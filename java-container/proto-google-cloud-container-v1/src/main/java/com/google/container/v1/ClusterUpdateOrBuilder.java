@@ -780,7 +780,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -792,7 +797,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -804,7 +814,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -1835,6 +1850,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return Whether the desiredContainerdConfig field is set.
+   */
+  boolean hasDesiredContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return The desiredContainerdConfig.
+   */
+  com.google.container.v1.ContainerdConfig getDesiredContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   */
+  com.google.container.v1.ContainerdConfigOrBuilder getDesiredContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable/Disable Multi-Networking for the cluster
    * </pre>
    *
@@ -1968,4 +2018,84 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredEnableCiliumClusterwideNetworkPolicy.
    */
   boolean getDesiredEnableCiliumClusterwideNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return Whether the desiredNodeKubeletConfig field is set.
+   */
+  boolean hasDesiredNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return The desiredNodeKubeletConfig.
+   */
+  com.google.container.v1.NodeKubeletConfig getDesiredNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   */
+  com.google.container.v1.NodeKubeletConfigOrBuilder getDesiredNodeKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigKubeletConfig field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigKubeletConfig.
+   */
+  com.google.container.v1.NodeKubeletConfig getDesiredNodePoolAutoConfigKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   */
+  com.google.container.v1.NodeKubeletConfigOrBuilder
+      getDesiredNodePoolAutoConfigKubeletConfigOrBuilder();
 }

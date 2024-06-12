@@ -8526,6 +8526,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     MIXED_AUDIO(13),
     TELEPHONY_TRANSFER_CALL(18),
     KNOWLEDGE_INFO_CARD(20),
+    TOOL_CALL(22),
     MESSAGE_NOT_SET(0);
     private final int value;
 
@@ -8564,6 +8565,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           return TELEPHONY_TRANSFER_CALL;
         case 20:
           return KNOWLEDGE_INFO_CARD;
+        case 22:
+          return TOOL_CALL;
         case 0:
           return MESSAGE_NOT_SET;
         default:
@@ -9207,6 +9210,60 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         .getDefaultInstance();
   }
 
+  public static final int TOOL_CALL_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   *
+   * @return Whether the toolCall field is set.
+   */
+  @java.lang.Override
+  public boolean hasToolCall() {
+    return messageCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   *
+   * @return The toolCall.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ToolCall getToolCall() {
+    if (messageCase_ == 22) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder getToolCallOrBuilder() {
+    if (messageCase_ == 22) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+  }
+
   public static final int CHANNEL_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
@@ -9321,6 +9378,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           20, (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_);
     }
+    if (messageCase_ == 22) {
+      output.writeMessage(22, (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -9389,6 +9449,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               20,
               (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_);
     }
+    if (messageCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9437,6 +9502,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         break;
       case 20:
         if (!getKnowledgeInfoCard().equals(other.getKnowledgeInfoCard())) return false;
+        break;
+      case 22:
+        if (!getToolCall().equals(other.getToolCall())) return false;
         break;
       case 0:
       default:
@@ -9494,6 +9562,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 20:
         hash = (37 * hash) + KNOWLEDGE_INFO_CARD_FIELD_NUMBER;
         hash = (53 * hash) + getKnowledgeInfoCard().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + TOOL_CALL_FIELD_NUMBER;
+        hash = (53 * hash) + getToolCall().hashCode();
         break;
       case 0:
       default:
@@ -9684,6 +9756,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (knowledgeInfoCardBuilder_ != null) {
         knowledgeInfoCardBuilder_.clear();
       }
+      if (toolCallBuilder_ != null) {
+        toolCallBuilder_.clear();
+      }
       channel_ = "";
       messageCase_ = 0;
       message_ = null;
@@ -9724,7 +9799,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.channel_ = channel_;
       }
     }
@@ -9761,6 +9836,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       if (messageCase_ == 20 && knowledgeInfoCardBuilder_ != null) {
         result.message_ = knowledgeInfoCardBuilder_.build();
+      }
+      if (messageCase_ == 22 && toolCallBuilder_ != null) {
+        result.message_ = toolCallBuilder_.build();
       }
     }
 
@@ -9812,7 +9890,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getMessageCase()) {
@@ -9864,6 +9942,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case KNOWLEDGE_INFO_CARD:
           {
             mergeKnowledgeInfoCard(other.getKnowledgeInfoCard());
+            break;
+          }
+        case TOOL_CALL:
+          {
+            mergeToolCall(other.getToolCall());
             break;
           }
         case MESSAGE_NOT_SET:
@@ -9957,7 +10040,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             case 154:
               {
                 channel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 154
             case 162:
@@ -9967,6 +10050,12 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
                 messageCase_ = 20;
                 break;
               } // case 162
+            case 178:
+              {
+                input.readMessage(getToolCallFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 22;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12475,6 +12564,224 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return knowledgeInfoCardBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCall,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCall.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder>
+        toolCallBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     *
+     * @return Whether the toolCall field is set.
+     */
+    @java.lang.Override
+    public boolean hasToolCall() {
+      return messageCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     *
+     * @return The toolCall.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ToolCall getToolCall() {
+      if (toolCallBuilder_ == null) {
+        if (messageCase_ == 22) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+      } else {
+        if (messageCase_ == 22) {
+          return toolCallBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    public Builder setToolCall(com.google.cloud.dialogflow.cx.v3beta1.ToolCall value) {
+      if (toolCallBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        message_ = value;
+        onChanged();
+      } else {
+        toolCallBuilder_.setMessage(value);
+      }
+      messageCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    public Builder setToolCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ToolCall.Builder builderForValue) {
+      if (toolCallBuilder_ == null) {
+        message_ = builderForValue.build();
+        onChanged();
+      } else {
+        toolCallBuilder_.setMessage(builderForValue.build());
+      }
+      messageCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    public Builder mergeToolCall(com.google.cloud.dialogflow.cx.v3beta1.ToolCall value) {
+      if (toolCallBuilder_ == null) {
+        if (messageCase_ == 22
+            && message_ != com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance()) {
+          message_ =
+              com.google.cloud.dialogflow.cx.v3beta1.ToolCall.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          message_ = value;
+        }
+        onChanged();
+      } else {
+        if (messageCase_ == 22) {
+          toolCallBuilder_.mergeFrom(value);
+        } else {
+          toolCallBuilder_.setMessage(value);
+        }
+      }
+      messageCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    public Builder clearToolCall() {
+      if (toolCallBuilder_ == null) {
+        if (messageCase_ == 22) {
+          messageCase_ = 0;
+          message_ = null;
+          onChanged();
+        }
+      } else {
+        if (messageCase_ == 22) {
+          messageCase_ = 0;
+          message_ = null;
+        }
+        toolCallBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ToolCall.Builder getToolCallBuilder() {
+      return getToolCallFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder getToolCallOrBuilder() {
+      if ((messageCase_ == 22) && (toolCallBuilder_ != null)) {
+        return toolCallBuilder_.getMessageOrBuilder();
+      } else {
+        if (messageCase_ == 22) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the definition of a tool call that should be executed by the
+     * client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCall,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCall.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder>
+        getToolCallFieldBuilder() {
+      if (toolCallBuilder_ == null) {
+        if (!(messageCase_ == 22)) {
+          message_ = com.google.cloud.dialogflow.cx.v3beta1.ToolCall.getDefaultInstance();
+        }
+        toolCallBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.ToolCall,
+                com.google.cloud.dialogflow.cx.v3beta1.ToolCall.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.ToolCall) message_,
+                getParentForChildren(),
+                isClean());
+        message_ = null;
+      }
+      messageCase_ = 22;
+      onChanged();
+      return toolCallBuilder_;
+    }
+
     private java.lang.Object channel_ = "";
     /**
      *
@@ -12546,7 +12853,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       channel_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -12566,7 +12873,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearChannel() {
       channel_ = getDefaultInstance().getChannel();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -12591,7 +12898,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       channel_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

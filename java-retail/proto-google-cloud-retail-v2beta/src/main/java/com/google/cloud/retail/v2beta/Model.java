@@ -774,6 +774,174 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2beta.Model.DataState)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Use single or multiple context products for recommendations.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2beta.Model.ContextProductsType}
+   */
+  public enum ContextProductsType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified default value, should never be explicitly set.
+     * Defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>CONTEXT_PRODUCTS_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CONTEXT_PRODUCTS_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use only a single product as context for the recommendation. Typically
+     * used on pages like add-to-cart or product details.
+     * </pre>
+     *
+     * <code>SINGLE_CONTEXT_PRODUCT = 1;</code>
+     */
+    SINGLE_CONTEXT_PRODUCT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use one or multiple products as context for the recommendation. Typically
+     * used on shopping cart pages.
+     * </pre>
+     *
+     * <code>MULTIPLE_CONTEXT_PRODUCTS = 2;</code>
+     */
+    MULTIPLE_CONTEXT_PRODUCTS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified default value, should never be explicitly set.
+     * Defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>CONTEXT_PRODUCTS_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONTEXT_PRODUCTS_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use only a single product as context for the recommendation. Typically
+     * used on pages like add-to-cart or product details.
+     * </pre>
+     *
+     * <code>SINGLE_CONTEXT_PRODUCT = 1;</code>
+     */
+    public static final int SINGLE_CONTEXT_PRODUCT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use one or multiple products as context for the recommendation. Typically
+     * used on shopping cart pages.
+     * </pre>
+     *
+     * <code>MULTIPLE_CONTEXT_PRODUCTS = 2;</code>
+     */
+    public static final int MULTIPLE_CONTEXT_PRODUCTS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ContextProductsType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ContextProductsType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONTEXT_PRODUCTS_TYPE_UNSPECIFIED;
+        case 1:
+          return SINGLE_CONTEXT_PRODUCT;
+        case 2:
+          return MULTIPLE_CONTEXT_PRODUCTS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ContextProductsType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ContextProductsType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ContextProductsType>() {
+              public ContextProductsType findValueByNumber(int number) {
+                return ContextProductsType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2beta.Model.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final ContextProductsType[] VALUES = values();
+
+    public static ContextProductsType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ContextProductsType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2beta.Model.ContextProductsType)
+  }
+
   public interface ServingConfigListOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2beta.Model.ServingConfigList)
@@ -1569,6 +1737,1612 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.retail.v2beta.Model.ServingConfigList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface FrequentlyBoughtTogetherFeaturesConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the context of the model when it is used in predict
+     * requests. Can only be set for the `frequently-bought-together` type. If
+     * it isn't specified, it defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for contextProductsType.
+     */
+    int getContextProductsTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the context of the model when it is used in predict
+     * requests. Can only be set for the `frequently-bought-together` type. If
+     * it isn't specified, it defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextProductsType.
+     */
+    com.google.cloud.retail.v2beta.Model.ContextProductsType getContextProductsType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional configs for the frequently-bought-together model type.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig}
+   */
+  public static final class FrequentlyBoughtTogetherFeaturesConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+      FrequentlyBoughtTogetherFeaturesConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FrequentlyBoughtTogetherFeaturesConfig.newBuilder() to construct.
+    private FrequentlyBoughtTogetherFeaturesConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FrequentlyBoughtTogetherFeaturesConfig() {
+      contextProductsType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FrequentlyBoughtTogetherFeaturesConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2beta.ModelProto
+          .internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2beta.ModelProto
+          .internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.class,
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder
+                  .class);
+    }
+
+    public static final int CONTEXT_PRODUCTS_TYPE_FIELD_NUMBER = 2;
+    private int contextProductsType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the context of the model when it is used in predict
+     * requests. Can only be set for the `frequently-bought-together` type. If
+     * it isn't specified, it defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for contextProductsType.
+     */
+    @java.lang.Override
+    public int getContextProductsTypeValue() {
+      return contextProductsType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the context of the model when it is used in predict
+     * requests. Can only be set for the `frequently-bought-together` type. If
+     * it isn't specified, it defaults to
+     * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextProductsType.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.Model.ContextProductsType getContextProductsType() {
+      com.google.cloud.retail.v2beta.Model.ContextProductsType result =
+          com.google.cloud.retail.v2beta.Model.ContextProductsType.forNumber(contextProductsType_);
+      return result == null
+          ? com.google.cloud.retail.v2beta.Model.ContextProductsType.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (contextProductsType_
+          != com.google.cloud.retail.v2beta.Model.ContextProductsType
+              .CONTEXT_PRODUCTS_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, contextProductsType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (contextProductsType_
+          != com.google.cloud.retail.v2beta.Model.ContextProductsType
+              .CONTEXT_PRODUCTS_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, contextProductsType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig other =
+          (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig) obj;
+
+      if (contextProductsType_ != other.contextProductsType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONTEXT_PRODUCTS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + contextProductsType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for the frequently-bought-together model type.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+        com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.class,
+                com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        contextProductsType_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig build() {
+        com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+          buildPartial() {
+        com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig result =
+            new com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.contextProductsType_ = contextProductsType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig other) {
+        if (other
+            == com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+                .getDefaultInstance()) return this;
+        if (other.contextProductsType_ != 0) {
+          setContextProductsTypeValue(other.getContextProductsTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  contextProductsType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int contextProductsType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the context of the model when it is used in predict
+       * requests. Can only be set for the `frequently-bought-together` type. If
+       * it isn't specified, it defaults to
+       * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for contextProductsType.
+       */
+      @java.lang.Override
+      public int getContextProductsTypeValue() {
+        return contextProductsType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the context of the model when it is used in predict
+       * requests. Can only be set for the `frequently-bought-together` type. If
+       * it isn't specified, it defaults to
+       * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for contextProductsType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContextProductsTypeValue(int value) {
+        contextProductsType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the context of the model when it is used in predict
+       * requests. Can only be set for the `frequently-bought-together` type. If
+       * it isn't specified, it defaults to
+       * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The contextProductsType.
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.ContextProductsType getContextProductsType() {
+        com.google.cloud.retail.v2beta.Model.ContextProductsType result =
+            com.google.cloud.retail.v2beta.Model.ContextProductsType.forNumber(
+                contextProductsType_);
+        return result == null
+            ? com.google.cloud.retail.v2beta.Model.ContextProductsType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the context of the model when it is used in predict
+       * requests. Can only be set for the `frequently-bought-together` type. If
+       * it isn't specified, it defaults to
+       * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The contextProductsType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContextProductsType(
+          com.google.cloud.retail.v2beta.Model.ContextProductsType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        contextProductsType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the context of the model when it is used in predict
+       * requests. Can only be set for the `frequently-bought-together` type. If
+       * it isn't specified, it defaults to
+       * [MULTIPLE_CONTEXT_PRODUCTS][google.cloud.retail.v2beta.Model.ContextProductsType.MULTIPLE_CONTEXT_PRODUCTS].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.ContextProductsType context_products_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContextProductsType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        contextProductsType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+    private static final com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig();
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FrequentlyBoughtTogetherFeaturesConfig> PARSER =
+        new com.google.protobuf.AbstractParser<FrequentlyBoughtTogetherFeaturesConfig>() {
+          @java.lang.Override
+          public FrequentlyBoughtTogetherFeaturesConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FrequentlyBoughtTogetherFeaturesConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FrequentlyBoughtTogetherFeaturesConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ModelFeaturesConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2beta.Model.ModelFeaturesConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     *
+     * @return Whether the frequentlyBoughtTogetherConfig field is set.
+     */
+    boolean hasFrequentlyBoughtTogetherConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     *
+     * @return The frequentlyBoughtTogetherConfig.
+     */
+    com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        getFrequentlyBoughtTogetherConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     */
+    com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder
+        getFrequentlyBoughtTogetherConfigOrBuilder();
+
+    com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.TypeDedicatedConfigCase
+        getTypeDedicatedConfigCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional model features config.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2beta.Model.ModelFeaturesConfig}
+   */
+  public static final class ModelFeaturesConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.Model.ModelFeaturesConfig)
+      ModelFeaturesConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModelFeaturesConfig.newBuilder() to construct.
+    private ModelFeaturesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModelFeaturesConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModelFeaturesConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2beta.ModelProto
+          .internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2beta.ModelProto
+          .internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.class,
+              com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder.class);
+    }
+
+    private int typeDedicatedConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object typeDedicatedConfig_;
+
+    public enum TypeDedicatedConfigCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      FREQUENTLY_BOUGHT_TOGETHER_CONFIG(1),
+      TYPEDEDICATEDCONFIG_NOT_SET(0);
+      private final int value;
+
+      private TypeDedicatedConfigCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TypeDedicatedConfigCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TypeDedicatedConfigCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return FREQUENTLY_BOUGHT_TOGETHER_CONFIG;
+          case 0:
+            return TYPEDEDICATEDCONFIG_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TypeDedicatedConfigCase getTypeDedicatedConfigCase() {
+      return TypeDedicatedConfigCase.forNumber(typeDedicatedConfigCase_);
+    }
+
+    public static final int FREQUENTLY_BOUGHT_TOGETHER_CONFIG_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     *
+     * @return Whether the frequentlyBoughtTogetherConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasFrequentlyBoughtTogetherConfig() {
+      return typeDedicatedConfigCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     *
+     * @return The frequentlyBoughtTogetherConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+        getFrequentlyBoughtTogetherConfig() {
+      if (typeDedicatedConfigCase_ == 1) {
+        return (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+            typeDedicatedConfig_;
+      }
+      return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional configs for frequently-bought-together models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder
+        getFrequentlyBoughtTogetherConfigOrBuilder() {
+      if (typeDedicatedConfigCase_ == 1) {
+        return (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+            typeDedicatedConfig_;
+      }
+      return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (typeDedicatedConfigCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+                typeDedicatedConfig_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (typeDedicatedConfigCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+                    typeDedicatedConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig other =
+          (com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig) obj;
+
+      if (!getTypeDedicatedConfigCase().equals(other.getTypeDedicatedConfigCase())) return false;
+      switch (typeDedicatedConfigCase_) {
+        case 1:
+          if (!getFrequentlyBoughtTogetherConfig()
+              .equals(other.getFrequentlyBoughtTogetherConfig())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (typeDedicatedConfigCase_) {
+        case 1:
+          hash = (37 * hash) + FREQUENTLY_BOUGHT_TOGETHER_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getFrequentlyBoughtTogetherConfig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional model features config.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2beta.Model.ModelFeaturesConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2beta.Model.ModelFeaturesConfig)
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.class,
+                com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (frequentlyBoughtTogetherConfigBuilder_ != null) {
+          frequentlyBoughtTogetherConfigBuilder_.clear();
+        }
+        typeDedicatedConfigCase_ = 0;
+        typeDedicatedConfig_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2beta.ModelProto
+            .internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig build() {
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig buildPartial() {
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig result =
+            new com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig result) {
+        result.typeDedicatedConfigCase_ = typeDedicatedConfigCase_;
+        result.typeDedicatedConfig_ = this.typeDedicatedConfig_;
+        if (typeDedicatedConfigCase_ == 1 && frequentlyBoughtTogetherConfigBuilder_ != null) {
+          result.typeDedicatedConfig_ = frequentlyBoughtTogetherConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig) {
+          return mergeFrom((com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig other) {
+        if (other == com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance())
+          return this;
+        switch (other.getTypeDedicatedConfigCase()) {
+          case FREQUENTLY_BOUGHT_TOGETHER_CONFIG:
+            {
+              mergeFrequentlyBoughtTogetherConfig(other.getFrequentlyBoughtTogetherConfig());
+              break;
+            }
+          case TYPEDEDICATEDCONFIG_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getFrequentlyBoughtTogetherConfigFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  typeDedicatedConfigCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int typeDedicatedConfigCase_ = 0;
+      private java.lang.Object typeDedicatedConfig_;
+
+      public TypeDedicatedConfigCase getTypeDedicatedConfigCase() {
+        return TypeDedicatedConfigCase.forNumber(typeDedicatedConfigCase_);
+      }
+
+      public Builder clearTypeDedicatedConfig() {
+        typeDedicatedConfigCase_ = 0;
+        typeDedicatedConfig_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig,
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder,
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder>
+          frequentlyBoughtTogetherConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       *
+       * @return Whether the frequentlyBoughtTogetherConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasFrequentlyBoughtTogetherConfig() {
+        return typeDedicatedConfigCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       *
+       * @return The frequentlyBoughtTogetherConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+          getFrequentlyBoughtTogetherConfig() {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 1) {
+            return (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+                typeDedicatedConfig_;
+          }
+          return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+              .getDefaultInstance();
+        } else {
+          if (typeDedicatedConfigCase_ == 1) {
+            return frequentlyBoughtTogetherConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      public Builder setFrequentlyBoughtTogetherConfig(
+          com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig value) {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          typeDedicatedConfig_ = value;
+          onChanged();
+        } else {
+          frequentlyBoughtTogetherConfigBuilder_.setMessage(value);
+        }
+        typeDedicatedConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      public Builder setFrequentlyBoughtTogetherConfig(
+          com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder
+              builderForValue) {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          typeDedicatedConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          frequentlyBoughtTogetherConfigBuilder_.setMessage(builderForValue.build());
+        }
+        typeDedicatedConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      public Builder mergeFrequentlyBoughtTogetherConfig(
+          com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig value) {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 1
+              && typeDedicatedConfig_
+                  != com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+                      .getDefaultInstance()) {
+            typeDedicatedConfig_ =
+                com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+                    .newBuilder(
+                        (com.google.cloud.retail.v2beta.Model
+                                .FrequentlyBoughtTogetherFeaturesConfig)
+                            typeDedicatedConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            typeDedicatedConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeDedicatedConfigCase_ == 1) {
+            frequentlyBoughtTogetherConfigBuilder_.mergeFrom(value);
+          } else {
+            frequentlyBoughtTogetherConfigBuilder_.setMessage(value);
+          }
+        }
+        typeDedicatedConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      public Builder clearFrequentlyBoughtTogetherConfig() {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 1) {
+            typeDedicatedConfigCase_ = 0;
+            typeDedicatedConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeDedicatedConfigCase_ == 1) {
+            typeDedicatedConfigCase_ = 0;
+            typeDedicatedConfig_ = null;
+          }
+          frequentlyBoughtTogetherConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder
+          getFrequentlyBoughtTogetherConfigBuilder() {
+        return getFrequentlyBoughtTogetherConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder
+          getFrequentlyBoughtTogetherConfigOrBuilder() {
+        if ((typeDedicatedConfigCase_ == 1) && (frequentlyBoughtTogetherConfigBuilder_ != null)) {
+          return frequentlyBoughtTogetherConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeDedicatedConfigCase_ == 1) {
+            return (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+                typeDedicatedConfig_;
+          }
+          return com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional configs for frequently-bought-together models.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig frequently_bought_together_config = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig,
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig.Builder,
+              com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfigOrBuilder>
+          getFrequentlyBoughtTogetherConfigFieldBuilder() {
+        if (frequentlyBoughtTogetherConfigBuilder_ == null) {
+          if (!(typeDedicatedConfigCase_ == 1)) {
+            typeDedicatedConfig_ =
+                com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+                    .getDefaultInstance();
+          }
+          frequentlyBoughtTogetherConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig,
+                  com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig
+                      .Builder,
+                  com.google.cloud.retail.v2beta.Model
+                      .FrequentlyBoughtTogetherFeaturesConfigOrBuilder>(
+                  (com.google.cloud.retail.v2beta.Model.FrequentlyBoughtTogetherFeaturesConfig)
+                      typeDedicatedConfig_,
+                  getParentForChildren(),
+                  isClean());
+          typeDedicatedConfig_ = null;
+        }
+        typeDedicatedConfigCase_ = 1;
+        onChanged();
+        return frequentlyBoughtTogetherConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2beta.Model.ModelFeaturesConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2beta.Model.ModelFeaturesConfig)
+    private static final com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig();
+    }
+
+    public static com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModelFeaturesConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ModelFeaturesConfig>() {
+          @java.lang.Override
+          public ModelFeaturesConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModelFeaturesConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModelFeaturesConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -2415,6 +4189,63 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return servingConfigLists_.get(index);
   }
 
+  public static final int MODEL_FEATURES_CONFIG_FIELD_NUMBER = 22;
+  private com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig modelFeaturesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelFeaturesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelFeaturesConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelFeaturesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig getModelFeaturesConfig() {
+    return modelFeaturesConfig_ == null
+        ? com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance()
+        : modelFeaturesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder
+      getModelFeaturesConfigOrBuilder() {
+    return modelFeaturesConfig_ == null
+        ? com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance()
+        : modelFeaturesConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2482,6 +4313,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < servingConfigLists_.size(); i++) {
       output.writeMessage(19, servingConfigLists_.get(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(22, getModelFeaturesConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2545,6 +4379,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(19, servingConfigLists_.get(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22, getModelFeaturesConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2583,6 +4421,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (dataState_ != other.dataState_) return false;
     if (filteringOption_ != other.filteringOption_) return false;
     if (!getServingConfigListsList().equals(other.getServingConfigListsList())) return false;
+    if (hasModelFeaturesConfig() != other.hasModelFeaturesConfig()) return false;
+    if (hasModelFeaturesConfig()) {
+      if (!getModelFeaturesConfig().equals(other.getModelFeaturesConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2629,6 +4471,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (getServingConfigListsCount() > 0) {
       hash = (37 * hash) + SERVING_CONFIG_LISTS_FIELD_NUMBER;
       hash = (53 * hash) + getServingConfigListsList().hashCode();
+    }
+    if (hasModelFeaturesConfig()) {
+      hash = (37 * hash) + MODEL_FEATURES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getModelFeaturesConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2777,6 +4623,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getLastTuneTimeFieldBuilder();
         getServingConfigListsFieldBuilder();
+        getModelFeaturesConfigFieldBuilder();
       }
     }
 
@@ -2816,6 +4663,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         servingConfigListsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
+      modelFeaturesConfig_ = null;
+      if (modelFeaturesConfigBuilder_ != null) {
+        modelFeaturesConfigBuilder_.dispose();
+        modelFeaturesConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2907,6 +4759,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.filteringOption_ = filteringOption_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.modelFeaturesConfig_ =
+            modelFeaturesConfigBuilder_ == null
+                ? modelFeaturesConfig_
+                : modelFeaturesConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3032,6 +4891,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasModelFeaturesConfig()) {
+        mergeModelFeaturesConfig(other.getModelFeaturesConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3150,6 +5012,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 154
+            case 178:
+              {
+                input.readMessage(
+                    getModelFeaturesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5593,6 +7462,215 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         servingConfigLists_ = null;
       }
       return servingConfigListsBuilder_;
+    }
+
+    private com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig modelFeaturesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig,
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder,
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder>
+        modelFeaturesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the modelFeaturesConfig field is set.
+     */
+    public boolean hasModelFeaturesConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modelFeaturesConfig.
+     */
+    public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig getModelFeaturesConfig() {
+      if (modelFeaturesConfigBuilder_ == null) {
+        return modelFeaturesConfig_ == null
+            ? com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance()
+            : modelFeaturesConfig_;
+      } else {
+        return modelFeaturesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelFeaturesConfig(
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig value) {
+      if (modelFeaturesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelFeaturesConfig_ = value;
+      } else {
+        modelFeaturesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelFeaturesConfig(
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder builderForValue) {
+      if (modelFeaturesConfigBuilder_ == null) {
+        modelFeaturesConfig_ = builderForValue.build();
+      } else {
+        modelFeaturesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeModelFeaturesConfig(
+        com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig value) {
+      if (modelFeaturesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && modelFeaturesConfig_ != null
+            && modelFeaturesConfig_
+                != com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance()) {
+          getModelFeaturesConfigBuilder().mergeFrom(value);
+        } else {
+          modelFeaturesConfig_ = value;
+        }
+      } else {
+        modelFeaturesConfigBuilder_.mergeFrom(value);
+      }
+      if (modelFeaturesConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearModelFeaturesConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      modelFeaturesConfig_ = null;
+      if (modelFeaturesConfigBuilder_ != null) {
+        modelFeaturesConfigBuilder_.dispose();
+        modelFeaturesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder
+        getModelFeaturesConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getModelFeaturesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder
+        getModelFeaturesConfigOrBuilder() {
+      if (modelFeaturesConfigBuilder_ != null) {
+        return modelFeaturesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return modelFeaturesConfig_ == null
+            ? com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.getDefaultInstance()
+            : modelFeaturesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional model features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig,
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder,
+            com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder>
+        getModelFeaturesConfigFieldBuilder() {
+      if (modelFeaturesConfigBuilder_ == null) {
+        modelFeaturesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig,
+                com.google.cloud.retail.v2beta.Model.ModelFeaturesConfig.Builder,
+                com.google.cloud.retail.v2beta.Model.ModelFeaturesConfigOrBuilder>(
+                getModelFeaturesConfig(), getParentForChildren(), isClean());
+        modelFeaturesConfig_ = null;
+      }
+      return modelFeaturesConfigBuilder_;
     }
 
     @java.lang.Override

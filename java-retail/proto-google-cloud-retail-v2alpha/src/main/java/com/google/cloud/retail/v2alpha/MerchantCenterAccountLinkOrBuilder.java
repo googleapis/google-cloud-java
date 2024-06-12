@@ -117,12 +117,12 @@ public interface MerchantCenterAccountLinkOrBuilder
    *
    *
    * <pre>
-   * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+   * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -134,12 +134,12 @@ public interface MerchantCenterAccountLinkOrBuilder
    *
    *
    * <pre>
-   * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+   * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -333,7 +333,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. GCP project ID.
+   * Output only. Google Cloud project ID.
    * </pre>
    *
    * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -345,7 +345,7 @@ public interface MerchantCenterAccountLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. GCP project ID.
+   * Output only. Google Cloud project ID.
    * </pre>
    *
    * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -353,4 +353,31 @@ public interface MerchantCenterAccountLinkOrBuilder
    * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional arbitrary string that could be used as a tag for
+   * tracking link source.
+   * </pre>
+   *
+   * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The source.
+   */
+  java.lang.String getSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional arbitrary string that could be used as a tag for
+   * tracking link source.
+   * </pre>
+   *
+   * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for source.
+   */
+  com.google.protobuf.ByteString getSourceBytes();
 }

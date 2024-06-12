@@ -51,7 +51,6 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     goal_ = "";
     inputParameterDefinitions_ = java.util.Collections.emptyList();
     outputParameterDefinitions_ = java.util.Collections.emptyList();
-    steps_ = java.util.Collections.emptyList();
     referencedPlaybooks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedFlows_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -1422,6 +1421,1029 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface InstructionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList();
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    int getStepsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
+        getStepsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Message of the Instruction of the playbook.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction}
+   */
+  public static final class Instruction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)
+      InstructionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Instruction.newBuilder() to construct.
+    private Instruction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Instruction() {
+      steps_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Instruction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.PlaybookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.PlaybookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder.class);
+    }
+
+    public static final int STEPS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> steps_;
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList() {
+      return steps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
+        getStepsOrBuilderList() {
+      return steps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    @java.lang.Override
+    public int getStepsCount() {
+      return steps_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index) {
+      return steps_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ordered list of step by step execution instructions to accomplish
+     * target goal.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(
+        int index) {
+      return steps_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < steps_.size(); i++) {
+        output.writeMessage(2, steps_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < steps_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, steps_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction) obj;
+
+      if (!getStepsList().equals(other.getStepsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getStepsCount() > 0) {
+        hash = (37 * hash) + STEPS_FIELD_NUMBER;
+        hash = (53 * hash) + getStepsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message of the Instruction of the playbook.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.PlaybookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.PlaybookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (stepsBuilder_ == null) {
+          steps_ = java.util.Collections.emptyList();
+        } else {
+          steps_ = null;
+          stepsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.PlaybookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result) {
+        if (stepsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            steps_ = java.util.Collections.unmodifiableList(steps_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.steps_ = steps_;
+        } else {
+          result.steps_ = stepsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance())
+          return this;
+        if (stepsBuilder_ == null) {
+          if (!other.steps_.isEmpty()) {
+            if (steps_.isEmpty()) {
+              steps_ = other.steps_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureStepsIsMutable();
+              steps_.addAll(other.steps_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.steps_.isEmpty()) {
+            if (stepsBuilder_.isEmpty()) {
+              stepsBuilder_.dispose();
+              stepsBuilder_ = null;
+              steps_ = other.steps_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              stepsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getStepsFieldBuilder()
+                      : null;
+            } else {
+              stepsBuilder_.addAllMessages(other.steps_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.parser(),
+                          extensionRegistry);
+                  if (stepsBuilder_ == null) {
+                    ensureStepsIsMutable();
+                    steps_.add(m);
+                  } else {
+                    stepsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> steps_ =
+          java.util.Collections.emptyList();
+
+      private void ensureStepsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          steps_ =
+              new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step>(steps_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
+          stepsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList() {
+        if (stepsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(steps_);
+        } else {
+          return stepsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public int getStepsCount() {
+        if (stepsBuilder_ == null) {
+          return steps_.size();
+        } else {
+          return stepsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index) {
+        if (stepsBuilder_ == null) {
+          return steps_.get(index);
+        } else {
+          return stepsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder setSteps(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
+        if (stepsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepsIsMutable();
+          steps_.set(index, value);
+          onChanged();
+        } else {
+          stepsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder setSteps(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
+        if (stepsBuilder_ == null) {
+          ensureStepsIsMutable();
+          steps_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder addSteps(com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
+        if (stepsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepsIsMutable();
+          steps_.add(value);
+          onChanged();
+        } else {
+          stepsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder addSteps(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
+        if (stepsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepsIsMutable();
+          steps_.add(index, value);
+          onChanged();
+        } else {
+          stepsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder addSteps(
+          com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
+        if (stepsBuilder_ == null) {
+          ensureStepsIsMutable();
+          steps_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stepsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder addSteps(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
+        if (stepsBuilder_ == null) {
+          ensureStepsIsMutable();
+          steps_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder addAllSteps(
+          java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step>
+              values) {
+        if (stepsBuilder_ == null) {
+          ensureStepsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, steps_);
+          onChanged();
+        } else {
+          stepsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder clearSteps() {
+        if (stepsBuilder_ == null) {
+          steps_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          stepsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public Builder removeSteps(int index) {
+        if (stepsBuilder_ == null) {
+          ensureStepsIsMutable();
+          steps_.remove(index);
+          onChanged();
+        } else {
+          stepsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder getStepsBuilder(
+          int index) {
+        return getStepsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(
+          int index) {
+        if (stepsBuilder_ == null) {
+          return steps_.get(index);
+        } else {
+          return stepsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
+          getStepsOrBuilderList() {
+        if (stepsBuilder_ != null) {
+          return stepsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(steps_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder addStepsBuilder() {
+        return getStepsFieldBuilder()
+            .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder addStepsBuilder(
+          int index) {
+        return getStepsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ordered list of step by step execution instructions to accomplish
+       * target goal.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 2;</code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder>
+          getStepsBuilderList() {
+        return getStepsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
+          getStepsFieldBuilder() {
+        if (stepsBuilder_ == null) {
+          stepsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
+                  com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>(
+                  steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          steps_ = null;
+        }
+        return stepsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Instruction> PARSER =
+        new com.google.protobuf.AbstractParser<Instruction>() {
+          @java.lang.Override
+          public Instruction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Instruction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Instruction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -1754,81 +2776,55 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     return outputParameterDefinitions_.get(index);
   }
 
-  public static final int STEPS_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> steps_;
+  public static final int INSTRUCTION_FIELD_NUMBER = 17;
+  private com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction_;
   /**
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+   *
+   * @return Whether the instruction field is set.
    */
   @java.lang.Override
-  public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList() {
-    return steps_;
+  public boolean hasInstruction() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+   *
+   * @return The instruction.
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
-      getStepsOrBuilderList() {
-    return steps_;
+  public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getInstruction() {
+    return instruction_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance()
+        : instruction_;
   }
   /**
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
    */
   @java.lang.Override
-  public int getStepsCount() {
-    return steps_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index) {
-    return steps_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(
-      int index) {
-    return steps_.get(index);
+  public com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder
+      getInstructionOrBuilder() {
+    return instruction_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance()
+        : instruction_;
   }
 
   public static final int TOKEN_COUNT_FIELD_NUMBER = 8;
@@ -1866,7 +2862,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -1915,7 +2911,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -2197,7 +3193,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLlmModelSettings() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -2260,9 +3256,6 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(goal_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, goal_);
     }
-    for (int i = 0; i < steps_.size(); i++) {
-      output.writeMessage(4, steps_.get(i));
-    }
     for (int i = 0; i < inputParameterDefinitions_.size(); i++) {
       output.writeMessage(5, inputParameterDefinitions_.get(i));
     }
@@ -2272,10 +3265,10 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (tokenCount_ != 0L) {
       output.writeInt64(8, tokenCount_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10, getUpdateTime());
     }
     for (int i = 0; i < referencedPlaybooks_.size(); i++) {
@@ -2288,8 +3281,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < referencedTools_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, referencedTools_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(14, getLlmModelSettings());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(17, getInstruction());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2309,9 +3305,6 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(goal_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, goal_);
     }
-    for (int i = 0; i < steps_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, steps_.get(i));
-    }
     for (int i = 0; i < inputParameterDefinitions_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2325,10 +3318,10 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (tokenCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, tokenCount_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
     }
     {
@@ -2355,8 +3348,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReferencedToolsList().size();
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLlmModelSettings());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getInstruction());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2381,7 +3377,10 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (!getOutputParameterDefinitionsList().equals(other.getOutputParameterDefinitionsList()))
       return false;
-    if (!getStepsList().equals(other.getStepsList())) return false;
+    if (hasInstruction() != other.hasInstruction()) return false;
+    if (hasInstruction()) {
+      if (!getInstruction().equals(other.getInstruction())) return false;
+    }
     if (getTokenCount() != other.getTokenCount()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -2423,9 +3422,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + OUTPUT_PARAMETER_DEFINITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOutputParameterDefinitionsList().hashCode();
     }
-    if (getStepsCount() > 0) {
-      hash = (37 * hash) + STEPS_FIELD_NUMBER;
-      hash = (53 * hash) + getStepsList().hashCode();
+    if (hasInstruction()) {
+      hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getInstruction().hashCode();
     }
     hash = (37 * hash) + TOKEN_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTokenCount());
@@ -2602,7 +3601,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInputParameterDefinitionsFieldBuilder();
         getOutputParameterDefinitionsFieldBuilder();
-        getStepsFieldBuilder();
+        getInstructionFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getLlmModelSettingsFieldBuilder();
@@ -2630,13 +3629,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         outputParameterDefinitionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      if (stepsBuilder_ == null) {
-        steps_ = java.util.Collections.emptyList();
-      } else {
-        steps_ = null;
-        stepsBuilder_.clear();
+      instruction_ = null;
+      if (instructionBuilder_ != null) {
+        instructionBuilder_.dispose();
+        instructionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
       tokenCount_ = 0L;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -2713,15 +3710,6 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.outputParameterDefinitions_ = outputParameterDefinitionsBuilder_.build();
       }
-      if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
-          steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.steps_ = steps_;
-      } else {
-        result.steps_ = stepsBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Playbook result) {
@@ -2735,17 +3723,22 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.goal_ = goal_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.instruction_ =
+            instructionBuilder_ == null ? instruction_ : instructionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.tokenCount_ = tokenCount_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         referencedPlaybooks_.makeImmutable();
@@ -2762,7 +3755,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.llmModelSettings_ =
             llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2882,32 +3875,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (stepsBuilder_ == null) {
-        if (!other.steps_.isEmpty()) {
-          if (steps_.isEmpty()) {
-            steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureStepsIsMutable();
-            steps_.addAll(other.steps_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.steps_.isEmpty()) {
-          if (stepsBuilder_.isEmpty()) {
-            stepsBuilder_.dispose();
-            stepsBuilder_ = null;
-            steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-            stepsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getStepsFieldBuilder()
-                    : null;
-          } else {
-            stepsBuilder_.addAllMessages(other.steps_);
-          }
-        }
+      if (other.hasInstruction()) {
+        mergeInstruction(other.getInstruction());
       }
       if (other.getTokenCount() != 0L) {
         setTokenCount(other.getTokenCount());
@@ -2995,20 +3964,6 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 34:
-              {
-                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step m =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.parser(),
-                        extensionRegistry);
-                if (stepsBuilder_ == null) {
-                  ensureStepsIsMutable();
-                  steps_.add(m);
-                } else {
-                  stepsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
             case 42:
               {
                 com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition m =
@@ -3083,6 +4038,12 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 114
+            case 138:
+              {
+                input.readMessage(getInstructionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4249,94 +5210,116 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       return outputParameterDefinitionsBuilder_;
     }
 
-    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> steps_ =
-        java.util.Collections.emptyList();
-
-    private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
-        steps_ =
-            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step>(steps_);
+    private com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction,
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder>
+        instructionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     *
+     * @return Whether the instruction field is set.
+     */
+    public boolean hasInstruction() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     *
+     * @return The instruction.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getInstruction() {
+      if (instructionBuilder_ == null) {
+        return instruction_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance()
+            : instruction_;
+      } else {
+        return instructionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     */
+    public Builder setInstruction(
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction value) {
+      if (instructionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instruction_ = value;
+      } else {
+        instructionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     */
+    public Builder setInstruction(
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder builderForValue) {
+      if (instructionBuilder_ == null) {
+        instruction_ = builderForValue.build();
+      } else {
+        instructionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     */
+    public Builder mergeInstruction(
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction value) {
+      if (instructionBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && instruction_ != null
+            && instruction_
+                != com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction
+                    .getDefaultInstance()) {
+          getInstructionBuilder().mergeFrom(value);
+        } else {
+          instruction_ = value;
+        }
+      } else {
+        instructionBuilder_.mergeFrom(value);
+      }
+      if (instruction_ != null) {
         bitField0_ |= 0x00000020;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
-        stepsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList() {
-      if (stepsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(steps_);
-      } else {
-        return stepsBuilder_.getMessageList();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public int getStepsCount() {
-      if (stepsBuilder_ == null) {
-        return steps_.size();
-      } else {
-        return stepsBuilder_.getCount();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index) {
-      if (stepsBuilder_ == null) {
-        return steps_.get(index);
-      } else {
-        return stepsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder setSteps(int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
-      if (stepsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureStepsIsMutable();
-        steps_.set(index, value);
         onChanged();
-      } else {
-        stepsBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -4344,280 +5327,79 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
+     * Instruction to accomplish target goal.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
      */
-    public Builder setSteps(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
-      if (stepsBuilder_ == null) {
-        ensureStepsIsMutable();
-        steps_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        stepsBuilder_.setMessage(index, builderForValue.build());
+    public Builder clearInstruction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      instruction_ = null;
+      if (instructionBuilder_ != null) {
+        instructionBuilder_.dispose();
+        instructionBuilder_ = null;
       }
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
+     * Instruction to accomplish target goal.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
      */
-    public Builder addSteps(com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
-      if (stepsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureStepsIsMutable();
-        steps_.add(value);
-        onChanged();
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder
+        getInstructionBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getInstructionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instruction to accomplish target goal.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder
+        getInstructionOrBuilder() {
+      if (instructionBuilder_ != null) {
+        return instructionBuilder_.getMessageOrBuilder();
       } else {
-        stepsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder addSteps(int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step value) {
-      if (stepsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureStepsIsMutable();
-        steps_.add(index, value);
-        onChanged();
-      } else {
-        stepsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder addSteps(
-        com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
-      if (stepsBuilder_ == null) {
-        ensureStepsIsMutable();
-        steps_.add(builderForValue.build());
-        onChanged();
-      } else {
-        stepsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder addSteps(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder builderForValue) {
-      if (stepsBuilder_ == null) {
-        ensureStepsIsMutable();
-        steps_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        stepsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder addAllSteps(
-        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> values) {
-      if (stepsBuilder_ == null) {
-        ensureStepsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, steps_);
-        onChanged();
-      } else {
-        stepsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder clearSteps() {
-      if (stepsBuilder_ == null) {
-        steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-      } else {
-        stepsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public Builder removeSteps(int index) {
-      if (stepsBuilder_ == null) {
-        ensureStepsIsMutable();
-        steps_.remove(index);
-        onChanged();
-      } else {
-        stepsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder getStepsBuilder(int index) {
-      return getStepsFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(
-        int index) {
-      if (stepsBuilder_ == null) {
-        return steps_.get(index);
-      } else {
-        return stepsBuilder_.getMessageOrBuilder(index);
+        return instruction_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance()
+            : instruction_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
+     * Instruction to accomplish target goal.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
-        getStepsOrBuilderList() {
-      if (stepsBuilder_ != null) {
-        return stepsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(steps_);
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction,
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder>
+        getInstructionFieldBuilder() {
+      if (instructionBuilder_ == null) {
+        instructionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction,
+                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder>(
+                getInstruction(), getParentForChildren(), isClean());
+        instruction_ = null;
       }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder addStepsBuilder() {
-      return getStepsFieldBuilder()
-          .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder addStepsBuilder(int index) {
-      return getStepsFieldBuilder()
-          .addBuilder(
-              index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Ordered list of step by step execution instructions to accomplish
-     * target goal.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-     */
-    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder>
-        getStepsBuilderList() {
-      return getStepsFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
-        getStepsFieldBuilder() {
-      if (stepsBuilder_ == null) {
-        stepsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
-                com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
-                com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
-        steps_ = null;
-      }
-      return stepsBuilder_;
+      return instructionBuilder_;
     }
 
     private long tokenCount_;

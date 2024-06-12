@@ -55,6 +55,7 @@ import javax.annotation.Generated;
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEnableAttributeSuggestions(true)
  *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
@@ -264,6 +265,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEnableAttributeSuggestions(true)
    *           .setEntity("entity-1298275357")
    *           .build();
    *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
@@ -302,6 +304,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEnableAttributeSuggestions(true)
    *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<CompleteQueryResponse> future =

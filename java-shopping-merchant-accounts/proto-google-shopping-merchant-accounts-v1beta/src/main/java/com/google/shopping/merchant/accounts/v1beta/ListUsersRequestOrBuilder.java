@@ -29,7 +29,7 @@ public interface ListUsersRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of users.
-   * Format: `accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ListUsersRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of users.
-   * Format: `accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>

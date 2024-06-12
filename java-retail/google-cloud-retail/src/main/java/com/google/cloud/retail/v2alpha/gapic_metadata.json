@@ -17,6 +17,21 @@
         }
       }
     },
+    "BranchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BranchServiceClient",
+          "rpcs": {
+            "GetBranch": {
+              "methods": ["getBranch", "getBranch", "getBranch", "getBranchCallable"]
+            },
+            "ListBranches": {
+              "methods": ["listBranches", "listBranches", "listBranches", "listBranchesCallable"]
+            }
+          }
+        }
+      }
+    },
     "CatalogService": {
       "clients": {
         "grpc": {
@@ -204,6 +219,39 @@
             },
             "UpdateProduct": {
               "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "AcceptTerms": {
+              "methods": ["acceptTerms", "acceptTerms", "acceptTerms", "acceptTermsCallable"]
+            },
+            "EnrollSolution": {
+              "methods": ["enrollSolutionAsync", "enrollSolutionOperationCallable", "enrollSolutionCallable"]
+            },
+            "GetAlertConfig": {
+              "methods": ["getAlertConfig", "getAlertConfig", "getAlertConfig", "getAlertConfigCallable"]
+            },
+            "GetLoggingConfig": {
+              "methods": ["getLoggingConfig", "getLoggingConfig", "getLoggingConfig", "getLoggingConfigCallable"]
+            },
+            "GetProject": {
+              "methods": ["getProject", "getProject", "getProject", "getProjectCallable"]
+            },
+            "ListEnrolledSolutions": {
+              "methods": ["listEnrolledSolutions", "listEnrolledSolutions", "listEnrolledSolutions", "listEnrolledSolutionsCallable"]
+            },
+            "UpdateAlertConfig": {
+              "methods": ["updateAlertConfig", "updateAlertConfig", "updateAlertConfigCallable"]
+            },
+            "UpdateLoggingConfig": {
+              "methods": ["updateLoggingConfig", "updateLoggingConfig", "updateLoggingConfigCallable"]
             }
           }
         }

@@ -610,6 +610,66 @@ public class ProductServiceClientTest {
   }
 
   @Test
+  public void purgeProductsTest() throws Exception {
+    PurgeProductsResponse expectedResponse =
+        PurgeProductsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeProductsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockProductService.addResponse(resultOperation);
+
+    PurgeProductsRequest request =
+        PurgeProductsRequest.newBuilder()
+            .setParent(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeProductsResponse actualResponse = client.purgeProductsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeProductsRequest actualRequest = ((PurgeProductsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeProductsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProductService.addException(exception);
+
+    try {
+      PurgeProductsRequest request =
+          PurgeProductsRequest.newBuilder()
+              .setParent(
+                  BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeProductsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void importProductsTest() throws Exception {
     ImportProductsResponse expectedResponse =
         ImportProductsResponse.newBuilder()

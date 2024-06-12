@@ -738,15 +738,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enables dynamic position for this facet. If set to true, the position of
      * this facet among all facets in the response is determined by Google
-     * Retail Search. It will be ordered together with dynamic facets if dynamic
+     * Retail Search. It is ordered together with dynamic facets if dynamic
      * facets is enabled. If set to false, the position of this facet in the
-     * response will be the same as in the request, and it will be ranked before
+     * response is the same as in the request, and it is ranked before
      * the facets with dynamic position enable and all dynamic facets.
      *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
-     * that the position of rating facet in response will be determined by
+     * that the position of rating facet in response is determined by
      * Google Retail Search.
      *
      * Another example, assuming you have the following facets in the request:
@@ -757,13 +757,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * "brands", enable_dynamic_position = false
      *
-     * And also you have a dynamic facets enable, which will generate a facet
-     * 'gender'. Then the final order of the facets in the response can be
+     * And also you have a dynamic facets enable, which generates a facet
+     * "gender". Then, the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
      * "rating") depends on how Google Retail Search orders "gender" and
-     * "rating" facets. However, notice that "price" and "brands" will always be
-     * ranked at 1st and 2nd position since their enable_dynamic_position are
-     * false.
+     * "rating" facets. However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * values are false.
      * </pre>
      *
      * <code>bool enable_dynamic_position = 4;</code>
@@ -935,13 +935,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -956,13 +956,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -977,13 +977,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -998,13 +998,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1020,13 +1020,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1187,7 +1187,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1203,7 +1203,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1219,7 +1219,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1236,7 +1236,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1254,7 +1254,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1270,7 +1270,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1286,7 +1286,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1303,7 +1303,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1400,7 +1400,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The query that is used to compute facet for the given facet key.
-       * When provided, it will override the default behavior of facet
+       * When provided, it overrides the default behavior of facet
        * computation. The query syntax is the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
        * for detail syntax and limitations. Notice that there is no limitation
@@ -1410,9 +1410,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * In the response,
        * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-       * will be always "1" and
+       * is always "1" and
        * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-       * will be the number of results that match the query.
+       * is the number of results that match the query.
        *
        * For example, you can set a customized facet for "shipToStore",
        * where
@@ -1420,7 +1420,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * is "customizedShipToStore", and
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-       * Then the facet will count the products that are both in stock and ship
+       * Then the facet counts the products that are both in stock and ship
        * to store "123".
        * </pre>
        *
@@ -1434,7 +1434,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The query that is used to compute facet for the given facet key.
-       * When provided, it will override the default behavior of facet
+       * When provided, it overrides the default behavior of facet
        * computation. The query syntax is the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
        * for detail syntax and limitations. Notice that there is no limitation
@@ -1444,9 +1444,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * In the response,
        * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-       * will be always "1" and
+       * is always "1" and
        * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-       * will be the number of results that match the query.
+       * is the number of results that match the query.
        *
        * For example, you can set a customized facet for "shipToStore",
        * where
@@ -1454,7 +1454,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * is "customizedShipToStore", and
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-       * Then the facet will count the products that are both in stock and ship
+       * Then the facet counts the products that are both in stock and ship
        * to store "123".
        * </pre>
        *
@@ -1672,13 +1672,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1696,13 +1696,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1721,13 +1721,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1745,13 +1745,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1769,13 +1769,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * values. Maximum number of intervals is 40.
        *
        * For all numerical facet keys that appear in the list of products from
-       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
        * computed from their distribution weekly. If the model assigns a high
        * score to a numerical facet key and its intervals are not specified in
-       * the search request, these percentiles will become the bounds
-       * for its intervals and will be returned in the response. If the
+       * the search request, these percentiles become the bounds
+       * for its intervals and are returned in the response. If the
        * facet key intervals are specified in the request, then the specified
-       * intervals will be returned instead.
+       * intervals are returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1957,7 +1957,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1975,7 +1975,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -1993,7 +1993,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2012,7 +2012,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that start with the given string prefix. For
        * example, suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+       * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2037,7 +2037,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2055,7 +2055,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2073,7 +2073,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2092,7 +2092,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet values that contains the given strings. For example,
        * suppose "categories" has three values "Women &gt; Shoe",
        * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-       * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+       * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
        * Only supported on textual fields. Maximum is 10.
        * </pre>
        *
@@ -2226,7 +2226,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The query that is used to compute facet for the given facet key.
-       * When provided, it will override the default behavior of facet
+       * When provided, it overrides the default behavior of facet
        * computation. The query syntax is the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
        * for detail syntax and limitations. Notice that there is no limitation
@@ -2236,9 +2236,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * In the response,
        * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-       * will be always "1" and
+       * is always "1" and
        * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-       * will be the number of results that match the query.
+       * is the number of results that match the query.
        *
        * For example, you can set a customized facet for "shipToStore",
        * where
@@ -2246,7 +2246,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * is "customizedShipToStore", and
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-       * Then the facet will count the products that are both in stock and ship
+       * Then the facet counts the products that are both in stock and ship
        * to store "123".
        * </pre>
        *
@@ -2271,7 +2271,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The query that is used to compute facet for the given facet key.
-       * When provided, it will override the default behavior of facet
+       * When provided, it overrides the default behavior of facet
        * computation. The query syntax is the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
        * for detail syntax and limitations. Notice that there is no limitation
@@ -2281,9 +2281,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * In the response,
        * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-       * will be always "1" and
+       * is always "1" and
        * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-       * will be the number of results that match the query.
+       * is the number of results that match the query.
        *
        * For example, you can set a customized facet for "shipToStore",
        * where
@@ -2291,7 +2291,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * is "customizedShipToStore", and
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-       * Then the facet will count the products that are both in stock and ship
+       * Then the facet counts the products that are both in stock and ship
        * to store "123".
        * </pre>
        *
@@ -3298,13 +3298,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3325,13 +3325,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3352,13 +3352,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3379,13 +3379,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3412,13 +3412,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3443,13 +3443,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3476,13 +3476,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3509,13 +3509,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3540,13 +3540,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3571,13 +3571,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3602,13 +3602,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3632,13 +3632,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3662,13 +3662,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3685,13 +3685,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3712,13 +3712,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3740,13 +3740,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3764,13 +3764,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3788,13 +3788,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * values. Maximum number of intervals is 40.
          *
          * For all numerical facet keys that appear in the list of products from
-         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90, and 100 are
          * computed from their distribution weekly. If the model assigns a high
          * score to a numerical facet key and its intervals are not specified in
-         * the search request, these percentiles will become the bounds
-         * for its intervals and will be returned in the response. If the
+         * the search request, these percentiles become the bounds
+         * for its intervals and are returned in the response. If the
          * facet key intervals are specified in the request, then the specified
-         * intervals will be returned instead.
+         * intervals are returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -4230,7 +4230,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4249,7 +4249,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4267,7 +4267,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4286,7 +4286,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4305,7 +4305,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4332,7 +4332,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4358,7 +4358,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4381,7 +4381,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4403,7 +4403,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that start with the given string prefix. For
          * example, suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "prefixes" to "Women", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Women &gt; Dress".
+         * "categories" facet gives only "Women &gt; Shoe" and "Women &gt; Dress".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4440,7 +4440,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4459,7 +4459,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4477,7 +4477,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4496,7 +4496,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4515,7 +4515,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4542,7 +4542,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4568,7 +4568,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4591,7 +4591,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4613,7 +4613,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet values that contains the given strings. For example,
          * suppose "categories" has three values "Women &gt; Shoe",
          * "Women &gt; Dress" and "Men &gt; Shoe". If set "contains" to "Shoe", the
-         * "categories" facet will give only "Women &gt; Shoe" and "Men &gt; Shoe".
+         * "categories" facet gives only "Women &gt; Shoe" and "Men &gt; Shoe".
          * Only supported on textual fields. Maximum is 10.
          * </pre>
          *
@@ -4907,7 +4907,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The query that is used to compute facet for the given facet key.
-         * When provided, it will override the default behavior of facet
+         * When provided, it overrides the default behavior of facet
          * computation. The query syntax is the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
          * for detail syntax and limitations. Notice that there is no limitation
@@ -4917,9 +4917,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * In the response,
          * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-         * will be always "1" and
+         * is always "1" and
          * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-         * will be the number of results that match the query.
+         * is the number of results that match the query.
          *
          * For example, you can set a customized facet for "shipToStore",
          * where
@@ -4927,7 +4927,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * is "customizedShipToStore", and
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-         * Then the facet will count the products that are both in stock and ship
+         * Then the facet counts the products that are both in stock and ship
          * to store "123".
          * </pre>
          *
@@ -4951,7 +4951,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The query that is used to compute facet for the given facet key.
-         * When provided, it will override the default behavior of facet
+         * When provided, it overrides the default behavior of facet
          * computation. The query syntax is the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
          * for detail syntax and limitations. Notice that there is no limitation
@@ -4961,9 +4961,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * In the response,
          * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-         * will be always "1" and
+         * is always "1" and
          * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-         * will be the number of results that match the query.
+         * is the number of results that match the query.
          *
          * For example, you can set a customized facet for "shipToStore",
          * where
@@ -4971,7 +4971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * is "customizedShipToStore", and
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-         * Then the facet will count the products that are both in stock and ship
+         * Then the facet counts the products that are both in stock and ship
          * to store "123".
          * </pre>
          *
@@ -4995,7 +4995,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The query that is used to compute facet for the given facet key.
-         * When provided, it will override the default behavior of facet
+         * When provided, it overrides the default behavior of facet
          * computation. The query syntax is the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
          * for detail syntax and limitations. Notice that there is no limitation
@@ -5005,9 +5005,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * In the response,
          * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-         * will be always "1" and
+         * is always "1" and
          * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-         * will be the number of results that match the query.
+         * is the number of results that match the query.
          *
          * For example, you can set a customized facet for "shipToStore",
          * where
@@ -5015,7 +5015,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * is "customizedShipToStore", and
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-         * Then the facet will count the products that are both in stock and ship
+         * Then the facet counts the products that are both in stock and ship
          * to store "123".
          * </pre>
          *
@@ -5038,7 +5038,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The query that is used to compute facet for the given facet key.
-         * When provided, it will override the default behavior of facet
+         * When provided, it overrides the default behavior of facet
          * computation. The query syntax is the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
          * for detail syntax and limitations. Notice that there is no limitation
@@ -5048,9 +5048,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * In the response,
          * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-         * will be always "1" and
+         * is always "1" and
          * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-         * will be the number of results that match the query.
+         * is the number of results that match the query.
          *
          * For example, you can set a customized facet for "shipToStore",
          * where
@@ -5058,7 +5058,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * is "customizedShipToStore", and
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-         * Then the facet will count the products that are both in stock and ship
+         * Then the facet counts the products that are both in stock and ship
          * to store "123".
          * </pre>
          *
@@ -5077,7 +5077,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The query that is used to compute facet for the given facet key.
-         * When provided, it will override the default behavior of facet
+         * When provided, it overrides the default behavior of facet
          * computation. The query syntax is the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
          * for detail syntax and limitations. Notice that there is no limitation
@@ -5087,9 +5087,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * In the response,
          * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
-         * will be always "1" and
+         * is always "1" and
          * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
-         * will be the number of results that match the query.
+         * is the number of results that match the query.
          *
          * For example, you can set a customized facet for "shipToStore",
          * where
@@ -5097,7 +5097,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * is "customizedShipToStore", and
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is "availability: ANY(&#92;"IN_STOCK&#92;") AND shipToStore: ANY(&#92;"123&#92;")".
-         * Then the facet will count the products that are both in stock and ship
+         * Then the facet counts the products that are both in stock and ship
          * to store "123".
          * </pre>
          *
@@ -5500,15 +5500,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enables dynamic position for this facet. If set to true, the position of
      * this facet among all facets in the response is determined by Google
-     * Retail Search. It will be ordered together with dynamic facets if dynamic
+     * Retail Search. It is ordered together with dynamic facets if dynamic
      * facets is enabled. If set to false, the position of this facet in the
-     * response will be the same as in the request, and it will be ranked before
+     * response is the same as in the request, and it is ranked before
      * the facets with dynamic position enable and all dynamic facets.
      *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
-     * that the position of rating facet in response will be determined by
+     * that the position of rating facet in response is determined by
      * Google Retail Search.
      *
      * Another example, assuming you have the following facets in the request:
@@ -5519,13 +5519,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * "brands", enable_dynamic_position = false
      *
-     * And also you have a dynamic facets enable, which will generate a facet
-     * 'gender'. Then the final order of the facets in the response can be
+     * And also you have a dynamic facets enable, which generates a facet
+     * "gender". Then, the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
      * "rating") depends on how Google Retail Search orders "gender" and
-     * "rating" facets. However, notice that "price" and "brands" will always be
-     * ranked at 1st and 2nd position since their enable_dynamic_position are
-     * false.
+     * "rating" facets. However, notice that "price" and "brands" are always
+     * ranked at first and second position because their enable_dynamic_position
+     * values are false.
      * </pre>
      *
      * <code>bool enable_dynamic_position = 4;</code>
@@ -6688,15 +6688,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined by Google
-       * Retail Search. It will be ordered together with dynamic facets if dynamic
+       * Retail Search. It is ordered together with dynamic facets if dynamic
        * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined by
+       * that the position of rating facet in response is determined by
        * Google Retail Search.
        *
        * Another example, assuming you have the following facets in the request:
@@ -6707,13 +6707,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enable, which generates a facet
+       * "gender". Then, the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how Google Retail Search orders "gender" and
-       * "rating" facets. However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * "rating" facets. However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * values are false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -6730,15 +6730,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined by Google
-       * Retail Search. It will be ordered together with dynamic facets if dynamic
+       * Retail Search. It is ordered together with dynamic facets if dynamic
        * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined by
+       * that the position of rating facet in response is determined by
        * Google Retail Search.
        *
        * Another example, assuming you have the following facets in the request:
@@ -6749,13 +6749,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enable, which generates a facet
+       * "gender". Then, the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how Google Retail Search orders "gender" and
-       * "rating" facets. However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * "rating" facets. However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * values are false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -6776,15 +6776,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enables dynamic position for this facet. If set to true, the position of
        * this facet among all facets in the response is determined by Google
-       * Retail Search. It will be ordered together with dynamic facets if dynamic
+       * Retail Search. It is ordered together with dynamic facets if dynamic
        * facets is enabled. If set to false, the position of this facet in the
-       * response will be the same as in the request, and it will be ranked before
+       * response is the same as in the request, and it is ranked before
        * the facets with dynamic position enable and all dynamic facets.
        *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
-       * that the position of rating facet in response will be determined by
+       * that the position of rating facet in response is determined by
        * Google Retail Search.
        *
        * Another example, assuming you have the following facets in the request:
@@ -6795,13 +6795,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * * "brands", enable_dynamic_position = false
        *
-       * And also you have a dynamic facets enable, which will generate a facet
-       * 'gender'. Then the final order of the facets in the response can be
+       * And also you have a dynamic facets enable, which generates a facet
+       * "gender". Then, the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
        * "rating") depends on how Google Retail Search orders "gender" and
-       * "rating" facets. However, notice that "price" and "brands" will always be
-       * ranked at 1st and 2nd position since their enable_dynamic_position are
-       * false.
+       * "rating" facets. However, notice that "price" and "brands" are always
+       * ranked at first and second position because their enable_dynamic_position
+       * values are false.
        * </pre>
        *
        * <code>bool enable_dynamic_position = 4;</code>
@@ -12593,7 +12593,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving config name and the set
-   * of models that will be used to make the search.
+   * of models that are used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12621,7 +12621,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving config name and the set
-   * of models that will be used to make the search.
+   * of models that are used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13006,8 +13006,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+   * expression is case-sensitive. For more information, see
+   * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -13034,8 +13034,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+   * expression is case-sensitive. For more information, see
+   * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -13069,15 +13069,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * checking any filters on the search page.
    *
    * The filter applied to every search request when quality improvement such as
-   * query expansion is needed. For example, if a query does not have enough
-   * results, an expanded query with
-   * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-   * will be returned as a supplement of the original query. This field is
-   * strongly recommended to achieve high search quality.
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
    *
-   * See
-   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-   * for more details about filter syntax.
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
    * </pre>
    *
    * <code>string canonical_filter = 28;</code>
@@ -13104,15 +13103,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * checking any filters on the search page.
    *
    * The filter applied to every search request when quality improvement such as
-   * query expansion is needed. For example, if a query does not have enough
-   * results, an expanded query with
-   * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-   * will be returned as a supplement of the original query. This field is
-   * strongly recommended to achieve high search quality.
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
    *
-   * See
-   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-   * for more details about filter syntax.
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
    * </pre>
    *
    * <code>string canonical_filter = 28;</code>
@@ -13142,9 +13140,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-   * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+   * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+   * more information, see
+   * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -13171,9 +13169,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-   * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+   * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+   * more information, see
+   * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -13301,7 +13299,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=622
+   *     google/cloud/retail/v2alpha/search_service.proto;l=621
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -13325,7 +13323,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=622
+   *     google/cloud/retail/v2alpha/search_service.proto;l=621
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -13365,8 +13363,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -13389,8 +13387,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -13415,8 +13413,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -13443,8 +13441,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -13461,8 +13459,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -13481,8 +13479,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -13507,8 +13505,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * Defaults to
    * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
    * which means only the most relevant results are shown, and the least number
-   * of results are returned. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+   * of results are returned. For more information, see [Adjust result
+   * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -13529,8 +13527,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * Defaults to
    * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
    * which means only the most relevant results are shown, and the least number
-   * of results are returned. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+   * of results are returned. For more information, see [Adjust result
+   * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -14197,9 +14195,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -14235,9 +14233,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -14264,9 +14262,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -14300,9 +14298,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -15515,7 +15513,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving config name and the set
-     * of models that will be used to make the search.
+     * of models that are used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -15542,7 +15540,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving config name and the set
-     * of models that will be used to make the search.
+     * of models that are used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -15569,7 +15567,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving config name and the set
-     * of models that will be used to make the search.
+     * of models that are used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -15595,7 +15593,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving config name and the set
-     * of models that will be used to make the search.
+     * of models that are used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -15617,7 +15615,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving config name and the set
-     * of models that will be used to make the search.
+     * of models that are used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -16526,8 +16524,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+     * expression is case-sensitive. For more information, see
+     * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16553,8 +16551,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+     * expression is case-sensitive. For more information, see
+     * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16580,8 +16578,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+     * expression is case-sensitive. For more information, see
+     * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16606,8 +16604,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+     * expression is case-sensitive. For more information, see
+     * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16628,8 +16626,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+     * expression is case-sensitive. For more information, see
+     * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16659,15 +16657,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * checking any filters on the search page.
      *
      * The filter applied to every search request when quality improvement such as
-     * query expansion is needed. For example, if a query does not have enough
-     * results, an expanded query with
-     * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-     * will be returned as a supplement of the original query. This field is
-     * strongly recommended to achieve high search quality.
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
      *
-     * See
-     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-     * for more details about filter syntax.
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
      * </pre>
      *
      * <code>string canonical_filter = 28;</code>
@@ -16693,15 +16690,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * checking any filters on the search page.
      *
      * The filter applied to every search request when quality improvement such as
-     * query expansion is needed. For example, if a query does not have enough
-     * results, an expanded query with
-     * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-     * will be returned as a supplement of the original query. This field is
-     * strongly recommended to achieve high search quality.
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
      *
-     * See
-     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-     * for more details about filter syntax.
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
      * </pre>
      *
      * <code>string canonical_filter = 28;</code>
@@ -16727,15 +16723,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * checking any filters on the search page.
      *
      * The filter applied to every search request when quality improvement such as
-     * query expansion is needed. For example, if a query does not have enough
-     * results, an expanded query with
-     * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-     * will be returned as a supplement of the original query. This field is
-     * strongly recommended to achieve high search quality.
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
      *
-     * See
-     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-     * for more details about filter syntax.
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
      * </pre>
      *
      * <code>string canonical_filter = 28;</code>
@@ -16760,15 +16755,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * checking any filters on the search page.
      *
      * The filter applied to every search request when quality improvement such as
-     * query expansion is needed. For example, if a query does not have enough
-     * results, an expanded query with
-     * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-     * will be returned as a supplement of the original query. This field is
-     * strongly recommended to achieve high search quality.
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
      *
-     * See
-     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-     * for more details about filter syntax.
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
      * </pre>
      *
      * <code>string canonical_filter = 28;</code>
@@ -16789,15 +16783,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * checking any filters on the search page.
      *
      * The filter applied to every search request when quality improvement such as
-     * query expansion is needed. For example, if a query does not have enough
-     * results, an expanded query with
-     * [SearchRequest.canonical_filter][google.cloud.retail.v2alpha.SearchRequest.canonical_filter]
-     * will be returned as a supplement of the original query. This field is
-     * strongly recommended to achieve high search quality.
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
      *
-     * See
-     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
-     * for more details about filter syntax.
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter].
      * </pre>
      *
      * <code>string canonical_filter = 28;</code>
@@ -16823,9 +16816,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+     * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+     * more information, see
+     * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16851,9 +16844,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+     * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+     * more information, see
+     * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16879,9 +16872,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+     * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+     * more information, see
+     * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16906,9 +16899,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+     * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+     * more information, see
+     * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -16929,9 +16922,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+     * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+     * more information, see
+     * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -17391,7 +17384,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=622
+     *     google/cloud/retail/v2alpha/search_service.proto;l=621
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -17414,7 +17407,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=622
+     *     google/cloud/retail/v2alpha/search_service.proto;l=621
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -17637,8 +17630,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17660,8 +17653,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17689,8 +17682,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17720,8 +17713,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17749,8 +17742,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17786,8 +17779,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17814,8 +17807,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17837,8 +17830,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17865,8 +17858,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Boost specification to boost certain products. For more information, see
+     * [Boost results](https://cloud.google.com/retail/docs/boosting).
      *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
@@ -17907,8 +17900,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -17925,8 +17918,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -17950,8 +17943,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -17977,8 +17970,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18001,8 +17994,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18035,8 +18028,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18058,8 +18051,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18077,8 +18070,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18100,8 +18093,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+     * query expansion occurs. For more information, see [Query
+     * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>
@@ -18135,8 +18128,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      * which means only the most relevant results are shown, and the least number
-     * of results are returned. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+     * of results are returned. For more information, see [Adjust result
+     * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -18157,8 +18150,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      * which means only the most relevant results are shown, and the least number
-     * of results are returned. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+     * of results are returned. For more information, see [Adjust result
+     * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -18182,8 +18175,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      * which means only the most relevant results are shown, and the least number
-     * of results are returned. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+     * of results are returned. For more information, see [Adjust result
+     * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -18210,8 +18203,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      * which means only the most relevant results are shown, and the least number
-     * of results are returned. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+     * of results are returned. For more information, see [Adjust result
+     * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -18239,8 +18232,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      * which means only the most relevant results are shown, and the least number
-     * of results are returned. See more details at this [user
-     * guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
+     * of results are returned. For more information, see [Adjust result
+     * size](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold relevance_threshold = 15;
@@ -19836,9 +19829,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -19874,9 +19867,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -19903,9 +19896,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -19939,9 +19932,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -19981,9 +19974,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -20019,9 +20012,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -20055,9 +20048,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
      *
-     * See [Google Cloud
-     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-     * for more details.
+     * For more information, see [Requirements for
+     * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * in the Resource Manager documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>

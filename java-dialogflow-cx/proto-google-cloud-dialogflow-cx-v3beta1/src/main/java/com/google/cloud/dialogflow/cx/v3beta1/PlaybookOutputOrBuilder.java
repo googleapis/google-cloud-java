@@ -53,61 +53,37 @@ public interface PlaybookOutputOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of output parameters for the invocation.
+   * Optional. A Struct object of output parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the actionParameters field is set.
    */
-  java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter> getParametersList();
+  boolean hasActionParameters();
   /**
    *
    *
    * <pre>
-   * Optional. A list of output parameters for the invocation.
+   * Optional. A Struct object of output parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The actionParameters.
    */
-  com.google.cloud.dialogflow.cx.v3beta1.ActionParameter getParameters(int index);
+  com.google.protobuf.Struct getActionParameters();
   /**
    *
    *
    * <pre>
-   * Optional. A list of output parameters for the invocation.
+   * Optional. A Struct object of output parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  int getParametersCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of output parameters for the invocation.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>
-      getParametersOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of output parameters for the invocation.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder getParametersOrBuilder(int index);
+  com.google.protobuf.StructOrBuilder getActionParametersOrBuilder();
 }

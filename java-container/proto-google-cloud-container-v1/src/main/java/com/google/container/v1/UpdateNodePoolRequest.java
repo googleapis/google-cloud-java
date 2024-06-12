@@ -48,6 +48,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     name_ = "";
     locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
+    accelerators_ = java.util.Collections.emptyList();
     machineType_ = "";
     diskType_ = "";
   }
@@ -90,7 +91,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2656
+   *     google/container/v1/cluster_service.proto;l=2760
    * @return The projectId.
    */
   @java.lang.Override
@@ -118,7 +119,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2656
+   *     google/container/v1/cluster_service.proto;l=2760
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -152,7 +153,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2662
+   *     google/container/v1/cluster_service.proto;l=2766
    * @return The zone.
    */
   @java.lang.Override
@@ -181,7 +182,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2662
+   *     google/container/v1/cluster_service.proto;l=2766
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -213,7 +214,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2666
+   *     google/container/v1/cluster_service.proto;l=2770
    * @return The clusterId.
    */
   @java.lang.Override
@@ -240,7 +241,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2666
+   *     google/container/v1/cluster_service.proto;l=2770
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -272,7 +273,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2670
+   *     google/container/v1/cluster_service.proto;l=2774
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -299,7 +300,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2670
+   *     google/container/v1/cluster_service.proto;l=2774
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1391,6 +1392,87 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : windowsNodeConfig_;
   }
 
+  public static final int ACCELERATORS_FIELD_NUMBER = 35;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1.AcceleratorConfig> accelerators_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1.AcceleratorConfig> getAcceleratorsList() {
+    return accelerators_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1.AcceleratorConfigOrBuilder>
+      getAcceleratorsOrBuilderList() {
+    return accelerators_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  @java.lang.Override
+  public int getAcceleratorsCount() {
+    return accelerators_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AcceleratorConfig getAccelerators(int index) {
+    return accelerators_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index) {
+    return accelerators_.get(index);
+  }
+
   public static final int MACHINE_TYPE_FIELD_NUMBER = 36;
 
   @SuppressWarnings("serial")
@@ -1582,6 +1664,62 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : resourceManagerTags_;
   }
 
+  public static final int CONTAINERD_CONFIG_FIELD_NUMBER = 40;
+  private com.google.container.v1.ContainerdConfig containerdConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainerdConfig() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   *
+   * @return The containerdConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfig getContainerdConfig() {
+    return containerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+    return containerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+
   public static final int QUEUED_PROVISIONING_FIELD_NUMBER = 42;
   private com.google.container.v1.NodePool.QueuedProvisioning queuedProvisioning_;
   /**
@@ -1597,7 +1735,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasQueuedProvisioning() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1719,6 +1857,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(34, getWindowsNodeConfig());
     }
+    for (int i = 0; i < accelerators_.size(); i++) {
+      output.writeMessage(35, accelerators_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 36, machineType_);
     }
@@ -1732,6 +1873,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       output.writeMessage(39, getResourceManagerTags());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(40, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(42, getQueuedProvisioning());
     }
     getUnknownFields().writeTo(output);
@@ -1821,6 +1965,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getWindowsNodeConfig());
     }
+    for (int i = 0; i < accelerators_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, accelerators_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, machineType_);
     }
@@ -1835,6 +1982,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(39, getResourceManagerTags());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(40, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getQueuedProvisioning());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1922,12 +2072,17 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasWindowsNodeConfig()) {
       if (!getWindowsNodeConfig().equals(other.getWindowsNodeConfig())) return false;
     }
+    if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (!getMachineType().equals(other.getMachineType())) return false;
     if (!getDiskType().equals(other.getDiskType())) return false;
     if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
     if (hasResourceManagerTags()) {
       if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
+    }
+    if (hasContainerdConfig() != other.hasContainerdConfig()) return false;
+    if (hasContainerdConfig()) {
+      if (!getContainerdConfig().equals(other.getContainerdConfig())) return false;
     }
     if (hasQueuedProvisioning() != other.hasQueuedProvisioning()) return false;
     if (hasQueuedProvisioning()) {
@@ -2024,6 +2179,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + WINDOWS_NODE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWindowsNodeConfig().hashCode();
     }
+    if (getAcceleratorsCount() > 0) {
+      hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorsList().hashCode();
+    }
     hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMachineType().hashCode();
     hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
@@ -2033,6 +2192,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasResourceManagerTags()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceManagerTags().hashCode();
+    }
+    if (hasContainerdConfig()) {
+      hash = (37 * hash) + CONTAINERD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getContainerdConfig().hashCode();
     }
     if (hasQueuedProvisioning()) {
       hash = (37 * hash) + QUEUED_PROVISIONING_FIELD_NUMBER;
@@ -2193,7 +2356,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         getLoggingConfigFieldBuilder();
         getResourceLabelsFieldBuilder();
         getWindowsNodeConfigFieldBuilder();
+        getAcceleratorsFieldBuilder();
         getResourceManagerTagsFieldBuilder();
+        getContainerdConfigFieldBuilder();
         getQueuedProvisioningFieldBuilder();
       }
     }
@@ -2286,6 +2451,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         windowsNodeConfigBuilder_.dispose();
         windowsNodeConfigBuilder_ = null;
       }
+      if (acceleratorsBuilder_ == null) {
+        accelerators_ = java.util.Collections.emptyList();
+      } else {
+        accelerators_ = null;
+        acceleratorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x01000000);
       machineType_ = "";
       diskType_ = "";
       diskSizeGb_ = 0L;
@@ -2293,6 +2465,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
         resourceManagerTagsBuilder_ = null;
+      }
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
       }
       queuedProvisioning_ = null;
       if (queuedProvisioningBuilder_ != null) {
@@ -2326,11 +2503,24 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public com.google.container.v1.UpdateNodePoolRequest buildPartial() {
       com.google.container.v1.UpdateNodePoolRequest result =
           new com.google.container.v1.UpdateNodePoolRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.UpdateNodePoolRequest result) {
+      if (acceleratorsBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)) {
+          accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+          bitField0_ = (bitField0_ & ~0x01000000);
+        }
+        result.accelerators_ = accelerators_;
+      } else {
+        result.accelerators_ = acceleratorsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.container.v1.UpdateNodePoolRequest result) {
@@ -2441,28 +2631,33 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 : windowsNodeConfigBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.machineType_ = machineType_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.diskType_ = diskType_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.resourceManagerTags_ =
             resourceManagerTagsBuilder_ == null
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.containerdConfig_ =
+            containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.queuedProvisioning_ =
             queuedProvisioningBuilder_ == null
                 ? queuedProvisioning_
                 : queuedProvisioningBuilder_.build();
-        to_bitField0_ |= 0x00010000;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2607,14 +2802,41 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (other.hasWindowsNodeConfig()) {
         mergeWindowsNodeConfig(other.getWindowsNodeConfig());
       }
+      if (acceleratorsBuilder_ == null) {
+        if (!other.accelerators_.isEmpty()) {
+          if (accelerators_.isEmpty()) {
+            accelerators_ = other.accelerators_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+          } else {
+            ensureAcceleratorsIsMutable();
+            accelerators_.addAll(other.accelerators_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.accelerators_.isEmpty()) {
+          if (acceleratorsBuilder_.isEmpty()) {
+            acceleratorsBuilder_.dispose();
+            acceleratorsBuilder_ = null;
+            accelerators_ = other.accelerators_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+            acceleratorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAcceleratorsFieldBuilder()
+                    : null;
+          } else {
+            acceleratorsBuilder_.addAllMessages(other.accelerators_);
+          }
+        }
+      }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.getDiskSizeGb() != 0L) {
@@ -2622,6 +2844,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasResourceManagerTags()) {
         mergeResourceManagerTags(other.getResourceManagerTags());
+      }
+      if (other.hasContainerdConfig()) {
+        mergeContainerdConfig(other.getContainerdConfig());
       }
       if (other.hasQueuedProvisioning()) {
         mergeQueuedProvisioning(other.getQueuedProvisioning());
@@ -2801,36 +3026,56 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00800000;
                 break;
               } // case 274
+            case 282:
+              {
+                com.google.container.v1.AcceleratorConfig m =
+                    input.readMessage(
+                        com.google.container.v1.AcceleratorConfig.parser(), extensionRegistry);
+                if (acceleratorsBuilder_ == null) {
+                  ensureAcceleratorsIsMutable();
+                  accelerators_.add(m);
+                } else {
+                  acceleratorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 282
             case 290:
               {
                 machineType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 290
             case 298:
               {
                 diskType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 298
             case 304:
               {
                 diskSizeGb_ = input.readInt64();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 304
             case 314:
               {
                 input.readMessage(
                     getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 314
+            case 322:
+              {
+                input.readMessage(
+                    getContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 322
             case 338:
               {
                 input.readMessage(
                     getQueuedProvisioningFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 338
             default:
@@ -2865,7 +3110,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2656
+     *     google/container/v1/cluster_service.proto;l=2760
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2892,7 +3137,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2656
+     *     google/container/v1/cluster_service.proto;l=2760
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2919,7 +3164,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2656
+     *     google/container/v1/cluster_service.proto;l=2760
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2945,7 +3190,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2656
+     *     google/container/v1/cluster_service.proto;l=2760
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2967,7 +3212,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2656
+     *     google/container/v1/cluster_service.proto;l=2760
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2997,7 +3242,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2662
+     *     google/container/v1/cluster_service.proto;l=2766
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3025,7 +3270,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2662
+     *     google/container/v1/cluster_service.proto;l=2766
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3053,7 +3298,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2662
+     *     google/container/v1/cluster_service.proto;l=2766
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3080,7 +3325,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2662
+     *     google/container/v1/cluster_service.proto;l=2766
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3103,7 +3348,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2662
+     *     google/container/v1/cluster_service.proto;l=2766
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3131,7 +3376,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2666
+     *     google/container/v1/cluster_service.proto;l=2770
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -3157,7 +3402,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2666
+     *     google/container/v1/cluster_service.proto;l=2770
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -3183,7 +3428,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2666
+     *     google/container/v1/cluster_service.proto;l=2770
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -3208,7 +3453,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2666
+     *     google/container/v1/cluster_service.proto;l=2770
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3229,7 +3474,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2666
+     *     google/container/v1/cluster_service.proto;l=2770
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -3257,7 +3502,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2670
+     *     google/container/v1/cluster_service.proto;l=2774
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -3283,7 +3528,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2670
+     *     google/container/v1/cluster_service.proto;l=2774
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -3309,7 +3554,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2670
+     *     google/container/v1/cluster_service.proto;l=2774
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3334,7 +3579,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2670
+     *     google/container/v1/cluster_service.proto;l=2774
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3355,7 +3600,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2670
+     *     google/container/v1/cluster_service.proto;l=2774
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -6934,6 +7179,393 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return windowsNodeConfigBuilder_;
     }
 
+    private java.util.List<com.google.container.v1.AcceleratorConfig> accelerators_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAcceleratorsIsMutable() {
+      if (!((bitField0_ & 0x01000000) != 0)) {
+        accelerators_ =
+            new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>(accelerators_);
+        bitField0_ |= 0x01000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AcceleratorConfig,
+            com.google.container.v1.AcceleratorConfig.Builder,
+            com.google.container.v1.AcceleratorConfigOrBuilder>
+        acceleratorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public java.util.List<com.google.container.v1.AcceleratorConfig> getAcceleratorsList() {
+      if (acceleratorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(accelerators_);
+      } else {
+        return acceleratorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public int getAcceleratorsCount() {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.size();
+      } else {
+        return acceleratorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public com.google.container.v1.AcceleratorConfig getAccelerators(int index) {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.get(index);
+      } else {
+        return acceleratorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder setAccelerators(int index, com.google.container.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.set(index, value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder setAccelerators(
+        int index, com.google.container.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder addAccelerators(com.google.container.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder addAccelerators(int index, com.google.container.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(index, value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder addAccelerators(
+        com.google.container.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder addAccelerators(
+        int index, com.google.container.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder addAllAccelerators(
+        java.lang.Iterable<? extends com.google.container.v1.AcceleratorConfig> values) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accelerators_);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder clearAccelerators() {
+      if (acceleratorsBuilder_ == null) {
+        accelerators_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x01000000);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public Builder removeAccelerators(int index) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.remove(index);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public com.google.container.v1.AcceleratorConfig.Builder getAcceleratorsBuilder(int index) {
+      return getAcceleratorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public com.google.container.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index) {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.get(index);
+      } else {
+        return acceleratorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public java.util.List<? extends com.google.container.v1.AcceleratorConfigOrBuilder>
+        getAcceleratorsOrBuilderList() {
+      if (acceleratorsBuilder_ != null) {
+        return acceleratorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(accelerators_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public com.google.container.v1.AcceleratorConfig.Builder addAcceleratorsBuilder() {
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(com.google.container.v1.AcceleratorConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public com.google.container.v1.AcceleratorConfig.Builder addAcceleratorsBuilder(int index) {
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.AcceleratorConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of hardware accelerators to be attached to each node.
+     * See https://cloud.google.com/compute/docs/gpus for more information about
+     * support for GPUs.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+     */
+    public java.util.List<com.google.container.v1.AcceleratorConfig.Builder>
+        getAcceleratorsBuilderList() {
+      return getAcceleratorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.AcceleratorConfig,
+            com.google.container.v1.AcceleratorConfig.Builder,
+            com.google.container.v1.AcceleratorConfigOrBuilder>
+        getAcceleratorsFieldBuilder() {
+      if (acceleratorsBuilder_ == null) {
+        acceleratorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.AcceleratorConfig,
+                com.google.container.v1.AcceleratorConfig.Builder,
+                com.google.container.v1.AcceleratorConfigOrBuilder>(
+                accelerators_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
+        accelerators_ = null;
+      }
+      return acceleratorsBuilder_;
+    }
+
     private java.lang.Object machineType_ = "";
     /**
      *
@@ -7005,7 +7637,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       machineType_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7025,7 +7657,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearMachineType() {
       machineType_ = getDefaultInstance().getMachineType();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7050,7 +7682,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       machineType_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7126,7 +7758,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       diskType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7146,7 +7778,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearDiskType() {
       diskType_ = getDefaultInstance().getDiskType();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -7171,7 +7803,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       diskType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7213,7 +7845,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setDiskSizeGb(long value) {
 
       diskSizeGb_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7232,7 +7864,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       diskSizeGb_ = 0L;
       onChanged();
       return this;
@@ -7258,7 +7890,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the resourceManagerTags field is set.
      */
     public boolean hasResourceManagerTags() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -7302,7 +7934,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7324,7 +7956,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7341,7 +7973,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeResourceManagerTags(com.google.container.v1.ResourceManagerTags value) {
       if (resourceManagerTagsBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && resourceManagerTags_ != null
             && resourceManagerTags_
                 != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
@@ -7353,7 +7985,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (resourceManagerTags_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -7370,7 +8002,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 39;</code>
      */
     public Builder clearResourceManagerTags() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       resourceManagerTags_ = null;
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
@@ -7391,7 +8023,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 39;</code>
      */
     public com.google.container.v1.ResourceManagerTags.Builder getResourceManagerTagsBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -7443,6 +8075,210 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return resourceManagerTagsBuilder_;
     }
 
+    private com.google.container.v1.ContainerdConfig containerdConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        containerdConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     *
+     * @return Whether the containerdConfig field is set.
+     */
+    public boolean hasContainerdConfig() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     *
+     * @return The containerdConfig.
+     */
+    public com.google.container.v1.ContainerdConfig getContainerdConfig() {
+      if (containerdConfigBuilder_ == null) {
+        return containerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      } else {
+        return containerdConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public Builder setContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        containerdConfig_ = value;
+      } else {
+        containerdConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public Builder setContainerdConfig(
+        com.google.container.v1.ContainerdConfig.Builder builderForValue) {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfig_ = builderForValue.build();
+      } else {
+        containerdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public Builder mergeContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)
+            && containerdConfig_ != null
+            && containerdConfig_ != com.google.container.v1.ContainerdConfig.getDefaultInstance()) {
+          getContainerdConfigBuilder().mergeFrom(value);
+        } else {
+          containerdConfig_ = value;
+        }
+      } else {
+        containerdConfigBuilder_.mergeFrom(value);
+      }
+      if (containerdConfig_ != null) {
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public Builder clearContainerdConfig() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public com.google.container.v1.ContainerdConfig.Builder getContainerdConfigBuilder() {
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return getContainerdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    public com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+      if (containerdConfigBuilder_ != null) {
+        return containerdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return containerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for nodes in the node pool.
+     * Initiates an upgrade operation that recreates the nodes with the new
+     * config.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        getContainerdConfigFieldBuilder() {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ContainerdConfig,
+                com.google.container.v1.ContainerdConfig.Builder,
+                com.google.container.v1.ContainerdConfigOrBuilder>(
+                getContainerdConfig(), getParentForChildren(), isClean());
+        containerdConfig_ = null;
+      }
+      return containerdConfigBuilder_;
+    }
+
     private com.google.container.v1.NodePool.QueuedProvisioning queuedProvisioning_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePool.QueuedProvisioning,
@@ -7461,7 +8297,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the queuedProvisioning field is set.
      */
     public boolean hasQueuedProvisioning() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -7502,7 +8338,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         queuedProvisioningBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -7522,7 +8358,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         queuedProvisioningBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -7538,7 +8374,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeQueuedProvisioning(
         com.google.container.v1.NodePool.QueuedProvisioning value) {
       if (queuedProvisioningBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && queuedProvisioning_ != null
             && queuedProvisioning_
                 != com.google.container.v1.NodePool.QueuedProvisioning.getDefaultInstance()) {
@@ -7550,7 +8386,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         queuedProvisioningBuilder_.mergeFrom(value);
       }
       if (queuedProvisioning_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -7565,7 +8401,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
      */
     public Builder clearQueuedProvisioning() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       queuedProvisioning_ = null;
       if (queuedProvisioningBuilder_ != null) {
         queuedProvisioningBuilder_.dispose();
@@ -7585,7 +8421,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1.NodePool.QueuedProvisioning.Builder
         getQueuedProvisioningBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return getQueuedProvisioningFieldBuilder().getBuilder();
     }

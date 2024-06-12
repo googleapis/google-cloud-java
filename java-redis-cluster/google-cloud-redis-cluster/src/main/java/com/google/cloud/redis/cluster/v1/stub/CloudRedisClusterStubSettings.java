@@ -52,9 +52,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
@@ -128,6 +130,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
   private final OperationCallSettings<CreateClusterRequest, Cluster, Any>
       createClusterOperationSettings;
+  private final UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthoritySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -282,6 +286,12 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return createClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getClusterCertificateAuthority. */
+  public UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthoritySettings() {
+    return getClusterCertificateAuthoritySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -411,6 +421,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
+    getClusterCertificateAuthoritySettings =
+        settingsBuilder.getClusterCertificateAuthoritySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -431,6 +443,9 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     private final UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings;
     private final OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthoritySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -480,6 +495,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createClusterOperationSettings = OperationCallSettings.newBuilder();
+      getClusterCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -490,6 +506,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               updateClusterSettings,
               deleteClusterSettings,
               createClusterSettings,
+              getClusterCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -506,6 +523,8 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
+      getClusterCertificateAuthoritySettings =
+          settings.getClusterCertificateAuthoritySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -516,6 +535,7 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               updateClusterSettings,
               deleteClusterSettings,
               createClusterSettings,
+              getClusterCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -567,6 +587,11 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
 
       builder
           .createClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getClusterCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -710,6 +735,12 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getClusterCertificateAuthority. */
+    public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthoritySettings() {
+      return getClusterCertificateAuthoritySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

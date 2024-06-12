@@ -29,6 +29,10 @@ public final class ToolCallProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCall_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCall_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_fieldAccessorTable;
@@ -50,19 +54,23 @@ public final class ToolCallProto {
           + ".v3beta1\032\034google/api/annotations.proto\032\027"
           + "google/api/client.proto\032\037google/api/fiel"
           + "d_behavior.proto\032\031google/api/resource.pr"
-          + "oto\032\034google/protobuf/struct.proto\"\205\002\n\016To"
-          + "olCallResult\0224\n\004tool\030\001 \001(\tB&\340A\002\372A \n\036dial"
-          + "ogflow.googleapis.com/Tool\022\023\n\006action\030\002 \001"
-          + "(\tB\003\340A\002\022I\n\005error\030\003 \001(\01328.google.cloud.di"
-          + "alogflow.cx.v3beta1.ToolCallResult.Error"
-          + "H\000\0224\n\021output_parameters\030\004 \001(\0132\027.google.p"
-          + "rotobuf.StructH\000\032\035\n\005Error\022\024\n\007message\030\001 \001"
-          + "(\tB\003\340A\001B\010\n\006resultB\307\001\n&com.google.cloud.d"
-          + "ialogflow.cx.v3beta1B\rToolCallProtoP\001Z6c"
-          + "loud.google.com/go/dialogflow/cx/apiv3be"
-          + "ta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dia"
-          + "logflow.Cx.V3Beta1\352\002&Google::Cloud::Dial"
-          + "ogflow::CX::V3beta1b\006proto3"
+          + "oto\032\034google/protobuf/struct.proto\"\215\001\n\010To"
+          + "olCall\0224\n\004tool\030\001 \001(\tB&\340A\002\372A \n\036dialogflow"
+          + ".googleapis.com/Tool\022\023\n\006action\030\002 \001(\tB\003\340A"
+          + "\002\0226\n\020input_parameters\030\003 \001(\0132\027.google.pro"
+          + "tobuf.StructB\003\340A\001\"\205\002\n\016ToolCallResult\0224\n\004"
+          + "tool\030\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapi"
+          + "s.com/Tool\022\023\n\006action\030\002 \001(\tB\003\340A\002\022I\n\005error"
+          + "\030\003 \001(\01328.google.cloud.dialogflow.cx.v3be"
+          + "ta1.ToolCallResult.ErrorH\000\0224\n\021output_par"
+          + "ameters\030\004 \001(\0132\027.google.protobuf.StructH\000"
+          + "\032\035\n\005Error\022\024\n\007message\030\001 \001(\tB\003\340A\001B\010\n\006resul"
+          + "tB\307\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "eta1B\rToolCallProtoP\001Z6cloud.google.com/"
+          + "go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001\001"
+          + "\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Bet"
+          + "a1\352\002&Google::Cloud::Dialogflow::CX::V3be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -74,8 +82,16 @@ public final class ToolCallProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCall_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCall_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCall_descriptor,
+            new java.lang.String[] {
+              "Tool", "Action", "InputParameters",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ToolCallResult_descriptor,

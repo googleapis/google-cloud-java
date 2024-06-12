@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2656
+   *     google/container/v1/cluster_service.proto;l=2760
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2656
+   *     google/container/v1/cluster_service.proto;l=2760
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2662
+   *     google/container/v1/cluster_service.proto;l=2766
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2662
+   *     google/container/v1/cluster_service.proto;l=2766
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2666
+   *     google/container/v1/cluster_service.proto;l=2770
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2666
+   *     google/container/v1/cluster_service.proto;l=2770
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2670
+   *     google/container/v1/cluster_service.proto;l=2774
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -156,7 +156,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2670
+   *     google/container/v1/cluster_service.proto;l=2774
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -914,6 +914,68 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  java.util.List<com.google.container.v1.AcceleratorConfig> getAcceleratorsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  com.google.container.v1.AcceleratorConfig getAccelerators(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  int getAcceleratorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  java.util.List<? extends com.google.container.v1.AcceleratorConfigOrBuilder>
+      getAcceleratorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of hardware accelerators to be attached to each node.
+   * See https://cloud.google.com/compute/docs/gpus for more information about
+   * support for GPUs.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
+   */
+  com.google.container.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The desired [Google Compute Engine machine
    * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
    * node pool. Initiates an upgrade operation that migrates the nodes in the
@@ -1028,6 +1090,47 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 39;</code>
    */
   com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  boolean hasContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   *
+   * @return The containerdConfig.
+   */
+  com.google.container.v1.ContainerdConfig getContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for nodes in the node pool.
+   * Initiates an upgrade operation that recreates the nodes with the new
+   * config.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 40;</code>
+   */
+  com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder();
 
   /**
    *

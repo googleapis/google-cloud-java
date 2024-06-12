@@ -48,6 +48,14 @@ public final class ModelProto {
       internal_static_google_cloud_retail_v2alpha_Model_ServingConfigList_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_Model_ServingConfigList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -62,7 +70,7 @@ public final class ModelProto {
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032(google/cloud/retail/v2alpha/"
           + "common.proto\032\037google/protobuf/timestamp."
-          + "proto\"\374\020\n\005Model\022b\n\030page_optimization_con"
+          + "proto\"\201\025\n\005Model\022b\n\030page_optimization_con"
           + "fig\030\021 \001(\01329.google.cloud.retail.v2alpha."
           + "Model.PageOptimizationConfigB\003\340A\001H\000\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\002\022\031\n\014display_name\030\002 \001(\tB\003\340A"
@@ -84,44 +92,57 @@ public final class ModelProto {
           + ".google.cloud.retail.v2alpha.Recommendat"
           + "ionsFilteringOptionB\003\340A\001\022W\n\024serving_conf"
           + "ig_lists\030\023 \003(\01324.google.cloud.retail.v2a"
-          + "lpha.Model.ServingConfigListB\003\340A\003\032\302\005\n\026Pa"
-          + "geOptimizationConfig\022)\n\034page_optimizatio"
-          + "n_event_type\030\001 \001(\tB\003\340A\002\022T\n\006panels\030\002 \003(\0132"
-          + "?.google.cloud.retail.v2alpha.Model.Page"
-          + "OptimizationConfig.PanelB\003\340A\002\022_\n\013restric"
-          + "tion\030\003 \001(\0162E.google.cloud.retail.v2alpha"
-          + ".Model.PageOptimizationConfig.Restrictio"
-          + "nB\003\340A\001\0325\n\tCandidate\022\033\n\021serving_config_id"
-          + "\030\001 \001(\tH\000B\013\n\tcandidate\032\345\001\n\005Panel\022\031\n\014displ"
-          + "ay_name\030\001 \001(\tB\003\340A\001\022\\\n\ncandidates\030\002 \003(\0132C"
-          + ".google.cloud.retail.v2alpha.Model.PageO"
-          + "ptimizationConfig.CandidateB\003\340A\002\022c\n\021defa"
-          + "ult_candidate\030\003 \001(\0132C.google.cloud.retai"
-          + "l.v2alpha.Model.PageOptimizationConfig.C"
-          + "andidateB\003\340A\002\"\246\001\n\013Restriction\022\033\n\027RESTRIC"
-          + "TION_UNSPECIFIED\020\000\022\022\n\016NO_RESTRICTION\020\001\022%"
-          + "\n!UNIQUE_SERVING_CONFIG_RESTRICTION\020\002\022\034\n"
-          + "\030UNIQUE_MODEL_RESTRICTION\020\003\022!\n\035UNIQUE_MO"
-          + "DEL_TYPE_RESTRICTION\020\004\0324\n\021ServingConfigL"
-          + "ist\022\037\n\022serving_config_ids\030\001 \003(\tB\003\340A\001\"R\n\014"
-          + "ServingState\022\035\n\031SERVING_STATE_UNSPECIFIE"
-          + "D\020\000\022\014\n\010INACTIVE\020\001\022\n\n\006ACTIVE\020\002\022\t\n\005TUNED\020\003"
-          + "\"I\n\rTrainingState\022\036\n\032TRAINING_STATE_UNSP"
-          + "ECIFIED\020\000\022\n\n\006PAUSED\020\001\022\014\n\010TRAINING\020\002\"\220\001\n\023"
-          + "PeriodicTuningState\022%\n!PERIODIC_TUNING_S"
-          + "TATE_UNSPECIFIED\020\000\022\034\n\030PERIODIC_TUNING_DI"
-          + "SABLED\020\001\022\027\n\023ALL_TUNING_DISABLED\020\003\022\033\n\027PER"
-          + "IODIC_TUNING_ENABLED\020\002\"D\n\tDataState\022\032\n\026D"
-          + "ATA_STATE_UNSPECIFIED\020\000\022\013\n\007DATA_OK\020\001\022\016\n\n"
-          + "DATA_ERROR\020\002:k\352Ah\n\033retail.googleapis.com"
-          + "/Model\022Iprojects/{project}/locations/{lo"
-          + "cation}/catalogs/{catalog}/models/{model"
-          + "}B\021\n\017training_configB\316\001\n\037com.google.clou"
-          + "d.retail.v2alphaB\nModelProtoP\001Z7cloud.go"
-          + "ogle.com/go/retail/apiv2alpha/retailpb;r"
-          + "etailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
-          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
-          + "oogle::Cloud::Retail::V2alphab\006proto3"
+          + "lpha.Model.ServingConfigListB\003\340A\003\022Z\n\025mod"
+          + "el_features_config\030\026 \001(\01326.google.cloud."
+          + "retail.v2alpha.Model.ModelFeaturesConfig"
+          + "B\003\340A\001\032\302\005\n\026PageOptimizationConfig\022)\n\034page"
+          + "_optimization_event_type\030\001 \001(\tB\003\340A\002\022T\n\006p"
+          + "anels\030\002 \003(\0132?.google.cloud.retail.v2alph"
+          + "a.Model.PageOptimizationConfig.PanelB\003\340A"
+          + "\002\022_\n\013restriction\030\003 \001(\0162E.google.cloud.re"
+          + "tail.v2alpha.Model.PageOptimizationConfi"
+          + "g.RestrictionB\003\340A\001\0325\n\tCandidate\022\033\n\021servi"
+          + "ng_config_id\030\001 \001(\tH\000B\013\n\tcandidate\032\345\001\n\005Pa"
+          + "nel\022\031\n\014display_name\030\001 \001(\tB\003\340A\001\022\\\n\ncandid"
+          + "ates\030\002 \003(\0132C.google.cloud.retail.v2alpha"
+          + ".Model.PageOptimizationConfig.CandidateB"
+          + "\003\340A\002\022c\n\021default_candidate\030\003 \001(\0132C.google"
+          + ".cloud.retail.v2alpha.Model.PageOptimiza"
+          + "tionConfig.CandidateB\003\340A\002\"\246\001\n\013Restrictio"
+          + "n\022\033\n\027RESTRICTION_UNSPECIFIED\020\000\022\022\n\016NO_RES"
+          + "TRICTION\020\001\022%\n!UNIQUE_SERVING_CONFIG_REST"
+          + "RICTION\020\002\022\034\n\030UNIQUE_MODEL_RESTRICTION\020\003\022"
+          + "!\n\035UNIQUE_MODEL_TYPE_RESTRICTION\020\004\0324\n\021Se"
+          + "rvingConfigList\022\037\n\022serving_config_ids\030\001 "
+          + "\003(\tB\003\340A\001\032\204\001\n&FrequentlyBoughtTogetherFea"
+          + "turesConfig\022Z\n\025context_products_type\030\002 \001"
+          + "(\01626.google.cloud.retail.v2alpha.Model.C"
+          + "ontextProductsTypeB\003\340A\001\032\246\001\n\023ModelFeature"
+          + "sConfig\022v\n!frequently_bought_together_co"
+          + "nfig\030\001 \001(\0132I.google.cloud.retail.v2alpha"
+          + ".Model.FrequentlyBoughtTogetherFeaturesC"
+          + "onfigH\000B\027\n\025type_dedicated_config\"R\n\014Serv"
+          + "ingState\022\035\n\031SERVING_STATE_UNSPECIFIED\020\000\022"
+          + "\014\n\010INACTIVE\020\001\022\n\n\006ACTIVE\020\002\022\t\n\005TUNED\020\003\"I\n\r"
+          + "TrainingState\022\036\n\032TRAINING_STATE_UNSPECIF"
+          + "IED\020\000\022\n\n\006PAUSED\020\001\022\014\n\010TRAINING\020\002\"\220\001\n\023Peri"
+          + "odicTuningState\022%\n!PERIODIC_TUNING_STATE"
+          + "_UNSPECIFIED\020\000\022\034\n\030PERIODIC_TUNING_DISABL"
+          + "ED\020\001\022\027\n\023ALL_TUNING_DISABLED\020\003\022\033\n\027PERIODI"
+          + "C_TUNING_ENABLED\020\002\"D\n\tDataState\022\032\n\026DATA_"
+          + "STATE_UNSPECIFIED\020\000\022\013\n\007DATA_OK\020\001\022\016\n\nDATA"
+          + "_ERROR\020\002\"w\n\023ContextProductsType\022%\n!CONTE"
+          + "XT_PRODUCTS_TYPE_UNSPECIFIED\020\000\022\032\n\026SINGLE"
+          + "_CONTEXT_PRODUCT\020\001\022\035\n\031MULTIPLE_CONTEXT_P"
+          + "RODUCTS\020\002:k\352Ah\n\033retail.googleapis.com/Mo"
+          + "del\022Iprojects/{project}/locations/{locat"
+          + "ion}/catalogs/{catalog}/models/{model}B\021"
+          + "\n\017training_configB\316\001\n\037com.google.cloud.r"
+          + "etail.v2alphaB\nModelProtoP\001Z7cloud.googl"
+          + "e.com/go/retail/apiv2alpha/retailpb;reta"
+          + "ilpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Al"
+          + "pha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Goog"
+          + "le::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -153,6 +174,7 @@ public final class ModelProto {
               "DataState",
               "FilteringOption",
               "ServingConfigLists",
+              "ModelFeaturesConfig",
               "TrainingConfig",
             });
     internal_static_google_cloud_retail_v2alpha_Model_PageOptimizationConfig_descriptor =
@@ -190,6 +212,22 @@ public final class ModelProto {
             internal_static_google_cloud_retail_v2alpha_Model_ServingConfigList_descriptor,
             new java.lang.String[] {
               "ServingConfigIds",
+            });
+    internal_static_google_cloud_retail_v2alpha_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor =
+        internal_static_google_cloud_retail_v2alpha_Model_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_retail_v2alpha_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor,
+            new java.lang.String[] {
+              "ContextProductsType",
+            });
+    internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor =
+        internal_static_google_cloud_retail_v2alpha_Model_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_Model_ModelFeaturesConfig_descriptor,
+            new java.lang.String[] {
+              "FrequentlyBoughtTogetherConfig", "TypeDedicatedConfig",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

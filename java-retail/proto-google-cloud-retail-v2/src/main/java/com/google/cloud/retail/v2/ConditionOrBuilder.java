@@ -147,4 +147,67 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2.Condition.TimeRange active_time_range = 3;</code>
    */
   com.google.cloud.retail.v2.Condition.TimeRangeOrBuilder getActiveTimeRangeOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @return A list containing the pageCategories.
+   */
+  java.util.List<java.lang.String> getPageCategoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @return The count of pageCategories.
+   */
+  int getPageCategoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The pageCategories at the given index.
+   */
+  java.lang.String getPageCategories(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the pageCategories at the given index.
+   */
+  com.google.protobuf.ByteString getPageCategoriesBytes(int index);
 }

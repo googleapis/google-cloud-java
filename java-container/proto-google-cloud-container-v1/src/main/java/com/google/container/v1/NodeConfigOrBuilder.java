@@ -1567,6 +1567,41 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  boolean hasContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return The containerdConfig.
+   */
+  com.google.container.v1.ContainerdConfig getContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   */
+  com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A map of resource manager tag keys and values to be attached to the nodes.
    * </pre>
    *

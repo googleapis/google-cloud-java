@@ -36,6 +36,14 @@ public final class ModelProto {
       internal_static_google_cloud_retail_v2beta_Model_ServingConfigList_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_Model_ServingConfigList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,7 +58,7 @@ public final class ModelProto {
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032\'google/cloud/retail/v2beta/com"
           + "mon.proto\032\037google/protobuf/timestamp.pro"
-          + "to\"\272\n\n\005Model\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014displ"
+          + "to\"\274\016\n\005Model\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014displ"
           + "ay_name\030\002 \001(\tB\003\340A\002\022L\n\016training_state\030\003 \001"
           + "(\0162/.google.cloud.retail.v2beta.Model.Tr"
           + "ainingStateB\003\340A\001\022J\n\rserving_state\030\004 \001(\0162"
@@ -70,25 +78,38 @@ public final class ModelProto {
           + ".RecommendationsFilteringOptionB\003\340A\001\022V\n\024"
           + "serving_config_lists\030\023 \003(\01323.google.clou"
           + "d.retail.v2beta.Model.ServingConfigListB"
-          + "\003\340A\003\0324\n\021ServingConfigList\022\037\n\022serving_con"
-          + "fig_ids\030\001 \003(\tB\003\340A\001\"R\n\014ServingState\022\035\n\031SE"
-          + "RVING_STATE_UNSPECIFIED\020\000\022\014\n\010INACTIVE\020\001\022"
-          + "\n\n\006ACTIVE\020\002\022\t\n\005TUNED\020\003\"I\n\rTrainingState\022"
-          + "\036\n\032TRAINING_STATE_UNSPECIFIED\020\000\022\n\n\006PAUSE"
-          + "D\020\001\022\014\n\010TRAINING\020\002\"\220\001\n\023PeriodicTuningStat"
-          + "e\022%\n!PERIODIC_TUNING_STATE_UNSPECIFIED\020\000"
-          + "\022\034\n\030PERIODIC_TUNING_DISABLED\020\001\022\027\n\023ALL_TU"
-          + "NING_DISABLED\020\003\022\033\n\027PERIODIC_TUNING_ENABL"
-          + "ED\020\002\"D\n\tDataState\022\032\n\026DATA_STATE_UNSPECIF"
-          + "IED\020\000\022\013\n\007DATA_OK\020\001\022\016\n\nDATA_ERROR\020\002:k\352Ah\n"
-          + "\033retail.googleapis.com/Model\022Iprojects/{"
-          + "project}/locations/{location}/catalogs/{"
-          + "catalog}/models/{model}B\311\001\n\036com.google.c"
-          + "loud.retail.v2betaB\nModelProtoP\001Z6cloud."
-          + "google.com/go/retail/apiv2beta/retailpb;"
-          + "retailpb\242\002\006RETAIL\252\002\032Google.Cloud.Retail."
-          + "V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Go"
-          + "ogle::Cloud::Retail::V2betab\006proto3"
+          + "\003\340A\003\022Y\n\025model_features_config\030\026 \001(\01325.go"
+          + "ogle.cloud.retail.v2beta.Model.ModelFeat"
+          + "uresConfigB\003\340A\001\0324\n\021ServingConfigList\022\037\n\022"
+          + "serving_config_ids\030\001 \003(\tB\003\340A\001\032\203\001\n&Freque"
+          + "ntlyBoughtTogetherFeaturesConfig\022Y\n\025cont"
+          + "ext_products_type\030\002 \001(\01625.google.cloud.r"
+          + "etail.v2beta.Model.ContextProductsTypeB\003"
+          + "\340A\001\032\245\001\n\023ModelFeaturesConfig\022u\n!frequentl"
+          + "y_bought_together_config\030\001 \001(\0132H.google."
+          + "cloud.retail.v2beta.Model.FrequentlyBoug"
+          + "htTogetherFeaturesConfigH\000B\027\n\025type_dedic"
+          + "ated_config\"R\n\014ServingState\022\035\n\031SERVING_S"
+          + "TATE_UNSPECIFIED\020\000\022\014\n\010INACTIVE\020\001\022\n\n\006ACTI"
+          + "VE\020\002\022\t\n\005TUNED\020\003\"I\n\rTrainingState\022\036\n\032TRAI"
+          + "NING_STATE_UNSPECIFIED\020\000\022\n\n\006PAUSED\020\001\022\014\n\010"
+          + "TRAINING\020\002\"\220\001\n\023PeriodicTuningState\022%\n!PE"
+          + "RIODIC_TUNING_STATE_UNSPECIFIED\020\000\022\034\n\030PER"
+          + "IODIC_TUNING_DISABLED\020\001\022\027\n\023ALL_TUNING_DI"
+          + "SABLED\020\003\022\033\n\027PERIODIC_TUNING_ENABLED\020\002\"D\n"
+          + "\tDataState\022\032\n\026DATA_STATE_UNSPECIFIED\020\000\022\013"
+          + "\n\007DATA_OK\020\001\022\016\n\nDATA_ERROR\020\002\"w\n\023ContextPr"
+          + "oductsType\022%\n!CONTEXT_PRODUCTS_TYPE_UNSP"
+          + "ECIFIED\020\000\022\032\n\026SINGLE_CONTEXT_PRODUCT\020\001\022\035\n"
+          + "\031MULTIPLE_CONTEXT_PRODUCTS\020\002:k\352Ah\n\033retai"
+          + "l.googleapis.com/Model\022Iprojects/{projec"
+          + "t}/locations/{location}/catalogs/{catalo"
+          + "g}/models/{model}B\311\001\n\036com.google.cloud.r"
+          + "etail.v2betaB\nModelProtoP\001Z6cloud.google"
+          + ".com/go/retail/apiv2beta/retailpb;retail"
+          + "pb\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta"
+          + "\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google::"
+          + "Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,6 +140,7 @@ public final class ModelProto {
               "DataState",
               "FilteringOption",
               "ServingConfigLists",
+              "ModelFeaturesConfig",
             });
     internal_static_google_cloud_retail_v2beta_Model_ServingConfigList_descriptor =
         internal_static_google_cloud_retail_v2beta_Model_descriptor.getNestedTypes().get(0);
@@ -127,6 +149,22 @@ public final class ModelProto {
             internal_static_google_cloud_retail_v2beta_Model_ServingConfigList_descriptor,
             new java.lang.String[] {
               "ServingConfigIds",
+            });
+    internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor =
+        internal_static_google_cloud_retail_v2beta_Model_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_Model_FrequentlyBoughtTogetherFeaturesConfig_descriptor,
+            new java.lang.String[] {
+              "ContextProductsType",
+            });
+    internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor =
+        internal_static_google_cloud_retail_v2beta_Model_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_Model_ModelFeaturesConfig_descriptor,
+            new java.lang.String[] {
+              "FrequentlyBoughtTogetherConfig", "TypeDedicatedConfig",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

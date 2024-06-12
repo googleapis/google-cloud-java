@@ -1690,6 +1690,25 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IGNORE_RECS_DENYLIST_FIELD_NUMBER = 24;
+  private boolean ignoreRecsDenylist_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * When the flag is enabled, the products in the denylist will not be filtered
+   * out in the recommendation filtering results.
+   * </pre>
+   *
+   * <code>bool ignore_recs_denylist = 24;</code>
+   *
+   * @return The ignoreRecsDenylist.
+   */
+  @java.lang.Override
+  public boolean getIgnoreRecsDenylist() {
+    return ignoreRecsDenylist_;
+  }
+
   public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 21;
   private com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalizationSpec_;
   /**
@@ -1983,6 +2002,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(21, getPersonalizationSpec());
     }
+    if (ignoreRecsDenylist_ != false) {
+      output.writeBool(24, ignoreRecsDenylist_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2108,6 +2130,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getPersonalizationSpec());
     }
+    if (ignoreRecsDenylist_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, ignoreRecsDenylist_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2147,6 +2172,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDiversityLevel().equals(other.getDiversityLevel())) return false;
     if (diversityType_ != other.diversityType_) return false;
     if (!getEnableCategoryFilterLevel().equals(other.getEnableCategoryFilterLevel())) return false;
+    if (getIgnoreRecsDenylist() != other.getIgnoreRecsDenylist()) return false;
     if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
     if (hasPersonalizationSpec()) {
       if (!getPersonalizationSpec().equals(other.getPersonalizationSpec())) return false;
@@ -2217,6 +2243,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + diversityType_;
     hash = (37 * hash) + ENABLE_CATEGORY_FILTER_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + getEnableCategoryFilterLevel().hashCode();
+    hash = (37 * hash) + IGNORE_RECS_DENYLIST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreRecsDenylist());
     if (hasPersonalizationSpec()) {
       hash = (37 * hash) + PERSONALIZATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalizationSpec().hashCode();
@@ -2396,13 +2424,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       diversityLevel_ = "";
       diversityType_ = 0;
       enableCategoryFilterLevel_ = "";
+      ignoreRecsDenylist_ = false;
       personalizationSpec_ = null;
       if (personalizationSpecBuilder_ != null) {
         personalizationSpecBuilder_.dispose();
         personalizationSpecBuilder_ = null;
       }
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
 
@@ -2439,9 +2468,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.ServingConfig result) {
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       }
       result.solutionTypes_ = solutionTypes_;
     }
@@ -2512,6 +2541,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         result.enableCategoryFilterLevel_ = enableCategoryFilterLevel_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.ignoreRecsDenylist_ = ignoreRecsDenylist_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.personalizationSpec_ =
             personalizationSpecBuilder_ == null
                 ? personalizationSpec_
@@ -2692,13 +2724,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00010000;
         onChanged();
       }
+      if (other.getIgnoreRecsDenylist() != false) {
+        setIgnoreRecsDenylist(other.getIgnoreRecsDenylist());
+      }
       if (other.hasPersonalizationSpec()) {
         mergePersonalizationSpec(other.getPersonalizationSpec());
       }
       if (!other.solutionTypes_.isEmpty()) {
         if (solutionTypes_.isEmpty()) {
           solutionTypes_ = other.solutionTypes_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         } else {
           ensureSolutionTypesIsMutable();
           solutionTypes_.addAll(other.solutionTypes_);
@@ -2866,9 +2901,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getPersonalizationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 170
+            case 192:
+              {
+                ignoreRecsDenylist_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 192
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6518,6 +6559,62 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean ignoreRecsDenylist_;
+    /**
+     *
+     *
+     * <pre>
+     * When the flag is enabled, the products in the denylist will not be filtered
+     * out in the recommendation filtering results.
+     * </pre>
+     *
+     * <code>bool ignore_recs_denylist = 24;</code>
+     *
+     * @return The ignoreRecsDenylist.
+     */
+    @java.lang.Override
+    public boolean getIgnoreRecsDenylist() {
+      return ignoreRecsDenylist_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When the flag is enabled, the products in the denylist will not be filtered
+     * out in the recommendation filtering results.
+     * </pre>
+     *
+     * <code>bool ignore_recs_denylist = 24;</code>
+     *
+     * @param value The ignoreRecsDenylist to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreRecsDenylist(boolean value) {
+
+      ignoreRecsDenylist_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When the flag is enabled, the products in the denylist will not be filtered
+     * out in the recommendation filtering results.
+     * </pre>
+     *
+     * <code>bool ignore_recs_denylist = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreRecsDenylist() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      ignoreRecsDenylist_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalizationSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec,
@@ -6552,7 +6649,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalizationSpec field is set.
      */
     public boolean hasPersonalizationSpec() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -6626,7 +6723,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6662,7 +6759,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6694,7 +6791,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePersonalizationSpec(
         com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec value) {
       if (personalizationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && personalizationSpec_ != null
             && personalizationSpec_
                 != com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec
@@ -6707,7 +6804,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         personalizationSpecBuilder_.mergeFrom(value);
       }
       if (personalizationSpec_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6738,7 +6835,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalizationSpec() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       personalizationSpec_ = null;
       if (personalizationSpecBuilder_ != null) {
         personalizationSpecBuilder_.dispose();
@@ -6774,7 +6871,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec.Builder
         getPersonalizationSpecBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getPersonalizationSpecFieldBuilder().getBuilder();
     }
@@ -6858,9 +6955,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> solutionTypes_ = java.util.Collections.emptyList();
 
     private void ensureSolutionTypesIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         solutionTypes_ = new java.util.ArrayList<java.lang.Integer>(solutionTypes_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
       }
     }
     /**
@@ -7006,7 +7103,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSolutionTypes() {
       solutionTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }

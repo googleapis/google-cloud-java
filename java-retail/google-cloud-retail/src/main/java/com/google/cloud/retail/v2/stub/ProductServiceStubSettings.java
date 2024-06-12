@@ -62,6 +62,9 @@ import com.google.cloud.retail.v2.ImportProductsResponse;
 import com.google.cloud.retail.v2.ListProductsRequest;
 import com.google.cloud.retail.v2.ListProductsResponse;
 import com.google.cloud.retail.v2.Product;
+import com.google.cloud.retail.v2.PurgeProductsMetadata;
+import com.google.cloud.retail.v2.PurgeProductsRequest;
+import com.google.cloud.retail.v2.PurgeProductsResponse;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse;
@@ -133,6 +136,10 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       listProductsSettings;
   private final UnaryCallSettings<UpdateProductRequest, Product> updateProductSettings;
   private final UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings;
+  private final UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings;
+  private final OperationCallSettings<
+          PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationSettings;
   private final UnaryCallSettings<ImportProductsRequest, Operation> importProductsSettings;
   private final OperationCallSettings<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationSettings;
@@ -242,6 +249,17 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
   /** Returns the object with the settings used for calls to deleteProduct. */
   public UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings() {
     return deleteProductSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return purgeProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public OperationCallSettings<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationSettings() {
+    return purgeProductsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to importProducts. */
@@ -435,6 +453,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     listProductsSettings = settingsBuilder.listProductsSettings().build();
     updateProductSettings = settingsBuilder.updateProductSettings().build();
     deleteProductSettings = settingsBuilder.deleteProductSettings().build();
+    purgeProductsSettings = settingsBuilder.purgeProductsSettings().build();
+    purgeProductsOperationSettings = settingsBuilder.purgeProductsOperationSettings().build();
     importProductsSettings = settingsBuilder.importProductsSettings().build();
     importProductsOperationSettings = settingsBuilder.importProductsOperationSettings().build();
     setInventorySettings = settingsBuilder.setInventorySettings().build();
@@ -463,6 +483,10 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
         listProductsSettings;
     private final UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings;
     private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
+    private final UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+        purgeProductsOperationSettings;
     private final UnaryCallSettings.Builder<ImportProductsRequest, Operation>
         importProductsSettings;
     private final OperationCallSettings.Builder<
@@ -503,12 +527,12 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_2_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "retry_policy_3_codes",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
@@ -530,7 +554,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -541,7 +565,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(300000L))
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -557,6 +581,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
       updateProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeProductsOperationSettings = OperationCallSettings.newBuilder();
       importProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importProductsOperationSettings = OperationCallSettings.newBuilder();
       setInventorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -577,6 +603,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               listProductsSettings,
               updateProductSettings,
               deleteProductSettings,
+              purgeProductsSettings,
               importProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
@@ -594,6 +621,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       listProductsSettings = settings.listProductsSettings.toBuilder();
       updateProductSettings = settings.updateProductSettings.toBuilder();
       deleteProductSettings = settings.deleteProductSettings.toBuilder();
+      purgeProductsSettings = settings.purgeProductsSettings.toBuilder();
+      purgeProductsOperationSettings = settings.purgeProductsOperationSettings.toBuilder();
       importProductsSettings = settings.importProductsSettings.toBuilder();
       importProductsOperationSettings = settings.importProductsOperationSettings.toBuilder();
       setInventorySettings = settings.setInventorySettings.toBuilder();
@@ -618,6 +647,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               listProductsSettings,
               updateProductSettings,
               deleteProductSettings,
+              purgeProductsSettings,
               importProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
@@ -653,66 +683,95 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     private static Builder initDefaults(Builder builder) {
       builder
           .createProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .getProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .listProductsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .updateProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .deleteProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .purgeProductsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .importProductsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .setInventorySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .addFulfillmentPlacesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .removeFulfillmentPlacesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .addLocalInventoriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .removeLocalInventoriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .purgeProductsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeProductsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeProductsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .importProductsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ImportProductsResponse.class))
@@ -735,8 +794,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SetInventoryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(SetInventoryResponse.class))
@@ -759,8 +818,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AddFulfillmentPlacesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -785,8 +844,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RemoveFulfillmentPlacesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -811,8 +870,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AddLocalInventoriesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -837,8 +896,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RemoveLocalInventoriesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -901,6 +960,18 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     /** Returns the builder for the settings used for calls to deleteProduct. */
     public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
       return deleteProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return purgeProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public OperationCallSettings.Builder<
+            PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+        purgeProductsOperationSettings() {
+      return purgeProductsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to importProducts. */

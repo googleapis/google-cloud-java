@@ -1472,6 +1472,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -1489,6 +1490,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -1506,6 +1508,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -3999,6 +4002,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>
@@ -4016,6 +4020,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>
@@ -4033,6 +4038,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>
@@ -4053,6 +4059,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>
@@ -4074,6 +4081,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>
@@ -4098,6 +4106,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the details of in-transit encryption.
+     * Now named inter-node transparent encryption.
      * </pre>
      *
      * <code>

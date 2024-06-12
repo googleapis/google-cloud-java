@@ -78,7 +78,7 @@ public final class CreateMerchantCenterAccountLinkRequest
    * <pre>
    * Required. The branch resource where this MerchantCenterAccountLink will be
    * created. Format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class CreateMerchantCenterAccountLinkRequest
    * <pre>
    * Required. The branch resource where this MerchantCenterAccountLink will be
    * created. Format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>
@@ -616,7 +616,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * <pre>
      * Required. The branch resource where this MerchantCenterAccountLink will be
      * created. Format:
-     * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+     * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
      * </pre>
      *
      * <code>
@@ -642,7 +642,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * <pre>
      * Required. The branch resource where this MerchantCenterAccountLink will be
      * created. Format:
-     * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+     * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * <pre>
      * Required. The branch resource where this MerchantCenterAccountLink will be
      * created. Format:
-     * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+     * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
      * </pre>
      *
      * <code>
@@ -693,7 +693,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * <pre>
      * Required. The branch resource where this MerchantCenterAccountLink will be
      * created. Format:
-     * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+     * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
      * </pre>
      *
      * <code>
@@ -714,7 +714,7 @@ public final class CreateMerchantCenterAccountLinkRequest
      * <pre>
      * Required. The branch resource where this MerchantCenterAccountLink will be
      * created. Format:
-     * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+     * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
      * </pre>
      *
      * <code>

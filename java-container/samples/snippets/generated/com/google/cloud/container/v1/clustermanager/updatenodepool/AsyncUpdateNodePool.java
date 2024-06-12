@@ -19,7 +19,9 @@ package com.google.cloud.container.v1.samples;
 // [START container_v1_generated_ClusterManager_UpdateNodePool_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.container.v1.ClusterManagerClient;
+import com.google.container.v1.AcceleratorConfig;
 import com.google.container.v1.ConfidentialNodes;
+import com.google.container.v1.ContainerdConfig;
 import com.google.container.v1.FastSocket;
 import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.LinuxNodeConfig;
@@ -78,10 +80,12 @@ public class AsyncUpdateNodePool {
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+              .addAllAccelerators(new ArrayList<AcceleratorConfig>())
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+              .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

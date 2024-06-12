@@ -181,6 +181,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,6 +246,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

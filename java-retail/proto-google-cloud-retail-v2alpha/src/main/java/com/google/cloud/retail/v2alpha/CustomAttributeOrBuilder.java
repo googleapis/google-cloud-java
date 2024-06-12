@@ -183,7 +183,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2alpha/common.proto;l=426
+   *     google/cloud/retail/v2alpha/common.proto;l=511
    * @return Whether the searchable field is set.
    */
   @java.lang.Deprecated
@@ -211,7 +211,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2alpha/common.proto;l=426
+   *     google/cloud/retail/v2alpha/common.proto;l=511
    * @return The searchable.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2alpha/common.proto;l=447
+   *     google/cloud/retail/v2alpha/common.proto;l=532
    * @return Whether the indexable field is set.
    */
   @java.lang.Deprecated
@@ -278,7 +278,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2alpha/common.proto;l=447
+   *     google/cloud/retail/v2alpha/common.proto;l=532
    * @return The indexable.
    */
   @java.lang.Deprecated

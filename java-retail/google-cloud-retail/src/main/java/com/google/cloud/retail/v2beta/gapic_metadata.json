@@ -172,6 +172,9 @@
             "ListProducts": {
               "methods": ["listProducts", "listProducts", "listProducts", "listProductsPagedCallable", "listProductsCallable"]
             },
+            "PurgeProducts": {
+              "methods": ["purgeProductsAsync", "purgeProductsOperationCallable", "purgeProductsCallable"]
+            },
             "RemoveFulfillmentPlaces": {
               "methods": ["removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesOperationCallable", "removeFulfillmentPlacesCallable"]
             },

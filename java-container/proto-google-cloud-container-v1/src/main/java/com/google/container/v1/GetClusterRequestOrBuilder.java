@@ -36,7 +36,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2609
+   *     google/container/v1/cluster_service.proto;l=2713
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2609
+   *     google/container/v1/cluster_service.proto;l=2713
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2615
+   *     google/container/v1/cluster_service.proto;l=2719
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2615
+   *     google/container/v1/cluster_service.proto;l=2719
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2619
+   *     google/container/v1/cluster_service.proto;l=2723
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2619
+   *     google/container/v1/cluster_service.proto;l=2723
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

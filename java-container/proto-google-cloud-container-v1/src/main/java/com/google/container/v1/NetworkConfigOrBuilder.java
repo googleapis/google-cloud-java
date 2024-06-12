@@ -410,6 +410,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -424,6 +425,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -438,6 +440,7 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>

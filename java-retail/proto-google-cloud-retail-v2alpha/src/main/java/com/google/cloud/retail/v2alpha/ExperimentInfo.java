@@ -23,7 +23,8 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Metadata for active A/B testing [Experiments][].
+ * Metadata for active A/B testing
+ * [Experiment][google.cloud.retail.v2alpha.Experiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.ExperimentInfo}
@@ -104,8 +105,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [VariantArm.serving_config_id][] responsible for generating the search
-     * response. For example:
+     * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+     * responsible for generating the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
      *
@@ -119,8 +120,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [VariantArm.serving_config_id][] responsible for generating the search
-     * response. For example:
+     * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+     * responsible for generating the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
      *
@@ -241,8 +242,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [VariantArm.serving_config_id][] responsible for generating the search
-     * response. For example:
+     * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+     * responsible for generating the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
      *
@@ -267,8 +268,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [VariantArm.serving_config_id][] responsible for generating the search
-     * response. For example:
+     * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+     * responsible for generating the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
      *
@@ -800,8 +801,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [VariantArm.serving_config_id][] responsible for generating the search
-       * response. For example:
+       * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+       * responsible for generating the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
        *
@@ -826,8 +827,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [VariantArm.serving_config_id][] responsible for generating the search
-       * response. For example:
+       * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+       * responsible for generating the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
        *
@@ -852,8 +853,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [VariantArm.serving_config_id][] responsible for generating the search
-       * response. For example:
+       * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+       * responsible for generating the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
        *
@@ -877,8 +878,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [VariantArm.serving_config_id][] responsible for generating the search
-       * response. For example:
+       * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+       * responsible for generating the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
        *
@@ -898,8 +899,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [VariantArm.serving_config_id][] responsible for generating the search
-       * response. For example:
+       * [Experiment.VariantArm.serving_config_id][google.cloud.retail.v2alpha.Experiment.VariantArm.serving_config_id]
+       * responsible for generating the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
        *
@@ -1347,7 +1348,8 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata for active A/B testing [Experiments][].
+   * Metadata for active A/B testing
+   * [Experiment][google.cloud.retail.v2alpha.Experiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.ExperimentInfo}

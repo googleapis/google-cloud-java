@@ -620,4 +620,45 @@ public interface ModelOrBuilder
    */
   com.google.cloud.retail.v2.Model.ServingConfigListOrBuilder getServingConfigListsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelFeaturesConfig field is set.
+   */
+  boolean hasModelFeaturesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelFeaturesConfig.
+   */
+  com.google.cloud.retail.v2.Model.ModelFeaturesConfig getModelFeaturesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional model features config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.Model.ModelFeaturesConfig model_features_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.retail.v2.Model.ModelFeaturesConfigOrBuilder getModelFeaturesConfigOrBuilder();
 }

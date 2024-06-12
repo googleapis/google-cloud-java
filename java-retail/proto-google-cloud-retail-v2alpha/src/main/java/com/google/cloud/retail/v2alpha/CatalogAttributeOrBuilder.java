@@ -146,7 +146,9 @@ public interface CatalogAttributeOrBuilder
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -165,7 +167,9 @@ public interface CatalogAttributeOrBuilder
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -230,7 +234,9 @@ public interface CatalogAttributeOrBuilder
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
    * as there are no text values associated to numerical attributes.
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified, when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -254,7 +260,9 @@ public interface CatalogAttributeOrBuilder
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
    * as there are no text values associated to numerical attributes.
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified, when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -371,4 +379,39 @@ public interface CatalogAttributeOrBuilder
    * @return The retrievableOption.
    */
   com.google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption getRetrievableOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   *
+   * @return Whether the facetConfig field is set.
+   */
+  boolean hasFacetConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   *
+   * @return The facetConfig.
+   */
+  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig getFacetConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   */
+  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder getFacetConfigOrBuilder();
 }

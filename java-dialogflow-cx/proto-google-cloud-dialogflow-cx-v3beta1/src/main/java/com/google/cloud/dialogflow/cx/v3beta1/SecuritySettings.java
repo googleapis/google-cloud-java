@@ -746,6 +746,20 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
         getAudioFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to store TTS audio. By default, TTS audio from the virtual agent
+     * is not exported.
+     * </pre>
+     *
+     * <code>bool store_tts_audio = 6;</code>
+     *
+     * @return The storeTtsAudio.
+     */
+    boolean getStoreTtsAudio();
   }
   /**
    *
@@ -1155,6 +1169,25 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int STORE_TTS_AUDIO_FIELD_NUMBER = 6;
+    private boolean storeTtsAudio_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to store TTS audio. By default, TTS audio from the virtual agent
+     * is not exported.
+     * </pre>
+     *
+     * <code>bool store_tts_audio = 6;</code>
+     *
+     * @return The storeTtsAudio.
+     */
+    @java.lang.Override
+    public boolean getStoreTtsAudio() {
+      return storeTtsAudio_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1184,6 +1217,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         output.writeEnum(4, audioFormat_);
       }
+      if (storeTtsAudio_ != false) {
+        output.writeBool(6, storeTtsAudio_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1208,6 +1244,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, audioFormat_);
       }
+      if (storeTtsAudio_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, storeTtsAudio_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1229,6 +1268,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (!getAudioExportPattern().equals(other.getAudioExportPattern())) return false;
       if (getEnableAudioRedaction() != other.getEnableAudioRedaction()) return false;
       if (audioFormat_ != other.audioFormat_) return false;
+      if (getStoreTtsAudio() != other.getStoreTtsAudio()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1248,6 +1288,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAudioRedaction());
       hash = (37 * hash) + AUDIO_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + audioFormat_;
+      hash = (37 * hash) + STORE_TTS_AUDIO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStoreTtsAudio());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1402,6 +1444,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         audioExportPattern_ = "";
         enableAudioRedaction_ = false;
         audioFormat_ = 0;
+        storeTtsAudio_ = false;
         return this;
       }
 
@@ -1454,6 +1497,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.audioFormat_ = audioFormat_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.storeTtsAudio_ = storeTtsAudio_;
         }
       }
 
@@ -1526,6 +1572,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         if (other.audioFormat_ != 0) {
           setAudioFormatValue(other.getAudioFormatValue());
         }
+        if (other.getStoreTtsAudio() != false) {
+          setStoreTtsAudio(other.getStoreTtsAudio());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1576,6 +1625,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 48:
+                {
+                  storeTtsAudio_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1995,6 +2050,62 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       public Builder clearAudioFormat() {
         bitField0_ = (bitField0_ & ~0x00000008);
         audioFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean storeTtsAudio_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to store TTS audio. By default, TTS audio from the virtual agent
+       * is not exported.
+       * </pre>
+       *
+       * <code>bool store_tts_audio = 6;</code>
+       *
+       * @return The storeTtsAudio.
+       */
+      @java.lang.Override
+      public boolean getStoreTtsAudio() {
+        return storeTtsAudio_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to store TTS audio. By default, TTS audio from the virtual agent
+       * is not exported.
+       * </pre>
+       *
+       * <code>bool store_tts_audio = 6;</code>
+       *
+       * @param value The storeTtsAudio to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStoreTtsAudio(boolean value) {
+
+        storeTtsAudio_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to store TTS audio. By default, TTS audio from the virtual agent
+       * is not exported.
+       * </pre>
+       *
+       * <code>bool store_tts_audio = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStoreTtsAudio() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        storeTtsAudio_ = false;
         onChanged();
         return this;
       }
