@@ -62,13 +62,13 @@ if [ -z "${current_branch}" ]; then
   exit 1
 fi
 
-if [ -z "${image_tag}" ]; then
-  image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
-fi
-
 if [ -z "${generation_config}" ]; then
   generation_config=generation_config.yaml
   echo "Use default generation config: ${generation_config}"
+fi
+
+if [ -z "${image_tag}" ]; then
+  image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
 fi
 
 workspace_name="/workspace"
