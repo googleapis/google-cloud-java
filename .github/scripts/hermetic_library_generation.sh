@@ -17,6 +17,7 @@ set -e
 # 1. git
 # 2. gh
 # 3. docker
+# 4. mvn
 
 # The parameters of this script is:
 # 1. target_branch, the branch into which the pull request is merged.
