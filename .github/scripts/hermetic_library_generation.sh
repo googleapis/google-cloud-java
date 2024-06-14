@@ -88,12 +88,15 @@ fi
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}" || true)
 
+# get .m2 folder so it's mapped into the docker container
+m2_folder=$(dirname $(mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout))
+
 # run hermetic code generation docker image.
 docker run \
   --rm \
   -u "$(id -u):$(id -g)" \
   -v "$(pwd):${workspace_name}" \
-  -v "$HOME"/.m2:/home/.m2 \
+  -v "${m2_folder}":/home/.m2 \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
   --current-generation-config-path="${workspace_name}/${generation_config}"
