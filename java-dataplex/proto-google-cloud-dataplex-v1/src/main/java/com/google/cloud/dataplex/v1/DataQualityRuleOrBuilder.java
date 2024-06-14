@@ -363,7 +363,7 @@ public interface DataQualityRuleOrBuilder
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -376,7 +376,7 @@ public interface DataQualityRuleOrBuilder
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -389,7 +389,7 @@ public interface DataQualityRuleOrBuilder
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>

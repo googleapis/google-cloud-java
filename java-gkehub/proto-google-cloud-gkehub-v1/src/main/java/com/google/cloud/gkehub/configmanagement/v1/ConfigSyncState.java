@@ -38,7 +38,12 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private ConfigSyncState() {}
+  private ConfigSyncState() {
+    errors_ = java.util.Collections.emptyList();
+    rootsyncCrd_ = 0;
+    reposyncCrd_ = 0;
+    state_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +64,404 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.class,
             com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * CRDState representing the state of a CRD
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState}
+   */
+  public enum CRDState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * CRD's state cannot be determined
+     * </pre>
+     *
+     * <code>CRD_STATE_UNSPECIFIED = 0;</code>
+     */
+    CRD_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * CRD is not installed
+     * </pre>
+     *
+     * <code>NOT_INSTALLED = 1;</code>
+     */
+    NOT_INSTALLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * CRD is installed
+     * </pre>
+     *
+     * <code>INSTALLED = 2;</code>
+     */
+    INSTALLED(2),
+    /**
+     *
+     *
+     * <pre>
+     * CRD is terminating (i.e., it has been deleted and is cleaning up)
+     * </pre>
+     *
+     * <code>TERMINATING = 3;</code>
+     */
+    TERMINATING(3),
+    /**
+     *
+     *
+     * <pre>
+     * CRD is installing
+     * </pre>
+     *
+     * <code>INSTALLING = 4;</code>
+     */
+    INSTALLING(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * CRD's state cannot be determined
+     * </pre>
+     *
+     * <code>CRD_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CRD_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * CRD is not installed
+     * </pre>
+     *
+     * <code>NOT_INSTALLED = 1;</code>
+     */
+    public static final int NOT_INSTALLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * CRD is installed
+     * </pre>
+     *
+     * <code>INSTALLED = 2;</code>
+     */
+    public static final int INSTALLED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * CRD is terminating (i.e., it has been deleted and is cleaning up)
+     * </pre>
+     *
+     * <code>TERMINATING = 3;</code>
+     */
+    public static final int TERMINATING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * CRD is installing
+     * </pre>
+     *
+     * <code>INSTALLING = 4;</code>
+     */
+    public static final int INSTALLING_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CRDState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CRDState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CRD_STATE_UNSPECIFIED;
+        case 1:
+          return NOT_INSTALLED;
+        case 2:
+          return INSTALLED;
+        case 3:
+          return TERMINATING;
+        case 4:
+          return INSTALLING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CRDState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CRDState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CRDState>() {
+          public CRDState findValueByNumber(int number) {
+            return CRDState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final CRDState[] VALUES = values();
+
+    public static CRDState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CRDState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState)
+  }
+
+  /** Protobuf enum {@code google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State} */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * CS's state cannot be determined.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * CS is not installed.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_NOT_INSTALLED = 1;</code>
+     */
+    CONFIG_SYNC_NOT_INSTALLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * The expected CS version is installed successfully.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_INSTALLED = 2;</code>
+     */
+    CONFIG_SYNC_INSTALLED(2),
+    /**
+     *
+     *
+     * <pre>
+     * CS encounters errors.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_ERROR = 3;</code>
+     */
+    CONFIG_SYNC_ERROR(3),
+    /**
+     *
+     *
+     * <pre>
+     * CS is installing or terminating.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_PENDING = 4;</code>
+     */
+    CONFIG_SYNC_PENDING(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * CS's state cannot be determined.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * CS is not installed.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_NOT_INSTALLED = 1;</code>
+     */
+    public static final int CONFIG_SYNC_NOT_INSTALLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The expected CS version is installed successfully.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_INSTALLED = 2;</code>
+     */
+    public static final int CONFIG_SYNC_INSTALLED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * CS encounters errors.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_ERROR = 3;</code>
+     */
+    public static final int CONFIG_SYNC_ERROR_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * CS is installing or terminating.
+     * </pre>
+     *
+     * <code>CONFIG_SYNC_PENDING = 4;</code>
+     */
+    public static final int CONFIG_SYNC_PENDING_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CONFIG_SYNC_NOT_INSTALLED;
+        case 2:
+          return CONFIG_SYNC_INSTALLED;
+        case 3:
+          return CONFIG_SYNC_ERROR;
+        case 4:
+          return CONFIG_SYNC_PENDING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State)
   }
 
   private int bitField0_;
@@ -221,6 +624,199 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         : syncState_;
   }
 
+  public static final int ERRORS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError> errors_;
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError>
+      getErrorsList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
+      getErrorsOrBuilderList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  @java.lang.Override
+  public int getErrorsCount() {
+    return errors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError getErrors(int index) {
+    return errors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder getErrorsOrBuilder(
+      int index) {
+    return errors_.get(index);
+  }
+
+  public static final int ROOTSYNC_CRD_FIELD_NUMBER = 5;
+  private int rootsyncCrd_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for rootsyncCrd.
+   */
+  @java.lang.Override
+  public int getRootsyncCrdValue() {
+    return rootsyncCrd_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+   * </code>
+   *
+   * @return The rootsyncCrd.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getRootsyncCrd() {
+    com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState result =
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.forNumber(
+            rootsyncCrd_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int REPOSYNC_CRD_FIELD_NUMBER = 6;
+  private int reposyncCrd_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reposyncCrd.
+   */
+  @java.lang.Override
+  public int getReposyncCrdValue() {
+    return reposyncCrd_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+   * </code>
+   *
+   * @return The reposyncCrd.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getReposyncCrd() {
+    com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState result =
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.forNumber(
+            reposyncCrd_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int STATE_FIELD_NUMBER = 7;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State getState() {
+    com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State result =
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.forNumber(state_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -244,6 +840,26 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getSyncState());
     }
+    for (int i = 0; i < errors_.size(); i++) {
+      output.writeMessage(4, errors_.get(i));
+    }
+    if (rootsyncCrd_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState
+            .CRD_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, rootsyncCrd_);
+    }
+    if (reposyncCrd_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState
+            .CRD_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, reposyncCrd_);
+    }
+    if (state_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, state_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -261,6 +877,26 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSyncState());
+    }
+    for (int i = 0; i < errors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, errors_.get(i));
+    }
+    if (rootsyncCrd_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState
+            .CRD_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, rootsyncCrd_);
+    }
+    if (reposyncCrd_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState
+            .CRD_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, reposyncCrd_);
+    }
+    if (state_
+        != com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -290,6 +926,10 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     if (hasSyncState()) {
       if (!getSyncState().equals(other.getSyncState())) return false;
     }
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (rootsyncCrd_ != other.rootsyncCrd_) return false;
+    if (reposyncCrd_ != other.reposyncCrd_) return false;
+    if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -313,6 +953,16 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + SYNC_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getSyncState().hashCode();
     }
+    if (getErrorsCount() > 0) {
+      hash = (37 * hash) + ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    hash = (37 * hash) + ROOTSYNC_CRD_FIELD_NUMBER;
+    hash = (53 * hash) + rootsyncCrd_;
+    hash = (37 * hash) + REPOSYNC_CRD_FIELD_NUMBER;
+    hash = (53 * hash) + reposyncCrd_;
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -457,6 +1107,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         getVersionFieldBuilder();
         getDeploymentStateFieldBuilder();
         getSyncStateFieldBuilder();
+        getErrorsFieldBuilder();
       }
     }
 
@@ -479,6 +1130,16 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         syncStateBuilder_.dispose();
         syncStateBuilder_ = null;
       }
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+      } else {
+        errors_ = null;
+        errorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rootsyncCrd_ = 0;
+      reposyncCrd_ = 0;
+      state_ = 0;
       return this;
     }
 
@@ -506,11 +1167,25 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState result =
           new com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState result) {
+      if (errorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          errors_ = java.util.Collections.unmodifiableList(errors_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.errors_ = errors_;
+      } else {
+        result.errors_ = errorsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState result) {
@@ -528,6 +1203,15 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.syncState_ = syncStateBuilder_ == null ? syncState_ : syncStateBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rootsyncCrd_ = rootsyncCrd_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.reposyncCrd_ = reposyncCrd_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -587,6 +1271,42 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       if (other.hasSyncState()) {
         mergeSyncState(other.getSyncState());
       }
+      if (errorsBuilder_ == null) {
+        if (!other.errors_.isEmpty()) {
+          if (errors_.isEmpty()) {
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureErrorsIsMutable();
+            errors_.addAll(other.errors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errors_.isEmpty()) {
+          if (errorsBuilder_.isEmpty()) {
+            errorsBuilder_.dispose();
+            errorsBuilder_ = null;
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
+          } else {
+            errorsBuilder_.addAllMessages(other.errors_);
+          }
+        }
+      }
+      if (other.rootsyncCrd_ != 0) {
+        setRootsyncCrdValue(other.getRootsyncCrdValue());
+      }
+      if (other.reposyncCrd_ != 0) {
+        setReposyncCrdValue(other.getReposyncCrdValue());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -631,6 +1351,38 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError m =
+                    input.readMessage(
+                        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.parser(),
+                        extensionRegistry);
+                if (errorsBuilder_ == null) {
+                  ensureErrorsIsMutable();
+                  errors_.add(m);
+                } else {
+                  errorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 40:
+              {
+                rootsyncCrd_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                reposyncCrd_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1249,6 +2001,667 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         syncState_ = null;
       }
       return syncStateBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError> errors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        errors_ =
+            new java.util.ArrayList<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError>(
+                errors_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError,
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder,
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
+        errorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError>
+        getErrorsList() {
+      if (errorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errors_);
+      } else {
+        return errorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public int getErrorsCount() {
+      if (errorsBuilder_ == null) {
+        return errors_.size();
+      } else {
+        return errorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError getErrors(int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder setErrors(
+        int index, com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.set(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder setErrors(
+        int index,
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder addErrors(com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder addErrors(
+        int index, com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder addErrors(
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder addErrors(
+        int index,
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder addAllErrors(
+        java.lang.Iterable<? extends com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError>
+            values) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
+        onChanged();
+      } else {
+        errorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder clearErrors() {
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        errorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public Builder removeErrors(int index) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.remove(index);
+        onChanged();
+      } else {
+        errorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder getErrorsBuilder(
+        int index) {
+      return getErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder getErrorsOrBuilder(
+        int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
+        getErrorsOrBuilderList() {
+      if (errorsBuilder_ != null) {
+        return errorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder addErrorsBuilder() {
+      return getErrorsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder addErrorsBuilder(
+        int index) {
+      return getErrorsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Errors pertaining to the installation of Config Sync.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+     */
+    public java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder>
+        getErrorsBuilderList() {
+      return getErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError,
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder,
+            com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
+        getErrorsFieldBuilder() {
+      if (errorsBuilder_ == null) {
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError,
+                com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError.Builder,
+                com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>(
+                errors_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        errors_ = null;
+      }
+      return errorsBuilder_;
+    }
+
+    private int rootsyncCrd_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of the RootSync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for rootsyncCrd.
+     */
+    @java.lang.Override
+    public int getRootsyncCrdValue() {
+      return rootsyncCrd_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the RootSync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for rootsyncCrd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRootsyncCrdValue(int value) {
+      rootsyncCrd_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the RootSync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+     * </code>
+     *
+     * @return The rootsyncCrd.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getRootsyncCrd() {
+      com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState result =
+          com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.forNumber(
+              rootsyncCrd_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the RootSync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+     * </code>
+     *
+     * @param value The rootsyncCrd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRootsyncCrd(
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      rootsyncCrd_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the RootSync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRootsyncCrd() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      rootsyncCrd_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int reposyncCrd_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of the Reposync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reposyncCrd.
+     */
+    @java.lang.Override
+    public int getReposyncCrdValue() {
+      return reposyncCrd_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the Reposync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reposyncCrd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReposyncCrdValue(int value) {
+      reposyncCrd_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the Reposync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+     * </code>
+     *
+     * @return The reposyncCrd.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getReposyncCrd() {
+      com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState result =
+          com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.forNumber(
+              reposyncCrd_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the Reposync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+     * </code>
+     *
+     * @param value The reposyncCrd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReposyncCrd(
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      reposyncCrd_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the Reposync CRD
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReposyncCrd() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      reposyncCrd_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of CS
+     * This field summarizes the other fields in this message.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of CS
+     * This field summarizes the other fields in this message.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of CS
+     * This field summarizes the other fields in this message.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State getState() {
+      com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State result =
+          com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of CS
+     * This field summarizes the other fields in this message.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(
+        com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of CS
+     * This field summarizes the other fields in this message.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      state_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

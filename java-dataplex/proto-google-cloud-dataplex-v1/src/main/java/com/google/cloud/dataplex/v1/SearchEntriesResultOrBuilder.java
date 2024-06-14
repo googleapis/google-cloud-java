@@ -31,10 +31,13 @@ public interface SearchEntriesResultOrBuilder
    * Linked resource name.
    * </pre>
    *
-   * <code>string linked_resource = 8;</code>
+   * <code>string linked_resource = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1257
    * @return The linkedResource.
    */
+  @java.lang.Deprecated
   java.lang.String getLinkedResource();
   /**
    *
@@ -43,45 +46,28 @@ public interface SearchEntriesResultOrBuilder
    * Linked resource name.
    * </pre>
    *
-   * <code>string linked_resource = 8;</code>
+   * <code>string linked_resource = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1257
    * @return The bytes for linkedResource.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getLinkedResourceBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
    * @return Whether the dataplexEntry field is set.
    */
   boolean hasDataplexEntry();
   /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
    * @return The dataplexEntry.
    */
   com.google.cloud.dataplex.v1.Entry getDataplexEntry();
-  /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-   */
+  /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
   com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder();
 
   /**
@@ -91,10 +77,14 @@ public interface SearchEntriesResultOrBuilder
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1262
    * @return Whether the snippets field is set.
    */
+  @java.lang.Deprecated
   boolean hasSnippets();
   /**
    *
@@ -103,10 +93,14 @@ public interface SearchEntriesResultOrBuilder
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1262
    * @return The snippets.
    */
+  @java.lang.Deprecated
   com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets getSnippets();
   /**
    *
@@ -115,7 +109,9 @@ public interface SearchEntriesResultOrBuilder
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.dataplex.v1.SearchEntriesResult.SnippetsOrBuilder getSnippetsOrBuilder();
 }

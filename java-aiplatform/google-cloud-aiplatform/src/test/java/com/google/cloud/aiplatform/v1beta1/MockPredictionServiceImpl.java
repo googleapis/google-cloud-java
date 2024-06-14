@@ -100,6 +100,27 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
   }
 
   @Override
+  public void streamRawPredict(
+      StreamRawPredictRequest request, StreamObserver<HttpBody> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof HttpBody) {
+      requests.add(request);
+      responseObserver.onNext(((HttpBody) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamRawPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HttpBody.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void directPredict(
       DirectPredictRequest request, StreamObserver<DirectPredictResponse> responseObserver) {
     Object response = responses.poll();

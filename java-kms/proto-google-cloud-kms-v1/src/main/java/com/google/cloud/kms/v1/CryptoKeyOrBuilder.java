@@ -576,5 +576,68 @@ public interface CryptoKeyOrBuilder
    */
   com.google.protobuf.ByteString getCryptoKeyBackendBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the keyAccessJustificationsPolicy field is set.
+   */
+  boolean hasKeyAccessJustificationsPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyAccessJustificationsPolicy.
+   */
+  com.google.cloud.kms.v1.KeyAccessJustificationsPolicy getKeyAccessJustificationsPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder
+      getKeyAccessJustificationsPolicyOrBuilder();
+
   com.google.cloud.kms.v1.CryptoKey.RotationScheduleCase getRotationScheduleCase();
 }

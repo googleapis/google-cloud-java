@@ -28,11 +28,8 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * This field is set to the `cluster_name` field of the Membership Spec if it
+   * is not empty. Otherwise, it is set to the cluster's fleet membership name.
    * </pre>
    *
    * <code>string cluster_name = 1;</code>
@@ -44,11 +41,8 @@ public interface MembershipStateOrBuilder
    *
    *
    * <pre>
-   * The user-defined name for the cluster used by ClusterSelectors to group
-   * clusters together. This should match Membership's membership_name,
-   * unless the user installed ACM on the cluster manually prior to enabling
-   * the ACM hub feature.
-   * Unique within a Anthos Config Management installation.
+   * This field is set to the `cluster_name` field of the Membership Spec if it
+   * is not empty. Otherwise, it is set to the cluster's fleet membership name.
    * </pre>
    *
    * <code>string cluster_name = 1;</code>

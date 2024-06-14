@@ -42,6 +42,8 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     webSearchQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     retrievalQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     groundingAttributions_ = java.util.Collections.emptyList();
+    groundingChunks_ = java.util.Collections.emptyList();
+    groundingSupports_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -336,6 +338,162 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     return groundingAttributions_.get(index);
   }
 
+  public static final int GROUNDING_CHUNKS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk> groundingChunks_;
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk>
+      getGroundingChunksList() {
+    return groundingChunks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
+      getGroundingChunksOrBuilderList() {
+    return groundingChunks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  @java.lang.Override
+  public int getGroundingChunksCount() {
+    return groundingChunks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingChunk getGroundingChunks(int index) {
+    return groundingChunks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder getGroundingChunksOrBuilder(
+      int index) {
+    return groundingChunks_.get(index);
+  }
+
+  public static final int GROUNDING_SUPPORTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport> groundingSupports_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport>
+      getGroundingSupportsList() {
+    return groundingSupports_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
+      getGroundingSupportsOrBuilderList() {
+    return groundingSupports_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGroundingSupportsCount() {
+    return groundingSupports_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingSupport getGroundingSupports(int index) {
+    return groundingSupports_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder
+      getGroundingSupportsOrBuilder(int index) {
+    return groundingSupports_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -361,6 +519,12 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getSearchEntryPoint());
+    }
+    for (int i = 0; i < groundingChunks_.size(); i++) {
+      output.writeMessage(5, groundingChunks_.get(i));
+    }
+    for (int i = 0; i < groundingSupports_.size(); i++) {
+      output.writeMessage(6, groundingSupports_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -395,6 +559,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSearchEntryPoint());
     }
+    for (int i = 0; i < groundingChunks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, groundingChunks_.get(i));
+    }
+    for (int i = 0; i < groundingSupports_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, groundingSupports_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,6 +589,8 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (!getRetrievalQueriesList().equals(other.getRetrievalQueriesList())) return false;
     if (!getGroundingAttributionsList().equals(other.getGroundingAttributionsList())) return false;
+    if (!getGroundingChunksList().equals(other.getGroundingChunksList())) return false;
+    if (!getGroundingSupportsList().equals(other.getGroundingSupportsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -444,6 +617,14 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (getGroundingAttributionsCount() > 0) {
       hash = (37 * hash) + GROUNDING_ATTRIBUTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getGroundingAttributionsList().hashCode();
+    }
+    if (getGroundingChunksCount() > 0) {
+      hash = (37 * hash) + GROUNDING_CHUNKS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingChunksList().hashCode();
+    }
+    if (getGroundingSupportsCount() > 0) {
+      hash = (37 * hash) + GROUNDING_SUPPORTS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingSupportsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -588,6 +769,8 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSearchEntryPointFieldBuilder();
         getGroundingAttributionsFieldBuilder();
+        getGroundingChunksFieldBuilder();
+        getGroundingSupportsFieldBuilder();
       }
     }
 
@@ -609,6 +792,20 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingAttributionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (groundingChunksBuilder_ == null) {
+        groundingChunks_ = java.util.Collections.emptyList();
+      } else {
+        groundingChunks_ = null;
+        groundingChunksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupports_ = java.util.Collections.emptyList();
+      } else {
+        groundingSupports_ = null;
+        groundingSupportsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -654,6 +851,24 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         result.groundingAttributions_ = groundingAttributions_;
       } else {
         result.groundingAttributions_ = groundingAttributionsBuilder_.build();
+      }
+      if (groundingChunksBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          groundingChunks_ = java.util.Collections.unmodifiableList(groundingChunks_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.groundingChunks_ = groundingChunks_;
+      } else {
+        result.groundingChunks_ = groundingChunksBuilder_.build();
+      }
+      if (groundingSupportsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          groundingSupports_ = java.util.Collections.unmodifiableList(groundingSupports_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.groundingSupports_ = groundingSupports_;
+      } else {
+        result.groundingSupports_ = groundingSupportsBuilder_.build();
       }
     }
 
@@ -772,6 +987,60 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (groundingChunksBuilder_ == null) {
+        if (!other.groundingChunks_.isEmpty()) {
+          if (groundingChunks_.isEmpty()) {
+            groundingChunks_ = other.groundingChunks_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureGroundingChunksIsMutable();
+            groundingChunks_.addAll(other.groundingChunks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.groundingChunks_.isEmpty()) {
+          if (groundingChunksBuilder_.isEmpty()) {
+            groundingChunksBuilder_.dispose();
+            groundingChunksBuilder_ = null;
+            groundingChunks_ = other.groundingChunks_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            groundingChunksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGroundingChunksFieldBuilder()
+                    : null;
+          } else {
+            groundingChunksBuilder_.addAllMessages(other.groundingChunks_);
+          }
+        }
+      }
+      if (groundingSupportsBuilder_ == null) {
+        if (!other.groundingSupports_.isEmpty()) {
+          if (groundingSupports_.isEmpty()) {
+            groundingSupports_ = other.groundingSupports_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureGroundingSupportsIsMutable();
+            groundingSupports_.addAll(other.groundingSupports_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.groundingSupports_.isEmpty()) {
+          if (groundingSupportsBuilder_.isEmpty()) {
+            groundingSupportsBuilder_.dispose();
+            groundingSupportsBuilder_ = null;
+            groundingSupports_ = other.groundingSupports_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            groundingSupportsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGroundingSupportsFieldBuilder()
+                    : null;
+          } else {
+            groundingSupportsBuilder_.addAllMessages(other.groundingSupports_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -833,6 +1102,34 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case 34
+            case 42:
+              {
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.GroundingChunk.parser(),
+                        extensionRegistry);
+                if (groundingChunksBuilder_ == null) {
+                  ensureGroundingChunksIsMutable();
+                  groundingChunks_.add(m);
+                } else {
+                  groundingChunksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.cloud.aiplatform.v1beta1.GroundingSupport m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.GroundingSupport.parser(),
+                        extensionRegistry);
+                if (groundingSupportsBuilder_ == null) {
+                  ensureGroundingSupportsIsMutable();
+                  groundingSupports_.add(m);
+                } else {
+                  groundingSupportsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1821,6 +2118,768 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingAttributions_ = null;
       }
       return groundingAttributionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk> groundingChunks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGroundingChunksIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        groundingChunks_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.GroundingChunk>(
+                groundingChunks_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
+        groundingChunksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk>
+        getGroundingChunksList() {
+      if (groundingChunksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(groundingChunks_);
+      } else {
+        return groundingChunksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public int getGroundingChunksCount() {
+      if (groundingChunksBuilder_ == null) {
+        return groundingChunks_.size();
+      } else {
+        return groundingChunksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk getGroundingChunks(int index) {
+      if (groundingChunksBuilder_ == null) {
+        return groundingChunks_.get(index);
+      } else {
+        return groundingChunksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder setGroundingChunks(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingChunk value) {
+      if (groundingChunksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.set(index, value);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder setGroundingChunks(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder builderForValue) {
+      if (groundingChunksBuilder_ == null) {
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingChunksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder addGroundingChunks(com.google.cloud.aiplatform.v1beta1.GroundingChunk value) {
+      if (groundingChunksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.add(value);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder addGroundingChunks(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingChunk value) {
+      if (groundingChunksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.add(index, value);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder addGroundingChunks(
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder builderForValue) {
+      if (groundingChunksBuilder_ == null) {
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        groundingChunksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder addGroundingChunks(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder builderForValue) {
+      if (groundingChunksBuilder_ == null) {
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingChunksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder addAllGroundingChunks(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.GroundingChunk> values) {
+      if (groundingChunksBuilder_ == null) {
+        ensureGroundingChunksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groundingChunks_);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder clearGroundingChunks() {
+      if (groundingChunksBuilder_ == null) {
+        groundingChunks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public Builder removeGroundingChunks(int index) {
+      if (groundingChunksBuilder_ == null) {
+        ensureGroundingChunksIsMutable();
+        groundingChunks_.remove(index);
+        onChanged();
+      } else {
+        groundingChunksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder getGroundingChunksBuilder(
+        int index) {
+      return getGroundingChunksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder getGroundingChunksOrBuilder(
+        int index) {
+      if (groundingChunksBuilder_ == null) {
+        return groundingChunks_.get(index);
+      } else {
+        return groundingChunksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
+        getGroundingChunksOrBuilderList() {
+      if (groundingChunksBuilder_ != null) {
+        return groundingChunksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(groundingChunks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder addGroundingChunksBuilder() {
+      return getGroundingChunksFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.GroundingChunk.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder addGroundingChunksBuilder(
+        int index) {
+      return getGroundingChunksFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.GroundingChunk.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of supporting references retrieved from specified grounding source.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder>
+        getGroundingChunksBuilderList() {
+      return getGroundingChunksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
+        getGroundingChunksFieldBuilder() {
+      if (groundingChunksBuilder_ == null) {
+        groundingChunksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Builder,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>(
+                groundingChunks_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        groundingChunks_ = null;
+      }
+      return groundingChunksBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport>
+        groundingSupports_ = java.util.Collections.emptyList();
+
+    private void ensureGroundingSupportsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        groundingSupports_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.GroundingSupport>(
+                groundingSupports_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingSupport,
+            com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
+        groundingSupportsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport>
+        getGroundingSupportsList() {
+      if (groundingSupportsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(groundingSupports_);
+      } else {
+        return groundingSupportsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getGroundingSupportsCount() {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.size();
+      } else {
+        return groundingSupportsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingSupport getGroundingSupports(int index) {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.get(index);
+      } else {
+        return groundingSupportsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSupports(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.set(index, value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSupports(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        com.google.cloud.aiplatform.v1beta1.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(index, value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        int index, com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllGroundingSupports(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.GroundingSupport> values) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groundingSupports_);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGroundingSupports() {
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupports_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeGroundingSupports(int index) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.remove(index);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder getGroundingSupportsBuilder(
+        int index) {
+      return getGroundingSupportsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder
+        getGroundingSupportsOrBuilder(int index) {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.get(index);
+      } else {
+        return groundingSupportsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
+        getGroundingSupportsOrBuilderList() {
+      if (groundingSupportsBuilder_ != null) {
+        return groundingSupportsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(groundingSupports_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder
+        addGroundingSupportsBuilder() {
+      return getGroundingSupportsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.GroundingSupport.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder addGroundingSupportsBuilder(
+        int index) {
+      return getGroundingSupportsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.GroundingSupport.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of grounding support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder>
+        getGroundingSupportsBuilderList() {
+      return getGroundingSupportsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingSupport,
+            com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
+        getGroundingSupportsFieldBuilder() {
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupportsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GroundingSupport,
+                com.google.cloud.aiplatform.v1beta1.GroundingSupport.Builder,
+                com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>(
+                groundingSupports_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        groundingSupports_ = null;
+      }
+      return groundingSupportsBuilder_;
     }
 
     @java.lang.Override

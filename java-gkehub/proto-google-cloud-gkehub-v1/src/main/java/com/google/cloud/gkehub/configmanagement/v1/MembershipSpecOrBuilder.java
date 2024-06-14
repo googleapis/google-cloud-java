@@ -161,4 +161,68 @@ public interface MembershipSpecOrBuilder
    * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The user-specified cluster name used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector, for applying configs to only a subset
+   * of clusters.
+   * Omit this field if the cluster's fleet membership name is used by Config
+   * Sync cluster-name-selector annotation or ClusterSelector.
+   * Set this field if a name different from the cluster's fleet membership name
+   * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11;</code>
+   *
+   * @return The cluster.
+   */
+  java.lang.String getCluster();
+  /**
+   *
+   *
+   * <pre>
+   * The user-specified cluster name used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector, for applying configs to only a subset
+   * of clusters.
+   * Omit this field if the cluster's fleet membership name is used by Config
+   * Sync cluster-name-selector annotation or ClusterSelector.
+   * Set this field if a name different from the cluster's fleet membership name
+   * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11;</code>
+   *
+   * @return The bytes for cluster.
+   */
+  com.google.protobuf.ByteString getClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for management.
+   */
+  int getManagementValue();
+  /**
+   *
+   *
+   * <pre>
+   * Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+   * </code>
+   *
+   * @return The management.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management getManagement();
 }

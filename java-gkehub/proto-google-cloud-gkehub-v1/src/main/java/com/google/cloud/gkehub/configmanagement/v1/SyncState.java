@@ -72,7 +72,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An enum representing an ACM's status syncing configs to a cluster
+   * An enum representing Config Sync's status of syncing configs to a cluster.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode}
@@ -82,7 +82,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM cannot determine a sync code
+     * Config Sync cannot determine a sync code
      * </pre>
      *
      * <code>SYNC_CODE_UNSPECIFIED = 0;</code>
@@ -92,7 +92,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM successfully synced the git Repo with the cluster
+     * Config Sync successfully synced the git Repo with the cluster
      * </pre>
      *
      * <code>SYNCED = 1;</code>
@@ -102,7 +102,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM is in the progress of syncing a new change
+     * Config Sync is in the progress of syncing a new change
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -112,7 +112,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates an error configuring ACM, and user action is required
+     * Indicates an error configuring Config Sync, and user action is required
      * </pre>
      *
      * <code>ERROR = 3;</code>
@@ -122,8 +122,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM has been installed (operator manifest deployed),
-     * but not configured.
+     * Config Sync has been installed but not configured
      * </pre>
      *
      * <code>NOT_CONFIGURED = 4;</code>
@@ -133,7 +132,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM has not been installed (no operator pod found)
+     * Config Sync has not been installed
      * </pre>
      *
      * <code>NOT_INSTALLED = 5;</code>
@@ -166,7 +165,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM cannot determine a sync code
+     * Config Sync cannot determine a sync code
      * </pre>
      *
      * <code>SYNC_CODE_UNSPECIFIED = 0;</code>
@@ -176,7 +175,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM successfully synced the git Repo with the cluster
+     * Config Sync successfully synced the git Repo with the cluster
      * </pre>
      *
      * <code>SYNCED = 1;</code>
@@ -186,7 +185,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM is in the progress of syncing a new change
+     * Config Sync is in the progress of syncing a new change
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -196,7 +195,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates an error configuring ACM, and user action is required
+     * Indicates an error configuring Config Sync, and user action is required
      * </pre>
      *
      * <code>ERROR = 3;</code>
@@ -206,8 +205,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM has been installed (operator manifest deployed),
-     * but not configured.
+     * Config Sync has been installed but not configured
      * </pre>
      *
      * <code>NOT_CONFIGURED = 4;</code>
@@ -217,7 +215,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ACM has not been installed (no operator pod found)
+     * Config Sync has not been installed
      * </pre>
      *
      * <code>NOT_INSTALLED = 5;</code>
@@ -509,7 +507,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+   *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
    * @return The lastSync.
    */
   @java.lang.Override
@@ -537,7 +535,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+   *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
    * @return The bytes for lastSync.
    */
   @java.lang.Override
@@ -1613,7 +1611,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
      * @return The lastSync.
      */
     @java.lang.Deprecated
@@ -1640,7 +1638,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
      * @return The bytes for lastSync.
      */
     @java.lang.Deprecated
@@ -1667,7 +1665,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
      * @param value The lastSync to set.
      * @return This builder for chaining.
      */
@@ -1693,7 +1691,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1715,7 +1713,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1.SyncState.last_sync is deprecated. See
-     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=305
+     *     google/cloud/gkehub/v1/configmanagement/configmanagement.proto;l=436
      * @param value The bytes for lastSync to set.
      * @return This builder for chaining.
      */

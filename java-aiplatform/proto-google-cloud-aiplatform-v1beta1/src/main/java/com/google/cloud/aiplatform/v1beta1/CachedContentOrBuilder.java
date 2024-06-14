@@ -107,8 +107,8 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Identifier. The resource name of the cached content
-   * Format:
+   * Immutable. Identifier. The server-generated resource name of the cached
+   * content Format:
    * projects/{project}/locations/{location}/cachedContents/{cached_content}
    * </pre>
    *
@@ -123,8 +123,8 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Identifier. The resource name of the cached content
-   * Format:
+   * Immutable. Identifier. The server-generated resource name of the cached
+   * content Format:
    * projects/{project}/locations/{location}/cachedContents/{cached_content}
    * </pre>
    *

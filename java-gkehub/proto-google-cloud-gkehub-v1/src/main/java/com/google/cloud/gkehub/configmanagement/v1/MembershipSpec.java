@@ -41,6 +41,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   private MembershipSpec() {
     version_ = "";
+    cluster_ = "";
+    management_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +64,165 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.class,
             com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to automatically manage the Feature.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management}
+   */
+  public enum Management implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * </pre>
+     *
+     * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
+     */
+    MANAGEMENT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Google will manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_AUTOMATIC = 1;</code>
+     */
+    MANAGEMENT_AUTOMATIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * User will manually manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_MANUAL = 2;</code>
+     */
+    MANAGEMENT_MANUAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * </pre>
+     *
+     * <code>MANAGEMENT_UNSPECIFIED = 0;</code>
+     */
+    public static final int MANAGEMENT_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Google will manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_AUTOMATIC = 1;</code>
+     */
+    public static final int MANAGEMENT_AUTOMATIC_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * User will manually manage the Feature for the cluster.
+     * </pre>
+     *
+     * <code>MANAGEMENT_MANUAL = 2;</code>
+     */
+    public static final int MANAGEMENT_MANUAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Management valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Management forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MANAGEMENT_UNSPECIFIED;
+        case 1:
+          return MANAGEMENT_AUTOMATIC;
+        case 2:
+          return MANAGEMENT_MANUAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Management> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Management> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Management>() {
+          public Management findValueByNumber(int number) {
+            return Management.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Management[] VALUES = values();
+
+    public static Management valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Management(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management)
   }
 
   private int bitField0_;
@@ -276,6 +437,109 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLUSTER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The user-specified cluster name used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector, for applying configs to only a subset
+   * of clusters.
+   * Omit this field if the cluster's fleet membership name is used by Config
+   * Sync cluster-name-selector annotation or ClusterSelector.
+   * Set this field if a name different from the cluster's fleet membership name
+   * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11;</code>
+   *
+   * @return The cluster.
+   */
+  @java.lang.Override
+  public java.lang.String getCluster() {
+    java.lang.Object ref = cluster_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cluster_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user-specified cluster name used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector, for applying configs to only a subset
+   * of clusters.
+   * Omit this field if the cluster's fleet membership name is used by Config
+   * Sync cluster-name-selector annotation or ClusterSelector.
+   * Set this field if a name different from the cluster's fleet membership name
+   * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11;</code>
+   *
+   * @return The bytes for cluster.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClusterBytes() {
+    java.lang.Object ref = cluster_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cluster_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MANAGEMENT_FIELD_NUMBER = 12;
+  private int management_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for management.
+   */
+  @java.lang.Override
+  public int getManagementValue() {
+    return management_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+   * </code>
+   *
+   * @return The management.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management getManagement() {
+    com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management result =
+        com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management.forNumber(
+            management_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -302,6 +566,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cluster_);
+    }
+    if (management_
+        != com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management
+            .MANAGEMENT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, management_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -322,6 +595,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cluster_);
+    }
+    if (management_
+        != com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management
+            .MANAGEMENT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, management_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -352,6 +634,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getHierarchyController().equals(other.getHierarchyController())) return false;
     }
     if (!getVersion().equals(other.getVersion())) return false;
+    if (!getCluster().equals(other.getCluster())) return false;
+    if (management_ != other.management_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -377,6 +661,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
+    hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
+    hash = (53 * hash) + getCluster().hashCode();
+    hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+    hash = (53 * hash) + management_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -545,6 +833,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         hierarchyControllerBuilder_ = null;
       }
       version_ = "";
+      cluster_ = "";
+      management_ = 0;
       return this;
     }
 
@@ -600,6 +890,12 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.management_ = management_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -664,6 +960,14 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getCluster().isEmpty()) {
+        cluster_ = other.cluster_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.management_ != 0) {
+        setManagementValue(other.getManagementValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -716,6 +1020,18 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 82
+            case 90:
+              {
+                cluster_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 90
+            case 96:
+              {
+                management_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1432,6 +1748,241 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       version_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cluster_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The user-specified cluster name used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector, for applying configs to only a subset
+     * of clusters.
+     * Omit this field if the cluster's fleet membership name is used by Config
+     * Sync cluster-name-selector annotation or ClusterSelector.
+     * Set this field if a name different from the cluster's fleet membership name
+     * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11;</code>
+     *
+     * @return The cluster.
+     */
+    public java.lang.String getCluster() {
+      java.lang.Object ref = cluster_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cluster_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-specified cluster name used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector, for applying configs to only a subset
+     * of clusters.
+     * Omit this field if the cluster's fleet membership name is used by Config
+     * Sync cluster-name-selector annotation or ClusterSelector.
+     * Set this field if a name different from the cluster's fleet membership name
+     * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11;</code>
+     *
+     * @return The bytes for cluster.
+     */
+    public com.google.protobuf.ByteString getClusterBytes() {
+      java.lang.Object ref = cluster_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cluster_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-specified cluster name used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector, for applying configs to only a subset
+     * of clusters.
+     * Omit this field if the cluster's fleet membership name is used by Config
+     * Sync cluster-name-selector annotation or ClusterSelector.
+     * Set this field if a name different from the cluster's fleet membership name
+     * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11;</code>
+     *
+     * @param value The cluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCluster(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cluster_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-specified cluster name used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector, for applying configs to only a subset
+     * of clusters.
+     * Omit this field if the cluster's fleet membership name is used by Config
+     * Sync cluster-name-selector annotation or ClusterSelector.
+     * Set this field if a name different from the cluster's fleet membership name
+     * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCluster() {
+      cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-specified cluster name used by Config Sync cluster-name-selector
+     * annotation or ClusterSelector, for applying configs to only a subset
+     * of clusters.
+     * Omit this field if the cluster's fleet membership name is used by Config
+     * Sync cluster-name-selector annotation or ClusterSelector.
+     * Set this field if a name different from the cluster's fleet membership name
+     * is used by Config Sync cluster-name-selector annotation or ClusterSelector.
+     * </pre>
+     *
+     * <code>string cluster = 11;</code>
+     *
+     * @param value The bytes for cluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cluster_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int management_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for management.
+     */
+    @java.lang.Override
+    public int getManagementValue() {
+      return management_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for management to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagementValue(int value) {
+      management_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+     * </code>
+     *
+     * @return The management.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management getManagement() {
+      com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management result =
+          com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management.forNumber(
+              management_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+     * </code>
+     *
+     * @param value The management to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagement(
+        com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      management_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enables automatic Feature management.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Management management = 12;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearManagement() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      management_ = 0;
       onChanged();
       return this;
     }

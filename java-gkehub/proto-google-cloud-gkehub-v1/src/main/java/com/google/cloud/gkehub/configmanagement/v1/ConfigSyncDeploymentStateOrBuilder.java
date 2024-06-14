@@ -173,4 +173,29 @@ public interface ConfigSyncDeploymentStateOrBuilder
    * @return The rootReconciler.
    */
   com.google.cloud.gkehub.configmanagement.v1.DeploymentState getRootReconciler();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.DeploymentState admission_webhook = 7;</code>
+   *
+   * @return The enum numeric value on the wire for admissionWebhook.
+   */
+  int getAdmissionWebhookValue();
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.DeploymentState admission_webhook = 7;</code>
+   *
+   * @return The admissionWebhook.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.DeploymentState getAdmissionWebhook();
 }

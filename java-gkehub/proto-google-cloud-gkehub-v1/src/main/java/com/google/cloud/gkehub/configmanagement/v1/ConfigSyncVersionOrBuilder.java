@@ -173,4 +173,29 @@ public interface ConfigSyncVersionOrBuilder
    * @return The bytes for rootReconciler.
    */
   com.google.protobuf.ByteString getRootReconcilerBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission_webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The admissionWebhook.
+   */
+  java.lang.String getAdmissionWebhook();
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission_webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The bytes for admissionWebhook.
+   */
+  com.google.protobuf.ByteString getAdmissionWebhookBytes();
 }

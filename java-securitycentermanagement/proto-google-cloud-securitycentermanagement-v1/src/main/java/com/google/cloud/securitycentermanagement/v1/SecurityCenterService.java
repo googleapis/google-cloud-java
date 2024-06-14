@@ -134,6 +134,18 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 3;</code>
      */
     DISABLED(3),
+    /**
+     *
+     *
+     * <pre>
+     * SCC is configured to ingest findings from this service but not enable
+     * this service. Not a valid intended_enablement_state (that is, this is a
+     * readonly state).
+     * </pre>
+     *
+     * <code>INGEST_ONLY = 4;</code>
+     */
+    INGEST_ONLY(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -178,6 +190,18 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 3;</code>
      */
     public static final int DISABLED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * SCC is configured to ingest findings from this service but not enable
+     * this service. Not a valid intended_enablement_state (that is, this is a
+     * readonly state).
+     * </pre>
+     *
+     * <code>INGEST_ONLY = 4;</code>
+     */
+    public static final int INGEST_ONLY_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -211,6 +235,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
           return ENABLED;
         case 3:
           return DISABLED;
+        case 4:
+          return INGEST_ONLY;
         default:
           return null;
       }

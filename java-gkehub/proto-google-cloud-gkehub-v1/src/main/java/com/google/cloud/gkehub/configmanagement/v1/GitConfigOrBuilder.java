@@ -143,7 +143,9 @@ public interface GitConfigOrBuilder
    *
    *
    * <pre>
-   * Type of secret configured for access to the Git repo.
+   * Type of secret configured for access to the Git repo. Must be one of ssh,
+   * cookiefile, gcenode, token, gcpserviceaccount or none. The
+   * validation of this is case-sensitive. Required.
    * </pre>
    *
    * <code>string secret_type = 6;</code>
@@ -155,7 +157,9 @@ public interface GitConfigOrBuilder
    *
    *
    * <pre>
-   * Type of secret configured for access to the Git repo.
+   * Type of secret configured for access to the Git repo. Must be one of ssh,
+   * cookiefile, gcenode, token, gcpserviceaccount or none. The
+   * validation of this is case-sensitive. Required.
    * </pre>
    *
    * <code>string secret_type = 6;</code>
@@ -193,7 +197,7 @@ public interface GitConfigOrBuilder
    *
    *
    * <pre>
-   * The GCP Service Account Email used for auth when secret_type is
+   * The Google Cloud Service Account Email used for auth when secret_type is
    * gcpServiceAccount.
    * </pre>
    *
@@ -206,7 +210,7 @@ public interface GitConfigOrBuilder
    *
    *
    * <pre>
-   * The GCP Service Account Email used for auth when secret_type is
+   * The Google Cloud Service Account Email used for auth when secret_type is
    * gcpServiceAccount.
    * </pre>
    *

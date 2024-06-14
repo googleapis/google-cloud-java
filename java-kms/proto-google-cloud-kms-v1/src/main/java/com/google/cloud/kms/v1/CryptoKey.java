@@ -1139,6 +1139,84 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int KEY_ACCESS_JUSTIFICATIONS_POLICY_FIELD_NUMBER = 17;
+  private com.google.cloud.kms.v1.KeyAccessJustificationsPolicy keyAccessJustificationsPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the keyAccessJustificationsPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyAccessJustificationsPolicy() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyAccessJustificationsPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.KeyAccessJustificationsPolicy getKeyAccessJustificationsPolicy() {
+    return keyAccessJustificationsPolicy_ == null
+        ? com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.getDefaultInstance()
+        : keyAccessJustificationsPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy used for Key Access Justifications Policy Enforcement.
+   * If this field is present and this key is enrolled in Key Access
+   * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+   * decrypt, and sign operations, and the operation will fail if rejected by
+   * the policy. The policy is defined by specifying zero or more allowed
+   * justification codes.
+   * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+   * By default, this field is absent, and all justification codes are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder
+      getKeyAccessJustificationsPolicyOrBuilder() {
+    return keyAccessJustificationsPolicy_ == null
+        ? com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.getDefaultInstance()
+        : keyAccessJustificationsPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1186,6 +1264,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyBackend_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, cryptoKeyBackend_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(17, getKeyAccessJustificationsPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1242,6 +1323,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyBackend_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, cryptoKeyBackend_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getKeyAccessJustificationsPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1282,6 +1368,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (!getDestroyScheduledDuration().equals(other.getDestroyScheduledDuration())) return false;
     }
     if (!getCryptoKeyBackend().equals(other.getCryptoKeyBackend())) return false;
+    if (hasKeyAccessJustificationsPolicy() != other.hasKeyAccessJustificationsPolicy())
+      return false;
+    if (hasKeyAccessJustificationsPolicy()) {
+      if (!getKeyAccessJustificationsPolicy().equals(other.getKeyAccessJustificationsPolicy()))
+        return false;
+    }
     if (!getRotationScheduleCase().equals(other.getRotationScheduleCase())) return false;
     switch (rotationScheduleCase_) {
       case 8:
@@ -1333,6 +1425,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CRYPTO_KEY_BACKEND_FIELD_NUMBER;
     hash = (53 * hash) + getCryptoKeyBackend().hashCode();
+    if (hasKeyAccessJustificationsPolicy()) {
+      hash = (37 * hash) + KEY_ACCESS_JUSTIFICATIONS_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyAccessJustificationsPolicy().hashCode();
+    }
     switch (rotationScheduleCase_) {
       case 8:
         hash = (37 * hash) + ROTATION_PERIOD_FIELD_NUMBER;
@@ -1512,6 +1608,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         getNextRotationTimeFieldBuilder();
         getVersionTemplateFieldBuilder();
         getDestroyScheduledDurationFieldBuilder();
+        getKeyAccessJustificationsPolicyFieldBuilder();
       }
     }
 
@@ -1552,6 +1649,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         destroyScheduledDurationBuilder_ = null;
       }
       cryptoKeyBackend_ = "";
+      keyAccessJustificationsPolicy_ = null;
+      if (keyAccessJustificationsPolicyBuilder_ != null) {
+        keyAccessJustificationsPolicyBuilder_.dispose();
+        keyAccessJustificationsPolicyBuilder_ = null;
+      }
       rotationScheduleCase_ = 0;
       rotationSchedule_ = null;
       return this;
@@ -1631,6 +1733,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.cryptoKeyBackend_ = cryptoKeyBackend_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.keyAccessJustificationsPolicy_ =
+            keyAccessJustificationsPolicyBuilder_ == null
+                ? keyAccessJustificationsPolicy_
+                : keyAccessJustificationsPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1720,6 +1829,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         cryptoKeyBackend_ = other.cryptoKeyBackend_;
         bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (other.hasKeyAccessJustificationsPolicy()) {
+        mergeKeyAccessJustificationsPolicy(other.getKeyAccessJustificationsPolicy());
       }
       switch (other.getRotationScheduleCase()) {
         case ROTATION_PERIOD:
@@ -1832,6 +1944,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 138:
+              {
+                input.readMessage(
+                    getKeyAccessJustificationsPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4092,6 +4211,279 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.kms.v1.KeyAccessJustificationsPolicy keyAccessJustificationsPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicy,
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.Builder,
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder>
+        keyAccessJustificationsPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the keyAccessJustificationsPolicy field is set.
+     */
+    public boolean hasKeyAccessJustificationsPolicy() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keyAccessJustificationsPolicy.
+     */
+    public com.google.cloud.kms.v1.KeyAccessJustificationsPolicy
+        getKeyAccessJustificationsPolicy() {
+      if (keyAccessJustificationsPolicyBuilder_ == null) {
+        return keyAccessJustificationsPolicy_ == null
+            ? com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.getDefaultInstance()
+            : keyAccessJustificationsPolicy_;
+      } else {
+        return keyAccessJustificationsPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKeyAccessJustificationsPolicy(
+        com.google.cloud.kms.v1.KeyAccessJustificationsPolicy value) {
+      if (keyAccessJustificationsPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        keyAccessJustificationsPolicy_ = value;
+      } else {
+        keyAccessJustificationsPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKeyAccessJustificationsPolicy(
+        com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.Builder builderForValue) {
+      if (keyAccessJustificationsPolicyBuilder_ == null) {
+        keyAccessJustificationsPolicy_ = builderForValue.build();
+      } else {
+        keyAccessJustificationsPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKeyAccessJustificationsPolicy(
+        com.google.cloud.kms.v1.KeyAccessJustificationsPolicy value) {
+      if (keyAccessJustificationsPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && keyAccessJustificationsPolicy_ != null
+            && keyAccessJustificationsPolicy_
+                != com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.getDefaultInstance()) {
+          getKeyAccessJustificationsPolicyBuilder().mergeFrom(value);
+        } else {
+          keyAccessJustificationsPolicy_ = value;
+        }
+      } else {
+        keyAccessJustificationsPolicyBuilder_.mergeFrom(value);
+      }
+      if (keyAccessJustificationsPolicy_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKeyAccessJustificationsPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      keyAccessJustificationsPolicy_ = null;
+      if (keyAccessJustificationsPolicyBuilder_ != null) {
+        keyAccessJustificationsPolicyBuilder_.dispose();
+        keyAccessJustificationsPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.Builder
+        getKeyAccessJustificationsPolicyBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getKeyAccessJustificationsPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder
+        getKeyAccessJustificationsPolicyOrBuilder() {
+      if (keyAccessJustificationsPolicyBuilder_ != null) {
+        return keyAccessJustificationsPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return keyAccessJustificationsPolicy_ == null
+            ? com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.getDefaultInstance()
+            : keyAccessJustificationsPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The policy used for Key Access Justifications Policy Enforcement.
+     * If this field is present and this key is enrolled in Key Access
+     * Justifications Policy Enforcement, the policy will be evaluated in encrypt,
+     * decrypt, and sign operations, and the operation will fail if rejected by
+     * the policy. The policy is defined by specifying zero or more allowed
+     * justification codes.
+     * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
+     * By default, this field is absent, and all justification codes are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.KeyAccessJustificationsPolicy key_access_justifications_policy = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicy,
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.Builder,
+            com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder>
+        getKeyAccessJustificationsPolicyFieldBuilder() {
+      if (keyAccessJustificationsPolicyBuilder_ == null) {
+        keyAccessJustificationsPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.kms.v1.KeyAccessJustificationsPolicy,
+                com.google.cloud.kms.v1.KeyAccessJustificationsPolicy.Builder,
+                com.google.cloud.kms.v1.KeyAccessJustificationsPolicyOrBuilder>(
+                getKeyAccessJustificationsPolicy(), getParentForChildren(), isClean());
+        keyAccessJustificationsPolicy_ = null;
+      }
+      return keyAccessJustificationsPolicyBuilder_;
     }
 
     @java.lang.Override

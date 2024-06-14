@@ -95,8 +95,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#nonnullexpectation.
+     * See
+     * [DataQualityRule.NonNullExpectation][google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation].
      * </pre>
      *
      * <code>NON_NULL_EXPECTATION = 1;</code>
@@ -106,8 +106,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rangeexpectation.
+     * See
+     * [DataQualityRule.RangeExpectation][google.cloud.dataplex.v1.DataQualityRule.RangeExpectation].
      * </pre>
      *
      * <code>RANGE_EXPECTATION = 2;</code>
@@ -117,8 +117,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#regexexpectation.
+     * See
+     * [DataQualityRule.RegexExpectation][google.cloud.dataplex.v1.DataQualityRule.RegexExpectation].
      * </pre>
      *
      * <code>REGEX_EXPECTATION = 3;</code>
@@ -128,8 +128,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rowconditionexpectation.
+     * See
+     * [DataQualityRule.RowConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation].
      * </pre>
      *
      * <code>ROW_CONDITION_EXPECTATION = 4;</code>
@@ -139,8 +139,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#setexpectation.
+     * See
+     * [DataQualityRule.SetExpectation][google.cloud.dataplex.v1.DataQualityRule.SetExpectation].
      * </pre>
      *
      * <code>SET_EXPECTATION = 5;</code>
@@ -150,8 +150,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#statisticrangeexpectation.
+     * See
+     * [DataQualityRule.StatisticRangeExpectation][google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation].
      * </pre>
      *
      * <code>STATISTIC_RANGE_EXPECTATION = 6;</code>
@@ -161,8 +161,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#tableconditionexpectation.
+     * See
+     * [DataQualityRule.TableConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation].
      * </pre>
      *
      * <code>TABLE_CONDITION_EXPECTATION = 7;</code>
@@ -172,8 +172,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#uniquenessexpectation.
+     * See
+     * [DataQualityRule.UniquenessExpectation][google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation].
      * </pre>
      *
      * <code>UNIQUENESS_EXPECTATION = 8;</code>
@@ -183,8 +183,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#sqlAssertion.
+     * See
+     * [DataQualityRule.SqlAssertion][google.cloud.dataplex.v1.DataQualityRule.SqlAssertion].
      * </pre>
      *
      * <code>SQL_ASSERTION = 9;</code>
@@ -207,8 +207,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#nonnullexpectation.
+     * See
+     * [DataQualityRule.NonNullExpectation][google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation].
      * </pre>
      *
      * <code>NON_NULL_EXPECTATION = 1;</code>
@@ -218,8 +218,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rangeexpectation.
+     * See
+     * [DataQualityRule.RangeExpectation][google.cloud.dataplex.v1.DataQualityRule.RangeExpectation].
      * </pre>
      *
      * <code>RANGE_EXPECTATION = 2;</code>
@@ -229,8 +229,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#regexexpectation.
+     * See
+     * [DataQualityRule.RegexExpectation][google.cloud.dataplex.v1.DataQualityRule.RegexExpectation].
      * </pre>
      *
      * <code>REGEX_EXPECTATION = 3;</code>
@@ -240,8 +240,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rowconditionexpectation.
+     * See
+     * [DataQualityRule.RowConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation].
      * </pre>
      *
      * <code>ROW_CONDITION_EXPECTATION = 4;</code>
@@ -251,8 +251,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#setexpectation.
+     * See
+     * [DataQualityRule.SetExpectation][google.cloud.dataplex.v1.DataQualityRule.SetExpectation].
      * </pre>
      *
      * <code>SET_EXPECTATION = 5;</code>
@@ -262,8 +262,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#statisticrangeexpectation.
+     * See
+     * [DataQualityRule.StatisticRangeExpectation][google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation].
      * </pre>
      *
      * <code>STATISTIC_RANGE_EXPECTATION = 6;</code>
@@ -273,8 +273,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#tableconditionexpectation.
+     * See
+     * [DataQualityRule.TableConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation].
      * </pre>
      *
      * <code>TABLE_CONDITION_EXPECTATION = 7;</code>
@@ -284,8 +284,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#uniquenessexpectation.
+     * See
+     * [DataQualityRule.UniquenessExpectation][google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation].
      * </pre>
      *
      * <code>UNIQUENESS_EXPECTATION = 8;</code>
@@ -295,8 +295,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Please see
-     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#sqlAssertion.
+     * See
+     * [DataQualityRule.SqlAssertion][google.cloud.dataplex.v1.DataQualityRule.SqlAssertion].
      * </pre>
      *
      * <code>SQL_ASSERTION = 9;</code>
@@ -1169,8 +1169,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The number of rows returned by the sql statement in the SqlAssertion rule.
-   * This field is only valid for SqlAssertion rules.
+   * The number of rows returned by the SQL statement in a SQL assertion rule.
+   * This field is only valid for SQL assertion rules.
    * </pre>
    *
    * <code>int64 assertion_row_count = 13;</code>
@@ -2854,8 +2854,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of rows returned by the sql statement in the SqlAssertion rule.
-     * This field is only valid for SqlAssertion rules.
+     * The number of rows returned by the SQL statement in a SQL assertion rule.
+     * This field is only valid for SQL assertion rules.
      * </pre>
      *
      * <code>int64 assertion_row_count = 13;</code>
@@ -2870,8 +2870,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of rows returned by the sql statement in the SqlAssertion rule.
-     * This field is only valid for SqlAssertion rules.
+     * The number of rows returned by the SQL statement in a SQL assertion rule.
+     * This field is only valid for SQL assertion rules.
      * </pre>
      *
      * <code>int64 assertion_row_count = 13;</code>
@@ -2890,8 +2890,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of rows returned by the sql statement in the SqlAssertion rule.
-     * This field is only valid for SqlAssertion rules.
+     * The number of rows returned by the SQL statement in a SQL assertion rule.
+     * This field is only valid for SQL assertion rules.
      * </pre>
      *
      * <code>int64 assertion_row_count = 13;</code>

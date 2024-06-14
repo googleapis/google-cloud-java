@@ -40,6 +40,8 @@
  *
  * <p>======================= NetworkServicesClient =======================
  *
+ * <p>Service Description: Service describing handlers for resources.
+ *
  * <p>Sample for NetworkServicesClient:
  *
  * <pre>{@code

@@ -6407,17 +6407,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Queries for rows returned by the provided SQL statement. If any rows are
-   * are returned, this rule fails.
+   * A SQL statement that is evaluated to return rows that match an invalid
+   * state. If any rows are are returned, this rule fails.
    *
-   * The SQL statement needs to use BigQuery standard SQL syntax, and must not
+   * The SQL statement must use BigQuery standard SQL syntax, and must not
    * contain any semicolons.
    *
-   * ${data()} can be used to reference the rows being evaluated, i.e. the table
-   * after all additional filters (row filters, incremental data filters,
-   * sampling) are applied.
+   * You can use the data reference parameter `${data()}` to reference the
+   * source table with all of its precondition filters applied. Examples of
+   * precondition filters include row filters, incremental data filters, and
+   * sampling. For more information, see [Data reference
+   * parameter](https://cloud.google.com/dataplex/docs/auto-data-quality-overview#data-reference-parameter).
    *
-   * Example: SELECT * FROM ${data()} WHERE price &lt; 0
+   * Example: `SELECT * FROM ${data()} WHERE price &lt; 0`
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.SqlAssertion}
@@ -6673,17 +6675,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Queries for rows returned by the provided SQL statement. If any rows are
-     * are returned, this rule fails.
+     * A SQL statement that is evaluated to return rows that match an invalid
+     * state. If any rows are are returned, this rule fails.
      *
-     * The SQL statement needs to use BigQuery standard SQL syntax, and must not
+     * The SQL statement must use BigQuery standard SQL syntax, and must not
      * contain any semicolons.
      *
-     * ${data()} can be used to reference the rows being evaluated, i.e. the table
-     * after all additional filters (row filters, incremental data filters,
-     * sampling) are applied.
+     * You can use the data reference parameter `${data()}` to reference the
+     * source table with all of its precondition filters applied. Examples of
+     * precondition filters include row filters, incremental data filters, and
+     * sampling. For more information, see [Data reference
+     * parameter](https://cloud.google.com/dataplex/docs/auto-data-quality-overview#data-reference-parameter).
      *
-     * Example: SELECT * FROM ${data()} WHERE price &lt; 0
+     * Example: `SELECT * FROM ${data()} WHERE price &lt; 0`
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.SqlAssertion}
@@ -7582,7 +7586,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -7598,7 +7602,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -7617,7 +7621,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Aggregate rule which evaluates the number of rows returned for the
-   * provided statement.
+   * provided statement. If any rows are returned, this rule fails.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10631,7 +10635,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10647,7 +10651,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10673,7 +10677,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10697,7 +10701,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10718,7 +10722,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10753,7 +10757,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10779,7 +10783,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10793,7 +10797,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
@@ -10815,7 +10819,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Aggregate rule which evaluates the number of rows returned for the
-     * provided statement.
+     * provided statement. If any rows are returned, this rule fails.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>

@@ -45,6 +45,10 @@ public final class ConfigManagementProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_configmanagement_v1_GitConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_configmanagement_v1_OciConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkehub_configmanagement_v1_OciConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_fieldAccessorTable;
@@ -76,6 +80,10 @@ public final class ConfigManagementProto {
       internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncState_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncError_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncError_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncVersion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -136,7 +144,7 @@ public final class ConfigManagementProto {
           + "ub.configmanagement.v1.PolicyControllerS"
           + "tate\022e\n\032hierarchy_controller_state\030\007 \001(\013"
           + "2A.google.cloud.gkehub.configmanagement."
-          + "v1.HierarchyControllerState\"\243\002\n\016Membersh"
+          + "v1.HierarchyControllerState\"\347\003\n\016Membersh"
           + "ipSpec\022H\n\013config_sync\030\001 \001(\01323.google.clo"
           + "ud.gkehub.configmanagement.v1.ConfigSync"
           + "\022T\n\021policy_controller\030\002 \001(\01329.google.clo"
@@ -144,105 +152,136 @@ public final class ConfigManagementProto {
           + "roller\022`\n\024hierarchy_controller\030\004 \001(\0132B.g"
           + "oogle.cloud.gkehub.configmanagement.v1.H"
           + "ierarchyControllerConfig\022\017\n\007version\030\n \001("
-          + "\t\"d\n\nConfigSync\022?\n\003git\030\007 \001(\01322.google.cl"
-          + "oud.gkehub.configmanagement.v1.GitConfig"
-          + "\022\025\n\rsource_format\030\010 \001(\t\"\276\001\n\tGitConfig\022\021\n"
-          + "\tsync_repo\030\001 \001(\t\022\023\n\013sync_branch\030\002 \001(\t\022\022\n"
-          + "\npolicy_dir\030\003 \001(\t\022\026\n\016sync_wait_secs\030\004 \001("
-          + "\003\022\020\n\010sync_rev\030\005 \001(\t\022\023\n\013secret_type\030\006 \001(\t"
-          + "\022\023\n\013https_proxy\030\007 \001(\t\022!\n\031gcp_service_acc"
-          + "ount_email\030\010 \001(\t\"\211\002\n\020PolicyController\022\017\n"
-          + "\007enabled\030\001 \001(\010\022\'\n\032template_library_insta"
-          + "lled\030\002 \001(\010H\000\210\001\001\022#\n\026audit_interval_second"
-          + "s\030\003 \001(\003H\001\210\001\001\022\035\n\025exemptable_namespaces\030\004 "
-          + "\003(\t\022!\n\031referential_rules_enabled\030\005 \001(\010\022\032"
-          + "\n\022log_denies_enabled\030\006 \001(\010B\035\n\033_template_"
-          + "library_installedB\031\n\027_audit_interval_sec"
-          + "onds\"x\n\031HierarchyControllerConfig\022\017\n\007ena"
-          + "bled\030\001 \001(\010\022\036\n\026enable_pod_tree_labels\030\002 \001"
-          + "(\010\022*\n\"enable_hierarchical_resource_quota"
-          + "\030\003 \001(\010\"\270\001\n\"HierarchyControllerDeployment"
-          + "State\022E\n\003hnc\030\001 \001(\01628.google.cloud.gkehub"
-          + ".configmanagement.v1.DeploymentState\022K\n\t"
-          + "extension\030\002 \001(\01628.google.cloud.gkehub.co"
-          + "nfigmanagement.v1.DeploymentState\"<\n\032Hie"
-          + "rarchyControllerVersion\022\013\n\003hnc\030\001 \001(\t\022\021\n\t"
-          + "extension\030\002 \001(\t\"\314\001\n\030HierarchyControllerS"
-          + "tate\022T\n\007version\030\001 \001(\0132C.google.cloud.gke"
-          + "hub.configmanagement.v1.HierarchyControl"
-          + "lerVersion\022Z\n\005state\030\002 \001(\0132K.google.cloud"
-          + ".gkehub.configmanagement.v1.HierarchyCon"
-          + "trollerDeploymentState\"\273\001\n\rOperatorState"
-          + "\022\017\n\007version\030\001 \001(\t\022R\n\020deployment_state\030\002 "
-          + "\001(\01628.google.cloud.gkehub.configmanageme"
-          + "nt.v1.DeploymentState\022E\n\006errors\030\003 \003(\01325."
+          + "\t\022\017\n\007cluster\030\013 \001(\t\022V\n\nmanagement\030\014 \001(\0162B"
+          + ".google.cloud.gkehub.configmanagement.v1"
+          + ".MembershipSpec.Management\"Y\n\nManagement"
+          + "\022\032\n\026MANAGEMENT_UNSPECIFIED\020\000\022\030\n\024MANAGEME"
+          + "NT_AUTOMATIC\020\001\022\025\n\021MANAGEMENT_MANUAL\020\002\"\211\002"
+          + "\n\nConfigSync\022?\n\003git\030\007 \001(\01322.google.cloud"
+          + ".gkehub.configmanagement.v1.GitConfig\022\025\n"
+          + "\rsource_format\030\010 \001(\t\022\024\n\007enabled\030\n \001(\010H\000\210"
+          + "\001\001\022\025\n\rprevent_drift\030\013 \001(\010\022?\n\003oci\030\014 \001(\01322"
+          + ".google.cloud.gkehub.configmanagement.v1"
+          + ".OciConfig\022)\n!metrics_gcp_service_accoun"
+          + "t_email\030\017 \001(\tB\n\n\010_enabled\"\276\001\n\tGitConfig\022"
+          + "\021\n\tsync_repo\030\001 \001(\t\022\023\n\013sync_branch\030\002 \001(\t\022"
+          + "\022\n\npolicy_dir\030\003 \001(\t\022\026\n\016sync_wait_secs\030\004 "
+          + "\001(\003\022\020\n\010sync_rev\030\005 \001(\t\022\023\n\013secret_type\030\006 \001"
+          + "(\t\022\023\n\013https_proxy\030\007 \001(\t\022!\n\031gcp_service_a"
+          + "ccount_email\030\010 \001(\t\"\202\001\n\tOciConfig\022\021\n\tsync"
+          + "_repo\030\001 \001(\t\022\022\n\npolicy_dir\030\002 \001(\t\022\026\n\016sync_"
+          + "wait_secs\030\003 \001(\003\022\023\n\013secret_type\030\004 \001(\t\022!\n\031"
+          + "gcp_service_account_email\030\005 \001(\t\"\211\002\n\020Poli"
+          + "cyController\022\017\n\007enabled\030\001 \001(\010\022\'\n\032templat"
+          + "e_library_installed\030\002 \001(\010H\000\210\001\001\022#\n\026audit_"
+          + "interval_seconds\030\003 \001(\003H\001\210\001\001\022\035\n\025exemptabl"
+          + "e_namespaces\030\004 \003(\t\022!\n\031referential_rules_"
+          + "enabled\030\005 \001(\010\022\032\n\022log_denies_enabled\030\006 \001("
+          + "\010B\035\n\033_template_library_installedB\031\n\027_aud"
+          + "it_interval_seconds\"x\n\031HierarchyControll"
+          + "erConfig\022\017\n\007enabled\030\001 \001(\010\022\036\n\026enable_pod_"
+          + "tree_labels\030\002 \001(\010\022*\n\"enable_hierarchical"
+          + "_resource_quota\030\003 \001(\010\"\270\001\n\"HierarchyContr"
+          + "ollerDeploymentState\022E\n\003hnc\030\001 \001(\01628.goog"
+          + "le.cloud.gkehub.configmanagement.v1.Depl"
+          + "oymentState\022K\n\textension\030\002 \001(\01628.google."
+          + "cloud.gkehub.configmanagement.v1.Deploym"
+          + "entState\"<\n\032HierarchyControllerVersion\022\013"
+          + "\n\003hnc\030\001 \001(\t\022\021\n\textension\030\002 \001(\t\"\314\001\n\030Hiera"
+          + "rchyControllerState\022T\n\007version\030\001 \001(\0132C.g"
+          + "oogle.cloud.gkehub.configmanagement.v1.H"
+          + "ierarchyControllerVersion\022Z\n\005state\030\002 \001(\013"
+          + "2K.google.cloud.gkehub.configmanagement."
+          + "v1.HierarchyControllerDeploymentState\"\273\001"
+          + "\n\rOperatorState\022\017\n\007version\030\001 \001(\t\022R\n\020depl"
+          + "oyment_state\030\002 \001(\01628.google.cloud.gkehub"
+          + ".configmanagement.v1.DeploymentState\022E\n\006"
+          + "errors\030\003 \003(\01325.google.cloud.gkehub.confi"
+          + "gmanagement.v1.InstallError\"%\n\014InstallEr"
+          + "ror\022\025\n\rerror_message\030\001 \001(\t\"\304\006\n\017ConfigSyn"
+          + "cState\022K\n\007version\030\001 \001(\0132:.google.cloud.g"
+          + "kehub.configmanagement.v1.ConfigSyncVers"
+          + "ion\022\\\n\020deployment_state\030\002 \001(\0132B.google.c"
+          + "loud.gkehub.configmanagement.v1.ConfigSy"
+          + "ncDeploymentState\022F\n\nsync_state\030\003 \001(\01322."
           + "google.cloud.gkehub.configmanagement.v1."
-          + "InstallError\"%\n\014InstallError\022\025\n\rerror_me"
-          + "ssage\030\001 \001(\t\"\204\002\n\017ConfigSyncState\022K\n\007versi"
-          + "on\030\001 \001(\0132:.google.cloud.gkehub.configman"
-          + "agement.v1.ConfigSyncVersion\022\\\n\020deployme"
-          + "nt_state\030\002 \001(\0132B.google.cloud.gkehub.con"
-          + "figmanagement.v1.ConfigSyncDeploymentSta"
-          + "te\022F\n\nsync_state\030\003 \001(\01322.google.cloud.gk"
-          + "ehub.configmanagement.v1.SyncState\"\215\001\n\021C"
-          + "onfigSyncVersion\022\020\n\010importer\030\001 \001(\t\022\016\n\006sy"
-          + "ncer\030\002 \001(\t\022\020\n\010git_sync\030\003 \001(\t\022\017\n\007monitor\030"
-          + "\004 \001(\t\022\032\n\022reconciler_manager\030\005 \001(\t\022\027\n\017roo"
-          + "t_reconciler\030\006 \001(\t\"\361\003\n\031ConfigSyncDeploym"
-          + "entState\022J\n\010importer\030\001 \001(\01628.google.clou"
-          + "d.gkehub.configmanagement.v1.DeploymentS"
-          + "tate\022H\n\006syncer\030\002 \001(\01628.google.cloud.gkeh"
-          + "ub.configmanagement.v1.DeploymentState\022J"
-          + "\n\010git_sync\030\003 \001(\01628.google.cloud.gkehub.c"
-          + "onfigmanagement.v1.DeploymentState\022I\n\007mo"
-          + "nitor\030\004 \001(\01628.google.cloud.gkehub.config"
-          + "management.v1.DeploymentState\022T\n\022reconci"
-          + "ler_manager\030\005 \001(\01628.google.cloud.gkehub."
-          + "configmanagement.v1.DeploymentState\022Q\n\017r"
-          + "oot_reconciler\030\006 \001(\01628.google.cloud.gkeh"
-          + "ub.configmanagement.v1.DeploymentState\"\273"
-          + "\003\n\tSyncState\022\024\n\014source_token\030\001 \001(\t\022\024\n\014im"
-          + "port_token\030\002 \001(\t\022\022\n\nsync_token\030\003 \001(\t\022\025\n\t"
-          + "last_sync\030\004 \001(\tB\002\030\001\0222\n\016last_sync_time\030\007 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022I\n\004code\030"
-          + "\005 \001(\0162;.google.cloud.gkehub.configmanage"
-          + "ment.v1.SyncState.SyncCode\022B\n\006errors\030\006 \003"
-          + "(\01322.google.cloud.gkehub.configmanagemen"
-          + "t.v1.SyncError\"\223\001\n\010SyncCode\022\031\n\025SYNC_CODE"
-          + "_UNSPECIFIED\020\000\022\n\n\006SYNCED\020\001\022\013\n\007PENDING\020\002\022"
-          + "\t\n\005ERROR\020\003\022\022\n\016NOT_CONFIGURED\020\004\022\021\n\rNOT_IN"
-          + "STALLED\020\005\022\020\n\014UNAUTHORIZED\020\006\022\017\n\013UNREACHAB"
-          + "LE\020\007\"\201\001\n\tSyncError\022\014\n\004code\030\001 \001(\t\022\025\n\rerro"
-          + "r_message\030\002 \001(\t\022O\n\017error_resources\030\003 \003(\013"
-          + "26.google.cloud.gkehub.configmanagement."
-          + "v1.ErrorResource\"\250\001\n\rErrorResource\022\023\n\013so"
-          + "urce_path\030\001 \001(\t\022\025\n\rresource_name\030\002 \001(\t\022\032"
-          + "\n\022resource_namespace\030\003 \001(\t\022O\n\014resource_g"
-          + "vk\030\004 \001(\01329.google.cloud.gkehub.configman"
-          + "agement.v1.GroupVersionKind\"@\n\020GroupVers"
-          + "ionKind\022\r\n\005group\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022"
-          + "\014\n\004kind\030\003 \001(\t\"\310\001\n\025PolicyControllerState\022"
-          + "Q\n\007version\030\001 \001(\0132@.google.cloud.gkehub.c"
-          + "onfigmanagement.v1.PolicyControllerVersi"
-          + "on\022\\\n\020deployment_state\030\002 \001(\0132B.google.cl"
-          + "oud.gkehub.configmanagement.v1.Gatekeepe"
-          + "rDeploymentState\"*\n\027PolicyControllerVers"
-          + "ion\022\017\n\007version\030\001 \001(\t\"\326\001\n\031GatekeeperDeplo"
-          + "ymentState\022e\n#gatekeeper_controller_mana"
-          + "ger_state\030\001 \001(\01628.google.cloud.gkehub.co"
-          + "nfigmanagement.v1.DeploymentState\022R\n\020gat"
-          + "ekeeper_audit\030\002 \001(\01628.google.cloud.gkehu"
-          + "b.configmanagement.v1.DeploymentState*`\n"
-          + "\017DeploymentState\022 \n\034DEPLOYMENT_STATE_UNS"
-          + "PECIFIED\020\000\022\021\n\rNOT_INSTALLED\020\001\022\r\n\tINSTALL"
-          + "ED\020\002\022\t\n\005ERROR\020\003B\241\002\n+com.google.cloud.gke"
-          + "hub.configmanagement.v1B\025ConfigManagemen"
-          + "tProtoP\001ZWcloud.google.com/go/gkehub/con"
-          + "figmanagement/apiv1/configmanagementpb;c"
-          + "onfigmanagementpb\252\002\'Google.Cloud.GkeHub."
-          + "ConfigManagement.V1\312\002\'Google\\Cloud\\GkeHu"
-          + "b\\ConfigManagement\\V1\352\002+Google::Cloud::G"
-          + "keHub::ConfigManagement::V1b\006proto3"
+          + "SyncState\022H\n\006errors\030\004 \003(\01328.google.cloud"
+          + ".gkehub.configmanagement.v1.ConfigSyncEr"
+          + "ror\022W\n\014rootsync_crd\030\005 \001(\0162A.google.cloud"
+          + ".gkehub.configmanagement.v1.ConfigSyncSt"
+          + "ate.CRDState\022W\n\014reposync_crd\030\006 \001(\0162A.goo"
+          + "gle.cloud.gkehub.configmanagement.v1.Con"
+          + "figSyncState.CRDState\022M\n\005state\030\007 \001(\0162>.g"
+          + "oogle.cloud.gkehub.configmanagement.v1.C"
+          + "onfigSyncState.State\"h\n\010CRDState\022\031\n\025CRD_"
+          + "STATE_UNSPECIFIED\020\000\022\021\n\rNOT_INSTALLED\020\001\022\r"
+          + "\n\tINSTALLED\020\002\022\017\n\013TERMINATING\020\003\022\016\n\nINSTAL"
+          + "LING\020\004\"\210\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
+          + "\035\n\031CONFIG_SYNC_NOT_INSTALLED\020\001\022\031\n\025CONFIG"
+          + "_SYNC_INSTALLED\020\002\022\025\n\021CONFIG_SYNC_ERROR\020\003"
+          + "\022\027\n\023CONFIG_SYNC_PENDING\020\004\"(\n\017ConfigSyncE"
+          + "rror\022\025\n\rerror_message\030\001 \001(\t\"\250\001\n\021ConfigSy"
+          + "ncVersion\022\020\n\010importer\030\001 \001(\t\022\016\n\006syncer\030\002 "
+          + "\001(\t\022\020\n\010git_sync\030\003 \001(\t\022\017\n\007monitor\030\004 \001(\t\022\032"
+          + "\n\022reconciler_manager\030\005 \001(\t\022\027\n\017root_recon"
+          + "ciler\030\006 \001(\t\022\031\n\021admission_webhook\030\007 \001(\t\"\306"
+          + "\004\n\031ConfigSyncDeploymentState\022J\n\010importer"
+          + "\030\001 \001(\01628.google.cloud.gkehub.configmanag"
+          + "ement.v1.DeploymentState\022H\n\006syncer\030\002 \001(\016"
+          + "28.google.cloud.gkehub.configmanagement."
+          + "v1.DeploymentState\022J\n\010git_sync\030\003 \001(\01628.g"
+          + "oogle.cloud.gkehub.configmanagement.v1.D"
+          + "eploymentState\022I\n\007monitor\030\004 \001(\01628.google"
+          + ".cloud.gkehub.configmanagement.v1.Deploy"
+          + "mentState\022T\n\022reconciler_manager\030\005 \001(\01628."
+          + "google.cloud.gkehub.configmanagement.v1."
+          + "DeploymentState\022Q\n\017root_reconciler\030\006 \001(\016"
+          + "28.google.cloud.gkehub.configmanagement."
+          + "v1.DeploymentState\022S\n\021admission_webhook\030"
+          + "\007 \001(\01628.google.cloud.gkehub.configmanage"
+          + "ment.v1.DeploymentState\"\273\003\n\tSyncState\022\024\n"
+          + "\014source_token\030\001 \001(\t\022\024\n\014import_token\030\002 \001("
+          + "\t\022\022\n\nsync_token\030\003 \001(\t\022\025\n\tlast_sync\030\004 \001(\t"
+          + "B\002\030\001\0222\n\016last_sync_time\030\007 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\022I\n\004code\030\005 \001(\0162;.google."
+          + "cloud.gkehub.configmanagement.v1.SyncSta"
+          + "te.SyncCode\022B\n\006errors\030\006 \003(\01322.google.clo"
+          + "ud.gkehub.configmanagement.v1.SyncError\""
+          + "\223\001\n\010SyncCode\022\031\n\025SYNC_CODE_UNSPECIFIED\020\000\022"
+          + "\n\n\006SYNCED\020\001\022\013\n\007PENDING\020\002\022\t\n\005ERROR\020\003\022\022\n\016N"
+          + "OT_CONFIGURED\020\004\022\021\n\rNOT_INSTALLED\020\005\022\020\n\014UN"
+          + "AUTHORIZED\020\006\022\017\n\013UNREACHABLE\020\007\"\201\001\n\tSyncEr"
+          + "ror\022\014\n\004code\030\001 \001(\t\022\025\n\rerror_message\030\002 \001(\t"
+          + "\022O\n\017error_resources\030\003 \003(\01326.google.cloud"
+          + ".gkehub.configmanagement.v1.ErrorResourc"
+          + "e\"\250\001\n\rErrorResource\022\023\n\013source_path\030\001 \001(\t"
+          + "\022\025\n\rresource_name\030\002 \001(\t\022\032\n\022resource_name"
+          + "space\030\003 \001(\t\022O\n\014resource_gvk\030\004 \001(\01329.goog"
+          + "le.cloud.gkehub.configmanagement.v1.Grou"
+          + "pVersionKind\"@\n\020GroupVersionKind\022\r\n\005grou"
+          + "p\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\014\n\004kind\030\003 \001(\t\"\310"
+          + "\001\n\025PolicyControllerState\022Q\n\007version\030\001 \001("
+          + "\0132@.google.cloud.gkehub.configmanagement"
+          + ".v1.PolicyControllerVersion\022\\\n\020deploymen"
+          + "t_state\030\002 \001(\0132B.google.cloud.gkehub.conf"
+          + "igmanagement.v1.GatekeeperDeploymentStat"
+          + "e\"*\n\027PolicyControllerVersion\022\017\n\007version\030"
+          + "\001 \001(\t\"\326\001\n\031GatekeeperDeploymentState\022e\n#g"
+          + "atekeeper_controller_manager_state\030\001 \001(\016"
+          + "28.google.cloud.gkehub.configmanagement."
+          + "v1.DeploymentState\022R\n\020gatekeeper_audit\030\002"
+          + " \001(\01628.google.cloud.gkehub.configmanagem"
+          + "ent.v1.DeploymentState*m\n\017DeploymentStat"
+          + "e\022 \n\034DEPLOYMENT_STATE_UNSPECIFIED\020\000\022\021\n\rN"
+          + "OT_INSTALLED\020\001\022\r\n\tINSTALLED\020\002\022\t\n\005ERROR\020\003"
+          + "\022\013\n\007PENDING\020\004B\241\002\n+com.google.cloud.gkehu"
+          + "b.configmanagement.v1B\025ConfigManagementP"
+          + "rotoP\001ZWcloud.google.com/go/gkehub/confi"
+          + "gmanagement/apiv1/configmanagementpb;con"
+          + "figmanagementpb\252\002\'Google.Cloud.GkeHub.Co"
+          + "nfigManagement.V1\312\002\'Google\\Cloud\\GkeHub\\"
+          + "ConfigManagement\\V1\352\002+Google::Cloud::Gke"
+          + "Hub::ConfigManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -269,7 +308,12 @@ public final class ConfigManagementProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_MembershipSpec_descriptor,
             new java.lang.String[] {
-              "ConfigSync", "PolicyController", "HierarchyController", "Version",
+              "ConfigSync",
+              "PolicyController",
+              "HierarchyController",
+              "Version",
+              "Cluster",
+              "Management",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSync_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -277,7 +321,12 @@ public final class ConfigManagementProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSync_descriptor,
             new java.lang.String[] {
-              "Git", "SourceFormat",
+              "Git",
+              "SourceFormat",
+              "Enabled",
+              "PreventDrift",
+              "Oci",
+              "MetricsGcpServiceAccountEmail",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_GitConfig_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -294,8 +343,16 @@ public final class ConfigManagementProto {
               "HttpsProxy",
               "GcpServiceAccountEmail",
             });
-    internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_descriptor =
+    internal_static_google_cloud_gkehub_configmanagement_v1_OciConfig_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_gkehub_configmanagement_v1_OciConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_configmanagement_v1_OciConfig_descriptor,
+            new java.lang.String[] {
+              "SyncRepo", "PolicyDir", "SyncWaitSecs", "SecretType", "GcpServiceAccountEmail",
+            });
+    internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_PolicyController_descriptor,
@@ -308,7 +365,7 @@ public final class ConfigManagementProto {
               "LogDeniesEnabled",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerConfig_descriptor,
@@ -316,7 +373,7 @@ public final class ConfigManagementProto {
               "Enabled", "EnablePodTreeLabels", "EnableHierarchicalResourceQuota",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerDeploymentState_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerDeploymentState_descriptor,
@@ -324,7 +381,7 @@ public final class ConfigManagementProto {
               "Hnc", "Extension",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerVersion_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerVersion_descriptor,
@@ -332,7 +389,7 @@ public final class ConfigManagementProto {
               "Hnc", "Extension",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerState_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_HierarchyControllerState_descriptor,
@@ -340,7 +397,7 @@ public final class ConfigManagementProto {
               "Version", "State",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_OperatorState_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_gkehub_configmanagement_v1_OperatorState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_OperatorState_descriptor,
@@ -348,7 +405,7 @@ public final class ConfigManagementProto {
               "Version", "DeploymentState", "Errors",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_InstallError_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_gkehub_configmanagement_v1_InstallError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_InstallError_descriptor,
@@ -356,31 +413,57 @@ public final class ConfigManagementProto {
               "ErrorMessage",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncState_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncState_descriptor,
             new java.lang.String[] {
-              "Version", "DeploymentState", "SyncState",
+              "Version",
+              "DeploymentState",
+              "SyncState",
+              "Errors",
+              "RootsyncCrd",
+              "ReposyncCrd",
+              "State",
+            });
+    internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncError_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncError_descriptor,
+            new java.lang.String[] {
+              "ErrorMessage",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncVersion_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncVersion_descriptor,
             new java.lang.String[] {
-              "Importer", "Syncer", "GitSync", "Monitor", "ReconcilerManager", "RootReconciler",
+              "Importer",
+              "Syncer",
+              "GitSync",
+              "Monitor",
+              "ReconcilerManager",
+              "RootReconciler",
+              "AdmissionWebhook",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncDeploymentState_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncDeploymentState_descriptor,
             new java.lang.String[] {
-              "Importer", "Syncer", "GitSync", "Monitor", "ReconcilerManager", "RootReconciler",
+              "Importer",
+              "Syncer",
+              "GitSync",
+              "Monitor",
+              "ReconcilerManager",
+              "RootReconciler",
+              "AdmissionWebhook",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_SyncState_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkehub_configmanagement_v1_SyncState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_SyncState_descriptor,
@@ -394,7 +477,7 @@ public final class ConfigManagementProto {
               "Errors",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_SyncError_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkehub_configmanagement_v1_SyncError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_SyncError_descriptor,
@@ -402,7 +485,7 @@ public final class ConfigManagementProto {
               "Code", "ErrorMessage", "ErrorResources",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_ErrorResource_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gkehub_configmanagement_v1_ErrorResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_ErrorResource_descriptor,
@@ -410,7 +493,7 @@ public final class ConfigManagementProto {
               "SourcePath", "ResourceName", "ResourceNamespace", "ResourceGvk",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_GroupVersionKind_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gkehub_configmanagement_v1_GroupVersionKind_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_GroupVersionKind_descriptor,
@@ -418,7 +501,7 @@ public final class ConfigManagementProto {
               "Group", "Version", "Kind",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerState_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerState_descriptor,
@@ -426,7 +509,7 @@ public final class ConfigManagementProto {
               "Version", "DeploymentState",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerVersion_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_PolicyControllerVersion_descriptor,
@@ -434,7 +517,7 @@ public final class ConfigManagementProto {
               "Version",
             });
     internal_static_google_cloud_gkehub_configmanagement_v1_GatekeeperDeploymentState_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_gkehub_configmanagement_v1_GatekeeperDeploymentState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_configmanagement_v1_GatekeeperDeploymentState_descriptor,

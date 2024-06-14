@@ -97,6 +97,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
   }
 
+  /** Returns the object with the settings used for calls to streamRawPredict. */
+  public ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamRawPredictSettings();
+  }
+
   /** Returns the object with the settings used for calls to directPredict. */
   public UnaryCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).directPredictSettings();
@@ -296,6 +301,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to rawPredict. */
     public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
       return getStubSettingsBuilder().rawPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamRawPredict. */
+    public ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings() {
+      return getStubSettingsBuilder().streamRawPredictSettings();
     }
 
     /** Returns the builder for the settings used for calls to directPredict. */

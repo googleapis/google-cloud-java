@@ -1432,6 +1432,9 @@
             "StreamGenerateContent": {
               "methods": ["streamGenerateContentCallable"]
             },
+            "StreamRawPredict": {
+              "methods": ["streamRawPredictCallable"]
+            },
             "StreamingPredict": {
               "methods": ["streamingPredictCallable"]
             },

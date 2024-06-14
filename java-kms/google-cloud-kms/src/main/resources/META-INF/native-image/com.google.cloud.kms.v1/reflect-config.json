@@ -378,6 +378,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.kms.v1.AccessReason",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.kms.v1.AsymmetricDecryptRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1153,6 +1162,24 @@
   },
   {
     "name": "com.google.cloud.kms.v1.ImportJob$WrappingPublicKey$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.kms.v1.KeyAccessJustificationsPolicy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.kms.v1.KeyAccessJustificationsPolicy$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

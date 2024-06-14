@@ -559,6 +559,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -610,6 +611,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1049,6 +1051,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1103,6 +1106,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1485,6 +1489,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1600,6 +1605,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1655,6 +1661,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
