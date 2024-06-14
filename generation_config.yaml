@@ -1,7 +1,7 @@
 gapic_generator_version: 2.41.0
 protoc_version: '25.3'
-googleapis_commitish: ac90fa9958bd6f7622674f52f77e4dc01d98bee8
-libraries_bom_version: 26.40.0
+googleapis_commitish: 4293b78ee0defa9a2eef8f318e5253c0be3e065d
+libraries_bom_version: 26.41.0
 template_excludes:
 - .github/*
 - .kokoro/*
