@@ -29,6 +29,7 @@ import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.FunctionCall;
+import com.google.cloud.vertexai.api.FunctionCallingConfig;
 import com.google.cloud.vertexai.api.FunctionDeclaration;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
@@ -40,6 +41,7 @@ import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
 import com.google.cloud.vertexai.api.Schema;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.api.ToolConfig;
 import com.google.cloud.vertexai.api.Type;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
@@ -174,6 +176,16 @@ public final class ChatSessionTest {
                                   .build())
                           .addRequired("location")))
           .build();
+  private static final ToolConfig TOOL_CONFIG =
+      ToolConfig.newBuilder()
+          .setFunctionCallingConfig(
+              FunctionCallingConfig.newBuilder()
+                  .setMode(FunctionCallingConfig.Mode.ANY)
+                  .addAllowedFunctionNames("getCurrentWeather"))
+          .build();
+  private static final Content SYSTEM_INSTRUCTION =
+      ContentMaker.fromString(
+          "You're a helpful assistant that starts all its answers with: \"COOL\"");
 
   @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
 
@@ -518,7 +530,9 @@ public final class ChatSessionTest {
         rootChat
             .withGenerationConfig(GENERATION_CONFIG)
             .withSafetySettings(Arrays.asList(SAFETY_SETTING))
-            .withTools(Arrays.asList(TOOL));
+            .withTools(Arrays.asList(TOOL))
+            .withToolConfig(TOOL_CONFIG)
+            .withSystemInstruction(SYSTEM_INSTRUCTION);
     response = childChat.sendMessage(SAMPLE_MESSAGE_2);
 
     // (Assert) root chat history should contain all 4 contents
@@ -532,8 +546,12 @@ public final class ChatSessionTest {
     ArgumentCaptor<GenerateContentRequest> request =
         ArgumentCaptor.forClass(GenerateContentRequest.class);
     verify(mockUnaryCallable, times(2)).call(request.capture());
+    Content expectedSystemInstruction = SYSTEM_INSTRUCTION.toBuilder().clearRole().build();
     assertThat(request.getAllValues().get(1).getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(request.getAllValues().get(1).getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
     assertThat(request.getAllValues().get(1).getTools(0)).isEqualTo(TOOL);
+    assertThat(request.getAllValues().get(1).getToolConfig()).isEqualTo(TOOL_CONFIG);
+    assertThat(request.getAllValues().get(1).getSystemInstruction())
+        .isEqualTo(expectedSystemInstruction);
   }
 }
