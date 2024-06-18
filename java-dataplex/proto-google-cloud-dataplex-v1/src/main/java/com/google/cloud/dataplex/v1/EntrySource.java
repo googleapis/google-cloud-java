@@ -46,6 +46,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     ancestors_ = java.util.Collections.emptyList();
+    location_ = "";
   }
 
   @java.lang.Override
@@ -1477,6 +1478,63 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Location of the resource in the source system. Entry will be
+   * searchable by this location. By default, this should match the location of
+   * the EntryGroup containing this entry. A different value allows capturing
+   * source location for data external to GCP.
+   * </pre>
+   *
+   * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The location.
+   */
+  @java.lang.Override
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Location of the resource in the source system. Entry will be
+   * searchable by this location. By default, this should match the location of
+   * the EntryGroup containing this entry. A different value allows capturing
+   * source location for data external to GCP.
+   * </pre>
+   *
+   * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for location.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1516,6 +1574,9 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, location_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1560,6 +1621,9 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, location_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1590,6 +1654,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getLocation().equals(other.getLocation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1627,6 +1692,8 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1823,6 +1890,7 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      location_ = "";
       return this;
     }
 
@@ -1899,6 +1967,9 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.location_ = location_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2008,6 +2079,11 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2102,6 +2178,12 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                location_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3607,6 +3689,127 @@ public final class EntrySource extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Location of the resource in the source system. Entry will be
+     * searchable by this location. By default, this should match the location of
+     * the EntryGroup containing this entry. A different value allows capturing
+     * source location for data external to GCP.
+     * </pre>
+     *
+     * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Location of the resource in the source system. Entry will be
+     * searchable by this location. By default, this should match the location of
+     * the EntryGroup containing this entry. A different value allows capturing
+     * source location for data external to GCP.
+     * </pre>
+     *
+     * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Location of the resource in the source system. Entry will be
+     * searchable by this location. By default, this should match the location of
+     * the EntryGroup containing this entry. A different value allows capturing
+     * source location for data external to GCP.
+     * </pre>
+     *
+     * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      location_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Location of the resource in the source system. Entry will be
+     * searchable by this location. By default, this should match the location of
+     * the EntryGroup containing this entry. A different value allows capturing
+     * source location for data external to GCP.
+     * </pre>
+     *
+     * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+      location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Location of the resource in the source system. Entry will be
+     * searchable by this location. By default, this should match the location of
+     * the EntryGroup containing this entry. A different value allows capturing
+     * source location for data external to GCP.
+     * </pre>
+     *
+     * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      location_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

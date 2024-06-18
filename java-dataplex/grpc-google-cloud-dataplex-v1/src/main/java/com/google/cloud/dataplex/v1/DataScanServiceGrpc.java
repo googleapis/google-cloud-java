@@ -616,7 +616,9 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * Generates recommended data quality rules based on the results of a data
+     * profiling scan.
+     * Use the recommendations to build rules for a data quality scan.
      * </pre>
      */
     default void generateDataQualityRules(
@@ -801,7 +803,9 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * Generates recommended data quality rules based on the results of a data
+     * profiling scan.
+     * Use the recommendations to build rules for a data quality scan.
      * </pre>
      */
     public void generateDataQualityRules(
@@ -944,7 +948,9 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * Generates recommended data quality rules based on the results of a data
+     * profiling scan.
+     * Use the recommendations to build rules for a data quality scan.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse generateDataQualityRules(
@@ -1087,7 +1093,9 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * Generates recommended data quality rules based on the results of a data
+     * profiling scan.
+     * Use the recommendations to build rules for a data quality scan.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

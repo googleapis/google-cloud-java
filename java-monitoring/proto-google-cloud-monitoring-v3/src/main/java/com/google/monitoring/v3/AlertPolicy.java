@@ -579,6 +579,73 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for subject.
      */
     com.google.protobuf.ByteString getSubjectBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link> getLinksList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Documentation.Link getLinks(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getLinksCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>
+        getLinksOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder getLinksOrBuilder(int index);
   }
   /**
    *
@@ -604,6 +671,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       content_ = "";
       mimeType_ = "";
       subject_ = "";
+      links_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -625,6 +693,900 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.AlertPolicy.Documentation.class,
               com.google.monitoring.v3.AlertPolicy.Documentation.Builder.class);
+    }
+
+    public interface LinkOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Documentation.Link)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * A short display name for the link. The display name must not be empty
+       * or exceed 63 characters. Example: "playbook".
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
+       */
+      java.lang.String getDisplayName();
+      /**
+       *
+       *
+       * <pre>
+       * A short display name for the link. The display name must not be empty
+       * or exceed 63 characters. Example: "playbook".
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      com.google.protobuf.ByteString getDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The url of a webpage.
+       * A url can be templatized by using variables
+       * in the path or the query parameters. The total length of a URL should
+       * not exceed 2083 characters before and after variable expansion.
+       * Example: "https://my_domain.com/playbook?name=${resource.name}"
+       * </pre>
+       *
+       * <code>string url = 2;</code>
+       *
+       * @return The url.
+       */
+      java.lang.String getUrl();
+      /**
+       *
+       *
+       * <pre>
+       * The url of a webpage.
+       * A url can be templatized by using variables
+       * in the path or the query parameters. The total length of a URL should
+       * not exceed 2083 characters before and after variable expansion.
+       * Example: "https://my_domain.com/playbook?name=${resource.name}"
+       * </pre>
+       *
+       * <code>string url = 2;</code>
+       *
+       * @return The bytes for url.
+       */
+      com.google.protobuf.ByteString getUrlBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Links to content such as playbooks, repositories, and other resources.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.AlertPolicy.Documentation.Link}
+     */
+    public static final class Link extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Documentation.Link)
+        LinkOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Link.newBuilder() to construct.
+      private Link(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Link() {
+        displayName_ = "";
+        url_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Link();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Documentation_Link_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Documentation_Link_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.Documentation.Link.class,
+                com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder.class);
+      }
+
+      public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A short display name for the link. The display name must not be empty
+       * or exceed 63 characters. Example: "playbook".
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The displayName.
+       */
+      @java.lang.Override
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A short display name for the link. The display name must not be empty
+       * or exceed 63 characters. Example: "playbook".
+       * </pre>
+       *
+       * <code>string display_name = 1;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int URL_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object url_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The url of a webpage.
+       * A url can be templatized by using variables
+       * in the path or the query parameters. The total length of a URL should
+       * not exceed 2083 characters before and after variable expansion.
+       * Example: "https://my_domain.com/playbook?name=${resource.name}"
+       * </pre>
+       *
+       * <code>string url = 2;</code>
+       *
+       * @return The url.
+       */
+      @java.lang.Override
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The url of a webpage.
+       * A url can be templatized by using variables
+       * in the path or the query parameters. The total length of a URL should
+       * not exceed 2083 characters before and after variable expansion.
+       * Example: "https://my_domain.com/playbook?name=${resource.name}"
+       * </pre>
+       *
+       * <code>string url = 2;</code>
+       *
+       * @return The bytes for url.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.monitoring.v3.AlertPolicy.Documentation.Link)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.Documentation.Link other =
+            (com.google.monitoring.v3.AlertPolicy.Documentation.Link) obj;
+
+        if (!getDisplayName().equals(other.getDisplayName())) return false;
+        if (!getUrl().equals(other.getUrl())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayName().hashCode();
+        hash = (37 * hash) + URL_FIELD_NUMBER;
+        hash = (53 * hash) + getUrl().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Links to content such as playbooks, repositories, and other resources.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Documentation.Link}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Documentation.Link)
+          com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Documentation_Link_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Documentation_Link_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Documentation.Link.class,
+                  com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder.class);
+        }
+
+        // Construct using com.google.monitoring.v3.AlertPolicy.Documentation.Link.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          displayName_ = "";
+          url_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Documentation_Link_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Documentation.Link getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.Documentation.Link.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Documentation.Link build() {
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Documentation.Link buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link result =
+              new com.google.monitoring.v3.AlertPolicy.Documentation.Link(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.monitoring.v3.AlertPolicy.Documentation.Link result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.displayName_ = displayName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.url_ = url_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.monitoring.v3.AlertPolicy.Documentation.Link) {
+            return mergeFrom((com.google.monitoring.v3.AlertPolicy.Documentation.Link) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.monitoring.v3.AlertPolicy.Documentation.Link other) {
+          if (other == com.google.monitoring.v3.AlertPolicy.Documentation.Link.getDefaultInstance())
+            return this;
+          if (!other.getDisplayName().isEmpty()) {
+            displayName_ = other.displayName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getUrl().isEmpty()) {
+            url_ = other.url_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    displayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    url_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object displayName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * A short display name for the link. The display name must not be empty
+         * or exceed 63 characters. Example: "playbook".
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return The displayName.
+         */
+        public java.lang.String getDisplayName() {
+          java.lang.Object ref = displayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            displayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short display name for the link. The display name must not be empty
+         * or exceed 63 characters. Example: "playbook".
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return The bytes for displayName.
+         */
+        public com.google.protobuf.ByteString getDisplayNameBytes() {
+          java.lang.Object ref = displayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            displayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short display name for the link. The display name must not be empty
+         * or exceed 63 characters. Example: "playbook".
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @param value The displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          displayName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short display name for the link. The display name must not be empty
+         * or exceed 63 characters. Example: "playbook".
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisplayName() {
+          displayName_ = getDefaultInstance().getDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A short display name for the link. The display name must not be empty
+         * or exceed 63 characters. Example: "playbook".
+         * </pre>
+         *
+         * <code>string display_name = 1;</code>
+         *
+         * @param value The bytes for displayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          displayName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object url_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The url of a webpage.
+         * A url can be templatized by using variables
+         * in the path or the query parameters. The total length of a URL should
+         * not exceed 2083 characters before and after variable expansion.
+         * Example: "https://my_domain.com/playbook?name=${resource.name}"
+         * </pre>
+         *
+         * <code>string url = 2;</code>
+         *
+         * @return The url.
+         */
+        public java.lang.String getUrl() {
+          java.lang.Object ref = url_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            url_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The url of a webpage.
+         * A url can be templatized by using variables
+         * in the path or the query parameters. The total length of a URL should
+         * not exceed 2083 characters before and after variable expansion.
+         * Example: "https://my_domain.com/playbook?name=${resource.name}"
+         * </pre>
+         *
+         * <code>string url = 2;</code>
+         *
+         * @return The bytes for url.
+         */
+        public com.google.protobuf.ByteString getUrlBytes() {
+          java.lang.Object ref = url_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            url_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The url of a webpage.
+         * A url can be templatized by using variables
+         * in the path or the query parameters. The total length of a URL should
+         * not exceed 2083 characters before and after variable expansion.
+         * Example: "https://my_domain.com/playbook?name=${resource.name}"
+         * </pre>
+         *
+         * <code>string url = 2;</code>
+         *
+         * @param value The url to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrl(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          url_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The url of a webpage.
+         * A url can be templatized by using variables
+         * in the path or the query parameters. The total length of a URL should
+         * not exceed 2083 characters before and after variable expansion.
+         * Example: "https://my_domain.com/playbook?name=${resource.name}"
+         * </pre>
+         *
+         * <code>string url = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUrl() {
+          url_ = getDefaultInstance().getUrl();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The url of a webpage.
+         * A url can be templatized by using variables
+         * in the path or the query parameters. The total length of a URL should
+         * not exceed 2083 characters before and after variable expansion.
+         * Example: "https://my_domain.com/playbook?name=${resource.name}"
+         * </pre>
+         *
+         * <code>string url = 2;</code>
+         *
+         * @param value The bytes for url to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          url_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Documentation.Link)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Documentation.Link)
+      private static final com.google.monitoring.v3.AlertPolicy.Documentation.Link DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.monitoring.v3.AlertPolicy.Documentation.Link();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Documentation.Link getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Link> PARSER =
+          new com.google.protobuf.AbstractParser<Link>() {
+            @java.lang.Override
+            public Link parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Link> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Link> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Documentation.Link getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int CONTENT_FIELD_NUMBER = 1;
@@ -816,6 +1778,94 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int LINKS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link> links_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link> getLinksList() {
+      return links_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>
+        getLinksOrBuilderList() {
+      return links_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getLinksCount() {
+      return links_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Documentation.Link getLinks(int index) {
+      return links_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Links to content such as playbooks, repositories, and other
+     * resources. This field can contain up to 3 entries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder getLinksOrBuilder(
+        int index) {
+      return links_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -839,6 +1889,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subject_);
       }
+      for (int i = 0; i < links_.size(); i++) {
+        output.writeMessage(4, links_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -856,6 +1909,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subject_);
+      }
+      for (int i = 0; i < links_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, links_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -876,6 +1932,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!getContent().equals(other.getContent())) return false;
       if (!getMimeType().equals(other.getMimeType())) return false;
       if (!getSubject().equals(other.getSubject())) return false;
+      if (!getLinksList().equals(other.getLinksList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -893,6 +1950,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getMimeType().hashCode();
       hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
       hash = (53 * hash) + getSubject().hashCode();
+      if (getLinksCount() > 0) {
+        hash = (37 * hash) + LINKS_FIELD_NUMBER;
+        hash = (53 * hash) + getLinksList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1038,6 +2099,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         content_ = "";
         mimeType_ = "";
         subject_ = "";
+        if (linksBuilder_ == null) {
+          links_ = java.util.Collections.emptyList();
+        } else {
+          links_ = null;
+          linksBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1065,11 +2133,25 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.AlertPolicy.Documentation buildPartial() {
         com.google.monitoring.v3.AlertPolicy.Documentation result =
             new com.google.monitoring.v3.AlertPolicy.Documentation(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.monitoring.v3.AlertPolicy.Documentation result) {
+        if (linksBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            links_ = java.util.Collections.unmodifiableList(links_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.links_ = links_;
+        } else {
+          result.links_ = linksBuilder_.build();
+        }
       }
 
       private void buildPartial0(com.google.monitoring.v3.AlertPolicy.Documentation result) {
@@ -1148,6 +2230,33 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (linksBuilder_ == null) {
+          if (!other.links_.isEmpty()) {
+            if (links_.isEmpty()) {
+              links_ = other.links_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureLinksIsMutable();
+              links_.addAll(other.links_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.links_.isEmpty()) {
+            if (linksBuilder_.isEmpty()) {
+              linksBuilder_.dispose();
+              linksBuilder_ = null;
+              links_ = other.links_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              linksBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getLinksFieldBuilder()
+                      : null;
+            } else {
+              linksBuilder_.addAllMessages(other.links_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1192,6 +2301,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  com.google.monitoring.v3.AlertPolicy.Documentation.Link m =
+                      input.readMessage(
+                          com.google.monitoring.v3.AlertPolicy.Documentation.Link.parser(),
+                          extensionRegistry);
+                  if (linksBuilder_ == null) {
+                    ensureLinksIsMutable();
+                    links_.add(m);
+                  } else {
+                    linksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1617,6 +2740,425 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link> links_ =
+          java.util.Collections.emptyList();
+
+      private void ensureLinksIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          links_ =
+              new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Documentation.Link>(
+                  links_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Documentation.Link,
+              com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder,
+              com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>
+          linksBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link>
+          getLinksList() {
+        if (linksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(links_);
+        } else {
+          return linksBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getLinksCount() {
+        if (linksBuilder_ == null) {
+          return links_.size();
+        } else {
+          return linksBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Documentation.Link getLinks(int index) {
+        if (linksBuilder_ == null) {
+          return links_.get(index);
+        } else {
+          return linksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLinks(
+          int index, com.google.monitoring.v3.AlertPolicy.Documentation.Link value) {
+        if (linksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinksIsMutable();
+          links_.set(index, value);
+          onChanged();
+        } else {
+          linksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLinks(
+          int index,
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder builderForValue) {
+        if (linksBuilder_ == null) {
+          ensureLinksIsMutable();
+          links_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          linksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addLinks(com.google.monitoring.v3.AlertPolicy.Documentation.Link value) {
+        if (linksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinksIsMutable();
+          links_.add(value);
+          onChanged();
+        } else {
+          linksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addLinks(
+          int index, com.google.monitoring.v3.AlertPolicy.Documentation.Link value) {
+        if (linksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLinksIsMutable();
+          links_.add(index, value);
+          onChanged();
+        } else {
+          linksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addLinks(
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder builderForValue) {
+        if (linksBuilder_ == null) {
+          ensureLinksIsMutable();
+          links_.add(builderForValue.build());
+          onChanged();
+        } else {
+          linksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addLinks(
+          int index,
+          com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder builderForValue) {
+        if (linksBuilder_ == null) {
+          ensureLinksIsMutable();
+          links_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          linksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllLinks(
+          java.lang.Iterable<? extends com.google.monitoring.v3.AlertPolicy.Documentation.Link>
+              values) {
+        if (linksBuilder_ == null) {
+          ensureLinksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, links_);
+          onChanged();
+        } else {
+          linksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearLinks() {
+        if (linksBuilder_ == null) {
+          links_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          linksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeLinks(int index) {
+        if (linksBuilder_ == null) {
+          ensureLinksIsMutable();
+          links_.remove(index);
+          onChanged();
+        } else {
+          linksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder getLinksBuilder(
+          int index) {
+        return getLinksFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder getLinksOrBuilder(
+          int index) {
+        if (linksBuilder_ == null) {
+          return links_.get(index);
+        } else {
+          return linksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>
+          getLinksOrBuilderList() {
+        if (linksBuilder_ != null) {
+          return linksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(links_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder addLinksBuilder() {
+        return getLinksFieldBuilder()
+            .addBuilder(
+                com.google.monitoring.v3.AlertPolicy.Documentation.Link.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder addLinksBuilder(
+          int index) {
+        return getLinksFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.monitoring.v3.AlertPolicy.Documentation.Link.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Links to content such as playbooks, repositories, and other
+       * resources. This field can contain up to 3 entries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.Documentation.Link links = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder>
+          getLinksBuilderList() {
+        return getLinksFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Documentation.Link,
+              com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder,
+              com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>
+          getLinksFieldBuilder() {
+        if (linksBuilder_ == null) {
+          linksBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.Documentation.Link,
+                  com.google.monitoring.v3.AlertPolicy.Documentation.Link.Builder,
+                  com.google.monitoring.v3.AlertPolicy.Documentation.LinkOrBuilder>(
+                  links_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+          links_ = null;
+        }
+        return linksBuilder_;
       }
 
       @java.lang.Override

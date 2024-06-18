@@ -233,7 +233,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateDataQualityRules</td>
- *      <td><p> Generates recommended DataQualityRule from a data profiling DataScan.</td>
+ *      <td><p> Generates recommended data quality rules based on the results of a data profiling scan.
+ * <p>  Use the recommendations to build rules for a data quality scan.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1565,7 +1566,9 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *
@@ -1582,10 +1585,11 @@ public class DataScanServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name should be either
+   * @param name Required. The name must be one of the following:
    *     <ul>
-   *       <li>the name of a datascan with at least one successful completed data profiling job, or
-   *       <li>the name of a successful completed data profiling datascan job.
+   *       <li>The name of a data scan with at least one successful, completed data profiling job
+   *       <li>The name of a successful, completed data profiling job (a data scan job where the job
+   *           type is data profiling)
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1598,7 +1602,9 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *
@@ -1626,7 +1632,9 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
    *
    * <p>Sample code:
    *

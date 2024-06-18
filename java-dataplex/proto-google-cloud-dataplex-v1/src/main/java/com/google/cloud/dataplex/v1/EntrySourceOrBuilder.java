@@ -353,4 +353,35 @@ public interface EntrySourceOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Location of the resource in the source system. Entry will be
+   * searchable by this location. By default, this should match the location of
+   * the EntryGroup containing this entry. A different value allows capturing
+   * source location for data external to GCP.
+   * </pre>
+   *
+   * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Location of the resource in the source system. Entry will be
+   * searchable by this location. By default, this should match the location of
+   * the EntryGroup containing this entry. A different value allows capturing
+   * source location for data external to GCP.
+   * </pre>
+   *
+   * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
 }

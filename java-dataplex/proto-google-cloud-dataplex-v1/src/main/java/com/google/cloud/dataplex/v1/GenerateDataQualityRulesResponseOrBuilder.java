@@ -28,7 +28,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * Generated recommended {&#64;link DataQualityRule}s.
+   * The data quality rules that Dataplex generates based on the results
+   * of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -38,7 +39,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * Generated recommended {&#64;link DataQualityRule}s.
+   * The data quality rules that Dataplex generates based on the results
+   * of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -48,7 +50,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * Generated recommended {&#64;link DataQualityRule}s.
+   * The data quality rules that Dataplex generates based on the results
+   * of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -58,7 +61,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * Generated recommended {&#64;link DataQualityRule}s.
+   * The data quality rules that Dataplex generates based on the results
+   * of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -69,7 +73,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * Generated recommended {&#64;link DataQualityRule}s.
+   * The data quality rules that Dataplex generates based on the results
+   * of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
