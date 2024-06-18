@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.1 (2024-06-17)
+
+### Features
+
+* Log manual affinity and disabling affinity (#177)
+
 ## 1.6.0 (2024-05-09)
 
 ### Features
