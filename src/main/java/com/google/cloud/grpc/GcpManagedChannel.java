@@ -67,6 +67,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -1053,11 +1054,15 @@ public class GcpManagedChannel extends ManagedChannel {
     if (options.getChannelPoolOptions() != null
         && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
       channelRef = getChannelRefRoundRobin();
-      logger.finest(
-          log("Channel %d picked for bind operation using round-robin.", channelRef.getId()));
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(
+            log("Channel %d picked for bind operation using round-robin.", channelRef.getId()));
+      }
     } else {
       channelRef = getChannelRef(null);
-      logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
+      }
     }
     return channelRef;
   }
@@ -1113,7 +1118,9 @@ public class GcpManagedChannel extends ManagedChannel {
     Integer channelId = tempMap.get(key);
     if (channelId != null && !fallbackMap.containsKey(channelId)) {
       // Fallback channel is ready.
-      logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
+      }
       fallbacksSucceeded.incrementAndGet();
       return channelRefs.get(channelId);
     }
@@ -1123,14 +1130,18 @@ public class GcpManagedChannel extends ManagedChannel {
         && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
       // Got a ready and not an overloaded channel.
       if (channelRef.getId() != mappedChannel.getId()) {
-        logger.finest(
-            log("Setting fallback channel: %d -> %d", mappedChannel.getId(), channelRef.getId()));
+        if (logger.isLoggable(Level.FINEST)) {
+          logger.finest(
+              log("Setting fallback channel: %d -> %d", mappedChannel.getId(), channelRef.getId()));
+        }
         fallbacksSucceeded.incrementAndGet();
         tempMap.put(key, channelRef.getId());
       }
       return channelRef;
     }
-    logger.finest(log("Failed to find fallback for channel %d", mappedChannel.getId()));
+    if (logger.isLoggable(Level.FINEST)) {
+      logger.finest(log("Failed to find fallback for channel %d", mappedChannel.getId()));
+    }
     fallbacksFailed.incrementAndGet();
     if (channelId != null) {
       // Stick with previous mapping if fallback has failed.
@@ -1225,7 +1236,9 @@ public class GcpManagedChannel extends ManagedChannel {
       ChannelRef newChannel = tryCreateNewChannel();
       if (newChannel != null) {
         if (!forFallback && readyCandidate == null) {
-          logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
+          if (logger.isLoggable(Level.FINEST)) {
+            logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
+          }
           fallbacksSucceeded.incrementAndGet();
         }
         return newChannel;
@@ -1234,17 +1247,21 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (readyCandidate != null) {
       if (!forFallback && readyCandidate.getId() != channelCandidate.getId()) {
-        logger.finest(
-            log(
-                "Picking fallback channel: %d -> %d",
-                channelCandidate.getId(), readyCandidate.getId()));
+        if (logger.isLoggable(Level.FINEST)) {
+          logger.finest(
+              log(
+                  "Picking fallback channel: %d -> %d",
+                  channelCandidate.getId(), readyCandidate.getId()));
+        }
         fallbacksSucceeded.incrementAndGet();
       }
       return readyCandidate;
     }
 
     if (!forFallback) {
-      logger.finest(log("Failed to find fallback for channel %d", channelCandidate.getId()));
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(log("Failed to find fallback for channel %d", channelCandidate.getId()));
+      }
       fallbacksFailed.incrementAndGet();
     }
     return channelCandidate;
@@ -1273,6 +1290,9 @@ public class GcpManagedChannel extends ManagedChannel {
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
     if (callOptions.getOption(DISABLE_AFFINITY_KEY)
         || DISABLE_AFFINITY_CTX_KEY.get(Context.current())) {
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(log("Channel affinity is disabled via context or call options."));
+      }
       return new GcpClientCall.SimpleGcpClientCall<>(
           getChannelRef(null), methodDescriptor, callOptions);
     }
@@ -1291,10 +1311,17 @@ public class GcpManagedChannel extends ManagedChannel {
   private String keyFromOptsCtx(CallOptions callOptions) {
     String key = callOptions.getOption(AFFINITY_KEY);
     if (key != null) {
+      if (logger.isLoggable(Level.FINEST)) {
+        logger.finest(log("Affinity key \"%s\" set manually via call options.", key));
+      }
       return key;
     }
 
-    return AFFINITY_CTX_KEY.get(Context.current());
+    key = AFFINITY_CTX_KEY.get(Context.current());
+    if (key != null && logger.isLoggable(Level.FINEST)) {
+      logger.finest(log("Affinity key \"%s\" set manually via context.", key));
+    }
+    return key;
   }
 
   @Override
@@ -1436,10 +1463,12 @@ public class GcpManagedChannel extends ManagedChannel {
     if (channelRef == null || affinityKeys == null) {
       return;
     }
-    logger.finest(
-        log(
-            "Binding %d key(s) to channel %d: [%s]",
-            affinityKeys.size(), channelRef.getId(), String.join(", ", affinityKeys)));
+    if (logger.isLoggable(Level.FINEST)) {
+      logger.finest(
+          log(
+              "Binding %d key(s) to channel %d: [%s]",
+              affinityKeys.size(), channelRef.getId(), String.join(", ", affinityKeys)));
+    }
     for (String affinityKey : affinityKeys) {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
@@ -1459,9 +1488,13 @@ public class GcpManagedChannel extends ManagedChannel {
       affinityKeyLastUsed.remove(affinityKey);
       if (channelRef != null) {
         channelRef.affinityCountDecr();
-        logger.finest(log("Unbinding key %s from channel %d.", affinityKey, channelRef.getId()));
+        if (logger.isLoggable(Level.FINEST)) {
+          logger.finest(log("Unbinding key %s from channel %d.", affinityKey, channelRef.getId()));
+        }
       } else {
-        logger.finest(log("Unbinding key %s but it wasn't bound.", affinityKey));
+        if (logger.isLoggable(Level.FINEST)) {
+          logger.finest(log("Unbinding key %s but it wasn't bound.", affinityKey));
+        }
       }
     }
   }

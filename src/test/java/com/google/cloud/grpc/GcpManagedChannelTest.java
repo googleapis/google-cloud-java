@@ -1307,7 +1307,7 @@ public final class GcpManagedChannelTest {
     // Make sure it was IDLE;
     assertThat(currentState).isEqualTo(ConnectivityState.IDLE);
 
-    TimeUnit.MILLISECONDS.sleep(5);
+    TimeUnit.MILLISECONDS.sleep(25);
 
     assertThat(newState.get())
         .isAnyOf(ConnectivityState.CONNECTING, ConnectivityState.TRANSIENT_FAILURE);
