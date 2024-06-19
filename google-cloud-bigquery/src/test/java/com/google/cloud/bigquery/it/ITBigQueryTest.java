@@ -6833,6 +6833,32 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testExternalMetadataCacheModeFailForNonBiglake() {
+    // Validate that MetadataCacheMode is passed to the backend.
+    // TODO: Enhance this test after BigLake testing infrastructure is inplace.
+    String tableName = "test_metadata_cache_mode_fail_for_non_biglake";
+    TableId tableId = TableId.of(DATASET, tableName);
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(
+                "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json())
+            .setMetadataCacheMode("AUTOMATIC")
+            .build();
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+
+    try {
+      bigquery.create(tableInfo);
+      fail("BigQueryException was expected");
+    } catch (BigQueryException e) {
+      BigQueryError error = e.getError();
+      assertNotNull(error);
+      assertEquals("invalid", error.getReason());
+      assertThat(
+              e.getMessage().contains("metadataCacheMode provided for non BigLake external table"))
+          .isTrue();
+    }
+  }
+
+  @Test
   public void testObjectTable() throws InterruptedException {
     String tableName = "test_object_table";
     TableId tableId = TableId.of(DATASET, tableName);
