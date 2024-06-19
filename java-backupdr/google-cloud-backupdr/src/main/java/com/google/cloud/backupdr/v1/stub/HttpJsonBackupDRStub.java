@@ -393,8 +393,6 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/backupVaults/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
