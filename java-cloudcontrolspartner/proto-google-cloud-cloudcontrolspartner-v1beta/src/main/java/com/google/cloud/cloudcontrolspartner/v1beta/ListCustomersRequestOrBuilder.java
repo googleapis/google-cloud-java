@@ -29,7 +29,7 @@ public interface ListCustomersRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource
-   * Format: organizations/{organization}/locations/{location}
+   * Format: `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ListCustomersRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource
-   * Format: organizations/{organization}/locations/{location}
+   * Format: `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>

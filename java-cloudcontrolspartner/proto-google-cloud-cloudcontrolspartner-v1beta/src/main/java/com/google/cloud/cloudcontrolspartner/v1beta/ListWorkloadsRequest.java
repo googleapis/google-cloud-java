@@ -76,7 +76,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Parent resource
    * Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Parent resource
    * Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>
@@ -749,7 +749,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Parent resource
      * Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>
@@ -775,7 +775,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Parent resource
      * Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>
@@ -801,7 +801,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Parent resource
      * Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>
@@ -826,7 +826,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Parent resource
      * Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>
@@ -847,7 +847,7 @@ public final class ListWorkloadsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Parent resource
      * Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>

@@ -75,7 +75,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Parent resource
-   * Format: organizations/{organization}/locations/{location}
+   * Format: `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Parent resource
-   * Format: organizations/{organization}/locations/{location}
+   * Format: `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -746,7 +746,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent resource
-     * Format: organizations/{organization}/locations/{location}
+     * Format: `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -771,7 +771,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent resource
-     * Format: organizations/{organization}/locations/{location}
+     * Format: `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -796,7 +796,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent resource
-     * Format: organizations/{organization}/locations/{location}
+     * Format: `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -820,7 +820,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent resource
-     * Format: organizations/{organization}/locations/{location}
+     * Format: `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -840,7 +840,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent resource
-     * Format: organizations/{organization}/locations/{location}
+     * Format: `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>

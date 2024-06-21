@@ -72,7 +72,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
    * </pre>
    *
    * <code>
@@ -477,7 +477,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
      * </pre>
      *
      * <code>
@@ -502,7 +502,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
      * </pre>
      *
      * <code>
@@ -527,7 +527,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
      * </pre>
      *
      * <code>
@@ -551,7 +551,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
      * </pre>
      *
      * <code>
@@ -571,7 +571,7 @@ public final class GetEkmConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
      * </pre>
      *
      * <code>

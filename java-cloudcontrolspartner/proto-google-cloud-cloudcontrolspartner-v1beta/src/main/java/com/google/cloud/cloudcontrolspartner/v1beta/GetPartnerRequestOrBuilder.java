@@ -28,7 +28,8 @@ public interface GetPartnerRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: organizations/{organization}/locations/{location}/partner
+   * Required. Format:
+   * `organizations/{organization}/locations/{location}/partner`
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface GetPartnerRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: organizations/{organization}/locations/{location}/partner
+   * Required. Format:
+   * `organizations/{organization}/locations/{location}/partner`
    * </pre>
    *
    * <code>

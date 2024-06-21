@@ -989,6 +989,10 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSecurityCenterServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "showEligibleModulesOnly",
+                                request.getShowEligibleModulesOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1031,6 +1035,10 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields,
+                                "showEligibleModulesOnly",
+                                request.getShowEligibleModulesOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

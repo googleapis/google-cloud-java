@@ -29,7 +29,7 @@ public interface GetPartnerPermissionsRequestOrBuilder
    *
    * <pre>
    * Required. Name of the resource to get in the format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetPartnerPermissionsRequestOrBuilder
    *
    * <pre>
    * Required. Name of the resource to get in the format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
    * </pre>
    *
    * <code>

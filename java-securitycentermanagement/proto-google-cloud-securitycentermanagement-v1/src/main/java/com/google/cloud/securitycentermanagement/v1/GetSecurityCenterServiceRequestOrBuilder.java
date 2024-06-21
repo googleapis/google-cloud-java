@@ -80,4 +80,18 @@ public interface GetSecurityCenterServiceRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Flag that, when set, will be used to filter the ModuleSettings that are
+   * in scope. The default setting is that all modules will be shown.
+   * </pre>
+   *
+   * <code>bool show_eligible_modules_only = 2;</code>
+   *
+   * @return The showEligibleModulesOnly.
+   */
+  boolean getShowEligibleModulesOnly();
 }

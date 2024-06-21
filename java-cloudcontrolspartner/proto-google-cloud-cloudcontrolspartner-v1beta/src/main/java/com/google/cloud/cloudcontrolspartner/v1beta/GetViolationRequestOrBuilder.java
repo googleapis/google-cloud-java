@@ -29,7 +29,7 @@ public interface GetViolationRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetViolationRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * </pre>
    *
    * <code>

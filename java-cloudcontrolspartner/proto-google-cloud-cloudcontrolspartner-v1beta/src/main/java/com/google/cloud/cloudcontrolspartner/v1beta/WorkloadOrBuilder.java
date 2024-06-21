@@ -29,7 +29,7 @@ public interface WorkloadOrBuilder
    *
    * <pre>
    * Identifier. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,7 +42,7 @@ public interface WorkloadOrBuilder
    *
    * <pre>
    * Identifier. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
