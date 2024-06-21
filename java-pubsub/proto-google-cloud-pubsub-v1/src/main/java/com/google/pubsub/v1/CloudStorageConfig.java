@@ -130,6 +130,17 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * <code>IN_TRANSIT_LOCATION_RESTRICTION = 4;</code>
      */
     IN_TRANSIT_LOCATION_RESTRICTION(4),
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the Cloud Storage bucket due to an incompatibility
+     * between the topic schema and subscription settings.
+     * </pre>
+     *
+     * <code>SCHEMA_MISMATCH = 5;</code>
+     */
+    SCHEMA_MISMATCH(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -185,6 +196,17 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * <code>IN_TRANSIT_LOCATION_RESTRICTION = 4;</code>
      */
     public static final int IN_TRANSIT_LOCATION_RESTRICTION_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Cannot write to the Cloud Storage bucket due to an incompatibility
+     * between the topic schema and subscription settings.
+     * </pre>
+     *
+     * <code>SCHEMA_MISMATCH = 5;</code>
+     */
+    public static final int SCHEMA_MISMATCH_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -220,6 +242,8 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
           return NOT_FOUND;
         case 4:
           return IN_TRANSIT_LOCATION_RESTRICTION;
+        case 5:
+          return SCHEMA_MISMATCH;
         default:
           return null;
       }
@@ -721,6 +745,20 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * @return The writeMetadata.
      */
     boolean getWriteMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, the output Cloud Storage file will be serialized
+     * using the topic schema, if it exists.
+     * </pre>
+     *
+     * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useTopicSchema.
+     */
+    boolean getUseTopicSchema();
   }
   /**
    *
@@ -788,6 +826,25 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return writeMetadata_;
     }
 
+    public static final int USE_TOPIC_SCHEMA_FIELD_NUMBER = 2;
+    private boolean useTopicSchema_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, the output Cloud Storage file will be serialized
+     * using the topic schema, if it exists.
+     * </pre>
+     *
+     * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useTopicSchema.
+     */
+    @java.lang.Override
+    public boolean getUseTopicSchema() {
+      return useTopicSchema_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -805,6 +862,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       if (writeMetadata_ != false) {
         output.writeBool(1, writeMetadata_);
       }
+      if (useTopicSchema_ != false) {
+        output.writeBool(2, useTopicSchema_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -816,6 +876,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       size = 0;
       if (writeMetadata_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, writeMetadata_);
+      }
+      if (useTopicSchema_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, useTopicSchema_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -834,6 +897,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
           (com.google.pubsub.v1.CloudStorageConfig.AvroConfig) obj;
 
       if (getWriteMetadata() != other.getWriteMetadata()) return false;
+      if (getUseTopicSchema() != other.getUseTopicSchema()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -847,6 +911,8 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + WRITE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWriteMetadata());
+      hash = (37 * hash) + USE_TOPIC_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTopicSchema());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -990,6 +1056,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         super.clear();
         bitField0_ = 0;
         writeMetadata_ = false;
+        useTopicSchema_ = false;
         return this;
       }
 
@@ -1028,6 +1095,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.writeMetadata_ = writeMetadata_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.useTopicSchema_ = useTopicSchema_;
         }
       }
 
@@ -1082,6 +1152,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         if (other.getWriteMetadata() != false) {
           setWriteMetadata(other.getWriteMetadata());
         }
+        if (other.getUseTopicSchema() != false) {
+          setUseTopicSchema(other.getUseTopicSchema());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1114,6 +1187,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 16:
+                {
+                  useTopicSchema_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1197,6 +1276,62 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       public Builder clearWriteMetadata() {
         bitField0_ = (bitField0_ & ~0x00000001);
         writeMetadata_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean useTopicSchema_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When true, the output Cloud Storage file will be serialized
+       * using the topic schema, if it exists.
+       * </pre>
+       *
+       * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The useTopicSchema.
+       */
+      @java.lang.Override
+      public boolean getUseTopicSchema() {
+        return useTopicSchema_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When true, the output Cloud Storage file will be serialized
+       * using the topic schema, if it exists.
+       * </pre>
+       *
+       * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The useTopicSchema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseTopicSchema(boolean value) {
+
+        useTopicSchema_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When true, the output Cloud Storage file will be serialized
+       * using the topic schema, if it exists.
+       * </pre>
+       *
+       * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseTopicSchema() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        useTopicSchema_ = false;
         onChanged();
         return this;
       }
