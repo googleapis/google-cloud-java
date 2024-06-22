@@ -18,8 +18,8 @@ package com.google.cloud.notebooks.v1.samples;
 
 // [START notebooks_v1_generated_ManagedNotebookService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.notebooks.v1.LocationName;
 import com.google.cloud.notebooks.v1.ManagedNotebookServiceClient;
-import com.google.cloud.notebooks.v1.RuntimeName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -40,7 +40,7 @@ public class AsyncSetIamPolicy {
         ManagedNotebookServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

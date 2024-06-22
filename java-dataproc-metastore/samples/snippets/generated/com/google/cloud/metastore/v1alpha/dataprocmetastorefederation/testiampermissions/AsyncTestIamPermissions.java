@@ -18,8 +18,8 @@ package com.google.cloud.metastore.v1alpha.samples;
 
 // [START metastore_v1alpha_generated_DataprocMetastoreFederation_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.metastore.v1alpha.BackupName;
 import com.google.cloud.metastore.v1alpha.DataprocMetastoreFederationClient;
+import com.google.cloud.metastore.v1alpha.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -40,8 +40,7 @@ public class AsyncTestIamPermissions {
         DataprocMetastoreFederationClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

@@ -869,7 +869,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.getIamPolicy(request);
@@ -898,7 +898,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);
@@ -2247,7 +2247,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2277,7 +2277,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2380,7 +2380,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
@@ -2409,7 +2409,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

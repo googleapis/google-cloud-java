@@ -17,7 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Organizations_SetIamPolicy_sync]
-import com.google.cloud.resourcemanager.v3.OrganizationName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,7 +38,7 @@ public class SyncSetIamPolicy {
     try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

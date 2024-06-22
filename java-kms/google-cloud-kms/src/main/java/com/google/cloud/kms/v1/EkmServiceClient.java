@@ -1421,9 +1421,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1455,9 +1453,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1487,9 +1483,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = ekmServiceClient.getIamPolicy(request);
@@ -1519,9 +1513,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = ekmServiceClient.getIamPolicyCallable().futureCall(request);
@@ -1554,9 +1546,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = ekmServiceClient.testIamPermissions(request);
@@ -1590,9 +1580,7 @@ public class EkmServiceClient implements BackgroundResource {
    * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

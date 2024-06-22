@@ -17,8 +17,8 @@
 package com.google.cloud.datacatalog.v1.samples;
 
 // [START datacatalog_v1_generated_PolicyTagManager_SetIamPolicy_sync]
+import com.google.cloud.datacatalog.v1.EntryName;
 import com.google.cloud.datacatalog.v1.PolicyTagManagerClient;
-import com.google.cloud.datacatalog.v1.PolicyTagName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,8 +39,7 @@ public class SyncSetIamPolicy {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-                      .toString())
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

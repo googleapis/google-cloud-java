@@ -319,8 +319,8 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EffectiveSecurityHealthAnalyticsCustomModule.newBuilder()
             .setName(
                 EffectiveSecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationEffectiveSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]",
+                    .ofOrganizationLocationEffectiveSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]",
                         "[LOCATION]",
                         "[EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
@@ -378,8 +378,8 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EffectiveSecurityHealthAnalyticsCustomModule.newBuilder()
             .setName(
                 EffectiveSecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationEffectiveSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]",
+                    .ofOrganizationLocationEffectiveSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]",
                         "[LOCATION]",
                         "[EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
@@ -865,16 +865,16 @@ public class SecurityCenterManagementClientHttpJsonTest {
         SecurityHealthAnalyticsCustomModule.newBuilder()
             .setName(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastEditor("lastEditor1523898275")
             .setAncestorModule(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setCustomConfig(CustomConfig.newBuilder().build())
             .build();
@@ -929,16 +929,16 @@ public class SecurityCenterManagementClientHttpJsonTest {
         SecurityHealthAnalyticsCustomModule.newBuilder()
             .setName(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastEditor("lastEditor1523898275")
             .setAncestorModule(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setCustomConfig(CustomConfig.newBuilder().build())
             .build();
@@ -1241,16 +1241,16 @@ public class SecurityCenterManagementClientHttpJsonTest {
         SecurityHealthAnalyticsCustomModule.newBuilder()
             .setName(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastEditor("lastEditor1523898275")
             .setAncestorModule(
                 SecurityHealthAnalyticsCustomModuleName
-                    .ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
+                    .ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE]")
                     .toString())
             .setCustomConfig(CustomConfig.newBuilder().build())
             .build();
@@ -1696,8 +1696,8 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EffectiveEventThreatDetectionCustomModule.newBuilder()
             .setName(
                 EffectiveEventThreatDetectionCustomModuleName
-                    .ofProjectLocationEffectiveEventThreatDetectionCustomModuleName(
-                        "[PROJECT]",
+                    .ofOrganizationLocationEffectiveEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]",
                         "[LOCATION]",
                         "[EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
@@ -1757,8 +1757,8 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EffectiveEventThreatDetectionCustomModule.newBuilder()
             .setName(
                 EffectiveEventThreatDetectionCustomModuleName
-                    .ofProjectLocationEffectiveEventThreatDetectionCustomModuleName(
-                        "[PROJECT]",
+                    .ofOrganizationLocationEffectiveEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]",
                         "[LOCATION]",
                         "[EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
@@ -2246,14 +2246,14 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EventThreatDetectionCustomModule.newBuilder()
             .setName(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setConfig(Struct.newBuilder().build())
             .setAncestorModule(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setType("type3575610")
             .setDisplayName("displayName1714148973")
@@ -2311,14 +2311,14 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EventThreatDetectionCustomModule.newBuilder()
             .setName(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setConfig(Struct.newBuilder().build())
             .setAncestorModule(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setType("type3575610")
             .setDisplayName("displayName1714148973")
@@ -2629,14 +2629,14 @@ public class SecurityCenterManagementClientHttpJsonTest {
         EventThreatDetectionCustomModule.newBuilder()
             .setName(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setConfig(Struct.newBuilder().build())
             .setAncestorModule(
                 EventThreatDetectionCustomModuleName
-                    .ofProjectLocationEventThreatDetectionCustomModuleName(
-                        "[PROJECT]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
+                    .ofOrganizationLocationEventThreatDetectionCustomModuleName(
+                        "[ORGANIZATION]", "[LOCATION]", "[EVENT_THREAT_DETECTION_CUSTOM_MODULE]")
                     .toString())
             .setType("type3575610")
             .setDisplayName("displayName1714148973")

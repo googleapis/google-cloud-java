@@ -18,7 +18,7 @@ package com.google.cloud.networksecurity.v1.samples;
 
 // [START networksecurity_v1_generated_NetworkSecurity_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networksecurity.v1.AuthorizationPolicyName;
+import com.google.cloud.networksecurity.v1.LocationName;
 import com.google.cloud.networksecurity.v1.NetworkSecurityClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,9 +39,7 @@ public class AsyncSetIamPolicy {
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

@@ -1092,7 +1092,7 @@ public class PredictionServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1123,8 +1123,7 @@ public class PredictionServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1150,7 +1149,7 @@ public class PredictionServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1179,8 +1178,7 @@ public class PredictionServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1200,7 +1198,7 @@ public class PredictionServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1229,8 +1227,7 @@ public class PredictionServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

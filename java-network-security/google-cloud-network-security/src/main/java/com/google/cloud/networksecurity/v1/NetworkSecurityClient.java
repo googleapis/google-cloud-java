@@ -2989,9 +2989,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3023,9 +3021,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3055,9 +3051,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = networkSecurityClient.getIamPolicy(request);
@@ -3087,9 +3081,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = networkSecurityClient.getIamPolicyCallable().futureCall(request);
@@ -3122,9 +3114,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = networkSecurityClient.testIamPermissions(request);
@@ -3158,9 +3148,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -18,8 +18,8 @@ package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_HubService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networkconnectivity.v1.GroupName;
 import com.google.cloud.networkconnectivity.v1.HubServiceClient;
+import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

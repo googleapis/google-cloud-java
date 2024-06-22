@@ -17,7 +17,7 @@
 package com.google.cloud.dataplex.v1.samples;
 
 // [START dataplex_v1_generated_ContentService_TestIamPermissions_sync]
-import com.google.cloud.dataplex.v1.ContentName;
+import com.google.cloud.dataplex.v1.AspectTypeName;
 import com.google.cloud.dataplex.v1.ContentServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,8 +38,7 @@ public class SyncTestIamPermissions {
     try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = contentServiceClient.testIamPermissions(request);

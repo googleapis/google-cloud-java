@@ -18,8 +18,8 @@ package com.google.cloud.secretmanager.v1beta2.samples;
 
 // [START secretmanager_v1beta2_generated_SecretManagerService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.secretmanager.v1beta2.ProjectName;
 import com.google.cloud.secretmanager.v1beta2.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta2.SecretName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -40,7 +40,7 @@ public class AsyncGetIamPolicy {
         SecretManagerServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

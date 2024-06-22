@@ -17,7 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_MatchService_SetIamPolicy_sync]
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
+import com.google.cloud.aiplatform.v1beta1.AnnotationSpecName;
 import com.google.cloud.aiplatform.v1beta1.MatchServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,8 +39,7 @@ public class SyncSetIamPolicy {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())

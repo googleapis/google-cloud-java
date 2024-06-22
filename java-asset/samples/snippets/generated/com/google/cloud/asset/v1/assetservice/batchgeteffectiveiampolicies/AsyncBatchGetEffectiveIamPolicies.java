@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
-import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.FeedName;
 import java.util.ArrayList;
 
 public class AsyncBatchGetEffectiveIamPolicies {
@@ -39,7 +39,7 @@ public class AsyncBatchGetEffectiveIamPolicies {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       BatchGetEffectiveIamPoliciesRequest request =
           BatchGetEffectiveIamPoliciesRequest.newBuilder()
-              .setScope(FolderName.of("[FOLDER]").toString())
+              .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
               .addAllNames(new ArrayList<String>())
               .build();
       ApiFuture<BatchGetEffectiveIamPoliciesResponse> future =

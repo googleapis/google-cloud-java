@@ -19,6 +19,7 @@ package com.google.cloud.iam.admin.v1.samples;
 // [START iam_v1_generated_IAM_DeleteRole_sync]
 import com.google.cloud.iam.admin.v1.IAMClient;
 import com.google.iam.admin.v1.DeleteRoleRequest;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 import com.google.protobuf.ByteString;
 
@@ -37,7 +38,7 @@ public class SyncDeleteRole {
     try (IAMClient iAMClient = IAMClient.create()) {
       DeleteRoleRequest request =
           DeleteRoleRequest.newBuilder()
-              .setName("DeleteRoleRequest1468559982".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setEtag(ByteString.EMPTY)
               .build();
       Role response = iAMClient.deleteRole(request);

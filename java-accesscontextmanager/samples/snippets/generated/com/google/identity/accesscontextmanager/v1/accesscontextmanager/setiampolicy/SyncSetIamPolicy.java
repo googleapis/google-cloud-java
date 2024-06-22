@@ -20,7 +20,7 @@ package com.google.identity.accesscontextmanager.v1.samples;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.identity.accesscontextmanager.v1.AccessContextManagerClient;
-import com.google.identity.accesscontextmanager.v1.AccessPolicyName;
+import com.google.identity.accesscontextmanager.v1.AccessLevelName;
 import com.google.protobuf.FieldMask;
 
 public class SyncSetIamPolicy {
@@ -39,7 +39,7 @@ public class SyncSetIamPolicy {
         AccessContextManagerClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+              .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

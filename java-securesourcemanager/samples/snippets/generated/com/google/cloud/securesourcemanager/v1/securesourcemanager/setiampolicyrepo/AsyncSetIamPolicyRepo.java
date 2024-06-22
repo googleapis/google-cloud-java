@@ -18,7 +18,7 @@ package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_SetIamPolicyRepo_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.securesourcemanager.v1.RepositoryName;
+import com.google.cloud.securesourcemanager.v1.LocationName;
 import com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,7 +39,7 @@ public class AsyncSetIamPolicyRepo {
     try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

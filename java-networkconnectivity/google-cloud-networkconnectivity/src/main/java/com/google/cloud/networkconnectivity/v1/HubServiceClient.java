@@ -3651,7 +3651,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3683,7 +3683,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3713,7 +3713,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = hubServiceClient.getIamPolicy(request);
@@ -3743,7 +3743,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = hubServiceClient.getIamPolicyCallable().futureCall(request);
@@ -3776,7 +3776,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = hubServiceClient.testIamPermissions(request);
@@ -3810,7 +3810,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

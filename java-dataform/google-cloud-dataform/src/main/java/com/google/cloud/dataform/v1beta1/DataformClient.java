@@ -6503,7 +6503,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -6535,7 +6538,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -6565,7 +6571,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = dataformClient.getIamPolicy(request);
@@ -6595,7 +6604,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = dataformClient.getIamPolicyCallable().futureCall(request);
@@ -6628,7 +6640,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = dataformClient.testIamPermissions(request);
@@ -6662,7 +6677,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -17,7 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_TagKeys_SetIamPolicy_sync]
-import com.google.cloud.resourcemanager.v3.TagKeyName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,7 +38,7 @@ public class SyncSetIamPolicy {
     try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(TagKeyName.of("[TAG_KEY]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

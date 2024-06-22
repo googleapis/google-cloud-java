@@ -99,7 +99,7 @@ public class AssetServiceClientTest {
 
     ExportAssetsRequest request =
         ExportAssetsRequest.newBuilder()
-            .setParent("ExportAssetsRequest-846449128".toString())
+            .setParent("parent-995424086")
             .setReadTime(Timestamp.newBuilder().build())
             .addAllAssetTypes(new ArrayList<String>())
             .setContentType(ContentType.forNumber(0))
@@ -135,7 +135,7 @@ public class AssetServiceClientTest {
     try {
       ExportAssetsRequest request =
           ExportAssetsRequest.newBuilder()
-              .setParent("ExportAssetsRequest-846449128".toString())
+              .setParent("parent-995424086")
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))

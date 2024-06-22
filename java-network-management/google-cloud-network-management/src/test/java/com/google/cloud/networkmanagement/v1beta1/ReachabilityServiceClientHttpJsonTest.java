@@ -650,7 +650,8 @@ public class ReachabilityServiceClientHttpJsonTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource("SetIamPolicyRequest1223629066".toString())
+            .setResource(
+                "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -683,7 +684,8 @@ public class ReachabilityServiceClientHttpJsonTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource(
+                  "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -708,7 +710,8 @@ public class ReachabilityServiceClientHttpJsonTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource("GetIamPolicyRequest-1527610370".toString())
+            .setResource(
+                "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -740,7 +743,8 @@ public class ReachabilityServiceClientHttpJsonTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(
+                  "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -759,7 +763,8 @@ public class ReachabilityServiceClientHttpJsonTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource("TestIamPermissionsRequest942398222".toString())
+            .setResource(
+                "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -791,7 +796,8 @@ public class ReachabilityServiceClientHttpJsonTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(
+                  "projects/project-3782/locations/global/connectivityTests/connectivityTest-3782")
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

@@ -640,7 +640,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = organizationsClient.getIamPolicy(request);
@@ -674,7 +674,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = organizationsClient.getIamPolicyCallable().futureCall(request);
@@ -771,7 +771,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -805,7 +805,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -917,7 +917,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = organizationsClient.testIamPermissions(request);
@@ -949,7 +949,7 @@ public class OrganizationsClient implements BackgroundResource {
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

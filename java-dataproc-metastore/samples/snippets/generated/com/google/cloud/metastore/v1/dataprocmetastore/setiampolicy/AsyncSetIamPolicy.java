@@ -18,8 +18,8 @@ package com.google.cloud.metastore.v1.samples;
 
 // [START metastore_v1_generated_DataprocMetastore_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.metastore.v1.BackupName;
 import com.google.cloud.metastore.v1.DataprocMetastoreClient;
+import com.google.cloud.metastore.v1.LocationName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,8 +39,7 @@ public class AsyncSetIamPolicy {
     try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

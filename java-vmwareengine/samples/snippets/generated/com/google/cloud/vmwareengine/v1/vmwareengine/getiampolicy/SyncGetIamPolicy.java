@@ -17,7 +17,7 @@
 package com.google.cloud.vmwareengine.v1.samples;
 
 // [START vmwareengine_v1_generated_VmwareEngine_GetIamPolicy_sync]
-import com.google.cloud.vmwareengine.v1.ClusterName;
+import com.google.cloud.vmwareengine.v1.LocationName;
 import com.google.cloud.vmwareengine.v1.VmwareEngineClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -38,9 +38,7 @@ public class SyncGetIamPolicy {
     try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = vmwareEngineClient.getIamPolicy(request);

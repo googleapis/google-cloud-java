@@ -18,8 +18,8 @@ package com.google.cloud.metastore.v1beta.samples;
 
 // [START metastore_v1beta_generated_DataprocMetastore_RemoveIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.metastore.v1beta.BackupName;
 import com.google.cloud.metastore.v1beta.DataprocMetastoreClient;
+import com.google.cloud.metastore.v1beta.LocationName;
 import com.google.cloud.metastore.v1beta.RemoveIamPolicyRequest;
 import com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse;
 
@@ -38,8 +38,7 @@ public class AsyncRemoveIamPolicy {
     try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
       RemoveIamPolicyRequest request =
           RemoveIamPolicyRequest.newBuilder()
-              .setResource(
-                  BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setAsynchronous(true)
               .build();
       ApiFuture<RemoveIamPolicyResponse> future =

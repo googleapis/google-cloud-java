@@ -877,7 +877,8 @@ public class DataCatalogClientHttpJsonTest {
 
     Entry entry =
         Entry.newBuilder()
-            .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setName(
+                "projects/project-8024/locations/location-8024/entryGroups/entryGroup-8024/entries/entrie-8024")
             .setLinkedResource("linkedResource-495606457")
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
@@ -919,7 +920,8 @@ public class DataCatalogClientHttpJsonTest {
     try {
       Entry entry =
           Entry.newBuilder()
-              .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setName(
+                  "projects/project-8024/locations/location-8024/entryGroups/entryGroup-8024/entries/entrie-8024")
               .setLinkedResource("linkedResource-495606457")
               .setFullyQualifiedName("fullyQualifiedName288467357")
               .setDisplayName("displayName1714148973")
@@ -960,7 +962,8 @@ public class DataCatalogClientHttpJsonTest {
 
     Entry entry =
         Entry.newBuilder()
-            .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setName(
+                "projects/project-8024/locations/location-8024/entryGroups/entryGroup-8024/entries/entrie-8024")
             .setLinkedResource("linkedResource-495606457")
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
@@ -1003,7 +1006,8 @@ public class DataCatalogClientHttpJsonTest {
     try {
       Entry entry =
           Entry.newBuilder()
-              .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setName(
+                  "projects/project-8024/locations/location-8024/entryGroups/entryGroup-8024/entries/entrie-8024")
               .setLinkedResource("linkedResource-495606457")
               .setFullyQualifiedName("fullyQualifiedName288467357")
               .setDisplayName("displayName1714148973")

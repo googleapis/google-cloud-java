@@ -19,7 +19,7 @@ package com.google.cloud.iam.admin.v1.samples;
 // [START iam_v1_generated_IAM_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iam.admin.v1.IAMClient;
-import com.google.iam.admin.v1.ServiceAccountName;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,7 +39,7 @@ public class AsyncSetIamPolicy {
     try (IAMClient iAMClient = IAMClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

@@ -18,7 +18,7 @@ package com.google.cloud.workstations.v1beta.samples;
 
 // [START workstations_v1beta_generated_Workstations_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.workstations.v1beta.WorkstationName;
+import com.google.cloud.workstations.v1beta.LocationName;
 import com.google.cloud.workstations.v1beta.WorkstationsClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,14 +39,7 @@ public class AsyncSetIamPolicy {
     try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

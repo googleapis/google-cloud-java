@@ -17,8 +17,8 @@
 package com.google.cloud.dataform.v1alpha2.samples;
 
 // [START dataform_v1alpha2_generated_Dataform_TestIamPermissions_sync]
+import com.google.cloud.dataform.v1alpha2.CompilationResultName;
 import com.google.cloud.dataform.v1alpha2.DataformClient;
-import com.google.cloud.dataform.v1alpha2.RepositoryName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -38,7 +38,10 @@ public class SyncTestIamPermissions {
     try (DataformClient dataformClient = DataformClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = dataformClient.testIamPermissions(request);

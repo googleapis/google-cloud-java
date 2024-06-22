@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.AssetServiceClient;
-import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.FeedName;
 import com.google.cloud.asset.v1.ProjectName;
 
 public class AsyncAnalyzeMove {
@@ -40,7 +40,7 @@ public class AsyncAnalyzeMove {
       AnalyzeMoveRequest request =
           AnalyzeMoveRequest.newBuilder()
               .setResource(ProjectName.of("[PROJECT]").toString())
-              .setDestinationParent(FolderName.of("[FOLDER]").toString())
+              .setDestinationParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
               .build();
       ApiFuture<AnalyzeMoveResponse> future =
           assetServiceClient.analyzeMoveCallable().futureCall(request);

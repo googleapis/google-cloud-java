@@ -838,7 +838,7 @@ public class ServiceManagerClientHttpJsonTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource("SetIamPolicyRequest1223629066".toString())
+            .setResource("services/service-1719")
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -871,7 +871,7 @@ public class ServiceManagerClientHttpJsonTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource("services/service-1719")
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -896,7 +896,7 @@ public class ServiceManagerClientHttpJsonTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource("GetIamPolicyRequest-1527610370".toString())
+            .setResource("services/service-1719")
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -928,7 +928,7 @@ public class ServiceManagerClientHttpJsonTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource("services/service-1719")
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -947,7 +947,7 @@ public class ServiceManagerClientHttpJsonTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource("TestIamPermissionsRequest942398222".toString())
+            .setResource("services/service-1719")
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -979,7 +979,7 @@ public class ServiceManagerClientHttpJsonTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource("services/service-1719")
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

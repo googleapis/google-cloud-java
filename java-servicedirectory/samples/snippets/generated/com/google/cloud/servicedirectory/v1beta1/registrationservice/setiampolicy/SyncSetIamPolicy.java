@@ -17,7 +17,7 @@
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
 // [START servicedirectory_v1beta1_generated_RegistrationService_SetIamPolicy_sync]
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
+import com.google.cloud.servicedirectory.v1beta1.LocationName;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,7 +38,7 @@ public class SyncSetIamPolicy {
     try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

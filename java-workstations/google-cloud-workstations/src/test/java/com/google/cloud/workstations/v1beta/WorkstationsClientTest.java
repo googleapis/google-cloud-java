@@ -2406,14 +2406,7 @@ public class WorkstationsClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                WorkstationName.of(
-                        "[PROJECT]",
-                        "[LOCATION]",
-                        "[WORKSTATION_CLUSTER]",
-                        "[WORKSTATION_CONFIG]",
-                        "[WORKSTATION]")
-                    .toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -2442,14 +2435,7 @@ public class WorkstationsClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -2473,14 +2459,7 @@ public class WorkstationsClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(
-                WorkstationName.of(
-                        "[PROJECT]",
-                        "[LOCATION]",
-                        "[WORKSTATION_CLUSTER]",
-                        "[WORKSTATION_CONFIG]",
-                        "[WORKSTATION]")
-                    .toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -2507,14 +2486,7 @@ public class WorkstationsClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -2532,14 +2504,7 @@ public class WorkstationsClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                WorkstationName.of(
-                        "[PROJECT]",
-                        "[LOCATION]",
-                        "[WORKSTATION_CLUSTER]",
-                        "[WORKSTATION_CONFIG]",
-                        "[WORKSTATION]")
-                    .toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -2566,14 +2531,7 @@ public class WorkstationsClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

@@ -17,7 +17,7 @@
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
 // [START servicedirectory_v1beta1_generated_RegistrationService_TestIamPermissions_sync]
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
+import com.google.cloud.servicedirectory.v1beta1.LocationName;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = registrationServiceClient.testIamPermissions(request);

@@ -495,8 +495,7 @@ public class ContentServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -525,8 +524,7 @@ public class ContentServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -545,8 +543,7 @@ public class ContentServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+            .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -573,8 +570,7 @@ public class ContentServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

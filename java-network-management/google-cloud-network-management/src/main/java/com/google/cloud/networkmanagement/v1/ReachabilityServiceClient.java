@@ -1374,7 +1374,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource("resource-341064690")
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1406,7 +1406,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource("resource-341064690")
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1437,7 +1437,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource("resource-341064690")
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = reachabilityServiceClient.getIamPolicy(request);
@@ -1467,7 +1467,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource("resource-341064690")
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1501,7 +1501,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource("resource-341064690")
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = reachabilityServiceClient.testIamPermissions(request);
@@ -1535,7 +1535,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource("resource-341064690")
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -724,9 +724,7 @@ public class EkmServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -755,9 +753,7 @@ public class EkmServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -781,9 +777,7 @@ public class EkmServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -810,9 +804,7 @@ public class EkmServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -830,9 +822,7 @@ public class EkmServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -859,9 +849,7 @@ public class EkmServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

@@ -18,7 +18,7 @@ package com.google.cloud.workstations.v1.samples;
 
 // [START workstations_v1_generated_Workstations_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.workstations.v1.WorkstationName;
+import com.google.cloud.workstations.v1.LocationName;
 import com.google.cloud.workstations.v1.WorkstationsClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -39,14 +39,7 @@ public class AsyncTestIamPermissions {
     try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

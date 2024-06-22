@@ -19,7 +19,7 @@ package com.google.cloud.iot.v1.samples;
 // [START cloudiot_v1_generated_DeviceManager_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.DeviceManagerClient;
-import com.google.cloud.iot.v1.RegistryName;
+import com.google.cloud.iot.v1.DeviceName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,8 @@ public class AsyncTestIamPermissions {
     try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]").toString())
+              .setResource(
+                  DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

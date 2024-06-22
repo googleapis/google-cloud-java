@@ -17,8 +17,8 @@
 package com.google.cloud.datacatalog.v1beta1.samples;
 
 // [START datacatalog_v1beta1_generated_PolicyTagManager_GetIamPolicy_sync]
+import com.google.cloud.datacatalog.v1beta1.EntryName;
 import com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient;
-import com.google.cloud.datacatalog.v1beta1.PolicyTagName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,8 +39,7 @@ public class SyncGetIamPolicy {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-                      .toString())
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = policyTagManagerClient.getIamPolicy(request);

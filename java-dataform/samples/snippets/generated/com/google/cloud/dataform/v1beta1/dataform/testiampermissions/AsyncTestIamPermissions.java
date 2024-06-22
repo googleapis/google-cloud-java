@@ -18,8 +18,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 
 // [START dataform_v1beta1_generated_Dataform_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.dataform.v1beta1.CompilationResultName;
 import com.google.cloud.dataform.v1beta1.DataformClient;
-import com.google.cloud.dataform.v1beta1.RepositoryName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,10 @@ public class AsyncTestIamPermissions {
     try (DataformClient dataformClient = DataformClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

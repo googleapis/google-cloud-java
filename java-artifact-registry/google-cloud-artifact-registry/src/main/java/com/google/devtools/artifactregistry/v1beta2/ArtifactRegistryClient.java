@@ -2890,7 +2890,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2920,7 +2920,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2949,7 +2949,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = artifactRegistryClient.getIamPolicy(request);
@@ -2978,7 +2978,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = artifactRegistryClient.getIamPolicyCallable().futureCall(request);
@@ -3006,7 +3006,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = artifactRegistryClient.testIamPermissions(request);
@@ -3035,7 +3035,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

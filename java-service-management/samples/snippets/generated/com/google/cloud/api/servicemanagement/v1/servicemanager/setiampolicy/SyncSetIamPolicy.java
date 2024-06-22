@@ -37,7 +37,7 @@ public class SyncSetIamPolicy {
     try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource("resource-341064690")
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

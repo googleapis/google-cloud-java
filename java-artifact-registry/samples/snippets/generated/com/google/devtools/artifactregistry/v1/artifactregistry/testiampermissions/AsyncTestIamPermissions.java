@@ -19,7 +19,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 // [START artifactregistry_v1_generated_ArtifactRegistry_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
-import com.google.devtools.artifactregistry.v1.RepositoryName;
+import com.google.devtools.artifactregistry.v1.DockerImageName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,9 @@ public class AsyncTestIamPermissions {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]")
+                      .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

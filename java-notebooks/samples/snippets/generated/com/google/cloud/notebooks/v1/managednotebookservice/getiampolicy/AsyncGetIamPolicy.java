@@ -18,8 +18,8 @@ package com.google.cloud.notebooks.v1.samples;
 
 // [START notebooks_v1_generated_ManagedNotebookService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.notebooks.v1.LocationName;
 import com.google.cloud.notebooks.v1.ManagedNotebookServiceClient;
-import com.google.cloud.notebooks.v1.RuntimeName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -40,7 +40,7 @@ public class AsyncGetIamPolicy {
         ManagedNotebookServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

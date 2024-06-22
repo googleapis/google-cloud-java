@@ -1841,7 +1841,7 @@ public class IAMClientTest {
     mockIAM.addResponse(expectedResponse);
 
     GetRoleRequest request =
-        GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+        GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
 
     Role actualResponse = client.getRole(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1864,7 +1864,7 @@ public class IAMClientTest {
 
     try {
       GetRoleRequest request =
-          GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+          GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
       client.getRole(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1942,7 +1942,7 @@ public class IAMClientTest {
 
     UpdateRoleRequest request =
         UpdateRoleRequest.newBuilder()
-            .setName("UpdateRoleRequest230834320".toString())
+            .setName(ProjectName.of("[PROJECT]").toString())
             .setRole(Role.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1971,7 +1971,7 @@ public class IAMClientTest {
     try {
       UpdateRoleRequest request =
           UpdateRoleRequest.newBuilder()
-              .setName("UpdateRoleRequest230834320".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setRole(Role.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1997,7 +1997,7 @@ public class IAMClientTest {
 
     DeleteRoleRequest request =
         DeleteRoleRequest.newBuilder()
-            .setName("DeleteRoleRequest1468559982".toString())
+            .setName(ProjectName.of("[PROJECT]").toString())
             .setEtag(ByteString.EMPTY)
             .build();
 
@@ -2024,7 +2024,7 @@ public class IAMClientTest {
     try {
       DeleteRoleRequest request =
           DeleteRoleRequest.newBuilder()
-              .setName("DeleteRoleRequest1468559982".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setEtag(ByteString.EMPTY)
               .build();
       client.deleteRole(request);
@@ -2049,7 +2049,7 @@ public class IAMClientTest {
 
     UndeleteRoleRequest request =
         UndeleteRoleRequest.newBuilder()
-            .setName("UndeleteRoleRequest755355893".toString())
+            .setName(ProjectName.of("[PROJECT]").toString())
             .setEtag(ByteString.EMPTY)
             .build();
 
@@ -2076,7 +2076,7 @@ public class IAMClientTest {
     try {
       UndeleteRoleRequest request =
           UndeleteRoleRequest.newBuilder()
-              .setName("UndeleteRoleRequest755355893".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setEtag(ByteString.EMPTY)
               .build();
       client.undeleteRole(request);

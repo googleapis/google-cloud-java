@@ -765,7 +765,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
    *       ProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
@@ -799,7 +799,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
    *       ProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
@@ -903,7 +903,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
@@ -942,7 +942,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
@@ -982,7 +982,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())

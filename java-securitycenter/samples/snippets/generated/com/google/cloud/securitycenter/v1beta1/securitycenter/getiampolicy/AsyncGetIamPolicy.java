@@ -18,8 +18,8 @@ package com.google.cloud.securitycenter.v1beta1.samples;
 
 // [START securitycenter_v1beta1_generated_SecurityCenter_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.securitycenter.v1beta1.OrganizationName;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
-import com.google.cloud.securitycenter.v1beta1.SourceName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+              .setResource(OrganizationName.of("[ORGANIZATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);

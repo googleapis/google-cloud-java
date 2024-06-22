@@ -6801,8 +6801,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -6834,8 +6833,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -6865,8 +6863,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = networkServicesClient.getIamPolicy(request);
@@ -6896,8 +6893,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = networkServicesClient.getIamPolicyCallable().futureCall(request);
@@ -6930,8 +6926,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = networkServicesClient.testIamPermissions(request);
@@ -6965,8 +6960,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

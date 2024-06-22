@@ -82,7 +82,7 @@ public class SystemPolicyV1Beta1ClientTest {
   public void getSystemPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())
@@ -128,7 +128,7 @@ public class SystemPolicyV1Beta1ClientTest {
   public void getSystemPolicyTest2() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())

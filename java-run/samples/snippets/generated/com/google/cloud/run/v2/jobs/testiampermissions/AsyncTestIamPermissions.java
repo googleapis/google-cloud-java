@@ -18,8 +18,8 @@ package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Jobs_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.run.v2.JobName;
 import com.google.cloud.run.v2.JobsClient;
+import com.google.cloud.run.v2.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (JobsClient jobsClient = JobsClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

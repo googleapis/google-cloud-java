@@ -17,8 +17,8 @@
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
 // [START securitycenter_v1p1beta1_generated_SecurityCenter_SetIamPolicy_sync]
+import com.google.cloud.securitycenter.v1p1beta1.FolderName;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
-import com.google.cloud.securitycenter.v1p1beta1.SourceName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -38,8 +38,7 @@ public class SyncSetIamPolicy {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

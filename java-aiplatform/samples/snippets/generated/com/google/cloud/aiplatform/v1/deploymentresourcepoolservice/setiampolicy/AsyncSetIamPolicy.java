@@ -18,8 +18,8 @@ package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_DeploymentResourcePoolService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1.AnnotationSpecName;
 import com.google.cloud.aiplatform.v1.DeploymentResourcePoolServiceClient;
-import com.google.cloud.aiplatform.v1.EndpointName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -41,8 +41,7 @@ public class AsyncSetIamPolicy {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())

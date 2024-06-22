@@ -18,8 +18,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 
 // [START dataform_v1beta1_generated_Dataform_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.dataform.v1beta1.CompilationResultName;
 import com.google.cloud.dataform.v1beta1.DataformClient;
-import com.google.cloud.dataform.v1beta1.RepositoryName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,7 +39,10 @@ public class AsyncSetIamPolicy {
     try (DataformClient dataformClient = DataformClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

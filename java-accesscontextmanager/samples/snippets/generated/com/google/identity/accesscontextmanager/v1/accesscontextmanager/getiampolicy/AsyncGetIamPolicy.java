@@ -22,7 +22,7 @@ import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.identity.accesscontextmanager.v1.AccessContextManagerClient;
-import com.google.identity.accesscontextmanager.v1.AccessPolicyName;
+import com.google.identity.accesscontextmanager.v1.AccessLevelName;
 
 public class AsyncGetIamPolicy {
 
@@ -40,7 +40,7 @@ public class AsyncGetIamPolicy {
         AccessContextManagerClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+              .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

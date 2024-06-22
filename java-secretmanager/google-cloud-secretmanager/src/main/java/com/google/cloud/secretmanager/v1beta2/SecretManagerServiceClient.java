@@ -2339,7 +2339,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2374,7 +2374,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2406,7 +2406,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = secretManagerServiceClient.getIamPolicy(request);
@@ -2437,7 +2437,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -2472,7 +2472,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = secretManagerServiceClient.testIamPermissions(request);
@@ -2507,7 +2507,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -2006,7 +2006,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2038,7 +2038,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2068,7 +2068,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = notebookServiceClient.getIamPolicy(request);
@@ -2098,7 +2098,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = notebookServiceClient.getIamPolicyCallable().futureCall(request);
@@ -2131,7 +2131,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = notebookServiceClient.testIamPermissions(request);
@@ -2165,7 +2165,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

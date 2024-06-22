@@ -17,7 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Projects_GetIamPolicy_sync]
-import com.google.cloud.resourcemanager.v3.ProjectName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -38,7 +38,7 @@ public class SyncGetIamPolicy {
     try (ProjectsClient projectsClient = ProjectsClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(ProjectName.of("[PROJECT]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = projectsClient.getIamPolicy(request);

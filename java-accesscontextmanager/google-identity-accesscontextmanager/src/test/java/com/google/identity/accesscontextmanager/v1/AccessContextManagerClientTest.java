@@ -1934,7 +1934,7 @@ public class AccessContextManagerClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+            .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1963,7 +1963,7 @@ public class AccessContextManagerClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+              .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1987,7 +1987,7 @@ public class AccessContextManagerClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+            .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -2014,7 +2014,7 @@ public class AccessContextManagerClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+              .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);

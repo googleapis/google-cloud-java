@@ -17,7 +17,7 @@
 package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_GetIamPolicyRepo_sync]
-import com.google.cloud.securesourcemanager.v1.RepositoryName;
+import com.google.cloud.securesourcemanager.v1.LocationName;
 import com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -38,7 +38,7 @@ public class SyncGetIamPolicyRepo {
     try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = secureSourceManagerClient.getIamPolicyRepo(request);

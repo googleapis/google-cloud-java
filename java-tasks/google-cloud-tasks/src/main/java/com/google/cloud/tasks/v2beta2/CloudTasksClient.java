@@ -1929,7 +1929,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = cloudTasksClient.getIamPolicy(request);
@@ -1970,7 +1970,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = cloudTasksClient.getIamPolicyCallable().futureCall(request);
@@ -2098,7 +2098,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2143,7 +2143,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2264,7 +2264,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(request);
@@ -2304,7 +2304,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -408,9 +408,7 @@ public class AutokeyAdminClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -439,9 +437,7 @@ public class AutokeyAdminClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -465,9 +461,7 @@ public class AutokeyAdminClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -494,9 +488,7 @@ public class AutokeyAdminClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -514,9 +506,7 @@ public class AutokeyAdminClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -543,9 +533,7 @@ public class AutokeyAdminClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

@@ -17,7 +17,7 @@
 package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Services_GetIamPolicy_sync]
-import com.google.cloud.run.v2.ServiceName;
+import com.google.cloud.run.v2.LocationName;
 import com.google.cloud.run.v2.ServicesClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -38,7 +38,7 @@ public class SyncGetIamPolicy {
     try (ServicesClient servicesClient = ServicesClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = servicesClient.getIamPolicy(request);

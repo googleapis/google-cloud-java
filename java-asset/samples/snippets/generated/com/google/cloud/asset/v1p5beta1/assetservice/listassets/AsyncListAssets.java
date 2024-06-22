@@ -40,7 +40,7 @@ public class AsyncListAssets {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
-              .setParent("ListAssetsRequest-221586066".toString())
+              .setParent("parent-995424086")
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))

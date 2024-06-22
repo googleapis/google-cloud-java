@@ -17,7 +17,7 @@
 package com.google.cloud.notebooks.v2.samples;
 
 // [START notebooks_v2_generated_NotebookService_TestIamPermissions_sync]
-import com.google.cloud.notebooks.v2.InstanceName;
+import com.google.cloud.notebooks.v2.LocationName;
 import com.google.cloud.notebooks.v2.NotebookServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = notebookServiceClient.testIamPermissions(request);

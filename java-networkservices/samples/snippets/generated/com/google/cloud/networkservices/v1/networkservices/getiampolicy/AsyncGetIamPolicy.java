@@ -18,7 +18,7 @@ package com.google.cloud.networkservices.v1.samples;
 
 // [START networkservices_v1_generated_NetworkServices_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networkservices.v1.EndpointPolicyName;
+import com.google.cloud.networkservices.v1.LocationName;
 import com.google.cloud.networkservices.v1.NetworkServicesClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,8 +39,7 @@ public class AsyncGetIamPolicy {
     try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = networkServicesClient.getIamPolicyCallable().futureCall(request);

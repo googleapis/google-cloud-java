@@ -4215,7 +4215,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4250,7 +4250,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4282,7 +4282,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = accessContextManagerClient.getIamPolicy(request);
@@ -4313,7 +4313,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     AccessContextManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =

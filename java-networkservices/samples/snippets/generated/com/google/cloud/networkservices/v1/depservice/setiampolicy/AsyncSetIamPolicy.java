@@ -19,7 +19,7 @@ package com.google.cloud.networkservices.v1.samples;
 // [START networkservices_v1_generated_DepService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.networkservices.v1.DepServiceClient;
-import com.google.cloud.networkservices.v1.EndpointPolicyName;
+import com.google.cloud.networkservices.v1.LocationName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,8 +39,7 @@ public class AsyncSetIamPolicy {
     try (DepServiceClient depServiceClient = DepServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

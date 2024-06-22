@@ -84,7 +84,7 @@ public class CaseServiceClientHttpJsonTest {
   public void getCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -140,7 +140,7 @@ public class CaseServiceClientHttpJsonTest {
   public void getCaseTest2() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -582,7 +582,7 @@ public class CaseServiceClientHttpJsonTest {
   public void updateCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -670,7 +670,7 @@ public class CaseServiceClientHttpJsonTest {
   public void escalateCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -734,7 +734,7 @@ public class CaseServiceClientHttpJsonTest {
   public void closeCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())

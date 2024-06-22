@@ -18,7 +18,7 @@ package com.google.cloud.metastore.v1.samples;
 
 // [START metastore_v1_generated_DataprocMetastore_TestIamPermissions_sync]
 import com.google.cloud.metastore.v1.DataprocMetastoreClient;
-import com.google.cloud.metastore.v1.FederationName;
+import com.google.cloud.metastore.v1.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(FederationName.of("[PROJECT]", "[LOCATION]", "[FEDERATION]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = dataprocMetastoreClient.testIamPermissions(request);

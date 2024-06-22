@@ -18,7 +18,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 
 // [START artifactregistry_v1_generated_ArtifactRegistry_GetIamPolicy_sync]
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
-import com.google.devtools.artifactregistry.v1.RepositoryName;
+import com.google.devtools.artifactregistry.v1.DockerImageName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -38,7 +38,9 @@ public class SyncGetIamPolicy {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]")
+                      .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = artifactRegistryClient.getIamPolicy(request);

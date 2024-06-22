@@ -747,8 +747,8 @@ public class FeatureRegistryServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.ofProjectLocationFeatureGroupFeatureName(
-                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE]")
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -803,8 +803,8 @@ public class FeatureRegistryServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.ofProjectLocationFeatureGroupFeatureName(
-                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE]")
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -989,8 +989,8 @@ public class FeatureRegistryServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.ofProjectLocationFeatureGroupFeatureName(
-                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE]")
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -1250,7 +1250,7 @@ public class FeatureRegistryServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1281,8 +1281,7 @@ public class FeatureRegistryServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1308,7 +1307,7 @@ public class FeatureRegistryServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1337,8 +1336,7 @@ public class FeatureRegistryServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1358,7 +1356,7 @@ public class FeatureRegistryServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1387,8 +1385,7 @@ public class FeatureRegistryServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

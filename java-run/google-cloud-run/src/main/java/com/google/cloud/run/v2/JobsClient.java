@@ -1222,7 +1222,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = jobsClient.getIamPolicy(request);
@@ -1252,7 +1252,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = jobsClient.getIamPolicyCallable().futureCall(request);
@@ -1280,7 +1280,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1310,7 +1310,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1341,7 +1341,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = jobsClient.testIamPermissions(request);
@@ -1372,7 +1372,7 @@ public class JobsClient implements BackgroundResource {
    * try (JobsClient jobsClient = JobsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

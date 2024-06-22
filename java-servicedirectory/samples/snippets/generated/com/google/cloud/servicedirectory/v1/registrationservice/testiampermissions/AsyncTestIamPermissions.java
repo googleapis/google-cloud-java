@@ -18,7 +18,7 @@ package com.google.cloud.servicedirectory.v1.samples;
 
 // [START servicedirectory_v1_generated_RegistrationService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.servicedirectory.v1.NamespaceName;
+import com.google.cloud.servicedirectory.v1.LocationName;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

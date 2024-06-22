@@ -17,7 +17,7 @@
 package com.google.cloud.workstations.v1.samples;
 
 // [START workstations_v1_generated_Workstations_SetIamPolicy_sync]
-import com.google.cloud.workstations.v1.WorkstationName;
+import com.google.cloud.workstations.v1.LocationName;
 import com.google.cloud.workstations.v1.WorkstationsClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,14 +38,7 @@ public class SyncSetIamPolicy {
     try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

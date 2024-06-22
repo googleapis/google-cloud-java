@@ -822,7 +822,7 @@ public class JobsClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -849,7 +849,7 @@ public class JobsClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -872,7 +872,7 @@ public class JobsClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -901,7 +901,7 @@ public class JobsClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -920,7 +920,7 @@ public class JobsClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -947,7 +947,7 @@ public class JobsClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

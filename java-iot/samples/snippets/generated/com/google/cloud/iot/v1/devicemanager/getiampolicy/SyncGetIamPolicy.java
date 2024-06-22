@@ -18,7 +18,7 @@ package com.google.cloud.iot.v1.samples;
 
 // [START cloudiot_v1_generated_DeviceManager_GetIamPolicy_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
-import com.google.cloud.iot.v1.RegistryName;
+import com.google.cloud.iot.v1.DeviceName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -38,7 +38,8 @@ public class SyncGetIamPolicy {
     try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]").toString())
+              .setResource(
+                  DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = deviceManagerClient.getIamPolicy(request);

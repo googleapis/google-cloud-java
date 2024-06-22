@@ -17,8 +17,8 @@
 package com.google.cloud.securitycenter.v1beta1.samples;
 
 // [START securitycenter_v1beta1_generated_SecurityCenter_TestIamPermissions_sync]
+import com.google.cloud.securitycenter.v1beta1.OrganizationName;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
-import com.google.cloud.securitycenter.v1beta1.SourceName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+              .setResource(OrganizationName.of("[ORGANIZATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
