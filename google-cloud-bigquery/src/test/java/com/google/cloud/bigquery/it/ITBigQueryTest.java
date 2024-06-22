@@ -586,6 +586,8 @@ public class ITBigQueryTest {
       RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
   private static final String LOAD_FILE = "load.csv";
   private static final String LOAD_FILE_LARGE = "load_large.csv";
+
+  private static final String LOAD_FILE_FLEXIBLE_COLUMN_NAME = "load_flexible_column_name.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String JSON_LOAD_FILE_BQ_RESULTSET = "load_bq_resultset.json";
   private static final String JSON_LOAD_FILE_SIMPLE = "load_simple.json";
@@ -601,6 +603,7 @@ public class ITBigQueryTest {
   private static final TableId TABLE_ID_FASTQUERY_BQ_RESULTSET =
       TableId.of(DATASET, "fastquery_testing_bq_resultset");
   private static final String CSV_CONTENT = "StringValue1\nStringValue2\n";
+  private static final String CSV_CONTENT_FLEXIBLE_COLUMN = "name,&ampersand\nrow_name,1";
 
   private static final String JSON_CONTENT =
       "{"
@@ -1019,6 +1022,11 @@ public class ITBigQueryTest {
     storage.create(
         BlobInfo.newBuilder(BUCKET, LOAD_FILE).setContentType("text/plain").build(),
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));
+    storage.create(
+        BlobInfo.newBuilder(BUCKET, LOAD_FILE_FLEXIBLE_COLUMN_NAME)
+            .setContentType("text/plain")
+            .build(),
+        CSV_CONTENT_FLEXIBLE_COLUMN.getBytes(StandardCharsets.UTF_8));
     storage.create(
         BlobInfo.newBuilder(BUCKET, JSON_LOAD_FILE).setContentType("application/json").build(),
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
@@ -6933,5 +6941,61 @@ public class ITBigQueryTest {
     assertNotNull(queryStatistics.getExportDataStats());
     assertEquals(1L, queryStatistics.getExportDataStats().getFileCount().longValue());
     assertEquals(3L, queryStatistics.getExportDataStats().getRowCount().longValue());
+  }
+
+  @Test
+  public void testLoadConfigurationFlexibleColumnName() throws InterruptedException {
+    // See https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#columnnamecharactermap for
+    // mapping.
+
+    // Test v1 mapping.
+    String v1TableName = "flexible_column_name_data_testing_table_v1";
+    TableId v1TableId = TableId.of(DATASET, v1TableName);
+    try {
+      LoadJobConfiguration loadJobConfigurationV1 =
+          LoadJobConfiguration.newBuilder(
+                  v1TableId,
+                  "gs://" + BUCKET + "/" + LOAD_FILE_FLEXIBLE_COLUMN_NAME,
+                  FormatOptions.csv())
+              .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+              .setAutodetect(true)
+              .setColumnNameCharacterMap("V1")
+              .build();
+      Job jobV1 = bigquery.create(JobInfo.of(loadJobConfigurationV1));
+      jobV1 = jobV1.waitFor();
+      assertNull(jobV1.getStatus().getError());
+
+      Table remoteTableV1 = bigquery.getTable(DATASET, v1TableName);
+      assertNotNull(remoteTableV1);
+      assertEquals(
+          "_ampersand", remoteTableV1.getDefinition().getSchema().getFields().get(1).getName());
+    } finally {
+      bigquery.delete(v1TableId);
+    }
+
+    // Test v2 mapping.
+    String v2TableName = "flexible_column_name_data_testing_table_v2";
+    TableId v2TableId = TableId.of(DATASET, v2TableName);
+    try {
+      LoadJobConfiguration loadJobConfigurationV2 =
+          LoadJobConfiguration.newBuilder(
+                  v2TableId,
+                  "gs://" + BUCKET + "/" + LOAD_FILE_FLEXIBLE_COLUMN_NAME,
+                  FormatOptions.csv())
+              .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+              .setAutodetect(true)
+              .setColumnNameCharacterMap("V2")
+              .build();
+      Job jobV2 = bigquery.create(JobInfo.of(loadJobConfigurationV2));
+      jobV2 = jobV2.waitFor();
+      assertNull(jobV2.getStatus().getError());
+
+      Table remoteTableV2 = bigquery.getTable(DATASET, v2TableName);
+      assertNotNull(remoteTableV2);
+      assertEquals(
+          "&ampersand", remoteTableV2.getDefinition().getSchema().getFields().get(1).getName());
+    } finally {
+      bigquery.delete(v2TableId);
+    }
   }
 }
