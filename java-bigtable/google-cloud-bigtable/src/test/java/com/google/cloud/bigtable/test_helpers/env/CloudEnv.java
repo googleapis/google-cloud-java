@@ -134,8 +134,9 @@ class CloudEnv extends AbstractTestEnv {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
     }
 
-    setupRemoteAddrInterceptor(dataSettings.stubSettings());
+    configureConnection(dataSettings.stubSettings());
     configureUserAgent(dataSettings.stubSettings());
+
     if (tracingCookie != null) {
       injectTracingCookie(tracingCookie, dataSettings.stubSettings());
     }
@@ -164,21 +165,24 @@ class CloudEnv extends AbstractTestEnv {
                 .build());
   }
 
-  private void setupRemoteAddrInterceptor(StubSettings.Builder stubSettings) {
+  private void configureConnection(StubSettings.Builder stubSettings) {
     // Build an remote address restricting interceptor
     final ClientInterceptor interceptor;
+    boolean enableDirectPath = false;
 
     switch (getConnectionMode()) {
       case DEFAULT:
         // nothing special
         return;
       case REQUIRE_DIRECT_PATH:
+        enableDirectPath = true;
         interceptor =
             buildRemoteAddrInterceptor(
                 "DirectPath IPv4 or IPv6",
                 Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER));
         break;
       case REQUIRE_DIRECT_PATH_IPV4:
+        enableDirectPath = true;
         interceptor =
             buildRemoteAddrInterceptor("DirectPath IPv4", Predicates.or(DIRECT_PATH_IPV4_MATCHER));
         break;
@@ -200,6 +204,10 @@ class CloudEnv extends AbstractTestEnv {
     @SuppressWarnings("rawtypes")
     final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
         channelProvider.getChannelConfigurator();
+
+    if (enableDirectPath) {
+      channelProvider.setAttemptDirectPath(true).setAttemptDirectPathXds();
+    }
 
     @SuppressWarnings("rawtypes")
     final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> newConfigurator =
