@@ -1904,6 +1904,41 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testCreateAndListTable() {
+    String tableName = "test_create_and_list_table";
+    TableId tableId = TableId.of(DATASET, tableName);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    Clustering clustering =
+        Clustering.newBuilder().setFields(ImmutableList.of(STRING_FIELD_SCHEMA.getName())).build();
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+
+    Page<Table> tables = bigquery.listTables(DATASET);
+    boolean found = false;
+    Iterator<Table> tableIterator = tables.getValues().iterator();
+    // Find createdTable and validate the table definition.
+    while (tableIterator.hasNext() && !found) {
+      Table table = tableIterator.next();
+      if (table.getTableId().equals(createdTable.getTableId())) {
+        StandardTableDefinition definition = table.getDefinition();
+        assertThat(definition.getClustering()).isNotNull();
+        assertThat(definition.getTimePartitioning()).isNotNull();
+        found = true;
+      }
+    }
+    assertTrue(found);
+    assertTrue(createdTable.delete());
+  }
+
+  @Test
   public void testCreateAndGetTableWithBasicTableMetadataView() {
     String tableName = "test_create_and_get_table_with_basic_metadata_view";
     TableId tableId = TableId.of(DATASET, tableName);
