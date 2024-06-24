@@ -42,7 +42,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>2.39.4</version>
+  <version>2.39.5</version>
 </dependency>
 
 ```
@@ -50,7 +50,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.40.0')
+implementation platform('com.google.cloud:libraries-bom:26.41.0')
 
 implementation 'com.google.cloud:google-cloud-bigtable'
 ```
