@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/googleapis/java-shared-config/compare/v1.8.0...v1.8.1) (2024-06-24)
+
+
+### Dependencies
+
+* Update actions/checkout digest to 692973e ([#814](https://github.com/googleapis/java-shared-config/issues/814)) ([ebece6b](https://github.com/googleapis/java-shared-config/commit/ebece6b7df6208527450c12368fcc0c6ce07ac67))
+
 ## [1.8.0](https://github.com/googleapis/java-shared-config/compare/v1.7.7...v1.8.0) (2024-05-29)
 
 
