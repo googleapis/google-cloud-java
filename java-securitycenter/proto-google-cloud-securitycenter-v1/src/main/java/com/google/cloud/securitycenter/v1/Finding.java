@@ -69,6 +69,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     orgPolicies_ = java.util.Collections.emptyList();
     logEntries_ = java.util.Collections.emptyList();
     loadBalancers_ = java.util.Collections.emptyList();
+    groupMemberships_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -814,6 +815,19 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTURE_VIOLATION = 6;</code>
      */
     POSTURE_VIOLATION(6),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * </pre>
+     *
+     * <code>TOXIC_COMBINATION = 7;</code>
+     */
+    TOXIC_COMBINATION(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -890,6 +904,19 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTURE_VIOLATION = 6;</code>
      */
     public static final int POSTURE_VIOLATION_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * </pre>
+     *
+     * <code>TOXIC_COMBINATION = 7;</code>
+     */
+    public static final int TOXIC_COMBINATION_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -929,6 +956,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return SCC_ERROR;
         case 6:
           return POSTURE_VIOLATION;
+        case 7:
+          return TOXIC_COMBINATION;
         default:
           return null;
       }
@@ -3848,6 +3877,152 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : notebook_;
   }
 
+  public static final int TOXIC_COMBINATION_FIELD_NUMBER = 64;
+  private com.google.cloud.securitycenter.v1.ToxicCombination toxicCombination_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   *
+   * @return Whether the toxicCombination field is set.
+   */
+  @java.lang.Override
+  public boolean hasToxicCombination() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   *
+   * @return The toxicCombination.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ToxicCombination getToxicCombination() {
+    return toxicCombination_ == null
+        ? com.google.cloud.securitycenter.v1.ToxicCombination.getDefaultInstance()
+        : toxicCombination_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder
+      getToxicCombinationOrBuilder() {
+    return toxicCombination_ == null
+        ? com.google.cloud.securitycenter.v1.ToxicCombination.getDefaultInstance()
+        : toxicCombination_;
+  }
+
+  public static final int GROUP_MEMBERSHIPS_FIELD_NUMBER = 65;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.GroupMembership> groupMemberships_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.GroupMembership>
+      getGroupMembershipsList() {
+    return groupMemberships_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>
+      getGroupMembershipsOrBuilderList() {
+    return groupMemberships_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  @java.lang.Override
+  public int getGroupMembershipsCount() {
+    return groupMemberships_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.GroupMembership getGroupMemberships(int index) {
+    return groupMemberships_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder getGroupMembershipsOrBuilder(
+      int index) {
+    return groupMemberships_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3999,6 +4174,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(63, getNotebook());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(64, getToxicCombination());
+    }
+    for (int i = 0; i < groupMemberships_.size(); i++) {
+      output.writeMessage(65, groupMemberships_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -4177,6 +4358,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(63, getNotebook());
     }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(64, getToxicCombination());
+    }
+    for (int i = 0; i < groupMemberships_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(65, groupMemberships_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4296,6 +4484,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasNotebook()) {
       if (!getNotebook().equals(other.getNotebook())) return false;
     }
+    if (hasToxicCombination() != other.hasToxicCombination()) return false;
+    if (hasToxicCombination()) {
+      if (!getToxicCombination().equals(other.getToxicCombination())) return false;
+    }
+    if (!getGroupMembershipsList().equals(other.getGroupMembershipsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4460,6 +4653,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasNotebook()) {
       hash = (37 * hash) + NOTEBOOK_FIELD_NUMBER;
       hash = (53 * hash) + getNotebook().hashCode();
+    }
+    if (hasToxicCombination()) {
+      hash = (37 * hash) + TOXIC_COMBINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getToxicCombination().hashCode();
+    }
+    if (getGroupMembershipsCount() > 0) {
+      hash = (37 * hash) + GROUP_MEMBERSHIPS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupMembershipsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4665,6 +4866,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getLoadBalancersFieldBuilder();
         getCloudArmorFieldBuilder();
         getNotebookFieldBuilder();
+        getToxicCombinationFieldBuilder();
+        getGroupMembershipsFieldBuilder();
       }
     }
 
@@ -4849,6 +5052,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         notebookBuilder_.dispose();
         notebookBuilder_ = null;
       }
+      toxicCombination_ = null;
+      if (toxicCombinationBuilder_ != null) {
+        toxicCombinationBuilder_.dispose();
+        toxicCombinationBuilder_ = null;
+      }
+      if (groupMembershipsBuilder_ == null) {
+        groupMemberships_ = java.util.Collections.emptyList();
+      } else {
+        groupMemberships_ = null;
+        groupMembershipsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00008000);
       return this;
     }
 
@@ -4968,6 +5183,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.loadBalancers_ = loadBalancers_;
       } else {
         result.loadBalancers_ = loadBalancersBuilder_.build();
+      }
+      if (groupMembershipsBuilder_ == null) {
+        if (((bitField1_ & 0x00008000) != 0)) {
+          groupMemberships_ = java.util.Collections.unmodifiableList(groupMemberships_);
+          bitField1_ = (bitField1_ & ~0x00008000);
+        }
+        result.groupMemberships_ = groupMemberships_;
+      } else {
+        result.groupMemberships_ = groupMembershipsBuilder_.build();
       }
     }
 
@@ -5128,6 +5352,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00002000) != 0)) {
         result.notebook_ = notebookBuilder_ == null ? notebook_ : notebookBuilder_.build();
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.toxicCombination_ =
+            toxicCombinationBuilder_ == null ? toxicCombination_ : toxicCombinationBuilder_.build();
+        to_bitField0_ |= 0x00080000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5550,6 +5779,36 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasNotebook()) {
         mergeNotebook(other.getNotebook());
       }
+      if (other.hasToxicCombination()) {
+        mergeToxicCombination(other.getToxicCombination());
+      }
+      if (groupMembershipsBuilder_ == null) {
+        if (!other.groupMemberships_.isEmpty()) {
+          if (groupMemberships_.isEmpty()) {
+            groupMemberships_ = other.groupMemberships_;
+            bitField1_ = (bitField1_ & ~0x00008000);
+          } else {
+            ensureGroupMembershipsIsMutable();
+            groupMemberships_.addAll(other.groupMemberships_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.groupMemberships_.isEmpty()) {
+          if (groupMembershipsBuilder_.isEmpty()) {
+            groupMembershipsBuilder_.dispose();
+            groupMembershipsBuilder_ = null;
+            groupMemberships_ = other.groupMemberships_;
+            bitField1_ = (bitField1_ & ~0x00008000);
+            groupMembershipsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGroupMembershipsFieldBuilder()
+                    : null;
+          } else {
+            groupMembershipsBuilder_.addAllMessages(other.groupMemberships_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5942,6 +6201,27 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00002000;
                 break;
               } // case 506
+            case 514:
+              {
+                input.readMessage(
+                    getToxicCombinationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00004000;
+                break;
+              } // case 514
+            case 522:
+              {
+                com.google.cloud.securitycenter.v1.GroupMembership m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.GroupMembership.parser(),
+                        extensionRegistry);
+                if (groupMembershipsBuilder_ == null) {
+                  ensureGroupMembershipsIsMutable();
+                  groupMemberships_.add(m);
+                } else {
+                  groupMembershipsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 522
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15492,6 +15772,630 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         notebook_ = null;
       }
       return notebookBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.ToxicCombination toxicCombination_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.ToxicCombination,
+            com.google.cloud.securitycenter.v1.ToxicCombination.Builder,
+            com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder>
+        toxicCombinationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     *
+     * @return Whether the toxicCombination field is set.
+     */
+    public boolean hasToxicCombination() {
+      return ((bitField1_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     *
+     * @return The toxicCombination.
+     */
+    public com.google.cloud.securitycenter.v1.ToxicCombination getToxicCombination() {
+      if (toxicCombinationBuilder_ == null) {
+        return toxicCombination_ == null
+            ? com.google.cloud.securitycenter.v1.ToxicCombination.getDefaultInstance()
+            : toxicCombination_;
+      } else {
+        return toxicCombinationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public Builder setToxicCombination(com.google.cloud.securitycenter.v1.ToxicCombination value) {
+      if (toxicCombinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toxicCombination_ = value;
+      } else {
+        toxicCombinationBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public Builder setToxicCombination(
+        com.google.cloud.securitycenter.v1.ToxicCombination.Builder builderForValue) {
+      if (toxicCombinationBuilder_ == null) {
+        toxicCombination_ = builderForValue.build();
+      } else {
+        toxicCombinationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public Builder mergeToxicCombination(
+        com.google.cloud.securitycenter.v1.ToxicCombination value) {
+      if (toxicCombinationBuilder_ == null) {
+        if (((bitField1_ & 0x00004000) != 0)
+            && toxicCombination_ != null
+            && toxicCombination_
+                != com.google.cloud.securitycenter.v1.ToxicCombination.getDefaultInstance()) {
+          getToxicCombinationBuilder().mergeFrom(value);
+        } else {
+          toxicCombination_ = value;
+        }
+      } else {
+        toxicCombinationBuilder_.mergeFrom(value);
+      }
+      if (toxicCombination_ != null) {
+        bitField1_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public Builder clearToxicCombination() {
+      bitField1_ = (bitField1_ & ~0x00004000);
+      toxicCombination_ = null;
+      if (toxicCombinationBuilder_ != null) {
+        toxicCombinationBuilder_.dispose();
+        toxicCombinationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ToxicCombination.Builder
+        getToxicCombinationBuilder() {
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return getToxicCombinationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder
+        getToxicCombinationOrBuilder() {
+      if (toxicCombinationBuilder_ != null) {
+        return toxicCombinationBuilder_.getMessageOrBuilder();
+      } else {
+        return toxicCombination_ == null
+            ? com.google.cloud.securitycenter.v1.ToxicCombination.getDefaultInstance()
+            : toxicCombination_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about a group of security issues that, when the issues
+     * occur together, represent a greater risk than when the issues occur
+     * independently. A group of such issues is referred to as a toxic
+     * combination.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.ToxicCombination,
+            com.google.cloud.securitycenter.v1.ToxicCombination.Builder,
+            com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder>
+        getToxicCombinationFieldBuilder() {
+      if (toxicCombinationBuilder_ == null) {
+        toxicCombinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.ToxicCombination,
+                com.google.cloud.securitycenter.v1.ToxicCombination.Builder,
+                com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder>(
+                getToxicCombination(), getParentForChildren(), isClean());
+        toxicCombination_ = null;
+      }
+      return toxicCombinationBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.GroupMembership> groupMemberships_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGroupMembershipsIsMutable() {
+      if (!((bitField1_ & 0x00008000) != 0)) {
+        groupMemberships_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.GroupMembership>(
+                groupMemberships_);
+        bitField1_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.GroupMembership,
+            com.google.cloud.securitycenter.v1.GroupMembership.Builder,
+            com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>
+        groupMembershipsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.GroupMembership>
+        getGroupMembershipsList() {
+      if (groupMembershipsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(groupMemberships_);
+      } else {
+        return groupMembershipsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public int getGroupMembershipsCount() {
+      if (groupMembershipsBuilder_ == null) {
+        return groupMemberships_.size();
+      } else {
+        return groupMembershipsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public com.google.cloud.securitycenter.v1.GroupMembership getGroupMemberships(int index) {
+      if (groupMembershipsBuilder_ == null) {
+        return groupMemberships_.get(index);
+      } else {
+        return groupMembershipsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder setGroupMemberships(
+        int index, com.google.cloud.securitycenter.v1.GroupMembership value) {
+      if (groupMembershipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.set(index, value);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder setGroupMemberships(
+        int index, com.google.cloud.securitycenter.v1.GroupMembership.Builder builderForValue) {
+      if (groupMembershipsBuilder_ == null) {
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder addGroupMemberships(com.google.cloud.securitycenter.v1.GroupMembership value) {
+      if (groupMembershipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.add(value);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder addGroupMemberships(
+        int index, com.google.cloud.securitycenter.v1.GroupMembership value) {
+      if (groupMembershipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.add(index, value);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder addGroupMemberships(
+        com.google.cloud.securitycenter.v1.GroupMembership.Builder builderForValue) {
+      if (groupMembershipsBuilder_ == null) {
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.add(builderForValue.build());
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder addGroupMemberships(
+        int index, com.google.cloud.securitycenter.v1.GroupMembership.Builder builderForValue) {
+      if (groupMembershipsBuilder_ == null) {
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder addAllGroupMemberships(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.GroupMembership> values) {
+      if (groupMembershipsBuilder_ == null) {
+        ensureGroupMembershipsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupMemberships_);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder clearGroupMemberships() {
+      if (groupMembershipsBuilder_ == null) {
+        groupMemberships_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00008000);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public Builder removeGroupMemberships(int index) {
+      if (groupMembershipsBuilder_ == null) {
+        ensureGroupMembershipsIsMutable();
+        groupMemberships_.remove(index);
+        onChanged();
+      } else {
+        groupMembershipsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public com.google.cloud.securitycenter.v1.GroupMembership.Builder getGroupMembershipsBuilder(
+        int index) {
+      return getGroupMembershipsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder getGroupMembershipsOrBuilder(
+        int index) {
+      if (groupMembershipsBuilder_ == null) {
+        return groupMemberships_.get(index);
+      } else {
+        return groupMembershipsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>
+        getGroupMembershipsOrBuilderList() {
+      if (groupMembershipsBuilder_ != null) {
+        return groupMembershipsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(groupMemberships_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public com.google.cloud.securitycenter.v1.GroupMembership.Builder addGroupMembershipsBuilder() {
+      return getGroupMembershipsFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.GroupMembership.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public com.google.cloud.securitycenter.v1.GroupMembership.Builder addGroupMembershipsBuilder(
+        int index) {
+      return getGroupMembershipsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.securitycenter.v1.GroupMembership.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains details about groups of which this finding is a member. A group is
+     * a collection of findings that are related in some way.
+     * This field cannot be updated. Its value is ignored in all update requests.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.GroupMembership.Builder>
+        getGroupMembershipsBuilderList() {
+      return getGroupMembershipsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.GroupMembership,
+            com.google.cloud.securitycenter.v1.GroupMembership.Builder,
+            com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>
+        getGroupMembershipsFieldBuilder() {
+      if (groupMembershipsBuilder_ == null) {
+        groupMembershipsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.GroupMembership,
+                com.google.cloud.securitycenter.v1.GroupMembership.Builder,
+                com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>(
+                groupMemberships_,
+                ((bitField1_ & 0x00008000) != 0),
+                getParentForChildren(),
+                isClean());
+        groupMemberships_ = null;
+      }
+      return groupMembershipsBuilder_;
     }
 
     @java.lang.Override

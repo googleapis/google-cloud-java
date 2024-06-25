@@ -109,6 +109,10 @@ public final class SharedProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_GkeNodePoolConfig_GkeNodePoolAutoscalingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_AutotuningConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_AutotuningConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataproc_v1_RepositoryConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_RepositoryConfig_fieldAccessorTable;
@@ -129,114 +133,121 @@ public final class SharedProto {
           + "\030google.cloud.dataproc.v1\032\037google/api/fi"
           + "eld_behavior.proto\032\031google/api/resource."
           + "proto\032\036google/protobuf/duration.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\"\224\002\n\rRunti"
+          + "oogle/protobuf/timestamp.proto\"\365\002\n\rRunti"
           + "meConfig\022\024\n\007version\030\001 \001(\tB\003\340A\001\022\034\n\017contai"
           + "ner_image\030\002 \001(\tB\003\340A\001\022P\n\nproperties\030\003 \003(\013"
           + "27.google.cloud.dataproc.v1.RuntimeConfi"
           + "g.PropertiesEntryB\003\340A\001\022J\n\021repository_con"
           + "fig\030\005 \001(\0132*.google.cloud.dataproc.v1.Rep"
-          + "ositoryConfigB\003\340A\001\0321\n\017PropertiesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\253\001\n\021Enviro"
-          + "nmentConfig\022H\n\020execution_config\030\001 \001(\0132)."
-          + "google.cloud.dataproc.v1.ExecutionConfig"
-          + "B\003\340A\001\022L\n\022peripherals_config\030\002 \001(\0132+.goog"
-          + "le.cloud.dataproc.v1.PeripheralsConfigB\003"
-          + "\340A\001\"\242\002\n\017ExecutionConfig\022\034\n\017service_accou"
-          + "nt\030\002 \001(\tB\003\340A\001\022\032\n\013network_uri\030\004 \001(\tB\003\340A\001H"
-          + "\000\022\035\n\016subnetwork_uri\030\005 \001(\tB\003\340A\001H\000\022\031\n\014netw"
-          + "ork_tags\030\006 \003(\tB\003\340A\001\022\024\n\007kms_key\030\007 \001(\tB\003\340A"
-          + "\001\0220\n\010idle_ttl\030\010 \001(\0132\031.google.protobuf.Du"
-          + "rationB\003\340A\001\022+\n\003ttl\030\t \001(\0132\031.google.protob"
-          + "uf.DurationB\003\340A\001\022\033\n\016staging_bucket\030\n \001(\t"
-          + "B\003\340A\001B\t\n\007network\"9\n\030SparkHistoryServerCo"
-          + "nfig\022\035\n\020dataproc_cluster\030\001 \001(\tB\003\340A\001\"\266\001\n\021"
-          + "PeripheralsConfig\022C\n\021metastore_service\030\001"
-          + " \001(\tB(\340A\001\372A\"\n metastore.googleapis.com/S"
-          + "ervice\022\\\n\033spark_history_server_config\030\002 "
-          + "\001(\01322.google.cloud.dataproc.v1.SparkHist"
-          + "oryServerConfigB\003\340A\001\"\327\002\n\013RuntimeInfo\022L\n\t"
-          + "endpoints\030\001 \003(\01324.google.cloud.dataproc."
-          + "v1.RuntimeInfo.EndpointsEntryB\003\340A\003\022\027\n\nou"
-          + "tput_uri\030\002 \001(\tB\003\340A\003\022\"\n\025diagnostic_output"
-          + "_uri\030\003 \001(\tB\003\340A\003\022F\n\021approximate_usage\030\006 \001"
-          + "(\0132&.google.cloud.dataproc.v1.UsageMetri"
-          + "csB\003\340A\003\022C\n\rcurrent_usage\030\007 \001(\0132\'.google."
-          + "cloud.dataproc.v1.UsageSnapshotB\003\340A\003\0320\n\016"
-          + "EndpointsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"\236\001\n\014UsageMetrics\022\036\n\021milli_dcu_sec"
-          + "onds\030\001 \001(\003B\003\340A\001\022\'\n\032shuffle_storage_gb_se"
-          + "conds\030\002 \001(\003B\003\340A\001\022&\n\031milli_accelerator_se"
-          + "conds\030\003 \001(\003B\003\340A\001\022\035\n\020accelerator_type\030\004 \001"
-          + "(\tB\003\340A\001\"\210\002\n\rUsageSnapshot\022\026\n\tmilli_dcu\030\001"
-          + " \001(\003B\003\340A\001\022\037\n\022shuffle_storage_gb\030\002 \001(\003B\003\340"
-          + "A\001\022\036\n\021milli_dcu_premium\030\004 \001(\003B\003\340A\001\022\'\n\032sh"
-          + "uffle_storage_gb_premium\030\005 \001(\003B\003\340A\001\022\036\n\021m"
-          + "illi_accelerator\030\006 \001(\003B\003\340A\001\022\035\n\020accelerat"
-          + "or_type\030\007 \001(\tB\003\340A\001\0226\n\rsnapshot_time\030\003 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\001\"\244\001\n\020G"
-          + "keClusterConfig\022D\n\022gke_cluster_target\030\002 "
-          + "\001(\tB(\340A\001\372A\"\n container.googleapis.com/Cl"
-          + "uster\022J\n\020node_pool_target\030\003 \003(\0132+.google"
-          + ".cloud.dataproc.v1.GkeNodePoolTargetB\003\340A"
-          + "\001\"\362\001\n\027KubernetesClusterConfig\022!\n\024kuberne"
-          + "tes_namespace\030\001 \001(\tB\003\340A\001\022M\n\022gke_cluster_"
-          + "config\030\002 \001(\0132*.google.cloud.dataproc.v1."
-          + "GkeClusterConfigB\003\340A\002H\000\022[\n\032kubernetes_so"
-          + "ftware_config\030\003 \001(\01322.google.cloud.datap"
-          + "roc.v1.KubernetesSoftwareConfigB\003\340A\001B\010\n\006"
-          + "config\"\303\002\n\030KubernetesSoftwareConfig\022c\n\021c"
-          + "omponent_version\030\001 \003(\0132H.google.cloud.da"
-          + "taproc.v1.KubernetesSoftwareConfig.Compo"
-          + "nentVersionEntry\022V\n\nproperties\030\002 \003(\0132B.g"
+          + "ositoryConfigB\003\340A\001\022J\n\021autotuning_config\030"
+          + "\006 \001(\0132*.google.cloud.dataproc.v1.Autotun"
+          + "ingConfigB\003\340A\001\022\023\n\006cohort\030\007 \001(\tB\003\340A\001\0321\n\017P"
+          + "ropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\"\253\001\n\021EnvironmentConfig\022H\n\020executio"
+          + "n_config\030\001 \001(\0132).google.cloud.dataproc.v"
+          + "1.ExecutionConfigB\003\340A\001\022L\n\022peripherals_co"
+          + "nfig\030\002 \001(\0132+.google.cloud.dataproc.v1.Pe"
+          + "ripheralsConfigB\003\340A\001\"\242\002\n\017ExecutionConfig"
+          + "\022\034\n\017service_account\030\002 \001(\tB\003\340A\001\022\032\n\013networ"
+          + "k_uri\030\004 \001(\tB\003\340A\001H\000\022\035\n\016subnetwork_uri\030\005 \001"
+          + "(\tB\003\340A\001H\000\022\031\n\014network_tags\030\006 \003(\tB\003\340A\001\022\024\n\007"
+          + "kms_key\030\007 \001(\tB\003\340A\001\0220\n\010idle_ttl\030\010 \001(\0132\031.g"
+          + "oogle.protobuf.DurationB\003\340A\001\022+\n\003ttl\030\t \001("
+          + "\0132\031.google.protobuf.DurationB\003\340A\001\022\033\n\016sta"
+          + "ging_bucket\030\n \001(\tB\003\340A\001B\t\n\007network\"9\n\030Spa"
+          + "rkHistoryServerConfig\022\035\n\020dataproc_cluste"
+          + "r\030\001 \001(\tB\003\340A\001\"\266\001\n\021PeripheralsConfig\022C\n\021me"
+          + "tastore_service\030\001 \001(\tB(\340A\001\372A\"\n metastore"
+          + ".googleapis.com/Service\022\\\n\033spark_history"
+          + "_server_config\030\002 \001(\01322.google.cloud.data"
+          + "proc.v1.SparkHistoryServerConfigB\003\340A\001\"\327\002"
+          + "\n\013RuntimeInfo\022L\n\tendpoints\030\001 \003(\01324.googl"
+          + "e.cloud.dataproc.v1.RuntimeInfo.Endpoint"
+          + "sEntryB\003\340A\003\022\027\n\noutput_uri\030\002 \001(\tB\003\340A\003\022\"\n\025"
+          + "diagnostic_output_uri\030\003 \001(\tB\003\340A\003\022F\n\021appr"
+          + "oximate_usage\030\006 \001(\0132&.google.cloud.datap"
+          + "roc.v1.UsageMetricsB\003\340A\003\022C\n\rcurrent_usag"
+          + "e\030\007 \001(\0132\'.google.cloud.dataproc.v1.Usage"
+          + "SnapshotB\003\340A\003\0320\n\016EndpointsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\236\001\n\014UsageMetrics"
+          + "\022\036\n\021milli_dcu_seconds\030\001 \001(\003B\003\340A\001\022\'\n\032shuf"
+          + "fle_storage_gb_seconds\030\002 \001(\003B\003\340A\001\022&\n\031mil"
+          + "li_accelerator_seconds\030\003 \001(\003B\003\340A\001\022\035\n\020acc"
+          + "elerator_type\030\004 \001(\tB\003\340A\001\"\210\002\n\rUsageSnapsh"
+          + "ot\022\026\n\tmilli_dcu\030\001 \001(\003B\003\340A\001\022\037\n\022shuffle_st"
+          + "orage_gb\030\002 \001(\003B\003\340A\001\022\036\n\021milli_dcu_premium"
+          + "\030\004 \001(\003B\003\340A\001\022\'\n\032shuffle_storage_gb_premiu"
+          + "m\030\005 \001(\003B\003\340A\001\022\036\n\021milli_accelerator\030\006 \001(\003B"
+          + "\003\340A\001\022\035\n\020accelerator_type\030\007 \001(\tB\003\340A\001\0226\n\rs"
+          + "napshot_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\001\"\244\001\n\020GkeClusterConfig\022D\n\022gke_"
+          + "cluster_target\030\002 \001(\tB(\340A\001\372A\"\n container."
+          + "googleapis.com/Cluster\022J\n\020node_pool_targ"
+          + "et\030\003 \003(\0132+.google.cloud.dataproc.v1.GkeN"
+          + "odePoolTargetB\003\340A\001\"\362\001\n\027KubernetesCluster"
+          + "Config\022!\n\024kubernetes_namespace\030\001 \001(\tB\003\340A"
+          + "\001\022M\n\022gke_cluster_config\030\002 \001(\0132*.google.c"
+          + "loud.dataproc.v1.GkeClusterConfigB\003\340A\002H\000"
+          + "\022[\n\032kubernetes_software_config\030\003 \001(\01322.g"
           + "oogle.cloud.dataproc.v1.KubernetesSoftwa"
-          + "reConfig.PropertiesEntry\0327\n\025ComponentVer"
-          + "sionEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001\0321\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001\"\236\002\n\021GkeNodePoolTarget\022\026\n\tno"
-          + "de_pool\030\001 \001(\tB\003\340A\002\022D\n\005roles\030\002 \003(\01620.goog"
-          + "le.cloud.dataproc.v1.GkeNodePoolTarget.R"
-          + "oleB\003\340A\002\022J\n\020node_pool_config\030\003 \001(\0132+.goo"
-          + "gle.cloud.dataproc.v1.GkeNodePoolConfigB"
-          + "\003\340A\004\"_\n\004Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022\013\n\007DE"
-          + "FAULT\020\001\022\016\n\nCONTROLLER\020\002\022\020\n\014SPARK_DRIVER\020"
-          + "\003\022\022\n\016SPARK_EXECUTOR\020\004\"\274\005\n\021GkeNodePoolCon"
-          + "fig\022N\n\006config\030\002 \001(\01329.google.cloud.datap"
-          + "roc.v1.GkeNodePoolConfig.GkeNodeConfigB\003"
-          + "\340A\001\022\026\n\tlocations\030\r \003(\tB\003\340A\001\022b\n\013autoscali"
-          + "ng\030\004 \001(\0132H.google.cloud.dataproc.v1.GkeN"
-          + "odePoolConfig.GkeNodePoolAutoscalingConf"
-          + "igB\003\340A\001\032\231\002\n\rGkeNodeConfig\022\031\n\014machine_typ"
-          + "e\030\001 \001(\tB\003\340A\001\022\034\n\017local_ssd_count\030\007 \001(\005B\003\340"
-          + "A\001\022\030\n\013preemptible\030\n \001(\010B\003\340A\001\022c\n\014accelera"
-          + "tors\030\013 \003(\0132H.google.cloud.dataproc.v1.Gk"
-          + "eNodePoolConfig.GkeNodePoolAcceleratorCo"
-          + "nfigB\003\340A\001\022\035\n\020min_cpu_platform\030\r \001(\tB\003\340A\001"
-          + "\022\036\n\021boot_disk_kms_key\030\027 \001(\tB\003\340A\001\022\021\n\004spot"
-          + "\030  \001(\010B\003\340A\001\032o\n\034GkeNodePoolAcceleratorCon"
-          + "fig\022\031\n\021accelerator_count\030\001 \001(\003\022\030\n\020accele"
-          + "rator_type\030\002 \001(\t\022\032\n\022gpu_partition_size\030\003"
-          + " \001(\t\032N\n\034GkeNodePoolAutoscalingConfig\022\026\n\016"
-          + "min_node_count\030\002 \001(\005\022\026\n\016max_node_count\030\003"
-          + " \001(\005\"g\n\020RepositoryConfig\022S\n\026pypi_reposit"
-          + "ory_config\030\001 \001(\0132..google.cloud.dataproc"
-          + ".v1.PyPiRepositoryConfigB\003\340A\001\"4\n\024PyPiRep"
-          + "ositoryConfig\022\034\n\017pypi_repository\030\001 \001(\tB\003"
-          + "\340A\001*\324\001\n\tComponent\022\031\n\025COMPONENT_UNSPECIFI"
-          + "ED\020\000\022\014\n\010ANACONDA\020\005\022\n\n\006DOCKER\020\r\022\t\n\005DRUID\020"
-          + "\t\022\t\n\005FLINK\020\016\022\t\n\005HBASE\020\013\022\020\n\014HIVE_WEBHCAT\020"
-          + "\003\022\010\n\004HUDI\020\022\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022\t\n\005"
-          + "TRINO\020\021\022\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPPELI"
-          + "N\020\004\022\r\n\tZOOKEEPER\020\010*J\n\rFailureAction\022\036\n\032F"
-          + "AILURE_ACTION_UNSPECIFIED\020\000\022\r\n\tNO_ACTION"
-          + "\020\001\022\n\n\006DELETE\020\002B\254\002\n\034com.google.cloud.data"
-          + "proc.v1B\013SharedProtoP\001Z;cloud.google.com"
-          + "/go/dataproc/v2/apiv1/dataprocpb;datapro"
-          + "cpb\352A^\n container.googleapis.com/Cluster"
-          + "\022:projects/{project}/locations/{location"
-          + "}/clusters/{cluster}\352A^\n metastore.googl"
-          + "eapis.com/Service\022:projects/{project}/lo"
-          + "cations/{location}/services/{service}b\006p"
-          + "roto3"
+          + "reConfigB\003\340A\001B\010\n\006config\"\303\002\n\030KubernetesSo"
+          + "ftwareConfig\022c\n\021component_version\030\001 \003(\0132"
+          + "H.google.cloud.dataproc.v1.KubernetesSof"
+          + "twareConfig.ComponentVersionEntry\022V\n\npro"
+          + "perties\030\002 \003(\0132B.google.cloud.dataproc.v1"
+          + ".KubernetesSoftwareConfig.PropertiesEntr"
+          + "y\0327\n\025ComponentVersionEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017PropertiesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\236\002\n\021GkeNod"
+          + "ePoolTarget\022\026\n\tnode_pool\030\001 \001(\tB\003\340A\002\022D\n\005r"
+          + "oles\030\002 \003(\01620.google.cloud.dataproc.v1.Gk"
+          + "eNodePoolTarget.RoleB\003\340A\002\022J\n\020node_pool_c"
+          + "onfig\030\003 \001(\0132+.google.cloud.dataproc.v1.G"
+          + "keNodePoolConfigB\003\340A\004\"_\n\004Role\022\024\n\020ROLE_UN"
+          + "SPECIFIED\020\000\022\013\n\007DEFAULT\020\001\022\016\n\nCONTROLLER\020\002"
+          + "\022\020\n\014SPARK_DRIVER\020\003\022\022\n\016SPARK_EXECUTOR\020\004\"\274"
+          + "\005\n\021GkeNodePoolConfig\022N\n\006config\030\002 \001(\01329.g"
+          + "oogle.cloud.dataproc.v1.GkeNodePoolConfi"
+          + "g.GkeNodeConfigB\003\340A\001\022\026\n\tlocations\030\r \003(\tB"
+          + "\003\340A\001\022b\n\013autoscaling\030\004 \001(\0132H.google.cloud"
+          + ".dataproc.v1.GkeNodePoolConfig.GkeNodePo"
+          + "olAutoscalingConfigB\003\340A\001\032\231\002\n\rGkeNodeConf"
+          + "ig\022\031\n\014machine_type\030\001 \001(\tB\003\340A\001\022\034\n\017local_s"
+          + "sd_count\030\007 \001(\005B\003\340A\001\022\030\n\013preemptible\030\n \001(\010"
+          + "B\003\340A\001\022c\n\014accelerators\030\013 \003(\0132H.google.clo"
+          + "ud.dataproc.v1.GkeNodePoolConfig.GkeNode"
+          + "PoolAcceleratorConfigB\003\340A\001\022\035\n\020min_cpu_pl"
+          + "atform\030\r \001(\tB\003\340A\001\022\036\n\021boot_disk_kms_key\030\027"
+          + " \001(\tB\003\340A\001\022\021\n\004spot\030  \001(\010B\003\340A\001\032o\n\034GkeNodeP"
+          + "oolAcceleratorConfig\022\031\n\021accelerator_coun"
+          + "t\030\001 \001(\003\022\030\n\020accelerator_type\030\002 \001(\t\022\032\n\022gpu"
+          + "_partition_size\030\003 \001(\t\032N\n\034GkeNodePoolAuto"
+          + "scalingConfig\022\026\n\016min_node_count\030\002 \001(\005\022\026\n"
+          + "\016max_node_count\030\003 \001(\005\"\267\001\n\020AutotuningConf"
+          + "ig\022K\n\tscenarios\030\002 \003(\01623.google.cloud.dat"
+          + "aproc.v1.AutotuningConfig.ScenarioB\003\340A\001\""
+          + "V\n\010Scenario\022\030\n\024SCENARIO_UNSPECIFIED\020\000\022\013\n"
+          + "\007SCALING\020\002\022\027\n\023BROADCAST_HASH_JOIN\020\003\022\n\n\006M"
+          + "EMORY\020\004\"g\n\020RepositoryConfig\022S\n\026pypi_repo"
+          + "sitory_config\030\001 \001(\0132..google.cloud.datap"
+          + "roc.v1.PyPiRepositoryConfigB\003\340A\001\"4\n\024PyPi"
+          + "RepositoryConfig\022\034\n\017pypi_repository\030\001 \001("
+          + "\tB\003\340A\001*\324\001\n\tComponent\022\031\n\025COMPONENT_UNSPEC"
+          + "IFIED\020\000\022\014\n\010ANACONDA\020\005\022\n\n\006DOCKER\020\r\022\t\n\005DRU"
+          + "ID\020\t\022\t\n\005FLINK\020\016\022\t\n\005HBASE\020\013\022\020\n\014HIVE_WEBHC"
+          + "AT\020\003\022\010\n\004HUDI\020\022\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022"
+          + "\t\n\005TRINO\020\021\022\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPP"
+          + "ELIN\020\004\022\r\n\tZOOKEEPER\020\010*J\n\rFailureAction\022\036"
+          + "\n\032FAILURE_ACTION_UNSPECIFIED\020\000\022\r\n\tNO_ACT"
+          + "ION\020\001\022\n\n\006DELETE\020\002B\254\002\n\034com.google.cloud.d"
+          + "ataproc.v1B\013SharedProtoP\001Z;cloud.google."
+          + "com/go/dataproc/v2/apiv1/dataprocpb;data"
+          + "procpb\352A^\n container.googleapis.com/Clus"
+          + "ter\022:projects/{project}/locations/{locat"
+          + "ion}/clusters/{cluster}\352A^\n metastore.go"
+          + "ogleapis.com/Service\022:projects/{project}"
+          + "/locations/{location}/services/{service}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -253,7 +264,12 @@ public final class SharedProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor,
             new java.lang.String[] {
-              "Version", "ContainerImage", "Properties", "RepositoryConfig",
+              "Version",
+              "ContainerImage",
+              "Properties",
+              "RepositoryConfig",
+              "AutotuningConfig",
+              "Cohort",
             });
     internal_static_google_cloud_dataproc_v1_RuntimeConfig_PropertiesEntry_descriptor =
         internal_static_google_cloud_dataproc_v1_RuntimeConfig_descriptor.getNestedTypes().get(0);
@@ -440,8 +456,16 @@ public final class SharedProto {
             new java.lang.String[] {
               "MinNodeCount", "MaxNodeCount",
             });
-    internal_static_google_cloud_dataproc_v1_RepositoryConfig_descriptor =
+    internal_static_google_cloud_dataproc_v1_AutotuningConfig_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dataproc_v1_AutotuningConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_AutotuningConfig_descriptor,
+            new java.lang.String[] {
+              "Scenarios",
+            });
+    internal_static_google_cloud_dataproc_v1_RepositoryConfig_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dataproc_v1_RepositoryConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_RepositoryConfig_descriptor,
@@ -449,7 +473,7 @@ public final class SharedProto {
               "PypiRepositoryConfig",
             });
     internal_static_google_cloud_dataproc_v1_PyPiRepositoryConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_dataproc_v1_PyPiRepositoryConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_PyPiRepositoryConfig_descriptor,

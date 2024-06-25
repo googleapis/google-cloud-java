@@ -464,6 +464,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -556,6 +558,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3935,6 +3939,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4029,6 +4035,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4121,6 +4129,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4213,6 +4223,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4626,6 +4638,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4676,6 +4690,8 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -4751,6 +4767,8 @@ public class SecurityCenterClientHttpJsonTest {
               .addAllLoadBalancers(new ArrayList<LoadBalancer>())
               .setCloudArmor(CloudArmor.newBuilder().build())
               .setNotebook(Notebook.newBuilder().build())
+              .setToxicCombination(ToxicCombination.newBuilder().build())
+              .addAllGroupMemberships(new ArrayList<GroupMembership>())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");
