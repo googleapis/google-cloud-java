@@ -50,20 +50,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.40.0')
+implementation platform('com.google.cloud:libraries-bom:26.42.0')
 
 implementation 'com.google.cloud:google-cloud-datastore'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datastore:2.20.0'
+implementation 'com.google.cloud:google-cloud-datastore:2.20.1'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.20.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.20.1"
 ```
 <!-- {x-version-update-end} -->
 
@@ -210,6 +210,102 @@ running on Compute Engine or from your own desktop. To run the example on App En
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
 
+gRPC Java Datastore Client User Guide
+-------
+In this feature launch, the [Java Datastore client](https://github.com/googleapis/java-datastore) now offers gRPC as a transport layer option with experimental support. Using [gRPC connection pooling](https://grpc.io/docs/guides/performance/) enables distributing RPCs over multiple connections which may improve performance.
+
+#### Download Instructions
+Instructions:
+1. Clone the grpc-experimental branch from GitHub:
+```python
+git clone -b grpc-experimental https://github.com/googleapis/java-datastore.git
+```
+2. Run the following commands to build the library:
+```python
+# Go to the directory the code was downloaded to
+cd java-datastore/
+
+# Build the library
+mvn clean install -DskipTests=true
+```
+3. Add the following dependency to your project:
+```xml
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-datastore</artifactId>
+  <version>2.20.0-grpc-experimental-1-SNAPSHOT</version>
+</dependency>
+```
+
+#### How to Use
+To opt-in to the gRPC transport behavior, simply add the below line of code (`setTransportOptions`) to your Datastore client instantiation.
+
+Example:
+```java
+DatastoreOptions datastoreOptions =
+     DatastoreOptions.newBuilder()
+             .setProjectId("my-project")
+             .setDatabaseId("my-database")
+             .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+             .build();
+```
+Setting the transport options explicitly to `GrpcTransportOptions` will signal the client to use gRPC instead of HTTP when making calls to the server.
+
+To revert back to the existing stable behavior and transport, simply remove the transport options line or replace it with `HttpTransportOptions`. Please note this will require an application rebuild and restart.
+Example:
+```java
+// will default to existing HTTP transport behavior
+DatastoreOptions datastoreOptions = DatastoreOptions.newBuilder()
+    .setProjectId("my-project")
+    .setDatabaseId("my-database")
+    .build();
+
+// will also default to existing HTTP transport behavior
+DatastoreOptions datastoreOptions =
+            DatastoreOptions.newBuilder()
+              .setProjectId("my-project")
+              .setDatabaseId("my-database")
+              .setTransportOptions(HttpTransportOptions.newBuilder()
+              .setConnectTimeout(1000)
+              .build()).build();
+```
+
+Note: client instantiations that already use `setTransportOptions` with `HttpTransportOptions` will continue to have the same behavior. Only transports that are explicitly set to gRPC will change.
+
+#### Verify Datastore Transport Options Type
+To verify which type of TransportOptions you have successfully configured, you can use the below lines of code to compare transport options type:
+```java
+// checks if using gRPC transport options
+boolean isGRPC = datastore.getOptions().getTransportOptions() instanceof GrpcTransportOptions;
+
+// checks if using HTTP transport options
+boolean isHTTP = datastore.getOptions().getTransportOptions() instanceof HTTPTransportOptions;
+```
+
+#### New Features
+There are new gRPC specific features available to use in this update.
+
+##### Channel Pooling
+To customize the number of channels your client uses, you can update the channel provider in the DatastoreOptions. 
+See [ChannelPoolSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.grpc.ChannelPoolSettings) and [Performance Best Practices](https://grpc.io/docs/guides/performance/) for more information on channel pools and best practices for performance.
+
+Example:
+```java
+InstantiatingGrpcChannelProvider channelProvider =
+      DatastoreSettings.defaultGrpcTransportProviderBuilder()
+              .setChannelPoolSettings(
+                     ChannelPoolSettings.builder()
+                              .setInitialChannelCount(MIN_VAL)
+                              .setMaxChannelCount(MAX_VAL)
+                              .build())
+              .build();
+
+DatastoreOptions options = DatastoreOptions.newBuilder()
+                          .setProjectId("my-project")
+                          .setChannelProvider(channelProvider)
+                          .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+                          .build();
+```
 Testing
 -------
 
@@ -384,7 +480,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datastore/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datastore.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-datastore/2.20.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-datastore/2.20.1
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
