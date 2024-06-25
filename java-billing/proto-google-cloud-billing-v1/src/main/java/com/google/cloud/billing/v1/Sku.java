@@ -23,7 +23,7 @@ package com.google.cloud.billing.v1;
  *
  *
  * <pre>
- * Encapsulates a single SKU in Google Cloud Platform
+ * Encapsulates a single SKU in Google Cloud
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.v1.Sku}
@@ -77,7 +77,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name for the SKU.
-   * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+   * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -101,7 +101,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name for the SKU.
-   * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+   * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -130,7 +130,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The identifier for the SKU.
-   * Example: "AA95-CD31-42FE"
+   * Example: "D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string sku_id = 2;</code>
@@ -154,7 +154,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The identifier for the SKU.
-   * Example: "AA95-CD31-42FE"
+   * Example: "D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string sku_id = 2;</code>
@@ -766,7 +766,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates a single SKU in Google Cloud Platform
+   * Encapsulates a single SKU in Google Cloud
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.v1.Sku}
@@ -1125,7 +1125,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the SKU.
-     * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+     * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1148,7 +1148,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the SKU.
-     * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+     * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1171,7 +1171,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the SKU.
-     * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+     * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1193,7 +1193,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the SKU.
-     * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+     * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1211,7 +1211,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the SKU.
-     * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+     * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1236,7 +1236,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The identifier for the SKU.
-     * Example: "AA95-CD31-42FE"
+     * Example: "D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string sku_id = 2;</code>
@@ -1259,7 +1259,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The identifier for the SKU.
-     * Example: "AA95-CD31-42FE"
+     * Example: "D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string sku_id = 2;</code>
@@ -1282,7 +1282,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The identifier for the SKU.
-     * Example: "AA95-CD31-42FE"
+     * Example: "D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string sku_id = 2;</code>
@@ -1304,7 +1304,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The identifier for the SKU.
-     * Example: "AA95-CD31-42FE"
+     * Example: "D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string sku_id = 2;</code>
@@ -1322,7 +1322,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The identifier for the SKU.
-     * Example: "AA95-CD31-42FE"
+     * Example: "D041-B8A1-6E0B"
      * </pre>
      *
      * <code>string sku_id = 2;</code>

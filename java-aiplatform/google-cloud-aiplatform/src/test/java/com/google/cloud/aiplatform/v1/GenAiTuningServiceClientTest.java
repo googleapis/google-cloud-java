@@ -123,6 +123,7 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -178,6 +179,7 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -233,6 +235,7 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -285,6 +288,7 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 

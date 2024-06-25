@@ -77,7 +77,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the partner.
-   * Format: organizations/{organization}/locations/{location}/partner
+   * Format: `organizations/{organization}/locations/{location}/partner`
    * Example: "organizations/123456/locations/us-central1/partner"
    * </pre>
    *
@@ -102,7 +102,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the partner.
-   * Format: organizations/{organization}/locations/{location}/partner
+   * Format: `organizations/{organization}/locations/{location}/partner`
    * Example: "organizations/123456/locations/us-central1/partner"
    * </pre>
    *
@@ -1120,7 +1120,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the partner.
-     * Format: organizations/{organization}/locations/{location}/partner
+     * Format: `organizations/{organization}/locations/{location}/partner`
      * Example: "organizations/123456/locations/us-central1/partner"
      * </pre>
      *
@@ -1144,7 +1144,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the partner.
-     * Format: organizations/{organization}/locations/{location}/partner
+     * Format: `organizations/{organization}/locations/{location}/partner`
      * Example: "organizations/123456/locations/us-central1/partner"
      * </pre>
      *
@@ -1168,7 +1168,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the partner.
-     * Format: organizations/{organization}/locations/{location}/partner
+     * Format: `organizations/{organization}/locations/{location}/partner`
      * Example: "organizations/123456/locations/us-central1/partner"
      * </pre>
      *
@@ -1191,7 +1191,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the partner.
-     * Format: organizations/{organization}/locations/{location}/partner
+     * Format: `organizations/{organization}/locations/{location}/partner`
      * Example: "organizations/123456/locations/us-central1/partner"
      * </pre>
      *
@@ -1210,7 +1210,7 @@ public final class Partner extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the partner.
-     * Format: organizations/{organization}/locations/{location}/partner
+     * Format: `organizations/{organization}/locations/{location}/partner`
      * Example: "organizations/123456/locations/us-central1/partner"
      * </pre>
      *

@@ -73,7 +73,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Name of the resource to get in the format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Name of the resource to get in the format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
    * </pre>
    *
    * <code>
@@ -483,7 +483,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the resource to get in the format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
      * </pre>
      *
      * <code>
@@ -508,7 +508,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the resource to get in the format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
      * </pre>
      *
      * <code>
@@ -533,7 +533,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the resource to get in the format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
      * </pre>
      *
      * <code>
@@ -557,7 +557,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the resource to get in the format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
      * </pre>
      *
      * <code>
@@ -577,7 +577,7 @@ public final class GetPartnerPermissionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the resource to get in the format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
      * </pre>
      *
      * <code>

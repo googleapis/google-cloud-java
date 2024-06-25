@@ -4765,6 +4765,24 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PREFLIGHT_VALIDATIONS_FIELD_NUMBER = 26;
+  private boolean preflightValidations_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to do component level validations before job creation.
+   * </pre>
+   *
+   * <code>bool preflight_validations = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preflightValidations.
+   */
+  @java.lang.Override
+  public boolean getPreflightValidations() {
+    return preflightValidations_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4835,6 +4853,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, reservedIpRanges_.getRaw(i));
+    }
+    if (preflightValidations_ != false) {
+      output.writeBool(26, preflightValidations_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4915,6 +4936,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getReservedIpRangesList().size();
     }
+    if (preflightValidations_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, preflightValidations_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4980,6 +5004,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!getTemplateMetadata().equals(other.getTemplateMetadata())) return false;
     }
     if (!getScheduleName().equals(other.getScheduleName())) return false;
+    if (getPreflightValidations() != other.getPreflightValidations()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5053,6 +5078,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SCHEDULE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getScheduleName().hashCode();
+    hash = (37 * hash) + PREFLIGHT_VALIDATIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreflightValidations());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5291,6 +5318,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         templateMetadataBuilder_ = null;
       }
       scheduleName_ = "";
+      preflightValidations_ = false;
       return this;
     }
 
@@ -5400,6 +5428,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.scheduleName_ = scheduleName_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.preflightValidations_ = preflightValidations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5523,6 +5554,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         scheduleName_ = other.scheduleName_;
         bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.getPreflightValidations() != false) {
+        setPreflightValidations(other.getPreflightValidations());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5672,6 +5706,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                 reservedIpRanges_.add(s);
                 break;
               } // case 202
+            case 208:
+              {
+                preflightValidations_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8996,6 +9036,59 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       scheduleName_ = value;
       bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private boolean preflightValidations_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to do component level validations before job creation.
+     * </pre>
+     *
+     * <code>bool preflight_validations = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The preflightValidations.
+     */
+    @java.lang.Override
+    public boolean getPreflightValidations() {
+      return preflightValidations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to do component level validations before job creation.
+     * </pre>
+     *
+     * <code>bool preflight_validations = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The preflightValidations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreflightValidations(boolean value) {
+
+      preflightValidations_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to do component level validations before job creation.
+     * </pre>
+     *
+     * <code>bool preflight_validations = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreflightValidations() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      preflightValidations_ = false;
       onChanged();
       return this;
     }

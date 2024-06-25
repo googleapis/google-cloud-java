@@ -182,7 +182,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAccessApprovalRequests</td>
- *      <td><p> Lists access requests associated with a workload</td>
+ *      <td><p> Deprecated: Only returns access approval requests directly associated with an assured workload folder.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1171,7 +1171,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1195,7 +1196,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @param parent Required. Parent resource Format:
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(
       WorkloadName parent) {
     ListAccessApprovalRequestsRequest request =
@@ -1207,7 +1210,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1231,7 +1235,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @param parent Required. Parent resource Format:
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(String parent) {
     ListAccessApprovalRequestsRequest request =
         ListAccessApprovalRequestsRequest.newBuilder().setParent(parent).build();
@@ -1240,7 +1246,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1271,7 +1278,9 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(
       ListAccessApprovalRequestsRequest request) {
     return listAccessApprovalRequestsPagedCallable().call(request);
@@ -1279,7 +1288,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1311,7 +1321,10 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable() {
@@ -1320,7 +1333,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists access requests associated with a workload
+   * Deprecated: Only returns access approval requests directly associated with an assured workload
+   * folder.
    *
    * <p>Sample code:
    *
@@ -1357,7 +1371,10 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
       listAccessApprovalRequestsCallable() {
     return stub.listAccessApprovalRequestsCallable();

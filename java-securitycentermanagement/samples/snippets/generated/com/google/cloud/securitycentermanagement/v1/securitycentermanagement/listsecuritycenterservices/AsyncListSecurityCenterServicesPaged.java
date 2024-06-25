@@ -43,6 +43,7 @@ public class AsyncListSecurityCenterServicesPaged {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setShowEligibleModulesOnly(true)
               .build();
       while (true) {
         ListSecurityCenterServicesResponse response =

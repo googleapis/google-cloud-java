@@ -549,6 +549,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -636,6 +638,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3686,6 +3690,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3772,6 +3778,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3944,6 +3952,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4030,6 +4040,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4296,6 +4308,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

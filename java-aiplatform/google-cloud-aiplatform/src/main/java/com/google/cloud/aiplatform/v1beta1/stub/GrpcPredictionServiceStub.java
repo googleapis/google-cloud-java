@@ -47,6 +47,7 @@ import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -91,6 +92,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RawPredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<StreamRawPredictRequest, HttpBody>
+      streamRawPredictMethodDescriptor =
+          MethodDescriptor.<StreamRawPredictRequest, HttpBody>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamRawPredict")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamRawPredictRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<DirectPredictRequest, DirectPredictResponse>
       directPredictMethodDescriptor =
@@ -278,6 +290,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable;
+  private final ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable;
   private final UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable;
   private final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictCallable;
@@ -364,6 +377,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     GrpcCallSettings<RawPredictRequest, HttpBody> rawPredictTransportSettings =
         GrpcCallSettings.<RawPredictRequest, HttpBody>newBuilder()
             .setMethodDescriptor(rawPredictMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictTransportSettings =
+        GrpcCallSettings.<StreamRawPredictRequest, HttpBody>newBuilder()
+            .setMethodDescriptor(streamRawPredictMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -534,6 +557,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.rawPredictCallable =
         callableFactory.createUnaryCallable(
             rawPredictTransportSettings, settings.rawPredictSettings(), clientContext);
+    this.streamRawPredictCallable =
+        callableFactory.createServerStreamingCallable(
+            streamRawPredictTransportSettings, settings.streamRawPredictSettings(), clientContext);
     this.directPredictCallable =
         callableFactory.createUnaryCallable(
             directPredictTransportSettings, settings.directPredictSettings(), clientContext);
@@ -617,6 +643,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return rawPredictCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    return streamRawPredictCallable;
   }
 
   @Override

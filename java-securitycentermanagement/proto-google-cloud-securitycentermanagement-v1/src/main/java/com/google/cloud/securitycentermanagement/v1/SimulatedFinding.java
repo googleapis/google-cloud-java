@@ -613,6 +613,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>POSTURE_VIOLATION = 6;</code>
      */
     POSTURE_VIOLATION(6),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a combination of security issues that represent a more severe
+     * security problem when taken together.
+     * </pre>
+     *
+     * <code>TOXIC_COMBINATION = 7;</code>
+     */
+    TOXIC_COMBINATION(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -689,6 +700,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      * <code>POSTURE_VIOLATION = 6;</code>
      */
     public static final int POSTURE_VIOLATION_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a combination of security issues that represent a more severe
+     * security problem when taken together.
+     * </pre>
+     *
+     * <code>TOXIC_COMBINATION = 7;</code>
+     */
+    public static final int TOXIC_COMBINATION_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -728,6 +750,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
           return SCC_ERROR;
         case 6:
           return POSTURE_VIOLATION;
+        case 7:
+          return TOXIC_COMBINATION;
         default:
           return null;
       }

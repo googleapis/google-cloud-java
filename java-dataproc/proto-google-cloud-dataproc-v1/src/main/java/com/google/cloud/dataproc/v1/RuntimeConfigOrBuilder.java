@@ -184,4 +184,72 @@ public interface RuntimeConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.RepositoryConfigOrBuilder getRepositoryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autotuningConfig field is set.
+   */
+  boolean hasAutotuningConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autotuningConfig.
+   */
+  com.google.cloud.dataproc.v1.AutotuningConfig getAutotuningConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder getAutotuningConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cohort identifier. Identifies families of the workloads having
+   * the same shape, e.g. daily ETL jobs.
+   * </pre>
+   *
+   * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cohort.
+   */
+  java.lang.String getCohort();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cohort identifier. Identifies families of the workloads having
+   * the same shape, e.g. daily ETL jobs.
+   * </pre>
+   *
+   * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cohort.
+   */
+  com.google.protobuf.ByteString getCohortBytes();
 }

@@ -4471,7 +4471,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Date on which the item expires in Google Shopping, in [ISO
+   * Date on which the item expires, in [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
    * </pre>
    *
@@ -4487,7 +4487,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Date on which the item expires in Google Shopping, in [ISO
+   * Date on which the item expires, in [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
    * </pre>
    *
@@ -4505,7 +4505,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Date on which the item expires in Google Shopping, in [ISO
+   * Date on which the item expires, in [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
    * </pre>
    *
@@ -6289,7 +6289,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6304,7 +6304,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6325,7 +6325,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6348,7 +6348,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6368,7 +6368,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6396,7 +6396,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6416,7 +6416,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6431,7 +6431,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *
@@ -6450,7 +6450,7 @@ public final class CssProductStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Date on which the item expires in Google Shopping, in [ISO
+     * Date on which the item expires, in [ISO
      * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
      * </pre>
      *

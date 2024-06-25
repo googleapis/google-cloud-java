@@ -28,10 +28,12 @@ public interface GenerateDataQualityRulesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name should be either
-   * * the name of a datascan with at least one successful completed data
-   * profiling job, or
-   * * the name of a successful completed data profiling datascan job.
+   * Required. The name must be one of the following:
+   *
+   * * The name of a data scan with at least one successful, completed data
+   * profiling job
+   * * The name of a successful, completed data profiling job (a data scan job
+   * where the job type is data profiling)
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,10 +45,12 @@ public interface GenerateDataQualityRulesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name should be either
-   * * the name of a datascan with at least one successful completed data
-   * profiling job, or
-   * * the name of a successful completed data profiling datascan job.
+   * Required. The name must be one of the following:
+   *
+   * * The name of a data scan with at least one successful, completed data
+   * profiling job
+   * * The name of a successful, completed data profiling job (a data scan job
+   * where the job type is data profiling)
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

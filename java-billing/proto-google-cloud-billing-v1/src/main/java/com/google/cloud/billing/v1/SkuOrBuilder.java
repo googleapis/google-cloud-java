@@ -29,7 +29,7 @@ public interface SkuOrBuilder
    *
    * <pre>
    * The resource name for the SKU.
-   * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+   * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,7 +42,7 @@ public interface SkuOrBuilder
    *
    * <pre>
    * The resource name for the SKU.
-   * Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE"
+   * Example: "services/6F81-5844-456A/skus/D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -56,7 +56,7 @@ public interface SkuOrBuilder
    *
    * <pre>
    * The identifier for the SKU.
-   * Example: "AA95-CD31-42FE"
+   * Example: "D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string sku_id = 2;</code>
@@ -69,7 +69,7 @@ public interface SkuOrBuilder
    *
    * <pre>
    * The identifier for the SKU.
-   * Example: "AA95-CD31-42FE"
+   * Example: "D041-B8A1-6E0B"
    * </pre>
    *
    * <code>string sku_id = 2;</code>

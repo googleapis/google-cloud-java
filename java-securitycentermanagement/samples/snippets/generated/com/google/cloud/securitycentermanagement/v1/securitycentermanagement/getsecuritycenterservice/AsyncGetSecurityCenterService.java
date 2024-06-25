@@ -43,6 +43,7 @@ public class AsyncGetSecurityCenterService {
                   SecurityCenterServiceName.ofProjectLocationServiceName(
                           "[PROJECT]", "[LOCATION]", "[SERVICE]")
                       .toString())
+              .setShowEligibleModulesOnly(true)
               .build();
       ApiFuture<SecurityCenterService> future =
           securityCenterManagementClient.getSecurityCenterServiceCallable().futureCall(request);

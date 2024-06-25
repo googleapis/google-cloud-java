@@ -230,4 +230,120 @@ public interface GroundingMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GroundingAttributionOrBuilder
       getGroundingAttributionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk> getGroundingChunksList();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingChunk getGroundingChunks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  int getGroundingChunksCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
+      getGroundingChunksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of supporting references retrieved from specified grounding source.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder getGroundingChunksOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport> getGroundingSupportsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingSupport getGroundingSupports(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGroundingSupportsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
+      getGroundingSupportsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of grounding support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GroundingSupport grounding_supports = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder getGroundingSupportsOrBuilder(
+      int index);
 }

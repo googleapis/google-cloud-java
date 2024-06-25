@@ -50,8 +50,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: Service describing handlers for resources.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.

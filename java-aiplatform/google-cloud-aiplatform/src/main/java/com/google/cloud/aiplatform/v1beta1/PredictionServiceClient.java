@@ -125,6 +125,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StreamRawPredict</td>
+ *      <td><p> Perform a streaming online prediction with an arbitrary HTTP payload.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamRawPredictCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DirectPredict</td>
  *      <td><p> Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks.</td>
  *      <td>
@@ -811,6 +821,40 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     return stub.rawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction with an arbitrary HTTP payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamRawPredictRequest request =
+   *       StreamRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   ServerStream<HttpBody> stream =
+   *       predictionServiceClient.streamRawPredictCallable().call(request);
+   *   for (HttpBody response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamRawPredictRequest, HttpBody>
+      streamRawPredictCallable() {
+    return stub.streamRawPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

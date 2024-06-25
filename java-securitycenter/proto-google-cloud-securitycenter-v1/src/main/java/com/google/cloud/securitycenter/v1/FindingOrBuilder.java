@@ -1967,4 +1967,114 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
    */
   com.google.cloud.securitycenter.v1.NotebookOrBuilder getNotebookOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   *
+   * @return Whether the toxicCombination field is set.
+   */
+  boolean hasToxicCombination();
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   *
+   * @return The toxicCombination.
+   */
+  com.google.cloud.securitycenter.v1.ToxicCombination getToxicCombination();
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about a group of security issues that, when the issues
+   * occur together, represent a greater risk than when the issues occur
+   * independently. A group of such issues is referred to as a toxic
+   * combination.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ToxicCombination toxic_combination = 64;</code>
+   */
+  com.google.cloud.securitycenter.v1.ToxicCombinationOrBuilder getToxicCombinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.GroupMembership> getGroupMembershipsList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  com.google.cloud.securitycenter.v1.GroupMembership getGroupMemberships(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  int getGroupMembershipsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder>
+      getGroupMembershipsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains details about groups of which this finding is a member. A group is
+   * a collection of findings that are related in some way.
+   * This field cannot be updated. Its value is ignored in all update requests.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.GroupMembership group_memberships = 65;</code>
+   */
+  com.google.cloud.securitycenter.v1.GroupMembershipOrBuilder getGroupMembershipsOrBuilder(
+      int index);
 }

@@ -29,7 +29,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name for the service.
-   * Example: "services/DA34-426B-A397"
+   * Example: "services/6F81-5844-456A"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,7 +42,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name for the service.
-   * Example: "services/DA34-426B-A397"
+   * Example: "services/6F81-5844-456A"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -56,7 +56,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The identifier for the service.
-   * Example: "DA34-426B-A397"
+   * Example: "6F81-5844-456A"
    * </pre>
    *
    * <code>string service_id = 2;</code>
@@ -69,7 +69,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The identifier for the service.
-   * Example: "DA34-426B-A397"
+   * Example: "6F81-5844-456A"
    * </pre>
    *
    * <code>string service_id = 2;</code>

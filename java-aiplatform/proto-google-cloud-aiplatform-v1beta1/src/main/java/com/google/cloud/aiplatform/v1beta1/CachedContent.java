@@ -236,8 +236,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Identifier. The resource name of the cached content
-   * Format:
+   * Immutable. Identifier. The server-generated resource name of the cached
+   * content Format:
    * projects/{project}/locations/{location}/cachedContents/{cached_content}
    * </pre>
    *
@@ -263,8 +263,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Identifier. The resource name of the cached content
-   * Format:
+   * Immutable. Identifier. The server-generated resource name of the cached
+   * content Format:
    * projects/{project}/locations/{location}/cachedContents/{cached_content}
    * </pre>
    *
@@ -1922,8 +1922,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Identifier. The resource name of the cached content
-     * Format:
+     * Immutable. Identifier. The server-generated resource name of the cached
+     * content Format:
      * projects/{project}/locations/{location}/cachedContents/{cached_content}
      * </pre>
      *
@@ -1948,8 +1948,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Identifier. The resource name of the cached content
-     * Format:
+     * Immutable. Identifier. The server-generated resource name of the cached
+     * content Format:
      * projects/{project}/locations/{location}/cachedContents/{cached_content}
      * </pre>
      *
@@ -1974,8 +1974,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Identifier. The resource name of the cached content
-     * Format:
+     * Immutable. Identifier. The server-generated resource name of the cached
+     * content Format:
      * projects/{project}/locations/{location}/cachedContents/{cached_content}
      * </pre>
      *
@@ -1999,8 +1999,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Identifier. The resource name of the cached content
-     * Format:
+     * Immutable. Identifier. The server-generated resource name of the cached
+     * content Format:
      * projects/{project}/locations/{location}/cachedContents/{cached_content}
      * </pre>
      *
@@ -2020,8 +2020,8 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Identifier. The resource name of the cached content
-     * Format:
+     * Immutable. Identifier. The server-generated resource name of the cached
+     * content Format:
      * projects/{project}/locations/{location}/cachedContents/{cached_content}
      * </pre>
      *

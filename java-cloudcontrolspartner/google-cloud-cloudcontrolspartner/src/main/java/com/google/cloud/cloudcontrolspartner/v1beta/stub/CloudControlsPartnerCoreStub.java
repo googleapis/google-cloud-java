@@ -86,12 +86,14 @@ public abstract class CloudControlsPartnerCoreStub implements BackgroundResource
     throw new UnsupportedOperationException("Not implemented: getPartnerPermissionsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listAccessApprovalRequestsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
       listAccessApprovalRequestsCallable() {
     throw new UnsupportedOperationException(

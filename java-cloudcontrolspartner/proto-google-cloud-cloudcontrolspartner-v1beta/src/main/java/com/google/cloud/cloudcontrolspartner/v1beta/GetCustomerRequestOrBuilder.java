@@ -29,7 +29,7 @@ public interface GetCustomerRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetCustomerRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>

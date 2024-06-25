@@ -72,7 +72,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * </pre>
    *
    * <code>
@@ -473,7 +473,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
      * </pre>
      *
      * <code>
@@ -498,7 +498,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
      * </pre>
      *
      * <code>
@@ -523,7 +523,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
      * </pre>
      *
      * <code>
@@ -547,7 +547,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class GetViolationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
      * </pre>
      *
      * <code>

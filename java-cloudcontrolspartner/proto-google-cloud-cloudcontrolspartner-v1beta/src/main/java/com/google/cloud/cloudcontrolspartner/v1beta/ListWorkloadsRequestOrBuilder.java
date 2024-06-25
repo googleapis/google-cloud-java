@@ -30,7 +30,7 @@ public interface ListWorkloadsRequestOrBuilder
    * <pre>
    * Required. Parent resource
    * Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ListWorkloadsRequestOrBuilder
    * <pre>
    * Required. Parent resource
    * Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>

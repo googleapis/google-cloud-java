@@ -38,7 +38,9 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Segment() {}
+  private Segment() {
+    text_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -117,6 +119,57 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     return endIndex_;
   }
 
+  public static final int TEXT_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The text corresponding to the segment from the response.
+   * </pre>
+   *
+   * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The text.
+   */
+  @java.lang.Override
+  public java.lang.String getText() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      text_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The text corresponding to the segment from the response.
+   * </pre>
+   *
+   * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for text.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTextBytes() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      text_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +193,9 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     if (endIndex_ != 0) {
       output.writeInt32(3, endIndex_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, text_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -157,6 +213,9 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     }
     if (endIndex_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, endIndex_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, text_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -177,6 +236,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     if (getPartIndex() != other.getPartIndex()) return false;
     if (getStartIndex() != other.getStartIndex()) return false;
     if (getEndIndex() != other.getEndIndex()) return false;
+    if (!getText().equals(other.getText())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -194,6 +254,8 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStartIndex();
     hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
     hash = (53 * hash) + getEndIndex();
+    hash = (37 * hash) + TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getText().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,6 +398,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
       partIndex_ = 0;
       startIndex_ = 0;
       endIndex_ = 0;
+      text_ = "";
       return this;
     }
 
@@ -380,6 +443,9 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.endIndex_ = endIndex_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.text_ = text_;
       }
     }
 
@@ -437,6 +503,11 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
       if (other.getEndIndex() != 0) {
         setEndIndex(other.getEndIndex());
       }
+      if (!other.getText().isEmpty()) {
+        text_ = other.text_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -481,6 +552,12 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                text_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -661,6 +738,112 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEndIndex() {
       bitField0_ = (bitField0_ & ~0x00000004);
       endIndex_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object text_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The text corresponding to the segment from the response.
+     * </pre>
+     *
+     * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The text.
+     */
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The text corresponding to the segment from the response.
+     * </pre>
+     *
+     * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for text.
+     */
+    public com.google.protobuf.ByteString getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The text corresponding to the segment from the response.
+     * </pre>
+     *
+     * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
+     */
+    public Builder setText(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      text_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The text corresponding to the segment from the response.
+     * </pre>
+     *
+     * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearText() {
+      text_ = getDefaultInstance().getText();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The text corresponding to the segment from the response.
+     * </pre>
+     *
+     * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      text_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -71,7 +71,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Format: organizations/{organization}/locations/{location}/partner
+   * Required. Format:
+   * `organizations/{organization}/locations/{location}/partner`
    * </pre>
    *
    * <code>
@@ -96,7 +97,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Format: organizations/{organization}/locations/{location}/partner
+   * Required. Format:
+   * `organizations/{organization}/locations/{location}/partner`
    * </pre>
    *
    * <code>
@@ -469,7 +471,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Format: organizations/{organization}/locations/{location}/partner
+     * Required. Format:
+     * `organizations/{organization}/locations/{location}/partner`
      * </pre>
      *
      * <code>
@@ -493,7 +496,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Format: organizations/{organization}/locations/{location}/partner
+     * Required. Format:
+     * `organizations/{organization}/locations/{location}/partner`
      * </pre>
      *
      * <code>
@@ -517,7 +521,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Format: organizations/{organization}/locations/{location}/partner
+     * Required. Format:
+     * `organizations/{organization}/locations/{location}/partner`
      * </pre>
      *
      * <code>
@@ -540,7 +545,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Format: organizations/{organization}/locations/{location}/partner
+     * Required. Format:
+     * `organizations/{organization}/locations/{location}/partner`
      * </pre>
      *
      * <code>
@@ -559,7 +565,8 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Format: organizations/{organization}/locations/{location}/partner
+     * Required. Format:
+     * `organizations/{organization}/locations/{location}/partner`
      * </pre>
      *
      * <code>

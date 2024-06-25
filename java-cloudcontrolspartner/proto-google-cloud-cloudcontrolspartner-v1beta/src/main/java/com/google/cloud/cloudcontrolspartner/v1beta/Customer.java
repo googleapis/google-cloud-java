@@ -74,7 +74,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -98,7 +98,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}
+   * `organizations/{organization}/locations/{location}/customers/{customer}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -689,7 +689,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -712,7 +712,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -735,7 +735,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -757,7 +757,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -775,7 +775,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Format:
-     * organizations/{organization}/locations/{location}/customers/{customer}
+     * `organizations/{organization}/locations/{location}/customers/{customer}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

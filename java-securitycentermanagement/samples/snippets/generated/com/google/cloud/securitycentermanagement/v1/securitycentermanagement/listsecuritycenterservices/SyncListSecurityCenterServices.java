@@ -41,6 +41,7 @@ public class SyncListSecurityCenterServices {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setShowEligibleModulesOnly(true)
               .build();
       for (SecurityCenterService element :
           securityCenterManagementClient.listSecurityCenterServices(request).iterateAll()) {

@@ -64,7 +64,7 @@ public interface ConfigSyncOrBuilder
    *
    * <pre>
    * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
    * <code>string source_format = 8;</code>
@@ -77,7 +77,7 @@ public interface ConfigSyncOrBuilder
    *
    * <pre>
    * Specifies whether the Config Sync Repo is
-   * in “hierarchical” or “unstructured” mode.
+   * in "hierarchical" or "unstructured" mode.
    * </pre>
    *
    * <code>string source_format = 8;</code>
@@ -85,4 +85,126 @@ public interface ConfigSyncOrBuilder
    * @return The bytes for sourceFormat.
    */
   com.google.protobuf.ByteString getSourceFormatBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10;</code>
+   *
+   * @return Whether the enabled field is set.
+   */
+  boolean hasEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Enables the installation of ConfigSync.
+   * If set to true, ConfigSync resources will be created and the other
+   * ConfigSync fields will be applied if exist.
+   * If set to false, all other ConfigSync fields will be ignored, ConfigSync
+   * resources will be deleted.
+   * If omitted, ConfigSync resources will be managed depends on the presence
+   * of the git or oci field.
+   * </pre>
+   *
+   * <code>optional bool enabled = 10;</code>
+   *
+   * @return The enabled.
+   */
+  boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set to true to enable the Config Sync admission webhook to prevent drifts.
+   * If set to `false`, disables the Config Sync admission webhook and does not
+   * prevent drifts.
+   * </pre>
+   *
+   * <code>bool prevent_drift = 11;</code>
+   *
+   * @return The preventDrift.
+   */
+  boolean getPreventDrift();
+
+  /**
+   *
+   *
+   * <pre>
+   * OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.OciConfig oci = 12;</code>
+   *
+   * @return Whether the oci field is set.
+   */
+  boolean hasOci();
+  /**
+   *
+   *
+   * <pre>
+   * OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.OciConfig oci = 12;</code>
+   *
+   * @return The oci.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.OciConfig getOci();
+  /**
+   *
+   *
+   * <pre>
+   * OCI repo configuration for the cluster
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.OciConfig oci = 12;</code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1.OciConfigOrBuilder getOciOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Email of the Google Cloud Service Account (GSA) used for exporting
+   * Config Sync metrics to Cloud Monitoring when Workload Identity is enabled.
+   * The GSA should have the Monitoring Metric Writer
+   * (roles/monitoring.metricWriter) IAM role.
+   * The Kubernetes ServiceAccount `default` in the namespace
+   * `config-management-monitoring` should be bound to the GSA.
+   * </pre>
+   *
+   * <code>string metrics_gcp_service_account_email = 15;</code>
+   *
+   * @return The metricsGcpServiceAccountEmail.
+   */
+  java.lang.String getMetricsGcpServiceAccountEmail();
+  /**
+   *
+   *
+   * <pre>
+   * The Email of the Google Cloud Service Account (GSA) used for exporting
+   * Config Sync metrics to Cloud Monitoring when Workload Identity is enabled.
+   * The GSA should have the Monitoring Metric Writer
+   * (roles/monitoring.metricWriter) IAM role.
+   * The Kubernetes ServiceAccount `default` in the namespace
+   * `config-management-monitoring` should be bound to the GSA.
+   * </pre>
+   *
+   * <code>string metrics_gcp_service_account_email = 15;</code>
+   *
+   * @return The bytes for metricsGcpServiceAccountEmail.
+   */
+  com.google.protobuf.ByteString getMetricsGcpServiceAccountEmailBytes();
 }

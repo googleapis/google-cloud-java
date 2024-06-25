@@ -601,4 +601,58 @@ public interface ManagementServerOrBuilder
    * @return The bytes of the baProxyUri at the given index.
    */
   com.google.protobuf.ByteString getBaProxyUriBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  com.google.protobuf.BoolValue getSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getSatisfiesPzsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

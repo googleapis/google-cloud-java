@@ -29,7 +29,7 @@ public interface GetEkmConnectionsRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetEkmConnectionsRequestOrBuilder
    *
    * <pre>
    * Required. Format:
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
    * </pre>
    *
    * <code>

@@ -135,4 +135,138 @@ public interface ConfigSyncStateOrBuilder
    * <code>.google.cloud.gkehub.configmanagement.v1.SyncState sync_state = 3;</code>
    */
   com.google.cloud.gkehub.configmanagement.v1.SyncStateOrBuilder getSyncStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError> getErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError getErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  int getErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
+      getErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Errors pertaining to the installation of Config Sync.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
+   */
+  com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder getErrorsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for rootsyncCrd.
+   */
+  int getRootsyncCrdValue();
+  /**
+   *
+   *
+   * <pre>
+   * The state of the RootSync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState rootsync_crd = 5;
+   * </code>
+   *
+   * @return The rootsyncCrd.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getRootsyncCrd();
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reposyncCrd.
+   */
+  int getReposyncCrdValue();
+  /**
+   *
+   *
+   * <pre>
+   * The state of the Reposync CRD
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState reposync_crd = 6;
+   * </code>
+   *
+   * @return The reposyncCrd.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.CRDState getReposyncCrd();
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * The state of CS
+   * This field summarizes the other fields in this message.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State state = 7;</code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState.State getState();
 }

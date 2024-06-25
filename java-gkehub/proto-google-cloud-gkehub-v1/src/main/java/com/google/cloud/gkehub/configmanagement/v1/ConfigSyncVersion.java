@@ -45,6 +45,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     monitor_ = "";
     reconcilerManager_ = "";
     rootReconciler_ = "";
+    admissionWebhook_ = "";
   }
 
   @java.lang.Override
@@ -374,6 +375,57 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ADMISSION_WEBHOOK_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object admissionWebhook_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission_webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The admissionWebhook.
+   */
+  @java.lang.Override
+  public java.lang.String getAdmissionWebhook() {
+    java.lang.Object ref = admissionWebhook_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      admissionWebhook_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Version of the deployed admission_webhook pod
+   * </pre>
+   *
+   * <code>string admission_webhook = 7;</code>
+   *
+   * @return The bytes for admissionWebhook.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdmissionWebhookBytes() {
+    java.lang.Object ref = admissionWebhook_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      admissionWebhook_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -406,6 +458,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rootReconciler_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(admissionWebhook_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, admissionWebhook_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -433,6 +488,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootReconciler_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rootReconciler_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(admissionWebhook_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, admissionWebhook_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -455,6 +513,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     if (!getMonitor().equals(other.getMonitor())) return false;
     if (!getReconcilerManager().equals(other.getReconcilerManager())) return false;
     if (!getRootReconciler().equals(other.getRootReconciler())) return false;
+    if (!getAdmissionWebhook().equals(other.getAdmissionWebhook())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -478,6 +537,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getReconcilerManager().hashCode();
     hash = (37 * hash) + ROOT_RECONCILER_FIELD_NUMBER;
     hash = (53 * hash) + getRootReconciler().hashCode();
+    hash = (37 * hash) + ADMISSION_WEBHOOK_FIELD_NUMBER;
+    hash = (53 * hash) + getAdmissionWebhook().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -624,6 +685,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       monitor_ = "";
       reconcilerManager_ = "";
       rootReconciler_ = "";
+      admissionWebhook_ = "";
       return this;
     }
 
@@ -679,6 +741,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rootReconciler_ = rootReconciler_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.admissionWebhook_ = admissionWebhook_;
       }
     }
 
@@ -759,6 +824,11 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getAdmissionWebhook().isEmpty()) {
+        admissionWebhook_ = other.admissionWebhook_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -821,6 +891,12 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                admissionWebhook_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1472,6 +1548,112 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       rootReconciler_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object admissionWebhook_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission_webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return The admissionWebhook.
+     */
+    public java.lang.String getAdmissionWebhook() {
+      java.lang.Object ref = admissionWebhook_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        admissionWebhook_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission_webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return The bytes for admissionWebhook.
+     */
+    public com.google.protobuf.ByteString getAdmissionWebhookBytes() {
+      java.lang.Object ref = admissionWebhook_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        admissionWebhook_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission_webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @param value The admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhook(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      admissionWebhook_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission_webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdmissionWebhook() {
+      admissionWebhook_ = getDefaultInstance().getAdmissionWebhook();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of the deployed admission_webhook pod
+     * </pre>
+     *
+     * <code>string admission_webhook = 7;</code>
+     *
+     * @param value The bytes for admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhookBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      admissionWebhook_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

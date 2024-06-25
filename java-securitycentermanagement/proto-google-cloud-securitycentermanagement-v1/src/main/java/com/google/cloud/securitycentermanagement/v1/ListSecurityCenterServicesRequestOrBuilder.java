@@ -103,4 +103,18 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Flag that, when set, will be used to filter the ModuleSettings that are
+   * in scope. The default setting is that all modules will be shown.
+   * </pre>
+   *
+   * <code>bool show_eligible_modules_only = 4;</code>
+   *
+   * @return The showEligibleModulesOnly.
+   */
+  boolean getShowEligibleModulesOnly();
 }

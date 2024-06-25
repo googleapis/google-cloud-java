@@ -43,6 +43,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.BoolValue;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -215,6 +216,8 @@ public class BackupDRClientTest {
             .setWorkforceIdentityBasedOauth2ClientId(
                 WorkforceIdentityBasedOAuth2ClientID.newBuilder().build())
             .addAllBaProxyUri(new ArrayList<String>())
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -269,6 +272,8 @@ public class BackupDRClientTest {
             .setWorkforceIdentityBasedOauth2ClientId(
                 WorkforceIdentityBasedOAuth2ClientID.newBuilder().build())
             .addAllBaProxyUri(new ArrayList<String>())
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -321,6 +326,8 @@ public class BackupDRClientTest {
             .setWorkforceIdentityBasedOauth2ClientId(
                 WorkforceIdentityBasedOAuth2ClientID.newBuilder().build())
             .addAllBaProxyUri(new ArrayList<String>())
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -389,6 +396,8 @@ public class BackupDRClientTest {
             .setWorkforceIdentityBasedOauth2ClientId(
                 WorkforceIdentityBasedOAuth2ClientID.newBuilder().build())
             .addAllBaProxyUri(new ArrayList<String>())
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

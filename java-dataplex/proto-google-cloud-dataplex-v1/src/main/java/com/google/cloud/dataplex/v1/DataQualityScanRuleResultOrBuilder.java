@@ -284,8 +284,8 @@ public interface DataQualityScanRuleResultOrBuilder
    *
    *
    * <pre>
-   * The number of rows returned by the sql statement in the SqlAssertion rule.
-   * This field is only valid for SqlAssertion rules.
+   * The number of rows returned by the SQL statement in a SQL assertion rule.
+   * This field is only valid for SQL assertion rules.
    * </pre>
    *
    * <code>int64 assertion_row_count = 13;</code>

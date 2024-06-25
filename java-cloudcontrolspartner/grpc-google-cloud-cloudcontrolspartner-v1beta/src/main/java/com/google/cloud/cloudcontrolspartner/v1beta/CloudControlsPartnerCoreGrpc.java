@@ -578,9 +578,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAccessApprovalRequests(
         com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest request,
         io.grpc.stub.StreamObserver<
@@ -748,9 +750,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAccessApprovalRequests(
         com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest request,
         io.grpc.stub.StreamObserver<
@@ -880,9 +884,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse
         listAccessApprovalRequests(
             com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest
@@ -1016,9 +1022,11 @@ public final class CloudControlsPartnerCoreGrpc {
      *
      *
      * <pre>
-     * Lists access requests associated with a workload
+     * Deprecated: Only returns access approval requests directly associated with
+     * an assured workload folder.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse>
         listAccessApprovalRequests(

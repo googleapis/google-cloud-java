@@ -352,7 +352,12 @@ public class CloudControlsPartnerCoreStubSettings
     return getPartnerPermissionsSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAccessApprovalRequests. */
+  /**
+   * Returns the object with the settings used for calls to listAccessApprovalRequests.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAccessApprovalRequestsRequest,
           ListAccessApprovalRequestsResponse,
@@ -716,7 +721,12 @@ public class CloudControlsPartnerCoreStubSettings
       return getPartnerPermissionsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAccessApprovalRequests. */
+    /**
+     * Returns the builder for the settings used for calls to listAccessApprovalRequests.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAccessApprovalRequestsRequest,
             ListAccessApprovalRequestsResponse,

@@ -1564,7 +1564,7 @@ public interface AttributesOrBuilder
    * Date on which the item should expire, as specified upon insertion, in
    * [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. The actual
-   * expiration date in Google Shopping is exposed in `productstatuses` as
+   * expiration date is exposed in `productstatuses` as
    * [googleExpirationDate](https://support.google.com/merchants/answer/6324499)
    * and might be earlier if `expirationDate` is too far in the future.
    * Note: It may take 2+ days from the expiration date for the item to
@@ -1583,7 +1583,7 @@ public interface AttributesOrBuilder
    * Date on which the item should expire, as specified upon insertion, in
    * [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. The actual
-   * expiration date in Google Shopping is exposed in `productstatuses` as
+   * expiration date is exposed in `productstatuses` as
    * [googleExpirationDate](https://support.google.com/merchants/answer/6324499)
    * and might be earlier if `expirationDate` is too far in the future.
    * Note: It may take 2+ days from the expiration date for the item to
@@ -1602,7 +1602,7 @@ public interface AttributesOrBuilder
    * Date on which the item should expire, as specified upon insertion, in
    * [ISO
    * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. The actual
-   * expiration date in Google Shopping is exposed in `productstatuses` as
+   * expiration date is exposed in `productstatuses` as
    * [googleExpirationDate](https://support.google.com/merchants/answer/6324499)
    * and might be earlier if `expirationDate` is too far in the future.
    * Note: It may take 2+ days from the expiration date for the item to

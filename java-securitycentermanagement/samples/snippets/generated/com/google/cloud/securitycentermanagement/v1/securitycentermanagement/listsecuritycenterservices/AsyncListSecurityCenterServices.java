@@ -42,6 +42,7 @@ public class AsyncListSecurityCenterServices {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setShowEligibleModulesOnly(true)
               .build();
       ApiFuture<SecurityCenterService> future =
           securityCenterManagementClient

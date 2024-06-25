@@ -42,6 +42,7 @@ import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
@@ -73,6 +74,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
+  }
+
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRawPredictCallable()");
   }
 
   public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {

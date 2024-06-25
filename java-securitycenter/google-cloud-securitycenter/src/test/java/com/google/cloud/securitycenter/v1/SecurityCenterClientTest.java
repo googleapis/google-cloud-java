@@ -451,6 +451,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -539,6 +541,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3612,6 +3616,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3702,6 +3708,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3790,6 +3798,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3877,6 +3887,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4230,6 +4242,8 @@ public class SecurityCenterClientTest {
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

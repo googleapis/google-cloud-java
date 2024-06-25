@@ -63,6 +63,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.SearchEntriesResult.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface SnippetsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.SearchEntriesResult.Snippets)
@@ -75,10 +76,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
      * @return Whether the dataplexEntry field is set.
      */
+    @java.lang.Deprecated
     boolean hasDataplexEntry();
     /**
      *
@@ -87,10 +91,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
      * @return The dataplexEntry.
      */
+    @java.lang.Deprecated
     com.google.cloud.dataplex.v1.Entry getDataplexEntry();
     /**
      *
@@ -99,8 +106,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder();
   }
   /**
@@ -113,6 +121,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    *
    * Protobuf type {@code google.cloud.dataplex.v1.SearchEntriesResult.Snippets}
    */
+  @java.lang.Deprecated
   public static final class Snippets extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.SearchEntriesResult.Snippets)
@@ -156,11 +165,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
      * @return Whether the dataplexEntry field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasDataplexEntry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -171,11 +183,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+     *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
      * @return The dataplexEntry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.Entry getDataplexEntry() {
       return dataplexEntry_ == null
           ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance()
@@ -188,9 +203,10 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Entry
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
       return dataplexEntry_ == null
           ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance()
@@ -578,10 +594,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
        * @return Whether the dataplexEntry field is set.
        */
+      @java.lang.Deprecated
       public boolean hasDataplexEntry() {
         return ((bitField0_ & 0x00000001) != 0);
       }
@@ -592,10 +611,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.Snippets.dataplex_entry is
+       *     deprecated. See google/cloud/dataplex/v1/catalog.proto;l=1259
        * @return The dataplexEntry.
        */
+      @java.lang.Deprecated
       public com.google.cloud.dataplex.v1.Entry getDataplexEntry() {
         if (dataplexEntryBuilder_ == null) {
           return dataplexEntry_ == null
@@ -612,8 +634,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
         if (dataplexEntryBuilder_ == null) {
           if (value == null) {
@@ -634,8 +657,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry.Builder builderForValue) {
         if (dataplexEntryBuilder_ == null) {
           dataplexEntry_ = builderForValue.build();
@@ -653,8 +677,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder mergeDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
         if (dataplexEntryBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)
@@ -680,8 +705,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder clearDataplexEntry() {
         bitField0_ = (bitField0_ & ~0x00000001);
         dataplexEntry_ = null;
@@ -699,8 +725,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.dataplex.v1.Entry.Builder getDataplexEntryBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
@@ -713,8 +740,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
         if (dataplexEntryBuilder_ != null) {
           return dataplexEntryBuilder_.getMessageOrBuilder();
@@ -731,7 +759,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
        * Entry
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1;</code>
+       * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 1 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.dataplex.v1.Entry,
@@ -826,11 +854,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * Linked resource name.
    * </pre>
    *
-   * <code>string linked_resource = 8;</code>
+   * <code>string linked_resource = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1263
    * @return The linkedResource.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -849,11 +880,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * Linked resource name.
    * </pre>
    *
-   * <code>string linked_resource = 8;</code>
+   * <code>string linked_resource = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1263
    * @return The bytes for linkedResource.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -869,12 +903,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
   public static final int DATAPLEX_ENTRY_FIELD_NUMBER = 9;
   private com.google.cloud.dataplex.v1.Entry dataplexEntry_;
   /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
    * @return Whether the dataplexEntry field is set.
@@ -884,12 +912,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
    * @return The dataplexEntry.
@@ -900,15 +922,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance()
         : dataplexEntry_;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Entry format of the result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-   */
+  /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
     return dataplexEntry_ == null
@@ -925,11 +939,15 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1268
    * @return Whether the snippets field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasSnippets() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -940,11 +958,15 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+   *     google/cloud/dataplex/v1/catalog.proto;l=1268
    * @return The snippets.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets getSnippets() {
     return snippets_ == null
         ? com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.getDefaultInstance()
@@ -957,9 +979,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    * Snippets.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+   * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dataplex.v1.SearchEntriesResult.SnippetsOrBuilder getSnippetsOrBuilder() {
     return snippets_ == null
         ? com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.getDefaultInstance()
@@ -1393,10 +1417,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Linked resource name.
      * </pre>
      *
-     * <code>string linked_resource = 8;</code>
+     * <code>string linked_resource = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1263
      * @return The linkedResource.
      */
+    @java.lang.Deprecated
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = linkedResource_;
       if (!(ref instanceof java.lang.String)) {
@@ -1415,10 +1442,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Linked resource name.
      * </pre>
      *
-     * <code>string linked_resource = 8;</code>
+     * <code>string linked_resource = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1263
      * @return The bytes for linkedResource.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = linkedResource_;
       if (ref instanceof String) {
@@ -1437,11 +1467,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Linked resource name.
      * </pre>
      *
-     * <code>string linked_resource = 8;</code>
+     * <code>string linked_resource = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1263
      * @param value The linkedResource to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setLinkedResource(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1458,10 +1491,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Linked resource name.
      * </pre>
      *
-     * <code>string linked_resource = 8;</code>
+     * <code>string linked_resource = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1263
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearLinkedResource() {
       linkedResource_ = getDefaultInstance().getLinkedResource();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1475,11 +1511,14 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Linked resource name.
      * </pre>
      *
-     * <code>string linked_resource = 8;</code>
+     * <code>string linked_resource = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1263
      * @param value The bytes for linkedResource to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setLinkedResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1498,12 +1537,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.EntryOrBuilder>
         dataplexEntryBuilder_;
     /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      *
      * @return Whether the dataplexEntry field is set.
@@ -1512,12 +1545,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      *
      * @return The dataplexEntry.
@@ -1531,15 +1558,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         return dataplexEntryBuilder_.getMessage();
       }
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
       if (dataplexEntryBuilder_ == null) {
         if (value == null) {
@@ -1553,15 +1572,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry.Builder builderForValue) {
       if (dataplexEntryBuilder_ == null) {
         dataplexEntry_ = builderForValue.build();
@@ -1572,15 +1583,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder mergeDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
       if (dataplexEntryBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -1599,15 +1602,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder clearDataplexEntry() {
       bitField0_ = (bitField0_ & ~0x00000002);
       dataplexEntry_ = null;
@@ -1618,29 +1613,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public com.google.cloud.dataplex.v1.Entry.Builder getDataplexEntryBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getDataplexEntryFieldBuilder().getBuilder();
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
       if (dataplexEntryBuilder_ != null) {
         return dataplexEntryBuilder_.getMessageOrBuilder();
@@ -1650,15 +1629,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             : dataplexEntry_;
       }
     }
-    /**
-     *
-     *
-     * <pre>
-     * Entry format of the result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
-     */
+    /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.Entry,
             com.google.cloud.dataplex.v1.Entry.Builder,
@@ -1689,10 +1660,15 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1268
      * @return Whether the snippets field is set.
      */
+    @java.lang.Deprecated
     public boolean hasSnippets() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1703,10 +1679,15 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
+     *     google/cloud/dataplex/v1/catalog.proto;l=1268
      * @return The snippets.
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets getSnippets() {
       if (snippetsBuilder_ == null) {
         return snippets_ == null
@@ -1723,8 +1704,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setSnippets(com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets value) {
       if (snippetsBuilder_ == null) {
         if (value == null) {
@@ -1745,8 +1729,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setSnippets(
         com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.Builder builderForValue) {
       if (snippetsBuilder_ == null) {
@@ -1765,8 +1752,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeSnippets(com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets value) {
       if (snippetsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)
@@ -1793,8 +1783,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearSnippets() {
       bitField0_ = (bitField0_ & ~0x00000004);
       snippets_ = null;
@@ -1812,8 +1805,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.Builder getSnippetsBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1826,8 +1822,11 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.SearchEntriesResult.SnippetsOrBuilder
         getSnippetsOrBuilder() {
       if (snippetsBuilder_ != null) {
@@ -1845,7 +1844,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * Snippets.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets,

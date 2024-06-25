@@ -42,6 +42,7 @@ public class SyncGetSecurityCenterService {
                   SecurityCenterServiceName.ofProjectLocationServiceName(
                           "[PROJECT]", "[LOCATION]", "[SERVICE]")
                       .toString())
+              .setShowEligibleModulesOnly(true)
               .build();
       SecurityCenterService response =
           securityCenterManagementClient.getSecurityCenterService(request);

@@ -64,4 +64,29 @@ public interface SegmentOrBuilder
    * @return The endIndex.
    */
   int getEndIndex();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The text corresponding to the segment from the response.
+   * </pre>
+   *
+   * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The text.
+   */
+  java.lang.String getText();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The text corresponding to the segment from the response.
+   * </pre>
+   *
+   * <code>string text = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for text.
+   */
+  com.google.protobuf.ByteString getTextBytes();
 }

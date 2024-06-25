@@ -41,6 +41,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   private RuntimeConfig() {
     version_ = "";
     containerImage_ = "";
+    cohort_ = "";
   }
 
   @java.lang.Override
@@ -347,6 +348,115 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         : repositoryConfig_;
   }
 
+  public static final int AUTOTUNING_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.dataproc.v1.AutotuningConfig autotuningConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autotuningConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutotuningConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autotuningConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AutotuningConfig getAutotuningConfig() {
+    return autotuningConfig_ == null
+        ? com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()
+        : autotuningConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autotuning configuration of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder getAutotuningConfigOrBuilder() {
+    return autotuningConfig_ == null
+        ? com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()
+        : autotuningConfig_;
+  }
+
+  public static final int COHORT_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cohort_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cohort identifier. Identifies families of the workloads having
+   * the same shape, e.g. daily ETL jobs.
+   * </pre>
+   *
+   * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cohort.
+   */
+  @java.lang.Override
+  public java.lang.String getCohort() {
+    java.lang.Object ref = cohort_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cohort_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cohort identifier. Identifies families of the workloads having
+   * the same shape, e.g. daily ETL jobs.
+   * </pre>
+   *
+   * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cohort.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCohortBytes() {
+    java.lang.Object ref = cohort_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cohort_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -371,6 +481,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 3);
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getRepositoryConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getAutotuningConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cohort_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cohort_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -400,6 +516,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRepositoryConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getAutotuningConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cohort_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cohort_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -423,6 +545,11 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasRepositoryConfig()) {
       if (!getRepositoryConfig().equals(other.getRepositoryConfig())) return false;
     }
+    if (hasAutotuningConfig() != other.hasAutotuningConfig()) return false;
+    if (hasAutotuningConfig()) {
+      if (!getAutotuningConfig().equals(other.getAutotuningConfig())) return false;
+    }
+    if (!getCohort().equals(other.getCohort())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -446,6 +573,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + REPOSITORY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRepositoryConfig().hashCode();
     }
+    if (hasAutotuningConfig()) {
+      hash = (37 * hash) + AUTOTUNING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutotuningConfig().hashCode();
+    }
+    hash = (37 * hash) + COHORT_FIELD_NUMBER;
+    hash = (53 * hash) + getCohort().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -609,6 +742,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRepositoryConfigFieldBuilder();
+        getAutotuningConfigFieldBuilder();
       }
     }
 
@@ -624,6 +758,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         repositoryConfigBuilder_.dispose();
         repositoryConfigBuilder_ = null;
       }
+      autotuningConfig_ = null;
+      if (autotuningConfigBuilder_ != null) {
+        autotuningConfigBuilder_.dispose();
+        autotuningConfigBuilder_ = null;
+      }
+      cohort_ = "";
       return this;
     }
 
@@ -675,6 +815,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         result.repositoryConfig_ =
             repositoryConfigBuilder_ == null ? repositoryConfig_ : repositoryConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.autotuningConfig_ =
+            autotuningConfigBuilder_ == null ? autotuningConfig_ : autotuningConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cohort_ = cohort_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -739,6 +887,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRepositoryConfig()) {
         mergeRepositoryConfig(other.getRepositoryConfig());
       }
+      if (other.hasAutotuningConfig()) {
+        mergeAutotuningConfig(other.getAutotuningConfig());
+      }
+      if (!other.getCohort().isEmpty()) {
+        cohort_ = other.cohort_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -796,6 +952,19 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getAutotuningConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+            case 58:
+              {
+                cohort_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1415,6 +1584,322 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         repositoryConfig_ = null;
       }
       return repositoryConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.AutotuningConfig autotuningConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AutotuningConfig,
+            com.google.cloud.dataproc.v1.AutotuningConfig.Builder,
+            com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder>
+        autotuningConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autotuningConfig field is set.
+     */
+    public boolean hasAutotuningConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autotuningConfig.
+     */
+    public com.google.cloud.dataproc.v1.AutotuningConfig getAutotuningConfig() {
+      if (autotuningConfigBuilder_ == null) {
+        return autotuningConfig_ == null
+            ? com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()
+            : autotuningConfig_;
+      } else {
+        return autotuningConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutotuningConfig(com.google.cloud.dataproc.v1.AutotuningConfig value) {
+      if (autotuningConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autotuningConfig_ = value;
+      } else {
+        autotuningConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutotuningConfig(
+        com.google.cloud.dataproc.v1.AutotuningConfig.Builder builderForValue) {
+      if (autotuningConfigBuilder_ == null) {
+        autotuningConfig_ = builderForValue.build();
+      } else {
+        autotuningConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutotuningConfig(com.google.cloud.dataproc.v1.AutotuningConfig value) {
+      if (autotuningConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && autotuningConfig_ != null
+            && autotuningConfig_
+                != com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()) {
+          getAutotuningConfigBuilder().mergeFrom(value);
+        } else {
+          autotuningConfig_ = value;
+        }
+      } else {
+        autotuningConfigBuilder_.mergeFrom(value);
+      }
+      if (autotuningConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutotuningConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      autotuningConfig_ = null;
+      if (autotuningConfigBuilder_ != null) {
+        autotuningConfigBuilder_.dispose();
+        autotuningConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AutotuningConfig.Builder getAutotuningConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getAutotuningConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder getAutotuningConfigOrBuilder() {
+      if (autotuningConfigBuilder_ != null) {
+        return autotuningConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return autotuningConfig_ == null
+            ? com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()
+            : autotuningConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Autotuning configuration of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AutotuningConfig autotuning_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AutotuningConfig,
+            com.google.cloud.dataproc.v1.AutotuningConfig.Builder,
+            com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder>
+        getAutotuningConfigFieldBuilder() {
+      if (autotuningConfigBuilder_ == null) {
+        autotuningConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.AutotuningConfig,
+                com.google.cloud.dataproc.v1.AutotuningConfig.Builder,
+                com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder>(
+                getAutotuningConfig(), getParentForChildren(), isClean());
+        autotuningConfig_ = null;
+      }
+      return autotuningConfigBuilder_;
+    }
+
+    private java.lang.Object cohort_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cohort identifier. Identifies families of the workloads having
+     * the same shape, e.g. daily ETL jobs.
+     * </pre>
+     *
+     * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cohort.
+     */
+    public java.lang.String getCohort() {
+      java.lang.Object ref = cohort_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cohort_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cohort identifier. Identifies families of the workloads having
+     * the same shape, e.g. daily ETL jobs.
+     * </pre>
+     *
+     * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for cohort.
+     */
+    public com.google.protobuf.ByteString getCohortBytes() {
+      java.lang.Object ref = cohort_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cohort_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cohort identifier. Identifies families of the workloads having
+     * the same shape, e.g. daily ETL jobs.
+     * </pre>
+     *
+     * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The cohort to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCohort(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cohort_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cohort identifier. Identifies families of the workloads having
+     * the same shape, e.g. daily ETL jobs.
+     * </pre>
+     *
+     * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCohort() {
+      cohort_ = getDefaultInstance().getCohort();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cohort identifier. Identifies families of the workloads having
+     * the same shape, e.g. daily ETL jobs.
+     * </pre>
+     *
+     * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for cohort to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCohortBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cohort_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

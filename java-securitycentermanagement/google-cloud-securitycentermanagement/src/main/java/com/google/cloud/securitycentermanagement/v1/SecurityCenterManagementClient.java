@@ -4383,6 +4383,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *               SecurityCenterServiceName.ofProjectLocationServiceName(
    *                       "[PROJECT]", "[LOCATION]", "[SERVICE]")
    *                   .toString())
+   *           .setShowEligibleModulesOnly(true)
    *           .build();
    *   SecurityCenterService response =
    *       securityCenterManagementClient.getSecurityCenterService(request);
@@ -4417,6 +4418,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *               SecurityCenterServiceName.ofProjectLocationServiceName(
    *                       "[PROJECT]", "[LOCATION]", "[SERVICE]")
    *                   .toString())
+   *           .setShowEligibleModulesOnly(true)
    *           .build();
    *   ApiFuture<SecurityCenterService> future =
    *       securityCenterManagementClient.getSecurityCenterServiceCallable().futureCall(request);
@@ -4594,6 +4596,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
    *           .build();
    *   for (SecurityCenterService element :
    *       securityCenterManagementClient.listSecurityCenterServices(request).iterateAll()) {
@@ -4629,6 +4632,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
    *           .build();
    *   ApiFuture<SecurityCenterService> future =
    *       securityCenterManagementClient
@@ -4666,6 +4670,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setShowEligibleModulesOnly(true)
    *           .build();
    *   while (true) {
    *     ListSecurityCenterServicesResponse response =

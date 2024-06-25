@@ -17,7 +17,13 @@ package com.google.cloud.networkservices.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service describing handlers for resources.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/networkservices/v1/network_services.proto")
@@ -1885,7 +1891,13 @@ public final class NetworkServicesGrpc {
     return NetworkServicesFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
   public interface AsyncService {
 
     /**
@@ -2444,7 +2456,13 @@ public final class NetworkServicesGrpc {
     }
   }
 
-  /** Base class for the server implementation of the service NetworkServices. */
+  /**
+   * Base class for the server implementation of the service NetworkServices.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
   public abstract static class NetworkServicesImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -2454,7 +2472,13 @@ public final class NetworkServicesGrpc {
     }
   }
 
-  /** A stub to allow clients to do asynchronous rpc calls to service NetworkServices. */
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service NetworkServices.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
   public static final class NetworkServicesStub
       extends io.grpc.stub.AbstractAsyncStub<NetworkServicesStub> {
     private NetworkServicesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3094,7 +3118,13 @@ public final class NetworkServicesGrpc {
     }
   }
 
-  /** A stub to allow clients to do synchronous rpc calls to service NetworkServices. */
+  /**
+   * A stub to allow clients to do synchronous rpc calls to service NetworkServices.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
   public static final class NetworkServicesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<NetworkServicesBlockingStub> {
     private NetworkServicesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3615,7 +3645,13 @@ public final class NetworkServicesGrpc {
     }
   }
 
-  /** A stub to allow clients to do ListenableFuture-style rpc calls to service NetworkServices. */
+  /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service NetworkServices.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
   public static final class NetworkServicesFutureStub
       extends io.grpc.stub.AbstractFutureStub<NetworkServicesFutureStub> {
     private NetworkServicesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {

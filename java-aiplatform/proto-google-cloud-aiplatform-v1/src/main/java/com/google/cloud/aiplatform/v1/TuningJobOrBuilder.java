@@ -645,6 +645,47 @@ public interface TuningJobOrBuilder
    */
   com.google.cloud.aiplatform.v1.TuningDataStatsOrBuilder getTuningDataStatsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a TuningJob. If this is set,
+   * then all resources created by the TuningJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 16;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a TuningJob. If this is set,
+   * then all resources created by the TuningJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 16;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a TuningJob. If this is set,
+   * then all resources created by the TuningJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 16;</code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
   com.google.cloud.aiplatform.v1.TuningJob.SourceModelCase getSourceModelCase();
 
   com.google.cloud.aiplatform.v1.TuningJob.TuningSpecCase getTuningSpecCase();

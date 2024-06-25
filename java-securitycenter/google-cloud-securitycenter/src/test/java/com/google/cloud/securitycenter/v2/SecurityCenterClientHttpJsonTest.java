@@ -568,6 +568,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -659,6 +661,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4073,6 +4077,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4164,6 +4170,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4351,6 +4359,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4442,6 +4452,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4785,6 +4797,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4834,6 +4848,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4909,6 +4925,8 @@ public class SecurityCenterClientHttpJsonTest {
               .setSecurityPosture(SecurityPosture.newBuilder().build())
               .addAllLogEntries(new ArrayList<LogEntry>())
               .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+              .setToxicCombination(ToxicCombination.newBuilder().build())
+              .addAllGroupMemberships(new ArrayList<GroupMembership>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFinding(finding, updateMask);

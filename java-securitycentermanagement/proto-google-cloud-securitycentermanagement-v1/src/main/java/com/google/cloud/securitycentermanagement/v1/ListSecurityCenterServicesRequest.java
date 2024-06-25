@@ -203,6 +203,25 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
     }
   }
 
+  public static final int SHOW_ELIGIBLE_MODULES_ONLY_FIELD_NUMBER = 4;
+  private boolean showEligibleModulesOnly_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Flag that, when set, will be used to filter the ModuleSettings that are
+   * in scope. The default setting is that all modules will be shown.
+   * </pre>
+   *
+   * <code>bool show_eligible_modules_only = 4;</code>
+   *
+   * @return The showEligibleModulesOnly.
+   */
+  @java.lang.Override
+  public boolean getShowEligibleModulesOnly() {
+    return showEligibleModulesOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -226,6 +245,9 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (showEligibleModulesOnly_ != false) {
+      output.writeBool(4, showEligibleModulesOnly_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -243,6 +265,9 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (showEligibleModulesOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, showEligibleModulesOnly_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -265,6 +290,7 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getShowEligibleModulesOnly() != other.getShowEligibleModulesOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -282,6 +308,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + SHOW_ELIGIBLE_MODULES_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowEligibleModulesOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -434,6 +462,7 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      showEligibleModulesOnly_ = false;
       return this;
     }
 
@@ -483,6 +512,9 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.showEligibleModulesOnly_ = showEligibleModulesOnly_;
       }
     }
 
@@ -550,6 +582,9 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getShowEligibleModulesOnly() != false) {
+        setShowEligibleModulesOnly(other.getShowEligibleModulesOnly());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -594,6 +629,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                showEligibleModulesOnly_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -917,6 +958,62 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean showEligibleModulesOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Flag that, when set, will be used to filter the ModuleSettings that are
+     * in scope. The default setting is that all modules will be shown.
+     * </pre>
+     *
+     * <code>bool show_eligible_modules_only = 4;</code>
+     *
+     * @return The showEligibleModulesOnly.
+     */
+    @java.lang.Override
+    public boolean getShowEligibleModulesOnly() {
+      return showEligibleModulesOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Flag that, when set, will be used to filter the ModuleSettings that are
+     * in scope. The default setting is that all modules will be shown.
+     * </pre>
+     *
+     * <code>bool show_eligible_modules_only = 4;</code>
+     *
+     * @param value The showEligibleModulesOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShowEligibleModulesOnly(boolean value) {
+
+      showEligibleModulesOnly_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Flag that, when set, will be used to filter the ModuleSettings that are
+     * in scope. The default setting is that all modules will be shown.
+     * </pre>
+     *
+     * <code>bool show_eligible_modules_only = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShowEligibleModulesOnly() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      showEligibleModulesOnly_ = false;
       onChanged();
       return this;
     }

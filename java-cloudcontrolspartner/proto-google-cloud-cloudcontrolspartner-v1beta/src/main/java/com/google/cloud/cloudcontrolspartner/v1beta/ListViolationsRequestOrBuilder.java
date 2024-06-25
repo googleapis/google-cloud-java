@@ -30,7 +30,7 @@ public interface ListViolationsRequestOrBuilder
    * <pre>
    * Required. Parent resource
    * Format
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ListViolationsRequestOrBuilder
    * <pre>
    * Required. Parent resource
    * Format
-   * organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * </pre>
    *
    * <code>
