@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.131.0](https://github.com/googleapis/java-pubsub/compare/v1.130.1...v1.131.0) (2024-06-25)
+
+
+### Features
+
+* Add use_topic_schema for Cloud Storage Subscriptions ([#2082](https://github.com/googleapis/java-pubsub/issues/2082)) ([11d67d4](https://github.com/googleapis/java-pubsub/commit/11d67d44152ccca008dda071683d9932c59af41d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.40.0 ([#2087](https://github.com/googleapis/java-pubsub/issues/2087)) ([26b01c9](https://github.com/googleapis/java-pubsub/commit/26b01c921f2700947a1653702be0234cf84cccef))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ([#2088](https://github.com/googleapis/java-pubsub/issues/2088)) ([aebc3ed](https://github.com/googleapis/java-pubsub/commit/aebc3ed779e0847077742dedc7c2c0a9d8a1ab10))
+
 ## [1.130.1](https://github.com/googleapis/java-pubsub/compare/v1.130.0...v1.130.1) (2024-06-13)
 
 
