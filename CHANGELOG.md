@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.19.0](https://github.com/googleapis/java-logging/compare/v3.18.0...v3.19.0) (2024-06-26)
+
+
+### Features
+
+* **logging:** OpenTelemetry trace/span ID integration for Java logging library ([#1596](https://github.com/googleapis/java-logging/issues/1596)) ([67db829](https://github.com/googleapis/java-logging/commit/67db829621fd1c4a876d158fe1afb4927821fa54))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ([#1649](https://github.com/googleapis/java-logging/issues/1649)) ([cb428d1](https://github.com/googleapis/java-logging/commit/cb428d19a1ea750520d336c9d1042d50f3801f15))
+
 ## [3.18.0](https://github.com/googleapis/java-logging/compare/v3.17.2...v3.18.0) (2024-06-04)
 
 
