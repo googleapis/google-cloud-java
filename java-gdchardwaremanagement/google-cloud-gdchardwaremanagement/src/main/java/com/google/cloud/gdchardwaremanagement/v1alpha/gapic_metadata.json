@@ -1,0 +1,123 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gdchardwaremanagement.v1alpha",
+  "libraryPackage": "com.google.cloud.gdchardwaremanagement.v1alpha",
+  "services": {
+    "GDCHardwareManagement": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GDCHardwareManagementClient",
+          "rpcs": {
+            "CreateComment": {
+              "methods": ["createCommentAsync", "createCommentAsync", "createCommentAsync", "createCommentOperationCallable", "createCommentCallable"]
+            },
+            "CreateHardware": {
+              "methods": ["createHardwareAsync", "createHardwareAsync", "createHardwareAsync", "createHardwareOperationCallable", "createHardwareCallable"]
+            },
+            "CreateHardwareGroup": {
+              "methods": ["createHardwareGroupAsync", "createHardwareGroupAsync", "createHardwareGroupAsync", "createHardwareGroupOperationCallable", "createHardwareGroupCallable"]
+            },
+            "CreateOrder": {
+              "methods": ["createOrderAsync", "createOrderAsync", "createOrderAsync", "createOrderOperationCallable", "createOrderCallable"]
+            },
+            "CreateSite": {
+              "methods": ["createSiteAsync", "createSiteAsync", "createSiteAsync", "createSiteOperationCallable", "createSiteCallable"]
+            },
+            "CreateZone": {
+              "methods": ["createZoneAsync", "createZoneAsync", "createZoneAsync", "createZoneOperationCallable", "createZoneCallable"]
+            },
+            "DeleteHardware": {
+              "methods": ["deleteHardwareAsync", "deleteHardwareAsync", "deleteHardwareAsync", "deleteHardwareOperationCallable", "deleteHardwareCallable"]
+            },
+            "DeleteHardwareGroup": {
+              "methods": ["deleteHardwareGroupAsync", "deleteHardwareGroupAsync", "deleteHardwareGroupAsync", "deleteHardwareGroupOperationCallable", "deleteHardwareGroupCallable"]
+            },
+            "DeleteOrder": {
+              "methods": ["deleteOrderAsync", "deleteOrderAsync", "deleteOrderAsync", "deleteOrderOperationCallable", "deleteOrderCallable"]
+            },
+            "DeleteZone": {
+              "methods": ["deleteZoneAsync", "deleteZoneAsync", "deleteZoneAsync", "deleteZoneOperationCallable", "deleteZoneCallable"]
+            },
+            "GetChangeLogEntry": {
+              "methods": ["getChangeLogEntry", "getChangeLogEntry", "getChangeLogEntry", "getChangeLogEntryCallable"]
+            },
+            "GetComment": {
+              "methods": ["getComment", "getComment", "getComment", "getCommentCallable"]
+            },
+            "GetHardware": {
+              "methods": ["getHardware", "getHardware", "getHardware", "getHardwareCallable"]
+            },
+            "GetHardwareGroup": {
+              "methods": ["getHardwareGroup", "getHardwareGroup", "getHardwareGroup", "getHardwareGroupCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOrder": {
+              "methods": ["getOrder", "getOrder", "getOrder", "getOrderCallable"]
+            },
+            "GetSite": {
+              "methods": ["getSite", "getSite", "getSite", "getSiteCallable"]
+            },
+            "GetSku": {
+              "methods": ["getSku", "getSku", "getSku", "getSkuCallable"]
+            },
+            "GetZone": {
+              "methods": ["getZone", "getZone", "getZone", "getZoneCallable"]
+            },
+            "ListChangeLogEntries": {
+              "methods": ["listChangeLogEntries", "listChangeLogEntries", "listChangeLogEntries", "listChangeLogEntriesPagedCallable", "listChangeLogEntriesCallable"]
+            },
+            "ListComments": {
+              "methods": ["listComments", "listComments", "listComments", "listCommentsPagedCallable", "listCommentsCallable"]
+            },
+            "ListHardware": {
+              "methods": ["listHardware", "listHardware", "listHardware", "listHardwarePagedCallable", "listHardwareCallable"]
+            },
+            "ListHardwareGroups": {
+              "methods": ["listHardwareGroups", "listHardwareGroups", "listHardwareGroups", "listHardwareGroupsPagedCallable", "listHardwareGroupsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListOrders": {
+              "methods": ["listOrders", "listOrders", "listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
+            },
+            "ListSites": {
+              "methods": ["listSites", "listSites", "listSites", "listSitesPagedCallable", "listSitesCallable"]
+            },
+            "ListSkus": {
+              "methods": ["listSkus", "listSkus", "listSkus", "listSkusPagedCallable", "listSkusCallable"]
+            },
+            "ListZones": {
+              "methods": ["listZones", "listZones", "listZones", "listZonesPagedCallable", "listZonesCallable"]
+            },
+            "SignalZoneState": {
+              "methods": ["signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateAsync", "signalZoneStateOperationCallable", "signalZoneStateCallable"]
+            },
+            "SubmitOrder": {
+              "methods": ["submitOrderAsync", "submitOrderAsync", "submitOrderAsync", "submitOrderOperationCallable", "submitOrderCallable"]
+            },
+            "UpdateHardware": {
+              "methods": ["updateHardwareAsync", "updateHardwareAsync", "updateHardwareOperationCallable", "updateHardwareCallable"]
+            },
+            "UpdateHardwareGroup": {
+              "methods": ["updateHardwareGroupAsync", "updateHardwareGroupAsync", "updateHardwareGroupOperationCallable", "updateHardwareGroupCallable"]
+            },
+            "UpdateOrder": {
+              "methods": ["updateOrderAsync", "updateOrderAsync", "updateOrderOperationCallable", "updateOrderCallable"]
+            },
+            "UpdateSite": {
+              "methods": ["updateSiteAsync", "updateSiteAsync", "updateSiteOperationCallable", "updateSiteCallable"]
+            },
+            "UpdateZone": {
+              "methods": ["updateZoneAsync", "updateZoneAsync", "updateZoneOperationCallable", "updateZoneCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
