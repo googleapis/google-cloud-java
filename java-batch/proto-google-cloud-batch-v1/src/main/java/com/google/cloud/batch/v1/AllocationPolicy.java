@@ -1371,7 +1371,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Disk type as shown in `gcloud compute disk-types list`.
      * For example, local SSD uses type "local-ssd".
      * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-     * or "pd-standard".
+     * or "pd-standard". If not specified, "pd-standard" will be used as the
+     * default type for non-boot disks, "pd-balanced" will be used as the
+     * default type for boot disks.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1386,7 +1388,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Disk type as shown in `gcloud compute disk-types list`.
      * For example, local SSD uses type "local-ssd".
      * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-     * or "pd-standard".
+     * or "pd-standard". If not specified, "pd-standard" will be used as the
+     * default type for non-boot disks, "pd-balanced" will be used as the
+     * default type for boot disks.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1757,7 +1761,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Disk type as shown in `gcloud compute disk-types list`.
      * For example, local SSD uses type "local-ssd".
      * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-     * or "pd-standard".
+     * or "pd-standard". If not specified, "pd-standard" will be used as the
+     * default type for non-boot disks, "pd-balanced" will be used as the
+     * default type for boot disks.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1783,7 +1789,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * Disk type as shown in `gcloud compute disk-types list`.
      * For example, local SSD uses type "local-ssd".
      * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-     * or "pd-standard".
+     * or "pd-standard". If not specified, "pd-standard" will be used as the
+     * default type for non-boot disks, "pd-balanced" will be used as the
+     * default type for boot disks.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -2756,7 +2764,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Disk type as shown in `gcloud compute disk-types list`.
        * For example, local SSD uses type "local-ssd".
        * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-       * or "pd-standard".
+       * or "pd-standard". If not specified, "pd-standard" will be used as the
+       * default type for non-boot disks, "pd-balanced" will be used as the
+       * default type for boot disks.
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2781,7 +2791,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Disk type as shown in `gcloud compute disk-types list`.
        * For example, local SSD uses type "local-ssd".
        * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-       * or "pd-standard".
+       * or "pd-standard". If not specified, "pd-standard" will be used as the
+       * default type for non-boot disks, "pd-balanced" will be used as the
+       * default type for boot disks.
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2806,7 +2818,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Disk type as shown in `gcloud compute disk-types list`.
        * For example, local SSD uses type "local-ssd".
        * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-       * or "pd-standard".
+       * or "pd-standard". If not specified, "pd-standard" will be used as the
+       * default type for non-boot disks, "pd-balanced" will be used as the
+       * default type for boot disks.
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2830,7 +2844,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Disk type as shown in `gcloud compute disk-types list`.
        * For example, local SSD uses type "local-ssd".
        * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-       * or "pd-standard".
+       * or "pd-standard". If not specified, "pd-standard" will be used as the
+       * default type for non-boot disks, "pd-balanced" will be used as the
+       * default type for boot disks.
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2850,7 +2866,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * Disk type as shown in `gcloud compute disk-types list`.
        * For example, local SSD uses type "local-ssd".
        * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
-       * or "pd-standard".
+       * or "pd-standard". If not specified, "pd-standard" will be used as the
+       * default type for non-boot disks, "pd-balanced" will be used as the
+       * default type for boot disks.
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -4469,7 +4487,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=360
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=370
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4640,7 +4658,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=360
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=370
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -5302,7 +5320,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=360
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5320,7 +5338,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=360
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5342,7 +5360,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=360
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=370
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -8525,6 +8543,20 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     boolean getInstallGpuDrivers();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set this field true if you want Batch to install Ops Agent on
+     * your behalf. Default is false.
+     * </pre>
+     *
+     * <code>bool install_ops_agent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The installOpsAgent.
+     */
+    boolean getInstallOpsAgent();
+
     com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.PolicyTemplateCase
         getPolicyTemplateCase();
   }
@@ -8776,6 +8808,25 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return installGpuDrivers_;
     }
 
+    public static final int INSTALL_OPS_AGENT_FIELD_NUMBER = 4;
+    private boolean installOpsAgent_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set this field true if you want Batch to install Ops Agent on
+     * your behalf. Default is false.
+     * </pre>
+     *
+     * <code>bool install_ops_agent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The installOpsAgent.
+     */
+    @java.lang.Override
+    public boolean getInstallOpsAgent() {
+      return installOpsAgent_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8800,6 +8851,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installGpuDrivers_ != false) {
         output.writeBool(3, installGpuDrivers_);
       }
+      if (installOpsAgent_ != false) {
+        output.writeBool(4, installOpsAgent_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8820,6 +8874,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installGpuDrivers_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, installGpuDrivers_);
       }
+      if (installOpsAgent_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, installOpsAgent_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8837,6 +8894,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate) obj;
 
       if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
+      if (getInstallOpsAgent() != other.getInstallOpsAgent()) return false;
       if (!getPolicyTemplateCase().equals(other.getPolicyTemplateCase())) return false;
       switch (policyTemplateCase_) {
         case 1:
@@ -8861,6 +8919,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INSTALL_GPU_DRIVERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
+      hash = (37 * hash) + INSTALL_OPS_AGENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallOpsAgent());
       switch (policyTemplateCase_) {
         case 1:
           hash = (37 * hash) + POLICY_FIELD_NUMBER;
@@ -9024,6 +9084,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           policyBuilder_.clear();
         }
         installGpuDrivers_ = false;
+        installOpsAgent_ = false;
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -9068,6 +9129,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.installGpuDrivers_ = installGpuDrivers_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.installOpsAgent_ = installOpsAgent_;
         }
       }
 
@@ -9134,6 +9198,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other.getInstallGpuDrivers() != false) {
           setInstallGpuDrivers(other.getInstallGpuDrivers());
         }
+        if (other.getInstallOpsAgent() != false) {
+          setInstallOpsAgent(other.getInstallOpsAgent());
+        }
         switch (other.getPolicyTemplateCase()) {
           case POLICY:
             {
@@ -9197,6 +9264,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 32:
+                {
+                  installOpsAgent_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9665,6 +9738,62 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearInstallGpuDrivers() {
         bitField0_ = (bitField0_ & ~0x00000004);
         installGpuDrivers_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean installOpsAgent_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field true if you want Batch to install Ops Agent on
+       * your behalf. Default is false.
+       * </pre>
+       *
+       * <code>bool install_ops_agent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The installOpsAgent.
+       */
+      @java.lang.Override
+      public boolean getInstallOpsAgent() {
+        return installOpsAgent_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field true if you want Batch to install Ops Agent on
+       * your behalf. Default is false.
+       * </pre>
+       *
+       * <code>bool install_ops_agent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The installOpsAgent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstallOpsAgent(boolean value) {
+
+        installOpsAgent_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field true if you want Batch to install Ops Agent on
+       * your behalf. Default is false.
+       * </pre>
+       *
+       * <code>bool install_ops_agent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInstallOpsAgent() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        installOpsAgent_ = false;
         onChanged();
         return this;
       }

@@ -450,4 +450,52 @@ public interface AssessmentOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder getFraudSignalsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the phoneFraudAssessment field is set.
+   */
+  boolean hasPhoneFraudAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The phoneFraudAssessment.
+   */
+  com.google.recaptchaenterprise.v1.PhoneFraudAssessment getPhoneFraudAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder
+      getPhoneFraudAssessmentOrBuilder();
 }

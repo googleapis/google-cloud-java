@@ -101,7 +101,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Organization Policy uses gRPC for the transport layer.
+Cloud Organization Policy uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
