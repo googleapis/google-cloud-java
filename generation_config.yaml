@@ -958,6 +958,25 @@ libraries:
   - proto_path: google/cloud/functions/v2alpha
   - proto_path: google/cloud/functions/v2beta
 
+- api_shortname: gdchardwaremanagement
+  name_pretty: GDC Hardware Management API
+  product_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs
+  api_description: Google Distributed Cloud connected allows you to run Kubernetes
+    clusters on dedicated hardware provided and maintained by Google that is separate
+    from the Google Cloud data center.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-gdchardwaremanagement/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-gdchardwaremanagement
+  api_id: gdchardwaremanagement.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/gdchardwaremanagement/v1alpha
+  requires_billing: true
+  rpc_documentation: 
+    https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
 - api_shortname: gke-backup
   name_pretty: Backup for GKE
   product_documentation: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
@@ -1112,69 +1131,6 @@ libraries:
   issue_tracker: https://issuetracker.google.com/issues?q=status:open%20componentid:310170
   GAPICs:
   - proto_path: google/cloud/iot/v1
-- api_shortname: merchantapi
-  name_pretty: Merchant API
-  product_documentation: https://developers.google.com/merchant/api
-  api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: 
-    https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
-  release_level: preview
-  distribution_name: com.google.shopping:google-shopping-merchant-products
-  api_id: merchantapi.googleapis.com
-  library_type: GAPIC_AUTO
-  group_id: com.google.shopping
-  cloud_api: false
-  GAPICs:
-  - proto_path: google/shopping/merchant/products/v1beta
-  library_name: shopping-merchant-products
-- api_shortname: merchantapi
-  name_pretty: Merchant API
-  product_documentation: https://developers.google.com/merchant/api
-  api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: 
-    https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
-  release_level: preview
-  distribution_name: com.google.shopping:google-shopping-merchant-datasources
-  api_id: merchantapi.googleapis.com
-  library_type: GAPIC_AUTO
-  group_id: com.google.shopping
-  cloud_api: false
-  GAPICs:
-  - proto_path: google/shopping/merchant/datasources/v1beta
-  library_name: shopping-merchant-datasources
-  requires_billing: true
-- api_shortname: merchantapi
-  name_pretty: Merchant API
-  product_documentation: https://developers.google.com/merchant/api
-  api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: 
-    https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
-  release_level: preview
-  distribution_name: com.google.shopping:google-shopping-merchant-accounts
-  api_id: merchantapi.googleapis.com
-  library_type: GAPIC_AUTO
-  group_id: com.google.shopping
-  cloud_api: false
-  GAPICs:
-  - proto_path: google/shopping/merchant/accounts/v1beta
-  library_name: shopping-merchant-accounts
-  requires_billing: true
-- api_shortname: merchantapi
-  name_pretty: Merchant API
-  product_documentation: https://developers.google.com/merchant/api
-  api_description: Programmatically manage your Merchant Center accounts.
-  client_documentation: 
-    https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
-  release_level: preview
-  distribution_name: com.google.shopping:google-shopping-merchant-promotions
-  api_id: merchantapi.googleapis.com
-  library_type: GAPIC_AUTO
-  group_id: com.google.shopping
-  cloud_api: false
-  GAPICs:
-  - proto_path: google/shopping/merchant/promotions/v1beta
-  library_name: shopping-merchant-promotions
-  requires_billing: true
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
@@ -1939,6 +1895,22 @@ libraries:
   - proto_path: google/shopping/css/v1
 
   # duplicated api_shortname
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-accounts
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/accounts/v1beta
+  library_name: shopping-merchant-accounts
+  requires_billing: true
 - api_shortname: shopping-merchant-conversions
   name_pretty: Merchant Conversions API
   product_documentation: https://developers.google.com/merchant/api
@@ -1955,6 +1927,22 @@ libraries:
   - proto_path: google/shopping/merchant/conversions/v1beta
   requires_billing: true
 
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-datasources
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/datasources/v1beta
+  library_name: shopping-merchant-datasources
+  requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -1981,6 +1969,37 @@ libraries:
   - proto_path: google/shopping/merchant/lfp/v1beta
   requires_billing: true
 
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-products
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/products/v1beta
+  library_name: shopping-merchant-products
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-promotions
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/promotions/v1beta
+  library_name: shopping-merchant-promotions
+  requires_billing: true
 - api_shortname: shopping-merchant-quota
   name_pretty: Merchant Quota API
   product_documentation: https://developers.google.com/merchant/api
