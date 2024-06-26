@@ -101,7 +101,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-AI Platform Notebooks uses gRPC for the transport layer.
+AI Platform Notebooks uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 

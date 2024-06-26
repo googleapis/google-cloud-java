@@ -70,6 +70,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.PhoneFraudAssessment;
 import com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
@@ -157,6 +158,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
+            .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -208,6 +210,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
+            .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 

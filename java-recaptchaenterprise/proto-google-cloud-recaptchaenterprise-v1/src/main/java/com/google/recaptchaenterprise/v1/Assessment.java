@@ -651,6 +651,69 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         : fraudSignals_;
   }
 
+  public static final int PHONE_FRAUD_ASSESSMENT_FIELD_NUMBER = 12;
+  private com.google.recaptchaenterprise.v1.PhoneFraudAssessment phoneFraudAssessment_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the phoneFraudAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasPhoneFraudAssessment() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The phoneFraudAssessment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PhoneFraudAssessment getPhoneFraudAssessment() {
+    return phoneFraudAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()
+        : phoneFraudAssessment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Assessment returned when a site key, a token, and a phone
+   * number as `user_id` are provided. Account defender and SMS toll fraud
+   * protection need to be enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder
+      getPhoneFraudAssessmentOrBuilder() {
+    return phoneFraudAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()
+        : phoneFraudAssessment_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -691,6 +754,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getFraudPreventionAssessment());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(12, getPhoneFraudAssessment());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(13, getFraudSignals());
@@ -738,6 +804,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, getFraudPreventionAssessment());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getPhoneFraudAssessment());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFraudSignals());
@@ -799,6 +869,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasFraudSignals()) {
       if (!getFraudSignals().equals(other.getFraudSignals())) return false;
     }
+    if (hasPhoneFraudAssessment() != other.hasPhoneFraudAssessment()) return false;
+    if (hasPhoneFraudAssessment()) {
+      if (!getPhoneFraudAssessment().equals(other.getPhoneFraudAssessment())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -847,6 +921,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasFraudSignals()) {
       hash = (37 * hash) + FRAUD_SIGNALS_FIELD_NUMBER;
       hash = (53 * hash) + getFraudSignals().hashCode();
+    }
+    if (hasPhoneFraudAssessment()) {
+      hash = (37 * hash) + PHONE_FRAUD_ASSESSMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneFraudAssessment().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -997,6 +1075,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         getFirewallPolicyAssessmentFieldBuilder();
         getFraudPreventionAssessmentFieldBuilder();
         getFraudSignalsFieldBuilder();
+        getPhoneFraudAssessmentFieldBuilder();
       }
     }
 
@@ -1049,6 +1128,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (fraudSignalsBuilder_ != null) {
         fraudSignalsBuilder_.dispose();
         fraudSignalsBuilder_ = null;
+      }
+      phoneFraudAssessment_ = null;
+      if (phoneFraudAssessmentBuilder_ != null) {
+        phoneFraudAssessmentBuilder_.dispose();
+        phoneFraudAssessmentBuilder_ = null;
       }
       return this;
     }
@@ -1144,6 +1228,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             fraudSignalsBuilder_ == null ? fraudSignals_ : fraudSignalsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.phoneFraudAssessment_ =
+            phoneFraudAssessmentBuilder_ == null
+                ? phoneFraudAssessment_
+                : phoneFraudAssessmentBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1223,6 +1314,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFraudSignals()) {
         mergeFraudSignals(other.getFraudSignals());
+      }
+      if (other.hasPhoneFraudAssessment()) {
+        mergePhoneFraudAssessment(other.getPhoneFraudAssessment());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1310,6 +1404,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getPhoneFraudAssessmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(getFraudSignalsFieldBuilder().getBuilder(), extensionRegistry);
@@ -3390,6 +3491,233 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         fraudSignals_ = null;
       }
       return fraudSignalsBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.PhoneFraudAssessment phoneFraudAssessment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessment,
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder,
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder>
+        phoneFraudAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the phoneFraudAssessment field is set.
+     */
+    public boolean hasPhoneFraudAssessment() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The phoneFraudAssessment.
+     */
+    public com.google.recaptchaenterprise.v1.PhoneFraudAssessment getPhoneFraudAssessment() {
+      if (phoneFraudAssessmentBuilder_ == null) {
+        return phoneFraudAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()
+            : phoneFraudAssessment_;
+      } else {
+        return phoneFraudAssessmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhoneFraudAssessment(
+        com.google.recaptchaenterprise.v1.PhoneFraudAssessment value) {
+      if (phoneFraudAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        phoneFraudAssessment_ = value;
+      } else {
+        phoneFraudAssessmentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhoneFraudAssessment(
+        com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder builderForValue) {
+      if (phoneFraudAssessmentBuilder_ == null) {
+        phoneFraudAssessment_ = builderForValue.build();
+      } else {
+        phoneFraudAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePhoneFraudAssessment(
+        com.google.recaptchaenterprise.v1.PhoneFraudAssessment value) {
+      if (phoneFraudAssessmentBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && phoneFraudAssessment_ != null
+            && phoneFraudAssessment_
+                != com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()) {
+          getPhoneFraudAssessmentBuilder().mergeFrom(value);
+        } else {
+          phoneFraudAssessment_ = value;
+        }
+      } else {
+        phoneFraudAssessmentBuilder_.mergeFrom(value);
+      }
+      if (phoneFraudAssessment_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPhoneFraudAssessment() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      phoneFraudAssessment_ = null;
+      if (phoneFraudAssessmentBuilder_ != null) {
+        phoneFraudAssessmentBuilder_.dispose();
+        phoneFraudAssessmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder
+        getPhoneFraudAssessmentBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getPhoneFraudAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder
+        getPhoneFraudAssessmentOrBuilder() {
+      if (phoneFraudAssessmentBuilder_ != null) {
+        return phoneFraudAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        return phoneFraudAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()
+            : phoneFraudAssessment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Assessment returned when a site key, a token, and a phone
+     * number as `user_id` are provided. Account defender and SMS toll fraud
+     * protection need to be enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneFraudAssessment phone_fraud_assessment = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessment,
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder,
+            com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder>
+        getPhoneFraudAssessmentFieldBuilder() {
+      if (phoneFraudAssessmentBuilder_ == null) {
+        phoneFraudAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.PhoneFraudAssessment,
+                com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder,
+                com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder>(
+                getPhoneFraudAssessment(), getParentForChildren(), isClean());
+        phoneFraudAssessment_ = null;
+      }
+      return phoneFraudAssessmentBuilder_;
     }
 
     @java.lang.Override
