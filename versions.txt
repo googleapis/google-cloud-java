@@ -797,3 +797,6 @@ grpc-google-cloud-networkservices-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-products:0.1.0:0.2.0-SNAPSHOT
 proto-google-shopping-merchant-products-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-shopping-merchant-products-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-cloud-gdchardwaremanagement:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-gdchardwaremanagement-v1alpha:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-gdchardwaremanagement-v1alpha:0.0.0:0.0.1-SNAPSHOT

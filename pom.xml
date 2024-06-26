@@ -97,6 +97,7 @@
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-functions</module>
+    <module>java-gdchardwaremanagement</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
