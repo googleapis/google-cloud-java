@@ -1,5 +1,68 @@
 # Changelog
 
+## [1.40.0](https://github.com/googleapis/google-cloud-java/compare/v1.39.0...v1.40.0) (2024-06-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* [dialogflow-cx] An existing field `start_flow` is moved in to oneof in message `.google.cloud.dialogflow.cx.v3beta1.Agent`
+
+### Features
+
+* [aiplatform] add enum value MALFORMED_FUNCTION_CALL to `.google.cloud.aiplatform.v1beta1.content.Candidate.FinishReason` ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [aiplatform] add MALFORMED_FUNCTION_CALL to FinishReason ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [batch] add a install_ops_agent field to InstancePolicyOrTemplate for Ops Agent support ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* [container] A new message `HugepagesConfig` is added ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [container] A new method_signature `parent` is added to method `ListOperations` in service `ClusterManager` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [dataplex] exposing EntrySource.location field that contains location of a resource in the source system ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [dataproc] add the cohort and auto tuning configuration to the batch's RuntimeConfig ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [gdchardwaremanagement] new module for gdchardwaremanagement ([#10990](https://github.com/googleapis/google-cloud-java/issues/10990)) ([c3cdc2a](https://github.com/googleapis/google-cloud-java/commit/c3cdc2a29e3d2f78e9e0550c24a30532db81c16a))
+* [gkehub] add a new field `PENDING` under `DeploymentState` enum ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [kms] support Key Access Justifications policy configuration ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [monitoring] Add support to add links in AlertPolicy ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [recaptchaenterprise] added SMS Toll Fraud assessment ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* [redis-cluster] [Memorystore for Redis Cluster] Add support for different node types ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [redis-cluster] Add support for different node types ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [retail] support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [retail] support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [retail] support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [securitycenter] Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [securitycenter] Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [securitycentermanagement] add `TOXIC_COMBINATION` to `FindingClass` enum ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [securitycentermanagement] add an INGEST_ONLY EnablementState ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [vertexai] add AutomaticFunctionCallingResponder class ([#10896](https://github.com/googleapis/google-cloud-java/issues/10896)) ([a97ac3d](https://github.com/googleapis/google-cloud-java/commit/a97ac3d71c92db934d566df0f8a24a20e8479aa9))
+* [vertexai] add FunctionDeclarationMaker.fromFunc to create FunctionDeclaration from a Java static method ([#10915](https://github.com/googleapis/google-cloud-java/issues/10915)) ([5a10656](https://github.com/googleapis/google-cloud-java/commit/5a10656cf56ff8bcfdf276434d617e7384eab9ac))
+* [vertexai] allow setting ToolConfig and SystemInstruction in ChatSession ([#10953](https://github.com/googleapis/google-cloud-java/issues/10953)) ([5ebfc33](https://github.com/googleapis/google-cloud-java/commit/5ebfc33afaf473c847389f9ef8adc58ee41f6a29))
+* [vertexai] enable AutomaticFunctionCallingResponder in ChatSession ([#10913](https://github.com/googleapis/google-cloud-java/issues/10913)) ([4db0d1d](https://github.com/googleapis/google-cloud-java/commit/4db0d1dfa6069e6d917f12b625cb7cc9319323e4))
+* [vertexai] infer location and project when user doesn't specify them. ([#10868](https://github.com/googleapis/google-cloud-java/issues/10868)) ([14f9825](https://github.com/googleapis/google-cloud-java/commit/14f98251ee1f81d10bd23a21b515a34d2af1f98f))
+* [vertexai] support ToolConfig in GenerativeModel ([#10950](https://github.com/googleapis/google-cloud-java/issues/10950)) ([0801812](https://github.com/googleapis/google-cloud-java/commit/08018121c0d1284d7dd0cd0d288f40d0a11e5506))
+* [vertexai] Update gapic to include ToolConfig ([#10920](https://github.com/googleapis/google-cloud-java/issues/10920)) ([782f21b](https://github.com/googleapis/google-cloud-java/commit/782f21b5836d3b56bf58cc81026ab326e260b16c))
+
+
+### Bug Fixes
+
+* [dialogflow-cx] An existing field `start_flow` is moved in to oneof in message `.google.cloud.dialogflow.cx.v3beta1.Agent` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* bind maven local repository in docker environment ([#10967](https://github.com/googleapis/google-cloud-java/issues/10967)) ([3e7752f](https://github.com/googleapis/google-cloud-java/commit/3e7752f3daef38affbf7b207f67619ea72f0a404))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.40.0 ([#10817](https://github.com/googleapis/google-cloud-java/issues/10817)) ([aa8113c](https://github.com/googleapis/google-cloud-java/commit/aa8113c022208cfb93ac9881b997d22b7c4d9046))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.42.0 ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* restore guava dependency ([#10957](https://github.com/googleapis/google-cloud-java/issues/10957)) ([9e124ee](https://github.com/googleapis/google-cloud-java/commit/9e124ee206652b9268635d9b43eb19adb2a3d7ab))
+
+
+### Documentation
+
+* [batch] Documentation improvements ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [batch]Add instructions on how to configure cross-project pubsub publisher ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* [billing] Genereal documentation improvements ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [cloudcontrolspartner] Mark the accessApprovalRequests.list method as deprecated ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [cloudcontrolspartner] Mark the accessApprovalRequests.list method as deprecated ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [document-ai] Update the comment to add a note about `documentai.processors.create` permission ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [networkservices] Add a comment for the NetworkServices service ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [os-login] A comment for field `parent` in message `.google.cloud.oslogin.v1beta.SignSshPublicKeyRequest` is changed ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [securitycentermanagement] minor docs formatting in `UpdateSecurityCenterServiceRequest.validate_only` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [shopping-css] Remove "in Google Shopping" from documentation comments ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* [shopping-merchant-accounts] Format comments in ListUsersRequest ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* [shopping-merchant-accounts] mark `BusinessInfo.phone` as output only ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
 ## [1.39.0](https://github.com/googleapis/google-cloud-java/compare/v1.38.0...v1.39.0) (2024-06-07)
 
 

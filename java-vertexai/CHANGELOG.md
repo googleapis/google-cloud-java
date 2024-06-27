@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.6.0 (2024-06-27)
+
+### Features
+
+* add AutomaticFunctionCallingResponder class ([#10896](https://github.com/googleapis/google-cloud-java/issues/10896)) ([a97ac3d](https://github.com/googleapis/google-cloud-java/commit/a97ac3d71c92db934d566df0f8a24a20e8479aa9))
+* add FunctionDeclarationMaker.fromFunc to create FunctionDeclaration from a Java static method ([#10915](https://github.com/googleapis/google-cloud-java/issues/10915)) ([5a10656](https://github.com/googleapis/google-cloud-java/commit/5a10656cf56ff8bcfdf276434d617e7384eab9ac))
+* allow setting ToolConfig and SystemInstruction in ChatSession ([#10953](https://github.com/googleapis/google-cloud-java/issues/10953)) ([5ebfc33](https://github.com/googleapis/google-cloud-java/commit/5ebfc33afaf473c847389f9ef8adc58ee41f6a29))
+* enable AutomaticFunctionCallingResponder in ChatSession ([#10913](https://github.com/googleapis/google-cloud-java/issues/10913)) ([4db0d1d](https://github.com/googleapis/google-cloud-java/commit/4db0d1dfa6069e6d917f12b625cb7cc9319323e4))
+* infer location and project when user doesn't specify them. ([#10868](https://github.com/googleapis/google-cloud-java/issues/10868)) ([14f9825](https://github.com/googleapis/google-cloud-java/commit/14f98251ee1f81d10bd23a21b515a34d2af1f98f))
+* support ToolConfig in GenerativeModel ([#10950](https://github.com/googleapis/google-cloud-java/issues/10950)) ([0801812](https://github.com/googleapis/google-cloud-java/commit/08018121c0d1284d7dd0cd0d288f40d0a11e5506))
+* Update gapic to include ToolConfig ([#10920](https://github.com/googleapis/google-cloud-java/issues/10920)) ([782f21b](https://github.com/googleapis/google-cloud-java/commit/782f21b5836d3b56bf58cc81026ab326e260b16c))
+
+
+
 ## 1.5.0 (None)
 
 * No change

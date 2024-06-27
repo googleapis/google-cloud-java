@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.44.0 (2024-06-27)
+
+* No change
+
+
 ## 2.43.0 (None)
 
 * No change
