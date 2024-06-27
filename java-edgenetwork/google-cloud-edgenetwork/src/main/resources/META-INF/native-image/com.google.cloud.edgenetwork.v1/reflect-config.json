@@ -1368,6 +1368,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.edgenetwork.v1.Subnet$BondingType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.edgenetwork.v1.Subnet$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

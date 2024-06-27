@@ -38,7 +38,8 @@ public class SyncGetResourceValueConfig {
       GetResourceValueConfigRequest request =
           GetResourceValueConfigRequest.newBuilder()
               .setName(
-                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                  ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                          "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
                       .toString())
               .build();
       ResourceValueConfig response = securityCenterClient.getResourceValueConfig(request);

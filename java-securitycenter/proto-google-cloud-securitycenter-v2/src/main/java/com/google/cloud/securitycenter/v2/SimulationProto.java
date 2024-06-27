@@ -44,23 +44,28 @@ public final class SimulationProto {
       "\n/google/cloud/securitycenter/v2/simulat"
           + "ion.proto\022\036google.cloud.securitycenter.v"
           + "2\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\0324google/cloud/secu"
-          + "ritycenter/v2/valued_resource.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\"\265\002\n\nSimulat"
-          + "ion\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030\002 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\022d\n\037resou"
-          + "rce_value_configs_metadata\030\003 \003(\0132;.googl"
-          + "e.cloud.securitycenter.v2.ResourceValueC"
-          + "onfigMetadata:}\352Az\n(securitycenter.googl"
+          + "le/api/resource.proto\032-google/cloud/secu"
+          + "ritycenter/v2/resource.proto\0324google/clo"
+          + "ud/securitycenter/v2/valued_resource.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\312\003\n\n"
+          + "Simulation\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030"
+          + "\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022d"
+          + "\n\037resource_value_configs_metadata\030\003 \003(\0132"
+          + ";.google.cloud.securitycenter.v2.Resourc"
+          + "eValueConfigMetadata\022E\n\016cloud_provider\030\004"
+          + " \001(\0162-.google.cloud.securitycenter.v2.Cl"
+          + "oudProvider:\312\001\352A\306\001\n(securitycenter.googl"
           + "eapis.com/Simulation\0225organizations/{org"
-          + "anization}/simulations/{simulation}*\013sim"
-          + "ulations2\nsimulationB\351\001\n\"com.google.clou"
-          + "d.securitycenter.v2B\017SimulationProtoP\001ZJ"
-          + "cloud.google.com/go/securitycenter/apiv2"
-          + "/securitycenterpb;securitycenterpb\252\002\036Goo"
-          + "gle.Cloud.SecurityCenter.V2\312\002\036Google\\Clo"
-          + "ud\\SecurityCenter\\V2\352\002!Google::Cloud::Se"
-          + "curityCenter::V2b\006proto3"
+          + "anization}/simulations/{simulation}\022Jorg"
+          + "anizations/{organization}/locations/{loc"
+          + "ation}/simulations/{simluation}*\013simulat"
+          + "ions2\nsimulationB\351\001\n\"com.google.cloud.se"
+          + "curitycenter.v2B\017SimulationProtoP\001ZJclou"
+          + "d.google.com/go/securitycenter/apiv2/sec"
+          + "uritycenterpb;securitycenterpb\252\002\036Google."
+          + "Cloud.SecurityCenter.V2\312\002\036Google\\Cloud\\S"
+          + "ecurityCenter\\V2\352\002!Google::Cloud::Securi"
+          + "tyCenter::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -68,6 +73,7 @@ public final class SimulationProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v2.ValuedResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -77,7 +83,7 @@ public final class SimulationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v2_Simulation_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "ResourceValueConfigsMetadata",
+              "Name", "CreateTime", "ResourceValueConfigsMetadata", "CloudProvider",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -87,6 +93,7 @@ public final class SimulationProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v2.ValuedResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

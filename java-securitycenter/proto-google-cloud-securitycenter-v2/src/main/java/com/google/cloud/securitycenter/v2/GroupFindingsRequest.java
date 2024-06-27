@@ -315,14 +315,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * Required. Expression that defines what assets fields to use for grouping.
    * The string value should follow SQL syntax: comma separated list of fields.
    * For example: "parent,resource_name".
-   *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -348,14 +340,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * Required. Expression that defines what assets fields to use for grouping.
    * The string value should follow SQL syntax: comma separated list of fields.
    * For example: "parent,resource_name".
-   *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
    * </pre>
    *
    * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1446,14 +1430,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping.
      * The string value should follow SQL syntax: comma separated list of fields.
      * For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1478,14 +1454,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping.
      * The string value should follow SQL syntax: comma separated list of fields.
      * For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1510,14 +1478,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping.
      * The string value should follow SQL syntax: comma separated list of fields.
      * For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1541,14 +1501,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping.
      * The string value should follow SQL syntax: comma separated list of fields.
      * For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1568,14 +1520,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping.
      * The string value should follow SQL syntax: comma separated list of fields.
      * For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      * </pre>
      *
      * <code>string group_by = 3 [(.google.api.field_behavior) = REQUIRED];</code>

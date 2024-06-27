@@ -359,6 +359,43 @@ public interface SubnetOrBuilder
    *
    *
    * <pre>
+   * Optional. A bonding type in the subnet creation specifies whether a VLAN
+   * being created will be present on Bonded or Non-Bonded or Both port types.
+   * In addition, this flag is to be used to set the specific network
+   * configuration which clusters can then use for their workloads based on the
+   * bonding choice.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bondingType.
+   */
+  int getBondingTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A bonding type in the subnet creation specifies whether a VLAN
+   * being created will be present on Bonded or Non-Bonded or Both port types.
+   * In addition, this flag is to be used to set the specific network
+   * configuration which clusters can then use for their workloads based on the
+   * bonding choice.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bondingType.
+   */
+  com.google.cloud.edgenetwork.v1.Subnet.BondingType getBondingType();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Current stage of the resource to the device by config push.
    * </pre>
    *

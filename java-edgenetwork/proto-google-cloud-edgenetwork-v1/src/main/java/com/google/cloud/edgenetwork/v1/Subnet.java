@@ -44,6 +44,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     ipv4Cidr_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ipv6Cidr_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    bondingType_ = 0;
     state_ = 0;
   }
 
@@ -78,6 +79,171 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.edgenetwork.v1.Subnet.class,
             com.google.cloud.edgenetwork.v1.Subnet.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Bonding type in the subnet.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.edgenetwork.v1.Subnet.BondingType}
+   */
+  public enum BondingType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * Bonding type will be unspecified by default and if the user chooses to
+     * not specify a bonding type at time of creating the VLAN. This will be
+     * treated as mixed bonding where the VLAN will have both bonded and
+     * non-bonded connectivity to machines.
+     * </pre>
+     *
+     * <code>BONDING_TYPE_UNSPECIFIED = 0;</code>
+     */
+    BONDING_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Single homed.
+     * </pre>
+     *
+     * <code>BONDED = 1;</code>
+     */
+    BONDED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Multi homed.
+     * </pre>
+     *
+     * <code>NON_BONDED = 2;</code>
+     */
+    NON_BONDED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified
+     * Bonding type will be unspecified by default and if the user chooses to
+     * not specify a bonding type at time of creating the VLAN. This will be
+     * treated as mixed bonding where the VLAN will have both bonded and
+     * non-bonded connectivity to machines.
+     * </pre>
+     *
+     * <code>BONDING_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int BONDING_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Single homed.
+     * </pre>
+     *
+     * <code>BONDED = 1;</code>
+     */
+    public static final int BONDED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Multi homed.
+     * </pre>
+     *
+     * <code>NON_BONDED = 2;</code>
+     */
+    public static final int NON_BONDED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BondingType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BondingType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return BONDING_TYPE_UNSPECIFIED;
+        case 1:
+          return BONDED;
+        case 2:
+          return NON_BONDED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BondingType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BondingType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<BondingType>() {
+          public BondingType findValueByNumber(int number) {
+            return BondingType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.edgenetwork.v1.Subnet.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BondingType[] VALUES = values();
+
+    public static BondingType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BondingType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.edgenetwork.v1.Subnet.BondingType)
   }
 
   private int bitField0_;
@@ -587,6 +753,55 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     return vlanId_;
   }
 
+  public static final int BONDING_TYPE_FIELD_NUMBER = 11;
+  private int bondingType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A bonding type in the subnet creation specifies whether a VLAN
+   * being created will be present on Bonded or Non-Bonded or Both port types.
+   * In addition, this flag is to be used to set the specific network
+   * configuration which clusters can then use for their workloads based on the
+   * bonding choice.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bondingType.
+   */
+  @java.lang.Override
+  public int getBondingTypeValue() {
+    return bondingType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A bonding type in the subnet creation specifies whether a VLAN
+   * being created will be present on Bonded or Non-Bonded or Both port types.
+   * In addition, this flag is to be used to set the specific network
+   * configuration which clusters can then use for their workloads based on the
+   * bonding choice.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bondingType.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgenetwork.v1.Subnet.BondingType getBondingType() {
+    com.google.cloud.edgenetwork.v1.Subnet.BondingType result =
+        com.google.cloud.edgenetwork.v1.Subnet.BondingType.forNumber(bondingType_);
+    return result == null
+        ? com.google.cloud.edgenetwork.v1.Subnet.BondingType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int STATE_FIELD_NUMBER = 10;
   private int state_ = 0;
   /**
@@ -669,6 +884,11 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.edgenetwork.v1.ResourceState.STATE_UNKNOWN.getNumber()) {
       output.writeEnum(10, state_);
     }
+    if (bondingType_
+        != com.google.cloud.edgenetwork.v1.Subnet.BondingType.BONDING_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, bondingType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -725,6 +945,11 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.edgenetwork.v1.ResourceState.STATE_UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, state_);
     }
+    if (bondingType_
+        != com.google.cloud.edgenetwork.v1.Subnet.BondingType.BONDING_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, bondingType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -755,6 +980,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     if (!getIpv4CidrList().equals(other.getIpv4CidrList())) return false;
     if (!getIpv6CidrList().equals(other.getIpv6CidrList())) return false;
     if (getVlanId() != other.getVlanId()) return false;
+    if (bondingType_ != other.bondingType_) return false;
     if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -795,6 +1021,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VLAN_ID_FIELD_NUMBER;
     hash = (53 * hash) + getVlanId();
+    hash = (37 * hash) + BONDING_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + bondingType_;
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -985,6 +1213,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       ipv4Cidr_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ipv6Cidr_ = com.google.protobuf.LazyStringArrayList.emptyList();
       vlanId_ = 0;
+      bondingType_ = 0;
       state_ = 0;
       return this;
     }
@@ -1056,6 +1285,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         result.vlanId_ = vlanId_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.bondingType_ = bondingType_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1152,6 +1384,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (other.getVlanId() != 0) {
         setVlanId(other.getVlanId());
       }
+      if (other.bondingType_ != 0) {
+        setBondingTypeValue(other.getBondingTypeValue());
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -1246,9 +1481,15 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
+            case 88:
+              {
+                bondingType_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2574,6 +2815,128 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bondingType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A bonding type in the subnet creation specifies whether a VLAN
+     * being created will be present on Bonded or Non-Bonded or Both port types.
+     * In addition, this flag is to be used to set the specific network
+     * configuration which clusters can then use for their workloads based on the
+     * bonding choice.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for bondingType.
+     */
+    @java.lang.Override
+    public int getBondingTypeValue() {
+      return bondingType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A bonding type in the subnet creation specifies whether a VLAN
+     * being created will be present on Bonded or Non-Bonded or Both port types.
+     * In addition, this flag is to be used to set the specific network
+     * configuration which clusters can then use for their workloads based on the
+     * bonding choice.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for bondingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBondingTypeValue(int value) {
+      bondingType_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A bonding type in the subnet creation specifies whether a VLAN
+     * being created will be present on Bonded or Non-Bonded or Both port types.
+     * In addition, this flag is to be used to set the specific network
+     * configuration which clusters can then use for their workloads based on the
+     * bonding choice.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bondingType.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgenetwork.v1.Subnet.BondingType getBondingType() {
+      com.google.cloud.edgenetwork.v1.Subnet.BondingType result =
+          com.google.cloud.edgenetwork.v1.Subnet.BondingType.forNumber(bondingType_);
+      return result == null
+          ? com.google.cloud.edgenetwork.v1.Subnet.BondingType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A bonding type in the subnet creation specifies whether a VLAN
+     * being created will be present on Bonded or Non-Bonded or Both port types.
+     * In addition, this flag is to be used to set the specific network
+     * configuration which clusters can then use for their workloads based on the
+     * bonding choice.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bondingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBondingType(com.google.cloud.edgenetwork.v1.Subnet.BondingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      bondingType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A bonding type in the subnet creation specifies whether a VLAN
+     * being created will be present on Bonded or Non-Bonded or Both port types.
+     * In addition, this flag is to be used to set the specific network
+     * configuration which clusters can then use for their workloads based on the
+     * bonding choice.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.Subnet.BondingType bonding_type = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBondingType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      bondingType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      *
@@ -2608,7 +2971,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2649,7 +3012,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2668,7 +3031,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;

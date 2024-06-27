@@ -106,7 +106,7 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
     List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
 
     BatchCreateResourceValueConfigsResponse actualResponse =
@@ -136,7 +136,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
       client.batchCreateResourceValueConfigs(parent, requests);
       Assert.fail("No exception raised");
@@ -147,6 +147,53 @@ public class SecurityCenterClientHttpJsonTest {
 
   @Test
   public void batchCreateResourceValueConfigsTest2() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest3() throws Exception {
     BatchCreateResourceValueConfigsResponse expectedResponse =
         BatchCreateResourceValueConfigsResponse.newBuilder()
             .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
@@ -176,7 +223,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+  public void batchCreateResourceValueConfigsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -568,6 +615,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -661,6 +710,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -1669,7 +1720,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     ResourceValueConfigName name =
-        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+        ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+            "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
 
     client.deleteResourceValueConfig(name);
 
@@ -1697,7 +1749,8 @@ public class SecurityCenterClientHttpJsonTest {
 
     try {
       ResourceValueConfigName name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+              "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
       client.deleteResourceValueConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1863,13 +1916,17 @@ public class SecurityCenterClientHttpJsonTest {
   public void getSimulationTest() throws Exception {
     Simulation expectedResponse =
         Simulation.newBuilder()
-            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setName(
+                SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
-    SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+    SimulationName name =
+        SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
 
     Simulation actualResponse = client.getSimulation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1897,7 +1954,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      SimulationName name =
+          SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
       client.getSimulation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1909,9 +1967,12 @@ public class SecurityCenterClientHttpJsonTest {
   public void getSimulationTest2() throws Exception {
     Simulation expectedResponse =
         Simulation.newBuilder()
-            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setName(
+                SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1956,7 +2017,8 @@ public class SecurityCenterClientHttpJsonTest {
     ValuedResource expectedResponse =
         ValuedResource.newBuilder()
             .setName(
-                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                        "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                     .toString())
             .setResource("resource-341064690")
             .setResourceType("resourceType-384364440")
@@ -1967,7 +2029,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     ValuedResourceName name =
-        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+        ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+            "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
 
     ValuedResource actualResponse = client.getValuedResource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1996,7 +2059,8 @@ public class SecurityCenterClientHttpJsonTest {
 
     try {
       ValuedResourceName name =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       client.getValuedResource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2009,7 +2073,8 @@ public class SecurityCenterClientHttpJsonTest {
     ValuedResource expectedResponse =
         ValuedResource.newBuilder()
             .setName(
-                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                        "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                     .toString())
             .setResource("resource-341064690")
             .setResourceType("resourceType-384364440")
@@ -2366,7 +2431,9 @@ public class SecurityCenterClientHttpJsonTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -2375,13 +2442,15 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
     ResourceValueConfigName name =
-        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+        ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+            "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
 
     ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2410,7 +2479,8 @@ public class SecurityCenterClientHttpJsonTest {
 
     try {
       ResourceValueConfigName name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+              "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
       client.getResourceValueConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2423,7 +2493,9 @@ public class SecurityCenterClientHttpJsonTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -2432,6 +2504,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
@@ -2681,8 +2754,9 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ValuedResourceName parent =
-        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+    OrganizationValuedResourceName parent =
+        OrganizationValuedResourceName.of(
+            "[ORGANIZATION]", "[LOCATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
 
     ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
 
@@ -2714,8 +2788,9 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ValuedResourceName parent =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      OrganizationValuedResourceName parent =
+          OrganizationValuedResourceName.of(
+              "[ORGANIZATION]", "[LOCATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       client.listAttackPaths(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2725,6 +2800,60 @@ public class SecurityCenterClientHttpJsonTest {
 
   @Test
   public void listAttackPathsTest2() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ValuedResourceName parent =
+        ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+            "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValuedResourceName parent =
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.listAttackPaths(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest3() throws Exception {
     AttackPath responsesElement = AttackPath.newBuilder().build();
     ListAttackPathsResponse expectedResponse =
         ListAttackPathsResponse.newBuilder()
@@ -2758,7 +2887,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listAttackPathsExceptionTest2() throws Exception {
+  public void listAttackPathsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3637,7 +3766,7 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
 
     ListResourceValueConfigsPagedResponse pagedListResponse =
         client.listResourceValueConfigs(parent);
@@ -3670,7 +3799,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       client.listResourceValueConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3680,6 +3809,57 @@ public class SecurityCenterClientHttpJsonTest {
 
   @Test
   public void listResourceValueConfigsTest2() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest3() throws Exception {
     ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
     ListResourceValueConfigsResponse expectedResponse =
         ListResourceValueConfigsResponse.newBuilder()
@@ -3714,7 +3894,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listResourceValueConfigsExceptionTest2() throws Exception {
+  public void listResourceValueConfigsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3939,7 +4119,8 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    SimulationName parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+    SimulationName parent =
+        SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
 
     ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
 
@@ -3971,7 +4152,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SimulationName parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      SimulationName parent =
+          SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
       client.listValuedResources(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4077,6 +4259,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4170,6 +4354,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4359,6 +4545,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4452,6 +4640,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4797,6 +4987,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4848,6 +5040,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4925,6 +5119,8 @@ public class SecurityCenterClientHttpJsonTest {
               .setSecurityPosture(SecurityPosture.newBuilder().build())
               .addAllLogEntries(new ArrayList<LogEntry>())
               .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+              .setCloudArmor(CloudArmor.newBuilder().build())
+              .setNotebook(Notebook.newBuilder().build())
               .setToxicCombination(ToxicCombination.newBuilder().build())
               .addAllGroupMemberships(new ArrayList<GroupMembership>())
               .build();
@@ -5085,7 +5281,9 @@ public class SecurityCenterClientHttpJsonTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -5094,6 +5292,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
@@ -5102,7 +5301,9 @@ public class SecurityCenterClientHttpJsonTest {
     ResourceValueConfig resourceValueConfig =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -5111,6 +5312,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
@@ -5146,7 +5348,8 @@ public class SecurityCenterClientHttpJsonTest {
       ResourceValueConfig resourceValueConfig =
           ResourceValueConfig.newBuilder()
               .setName(
-                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                  ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                          "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
                       .toString())
               .setResourceValue(ResourceValue.forNumber(0))
               .addAllTagValues(new ArrayList<String>())
@@ -5156,6 +5359,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setCloudProvider(CloudProvider.forNumber(0))
               .setSensitiveDataProtectionMapping(
                   ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
               .build();

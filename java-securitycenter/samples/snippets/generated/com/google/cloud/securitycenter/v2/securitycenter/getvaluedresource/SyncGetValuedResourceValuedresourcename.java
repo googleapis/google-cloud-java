@@ -35,7 +35,8 @@ public class SyncGetValuedResourceValuedresourcename {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       ValuedResourceName name =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       ValuedResource response = securityCenterClient.getValuedResource(name);
     }
   }

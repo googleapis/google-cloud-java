@@ -113,7 +113,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
     List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
 
     BatchCreateResourceValueConfigsResponse actualResponse =
@@ -139,7 +139,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
       client.batchCreateResourceValueConfigs(parent, requests);
       Assert.fail("No exception raised");
@@ -150,6 +150,49 @@ public class SecurityCenterClientTest {
 
   @Test
   public void batchCreateResourceValueConfigsTest2() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateResourceValueConfigsRequest actualRequest =
+        ((BatchCreateResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest3() throws Exception {
     BatchCreateResourceValueConfigsResponse expectedResponse =
         BatchCreateResourceValueConfigsResponse.newBuilder()
             .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
@@ -177,7 +220,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+  public void batchCreateResourceValueConfigsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -549,6 +592,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -638,6 +683,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -1556,7 +1603,8 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addResponse(expectedResponse);
 
     ResourceValueConfigName name =
-        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+        ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+            "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
 
     client.deleteResourceValueConfig(name);
 
@@ -1579,7 +1627,8 @@ public class SecurityCenterClientTest {
 
     try {
       ResourceValueConfigName name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+              "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
       client.deleteResourceValueConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1726,13 +1775,17 @@ public class SecurityCenterClientTest {
   public void getSimulationTest() throws Exception {
     Simulation expectedResponse =
         Simulation.newBuilder()
-            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setName(
+                SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+    SimulationName name =
+        SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
 
     Simulation actualResponse = client.getSimulation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1754,7 +1807,8 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      SimulationName name =
+          SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
       client.getSimulation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1766,9 +1820,12 @@ public class SecurityCenterClientTest {
   public void getSimulationTest2() throws Exception {
     Simulation expectedResponse =
         Simulation.newBuilder()
-            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setName(
+                SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1807,7 +1864,8 @@ public class SecurityCenterClientTest {
     ValuedResource expectedResponse =
         ValuedResource.newBuilder()
             .setName(
-                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                        "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                     .toString())
             .setResource("resource-341064690")
             .setResourceType("resourceType-384364440")
@@ -1818,7 +1876,8 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addResponse(expectedResponse);
 
     ValuedResourceName name =
-        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+        ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+            "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
 
     ValuedResource actualResponse = client.getValuedResource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1841,7 +1900,8 @@ public class SecurityCenterClientTest {
 
     try {
       ValuedResourceName name =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       client.getValuedResource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1854,7 +1914,8 @@ public class SecurityCenterClientTest {
     ValuedResource expectedResponse =
         ValuedResource.newBuilder()
             .setName(
-                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                        "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                     .toString())
             .setResource("resource-341064690")
             .setResourceType("resourceType-384364440")
@@ -2167,7 +2228,9 @@ public class SecurityCenterClientTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -2176,13 +2239,15 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
     ResourceValueConfigName name =
-        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+        ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+            "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
 
     ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2206,7 +2271,8 @@ public class SecurityCenterClientTest {
 
     try {
       ResourceValueConfigName name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+              "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
       client.getResourceValueConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2219,7 +2285,9 @@ public class SecurityCenterClientTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -2228,6 +2296,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();
@@ -2450,8 +2519,9 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ValuedResourceName parent =
-        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+    OrganizationValuedResourceName parent =
+        OrganizationValuedResourceName.of(
+            "[ORGANIZATION]", "[LOCATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
 
     ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
 
@@ -2477,8 +2547,9 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ValuedResourceName parent =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      OrganizationValuedResourceName parent =
+          OrganizationValuedResourceName.of(
+              "[ORGANIZATION]", "[LOCATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       client.listAttackPaths(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2488,6 +2559,54 @@ public class SecurityCenterClientTest {
 
   @Test
   public void listAttackPathsTest2() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ValuedResourceName parent =
+        ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+            "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAttackPathsRequest actualRequest = ((ListAttackPathsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ValuedResourceName parent =
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.listAttackPaths(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest3() throws Exception {
     AttackPath responsesElement = AttackPath.newBuilder().build();
     ListAttackPathsResponse expectedResponse =
         ListAttackPathsResponse.newBuilder()
@@ -2517,7 +2636,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listAttackPathsExceptionTest2() throws Exception {
+  public void listAttackPathsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -3296,7 +3415,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
 
     ListResourceValueConfigsPagedResponse pagedListResponse =
         client.listResourceValueConfigs(parent);
@@ -3324,7 +3443,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       client.listResourceValueConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3334,6 +3453,52 @@ public class SecurityCenterClientTest {
 
   @Test
   public void listResourceValueConfigsTest2() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceValueConfigsRequest actualRequest =
+        ((ListResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest3() throws Exception {
     ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
     ListResourceValueConfigsResponse expectedResponse =
         ListResourceValueConfigsResponse.newBuilder()
@@ -3365,7 +3530,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listResourceValueConfigsExceptionTest2() throws Exception {
+  public void listResourceValueConfigsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -3564,7 +3729,8 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SimulationName parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+    SimulationName parent =
+        SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
 
     ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
 
@@ -3590,7 +3756,8 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SimulationName parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      SimulationName parent =
+          SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]");
       client.listValuedResources(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3690,6 +3857,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -3778,6 +3947,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -3952,6 +4123,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4040,6 +4213,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4308,6 +4483,8 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
@@ -4448,7 +4625,9 @@ public class SecurityCenterClientTest {
     ResourceValueConfig expectedResponse =
         ResourceValueConfig.newBuilder()
             .setName(
-                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+                ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                        "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                    .toString())
             .setResourceValue(ResourceValue.forNumber(0))
             .addAllTagValues(new ArrayList<String>())
             .setResourceType("resourceType-384364440")
@@ -4457,6 +4636,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
             .setSensitiveDataProtectionMapping(
                 ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
             .build();

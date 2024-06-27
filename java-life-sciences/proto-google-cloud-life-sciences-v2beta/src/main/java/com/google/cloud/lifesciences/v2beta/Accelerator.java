@@ -71,7 +71,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The accelerator type string (for example, "nvidia-tesla-k80").
+   * The accelerator type string (for example, "nvidia-tesla-t4").
    *
    * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
    * attached, the required runtime libraries will be made available to all
@@ -101,7 +101,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The accelerator type string (for example, "nvidia-tesla-k80").
+   * The accelerator type string (for example, "nvidia-tesla-t4").
    *
    * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
    * attached, the required runtime libraries will be made available to all
@@ -515,7 +515,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type string (for example, "nvidia-tesla-k80").
+     * The accelerator type string (for example, "nvidia-tesla-t4").
      *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
@@ -544,7 +544,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type string (for example, "nvidia-tesla-k80").
+     * The accelerator type string (for example, "nvidia-tesla-t4").
      *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
@@ -573,7 +573,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type string (for example, "nvidia-tesla-k80").
+     * The accelerator type string (for example, "nvidia-tesla-t4").
      *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
@@ -601,7 +601,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type string (for example, "nvidia-tesla-k80").
+     * The accelerator type string (for example, "nvidia-tesla-t4").
      *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
@@ -625,7 +625,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type string (for example, "nvidia-tesla-k80").
+     * The accelerator type string (for example, "nvidia-tesla-t4").
      *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
