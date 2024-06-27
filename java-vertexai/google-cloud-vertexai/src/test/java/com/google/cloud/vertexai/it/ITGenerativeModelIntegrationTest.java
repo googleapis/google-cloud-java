@@ -129,9 +129,13 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContent_restTransport_nonEmptyCandidateList() throws IOException {
+  public void generateContent_restTransportWithTunedModel_nonEmptyCandidateList()
+      throws IOException {
     try (VertexAI vertexAiViaRest = new VertexAI.Builder().setTransport(Transport.REST).build()) {
-      GenerativeModel textModelWithRest = new GenerativeModel(MODEL_NAME_TEXT, vertexAiViaRest);
+      GenerativeModel textModelWithRest =
+          new GenerativeModel(
+              "projects/964831358985/locations/us-central1/endpoints/7226683110069370880",
+              vertexAiViaRest);
       GenerateContentResponse response = textModelWithRest.generateContent(TEXT);
 
       assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
