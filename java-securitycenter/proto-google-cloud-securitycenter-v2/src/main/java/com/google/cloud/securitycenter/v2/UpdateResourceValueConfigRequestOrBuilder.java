@@ -71,6 +71,10 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * <pre>
    * The list of fields to be updated.
    * If empty all mutable fields will be updated.
+   *
+   * To update nested fields, include the top level field in the mask
+   * For example, to update gcp_metadata.resource_type, include the
+   * "gcp_metadata" field mask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -84,6 +88,10 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * <pre>
    * The list of fields to be updated.
    * If empty all mutable fields will be updated.
+   *
+   * To update nested fields, include the top level field in the mask
+   * For example, to update gcp_metadata.resource_type, include the
+   * "gcp_metadata" field mask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -97,6 +105,10 @@ public interface UpdateResourceValueConfigRequestOrBuilder
    * <pre>
    * The list of fields to be updated.
    * If empty all mutable fields will be updated.
+   *
+   * To update nested fields, include the top level field in the mask
+   * For example, to update gcp_metadata.resource_type, include the
+   * "gcp_metadata" field mask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

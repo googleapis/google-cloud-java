@@ -39,7 +39,8 @@ public class AsyncGetValuedResource {
       GetValuedResourceRequest request =
           GetValuedResourceRequest.newBuilder()
               .setName(
-                  ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                  ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                          "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                       .toString())
               .build();
       ApiFuture<ValuedResource> future =

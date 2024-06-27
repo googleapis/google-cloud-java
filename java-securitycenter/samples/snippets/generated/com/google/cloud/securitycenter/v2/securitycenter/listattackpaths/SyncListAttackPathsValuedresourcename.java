@@ -35,7 +35,8 @@ public class SyncListAttackPathsValuedresourcename {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       ValuedResourceName parent =
-          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+          ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+              "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
       for (AttackPath element : securityCenterClient.listAttackPaths(parent).iterateAll()) {
         // doThingsWith(element);
       }

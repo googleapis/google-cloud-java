@@ -153,6 +153,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs:batchCreate")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -561,6 +563,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -632,6 +636,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/simulations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -666,6 +671,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/simulations/*/valuedResources/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -816,6 +823,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -928,7 +937,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setAdditionalPaths(
                           "/v2/{parent=organizations/*/simulations/*/valuedResources/*}/attackPaths",
-                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths")
+                          "/v2/{parent=organizations/*/locations/*/simulations/*/valuedResources/*}/attackPaths",
+                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths",
+                          "/v2/{parent=organizations/*/locations/*/simulations/*/attackExposureResults/*}/attackPaths")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1138,6 +1149,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/resourceValueConfigs")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1645,6 +1658,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                                 request.getResourceValueConfig().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{resourceValueConfig.name=organizations/*/locations/*/resourceValueConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

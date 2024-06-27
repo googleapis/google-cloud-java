@@ -41,6 +41,7 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
   private Simulation() {
     name_ = "";
     resourceValueConfigsMetadata_ = java.util.Collections.emptyList();
+    cloudProvider_ = 0;
   }
 
   @java.lang.Override
@@ -258,6 +259,41 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
     return resourceValueConfigsMetadata_.get(index);
   }
 
+  public static final int CLOUD_PROVIDER_FIELD_NUMBER = 4;
+  private int cloudProvider_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider was used in this simulation.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+   *
+   * @return The enum numeric value on the wire for cloudProvider.
+   */
+  @java.lang.Override
+  public int getCloudProviderValue() {
+    return cloudProvider_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider was used in this simulation.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+   *
+   * @return The cloudProvider.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.CloudProvider getCloudProvider() {
+    com.google.cloud.securitycenter.v2.CloudProvider result =
+        com.google.cloud.securitycenter.v2.CloudProvider.forNumber(cloudProvider_);
+    return result == null ? com.google.cloud.securitycenter.v2.CloudProvider.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -281,6 +317,11 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < resourceValueConfigsMetadata_.size(); i++) {
       output.writeMessage(3, resourceValueConfigsMetadata_.get(i));
     }
+    if (cloudProvider_
+        != com.google.cloud.securitycenter.v2.CloudProvider.CLOUD_PROVIDER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, cloudProvider_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -300,6 +341,11 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, resourceValueConfigsMetadata_.get(i));
+    }
+    if (cloudProvider_
+        != com.google.cloud.securitycenter.v2.CloudProvider.CLOUD_PROVIDER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, cloudProvider_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -324,6 +370,7 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getResourceValueConfigsMetadataList().equals(other.getResourceValueConfigsMetadataList()))
       return false;
+    if (cloudProvider_ != other.cloudProvider_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -345,6 +392,8 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESOURCE_VALUE_CONFIGS_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getResourceValueConfigsMetadataList().hashCode();
     }
+    hash = (37 * hash) + CLOUD_PROVIDER_FIELD_NUMBER;
+    hash = (53 * hash) + cloudProvider_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -507,6 +556,7 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
         resourceValueConfigsMetadataBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      cloudProvider_ = 0;
       return this;
     }
 
@@ -564,6 +614,9 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cloudProvider_ = cloudProvider_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -649,6 +702,9 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.cloudProvider_ != 0) {
+        setCloudProviderValue(other.getCloudProviderValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -701,6 +757,12 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 32:
+              {
+                cloudProvider_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1458,6 +1520,98 @@ public final class Simulation extends com.google.protobuf.GeneratedMessageV3
         resourceValueConfigsMetadata_ = null;
       }
       return resourceValueConfigsMetadataBuilder_;
+    }
+
+    private int cloudProvider_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which cloud provider was used in this simulation.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+     *
+     * @return The enum numeric value on the wire for cloudProvider.
+     */
+    @java.lang.Override
+    public int getCloudProviderValue() {
+      return cloudProvider_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which cloud provider was used in this simulation.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for cloudProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudProviderValue(int value) {
+      cloudProvider_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which cloud provider was used in this simulation.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+     *
+     * @return The cloudProvider.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v2.CloudProvider getCloudProvider() {
+      com.google.cloud.securitycenter.v2.CloudProvider result =
+          com.google.cloud.securitycenter.v2.CloudProvider.forNumber(cloudProvider_);
+      return result == null
+          ? com.google.cloud.securitycenter.v2.CloudProvider.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which cloud provider was used in this simulation.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+     *
+     * @param value The cloudProvider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudProvider(com.google.cloud.securitycenter.v2.CloudProvider value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      cloudProvider_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which cloud provider was used in this simulation.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudProvider() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      cloudProvider_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

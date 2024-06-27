@@ -28,7 +28,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Name for the resource value config
+   * Name for the resource value configuration
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,7 +40,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Name for the resource value config
+   * Name for the resource value configuration
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -80,9 +80,9 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Tag values combined with AND to check against.
+   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
    * Values in the form "tagValues/123"
-   * E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
@@ -95,9 +95,9 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Tag values combined with AND to check against.
+   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
    * Values in the form "tagValues/123"
-   * E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
@@ -110,9 +110,9 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Tag values combined with AND to check against.
+   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
    * Values in the form "tagValues/123"
-   * E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
@@ -126,9 +126,9 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Tag values combined with AND to check against.
+   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
    * Values in the form "tagValues/123"
-   * E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
@@ -144,9 +144,9 @@ public interface ResourceValueConfigOrBuilder
    *
    * <pre>
    * Apply resource_value only to resources that match resource_type.
-   * resource_type will be checked with "AND" of other resources.
-   * E.g. "storage.googleapis.com/Bucket" with resource_value "HIGH" will
-   * apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
+   * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+   * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
+   * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
    * </pre>
    *
    * <code>string resource_type = 4;</code>
@@ -159,9 +159,9 @@ public interface ResourceValueConfigOrBuilder
    *
    * <pre>
    * Apply resource_value only to resources that match resource_type.
-   * resource_type will be checked with "AND" of other resources.
-   * E.g. "storage.googleapis.com/Bucket" with resource_value "HIGH" will
-   * apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
+   * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+   * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
+   * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
    * </pre>
    *
    * <code>string resource_type = 4;</code>
@@ -174,10 +174,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Project or folder to scope this config to.
-   * For example, "project/456" would apply this config only to resources in
-   * "project/456"
-   * scope will be checked with "AND" of other resources.
+   * Project or folder to scope this configuration to.
+   * For example, "project/456" would apply this configuration only to resources
+   * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
+   * resources.
    * </pre>
    *
    * <code>string scope = 5;</code>
@@ -189,10 +189,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Project or folder to scope this config to.
-   * For example, "project/456" would apply this config only to resources in
-   * "project/456"
-   * scope will be checked with "AND" of other resources.
+   * Project or folder to scope this configuration to.
+   * For example, "project/456" would apply this configuration only to resources
+   * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
+   * resources.
    * </pre>
    *
    * <code>string scope = 5;</code>
@@ -205,9 +205,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with AND.
-   * E.g. "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" AND "env": "prod"
+   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
+   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
    *
@@ -218,9 +219,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with AND.
-   * E.g. "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" AND "env": "prod"
+   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
+   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
    *
@@ -234,9 +236,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with AND.
-   * E.g. "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" AND "env": "prod"
+   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
+   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
    *
@@ -247,9 +250,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with AND.
-   * E.g. "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" AND "env": "prod"
+   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
+   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
    *
@@ -264,9 +268,10 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with AND.
-   * E.g. "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" AND "env": "prod"
+   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
+   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
    *
@@ -278,7 +283,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Description of the resource value config.
+   * Description of the resource value configuration.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -290,7 +295,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Description of the resource value config.
+   * Description of the resource value configuration.
    * </pre>
    *
    * <code>string description = 7;</code>
@@ -303,7 +308,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was created.
+   * Output only. Timestamp this resource value configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -316,7 +321,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was created.
+   * Output only. Timestamp this resource value configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -329,7 +334,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was created.
+   * Output only. Timestamp this resource value configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -341,7 +346,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was last updated.
+   * Output only. Timestamp this resource value configuration was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -354,7 +359,7 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was last updated.
+   * Output only. Timestamp this resource value configuration was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -367,13 +372,38 @@ public interface ResourceValueConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp this resource value config was last updated.
+   * Output only. Timestamp this resource value configuration was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud provider this configuration applies to
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 10;</code>
+   *
+   * @return The enum numeric value on the wire for cloudProvider.
+   */
+  int getCloudProviderValue();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud provider this configuration applies to
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 10;</code>
+   *
+   * @return The cloudProvider.
+   */
+  com.google.cloud.securitycenter.v2.CloudProvider getCloudProvider();
 
   /**
    *

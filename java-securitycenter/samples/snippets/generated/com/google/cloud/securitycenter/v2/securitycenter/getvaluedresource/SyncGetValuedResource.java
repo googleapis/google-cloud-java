@@ -38,7 +38,8 @@ public class SyncGetValuedResource {
       GetValuedResourceRequest request =
           GetValuedResourceRequest.newBuilder()
               .setName(
-                  ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                  ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                          "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                       .toString())
               .build();
       ValuedResource response = securityCenterClient.getValuedResource(request);

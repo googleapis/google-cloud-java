@@ -1432,6 +1432,16 @@ public final class ChatServiceGrpc {
      * if the People API Person profile ID for `user&#64;example.com` is `123456789`,
      * you can add the user to the space by setting the `membership.member.name`
      * to `users/user&#64;example.com` or `users/123456789`.
+     * To specify the Google groups to add, add memberships with the
+     * appropriate `membership.group_member.name`. To add or invite a Google
+     * group, use `groups/{group}`, where `{group}` is the `id` for the group from
+     * the Cloud Identity Groups API. For example, you can use [Cloud Identity
+     * Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add the group to the space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * For a named space or group chat, if the caller blocks, or is blocked
      * by some members, or doesn't have permission to add some members, then
      * those members aren't added to the created space.
@@ -1566,7 +1576,8 @@ public final class ChatServiceGrpc {
      * directly to the specified space. Requires [user
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` for the
-     * human or app member.
+     * human or app member, or set the `membership.group_member.name` for the
+     * group member.
      * - To add the calling app to a space or a direct message between two human
      *   users, use `users/app`. Unable to add other
      *   apps to the space.
@@ -1577,6 +1588,14 @@ public final class ChatServiceGrpc {
      * profile ID for `user&#64;example.com` is `123456789`, you can add the user to
      * the space by setting the `membership.member.name` to
      * `users/user&#64;example.com` or `users/123456789`.
+     * - To add or invite a Google group in a named space, use
+     * `groups/{group}`, where `{group}` is the `id` for the group from the Cloud
+     * Identity Groups API. For example, you can use [Cloud Identity Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add or invite the group to a named space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * </pre>
      */
     default void createMembership(
@@ -2089,6 +2108,16 @@ public final class ChatServiceGrpc {
      * if the People API Person profile ID for `user&#64;example.com` is `123456789`,
      * you can add the user to the space by setting the `membership.member.name`
      * to `users/user&#64;example.com` or `users/123456789`.
+     * To specify the Google groups to add, add memberships with the
+     * appropriate `membership.group_member.name`. To add or invite a Google
+     * group, use `groups/{group}`, where `{group}` is the `id` for the group from
+     * the Cloud Identity Groups API. For example, you can use [Cloud Identity
+     * Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add the group to the space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * For a named space or group chat, if the caller blocks, or is blocked
      * by some members, or doesn't have permission to add some members, then
      * those members aren't added to the created space.
@@ -2232,7 +2261,8 @@ public final class ChatServiceGrpc {
      * directly to the specified space. Requires [user
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` for the
-     * human or app member.
+     * human or app member, or set the `membership.group_member.name` for the
+     * group member.
      * - To add the calling app to a space or a direct message between two human
      *   users, use `users/app`. Unable to add other
      *   apps to the space.
@@ -2243,6 +2273,14 @@ public final class ChatServiceGrpc {
      * profile ID for `user&#64;example.com` is `123456789`, you can add the user to
      * the space by setting the `membership.member.name` to
      * `users/user&#64;example.com` or `users/123456789`.
+     * - To add or invite a Google group in a named space, use
+     * `groups/{group}`, where `{group}` is the `id` for the group from the Cloud
+     * Identity Groups API. For example, you can use [Cloud Identity Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add or invite the group to a named space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * </pre>
      */
     public void createMembership(
@@ -2724,6 +2762,16 @@ public final class ChatServiceGrpc {
      * if the People API Person profile ID for `user&#64;example.com` is `123456789`,
      * you can add the user to the space by setting the `membership.member.name`
      * to `users/user&#64;example.com` or `users/123456789`.
+     * To specify the Google groups to add, add memberships with the
+     * appropriate `membership.group_member.name`. To add or invite a Google
+     * group, use `groups/{group}`, where `{group}` is the `id` for the group from
+     * the Cloud Identity Groups API. For example, you can use [Cloud Identity
+     * Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add the group to the space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * For a named space or group chat, if the caller blocks, or is blocked
      * by some members, or doesn't have permission to add some members, then
      * those members aren't added to the created space.
@@ -2850,7 +2898,8 @@ public final class ChatServiceGrpc {
      * directly to the specified space. Requires [user
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` for the
-     * human or app member.
+     * human or app member, or set the `membership.group_member.name` for the
+     * group member.
      * - To add the calling app to a space or a direct message between two human
      *   users, use `users/app`. Unable to add other
      *   apps to the space.
@@ -2861,6 +2910,14 @@ public final class ChatServiceGrpc {
      * profile ID for `user&#64;example.com` is `123456789`, you can add the user to
      * the space by setting the `membership.member.name` to
      * `users/user&#64;example.com` or `users/123456789`.
+     * - To add or invite a Google group in a named space, use
+     * `groups/{group}`, where `{group}` is the `id` for the group from the Cloud
+     * Identity Groups API. For example, you can use [Cloud Identity Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add or invite the group to a named space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * </pre>
      */
     public com.google.chat.v1.Membership createMembership(
@@ -3321,6 +3378,16 @@ public final class ChatServiceGrpc {
      * if the People API Person profile ID for `user&#64;example.com` is `123456789`,
      * you can add the user to the space by setting the `membership.member.name`
      * to `users/user&#64;example.com` or `users/123456789`.
+     * To specify the Google groups to add, add memberships with the
+     * appropriate `membership.group_member.name`. To add or invite a Google
+     * group, use `groups/{group}`, where `{group}` is the `id` for the group from
+     * the Cloud Identity Groups API. For example, you can use [Cloud Identity
+     * Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add the group to the space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * For a named space or group chat, if the caller blocks, or is blocked
      * by some members, or doesn't have permission to add some members, then
      * those members aren't added to the created space.
@@ -3451,7 +3518,8 @@ public final class ChatServiceGrpc {
      * directly to the specified space. Requires [user
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` for the
-     * human or app member.
+     * human or app member, or set the `membership.group_member.name` for the
+     * group member.
      * - To add the calling app to a space or a direct message between two human
      *   users, use `users/app`. Unable to add other
      *   apps to the space.
@@ -3462,6 +3530,14 @@ public final class ChatServiceGrpc {
      * profile ID for `user&#64;example.com` is `123456789`, you can add the user to
      * the space by setting the `membership.member.name` to
      * `users/user&#64;example.com` or `users/123456789`.
+     * - To add or invite a Google group in a named space, use
+     * `groups/{group}`, where `{group}` is the `id` for the group from the Cloud
+     * Identity Groups API. For example, you can use [Cloud Identity Groups lookup
+     * API](https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup)
+     * to retrieve the ID `123456789` for group email `group&#64;example.com`, then
+     * you can add or invite the group to a named space by setting the
+     * `membership.group_member.name` to `groups/123456789`. Group email is not
+     * supported, and Google groups can only be added as members in named spaces.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>

@@ -3883,6 +3883,106 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return loadBalancers_.get(index);
   }
 
+  public static final int CLOUD_ARMOR_FIELD_NUMBER = 51;
+  private com.google.cloud.securitycenter.v2.CloudArmor cloudArmor_;
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   *
+   * @return Whether the cloudArmor field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudArmor() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   *
+   * @return The cloudArmor.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.CloudArmor getCloudArmor() {
+    return cloudArmor_ == null
+        ? com.google.cloud.securitycenter.v2.CloudArmor.getDefaultInstance()
+        : cloudArmor_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.CloudArmorOrBuilder getCloudArmorOrBuilder() {
+    return cloudArmor_ == null
+        ? com.google.cloud.securitycenter.v2.CloudArmor.getDefaultInstance()
+        : cloudArmor_;
+  }
+
+  public static final int NOTEBOOK_FIELD_NUMBER = 55;
+  private com.google.cloud.securitycenter.v2.Notebook notebook_;
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotebook() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   *
+   * @return The notebook.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.Notebook getNotebook() {
+    return notebook_ == null
+        ? com.google.cloud.securitycenter.v2.Notebook.getDefaultInstance()
+        : notebook_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.NotebookOrBuilder getNotebookOrBuilder() {
+    return notebook_ == null
+        ? com.google.cloud.securitycenter.v2.Notebook.getDefaultInstance()
+        : notebook_;
+  }
+
   public static final int TOXIC_COMBINATION_FIELD_NUMBER = 56;
   private com.google.cloud.securitycenter.v2.ToxicCombination toxicCombination_;
   /**
@@ -3902,7 +4002,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasToxicCombination() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -4179,6 +4279,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(50, loadBalancers_.get(i));
     }
     if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(51, getCloudArmor());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(55, getNotebook());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(56, getToxicCombination());
     }
     for (int i = 0; i < groupMemberships_.size(); i++) {
@@ -4359,6 +4465,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, loadBalancers_.get(i));
     }
     if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getCloudArmor());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(55, getNotebook());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, getToxicCombination());
     }
     for (int i = 0; i < groupMemberships_.size(); i++) {
@@ -4480,6 +4592,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getLogEntriesList().equals(other.getLogEntriesList())) return false;
     if (!getLoadBalancersList().equals(other.getLoadBalancersList())) return false;
+    if (hasCloudArmor() != other.hasCloudArmor()) return false;
+    if (hasCloudArmor()) {
+      if (!getCloudArmor().equals(other.getCloudArmor())) return false;
+    }
+    if (hasNotebook() != other.hasNotebook()) return false;
+    if (hasNotebook()) {
+      if (!getNotebook().equals(other.getNotebook())) return false;
+    }
     if (hasToxicCombination() != other.hasToxicCombination()) return false;
     if (hasToxicCombination()) {
       if (!getToxicCombination().equals(other.getToxicCombination())) return false;
@@ -4645,6 +4765,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (getLoadBalancersCount() > 0) {
       hash = (37 * hash) + LOAD_BALANCERS_FIELD_NUMBER;
       hash = (53 * hash) + getLoadBalancersList().hashCode();
+    }
+    if (hasCloudArmor()) {
+      hash = (37 * hash) + CLOUD_ARMOR_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudArmor().hashCode();
+    }
+    if (hasNotebook()) {
+      hash = (37 * hash) + NOTEBOOK_FIELD_NUMBER;
+      hash = (53 * hash) + getNotebook().hashCode();
     }
     if (hasToxicCombination()) {
       hash = (37 * hash) + TOXIC_COMBINATION_FIELD_NUMBER;
@@ -4857,6 +4985,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getSecurityPostureFieldBuilder();
         getLogEntriesFieldBuilder();
         getLoadBalancersFieldBuilder();
+        getCloudArmorFieldBuilder();
+        getNotebookFieldBuilder();
         getToxicCombinationFieldBuilder();
         getGroupMembershipsFieldBuilder();
       }
@@ -5038,6 +5168,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         loadBalancersBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00001000);
+      cloudArmor_ = null;
+      if (cloudArmorBuilder_ != null) {
+        cloudArmorBuilder_.dispose();
+        cloudArmorBuilder_ = null;
+      }
+      notebook_ = null;
+      if (notebookBuilder_ != null) {
+        notebookBuilder_.dispose();
+        notebookBuilder_ = null;
+      }
       toxicCombination_ = null;
       if (toxicCombinationBuilder_ != null) {
         toxicCombinationBuilder_.dispose();
@@ -5049,7 +5189,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         groupMemberships_ = null;
         groupMembershipsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       return this;
     }
 
@@ -5171,9 +5311,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.loadBalancers_ = loadBalancersBuilder_.build();
       }
       if (groupMembershipsBuilder_ == null) {
-        if (((bitField1_ & 0x00004000) != 0)) {
+        if (((bitField1_ & 0x00010000) != 0)) {
           groupMemberships_ = java.util.Collections.unmodifiableList(groupMemberships_);
-          bitField1_ = (bitField1_ & ~0x00004000);
+          bitField1_ = (bitField1_ & ~0x00010000);
         }
         result.groupMemberships_ = groupMemberships_;
       } else {
@@ -5337,9 +5477,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.cloudArmor_ = cloudArmorBuilder_ == null ? cloudArmor_ : cloudArmorBuilder_.build();
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.notebook_ = notebookBuilder_ == null ? notebook_ : notebookBuilder_.build();
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         result.toxicCombination_ =
             toxicCombinationBuilder_ == null ? toxicCombination_ : toxicCombinationBuilder_.build();
-        to_bitField0_ |= 0x00040000;
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5759,6 +5907,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCloudArmor()) {
+        mergeCloudArmor(other.getCloudArmor());
+      }
+      if (other.hasNotebook()) {
+        mergeNotebook(other.getNotebook());
+      }
       if (other.hasToxicCombination()) {
         mergeToxicCombination(other.getToxicCombination());
       }
@@ -5766,7 +5920,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         if (!other.groupMemberships_.isEmpty()) {
           if (groupMemberships_.isEmpty()) {
             groupMemberships_ = other.groupMemberships_;
-            bitField1_ = (bitField1_ & ~0x00004000);
+            bitField1_ = (bitField1_ & ~0x00010000);
           } else {
             ensureGroupMembershipsIsMutable();
             groupMemberships_.addAll(other.groupMemberships_);
@@ -5779,7 +5933,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             groupMembershipsBuilder_.dispose();
             groupMembershipsBuilder_ = null;
             groupMemberships_ = other.groupMemberships_;
-            bitField1_ = (bitField1_ & ~0x00004000);
+            bitField1_ = (bitField1_ & ~0x00010000);
             groupMembershipsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGroupMembershipsFieldBuilder()
@@ -6175,11 +6329,23 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 402
+            case 410:
+              {
+                input.readMessage(getCloudArmorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00002000;
+                break;
+              } // case 410
+            case 442:
+              {
+                input.readMessage(getNotebookFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00004000;
+                break;
+              } // case 442
             case 450:
               {
                 input.readMessage(
                     getToxicCombinationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 450
             case 458:
@@ -15725,6 +15891,378 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return loadBalancersBuilder_;
     }
 
+    private com.google.cloud.securitycenter.v2.CloudArmor cloudArmor_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.CloudArmor,
+            com.google.cloud.securitycenter.v2.CloudArmor.Builder,
+            com.google.cloud.securitycenter.v2.CloudArmorOrBuilder>
+        cloudArmorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     *
+     * @return Whether the cloudArmor field is set.
+     */
+    public boolean hasCloudArmor() {
+      return ((bitField1_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     *
+     * @return The cloudArmor.
+     */
+    public com.google.cloud.securitycenter.v2.CloudArmor getCloudArmor() {
+      if (cloudArmorBuilder_ == null) {
+        return cloudArmor_ == null
+            ? com.google.cloud.securitycenter.v2.CloudArmor.getDefaultInstance()
+            : cloudArmor_;
+      } else {
+        return cloudArmorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public Builder setCloudArmor(com.google.cloud.securitycenter.v2.CloudArmor value) {
+      if (cloudArmorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudArmor_ = value;
+      } else {
+        cloudArmorBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public Builder setCloudArmor(
+        com.google.cloud.securitycenter.v2.CloudArmor.Builder builderForValue) {
+      if (cloudArmorBuilder_ == null) {
+        cloudArmor_ = builderForValue.build();
+      } else {
+        cloudArmorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public Builder mergeCloudArmor(com.google.cloud.securitycenter.v2.CloudArmor value) {
+      if (cloudArmorBuilder_ == null) {
+        if (((bitField1_ & 0x00002000) != 0)
+            && cloudArmor_ != null
+            && cloudArmor_ != com.google.cloud.securitycenter.v2.CloudArmor.getDefaultInstance()) {
+          getCloudArmorBuilder().mergeFrom(value);
+        } else {
+          cloudArmor_ = value;
+        }
+      } else {
+        cloudArmorBuilder_.mergeFrom(value);
+      }
+      if (cloudArmor_ != null) {
+        bitField1_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public Builder clearCloudArmor() {
+      bitField1_ = (bitField1_ & ~0x00002000);
+      cloudArmor_ = null;
+      if (cloudArmorBuilder_ != null) {
+        cloudArmorBuilder_.dispose();
+        cloudArmorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v2.CloudArmor.Builder getCloudArmorBuilder() {
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return getCloudArmorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v2.CloudArmorOrBuilder getCloudArmorOrBuilder() {
+      if (cloudArmorBuilder_ != null) {
+        return cloudArmorBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudArmor_ == null
+            ? com.google.cloud.securitycenter.v2.CloudArmor.getDefaultInstance()
+            : cloudArmor_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Cloud Armor findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.CloudArmor,
+            com.google.cloud.securitycenter.v2.CloudArmor.Builder,
+            com.google.cloud.securitycenter.v2.CloudArmorOrBuilder>
+        getCloudArmorFieldBuilder() {
+      if (cloudArmorBuilder_ == null) {
+        cloudArmorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.CloudArmor,
+                com.google.cloud.securitycenter.v2.CloudArmor.Builder,
+                com.google.cloud.securitycenter.v2.CloudArmorOrBuilder>(
+                getCloudArmor(), getParentForChildren(), isClean());
+        cloudArmor_ = null;
+      }
+      return cloudArmorBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v2.Notebook notebook_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.Notebook,
+            com.google.cloud.securitycenter.v2.Notebook.Builder,
+            com.google.cloud.securitycenter.v2.NotebookOrBuilder>
+        notebookBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     *
+     * @return Whether the notebook field is set.
+     */
+    public boolean hasNotebook() {
+      return ((bitField1_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     *
+     * @return The notebook.
+     */
+    public com.google.cloud.securitycenter.v2.Notebook getNotebook() {
+      if (notebookBuilder_ == null) {
+        return notebook_ == null
+            ? com.google.cloud.securitycenter.v2.Notebook.getDefaultInstance()
+            : notebook_;
+      } else {
+        return notebookBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public Builder setNotebook(com.google.cloud.securitycenter.v2.Notebook value) {
+      if (notebookBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        notebook_ = value;
+      } else {
+        notebookBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public Builder setNotebook(
+        com.google.cloud.securitycenter.v2.Notebook.Builder builderForValue) {
+      if (notebookBuilder_ == null) {
+        notebook_ = builderForValue.build();
+      } else {
+        notebookBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public Builder mergeNotebook(com.google.cloud.securitycenter.v2.Notebook value) {
+      if (notebookBuilder_ == null) {
+        if (((bitField1_ & 0x00004000) != 0)
+            && notebook_ != null
+            && notebook_ != com.google.cloud.securitycenter.v2.Notebook.getDefaultInstance()) {
+          getNotebookBuilder().mergeFrom(value);
+        } else {
+          notebook_ = value;
+        }
+      } else {
+        notebookBuilder_.mergeFrom(value);
+      }
+      if (notebook_ != null) {
+        bitField1_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public Builder clearNotebook() {
+      bitField1_ = (bitField1_ & ~0x00004000);
+      notebook_ = null;
+      if (notebookBuilder_ != null) {
+        notebookBuilder_.dispose();
+        notebookBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public com.google.cloud.securitycenter.v2.Notebook.Builder getNotebookBuilder() {
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return getNotebookFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    public com.google.cloud.securitycenter.v2.NotebookOrBuilder getNotebookOrBuilder() {
+      if (notebookBuilder_ != null) {
+        return notebookBuilder_.getMessageOrBuilder();
+      } else {
+        return notebook_ == null
+            ? com.google.cloud.securitycenter.v2.Notebook.getDefaultInstance()
+            : notebook_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notebook associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.Notebook,
+            com.google.cloud.securitycenter.v2.Notebook.Builder,
+            com.google.cloud.securitycenter.v2.NotebookOrBuilder>
+        getNotebookFieldBuilder() {
+      if (notebookBuilder_ == null) {
+        notebookBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.Notebook,
+                com.google.cloud.securitycenter.v2.Notebook.Builder,
+                com.google.cloud.securitycenter.v2.NotebookOrBuilder>(
+                getNotebook(), getParentForChildren(), isClean());
+        notebook_ = null;
+      }
+      return notebookBuilder_;
+    }
+
     private com.google.cloud.securitycenter.v2.ToxicCombination toxicCombination_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v2.ToxicCombination,
@@ -15747,7 +16285,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the toxicCombination field is set.
      */
     public boolean hasToxicCombination() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
     /**
      *
@@ -15795,7 +16333,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         toxicCombinationBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -15819,7 +16357,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         toxicCombinationBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -15839,7 +16377,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeToxicCombination(
         com.google.cloud.securitycenter.v2.ToxicCombination value) {
       if (toxicCombinationBuilder_ == null) {
-        if (((bitField1_ & 0x00002000) != 0)
+        if (((bitField1_ & 0x00008000) != 0)
             && toxicCombination_ != null
             && toxicCombination_
                 != com.google.cloud.securitycenter.v2.ToxicCombination.getDefaultInstance()) {
@@ -15851,7 +16389,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         toxicCombinationBuilder_.mergeFrom(value);
       }
       if (toxicCombination_ != null) {
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -15870,7 +16408,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v2.ToxicCombination toxic_combination = 56;</code>
      */
     public Builder clearToxicCombination() {
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       toxicCombination_ = null;
       if (toxicCombinationBuilder_ != null) {
         toxicCombinationBuilder_.dispose();
@@ -15894,7 +16432,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.securitycenter.v2.ToxicCombination.Builder
         getToxicCombinationBuilder() {
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return getToxicCombinationFieldBuilder().getBuilder();
     }
@@ -15955,11 +16493,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureGroupMembershipsIsMutable() {
-      if (!((bitField1_ & 0x00004000) != 0)) {
+      if (!((bitField1_ & 0x00010000) != 0)) {
         groupMemberships_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v2.GroupMembership>(
                 groupMemberships_);
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00010000;
       }
     }
 
@@ -16200,7 +16738,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGroupMemberships() {
       if (groupMembershipsBuilder_ == null) {
         groupMemberships_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00004000);
+        bitField1_ = (bitField1_ & ~0x00010000);
         onChanged();
       } else {
         groupMembershipsBuilder_.clear();
@@ -16341,7 +16879,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v2.GroupMembership.Builder,
                 com.google.cloud.securitycenter.v2.GroupMembershipOrBuilder>(
                 groupMemberships_,
-                ((bitField1_ & 0x00004000) != 0),
+                ((bitField1_ & 0x00010000) != 0),
                 getParentForChildren(),
                 isClean());
         groupMemberships_ = null;

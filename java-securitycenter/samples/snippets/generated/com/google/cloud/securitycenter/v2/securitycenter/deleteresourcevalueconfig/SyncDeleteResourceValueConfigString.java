@@ -35,7 +35,9 @@ public class SyncDeleteResourceValueConfigString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       String name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString();
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                  "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+              .toString();
       securityCenterClient.deleteResourceValueConfig(name);
     }
   }

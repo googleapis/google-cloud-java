@@ -38,7 +38,9 @@ public class AsyncGetSimulation {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       GetSimulationRequest request =
           GetSimulationRequest.newBuilder()
-              .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+              .setName(
+                  SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                      .toString())
               .build();
       ApiFuture<Simulation> future =
           securityCenterClient.getSimulationCallable().futureCall(request);

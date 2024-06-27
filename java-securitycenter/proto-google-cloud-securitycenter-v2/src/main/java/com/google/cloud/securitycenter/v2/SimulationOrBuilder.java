@@ -158,4 +158,29 @@ public interface SimulationOrBuilder
    */
   com.google.cloud.securitycenter.v2.ResourceValueConfigMetadataOrBuilder
       getResourceValueConfigsMetadataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider was used in this simulation.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+   *
+   * @return The enum numeric value on the wire for cloudProvider.
+   */
+  int getCloudProviderValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider was used in this simulation.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudProvider cloud_provider = 4;</code>
+   *
+   * @return The cloudProvider.
+   */
+  com.google.cloud.securitycenter.v2.CloudProvider getCloudProvider();
 }
