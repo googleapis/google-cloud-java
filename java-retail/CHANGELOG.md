@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.48.0 (2024-06-27)
+
+### Features
+
+* support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* support merged facets ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
 ## 2.47.0 (None)
 
 * No change

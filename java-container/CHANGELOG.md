@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.49.0 (2024-06-27)
+
+### Features
+
+* A new message `HugepagesConfig` is added ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+* A new method_signature `parent` is added to method `ListOperations` in service `ClusterManager` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
 ## 2.48.0 (None)
 
 * No change

@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.47.0 (2024-06-27)
+
+### Features
+
+* add enum value MALFORMED_FUNCTION_CALL to `.google.cloud.aiplatform.v1beta1.content.Candidate.FinishReason` ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* add MALFORMED_FUNCTION_CALL to FinishReason ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
 ## 3.46.0 (None)
 
 * No change

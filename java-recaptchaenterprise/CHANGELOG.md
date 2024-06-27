@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.43.0 (2024-06-27)
+
+### Features
+
+* added SMS Toll Fraud assessment ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+
+
+
 ## 3.42.0 (None)
 
 * No change

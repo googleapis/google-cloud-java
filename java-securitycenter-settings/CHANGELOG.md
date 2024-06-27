@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.49.0 (2024-06-27)
+
+### Features
+
+* Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* Add toxic_combination and group_memberships fields to finding ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
 ## 0.48.0 (None)
 
 * No change

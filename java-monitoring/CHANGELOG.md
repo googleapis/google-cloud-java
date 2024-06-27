@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.47.0 (2024-06-27)
+
+### Features
+
+* Add support to add links in AlertPolicy ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
 ## 3.46.0 (None)
 
 * No change

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.46.0 (2024-06-27)
+
+### Features
+
+* add a install_ops_agent field to InstancePolicyOrTemplate for Ops Agent support ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* Documentation improvements ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
 ## 0.45.0 (None)
 
 * No change

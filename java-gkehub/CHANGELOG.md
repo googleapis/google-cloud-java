@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.46.0 (2024-06-27)
+
+### Features
+
+* add a new field `PENDING` under `DeploymentState` enum ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
 ## 1.45.0 (None)
 
 * No change

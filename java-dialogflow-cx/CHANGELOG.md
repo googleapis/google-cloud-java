@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.57.0 (2024-06-27)
+
+### Features
+
+* An existing field `start_flow` is moved in to oneof in message `.google.cloud.dialogflow.cx.v3beta1.Agent`
+* An existing field `start_flow` is moved in to oneof in message `.google.cloud.dialogflow.cx.v3beta1.Agent` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
 ## 0.56.0 (None)
 
 * No change

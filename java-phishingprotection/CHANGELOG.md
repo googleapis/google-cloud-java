@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.77.0 (2024-06-27)
+
+* No change
+
+
 ## 0.76.0 (None)
 
 * No change
