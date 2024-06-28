@@ -26,12 +26,13 @@ import java.util.Objects;
  */
 public final class CsvOptions extends FormatOptions {
 
-  private static final long serialVersionUID = 2193570529308612708L;
+  private static final long serialVersionUID = 2193570529308612709L;
 
   private final Boolean allowJaggedRows;
   private final Boolean allowQuotedNewLines;
   private final String encoding;
   private final String fieldDelimiter;
+  private final String nullMarker;
   private final String quote;
   private final Long skipLeadingRows;
   private final Boolean preserveAsciiControlCharacters;
@@ -42,6 +43,7 @@ public final class CsvOptions extends FormatOptions {
     private Boolean allowQuotedNewLines;
     private String encoding;
     private String fieldDelimiter;
+    private String nullMarker;
     private String quote;
     private Long skipLeadingRows;
     private Boolean preserveAsciiControlCharacters;
@@ -53,6 +55,7 @@ public final class CsvOptions extends FormatOptions {
       this.allowQuotedNewLines = csvOptions.allowQuotedNewLines;
       this.encoding = csvOptions.encoding;
       this.fieldDelimiter = csvOptions.fieldDelimiter;
+      this.nullMarker = csvOptions.nullMarker;
       this.quote = csvOptions.quote;
       this.skipLeadingRows = csvOptions.skipLeadingRows;
       this.preserveAsciiControlCharacters = csvOptions.preserveAsciiControlCharacters;
@@ -111,6 +114,18 @@ public final class CsvOptions extends FormatOptions {
     }
 
     /**
+     * [Optional] Specifies a string that represents a null value in a CSV file. For example, if you
+     * specify \"\\N\", BigQuery interprets \"\\N\" as a null value when querying a CSV file. The
+     * default value is the empty string. If you set this property to a custom value, BigQuery
+     * throws an error if an empty string is present for all data types except for STRING and BYTE.
+     * For STRING and BYTE columns, BigQuery interprets the empty string as an empty value.
+     */
+    public Builder setNullMarker(String nullMarker) {
+      this.nullMarker = nullMarker;
+      return this;
+    }
+
+    /**
      * Sets the value that is used to quote data sections in a CSV file. BigQuery converts the
      * string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split
      * the data in its raw, binary state. The default value is a double-quote ('"'). If your data
@@ -154,6 +169,7 @@ public final class CsvOptions extends FormatOptions {
     this.allowQuotedNewLines = builder.allowQuotedNewLines;
     this.encoding = builder.encoding;
     this.fieldDelimiter = builder.fieldDelimiter;
+    this.nullMarker = builder.nullMarker;
     this.quote = builder.quote;
     this.skipLeadingRows = builder.skipLeadingRows;
     this.preserveAsciiControlCharacters = builder.preserveAsciiControlCharacters;
@@ -192,6 +208,11 @@ public final class CsvOptions extends FormatOptions {
     return fieldDelimiter;
   }
 
+  /** Returns the string that represents a null value in a CSV file. */
+  public String getNullMarker() {
+    return nullMarker;
+  }
+
   /** Returns the value that is used to quote data sections in a CSV file. */
   public String getQuote() {
     return quote;
@@ -226,6 +247,7 @@ public final class CsvOptions extends FormatOptions {
         .add("allowQuotedNewLines", allowQuotedNewLines)
         .add("encoding", encoding)
         .add("fieldDelimiter", fieldDelimiter)
+        .add("nullMarker", nullMarker)
         .add("quote", quote)
         .add("skipLeadingRows", skipLeadingRows)
         .add("preserveAsciiControlCharacters", preserveAsciiControlCharacters)
@@ -240,6 +262,7 @@ public final class CsvOptions extends FormatOptions {
         allowQuotedNewLines,
         encoding,
         fieldDelimiter,
+        nullMarker,
         quote,
         skipLeadingRows,
         preserveAsciiControlCharacters);
@@ -258,6 +281,7 @@ public final class CsvOptions extends FormatOptions {
     csvOptions.setAllowQuotedNewlines(allowQuotedNewLines);
     csvOptions.setEncoding(encoding);
     csvOptions.setFieldDelimiter(fieldDelimiter);
+    csvOptions.setNullMarker(nullMarker);
     csvOptions.setQuote(quote);
     csvOptions.setSkipLeadingRows(skipLeadingRows);
     csvOptions.setPreserveAsciiControlCharacters(preserveAsciiControlCharacters);
@@ -282,6 +306,9 @@ public final class CsvOptions extends FormatOptions {
     }
     if (csvOptions.getFieldDelimiter() != null) {
       builder.setFieldDelimiter(csvOptions.getFieldDelimiter());
+    }
+    if (csvOptions.getNullMarker() != null) {
+      builder.setNullMarker(csvOptions.getNullMarker());
     }
     if (csvOptions.getQuote() != null) {
       builder.setQuote(csvOptions.getQuote());

@@ -24,14 +24,23 @@ import org.junit.Test;
 public class ParquetOptionsTest {
 
   private static final ParquetOptions OPTIONS =
-      ParquetOptions.newBuilder().setEnableListInference(true).setEnumAsString(true).build();
+      ParquetOptions.newBuilder()
+          .setEnableListInference(true)
+          .setEnumAsString(true)
+          .setMapTargetType("ARRAY_OF_STRUCT")
+          .build();
 
   @Test
   public void testToBuilder() {
     compareParquetOptions(OPTIONS, OPTIONS.toBuilder().build());
     ParquetOptions parquetOptions = OPTIONS.toBuilder().setEnableListInference(true).build();
     assertEquals(true, parquetOptions.getEnableListInference());
-    parquetOptions = parquetOptions.toBuilder().setEnumAsString(true).build();
+    parquetOptions =
+        parquetOptions
+            .toBuilder()
+            .setEnumAsString(true)
+            .setMapTargetType("ARRAY_OF_STRUCT")
+            .build();
     compareParquetOptions(OPTIONS, parquetOptions);
   }
 
@@ -47,6 +56,7 @@ public class ParquetOptionsTest {
     assertEquals(FormatOptions.PARQUET, OPTIONS.getType());
     assertEquals(true, OPTIONS.getEnableListInference());
     assertEquals(true, OPTIONS.getEnumAsString());
+    assertEquals("ARRAY_OF_STRUCT", OPTIONS.getMapTargetType());
   }
 
   @Test

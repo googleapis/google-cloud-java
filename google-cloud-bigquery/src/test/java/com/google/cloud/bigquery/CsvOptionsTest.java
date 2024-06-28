@@ -28,6 +28,7 @@ public class CsvOptionsTest {
   private static final Boolean ALLOW_QUOTED_NEWLINE = true;
   private static final Charset ENCODING = StandardCharsets.UTF_8;
   private static final String FIELD_DELIMITER = ",";
+  private static final String NULL_MARKER = "\\N";
   private static final String QUOTE = "\"";
   private static final long SKIP_LEADING_ROWS = 42L;
 
@@ -38,6 +39,7 @@ public class CsvOptionsTest {
           .setAllowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
           .setEncoding(ENCODING)
           .setFieldDelimiter(FIELD_DELIMITER)
+          .setNullMarker(NULL_MARKER)
           .setQuote(QUOTE)
           .setSkipLeadingRows(SKIP_LEADING_ROWS)
           .setPreserveAsciiControlCharacters(PRESERVE_ASCII_CONTROL_CHARACTERS)
@@ -65,6 +67,7 @@ public class CsvOptionsTest {
     assertEquals(ALLOW_QUOTED_NEWLINE, CSV_OPTIONS.allowQuotedNewLines());
     assertEquals(ENCODING.name(), CSV_OPTIONS.getEncoding());
     assertEquals(FIELD_DELIMITER, CSV_OPTIONS.getFieldDelimiter());
+    assertEquals(NULL_MARKER, CSV_OPTIONS.getNullMarker());
     assertEquals(QUOTE, CSV_OPTIONS.getQuote());
     assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.getSkipLeadingRows());
     assertEquals(
@@ -84,6 +87,7 @@ public class CsvOptionsTest {
     assertEquals(expected.allowQuotedNewLines(), value.allowQuotedNewLines());
     assertEquals(expected.getEncoding(), value.getEncoding());
     assertEquals(expected.getFieldDelimiter(), value.getFieldDelimiter());
+    assertEquals(expected.getNullMarker(), value.getNullMarker());
     assertEquals(expected.getQuote(), value.getQuote());
     assertEquals(expected.getSkipLeadingRows(), value.getSkipLeadingRows());
   }
