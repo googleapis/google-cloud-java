@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.20.2](https://github.com/googleapis/java-datastore/compare/v2.20.1...v2.20.2) (2024-06-28)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.32.0 ([#1492](https://github.com/googleapis/java-datastore/issues/1492)) ([d940c93](https://github.com/googleapis/java-datastore/commit/d940c937959942d753f9215e7ce940ab6742be46))
+
 ## [2.20.1](https://github.com/googleapis/java-datastore/compare/v2.20.0...v2.20.1) (2024-06-04)
 
 
