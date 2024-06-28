@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-jar-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud JAR Parent</name>
   <description>
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-storage</artifactId>
-        <version>v1-rev20240319-2.0.0</version>
+        <version>v1-rev20240621-2.0.0</version>
       </dependency>
 
       <!-- Test dependencies -->
@@ -85,7 +85,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>1.4.2</version>
+        <version>1.4.3</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
@@ -97,7 +97,7 @@
       <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
-        <version>5.2.0</version>
+        <version>5.3.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -221,7 +221,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.6.0</version>
+        <version>3.6.1</version>
         <reportSets>
           <reportSet>
             <reports>

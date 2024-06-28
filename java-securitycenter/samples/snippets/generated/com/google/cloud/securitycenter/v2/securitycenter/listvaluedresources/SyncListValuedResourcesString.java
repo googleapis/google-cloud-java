@@ -34,7 +34,8 @@ public class SyncListValuedResourcesString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-      String parent = SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString();
+      String parent =
+          SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]").toString();
       for (ValuedResource element : securityCenterClient.listValuedResources(parent).iterateAll()) {
         // doThingsWith(element);
       }

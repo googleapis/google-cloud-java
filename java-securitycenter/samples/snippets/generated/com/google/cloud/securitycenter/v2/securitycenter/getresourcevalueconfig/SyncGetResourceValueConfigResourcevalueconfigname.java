@@ -35,7 +35,8 @@ public class SyncGetResourceValueConfigResourcevalueconfigname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       ResourceValueConfigName name =
-          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+          ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+              "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
       ResourceValueConfig response = securityCenterClient.getResourceValueConfig(name);
     }
   }

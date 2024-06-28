@@ -52,40 +52,47 @@ public final class ResourceValueConfigProto {
       "\n:google/cloud/securitycenter/v2/resourc"
           + "e_value_config.proto\022\036google.cloud.secur"
           + "itycenter.v2\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\246\007\n\023ResourceVa"
-          + "lueConfig\022\014\n\004name\030\001 \001(\t\022E\n\016resource_valu"
-          + "e\030\002 \001(\0162-.google.cloud.securitycenter.v2"
-          + ".ResourceValue\022\027\n\ntag_values\030\003 \003(\tB\003\340A\002\022"
-          + "\025\n\rresource_type\030\004 \001(\t\022\r\n\005scope\030\005 \001(\t\022q\n"
-          + "\030resource_labels_selector\030\006 \003(\0132O.google"
-          + ".cloud.securitycenter.v2.ResourceValueCo"
-          + "nfig.ResourceLabelsSelectorEntry\022\023\n\013desc"
-          + "ription\030\007 \001(\t\0224\n\013create_time\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
-          + "me\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022}\n!sensitive_data_protection_mapping\030\013"
-          + " \001(\0132R.google.cloud.securitycenter.v2.Re"
-          + "sourceValueConfig.SensitiveDataProtectio"
-          + "nMapping\032\304\001\n\036SensitiveDataProtectionMapp"
-          + "ing\022O\n\030high_sensitivity_mapping\030\001 \001(\0162-."
-          + "google.cloud.securitycenter.v2.ResourceV"
-          + "alue\022Q\n\032medium_sensitivity_mapping\030\002 \001(\016"
-          + "2-.google.cloud.securitycenter.v2.Resour"
-          + "ceValue\032=\n\033ResourceLabelsSelectorEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\201\001\352A~\n1se"
-          + "curitycenter.googleapis.com/ResourceValu"
-          + "eConfig\022Iorganizations/{organization}/re"
-          + "sourceValueConfigs/{resource_value_confi"
-          + "g}*X\n\rResourceValue\022\036\n\032RESOURCE_VALUE_UN"
-          + "SPECIFIED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007\n\003LOW"
-          + "\020\003\022\010\n\004NONE\020\004B\362\001\n\"com.google.cloud.securi"
-          + "tycenter.v2B\030ResourceValueConfigProtoP\001Z"
-          + "Jcloud.google.com/go/securitycenter/apiv"
-          + "2/securitycenterpb;securitycenterpb\252\002\036Go"
-          + "ogle.Cloud.SecurityCenter.V2\312\002\036Google\\Cl"
-          + "oud\\SecurityCenter\\V2\352\002!Google::Cloud::S"
-          + "ecurityCenter::V2b\006proto3"
+          + "proto\032\031google/api/resource.proto\032-google"
+          + "/cloud/securitycenter/v2/resource.proto\032"
+          + "\037google/protobuf/timestamp.proto\"\371\010\n\023Res"
+          + "ourceValueConfig\022\014\n\004name\030\001 \001(\t\022E\n\016resour"
+          + "ce_value\030\002 \001(\0162-.google.cloud.securityce"
+          + "nter.v2.ResourceValue\022\027\n\ntag_values\030\003 \003("
+          + "\tB\003\340A\002\022\025\n\rresource_type\030\004 \001(\t\022\r\n\005scope\030\005"
+          + " \001(\t\022q\n\030resource_labels_selector\030\006 \003(\0132O"
+          + ".google.cloud.securitycenter.v2.Resource"
+          + "ValueConfig.ResourceLabelsSelectorEntry\022"
+          + "\023\n\013description\030\007 \001(\t\0224\n\013create_time\030\010 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
+          + "date_time\030\t \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022E\n\016cloud_provider\030\n \001(\0162-.googl"
+          + "e.cloud.securitycenter.v2.CloudProvider\022"
+          + "}\n!sensitive_data_protection_mapping\030\013 \001"
+          + "(\0132R.google.cloud.securitycenter.v2.Reso"
+          + "urceValueConfig.SensitiveDataProtectionM"
+          + "apping\032\304\001\n\036SensitiveDataProtectionMappin"
+          + "g\022O\n\030high_sensitivity_mapping\030\001 \001(\0162-.go"
+          + "ogle.cloud.securitycenter.v2.ResourceVal"
+          + "ue\022Q\n\032medium_sensitivity_mapping\030\002 \001(\0162-"
+          + ".google.cloud.securitycenter.v2.Resource"
+          + "Value\032=\n\033ResourceLabelsSelectorEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\215\002\352A\211\002\n1sec"
+          + "uritycenter.googleapis.com/ResourceValue"
+          + "Config\022Iorganizations/{organization}/res"
+          + "ourceValueConfigs/{resource_value_config"
+          + "}\022^organizations/{organization}/location"
+          + "s/{location}/resourceValueConfigs/{resou"
+          + "rce_value_config}*\024resourceValueConfigs2"
+          + "\023resourceValueConfig*X\n\rResourceValue\022\036\n"
+          + "\032RESOURCE_VALUE_UNSPECIFIED\020\000\022\010\n\004HIGH\020\001\022"
+          + "\n\n\006MEDIUM\020\002\022\007\n\003LOW\020\003\022\010\n\004NONE\020\004B\362\001\n\"com.g"
+          + "oogle.cloud.securitycenter.v2B\030ResourceV"
+          + "alueConfigProtoP\001ZJcloud.google.com/go/s"
+          + "ecuritycenter/apiv2/securitycenterpb;sec"
+          + "uritycenterpb\252\002\036Google.Cloud.SecurityCen"
+          + "ter.V2\312\002\036Google\\Cloud\\SecurityCenter\\V2\352"
+          + "\002!Google::Cloud::SecurityCenter::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -93,6 +100,7 @@ public final class ResourceValueConfigProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.securitycenter.v2.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v2_ResourceValueConfig_descriptor =
@@ -110,6 +118,7 @@ public final class ResourceValueConfigProto {
               "Description",
               "CreateTime",
               "UpdateTime",
+              "CloudProvider",
               "SensitiveDataProtectionMapping",
             });
     internal_static_google_cloud_securitycenter_v2_ResourceValueConfig_SensitiveDataProtectionMapping_descriptor =
@@ -140,6 +149,7 @@ public final class ResourceValueConfigProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.securitycenter.v2.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

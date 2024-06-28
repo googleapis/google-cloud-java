@@ -38,7 +38,8 @@ public class SyncDeleteResourceValueConfig {
       DeleteResourceValueConfigRequest request =
           DeleteResourceValueConfigRequest.newBuilder()
               .setName(
-                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                  ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                          "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
                       .toString())
               .build();
       securityCenterClient.deleteResourceValueConfig(request);

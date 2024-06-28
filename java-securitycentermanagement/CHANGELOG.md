@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.14.0 (2024-06-27)
+
+### Features
+
+* add `TOXIC_COMBINATION` to `FindingClass` enum ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* add an INGEST_ONLY EnablementState ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* minor docs formatting in `UpdateSecurityCenterServiceRequest.validate_only` ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
 ## 0.13.0 (None)
 
 * No change

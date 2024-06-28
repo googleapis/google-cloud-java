@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 (2024-06-27)
+
+### Features
+
+* Mark the accessApprovalRequests.list method as deprecated ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* Mark the accessApprovalRequests.list method as deprecated ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
 ## 0.9.0 (None)
 
 * No change

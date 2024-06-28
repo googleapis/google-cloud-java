@@ -40,7 +40,8 @@ public class AsyncListAttackPathsPaged {
       ListAttackPathsRequest request =
           ListAttackPathsRequest.newBuilder()
               .setParent(
-                  ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                  ValuedResourceName.ofOrganizationSimulationValuedResourceName(
+                          "[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
                       .toString())
               .setFilter("filter-1274492040")
               .setPageToken("pageToken873572522")

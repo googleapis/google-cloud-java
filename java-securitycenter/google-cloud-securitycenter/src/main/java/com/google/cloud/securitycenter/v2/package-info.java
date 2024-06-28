@@ -32,7 +32,7 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+ *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
  *   List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
  *   BatchCreateResourceValueConfigsResponse response =
  *       securityCenterClient.batchCreateResourceValueConfigs(parent, requests);

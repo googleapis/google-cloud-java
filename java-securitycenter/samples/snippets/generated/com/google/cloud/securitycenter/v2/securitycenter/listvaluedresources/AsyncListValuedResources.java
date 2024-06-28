@@ -38,7 +38,9 @@ public class AsyncListValuedResources {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       ListValuedResourcesRequest request =
           ListValuedResourcesRequest.newBuilder()
-              .setParent(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+              .setParent(
+                  SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                      .toString())
               .setFilter("filter-1274492040")
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)

@@ -1997,6 +1997,76 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   *
+   * @return Whether the cloudArmor field is set.
+   */
+  boolean hasCloudArmor();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   *
+   * @return The cloudArmor.
+   */
+  com.google.cloud.securitycenter.v2.CloudArmor getCloudArmor();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.CloudArmor cloud_armor = 51;</code>
+   */
+  com.google.cloud.securitycenter.v2.CloudArmorOrBuilder getCloudArmorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  boolean hasNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   *
+   * @return The notebook.
+   */
+  com.google.cloud.securitycenter.v2.Notebook getNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Notebook notebook = 55;</code>
+   */
+  com.google.cloud.securitycenter.v2.NotebookOrBuilder getNotebookOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Contains details about a group of security issues that, when the issues
    * occur together, represent a greater risk than when the issues occur
    * independently. A group of such issues is referred to as a toxic

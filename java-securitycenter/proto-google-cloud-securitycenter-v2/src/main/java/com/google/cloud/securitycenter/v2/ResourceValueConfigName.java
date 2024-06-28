@@ -17,6 +17,7 @@
 package com.google.cloud.securitycenter.v2;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,19 +33,35 @@ public class ResourceValueConfigName implements ResourceName {
   private static final PathTemplate ORGANIZATION_RESOURCE_VALUE_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/resourceValueConfigs/{resource_value_config}");
+  private static final PathTemplate ORGANIZATION_LOCATION_RESOURCE_VALUE_CONFIG =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/locations/{location}/resourceValueConfigs/{resource_value_config}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String resourceValueConfig;
+  private final String location;
 
   @Deprecated
   protected ResourceValueConfigName() {
     organization = null;
     resourceValueConfig = null;
+    location = null;
   }
 
   private ResourceValueConfigName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     resourceValueConfig = Preconditions.checkNotNull(builder.getResourceValueConfig());
+    location = null;
+    pathTemplate = ORGANIZATION_RESOURCE_VALUE_CONFIG;
+  }
+
+  private ResourceValueConfigName(OrganizationLocationResourceValueConfigBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    resourceValueConfig = Preconditions.checkNotNull(builder.getResourceValueConfig());
+    pathTemplate = ORGANIZATION_LOCATION_RESOURCE_VALUE_CONFIG;
   }
 
   public String getOrganization() {
@@ -55,8 +72,21 @@ public class ResourceValueConfigName implements ResourceName {
     return resourceValueConfig;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newOrganizationResourceValueConfigBuilder() {
+    return new Builder();
+  }
+
+  public static OrganizationLocationResourceValueConfigBuilder
+      newOrganizationLocationResourceValueConfigBuilder() {
+    return new OrganizationLocationResourceValueConfigBuilder();
   }
 
   public Builder toBuilder() {
@@ -70,9 +100,45 @@ public class ResourceValueConfigName implements ResourceName {
         .build();
   }
 
+  public static ResourceValueConfigName ofOrganizationResourceValueConfigName(
+      String organization, String resourceValueConfig) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setResourceValueConfig(resourceValueConfig)
+        .build();
+  }
+
+  public static ResourceValueConfigName ofOrganizationLocationResourceValueConfigName(
+      String organization, String location, String resourceValueConfig) {
+    return newOrganizationLocationResourceValueConfigBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setResourceValueConfig(resourceValueConfig)
+        .build();
+  }
+
   public static String format(String organization, String resourceValueConfig) {
     return newBuilder()
         .setOrganization(organization)
+        .setResourceValueConfig(resourceValueConfig)
+        .build()
+        .toString();
+  }
+
+  public static String formatOrganizationResourceValueConfigName(
+      String organization, String resourceValueConfig) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setResourceValueConfig(resourceValueConfig)
+        .build()
+        .toString();
+  }
+
+  public static String formatOrganizationLocationResourceValueConfigName(
+      String organization, String location, String resourceValueConfig) {
+    return newOrganizationLocationResourceValueConfigBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
         .setResourceValueConfig(resourceValueConfig)
         .build()
         .toString();
@@ -82,10 +148,20 @@ public class ResourceValueConfigName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_RESOURCE_VALUE_CONFIG.validatedMatch(
-            formattedString, "ResourceValueConfigName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("resource_value_config"));
+    if (ORGANIZATION_RESOURCE_VALUE_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_RESOURCE_VALUE_CONFIG.match(formattedString);
+      return ofOrganizationResourceValueConfigName(
+          matchMap.get("organization"), matchMap.get("resource_value_config"));
+    } else if (ORGANIZATION_LOCATION_RESOURCE_VALUE_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_LOCATION_RESOURCE_VALUE_CONFIG.match(formattedString);
+      return ofOrganizationLocationResourceValueConfigName(
+          matchMap.get("organization"),
+          matchMap.get("location"),
+          matchMap.get("resource_value_config"));
+    }
+    throw new ValidationException(
+        "ResourceValueConfigName.parse: formattedString not in valid format");
   }
 
   public static List<ResourceValueConfigName> parseList(List<String> formattedStrings) {
@@ -109,7 +185,8 @@ public class ResourceValueConfigName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_RESOURCE_VALUE_CONFIG.matches(formattedString);
+    return ORGANIZATION_RESOURCE_VALUE_CONFIG.matches(formattedString)
+        || ORGANIZATION_LOCATION_RESOURCE_VALUE_CONFIG.matches(formattedString);
   }
 
   @Override
@@ -124,6 +201,9 @@ public class ResourceValueConfigName implements ResourceName {
           if (resourceValueConfig != null) {
             fieldMapBuilder.put("resource_value_config", resourceValueConfig);
           }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -137,8 +217,7 @@ public class ResourceValueConfigName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_RESOURCE_VALUE_CONFIG.instantiate(
-        "organization", organization, "resource_value_config", resourceValueConfig);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -149,7 +228,8 @@ public class ResourceValueConfigName implements ResourceName {
     if (o != null && getClass() == o.getClass()) {
       ResourceValueConfigName that = ((ResourceValueConfigName) o);
       return Objects.equals(this.organization, that.organization)
-          && Objects.equals(this.resourceValueConfig, that.resourceValueConfig);
+          && Objects.equals(this.resourceValueConfig, that.resourceValueConfig)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -158,9 +238,13 @@ public class ResourceValueConfigName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(resourceValueConfig);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -190,8 +274,55 @@ public class ResourceValueConfigName implements ResourceName {
     }
 
     private Builder(ResourceValueConfigName resourceValueConfigName) {
+      Preconditions.checkArgument(
+          Objects.equals(resourceValueConfigName.pathTemplate, ORGANIZATION_RESOURCE_VALUE_CONFIG),
+          "toBuilder is only supported when ResourceValueConfigName has the pattern of organizations/{organization}/resourceValueConfigs/{resource_value_config}");
       this.organization = resourceValueConfigName.organization;
       this.resourceValueConfig = resourceValueConfigName.resourceValueConfig;
+    }
+
+    public ResourceValueConfigName build() {
+      return new ResourceValueConfigName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * organizations/{organization}/locations/{location}/resourceValueConfigs/{resource_value_config}.
+   */
+  public static class OrganizationLocationResourceValueConfigBuilder {
+    private String organization;
+    private String location;
+    private String resourceValueConfig;
+
+    protected OrganizationLocationResourceValueConfigBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getResourceValueConfig() {
+      return resourceValueConfig;
+    }
+
+    public OrganizationLocationResourceValueConfigBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationLocationResourceValueConfigBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public OrganizationLocationResourceValueConfigBuilder setResourceValueConfig(
+        String resourceValueConfig) {
+      this.resourceValueConfig = resourceValueConfig;
+      return this;
     }
 
     public ResourceValueConfigName build() {

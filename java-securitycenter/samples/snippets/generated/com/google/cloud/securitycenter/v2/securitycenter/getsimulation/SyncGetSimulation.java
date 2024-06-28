@@ -37,7 +37,9 @@ public class SyncGetSimulation {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       GetSimulationRequest request =
           GetSimulationRequest.newBuilder()
-              .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+              .setName(
+                  SimulationName.ofOrganizationSimulationName("[ORGANIZATION]", "[SIMULATION]")
+                      .toString())
               .build();
       Simulation response = securityCenterClient.getSimulation(request);
     }

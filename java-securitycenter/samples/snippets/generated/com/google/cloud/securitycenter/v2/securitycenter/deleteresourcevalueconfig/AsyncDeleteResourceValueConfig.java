@@ -39,7 +39,8 @@ public class AsyncDeleteResourceValueConfig {
       DeleteResourceValueConfigRequest request =
           DeleteResourceValueConfigRequest.newBuilder()
               .setName(
-                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                  ResourceValueConfigName.ofOrganizationResourceValueConfigName(
+                          "[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
                       .toString())
               .build();
       ApiFuture<Empty> future =
