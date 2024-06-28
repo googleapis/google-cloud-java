@@ -118,7 +118,7 @@ jobs:
       with:
         python-version: '3.11'
         architecture: 'x64'
-    - run: python3 -m pip install -r .github/requirements.txt
+    - run: python3 -m pip install --require-hashes -r .github/requirements.txt
     - run: python3 generate-readme.py
 
   group_id_check_for_maps_libraries:
