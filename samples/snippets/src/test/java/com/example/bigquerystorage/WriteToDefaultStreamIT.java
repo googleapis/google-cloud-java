@@ -78,6 +78,8 @@ public class WriteToDefaultStreamIT {
                 .setMaxLength(20L)
                 .build(),
             com.google.cloud.bigquery.Field.newBuilder("test_bytes", StandardSQLTypeName.BYTES)
+                .build(),
+            com.google.cloud.bigquery.Field.newBuilder("test_geo", StandardSQLTypeName.GEOGRAPHY)
                 .build());
     bigquery.create(DatasetInfo.newBuilder(datasetName).build());
     TableInfo tableInfo =

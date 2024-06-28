@@ -76,6 +76,9 @@ public class WriteToDefaultStream {
     record.put("test_string", String.format("record %03d-%03d %s", i, j, sbSuffix.toString()));
     ByteString byteString = buildByteString();
     record.put("test_bytes", byteString);
+    record.put(
+        "test_geo",
+        "POLYGON((-124.49 47.35,-124.49 40.73,-116.49 40.73,-116.49 47.35,-124.49 47.35))");
     return record;
   }
 
