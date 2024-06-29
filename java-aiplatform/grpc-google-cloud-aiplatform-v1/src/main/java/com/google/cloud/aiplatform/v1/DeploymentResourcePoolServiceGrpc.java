@@ -195,6 +195,58 @@ public final class DeploymentResourcePoolServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest,
+          com.google.longrunning.Operation>
+      getUpdateDeploymentResourcePoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDeploymentResourcePool",
+      requestType = com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest,
+          com.google.longrunning.Operation>
+      getUpdateDeploymentResourcePoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest,
+            com.google.longrunning.Operation>
+        getUpdateDeploymentResourcePoolMethod;
+    if ((getUpdateDeploymentResourcePoolMethod =
+            DeploymentResourcePoolServiceGrpc.getUpdateDeploymentResourcePoolMethod)
+        == null) {
+      synchronized (DeploymentResourcePoolServiceGrpc.class) {
+        if ((getUpdateDeploymentResourcePoolMethod =
+                DeploymentResourcePoolServiceGrpc.getUpdateDeploymentResourcePoolMethod)
+            == null) {
+          DeploymentResourcePoolServiceGrpc.getUpdateDeploymentResourcePoolMethod =
+              getUpdateDeploymentResourcePoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDeploymentResourcePool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeploymentResourcePoolServiceMethodDescriptorSupplier(
+                              "UpdateDeploymentResourcePool"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDeploymentResourcePoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.DeleteDeploymentResourcePoolRequest,
           com.google.longrunning.Operation>
       getDeleteDeploymentResourcePoolMethod;
@@ -398,6 +450,20 @@ public final class DeploymentResourcePoolServiceGrpc {
      *
      *
      * <pre>
+     * Update a DeploymentResourcePool.
+     * </pre>
+     */
+    default void updateDeploymentResourcePool(
+        com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeploymentResourcePoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Delete a DeploymentResourcePool.
      * </pre>
      */
@@ -515,6 +581,22 @@ public final class DeploymentResourcePoolServiceGrpc {
      *
      *
      * <pre>
+     * Update a DeploymentResourcePool.
+     * </pre>
+     */
+    public void updateDeploymentResourcePool(
+        com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDeploymentResourcePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Delete a DeploymentResourcePool.
      * </pre>
      */
@@ -603,6 +685,19 @@ public final class DeploymentResourcePoolServiceGrpc {
             com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDeploymentResourcePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a DeploymentResourcePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeploymentResourcePool(
+        com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeploymentResourcePoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -701,6 +796,20 @@ public final class DeploymentResourcePoolServiceGrpc {
      *
      *
      * <pre>
+     * Update a DeploymentResourcePool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDeploymentResourcePool(
+            com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDeploymentResourcePoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Delete a DeploymentResourcePool.
      * </pre>
      */
@@ -729,8 +838,9 @@ public final class DeploymentResourcePoolServiceGrpc {
   private static final int METHODID_CREATE_DEPLOYMENT_RESOURCE_POOL = 0;
   private static final int METHODID_GET_DEPLOYMENT_RESOURCE_POOL = 1;
   private static final int METHODID_LIST_DEPLOYMENT_RESOURCE_POOLS = 2;
-  private static final int METHODID_DELETE_DEPLOYMENT_RESOURCE_POOL = 3;
-  private static final int METHODID_QUERY_DEPLOYED_MODELS = 4;
+  private static final int METHODID_UPDATE_DEPLOYMENT_RESOURCE_POOL = 3;
+  private static final int METHODID_DELETE_DEPLOYMENT_RESOURCE_POOL = 4;
+  private static final int METHODID_QUERY_DEPLOYED_MODELS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -766,6 +876,11 @@ public final class DeploymentResourcePoolServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsResponse>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_DEPLOYMENT_RESOURCE_POOL:
+          serviceImpl.updateDeploymentResourcePool(
+              (com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_DEPLOYMENT_RESOURCE_POOL:
           serviceImpl.deleteDeploymentResourcePool(
@@ -818,6 +933,13 @@ public final class DeploymentResourcePoolServiceGrpc {
                     com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest,
                     com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsResponse>(
                     service, METHODID_LIST_DEPLOYMENT_RESOURCE_POOLS)))
+        .addMethod(
+            getUpdateDeploymentResourcePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_DEPLOYMENT_RESOURCE_POOL)))
         .addMethod(
             getDeleteDeploymentResourcePoolMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -887,6 +1009,7 @@ public final class DeploymentResourcePoolServiceGrpc {
                       .addMethod(getCreateDeploymentResourcePoolMethod())
                       .addMethod(getGetDeploymentResourcePoolMethod())
                       .addMethod(getListDeploymentResourcePoolsMethod())
+                      .addMethod(getUpdateDeploymentResourcePoolMethod())
                       .addMethod(getDeleteDeploymentResourcePoolMethod())
                       .addMethod(getQueryDeployedModelsMethod())
                       .build();

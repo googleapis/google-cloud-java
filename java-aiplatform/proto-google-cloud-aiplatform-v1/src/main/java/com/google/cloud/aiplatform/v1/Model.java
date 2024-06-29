@@ -7281,6 +7281,42 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         : baseModelSource_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 51;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 52;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7393,6 +7429,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(50, getBaseModelSource());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(51, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(52, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -7531,6 +7573,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getBaseModelSource());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(51, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(52, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7620,6 +7668,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasBaseModelSource()) {
       if (!getBaseModelSource().equals(other.getBaseModelSource())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7733,6 +7783,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BASE_MODEL_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getBaseModelSource().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -7916,6 +7970,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       versionId_ = "";
       versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -8012,6 +8067,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         baseModelSourceBuilder_.dispose();
         baseModelSourceBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -8041,6 +8098,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -8192,7 +8252,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             baseModelSourceBuilder_ == null ? baseModelSource_ : baseModelSourceBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.aiplatform.v1.Model result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
     }
 
     @java.lang.Override
@@ -8429,6 +8499,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBaseModelSource()) {
         mergeBaseModelSource(other.getBaseModelSource());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8683,6 +8759,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x40000000;
                 break;
               } // case 402
+            case 408:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 408
+            case 416:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 416
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8701,6 +8789,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -15867,6 +15956,112 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         baseModelSource_ = null;
       }
       return baseModelSourceBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
