@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
-  <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
+  <version>0.36.0</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
   <name>proto-google-cloud-kmsinventory-v1</name>
   <description>Proto library for google-cloud-kmsinventory</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-kmsinventory-parent</artifactId>
-    <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+    <version>0.36.0</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   </parent>
   <dependencies>
     <dependency>
