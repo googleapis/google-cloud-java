@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-developerconnect</artifactId>
-  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developerconnect:current} -->
+  <version>0.4.0</version><!-- {x-version-update:google-cloud-developerconnect:current} -->
   <packaging>jar</packaging>
   <name>Google Developer Connect API</name>
   <description>Developer Connect API Connect third-party source code management to Google</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-developerconnect-parent</artifactId>
-    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developerconnect:current} -->
+    <version>0.4.0</version><!-- {x-version-update:google-cloud-developerconnect:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-developerconnect</site.installationModule>
