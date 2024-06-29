@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storageinsights</artifactId>
-  <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
+  <version>0.32.0</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
   <packaging>jar</packaging>
   <name>Google Storage Insights API</name>
   <description>Storage Insights API Provides insights capability on Google Cloud Storage</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storageinsights-parent</artifactId>
-    <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
+    <version>0.32.0</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-storageinsights</site.installationModule>
