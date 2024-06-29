@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-parallelstore</artifactId>
-  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
+  <version>0.10.0</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
   <packaging>jar</packaging>
   <name>Google Parallelstore API</name>
   <description>Parallelstore API Parallelstore is based on Intel DAOS and delivers up to 6.3x greater read throughput performance compared to competitive Lustre scratch offerings. </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-parallelstore-parent</artifactId>
-    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
+    <version>0.10.0</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-parallelstore</site.installationModule>
