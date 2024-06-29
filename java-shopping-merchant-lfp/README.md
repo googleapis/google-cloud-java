@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-lfp</artifactId>
-  <version>0.5.0</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.shopping:google-shopping-merchant-lfp:0.5.0'
+implementation 'com.google.shopping:google-shopping-merchant-lfp:0.6.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.shopping" % "google-shopping-merchant-lfp" % "0.5.0"
+libraryDependencies += "com.google.shopping" % "google-shopping-merchant-lfp" % "0.6.0"
 ```
 <!-- {x-version-update-end} -->
 
