@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-alloydb-connectors-v1beta</artifactId>
-  <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1beta:current} -->
+  <version>0.25.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1beta:current} -->
   <name>proto-google-cloud-alloydb-connectors-v1beta</name>
   <description>Proto library for google-cloud-alloydb-connectors</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-alloydb-connectors-parent</artifactId>
-    <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
+    <version>0.25.0</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api-ads</groupId>
   <artifactId>ad-manager</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+  <version>0.6.0</version><!-- {x-version-update:ad-manager:current} -->
   <packaging>jar</packaging>
   <name>Google Google Ad Manager API</name>
   <description>Google Ad Manager API The Ad Manager API enables an app to integrate with Google Ad Manager. You can read Ad Manager data and run reports using the API.</description>
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>ad-manager-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+    <version>0.6.0</version><!-- {x-version-update:ad-manager:current} -->
   </parent>
   <properties>
     <site.installationModule>ad-manager</site.installationModule>

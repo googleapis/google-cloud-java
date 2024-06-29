@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api-ads</groupId>
   <artifactId>ad-manager-bom</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+  <version>0.6.0</version><!-- {x-version-update:ad-manager:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,12 +26,12 @@
       <dependency>
         <groupId>com.google.api-ads</groupId>
         <artifactId>ad-manager</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+        <version>0.6.0</version><!-- {x-version-update:ad-manager:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api-ads.api.grpc</groupId>
         <artifactId>proto-ad-manager-v1</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
+        <version>0.6.0</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
