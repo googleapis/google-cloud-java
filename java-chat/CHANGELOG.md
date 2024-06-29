@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 (2024-06-29)
+
+### Features
+
+* Update doc for `SetUpSpace` in service `ChatService` to support group members ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+
+
+
 ## 0.10.0 (2024-06-27)
 
 * No change
