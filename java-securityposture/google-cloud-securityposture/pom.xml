@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securityposture</artifactId>
-  <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securityposture:current} -->
+  <version>0.12.0</version><!-- {x-version-update:google-cloud-securityposture:current} -->
   <packaging>jar</packaging>
   <name>Google Security Posture API</name>
   <description>Security Posture API Security Posture is a comprehensive framework of policy sets that empowers organizations to define, assess early, deploy, and monitor their security measures in a unified way and helps simplify governance and reduces administrative toil.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securityposture-parent</artifactId>
-    <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securityposture:current} -->
+    <version>0.12.0</version><!-- {x-version-update:google-cloud-securityposture:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-securityposture</site.installationModule>

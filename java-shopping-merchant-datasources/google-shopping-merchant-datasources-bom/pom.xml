@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-datasources-bom</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-datasources</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
+        <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-datasources-v1beta</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-datasources-v1beta:current} -->
+        <version>0.3.0</version><!-- {x-version-update:grpc-google-shopping-merchant-datasources-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-datasources-v1beta</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-datasources-v1beta:current} -->
+        <version>0.3.0</version><!-- {x-version-update:proto-google-shopping-merchant-datasources-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

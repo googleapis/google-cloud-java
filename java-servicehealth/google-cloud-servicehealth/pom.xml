@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicehealth</artifactId>
-  <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
+  <version>0.14.0</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
   <packaging>jar</packaging>
   <name>Google Service Health API</name>
   <description>Service Health API Personalized Service Health helps you gain visibility into disruptive events impacting Google Cloud products.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicehealth-parent</artifactId>
-    <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
+    <version>0.14.0</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-servicehealth</site.installationModule>

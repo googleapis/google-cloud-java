@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-css-bom</artifactId>
-  <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-css:current} -->
+  <version>0.15.0</version><!-- {x-version-update:google-shopping-css:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-css</artifactId>
-        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-css:current} -->
+        <version>0.15.0</version><!-- {x-version-update:google-shopping-css:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-css-v1</artifactId>
-        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-css-v1:current} -->
+        <version>0.15.0</version><!-- {x-version-update:grpc-google-shopping-css-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-css-v1</artifactId>
-        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-css-v1:current} -->
+        <version>0.15.0</version><!-- {x-version-update:proto-google-shopping-css-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

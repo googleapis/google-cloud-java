@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping.api.grpc</groupId>
   <artifactId>proto-google-shopping-merchant-accounts-v1beta</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-accounts-v1beta:current} -->
+  <version>0.3.0</version><!-- {x-version-update:proto-google-shopping-merchant-accounts-v1beta:current} -->
   <name>proto-google-shopping-merchant-accounts-v1beta</name>
   <description>Proto library for google-shopping-merchant-accounts</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-accounts-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
   </parent>
   <dependencies>
     <dependency>
