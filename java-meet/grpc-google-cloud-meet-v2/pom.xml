@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-meet-v2</artifactId>
-  <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-meet-v2:current} -->
+  <version>0.14.0</version><!-- {x-version-update:grpc-google-cloud-meet-v2:current} -->
   <name>grpc-google-cloud-meet-v2</name>
   <description>GRPC library for google-cloud-meet</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-meet-parent</artifactId>
-    <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-meet:current} -->
+    <version>0.14.0</version><!-- {x-version-update:google-cloud-meet:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managedkafka-bom</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-managedkafka</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+        <version>0.3.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-managedkafka-v1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-managedkafka-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-managedkafka-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-managedkafka-v1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-managedkafka-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-managedkafka-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
