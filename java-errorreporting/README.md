@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.167.0-beta</version>
+  <version>0.168.0-beta</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-errorreporting:0.167.0-beta'
+implementation 'com.google.cloud:google-cloud-errorreporting:0.168.0-beta'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.167.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.168.0-beta"
 ```
 <!-- {x-version-update-end} -->
 

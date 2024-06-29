@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-alloydb</artifactId>
-  <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb:current} -->
+  <version>0.36.0</version><!-- {x-version-update:google-cloud-alloydb:current} -->
   <packaging>jar</packaging>
   <name>Google AlloyDB</name>
   <description>AlloyDB AlloyDB is a fully managed, PostgreSQL-compatible database service with industry-leading performance, availability, and scale.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-alloydb-parent</artifactId>
-    <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb:current} -->
+    <version>0.36.0</version><!-- {x-version-update:google-cloud-alloydb:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-alloydb</site.installationModule>

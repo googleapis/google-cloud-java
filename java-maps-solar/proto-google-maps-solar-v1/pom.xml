@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>proto-google-maps-solar-v1</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-solar-v1:current} -->
+  <version>0.6.0</version><!-- {x-version-update:proto-google-maps-solar-v1:current} -->
   <name>proto-google-maps-solar-v1</name>
   <description>Proto library for google-maps-solar</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-solar-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-maps-solar:current} -->
   </parent>
   <dependencies>
     <dependency>

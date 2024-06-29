@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicehealth</artifactId>
-  <version>0.13.0</version>
+  <version>0.14.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-servicehealth:0.13.0'
+implementation 'com.google.cloud:google-cloud-servicehealth:0.14.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-servicehealth" % "0.13.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-servicehealth" % "0.14.0"
 ```
 <!-- {x-version-update-end} -->
 

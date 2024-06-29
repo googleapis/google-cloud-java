@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-alloydb-connectors-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
+  <version>0.25.0</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
   <name>Google AlloyDB connectors Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,22 +29,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-alloydb-connectors</artifactId>
-        <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
+        <version>0.25.0</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-alloydb-connectors-v1</artifactId>
-        <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1:current} -->
+        <version>0.25.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-alloydb-connectors-v1beta</artifactId>
-        <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1beta:current} -->
+        <version>0.25.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-alloydb-connectors-v1alpha</artifactId>
-        <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1alpha:current} -->
+        <version>0.25.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

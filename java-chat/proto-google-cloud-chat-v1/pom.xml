@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-chat-v1</artifactId>
-  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-chat-v1:current} -->
+  <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-chat-v1:current} -->
   <name>proto-google-cloud-chat-v1</name>
   <description>Proto library for google-cloud-chat</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-chat-parent</artifactId>
-    <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-chat:current} -->
+    <version>0.11.0</version><!-- {x-version-update:google-cloud-chat:current} -->
   </parent>
   <dependencies>
     <dependency>

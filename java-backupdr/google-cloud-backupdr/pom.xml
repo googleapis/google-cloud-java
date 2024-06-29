@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-backupdr</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-cloud-backupdr:current} -->
   <packaging>jar</packaging>
   <name>Google Backup and DR Service API</name>
   <description>Backup and DR Service API Backup and DR Service is a powerful, centralized, cloud-first backup and disaster recovery solution for cloud-based and hybrid workloads. </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-backupdr-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-backupdr:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-backupdr</site.installationModule>

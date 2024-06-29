@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-telcoautomation</artifactId>
-  <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-telcoautomation:current} -->
+  <version>0.17.0</version><!-- {x-version-update:google-cloud-telcoautomation:current} -->
   <packaging>jar</packaging>
   <name>Google Telco Automation API</name>
   <description>Telco Automation API APIs to automate 5G deployment and management of cloud infrastructure and network functions.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-telcoautomation-parent</artifactId>
-    <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-telcoautomation:current} -->
+    <version>0.17.0</version><!-- {x-version-update:google-cloud-telcoautomation:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-telcoautomation</site.installationModule>

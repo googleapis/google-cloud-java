@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-policy</artifactId>
-  <version>1.45.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+  <version>1.45.0</version><!-- {x-version-update:google-iam-policy:current} -->
   <packaging>jar</packaging>
   <name>Google IAM Policy</name>
   <description>Eventarc lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-iam-policy-parent</artifactId>
-    <version>1.45.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+    <version>1.45.0</version><!-- {x-version-update:google-iam-policy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-iam-policy</site.installationModule>

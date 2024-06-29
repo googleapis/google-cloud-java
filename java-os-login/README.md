@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-login</artifactId>
-  <version>2.45.0</version>
+  <version>2.46.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-os-login:2.45.0'
+implementation 'com.google.cloud:google-cloud-os-login:2.46.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "2.45.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "2.46.0"
 ```
 <!-- {x-version-update-end} -->
 

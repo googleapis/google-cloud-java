@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-biglake</artifactId>
-  <version>0.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake:current} -->
+  <version>0.35.0</version><!-- {x-version-update:google-cloud-biglake:current} -->
   <packaging>jar</packaging>
   <name>Google BigLake</name>
   <description>BigLake The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-biglake-parent</artifactId>
-    <version>0.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake:current} -->
+    <version>0.35.0</version><!-- {x-version-update:google-cloud-biglake:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-biglake</site.installationModule>

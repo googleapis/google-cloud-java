@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-storageinsights-v1</artifactId>
-  <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-storageinsights-v1:current} -->
+  <version>0.32.0</version><!-- {x-version-update:grpc-google-cloud-storageinsights-v1:current} -->
   <name>grpc-google-cloud-storageinsights-v1</name>
   <description>GRPC library for google-cloud-storageinsights</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storageinsights-parent</artifactId>
-    <version>0.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
+    <version>0.32.0</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-confidentialcomputing</artifactId>
-  <version>0.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-confidentialcomputing:current} -->
+  <version>0.33.0</version><!-- {x-version-update:google-cloud-confidentialcomputing:current} -->
   <packaging>jar</packaging>
   <name>Google Confidential Computing API</name>
   <description>Confidential Computing API Protect data in-use with Confidential VMs, Confidential GKE, Confidential Dataproc, and Confidential Space.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-confidentialcomputing-parent</artifactId>
-    <version>0.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-confidentialcomputing:current} -->
+    <version>0.33.0</version><!-- {x-version-update:google-cloud-confidentialcomputing:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-confidentialcomputing</site.installationModule>

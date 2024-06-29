@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-cloudsupport</artifactId>
-  <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
+  <version>0.31.0</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud Support API</name>
   <description>Google Cloud Support API Manages Google Cloud technical support cases for Customer Care support offerings.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-cloudsupport-parent</artifactId>
-    <version>0.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
+    <version>0.31.0</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-cloudsupport</site.installationModule>

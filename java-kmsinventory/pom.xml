@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kmsinventory-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+  <version>0.36.0</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   <name>Google KMS Inventory API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,22 +29,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kmsinventory</artifactId>
-        <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+        <version>0.36.0</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-kmsinventory-v1</artifactId>
-        <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
+        <version>0.36.0</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
-        <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
+        <version>0.36.0</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
-        <version>0.141.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+        <version>0.141.0</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

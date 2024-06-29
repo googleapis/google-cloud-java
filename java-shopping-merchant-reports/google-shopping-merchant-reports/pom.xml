@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-reports</artifactId>
-  <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+  <version>0.23.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant API</name>
   <description>Merchant API Programmatically manage your Merchant Center accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-reports-parent</artifactId>
-    <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+    <version>0.23.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-reports</site.installationModule>

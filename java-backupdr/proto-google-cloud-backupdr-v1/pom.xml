@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-backupdr-v1</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-backupdr-v1:current} -->
+  <version>0.6.0</version><!-- {x-version-update:proto-google-cloud-backupdr-v1:current} -->
   <name>proto-google-cloud-backupdr-v1</name>
   <description>Proto library for google-cloud-backupdr</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-backupdr-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-backupdr:current} -->
   </parent>
   <dependencies>
     <dependency>

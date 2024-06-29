@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-reports-bom</artifactId>
-  <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+  <version>0.23.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-reports</artifactId>
-        <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
+        <version>0.23.0</version><!-- {x-version-update:google-shopping-merchant-reports:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>grpc-google-shopping-merchant-reports-v1beta</artifactId>
-        <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1beta:current} -->
+        <version>0.23.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reports-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-reports-v1beta</artifactId>
-        <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1beta:current} -->
+        <version>0.23.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
