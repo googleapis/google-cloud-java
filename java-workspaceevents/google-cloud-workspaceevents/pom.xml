@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workspaceevents</artifactId>
-  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
+  <version>0.11.0</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
   <packaging>jar</packaging>
   <name>Google Google Workspace Events API</name>
   <description>Google Workspace Events API The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-workspaceevents-parent</artifactId>
-    <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
+    <version>0.11.0</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-workspaceevents</site.installationModule>
