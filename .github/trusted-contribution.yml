@@ -1,3 +1,9 @@
 trustedContributors:
 - renovate-bot
 - gcf-owl-bot[bot]
+
+annotations:
+- type: comment
+  text: "/gcbrun"
+- type: label
+  text: "kokoro:force-run"
