@@ -56,12 +56,16 @@ public class SubscriberIT {
   private static final String subscriptionId = "subscriber-test-subscription-" + _suffix;
   // For a subscription with exactly once delivery enabled.
   private static final String subscriptionEodId = "subscriber-test-subscription-eod" + _suffix;
+  private static final String subscriptionOptimisticId =
+      "subscriber-test-subscription-optimistic" + _suffix;
   private static final TopicName topicName = TopicName.of(projectId, topicId);
   private static final TopicName topicNameEod = TopicName.of(projectId, topicIdEod);
   private static final ProjectSubscriptionName subscriptionName =
       ProjectSubscriptionName.of(projectId, subscriptionId);
   private static final ProjectSubscriptionName subscriptionEodName =
       ProjectSubscriptionName.of(projectId, subscriptionEodId);
+  private static final ProjectSubscriptionName subscriptionOptimisticName =
+      ProjectSubscriptionName.of(projectId, subscriptionOptimisticId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -163,6 +167,11 @@ public class SubscriberIT {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.deleteSubscription(subscriptionName.toString());
       subscriptionAdminClient.deleteSubscription(subscriptionEodName.toString());
+      try {
+        subscriptionAdminClient.deleteSubscription(subscriptionOptimisticName.toString());
+      } catch (Exception e) {
+        // Ignore exception.
+      }
     }
 
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
@@ -239,5 +248,15 @@ public class SubscriberIT {
     for (String messageId : messageIds) {
       assertThat(bout.toString()).contains("Message successfully acked: " + messageId);
     }
+  }
+
+  @Test
+  public void testOptimisticSubscriber() throws Exception {
+    bout.reset();
+    OptimisticSubscribeExample.optimisticSubscribeExample(
+        projectId, subscriptionOptimisticId, topicId);
+    assertThat(
+        bout.toString()
+            .contains("Created pull subscription: " + subscriptionOptimisticName.toString()));
   }
 }
