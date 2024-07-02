@@ -2033,7 +2033,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>
@@ -2050,7 +2050,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>
@@ -2073,7 +2073,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>
@@ -2903,7 +2903,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -2920,7 +2920,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -2951,7 +2951,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -2976,7 +2976,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -2999,7 +2999,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -3039,7 +3039,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -3066,7 +3066,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -3081,7 +3081,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
@@ -3107,7 +3107,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Runtime configuration for Vertext AI Search extension.
+     * Runtime configuration for Vertex AI Search extension.
      * </pre>
      *
      * <code>
