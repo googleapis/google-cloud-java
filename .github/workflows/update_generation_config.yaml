@@ -1,0 +1,42 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# GitHub action job to test core java library features on
+# downstream client libraries before they are released.
+name: Update generation configuration
+on:
+  schedule:
+  - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-generation-config:
+    runs-on: ubuntu-22.04
+    env:
+      # the branch into which the pull request is merged
+      base_branch: main
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+    - name: Update params in generation config to latest
+      shell: bash
+      run: |
+        set -x
+        [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
+        [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
+        bash .github/scripts/update_generation_config.sh \
+          --base_branch "${base_branch}"\
+          --repo ${{ github.repository }}
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
