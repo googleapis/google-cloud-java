@@ -31,7 +31,7 @@ jobs:
         set -x
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
-        bash .github/scriptes/hermetic_library_generation.sh \
+        bash .github/scripts/hermetic_library_generation.sh \
           --target_branch ${{ github.base_ref }} \
           --current_branch ${{ github.head_ref }}
       env:
