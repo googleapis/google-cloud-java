@@ -19,6 +19,8 @@ on:
 
 jobs:
   library_generation:
+    # skip pull requests coming from a forked repository
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
