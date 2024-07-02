@@ -125,6 +125,23 @@ public class DeploymentResourcePoolServiceSettings
         .listDeploymentResourcePoolsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDeploymentResourcePool. */
+  public UnaryCallSettings<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolSettings() {
+    return ((DeploymentResourcePoolServiceStubSettings) getStubSettings())
+        .updateDeploymentResourcePoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentResourcePool. */
+  public OperationCallSettings<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationSettings() {
+    return ((DeploymentResourcePoolServiceStubSettings) getStubSettings())
+        .updateDeploymentResourcePoolOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteDeploymentResourcePool. */
   public UnaryCallSettings<DeleteDeploymentResourcePoolRequest, Operation>
       deleteDeploymentResourcePoolSettings() {
@@ -300,6 +317,21 @@ public class DeploymentResourcePoolServiceSettings
             ListDeploymentResourcePoolsPagedResponse>
         listDeploymentResourcePoolsSettings() {
       return getStubSettingsBuilder().listDeploymentResourcePoolsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentResourcePool. */
+    public UnaryCallSettings.Builder<UpdateDeploymentResourcePoolRequest, Operation>
+        updateDeploymentResourcePoolSettings() {
+      return getStubSettingsBuilder().updateDeploymentResourcePoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentResourcePool. */
+    public OperationCallSettings.Builder<
+            UpdateDeploymentResourcePoolRequest,
+            DeploymentResourcePool,
+            UpdateDeploymentResourcePoolOperationMetadata>
+        updateDeploymentResourcePoolOperationSettings() {
+      return getStubSettingsBuilder().updateDeploymentResourcePoolOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteDeploymentResourcePool. */

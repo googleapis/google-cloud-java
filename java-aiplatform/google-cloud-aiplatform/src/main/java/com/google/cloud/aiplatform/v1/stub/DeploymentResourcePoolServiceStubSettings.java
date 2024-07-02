@@ -56,6 +56,8 @@ import com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest;
 import com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsResponse;
 import com.google.cloud.aiplatform.v1.QueryDeployedModelsRequest;
 import com.google.cloud.aiplatform.v1.QueryDeployedModelsResponse;
+import com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -135,6 +137,13 @@ public class DeploymentResourcePoolServiceStubSettings
           ListDeploymentResourcePoolsResponse,
           ListDeploymentResourcePoolsPagedResponse>
       listDeploymentResourcePoolsSettings;
+  private final UnaryCallSettings<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolSettings;
+  private final OperationCallSettings<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationSettings;
   private final UnaryCallSettings<DeleteDeploymentResourcePoolRequest, Operation>
       deleteDeploymentResourcePoolSettings;
   private final OperationCallSettings<
@@ -374,6 +383,21 @@ public class DeploymentResourcePoolServiceStubSettings
     return listDeploymentResourcePoolsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDeploymentResourcePool. */
+  public UnaryCallSettings<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolSettings() {
+    return updateDeploymentResourcePoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentResourcePool. */
+  public OperationCallSettings<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationSettings() {
+    return updateDeploymentResourcePoolOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteDeploymentResourcePool. */
   public UnaryCallSettings<DeleteDeploymentResourcePoolRequest, Operation>
       deleteDeploymentResourcePoolSettings() {
@@ -508,6 +532,10 @@ public class DeploymentResourcePoolServiceStubSettings
     getDeploymentResourcePoolSettings = settingsBuilder.getDeploymentResourcePoolSettings().build();
     listDeploymentResourcePoolsSettings =
         settingsBuilder.listDeploymentResourcePoolsSettings().build();
+    updateDeploymentResourcePoolSettings =
+        settingsBuilder.updateDeploymentResourcePoolSettings().build();
+    updateDeploymentResourcePoolOperationSettings =
+        settingsBuilder.updateDeploymentResourcePoolOperationSettings().build();
     deleteDeploymentResourcePoolSettings =
         settingsBuilder.deleteDeploymentResourcePoolSettings().build();
     deleteDeploymentResourcePoolOperationSettings =
@@ -539,6 +567,13 @@ public class DeploymentResourcePoolServiceStubSettings
             ListDeploymentResourcePoolsResponse,
             ListDeploymentResourcePoolsPagedResponse>
         listDeploymentResourcePoolsSettings;
+    private final UnaryCallSettings.Builder<UpdateDeploymentResourcePoolRequest, Operation>
+        updateDeploymentResourcePoolSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDeploymentResourcePoolRequest,
+            DeploymentResourcePool,
+            UpdateDeploymentResourcePoolOperationMetadata>
+        updateDeploymentResourcePoolOperationSettings;
     private final UnaryCallSettings.Builder<DeleteDeploymentResourcePoolRequest, Operation>
         deleteDeploymentResourcePoolSettings;
     private final OperationCallSettings.Builder<
@@ -589,6 +624,8 @@ public class DeploymentResourcePoolServiceStubSettings
       getDeploymentResourcePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDeploymentResourcePoolsSettings =
           PagedCallSettings.newBuilder(LIST_DEPLOYMENT_RESOURCE_POOLS_PAGE_STR_FACT);
+      updateDeploymentResourcePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDeploymentResourcePoolOperationSettings = OperationCallSettings.newBuilder();
       deleteDeploymentResourcePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDeploymentResourcePoolOperationSettings = OperationCallSettings.newBuilder();
       queryDeployedModelsSettings =
@@ -604,6 +641,7 @@ public class DeploymentResourcePoolServiceStubSettings
               createDeploymentResourcePoolSettings,
               getDeploymentResourcePoolSettings,
               listDeploymentResourcePoolsSettings,
+              updateDeploymentResourcePoolSettings,
               deleteDeploymentResourcePoolSettings,
               queryDeployedModelsSettings,
               listLocationsSettings,
@@ -624,6 +662,10 @@ public class DeploymentResourcePoolServiceStubSettings
       getDeploymentResourcePoolSettings = settings.getDeploymentResourcePoolSettings.toBuilder();
       listDeploymentResourcePoolsSettings =
           settings.listDeploymentResourcePoolsSettings.toBuilder();
+      updateDeploymentResourcePoolSettings =
+          settings.updateDeploymentResourcePoolSettings.toBuilder();
+      updateDeploymentResourcePoolOperationSettings =
+          settings.updateDeploymentResourcePoolOperationSettings.toBuilder();
       deleteDeploymentResourcePoolSettings =
           settings.deleteDeploymentResourcePoolSettings.toBuilder();
       deleteDeploymentResourcePoolOperationSettings =
@@ -640,6 +682,7 @@ public class DeploymentResourcePoolServiceStubSettings
               createDeploymentResourcePoolSettings,
               getDeploymentResourcePoolSettings,
               listDeploymentResourcePoolsSettings,
+              updateDeploymentResourcePoolSettings,
               deleteDeploymentResourcePoolSettings,
               queryDeployedModelsSettings,
               listLocationsSettings,
@@ -674,6 +717,11 @@ public class DeploymentResourcePoolServiceStubSettings
 
       builder
           .listDeploymentResourcePoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateDeploymentResourcePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -726,6 +774,32 @@ public class DeploymentResourcePoolServiceStubSettings
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   CreateDeploymentResourcePoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDeploymentResourcePoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDeploymentResourcePoolRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentResourcePool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateDeploymentResourcePoolOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -809,6 +883,21 @@ public class DeploymentResourcePoolServiceStubSettings
             ListDeploymentResourcePoolsPagedResponse>
         listDeploymentResourcePoolsSettings() {
       return listDeploymentResourcePoolsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentResourcePool. */
+    public UnaryCallSettings.Builder<UpdateDeploymentResourcePoolRequest, Operation>
+        updateDeploymentResourcePoolSettings() {
+      return updateDeploymentResourcePoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentResourcePool. */
+    public OperationCallSettings.Builder<
+            UpdateDeploymentResourcePoolRequest,
+            DeploymentResourcePool,
+            UpdateDeploymentResourcePoolOperationMetadata>
+        updateDeploymentResourcePoolOperationSettings() {
+      return updateDeploymentResourcePoolOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDeploymentResourcePool. */

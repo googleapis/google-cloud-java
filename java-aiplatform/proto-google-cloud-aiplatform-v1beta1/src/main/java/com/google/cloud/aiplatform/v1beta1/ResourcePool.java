@@ -74,7 +74,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. min replicas in the node pool,
-     * must be ≤ replica_count and &lt; max_replica_count or will throw error
+     * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+     * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+     * resource_pool to be 0 to match the OSS Ray
+     * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+     * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+     * a corresponding validation inside
+     * CreatePersistentResourceRequestValidator.java.
      * </pre>
      *
      * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,7 +93,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. min replicas in the node pool,
-     * must be ≤ replica_count and &lt; max_replica_count or will throw error
+     * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+     * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+     * resource_pool to be 0 to match the OSS Ray
+     * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+     * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+     * a corresponding validation inside
+     * CreatePersistentResourceRequestValidator.java.
      * </pre>
      *
      * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -173,7 +185,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. min replicas in the node pool,
-     * must be ≤ replica_count and &lt; max_replica_count or will throw error
+     * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+     * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+     * resource_pool to be 0 to match the OSS Ray
+     * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+     * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+     * a corresponding validation inside
+     * CreatePersistentResourceRequestValidator.java.
      * </pre>
      *
      * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -189,7 +207,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. min replicas in the node pool,
-     * must be ≤ replica_count and &lt; max_replica_count or will throw error
+     * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+     * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+     * resource_pool to be 0 to match the OSS Ray
+     * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+     * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+     * a corresponding validation inside
+     * CreatePersistentResourceRequestValidator.java.
      * </pre>
      *
      * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -631,7 +655,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. min replicas in the node pool,
-       * must be ≤ replica_count and &lt; max_replica_count or will throw error
+       * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+       * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+       * resource_pool to be 0 to match the OSS Ray
+       * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+       * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+       * a corresponding validation inside
+       * CreatePersistentResourceRequestValidator.java.
        * </pre>
        *
        * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -648,7 +678,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. min replicas in the node pool,
-       * must be ≤ replica_count and &lt; max_replica_count or will throw error
+       * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+       * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+       * resource_pool to be 0 to match the OSS Ray
+       * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+       * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+       * a corresponding validation inside
+       * CreatePersistentResourceRequestValidator.java.
        * </pre>
        *
        * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -665,7 +701,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. min replicas in the node pool,
-       * must be ≤ replica_count and &lt; max_replica_count or will throw error
+       * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+       * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+       * resource_pool to be 0 to match the OSS Ray
+       * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+       * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+       * a corresponding validation inside
+       * CreatePersistentResourceRequestValidator.java.
        * </pre>
        *
        * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -686,7 +728,13 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. min replicas in the node pool,
-       * must be ≤ replica_count and &lt; max_replica_count or will throw error
+       * must be ≤ replica_count and &lt; max_replica_count or will throw error.
+       * For autoscaling enabled Ray-on-Vertex, we allow min_replica_count of a
+       * resource_pool to be 0 to match the OSS Ray
+       * behavior(https://docs.ray.io/en/latest/cluster/vms/user-guides/configuring-autoscaling.html#cluster-config-parameters).
+       * As for Persistent Resource, the min_replica_count must be &gt; 0, we added
+       * a corresponding validation inside
+       * CreatePersistentResourceRequestValidator.java.
        * </pre>
        *
        * <code>optional int64 min_replica_count = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -1070,7 +1118,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>
@@ -1087,7 +1135,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>
@@ -1106,7 +1154,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>
@@ -2284,7 +2332,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2300,7 +2348,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2322,7 +2370,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2347,7 +2395,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2369,7 +2417,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2401,7 +2449,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2422,7 +2470,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2439,7 +2487,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>
@@ -2460,7 +2508,7 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional spec to configure GKE autoscaling
+     * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
      * </pre>
      *
      * <code>

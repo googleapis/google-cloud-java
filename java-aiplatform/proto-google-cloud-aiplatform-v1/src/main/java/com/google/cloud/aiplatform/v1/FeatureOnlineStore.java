@@ -2287,6 +2287,90 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return The bytes for publicEndpointDomainName.
      */
     com.google.protobuf.ByteString getPublicEndpointDomainNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    boolean hasPrivateServiceConnectConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig getPrivateServiceConnectConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachment.
+     */
+    java.lang.String getServiceAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachment.
+     */
+    com.google.protobuf.ByteString getServiceAttachmentBytes();
   }
   /**
    *
@@ -2311,6 +2395,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
     private DedicatedServingEndpoint() {
       publicEndpointDomainName_ = "";
+      serviceAttachment_ = "";
     }
 
     @java.lang.Override
@@ -2335,6 +2420,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   .class);
     }
 
+    private int bitField0_;
     public static final int PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
@@ -2390,6 +2476,132 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public static final int PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig privateServiceConnectConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateServiceConnectConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig
+        getPrivateServiceConnectConfig() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
+    }
+
+    public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAttachment() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2407,6 +2619,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publicEndpointDomainName_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getPrivateServiceConnectConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAttachment_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2419,6 +2637,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
         size +=
             com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicEndpointDomainName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getPrivateServiceConnectConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAttachment_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2438,6 +2664,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           (com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint) obj;
 
       if (!getPublicEndpointDomainName().equals(other.getPublicEndpointDomainName())) return false;
+      if (hasPrivateServiceConnectConfig() != other.hasPrivateServiceConnectConfig()) return false;
+      if (hasPrivateServiceConnectConfig()) {
+        if (!getPrivateServiceConnectConfig().equals(other.getPrivateServiceConnectConfig()))
+          return false;
+      }
+      if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2451,6 +2683,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPublicEndpointDomainName().hashCode();
+      if (hasPrivateServiceConnectConfig()) {
+        hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivateServiceConnectConfig().hashCode();
+      }
+      hash = (37 * hash) + SERVICE_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAttachment().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2593,10 +2831,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPrivateServiceConnectConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2604,6 +2851,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         super.clear();
         bitField0_ = 0;
         publicEndpointDomainName_ = "";
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
+        serviceAttachment_ = "";
         return this;
       }
 
@@ -2648,6 +2901,18 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.publicEndpointDomainName_ = publicEndpointDomainName_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.privateServiceConnectConfig_ =
+              privateServiceConnectConfigBuilder_ == null
+                  ? privateServiceConnectConfig_
+                  : privateServiceConnectConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.serviceAttachment_ = serviceAttachment_;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2707,6 +2972,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.hasPrivateServiceConnectConfig()) {
+          mergePrivateServiceConnectConfig(other.getPrivateServiceConnectConfig());
+        }
+        if (!other.getServiceAttachment().isEmpty()) {
+          serviceAttachment_ = other.serviceAttachment_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2739,6 +3012,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getPrivateServiceConnectConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  serviceAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2870,6 +3156,374 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         publicEndpointDomainName_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig
+          privateServiceConnectConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder>
+          privateServiceConnectConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the privateServiceConnectConfig field is set.
+       */
+      public boolean hasPrivateServiceConnectConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The privateServiceConnectConfig.
+       */
+      public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig
+          getPrivateServiceConnectConfig() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        } else {
+          return privateServiceConnectConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          privateServiceConnectConfig_ = value;
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.Builder builderForValue) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfig_ = builderForValue.build();
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && privateServiceConnectConfig_ != null
+              && privateServiceConnectConfig_
+                  != com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig
+                      .getDefaultInstance()) {
+            getPrivateServiceConnectConfigBuilder().mergeFrom(value);
+          } else {
+            privateServiceConnectConfig_ = value;
+          }
+        } else {
+          privateServiceConnectConfigBuilder_.mergeFrom(value);
+        }
+        if (privateServiceConnectConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPrivateServiceConnectConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.Builder
+          getPrivateServiceConnectConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPrivateServiceConnectConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder
+          getPrivateServiceConnectConfigOrBuilder() {
+        if (privateServiceConnectConfigBuilder_ != null) {
+          return privateServiceConnectConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder>
+          getPrivateServiceConnectConfigFieldBuilder() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig,
+                  com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig.Builder,
+                  com.google.cloud.aiplatform.v1.PrivateServiceConnectConfigOrBuilder>(
+                  getPrivateServiceConnectConfig(), getParentForChildren(), isClean());
+          privateServiceConnectConfig_ = null;
+        }
+        return privateServiceConnectConfigBuilder_;
+      }
+
+      private java.lang.Object serviceAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serviceAttachment.
+       */
+      public java.lang.String getServiceAttachment() {
+        java.lang.Object ref = serviceAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serviceAttachment.
+       */
+      public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+        java.lang.Object ref = serviceAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serviceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAttachment_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAttachment() {
+        serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serviceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceAttachment_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

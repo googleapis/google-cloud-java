@@ -433,6 +433,65 @@ public class DeploymentResourcePoolServiceClientTest {
   }
 
   @Test
+  public void updateDeploymentResourcePoolTest() throws Exception {
+    DeploymentResourcePool expectedResponse =
+        DeploymentResourcePool.newBuilder()
+            .setName(
+                DeploymentResourcePoolName.of(
+                        "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]")
+                    .toString())
+            .setDedicatedResources(DedicatedResources.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisableContainerLogging(true)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDeploymentResourcePoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDeploymentResourcePoolService.addResponse(resultOperation);
+
+    DeploymentResourcePool deploymentResourcePool = DeploymentResourcePool.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DeploymentResourcePool actualResponse =
+        client.updateDeploymentResourcePoolAsync(deploymentResourcePool, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeploymentResourcePoolService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDeploymentResourcePoolRequest actualRequest =
+        ((UpdateDeploymentResourcePoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(deploymentResourcePool, actualRequest.getDeploymentResourcePool());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDeploymentResourcePoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeploymentResourcePoolService.addException(exception);
+
+    try {
+      DeploymentResourcePool deploymentResourcePool = DeploymentResourcePool.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDeploymentResourcePoolAsync(deploymentResourcePool, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteDeploymentResourcePoolTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =

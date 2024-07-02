@@ -358,10 +358,13 @@ public final class ServiceProto {
           + "A\004name\202\323\344\223\0020\022./v1/{name=projects/*/locat"
           + "ions/*}/serverConfig\032P\312A\034edgecontainer.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB|\n!com.google.clo"
-          + "ud.edgecontainer.v1B\014ServiceProtoP\001ZGclo"
-          + "ud.google.com/go/edgecontainer/apiv1/edg"
-          + "econtainerpb;edgecontainerpbb\006proto3"
+          + "om/auth/cloud-platformB\337\001\n!com.google.cl"
+          + "oud.edgecontainer.v1B\014ServiceProtoP\001ZGcl"
+          + "oud.google.com/go/edgecontainer/apiv1/ed"
+          + "gecontainerpb;edgecontainerpb\252\002\035Google.C"
+          + "loud.EdgeContainer.V1\312\002\035Google\\Cloud\\Edg"
+          + "eContainer\\V1\352\002 Google::Cloud::EdgeConta"
+          + "iner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

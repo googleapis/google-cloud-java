@@ -248,6 +248,8 @@ public class ModelServiceClientTest {
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -319,6 +321,8 @@ public class ModelServiceClientTest {
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -566,6 +570,8 @@ public class ModelServiceClientTest {
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -900,6 +906,8 @@ public class ModelServiceClientTest {
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -974,6 +982,8 @@ public class ModelServiceClientTest {
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelService.addResponse(expectedResponse);
 

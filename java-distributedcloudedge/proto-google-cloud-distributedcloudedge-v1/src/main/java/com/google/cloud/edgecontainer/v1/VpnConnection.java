@@ -286,7 +286,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -308,7 +308,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -433,7 +433,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
      * @return The serviceAccount.
      */
     @java.lang.Override
@@ -466,7 +466,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
      * @return The bytes for serviceAccount.
      */
     @java.lang.Override
@@ -986,7 +986,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
        * @return The serviceAccount.
        */
       @java.lang.Deprecated
@@ -1018,7 +1018,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
        * @return The bytes for serviceAccount.
        */
       @java.lang.Deprecated
@@ -1050,7 +1050,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
        * @param value The serviceAccount to set.
        * @return This builder for chaining.
        */
@@ -1081,7 +1081,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1108,7 +1108,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
        * @param value The bytes for serviceAccount to set.
        * @return This builder for chaining.
        */
@@ -4799,7 +4799,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=690
+   *     google/cloud/edgecontainer/v1/resources.proto;l=693
    * @return The enum numeric value on the wire for bgpRoutingMode.
    */
   @java.lang.Override
@@ -4819,7 +4819,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=690
+   *     google/cloud/edgecontainer/v1/resources.proto;l=693
    * @return The bgpRoutingMode.
    */
   @java.lang.Override
@@ -6624,7 +6624,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=690
+     *     google/cloud/edgecontainer/v1/resources.proto;l=693
      * @return The enum numeric value on the wire for bgpRoutingMode.
      */
     @java.lang.Override
@@ -6644,7 +6644,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=690
+     *     google/cloud/edgecontainer/v1/resources.proto;l=693
      * @param value The enum numeric value on the wire for bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6667,7 +6667,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=690
+     *     google/cloud/edgecontainer/v1/resources.proto;l=693
      * @return The bgpRoutingMode.
      */
     @java.lang.Override
@@ -6691,7 +6691,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=690
+     *     google/cloud/edgecontainer/v1/resources.proto;l=693
      * @param value The bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6718,7 +6718,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=690
+     *     google/cloud/edgecontainer/v1/resources.proto;l=693
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

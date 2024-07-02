@@ -62,6 +62,24 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.BleuSpec.Builder.class);
   }
 
+  public static final int USE_EFFECTIVE_ORDER_FIELD_NUMBER = 1;
+  private boolean useEffectiveOrder_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to use_effective_order to compute bleu score.
+   * </pre>
+   *
+   * <code>bool use_effective_order = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useEffectiveOrder.
+   */
+  @java.lang.Override
+  public boolean getUseEffectiveOrder() {
+    return useEffectiveOrder_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -76,6 +94,9 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (useEffectiveOrder_ != false) {
+      output.writeBool(1, useEffectiveOrder_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -85,6 +106,9 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (useEffectiveOrder_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useEffectiveOrder_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -101,6 +125,7 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.BleuSpec other =
         (com.google.cloud.aiplatform.v1beta1.BleuSpec) obj;
 
+    if (getUseEffectiveOrder() != other.getUseEffectiveOrder()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -112,6 +137,8 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + USE_EFFECTIVE_ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseEffectiveOrder());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -251,6 +278,8 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      useEffectiveOrder_ = false;
       return this;
     }
 
@@ -278,8 +307,18 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.BleuSpec buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BleuSpec result =
           new com.google.cloud.aiplatform.v1beta1.BleuSpec(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.BleuSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.useEffectiveOrder_ = useEffectiveOrder_;
+      }
     }
 
     @java.lang.Override
@@ -327,6 +366,9 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.BleuSpec other) {
       if (other == com.google.cloud.aiplatform.v1beta1.BleuSpec.getDefaultInstance()) return this;
+      if (other.getUseEffectiveOrder() != false) {
+        setUseEffectiveOrder(other.getUseEffectiveOrder());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -353,6 +395,12 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                useEffectiveOrder_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -367,6 +415,61 @@ public final class BleuSpec extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private boolean useEffectiveOrder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use_effective_order to compute bleu score.
+     * </pre>
+     *
+     * <code>bool use_effective_order = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useEffectiveOrder.
+     */
+    @java.lang.Override
+    public boolean getUseEffectiveOrder() {
+      return useEffectiveOrder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use_effective_order to compute bleu score.
+     * </pre>
+     *
+     * <code>bool use_effective_order = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useEffectiveOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseEffectiveOrder(boolean value) {
+
+      useEffectiveOrder_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to use_effective_order to compute bleu score.
+     * </pre>
+     *
+     * <code>bool use_effective_order = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseEffectiveOrder() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      useEffectiveOrder_ = false;
+      onChanged();
       return this;
     }
 

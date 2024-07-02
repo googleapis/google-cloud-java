@@ -178,7 +178,7 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>
@@ -192,7 +192,7 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>
@@ -206,7 +206,7 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional spec to configure GKE autoscaling
+   * Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
    * </pre>
    *
    * <code>

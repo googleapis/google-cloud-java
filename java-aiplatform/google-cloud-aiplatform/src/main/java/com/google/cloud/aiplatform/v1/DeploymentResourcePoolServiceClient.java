@@ -41,6 +41,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -135,6 +136,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listDeploymentResourcePoolsPagedCallable()
  *           <li><p> listDeploymentResourcePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDeploymentResourcePool</td>
+ *      <td><p> Update a DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolAsync(UpdateDeploymentResourcePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolAsync(DeploymentResourcePool deploymentResourcePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolOperationCallable()
+ *           <li><p> updateDeploymentResourcePoolCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -875,6 +895,151 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListDeploymentResourcePoolsRequest, ListDeploymentResourcePoolsResponse>
       listDeploymentResourcePoolsCallable() {
     return stub.listDeploymentResourcePoolsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   DeploymentResourcePool deploymentResourcePool = DeploymentResourcePool.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeploymentResourcePool response =
+   *       deploymentResourcePoolServiceClient
+   *           .updateDeploymentResourcePoolAsync(deploymentResourcePool, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param deploymentResourcePool Required. The DeploymentResourcePool to update.
+   *     <p>The DeploymentResourcePool's `name` field is used to identify the DeploymentResourcePool
+   *     to update. Format:
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolAsync(
+          DeploymentResourcePool deploymentResourcePool, FieldMask updateMask) {
+    UpdateDeploymentResourcePoolRequest request =
+        UpdateDeploymentResourcePoolRequest.newBuilder()
+            .setDeploymentResourcePool(deploymentResourcePool)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeploymentResourcePoolAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DeploymentResourcePool response =
+   *       deploymentResourcePoolServiceClient.updateDeploymentResourcePoolAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolAsync(UpdateDeploymentResourcePoolRequest request) {
+    return updateDeploymentResourcePoolOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+   *       future =
+   *           deploymentResourcePoolServiceClient
+   *               .updateDeploymentResourcePoolOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   DeploymentResourcePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationCallable() {
+    return stub.updateDeploymentResourcePoolOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       deploymentResourcePoolServiceClient
+   *           .updateDeploymentResourcePoolCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolCallable() {
+    return stub.updateDeploymentResourcePoolCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

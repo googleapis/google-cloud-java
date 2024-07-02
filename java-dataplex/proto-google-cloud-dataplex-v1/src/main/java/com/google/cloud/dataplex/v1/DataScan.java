@@ -1375,6 +1375,47 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp latest_job_end_time = 5;</code>
      */
     com.google.protobuf.TimestampOrBuilder getLatestJobEndTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the latestJobCreateTime field is set.
+     */
+    boolean hasLatestJobCreateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The latestJobCreateTime.
+     */
+    com.google.protobuf.Timestamp getLatestJobCreateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLatestJobCreateTimeOrBuilder();
   }
   /**
    *
@@ -1519,6 +1560,62 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           : latestJobEndTime_;
     }
 
+    public static final int LATEST_JOB_CREATE_TIME_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp latestJobCreateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the latestJobCreateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatestJobCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The latestJobCreateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLatestJobCreateTime() {
+      return latestJobCreateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : latestJobCreateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when the DataScanJob execution was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLatestJobCreateTimeOrBuilder() {
+      return latestJobCreateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : latestJobCreateTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1539,6 +1636,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(5, getLatestJobEndTime());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(6, getLatestJobCreateTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1554,6 +1654,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLatestJobEndTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLatestJobCreateTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1579,6 +1683,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       if (hasLatestJobEndTime()) {
         if (!getLatestJobEndTime().equals(other.getLatestJobEndTime())) return false;
       }
+      if (hasLatestJobCreateTime() != other.hasLatestJobCreateTime()) return false;
+      if (hasLatestJobCreateTime()) {
+        if (!getLatestJobCreateTime().equals(other.getLatestJobCreateTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1597,6 +1705,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       if (hasLatestJobEndTime()) {
         hash = (37 * hash) + LATEST_JOB_END_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getLatestJobEndTime().hashCode();
+      }
+      if (hasLatestJobCreateTime()) {
+        hash = (37 * hash) + LATEST_JOB_CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLatestJobCreateTime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1743,6 +1855,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getLatestJobStartTimeFieldBuilder();
           getLatestJobEndTimeFieldBuilder();
+          getLatestJobCreateTimeFieldBuilder();
         }
       }
 
@@ -1759,6 +1872,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         if (latestJobEndTimeBuilder_ != null) {
           latestJobEndTimeBuilder_.dispose();
           latestJobEndTimeBuilder_ = null;
+        }
+        latestJobCreateTime_ = null;
+        if (latestJobCreateTimeBuilder_ != null) {
+          latestJobCreateTimeBuilder_.dispose();
+          latestJobCreateTimeBuilder_ = null;
         }
         return this;
       }
@@ -1810,6 +1928,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
                   ? latestJobEndTime_
                   : latestJobEndTimeBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.latestJobCreateTime_ =
+              latestJobCreateTimeBuilder_ == null
+                  ? latestJobCreateTime_
+                  : latestJobCreateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1868,6 +1993,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         if (other.hasLatestJobEndTime()) {
           mergeLatestJobEndTime(other.getLatestJobEndTime());
         }
+        if (other.hasLatestJobCreateTime()) {
+          mergeLatestJobCreateTime(other.getLatestJobCreateTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1908,6 +2036,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getLatestJobCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2295,6 +2430,209 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           latestJobEndTime_ = null;
         }
         return latestJobEndTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp latestJobCreateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          latestJobCreateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the latestJobCreateTime field is set.
+       */
+      public boolean hasLatestJobCreateTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The latestJobCreateTime.
+       */
+      public com.google.protobuf.Timestamp getLatestJobCreateTime() {
+        if (latestJobCreateTimeBuilder_ == null) {
+          return latestJobCreateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : latestJobCreateTime_;
+        } else {
+          return latestJobCreateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLatestJobCreateTime(com.google.protobuf.Timestamp value) {
+        if (latestJobCreateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          latestJobCreateTime_ = value;
+        } else {
+          latestJobCreateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLatestJobCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (latestJobCreateTimeBuilder_ == null) {
+          latestJobCreateTime_ = builderForValue.build();
+        } else {
+          latestJobCreateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeLatestJobCreateTime(com.google.protobuf.Timestamp value) {
+        if (latestJobCreateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && latestJobCreateTime_ != null
+              && latestJobCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLatestJobCreateTimeBuilder().mergeFrom(value);
+          } else {
+            latestJobCreateTime_ = value;
+          }
+        } else {
+          latestJobCreateTimeBuilder_.mergeFrom(value);
+        }
+        if (latestJobCreateTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearLatestJobCreateTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        latestJobCreateTime_ = null;
+        if (latestJobCreateTimeBuilder_ != null) {
+          latestJobCreateTimeBuilder_.dispose();
+          latestJobCreateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLatestJobCreateTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getLatestJobCreateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLatestJobCreateTimeOrBuilder() {
+        if (latestJobCreateTimeBuilder_ != null) {
+          return latestJobCreateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return latestJobCreateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : latestJobCreateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time when the DataScanJob execution was created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp latest_job_create_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLatestJobCreateTimeFieldBuilder() {
+        if (latestJobCreateTimeBuilder_ == null) {
+          latestJobCreateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLatestJobCreateTime(), getParentForChildren(), isClean());
+          latestJobCreateTime_ = null;
+        }
+        return latestJobCreateTimeBuilder_;
       }
 
       @java.lang.Override

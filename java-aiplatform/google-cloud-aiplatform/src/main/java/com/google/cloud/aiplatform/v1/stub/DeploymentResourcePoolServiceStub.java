@@ -33,6 +33,8 @@ import com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest;
 import com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsResponse;
 import com.google.cloud.aiplatform.v1.QueryDeployedModelsRequest;
 import com.google.cloud.aiplatform.v1.QueryDeployedModelsResponse;
+import com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateDeploymentResourcePoolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -90,6 +92,21 @@ public abstract class DeploymentResourcePoolServiceStub implements BackgroundRes
       listDeploymentResourcePoolsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listDeploymentResourcePoolsCallable()");
+  }
+
+  public OperationCallable<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDeploymentResourcePoolOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDeploymentResourcePoolCallable()");
   }
 
   public OperationCallable<DeleteDeploymentResourcePoolRequest, Empty, DeleteOperationMetadata>
