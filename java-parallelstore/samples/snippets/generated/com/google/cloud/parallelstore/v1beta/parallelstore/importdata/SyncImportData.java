@@ -21,6 +21,7 @@ import com.google.cloud.parallelstore.v1beta.ImportDataRequest;
 import com.google.cloud.parallelstore.v1beta.ImportDataResponse;
 import com.google.cloud.parallelstore.v1beta.InstanceName;
 import com.google.cloud.parallelstore.v1beta.ParallelstoreClient;
+import com.google.cloud.parallelstore.v1beta.ServiceAccountName;
 
 public class SyncImportData {
 
@@ -39,6 +40,7 @@ public class SyncImportData {
           ImportDataRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
               .build();
       ImportDataResponse response = parallelstoreClient.importDataAsync(request).get();
     }

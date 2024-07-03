@@ -1147,6 +1147,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ImportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   ImportDataResponse response = parallelstoreClient.importDataAsync(request).get();
    * }
@@ -1177,6 +1178,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ImportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   OperationFuture<ImportDataResponse, ImportDataMetadata> future =
    *       parallelstoreClient.importDataOperationCallable().futureCall(request);
@@ -1207,6 +1209,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ImportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   ApiFuture<Operation> future = parallelstoreClient.importDataCallable().futureCall(request);
    *   // Do something.
@@ -1235,6 +1238,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ExportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   ExportDataResponse response = parallelstoreClient.exportDataAsync(request).get();
    * }
@@ -1265,6 +1269,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ExportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   OperationFuture<ExportDataResponse, ExportDataMetadata> future =
    *       parallelstoreClient.exportDataOperationCallable().futureCall(request);
@@ -1295,6 +1300,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *       ExportDataRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
    *           .build();
    *   ApiFuture<Operation> future = parallelstoreClient.exportDataCallable().futureCall(request);
    *   // Do something.
