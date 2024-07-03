@@ -15,7 +15,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - javadoc
   - pattern: java7
     isAdminEnforced: true
@@ -46,7 +45,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.12.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -61,7 +59,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.25.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -76,7 +73,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.38.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -90,7 +86,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
   - pattern: 2.47.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -104,7 +99,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - javadoc
 permissionRules:
   - team: yoshi-admins
