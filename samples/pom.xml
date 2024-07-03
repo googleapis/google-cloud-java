@@ -47,7 +47,6 @@
     <module>install-without-bom</module>
     <module>snapshot</module>
     <module>snippets</module>
-    <module>native-image-sample</module>
   </modules>
 
   <build>
