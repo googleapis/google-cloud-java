@@ -70,7 +70,7 @@ public final class CommonProto {
           + "ARCH_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_S"
           + "TANDARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n"
           + "\013SearchAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIE"
-          + "D\020\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\325\r\n#com.googl"
+          + "D\020\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\243\013\n#com.googl"
           + "e.cloud.discoveryengine.v1B\013CommonProtoP"
           + "\001ZMcloud.google.com/go/discoveryengine/a"
           + "piv1/discoveryenginepb;discoveryenginepb"
@@ -106,15 +106,7 @@ public final class CommonProto {
           + "kingConfigs/{ranking_config}\352Ay\n#healthc"
           + "are.googleapis.com/FhirStore\022Rprojects/{"
           + "project}/locations/{location}/datasets/{"
-          + "dataset}/fhirStores/{fhir_store}\352A\256\002\n$di"
-          + "scoveryengine.googleapis.com/Chunk\022uproj"
-          + "ects/{project}/locations/{location}/data"
-          + "Stores/{data_store}/branches/{branch}/do"
-          + "cuments/{document}/chunks/{chunk}\022\216\001proj"
-          + "ects/{project}/locations/{location}/coll"
-          + "ections/{collection}/dataStores/{data_st"
-          + "ore}/branches/{branch}/documents/{docume"
-          + "nt}/chunks/{chunk}b\006proto3"
+          + "dataset}/fhirStores/{fhir_store}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

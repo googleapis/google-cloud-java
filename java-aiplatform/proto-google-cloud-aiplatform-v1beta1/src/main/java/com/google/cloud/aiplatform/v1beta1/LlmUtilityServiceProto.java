@@ -54,31 +54,35 @@ public final class LlmUtilityServiceProto {
           + "form.v1beta1\032\034google/api/annotations.pro"
           + "to\032\027google/api/client.proto\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\032\034google/protobuf/struct.proto\"\204\001"
-          + "\n\024ComputeTokensRequest\022<\n\010endpoint\030\001 \001(\t"
-          + "B*\340A\002\372A$\n\"aiplatform.googleapis.com/Endp"
-          + "oint\022.\n\tinstances\030\002 \003(\0132\026.google.protobu"
-          + "f.ValueB\003\340A\002\"/\n\nTokensInfo\022\016\n\006tokens\030\001 \003"
-          + "(\014\022\021\n\ttoken_ids\030\002 \003(\003\"Y\n\025ComputeTokensRe"
-          + "sponse\022@\n\013tokens_info\030\001 \003(\0132+.google.clo"
-          + "ud.aiplatform.v1beta1.TokensInfo2\240\003\n\021Llm"
-          + "UtilityService\022\273\002\n\rComputeTokens\0225.googl"
-          + "e.cloud.aiplatform.v1beta1.ComputeTokens"
-          + "Request\0326.google.cloud.aiplatform.v1beta"
-          + "1.ComputeTokensResponse\"\272\001\332A\022endpoint,in"
-          + "stances\202\323\344\223\002\236\001\"D/v1beta1/{endpoint=proje"
-          + "cts/*/locations/*/endpoints/*}:computeTo"
-          + "kens:\001*ZS\"N/v1beta1/{endpoint=projects/*"
-          + "/locations/*/publishers/*/models/*}:comp"
-          + "uteTokens:\001*\032M\312A\031aiplatform.googleapis.c"
-          + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\355\001\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\026LlmUtilityServiceProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
-          + "rm::V1beta1b\006proto3"
+          + "e.proto\032-google/cloud/aiplatform/v1beta1"
+          + "/content.proto\032\034google/protobuf/struct.p"
+          + "roto\"\331\001\n\024ComputeTokensRequest\022<\n\010endpoin"
+          + "t\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.c"
+          + "om/Endpoint\022.\n\tinstances\030\002 \003(\0132\026.google."
+          + "protobuf.ValueB\003\340A\001\022\022\n\005model\030\003 \001(\tB\003\340A\001\022"
+          + "?\n\010contents\030\004 \003(\0132(.google.cloud.aiplatf"
+          + "orm.v1beta1.ContentB\003\340A\001\"B\n\nTokensInfo\022\016"
+          + "\n\006tokens\030\001 \003(\014\022\021\n\ttoken_ids\030\002 \003(\003\022\021\n\004rol"
+          + "e\030\003 \001(\tB\003\340A\001\"Y\n\025ComputeTokensResponse\022@\n"
+          + "\013tokens_info\030\001 \003(\0132+.google.cloud.aiplat"
+          + "form.v1beta1.TokensInfo2\240\003\n\021LlmUtilitySe"
+          + "rvice\022\273\002\n\rComputeTokens\0225.google.cloud.a"
+          + "iplatform.v1beta1.ComputeTokensRequest\0326"
+          + ".google.cloud.aiplatform.v1beta1.Compute"
+          + "TokensResponse\"\272\001\332A\022endpoint,instances\202\323"
+          + "\344\223\002\236\001\"D/v1beta1/{endpoint=projects/*/loc"
+          + "ations/*/endpoints/*}:computeTokens:\001*ZS"
+          + "\"N/v1beta1/{endpoint=projects/*/location"
+          + "s/*/publishers/*/models/*}:computeTokens"
+          + ":\001*\032M\312A\031aiplatform.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmB\355\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\026LlmUtilityServiceProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -88,6 +92,7 @@ public final class LlmUtilityServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_ComputeTokensRequest_descriptor =
@@ -96,7 +101,7 @@ public final class LlmUtilityServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ComputeTokensRequest_descriptor,
             new java.lang.String[] {
-              "Endpoint", "Instances",
+              "Endpoint", "Instances", "Model", "Contents",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TokensInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -104,7 +109,7 @@ public final class LlmUtilityServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TokensInfo_descriptor,
             new java.lang.String[] {
-              "Tokens", "TokenIds",
+              "Tokens", "TokenIds", "Role",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ComputeTokensResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -128,6 +133,7 @@ public final class LlmUtilityServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
 

@@ -1080,6 +1080,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1133,6 +1135,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1186,6 +1190,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1239,6 +1245,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1302,6 +1310,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1317,6 +1327,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1358,6 +1370,8 @@ public class ChatServiceClientHttpJsonTest {
               .setImportMode(true)
               .setCreateTime(Timestamp.newBuilder().build())
               .setAdminInstalled(true)
+              .setAccessSettings(Space.AccessSettings.newBuilder().build())
+              .setSpaceUri("spaceUri2047440518")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpace(space, updateMask);
@@ -1507,6 +1521,8 @@ public class ChatServiceClientHttpJsonTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockService.addResponse(expectedResponse);
 

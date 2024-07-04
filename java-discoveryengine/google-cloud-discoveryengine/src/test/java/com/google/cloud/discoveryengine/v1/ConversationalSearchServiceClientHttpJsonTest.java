@@ -36,6 +36,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -688,6 +689,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                 AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -735,6 +737,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");

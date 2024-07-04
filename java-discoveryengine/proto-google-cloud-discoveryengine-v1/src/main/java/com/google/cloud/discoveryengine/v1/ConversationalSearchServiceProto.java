@@ -137,6 +137,10 @@ public final class ConversationalSearchServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_AnswerQueryResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AnswerQueryResponse_fieldAccessorTable;
@@ -231,8 +235,8 @@ public final class ConversationalSearchServiceProto {
           + "\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"z\n\031Li"
           + "stConversationsResponse\022D\n\rconversations"
           + "\030\001 \003(\0132-.google.cloud.discoveryengine.v1"
-          + ".Conversation\022\027\n\017next_page_token\030\002 \001(\t\"\216"
-          + "\035\n\022AnswerQueryRequest\022L\n\016serving_config\030"
+          + ".Conversation\022\027\n\017next_page_token\030\002 \001(\t\"\246"
+          + "\037\n\022AnswerQueryRequest\022L\n\016serving_config\030"
           + "\001 \001(\tB4\340A\002\372A.\n,discoveryengine.googleapi"
           + "s.com/ServingConfig\022:\n\005query\030\002 \001(\0132&.goo"
           + "gle.cloud.discoveryengine.v1.QueryB\003\340A\002\022"
@@ -251,81 +255,88 @@ public final class ConversationalSearchServiceProto {
           + "google.cloud.discoveryengine.v1.AnswerQu"
           + "eryRequest.QueryUnderstandingSpec\022\031\n\021asy"
           + "nchronous_mode\030\n \001(\010\022\026\n\016user_pseudo_id\030\014"
-          + " \001(\t\032\034\n\nSafetySpec\022\016\n\006enable\030\001 \001(\010\032&\n\024Re"
-          + "latedQuestionsSpec\022\016\n\006enable\030\001 \001(\010\032\372\003\n\024A"
-          + "nswerGenerationSpec\022f\n\nmodel_spec\030\001 \001(\0132"
-          + "R.google.cloud.discoveryengine.v1.Answer"
-          + "QueryRequest.AnswerGenerationSpec.ModelS"
-          + "pec\022h\n\013prompt_spec\030\002 \001(\0132S.google.cloud."
-          + "discoveryengine.v1.AnswerQueryRequest.An"
-          + "swerGenerationSpec.PromptSpec\022\031\n\021include"
-          + "_citations\030\003 \001(\010\022\034\n\024answer_language_code"
-          + "\030\004 \001(\t\022 \n\030ignore_adversarial_query\030\005 \001(\010"
-          + "\022\'\n\037ignore_non_answer_seeking_query\030\006 \001("
-          + "\010\022(\n\033ignore_low_relevant_content\030\007 \001(\010H\000"
-          + "\210\001\001\032\"\n\tModelSpec\022\025\n\rmodel_version\030\001 \001(\t\032"
-          + "\036\n\nPromptSpec\022\020\n\010preamble\030\001 \001(\tB\036\n\034_igno"
-          + "re_low_relevant_content\032\237\016\n\nSearchSpec\022d"
-          + "\n\rsearch_params\030\001 \001(\0132K.google.cloud.dis"
-          + "coveryengine.v1.AnswerQueryRequest.Searc"
-          + "hSpec.SearchParamsH\000\022m\n\022search_result_li"
-          + "st\030\002 \001(\0132O.google.cloud.discoveryengine."
-          + "v1.AnswerQueryRequest.SearchSpec.SearchR"
-          + "esultListH\000\032\362\001\n\014SearchParams\022\032\n\022max_retu"
-          + "rn_results\030\001 \001(\005\022\016\n\006filter\030\002 \001(\t\022L\n\nboos"
-          + "t_spec\030\003 \001(\01328.google.cloud.discoveryeng"
-          + "ine.v1.SearchRequest.BoostSpec\022\020\n\010order_"
-          + "by\030\004 \001(\t\022V\n\020data_store_specs\030\007 \003(\0132<.goo"
-          + "gle.cloud.discoveryengine.v1.SearchReque"
-          + "st.DataStoreSpec\032\275\n\n\020SearchResultList\022t\n"
-          + "\016search_results\030\001 \003(\0132\\.google.cloud.dis"
-          + "coveryengine.v1.AnswerQueryRequest.Searc"
-          + "hSpec.SearchResultList.SearchResult\032\262\t\n\014"
-          + "SearchResult\022\233\001\n\032unstructured_document_i"
-          + "nfo\030\001 \001(\0132u.google.cloud.discoveryengine"
-          + ".v1.AnswerQueryRequest.SearchSpec.Search"
-          + "ResultList.SearchResult.UnstructuredDocu"
-          + "mentInfoH\000\022|\n\nchunk_info\030\002 \001(\0132f.google."
-          + "cloud.discoveryengine.v1.AnswerQueryRequ"
-          + "est.SearchSpec.SearchResultList.SearchRe"
-          + "sult.ChunkInfoH\000\032\242\006\n\030UnstructuredDocumen"
-          + "tInfo\022>\n\010document\030\001 \001(\tB,\372A)\n\'discoverye"
-          + "ngine.googleapis.com/Document\022\013\n\003uri\030\002 \001"
-          + "(\t\022\r\n\005title\030\003 \001(\t\022\241\001\n\021document_contexts\030"
-          + "\004 \003(\0132\205\001.google.cloud.discoveryengine.v1"
-          + ".AnswerQueryRequest.SearchSpec.SearchRes"
-          + "ultList.SearchResult.UnstructuredDocumen"
-          + "tInfo.DocumentContext\022\245\001\n\023extractive_seg"
-          + "ments\030\005 \003(\0132\207\001.google.cloud.discoveryeng"
-          + "ine.v1.AnswerQueryRequest.SearchSpec.Sea"
-          + "rchResultList.SearchResult.UnstructuredD"
-          + "ocumentInfo.ExtractiveSegment\022\243\001\n\022extrac"
-          + "tive_answers\030\006 \003(\0132\206\001.google.cloud.disco"
-          + "veryengine.v1.AnswerQueryRequest.SearchS"
-          + "pec.SearchResultList.SearchResult.Unstru"
-          + "cturedDocumentInfo.ExtractiveAnswer\032;\n\017D"
-          + "ocumentContext\022\027\n\017page_identifier\030\001 \001(\t\022"
-          + "\017\n\007content\030\002 \001(\t\032=\n\021ExtractiveSegment\022\027\n"
-          + "\017page_identifier\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\032"
-          + "<\n\020ExtractiveAnswer\022\027\n\017page_identifier\030\001"
-          + " \001(\t\022\017\n\007content\030\002 \001(\t\032V\n\tChunkInfo\0228\n\005ch"
-          + "unk\030\001 \001(\tB)\372A&\n$discoveryengine.googleap"
-          + "is.com/Chunk\022\017\n\007content\030\002 \001(\tB\t\n\007content"
-          + "B\007\n\005input\032\253\004\n\026QueryUnderstandingSpec\022\205\001\n"
-          + "\031query_classification_spec\030\001 \001(\0132b.googl"
-          + "e.cloud.discoveryengine.v1.AnswerQueryRe"
-          + "quest.QueryUnderstandingSpec.QueryClassi"
-          + "ficationSpec\022{\n\024query_rephraser_spec\030\002 \001"
-          + "(\0132].google.cloud.discoveryengine.v1.Ans"
-          + "werQueryRequest.QueryUnderstandingSpec.Q"
-          + "ueryRephraserSpec\032\344\001\n\027QueryClassificatio"
-          + "nSpec\022v\n\005types\030\001 \003(\0162g.google.cloud.disc"
-          + "overyengine.v1.AnswerQueryRequest.QueryU"
-          + "nderstandingSpec.QueryClassificationSpec"
-          + ".Type\"Q\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021A"
-          + "DVERSARIAL_QUERY\020\001\022\034\n\030NON_ANSWER_SEEKING"
-          + "_QUERY\020\002\032%\n\022QueryRephraserSpec\022\017\n\007disabl"
-          + "e\030\001 \001(\010\"\245\001\n\023AnswerQueryResponse\0227\n\006answe"
+          + " \001(\t\022X\n\013user_labels\030\r \003(\0132C.google.cloud"
+          + ".discoveryengine.v1.AnswerQueryRequest.U"
+          + "serLabelsEntry\032\034\n\nSafetySpec\022\016\n\006enable\030\001"
+          + " \001(\010\032&\n\024RelatedQuestionsSpec\022\016\n\006enable\030\001"
+          + " \001(\010\032\372\003\n\024AnswerGenerationSpec\022f\n\nmodel_s"
+          + "pec\030\001 \001(\0132R.google.cloud.discoveryengine"
+          + ".v1.AnswerQueryRequest.AnswerGenerationS"
+          + "pec.ModelSpec\022h\n\013prompt_spec\030\002 \001(\0132S.goo"
+          + "gle.cloud.discoveryengine.v1.AnswerQuery"
+          + "Request.AnswerGenerationSpec.PromptSpec\022"
+          + "\031\n\021include_citations\030\003 \001(\010\022\034\n\024answer_lan"
+          + "guage_code\030\004 \001(\t\022 \n\030ignore_adversarial_q"
+          + "uery\030\005 \001(\010\022\'\n\037ignore_non_answer_seeking_"
+          + "query\030\006 \001(\010\022(\n\033ignore_low_relevant_conte"
+          + "nt\030\007 \001(\010H\000\210\001\001\032\"\n\tModelSpec\022\025\n\rmodel_vers"
+          + "ion\030\001 \001(\t\032\036\n\nPromptSpec\022\020\n\010preamble\030\001 \001("
+          + "\tB\036\n\034_ignore_low_relevant_content\032\216\017\n\nSe"
+          + "archSpec\022d\n\rsearch_params\030\001 \001(\0132K.google"
+          + ".cloud.discoveryengine.v1.AnswerQueryReq"
+          + "uest.SearchSpec.SearchParamsH\000\022m\n\022search"
+          + "_result_list\030\002 \001(\0132O.google.cloud.discov"
+          + "eryengine.v1.AnswerQueryRequest.SearchSp"
+          + "ec.SearchResultListH\000\032\341\002\n\014SearchParams\022\032"
+          + "\n\022max_return_results\030\001 \001(\005\022\016\n\006filter\030\002 \001"
+          + "(\t\022L\n\nboost_spec\030\003 \001(\01328.google.cloud.di"
+          + "scoveryengine.v1.SearchRequest.BoostSpec"
+          + "\022\020\n\010order_by\030\004 \001(\t\022m\n\022search_result_mode"
+          + "\030\005 \001(\0162Q.google.cloud.discoveryengine.v1"
+          + ".SearchRequest.ContentSearchSpec.SearchR"
+          + "esultMode\022V\n\020data_store_specs\030\007 \003(\0132<.go"
+          + "ogle.cloud.discoveryengine.v1.SearchRequ"
+          + "est.DataStoreSpec\032\275\n\n\020SearchResultList\022t"
+          + "\n\016search_results\030\001 \003(\0132\\.google.cloud.di"
+          + "scoveryengine.v1.AnswerQueryRequest.Sear"
+          + "chSpec.SearchResultList.SearchResult\032\262\t\n"
+          + "\014SearchResult\022\233\001\n\032unstructured_document_"
+          + "info\030\001 \001(\0132u.google.cloud.discoveryengin"
+          + "e.v1.AnswerQueryRequest.SearchSpec.Searc"
+          + "hResultList.SearchResult.UnstructuredDoc"
+          + "umentInfoH\000\022|\n\nchunk_info\030\002 \001(\0132f.google"
+          + ".cloud.discoveryengine.v1.AnswerQueryReq"
+          + "uest.SearchSpec.SearchResultList.SearchR"
+          + "esult.ChunkInfoH\000\032\242\006\n\030UnstructuredDocume"
+          + "ntInfo\022>\n\010document\030\001 \001(\tB,\372A)\n\'discovery"
+          + "engine.googleapis.com/Document\022\013\n\003uri\030\002 "
+          + "\001(\t\022\r\n\005title\030\003 \001(\t\022\241\001\n\021document_contexts"
+          + "\030\004 \003(\0132\205\001.google.cloud.discoveryengine.v"
+          + "1.AnswerQueryRequest.SearchSpec.SearchRe"
+          + "sultList.SearchResult.UnstructuredDocume"
+          + "ntInfo.DocumentContext\022\245\001\n\023extractive_se"
+          + "gments\030\005 \003(\0132\207\001.google.cloud.discoveryen"
+          + "gine.v1.AnswerQueryRequest.SearchSpec.Se"
+          + "archResultList.SearchResult.Unstructured"
+          + "DocumentInfo.ExtractiveSegment\022\243\001\n\022extra"
+          + "ctive_answers\030\006 \003(\0132\206\001.google.cloud.disc"
+          + "overyengine.v1.AnswerQueryRequest.Search"
+          + "Spec.SearchResultList.SearchResult.Unstr"
+          + "ucturedDocumentInfo.ExtractiveAnswer\032;\n\017"
+          + "DocumentContext\022\027\n\017page_identifier\030\001 \001(\t"
+          + "\022\017\n\007content\030\002 \001(\t\032=\n\021ExtractiveSegment\022\027"
+          + "\n\017page_identifier\030\001 \001(\t\022\017\n\007content\030\002 \001(\t"
+          + "\032<\n\020ExtractiveAnswer\022\027\n\017page_identifier\030"
+          + "\001 \001(\t\022\017\n\007content\030\002 \001(\t\032V\n\tChunkInfo\0228\n\005c"
+          + "hunk\030\001 \001(\tB)\372A&\n$discoveryengine.googlea"
+          + "pis.com/Chunk\022\017\n\007content\030\002 \001(\tB\t\n\007conten"
+          + "tB\007\n\005input\032\307\004\n\026QueryUnderstandingSpec\022\205\001"
+          + "\n\031query_classification_spec\030\001 \001(\0132b.goog"
+          + "le.cloud.discoveryengine.v1.AnswerQueryR"
+          + "equest.QueryUnderstandingSpec.QueryClass"
+          + "ificationSpec\022{\n\024query_rephraser_spec\030\002 "
+          + "\001(\0132].google.cloud.discoveryengine.v1.An"
+          + "swerQueryRequest.QueryUnderstandingSpec."
+          + "QueryRephraserSpec\032\344\001\n\027QueryClassificati"
+          + "onSpec\022v\n\005types\030\001 \003(\0162g.google.cloud.dis"
+          + "coveryengine.v1.AnswerQueryRequest.Query"
+          + "UnderstandingSpec.QueryClassificationSpe"
+          + "c.Type\"Q\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021"
+          + "ADVERSARIAL_QUERY\020\001\022\034\n\030NON_ANSWER_SEEKIN"
+          + "G_QUERY\020\002\032A\n\022QueryRephraserSpec\022\017\n\007disab"
+          + "le\030\001 \001(\010\022\032\n\022max_rephrase_steps\030\002 \001(\005\0321\n\017"
+          + "UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\t:\0028\001\"\245\001\n\023AnswerQueryResponse\0227\n\006answe"
           + "r\030\001 \001(\0132\'.google.cloud.discoveryengine.v"
           + "1.Answer\0229\n\007session\030\002 \001(\0132(.google.cloud"
           + ".discoveryengine.v1.Session\022\032\n\022answer_qu"
@@ -599,6 +610,7 @@ public final class ConversationalSearchServiceProto {
               "QueryUnderstandingSpec",
               "AsynchronousMode",
               "UserPseudoId",
+              "UserLabels",
             });
     internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_SafetySpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_descriptor
@@ -674,7 +686,12 @@ public final class ConversationalSearchServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_SearchSpec_SearchParams_descriptor,
             new java.lang.String[] {
-              "MaxReturnResults", "Filter", "BoostSpec", "OrderBy", "DataStoreSpecs",
+              "MaxReturnResults",
+              "Filter",
+              "BoostSpec",
+              "OrderBy",
+              "SearchResultMode",
+              "DataStoreSpecs",
             });
     internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_SearchSpec_SearchResultList_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_SearchSpec_descriptor
@@ -779,7 +796,17 @@ public final class ConversationalSearchServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_descriptor,
             new java.lang.String[] {
-              "Disable",
+              "Disable", "MaxRephraseSteps",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AnswerQueryRequest_UserLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1_AnswerQueryResponse_descriptor =
         getDescriptor().getMessageTypes().get(9);

@@ -47,6 +47,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     primaryContact_ = "";
     documentation_ = "";
     icon_ = com.google.protobuf.ByteString.EMPTY;
+    discoveryType_ = 0;
   }
 
   @java.lang.Override
@@ -443,6 +444,70 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         : sharingEnvironmentConfig_;
   }
 
+  public static final int DISCOVERY_TYPE_FIELD_NUMBER = 9;
+  private int discoveryType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discoveryType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscoveryType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for discoveryType.
+   */
+  @java.lang.Override
+  public int getDiscoveryTypeValue() {
+    return discoveryType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discoveryType.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType() {
+    com.google.cloud.bigquery.analyticshub.v1.DiscoveryType result =
+        com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.forNumber(discoveryType_);
+    return result == null
+        ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -481,6 +546,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(8, getSharingEnvironmentConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(9, discoveryType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -516,6 +584,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getSharingEnvironmentConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, discoveryType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -542,6 +613,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasSharingEnvironmentConfig() != other.hasSharingEnvironmentConfig()) return false;
     if (hasSharingEnvironmentConfig()) {
       if (!getSharingEnvironmentConfig().equals(other.getSharingEnvironmentConfig())) return false;
+    }
+    if (hasDiscoveryType() != other.hasDiscoveryType()) return false;
+    if (hasDiscoveryType()) {
+      if (discoveryType_ != other.discoveryType_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -571,6 +646,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasSharingEnvironmentConfig()) {
       hash = (37 * hash) + SHARING_ENVIRONMENT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSharingEnvironmentConfig().hashCode();
+    }
+    if (hasDiscoveryType()) {
+      hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + discoveryType_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -735,6 +814,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         sharingEnvironmentConfigBuilder_.dispose();
         sharingEnvironmentConfigBuilder_ = null;
       }
+      discoveryType_ = 0;
       return this;
     }
 
@@ -799,6 +879,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
                 ? sharingEnvironmentConfig_
                 : sharingEnvironmentConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.discoveryType_ = discoveryType_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -883,6 +967,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSharingEnvironmentConfig()) {
         mergeSharingEnvironmentConfig(other.getSharingEnvironmentConfig());
       }
+      if (other.hasDiscoveryType()) {
+        setDiscoveryType(other.getDiscoveryType());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -958,6 +1045,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 72:
+              {
+                discoveryType_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1885,6 +1978,137 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         sharingEnvironmentConfig_ = null;
       }
       return sharingEnvironmentConfigBuilder_;
+    }
+
+    private int discoveryType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the discoveryType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscoveryType() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for discoveryType.
+     */
+    @java.lang.Override
+    public int getDiscoveryTypeValue() {
+      return discoveryType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for discoveryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscoveryTypeValue(int value) {
+      discoveryType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The discoveryType.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType() {
+      com.google.cloud.bigquery.analyticshub.v1.DiscoveryType result =
+          com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.forNumber(discoveryType_);
+      return result == null
+          ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The discoveryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscoveryType(com.google.cloud.bigquery.analyticshub.v1.DiscoveryType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      discoveryType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery on the discovery page for all the listings
+     * under this exchange. Updating this field also updates (overwrites) the
+     * discovery_type field for all the listings under this exchange.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiscoveryType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      discoveryType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -238,4 +238,53 @@ public interface DataExchangeOrBuilder
    */
   com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder
       getSharingEnvironmentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discoveryType field is set.
+   */
+  boolean hasDiscoveryType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for discoveryType.
+   */
+  int getDiscoveryTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery on the discovery page for all the listings
+   * under this exchange. Updating this field also updates (overwrites) the
+   * discovery_type field for all the listings under this exchange.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discoveryType.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType();
 }

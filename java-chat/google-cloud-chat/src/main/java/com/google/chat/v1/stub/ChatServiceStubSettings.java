@@ -137,6 +137,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/chat.admin.delete")
+          .add("https://www.googleapis.com/auth/chat.admin.memberships")
+          .add("https://www.googleapis.com/auth/chat.admin.memberships.readonly")
+          .add("https://www.googleapis.com/auth/chat.admin.spaces")
+          .add("https://www.googleapis.com/auth/chat.admin.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.bot")
           .add("https://www.googleapis.com/auth/chat.delete")
           .add("https://www.googleapis.com/auth/chat.import")
