@@ -139,6 +139,50 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Document document = 2;</code>
      */
     com.google.cloud.discoveryengine.v1.DocumentOrBuilder getDocumentOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    boolean hasChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    com.google.cloud.discoveryengine.v1.Chunk getChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     */
+    com.google.cloud.discoveryengine.v1.ChunkOrBuilder getChunkOrBuilder();
   }
   /**
    *
@@ -291,6 +335,65 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : document_;
     }
 
+    public static final int CHUNK_FIELD_NUMBER = 18;
+    private com.google.cloud.discoveryengine.v1.Chunk chunk_;
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Chunk getChunk() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.ChunkOrBuilder getChunkOrBuilder() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -311,6 +414,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getDocument());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getChunk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -325,6 +431,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDocument());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -347,6 +456,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         if (!getDocument().equals(other.getDocument())) return false;
       }
+      if (hasChunk() != other.hasChunk()) return false;
+      if (hasChunk()) {
+        if (!getChunk().equals(other.getChunk())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -363,6 +476,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getDocument().hashCode();
+      }
+      if (hasChunk()) {
+        hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+        hash = (53 * hash) + getChunk().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -510,6 +627,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getDocumentFieldBuilder();
+          getChunkFieldBuilder();
         }
       }
 
@@ -522,6 +640,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (documentBuilder_ != null) {
           documentBuilder_.dispose();
           documentBuilder_ = null;
+        }
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
         }
         return this;
       }
@@ -568,6 +691,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -630,6 +757,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
+        if (other.hasChunk()) {
+          mergeChunk(other.getChunk());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -668,6 +798,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 146:
+                {
+                  input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 146
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -991,6 +1127,218 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           document_ = null;
         }
         return documentBuilder_;
+      }
+
+      private com.google.cloud.discoveryengine.v1.Chunk chunk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Chunk,
+              com.google.cloud.discoveryengine.v1.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1.ChunkOrBuilder>
+          chunkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       *
+       * @return Whether the chunk field is set.
+       */
+      public boolean hasChunk() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       *
+       * @return The chunk.
+       */
+      public com.google.cloud.discoveryengine.v1.Chunk getChunk() {
+        if (chunkBuilder_ == null) {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance()
+              : chunk_;
+        } else {
+          return chunkBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(com.google.cloud.discoveryengine.v1.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunk_ = value;
+        } else {
+          chunkBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(com.google.cloud.discoveryengine.v1.Chunk.Builder builderForValue) {
+        if (chunkBuilder_ == null) {
+          chunk_ = builderForValue.build();
+        } else {
+          chunkBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public Builder mergeChunk(com.google.cloud.discoveryengine.v1.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && chunk_ != null
+              && chunk_ != com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance()) {
+            getChunkBuilder().mergeFrom(value);
+          } else {
+            chunk_ = value;
+          }
+        } else {
+          chunkBuilder_.mergeFrom(value);
+        }
+        if (chunk_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public Builder clearChunk() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1.Chunk.Builder getChunkBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getChunkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1.ChunkOrBuilder getChunkOrBuilder() {
+        if (chunkBuilder_ != null) {
+          return chunkBuilder_.getMessageOrBuilder();
+        } else {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance()
+              : chunk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Chunk,
+              com.google.cloud.discoveryengine.v1.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1.ChunkOrBuilder>
+          getChunkFieldBuilder() {
+        if (chunkBuilder_ == null) {
+          chunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.Chunk,
+                  com.google.cloud.discoveryengine.v1.Chunk.Builder,
+                  com.google.cloud.discoveryengine.v1.ChunkOrBuilder>(
+                  getChunk(), getParentForChildren(), isClean());
+          chunk_ = null;
+        }
+        return chunkBuilder_;
       }
 
       @java.lang.Override
@@ -15089,6 +15437,934 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface SessionInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The queryId.
+     */
+    java.lang.String getQueryId();
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    com.google.protobuf.ByteString getQueryIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the session.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchResponse.SessionInfo}
+   */
+  public static final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)
+      SessionInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SessionInfo.newBuilder() to construct.
+    private SessionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SessionInfo() {
+      name_ = "";
+      queryId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SessionInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SessionInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SessionInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.class,
+              com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The queryId.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryId() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getQueryIdBytes() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, queryId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, queryId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo other =
+          (com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getQueryId().equals(other.getQueryId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the session.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchResponse.SessionInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SessionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SessionInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.class,
+                com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        queryId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SessionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo build() {
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo result =
+            new com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.queryId_ = queryId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getQueryId().isEmpty()) {
+          queryId_ = other.queryId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  queryId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object queryId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return The queryId.
+       */
+      public java.lang.String getQueryId() {
+        java.lang.Object ref = queryId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return The bytes for queryId.
+       */
+      public com.google.protobuf.ByteString getQueryIdBytes() {
+        java.lang.Object ref = queryId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          queryId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @param value The queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryId() {
+        queryId_ = getDefaultInstance().getQueryId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @param value The bytes for queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        queryId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchResponse.SessionInfo)
+    private static final com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SessionInfo> PARSER =
+        new com.google.protobuf.AbstractParser<SessionInfo>() {
+          @java.lang.Override
+          public SessionInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SessionInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SessionInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int RESULTS_FIELD_NUMBER = 1;
 
@@ -15605,6 +16881,69 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         : queryExpansionInfo_;
   }
 
+  public static final int SESSION_INFO_FIELD_NUMBER = 19;
+  private com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo sessionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return Whether the sessionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionInfo() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return The sessionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo getSessionInfo() {
+    return sessionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance()
+        : sessionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder
+      getSessionInfoOrBuilder() {
+    return sessionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance()
+        : sessionInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -15646,6 +16985,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(14, getQueryExpansionInfo());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(19, getSessionInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -15682,6 +17024,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getQueryExpansionInfo());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getSessionInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -15712,6 +17057,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasQueryExpansionInfo() != other.hasQueryExpansionInfo()) return false;
     if (hasQueryExpansionInfo()) {
       if (!getQueryExpansionInfo().equals(other.getQueryExpansionInfo())) return false;
+    }
+    if (hasSessionInfo() != other.hasSessionInfo()) return false;
+    if (hasSessionInfo()) {
+      if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -15749,6 +17098,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasQueryExpansionInfo()) {
       hash = (37 * hash) + QUERY_EXPANSION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getQueryExpansionInfo().hashCode();
+    }
+    if (hasSessionInfo()) {
+      hash = (37 * hash) + SESSION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -15896,6 +17249,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getFacetsFieldBuilder();
         getSummaryFieldBuilder();
         getQueryExpansionInfoFieldBuilder();
+        getSessionInfoFieldBuilder();
       }
     }
 
@@ -15931,6 +17285,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
         queryExpansionInfoBuilder_ = null;
+      }
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
+        sessionInfoBuilder_ = null;
       }
       return this;
     }
@@ -16017,6 +17376,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 ? queryExpansionInfo_
                 : queryExpansionInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.sessionInfo_ =
+            sessionInfoBuilder_ == null ? sessionInfo_ : sessionInfoBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -16150,6 +17514,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (other.hasQueryExpansionInfo()) {
         mergeQueryExpansionInfo(other.getQueryExpansionInfo());
       }
+      if (other.hasSessionInfo()) {
+        mergeSessionInfo(other.getSessionInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -16247,6 +17614,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 114
+            case 154:
+              {
+                input.readMessage(getSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17999,6 +19372,234 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         queryExpansionInfo_ = null;
       }
       return queryExpansionInfoBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo sessionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo,
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder,
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder>
+        sessionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     *
+     * @return Whether the sessionInfo field is set.
+     */
+    public boolean hasSessionInfo() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     *
+     * @return The sessionInfo.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo getSessionInfo() {
+      if (sessionInfoBuilder_ == null) {
+        return sessionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance()
+            : sessionInfo_;
+      } else {
+        return sessionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public Builder setSessionInfo(
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo value) {
+      if (sessionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionInfo_ = value;
+      } else {
+        sessionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public Builder setSessionInfo(
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder builderForValue) {
+      if (sessionInfoBuilder_ == null) {
+        sessionInfo_ = builderForValue.build();
+      } else {
+        sessionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public Builder mergeSessionInfo(
+        com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo value) {
+      if (sessionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && sessionInfo_ != null
+            && sessionInfo_
+                != com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
+                    .getDefaultInstance()) {
+          getSessionInfoBuilder().mergeFrom(value);
+        } else {
+          sessionInfo_ = value;
+        }
+      } else {
+        sessionInfoBuilder_.mergeFrom(value);
+      }
+      if (sessionInfo_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public Builder clearSessionInfo() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
+        sessionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder
+        getSessionInfoBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getSessionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder
+        getSessionInfoOrBuilder() {
+      if (sessionInfoBuilder_ != null) {
+        return sessionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.getDefaultInstance()
+            : sessionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo,
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder,
+            com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder>
+        getSessionInfoFieldBuilder() {
+      if (sessionInfoBuilder_ == null) {
+        sessionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo,
+                com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder,
+                com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder>(
+                getSessionInfo(), getParentForChildren(), isClean());
+        sessionInfo_ = null;
+      }
+      return sessionInfoBuilder_;
     }
 
     @java.lang.Override

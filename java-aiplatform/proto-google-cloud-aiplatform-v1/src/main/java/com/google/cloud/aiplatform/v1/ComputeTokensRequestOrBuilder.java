@@ -59,12 +59,12 @@ public interface ComputeTokensRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The instances that are the input to token computing API call.
+   * Optional. The instances that are the input to token computing API call.
    * Schema is identical to the prediction schema of the text model, even for
    * the non-text models, like chat models, or Codey models.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getInstancesList();
@@ -72,12 +72,12 @@ public interface ComputeTokensRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The instances that are the input to token computing API call.
+   * Optional. The instances that are the input to token computing API call.
    * Schema is identical to the prediction schema of the text model, even for
    * the non-text models, like chat models, or Codey models.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.Value getInstances(int index);
@@ -85,12 +85,12 @@ public interface ComputeTokensRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The instances that are the input to token computing API call.
+   * Optional. The instances that are the input to token computing API call.
    * Schema is identical to the prediction schema of the text model, even for
    * the non-text models, like chat models, or Codey models.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getInstancesCount();
@@ -98,12 +98,12 @@ public interface ComputeTokensRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The instances that are the input to token computing API call.
+   * Optional. The instances that are the input to token computing API call.
    * Schema is identical to the prediction schema of the text model, even for
    * the non-text models, like chat models, or Codey models.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList();
@@ -111,13 +111,104 @@ public interface ComputeTokensRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The instances that are the input to token computing API call.
+   * Optional. The instances that are the input to token computing API call.
    * Schema is identical to the prediction schema of the text model, even for
    * the non-text models, like chat models, or Codey models.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.ValueOrBuilder getInstancesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the publisher model requested to serve the
+   * prediction. Format:
+   * projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;
+   * </pre>
+   *
+   * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the publisher model requested to serve the
+   * prediction. Format:
+   * projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;
+   * </pre>
+   *
+   * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.Content> getContentsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Content getContents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getContentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.ContentOrBuilder>
+      getContentsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ContentOrBuilder getContentsOrBuilder(int index);
 }

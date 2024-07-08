@@ -120,6 +120,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateDeploymentResourcePool": {
+              "methods": ["updateDeploymentResourcePoolAsync", "updateDeploymentResourcePoolAsync", "updateDeploymentResourcePoolOperationCallable", "updateDeploymentResourcePoolCallable"]
             }
           }
         }

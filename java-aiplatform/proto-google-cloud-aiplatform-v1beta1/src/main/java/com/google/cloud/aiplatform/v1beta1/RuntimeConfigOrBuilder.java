@@ -71,7 +71,7 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime configuration for Vertext AI Search extension.
+   * Runtime configuration for Vertex AI Search extension.
    * </pre>
    *
    * <code>

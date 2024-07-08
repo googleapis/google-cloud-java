@@ -127,6 +127,8 @@ public class TensorboardServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setIsDefault(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +188,8 @@ public class TensorboardServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setIsDefault(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,6 +249,8 @@ public class TensorboardServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setIsDefault(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockTensorboardService.addResponse(expectedResponse);
 
@@ -293,6 +299,8 @@ public class TensorboardServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setIsDefault(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockTensorboardService.addResponse(expectedResponse);
 
@@ -341,6 +349,8 @@ public class TensorboardServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setIsDefault(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

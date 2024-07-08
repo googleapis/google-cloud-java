@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_LlmUtilityService_ComputeTokens_sync]
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.LlmUtilityServiceClient;
 import com.google.protobuf.Value;
@@ -44,6 +45,8 @@ public class SyncComputeTokens {
                           "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllInstances(new ArrayList<Value>())
+              .setModel("model104069929")
+              .addAllContents(new ArrayList<Content>())
               .build();
       ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(request);
     }

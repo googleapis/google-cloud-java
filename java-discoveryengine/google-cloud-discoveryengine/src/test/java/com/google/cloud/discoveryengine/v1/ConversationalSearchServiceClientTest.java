@@ -35,6 +35,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -609,6 +610,7 @@ public class ConversationalSearchServiceClientTest {
                 AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -629,6 +631,7 @@ public class ConversationalSearchServiceClientTest {
         request.getQueryUnderstandingSpec(), actualRequest.getQueryUnderstandingSpec());
     Assert.assertEquals(request.getAsynchronousMode(), actualRequest.getAsynchronousMode());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
+    Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -660,6 +663,7 @@ public class ConversationalSearchServiceClientTest {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");

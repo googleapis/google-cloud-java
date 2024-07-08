@@ -80,6 +80,1718 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder.class);
   }
 
+  public interface ChunkingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     *
+     * @return Whether the layoutBasedChunkingConfig field is set.
+     */
+    boolean hasLayoutBasedChunkingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     *
+     * @return The layoutBasedChunkingConfig.
+     */
+    com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .LayoutBasedChunkingConfig
+        getLayoutBasedChunkingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .LayoutBasedChunkingConfigOrBuilder
+        getLayoutBasedChunkingConfigOrBuilder();
+
+    com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.ChunkModeCase
+        getChunkModeCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for chunking config.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig}
+   */
+  public static final class ChunkingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
+      ChunkingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ChunkingConfig.newBuilder() to construct.
+    private ChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ChunkingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ChunkingConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+          .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+          .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.class,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder
+                  .class);
+    }
+
+    public interface LayoutBasedChunkingConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The token size limit for each chunk.
+       *
+       * Supported values: 100-500 (inclusive).
+       * Default value: 500.
+       * </pre>
+       *
+       * <code>int32 chunk_size = 1;</code>
+       *
+       * @return The chunkSize.
+       */
+      int getChunkSize();
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to include appending different levels of headings to chunks
+       * from the middle of the document to prevent context loss.
+       *
+       * Default value: False.
+       * </pre>
+       *
+       * <code>bool include_ancestor_headings = 2;</code>
+       *
+       * @return The includeAncestorHeadings.
+       */
+      boolean getIncludeAncestorHeadings();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig}
+     */
+    public static final class LayoutBasedChunkingConfig
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
+        LayoutBasedChunkingConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use LayoutBasedChunkingConfig.newBuilder() to construct.
+      private LayoutBasedChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LayoutBasedChunkingConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LayoutBasedChunkingConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig.class,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig.Builder.class);
+      }
+
+      public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
+      private int chunkSize_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The token size limit for each chunk.
+       *
+       * Supported values: 100-500 (inclusive).
+       * Default value: 500.
+       * </pre>
+       *
+       * <code>int32 chunk_size = 1;</code>
+       *
+       * @return The chunkSize.
+       */
+      @java.lang.Override
+      public int getChunkSize() {
+        return chunkSize_;
+      }
+
+      public static final int INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER = 2;
+      private boolean includeAncestorHeadings_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to include appending different levels of headings to chunks
+       * from the middle of the document to prevent context loss.
+       *
+       * Default value: False.
+       * </pre>
+       *
+       * <code>bool include_ancestor_headings = 2;</code>
+       *
+       * @return The includeAncestorHeadings.
+       */
+      @java.lang.Override
+      public boolean getIncludeAncestorHeadings() {
+        return includeAncestorHeadings_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (chunkSize_ != 0) {
+          output.writeInt32(1, chunkSize_);
+        }
+        if (includeAncestorHeadings_ != false) {
+          output.writeBool(2, includeAncestorHeadings_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (chunkSize_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, chunkSize_);
+        }
+        if (includeAncestorHeadings_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeAncestorHeadings_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig
+            other =
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                        .LayoutBasedChunkingConfig)
+                    obj;
+
+        if (getChunkSize() != other.getChunkSize()) return false;
+        if (getIncludeAncestorHeadings() != other.getIncludeAncestorHeadings()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CHUNK_SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkSize();
+        hash = (37 * hash) + INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAncestorHeadings());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig.class,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          chunkSize_ = 0;
+          includeAncestorHeadings_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig
+            build() {
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.chunkSize_ = chunkSize_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.includeAncestorHeadings_ = includeAncestorHeadings_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                        .LayoutBasedChunkingConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig.getDefaultInstance()) return this;
+          if (other.getChunkSize() != 0) {
+            setChunkSize(other.getChunkSize());
+          }
+          if (other.getIncludeAncestorHeadings() != false) {
+            setIncludeAncestorHeadings(other.getIncludeAncestorHeadings());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    chunkSize_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    includeAncestorHeadings_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int chunkSize_;
+        /**
+         *
+         *
+         * <pre>
+         * The token size limit for each chunk.
+         *
+         * Supported values: 100-500 (inclusive).
+         * Default value: 500.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1;</code>
+         *
+         * @return The chunkSize.
+         */
+        @java.lang.Override
+        public int getChunkSize() {
+          return chunkSize_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The token size limit for each chunk.
+         *
+         * Supported values: 100-500 (inclusive).
+         * Default value: 500.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1;</code>
+         *
+         * @param value The chunkSize to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChunkSize(int value) {
+
+          chunkSize_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The token size limit for each chunk.
+         *
+         * Supported values: 100-500 (inclusive).
+         * Default value: 500.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearChunkSize() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          chunkSize_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean includeAncestorHeadings_;
+        /**
+         *
+         *
+         * <pre>
+         * Whether to include appending different levels of headings to chunks
+         * from the middle of the document to prevent context loss.
+         *
+         * Default value: False.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2;</code>
+         *
+         * @return The includeAncestorHeadings.
+         */
+        @java.lang.Override
+        public boolean getIncludeAncestorHeadings() {
+          return includeAncestorHeadings_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Whether to include appending different levels of headings to chunks
+         * from the middle of the document to prevent context loss.
+         *
+         * Default value: False.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2;</code>
+         *
+         * @param value The includeAncestorHeadings to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeAncestorHeadings(boolean value) {
+
+          includeAncestorHeadings_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Whether to include appending different levels of headings to chunks
+         * from the middle of the document to prevent context loss.
+         *
+         * Default value: False.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeAncestorHeadings() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          includeAncestorHeadings_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig)
+      private static final com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+              .ChunkingConfig.LayoutBasedChunkingConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LayoutBasedChunkingConfig> PARSER =
+          new com.google.protobuf.AbstractParser<LayoutBasedChunkingConfig>() {
+            @java.lang.Override
+            public LayoutBasedChunkingConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<LayoutBasedChunkingConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LayoutBasedChunkingConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int chunkModeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object chunkMode_;
+
+    public enum ChunkModeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      LAYOUT_BASED_CHUNKING_CONFIG(1),
+      CHUNKMODE_NOT_SET(0);
+      private final int value;
+
+      private ChunkModeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ChunkModeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ChunkModeCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return LAYOUT_BASED_CHUNKING_CONFIG;
+          case 0:
+            return CHUNKMODE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ChunkModeCase getChunkModeCase() {
+      return ChunkModeCase.forNumber(chunkModeCase_);
+    }
+
+    public static final int LAYOUT_BASED_CHUNKING_CONFIG_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     *
+     * @return Whether the layoutBasedChunkingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasLayoutBasedChunkingConfig() {
+      return chunkModeCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     *
+     * @return The layoutBasedChunkingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .LayoutBasedChunkingConfig
+        getLayoutBasedChunkingConfig() {
+      if (chunkModeCase_ == 1) {
+        return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig)
+            chunkMode_;
+      }
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+          .LayoutBasedChunkingConfig.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the layout based chunking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .LayoutBasedChunkingConfigOrBuilder
+        getLayoutBasedChunkingConfigOrBuilder() {
+      if (chunkModeCase_ == 1) {
+        return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .LayoutBasedChunkingConfig)
+            chunkMode_;
+      }
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+          .LayoutBasedChunkingConfig.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (chunkModeCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig)
+                chunkMode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (chunkModeCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                        .LayoutBasedChunkingConfig)
+                    chunkMode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig other =
+          (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig) obj;
+
+      if (!getChunkModeCase().equals(other.getChunkModeCase())) return false;
+      switch (chunkModeCase_) {
+        case 1:
+          if (!getLayoutBasedChunkingConfig().equals(other.getLayoutBasedChunkingConfig()))
+            return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (chunkModeCase_) {
+        case 1:
+          hash = (37 * hash) + LAYOUT_BASED_CHUNKING_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getLayoutBasedChunkingConfig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for chunking config.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.class,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (layoutBasedChunkingConfigBuilder_ != null) {
+          layoutBasedChunkingConfigBuilder_.clear();
+        }
+        chunkModeCase_ = 0;
+        chunkMode_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ChunkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig build() {
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig result =
+            new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig result) {
+        result.chunkModeCase_ = chunkModeCase_;
+        result.chunkMode_ = this.chunkMode_;
+        if (chunkModeCase_ == 1 && layoutBasedChunkingConfigBuilder_ != null) {
+          result.chunkMode_ = layoutBasedChunkingConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .getDefaultInstance()) return this;
+        switch (other.getChunkModeCase()) {
+          case LAYOUT_BASED_CHUNKING_CONFIG:
+            {
+              mergeLayoutBasedChunkingConfig(other.getLayoutBasedChunkingConfig());
+              break;
+            }
+          case CHUNKMODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getLayoutBasedChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  chunkModeCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int chunkModeCase_ = 0;
+      private java.lang.Object chunkMode_;
+
+      public ChunkModeCase getChunkModeCase() {
+        return ChunkModeCase.forNumber(chunkModeCase_);
+      }
+
+      public Builder clearChunkMode() {
+        chunkModeCase_ = 0;
+        chunkMode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig.Builder,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfigOrBuilder>
+          layoutBasedChunkingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       *
+       * @return Whether the layoutBasedChunkingConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasLayoutBasedChunkingConfig() {
+        return chunkModeCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       *
+       * @return The layoutBasedChunkingConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig
+          getLayoutBasedChunkingConfig() {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          if (chunkModeCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig)
+                chunkMode_;
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig.getDefaultInstance();
+        } else {
+          if (chunkModeCase_ == 1) {
+            return layoutBasedChunkingConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      public Builder setLayoutBasedChunkingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig
+              value) {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunkMode_ = value;
+          onChanged();
+        } else {
+          layoutBasedChunkingConfigBuilder_.setMessage(value);
+        }
+        chunkModeCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      public Builder setLayoutBasedChunkingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig.Builder
+              builderForValue) {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          chunkMode_ = builderForValue.build();
+          onChanged();
+        } else {
+          layoutBasedChunkingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        chunkModeCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      public Builder mergeLayoutBasedChunkingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig
+              value) {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          if (chunkModeCase_ == 1
+              && chunkMode_
+                  != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig.getDefaultInstance()) {
+            chunkMode_ =
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig.newBuilder(
+                        (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                                .LayoutBasedChunkingConfig)
+                            chunkMode_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            chunkMode_ = value;
+          }
+          onChanged();
+        } else {
+          if (chunkModeCase_ == 1) {
+            layoutBasedChunkingConfigBuilder_.mergeFrom(value);
+          } else {
+            layoutBasedChunkingConfigBuilder_.setMessage(value);
+          }
+        }
+        chunkModeCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      public Builder clearLayoutBasedChunkingConfig() {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          if (chunkModeCase_ == 1) {
+            chunkModeCase_ = 0;
+            chunkMode_ = null;
+            onChanged();
+          }
+        } else {
+          if (chunkModeCase_ == 1) {
+            chunkModeCase_ = 0;
+            chunkMode_ = null;
+          }
+          layoutBasedChunkingConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig.Builder
+          getLayoutBasedChunkingConfigBuilder() {
+        return getLayoutBasedChunkingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfigOrBuilder
+          getLayoutBasedChunkingConfigOrBuilder() {
+        if ((chunkModeCase_ == 1) && (layoutBasedChunkingConfigBuilder_ != null)) {
+          return layoutBasedChunkingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (chunkModeCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig)
+                chunkMode_;
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+              .LayoutBasedChunkingConfig.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for the layout based chunking.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.LayoutBasedChunkingConfig layout_based_chunking_config = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfig.Builder,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                  .LayoutBasedChunkingConfigOrBuilder>
+          getLayoutBasedChunkingConfigFieldBuilder() {
+        if (layoutBasedChunkingConfigBuilder_ == null) {
+          if (!(chunkModeCase_ == 1)) {
+            chunkMode_ =
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .LayoutBasedChunkingConfig.getDefaultInstance();
+          }
+          layoutBasedChunkingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfig.Builder,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                      .LayoutBasedChunkingConfigOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                          .LayoutBasedChunkingConfig)
+                      chunkMode_,
+                  getParentForChildren(),
+                  isClean());
+          chunkMode_ = null;
+        }
+        chunkModeCase_ = 1;
+        onChanged();
+        return layoutBasedChunkingConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig)
+    private static final com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChunkingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ChunkingConfig>() {
+          @java.lang.Override
+          public ChunkingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ChunkingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChunkingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ParsingConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig)
@@ -175,6 +1887,50 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
             .OcrParsingConfigOrBuilder
         getOcrParsingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     *
+     * @return Whether the layoutParsingConfig field is set.
+     */
+    boolean hasLayoutParsingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     *
+     * @return The layoutParsingConfig.
+     */
+    com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig
+        getLayoutParsingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+            .LayoutParsingConfigOrBuilder
+        getLayoutParsingConfigOrBuilder();
 
     com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
             .TypeDedicatedConfigCase
@@ -731,7 +2487,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @return A list containing the enhancedDocumentElements.
        */
       @java.lang.Deprecated
@@ -749,7 +2505,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @return The count of enhancedDocumentElements.
        */
       @java.lang.Deprecated
@@ -767,7 +2523,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @param index The index of the element to return.
        * @return The enhancedDocumentElements at the given index.
        */
@@ -786,7 +2542,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @param index The index of the value to return.
        * @return The bytes of the enhancedDocumentElements at the given index.
        */
@@ -872,7 +2628,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @return A list containing the enhancedDocumentElements.
        */
       @java.lang.Deprecated
@@ -892,7 +2648,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @return The count of enhancedDocumentElements.
        */
       @java.lang.Deprecated
@@ -912,7 +2668,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @param index The index of the element to return.
        * @return The enhancedDocumentElements at the given index.
        */
@@ -933,7 +2689,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @deprecated
        *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
        *     is deprecated. See
-       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+       *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
        * @param index The index of the value to return.
        * @return The bytes of the enhancedDocumentElements at the given index.
        */
@@ -1427,7 +3183,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @return A list containing the enhancedDocumentElements.
          */
         @java.lang.Deprecated
@@ -1448,7 +3204,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @return The count of enhancedDocumentElements.
          */
         @java.lang.Deprecated
@@ -1468,7 +3224,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param index The index of the element to return.
          * @return The enhancedDocumentElements at the given index.
          */
@@ -1489,7 +3245,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param index The index of the value to return.
          * @return The bytes of the enhancedDocumentElements at the given index.
          */
@@ -1510,7 +3266,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param index The index to set the value at.
          * @param value The enhancedDocumentElements to set.
          * @return This builder for chaining.
@@ -1539,7 +3295,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param value The enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
@@ -1567,7 +3323,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param values The enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
@@ -1592,7 +3348,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -1616,7 +3372,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          * @deprecated
          *     google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
          *     is deprecated. See
-         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=52
+         *     google/cloud/discoveryengine/v1/document_processing_config.proto;l=76
          * @param value The bytes of the enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
@@ -1761,6 +3517,496 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       }
     }
 
+    public interface LayoutParsingConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * The layout parsing configurations for documents.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig}
+     */
+    public static final class LayoutParsingConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
+        LayoutParsingConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use LayoutParsingConfig.newBuilder() to construct.
+      private LayoutParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LayoutParsingConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LayoutParsingConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+            .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig.class,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig
+            other =
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                        .LayoutParsingConfig)
+                    obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The layout parsing configurations for documents.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig.class,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfigProto
+              .internal_static_google_cloud_discoveryengine_v1_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig
+            build() {
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                        .LayoutParsingConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
+      private static final com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+              .ParsingConfig.LayoutParsingConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LayoutParsingConfig> PARSER =
+          new com.google.protobuf.AbstractParser<LayoutParsingConfig>() {
+            @java.lang.Override
+            public LayoutParsingConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<LayoutParsingConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LayoutParsingConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int typeDedicatedConfigCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -1772,6 +4018,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       DIGITAL_PARSING_CONFIG(1),
       OCR_PARSING_CONFIG(2),
+      LAYOUT_PARSING_CONFIG(3),
       TYPEDEDICATEDCONFIG_NOT_SET(0);
       private final int value;
 
@@ -1794,6 +4041,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             return DIGITAL_PARSING_CONFIG;
           case 2:
             return OCR_PARSING_CONFIG;
+          case 3:
+            return LAYOUT_PARSING_CONFIG;
           case 0:
             return TYPEDEDICATEDCONFIG_NOT_SET;
           default:
@@ -1947,6 +4196,73 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           .OcrParsingConfig.getDefaultInstance();
     }
 
+    public static final int LAYOUT_PARSING_CONFIG_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     *
+     * @return Whether the layoutParsingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasLayoutParsingConfig() {
+      return typeDedicatedConfigCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     *
+     * @return The layoutParsingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+            .LayoutParsingConfig
+        getLayoutParsingConfig() {
+      if (typeDedicatedConfigCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig)
+            typeDedicatedConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+          .LayoutParsingConfig.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations applied to layout parser.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+            .LayoutParsingConfigOrBuilder
+        getLayoutParsingConfigOrBuilder() {
+      if (typeDedicatedConfigCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                .LayoutParsingConfig)
+            typeDedicatedConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+          .LayoutParsingConfig.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1975,6 +4291,13 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                     .OcrParsingConfig)
                 typeDedicatedConfig_);
       }
+      if (typeDedicatedConfigCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig)
+                typeDedicatedConfig_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1998,6 +4321,14 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                 2,
                 (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
                         .OcrParsingConfig)
+                    typeDedicatedConfig_);
+      }
+      if (typeDedicatedConfigCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                        .LayoutParsingConfig)
                     typeDedicatedConfig_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -2025,6 +4356,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         case 2:
           if (!getOcrParsingConfig().equals(other.getOcrParsingConfig())) return false;
           break;
+        case 3:
+          if (!getLayoutParsingConfig().equals(other.getLayoutParsingConfig())) return false;
+          break;
         case 0:
         default:
       }
@@ -2047,6 +4381,10 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         case 2:
           hash = (37 * hash) + OCR_PARSING_CONFIG_FIELD_NUMBER;
           hash = (53 * hash) + getOcrParsingConfig().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + LAYOUT_PARSING_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getLayoutParsingConfig().hashCode();
           break;
         case 0:
         default:
@@ -2207,6 +4545,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         if (ocrParsingConfigBuilder_ != null) {
           ocrParsingConfigBuilder_.clear();
         }
+        if (layoutParsingConfigBuilder_ != null) {
+          layoutParsingConfigBuilder_.clear();
+        }
         typeDedicatedConfigCase_ = 0;
         typeDedicatedConfig_ = null;
         return this;
@@ -2262,6 +4603,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         if (typeDedicatedConfigCase_ == 2 && ocrParsingConfigBuilder_ != null) {
           result.typeDedicatedConfig_ = ocrParsingConfigBuilder_.build();
+        }
+        if (typeDedicatedConfigCase_ == 3 && layoutParsingConfigBuilder_ != null) {
+          result.typeDedicatedConfig_ = layoutParsingConfigBuilder_.build();
         }
       }
 
@@ -2328,6 +4672,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               mergeOcrParsingConfig(other.getOcrParsingConfig());
               break;
             }
+          case LAYOUT_PARSING_CONFIG:
+            {
+              mergeLayoutParsingConfig(other.getLayoutParsingConfig());
+              break;
+            }
           case TYPEDEDICATEDCONFIG_NOT_SET:
             {
               break;
@@ -2373,6 +4722,13 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                   typeDedicatedConfigCase_ = 2;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getLayoutParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  typeDedicatedConfigCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2947,6 +5303,272 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return ocrParsingConfigBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig.Builder,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfigOrBuilder>
+          layoutParsingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       *
+       * @return Whether the layoutParsingConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasLayoutParsingConfig() {
+        return typeDedicatedConfigCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       *
+       * @return The layoutParsingConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig
+          getLayoutParsingConfig() {
+        if (layoutParsingConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig)
+                typeDedicatedConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig.getDefaultInstance();
+        } else {
+          if (typeDedicatedConfigCase_ == 3) {
+            return layoutParsingConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      public Builder setLayoutParsingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig
+              value) {
+        if (layoutParsingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          typeDedicatedConfig_ = value;
+          onChanged();
+        } else {
+          layoutParsingConfigBuilder_.setMessage(value);
+        }
+        typeDedicatedConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      public Builder setLayoutParsingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig.Builder
+              builderForValue) {
+        if (layoutParsingConfigBuilder_ == null) {
+          typeDedicatedConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          layoutParsingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        typeDedicatedConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      public Builder mergeLayoutParsingConfig(
+          com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig
+              value) {
+        if (layoutParsingConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 3
+              && typeDedicatedConfig_
+                  != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig.getDefaultInstance()) {
+            typeDedicatedConfig_ =
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig.newBuilder(
+                        (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                                .LayoutParsingConfig)
+                            typeDedicatedConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            typeDedicatedConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeDedicatedConfigCase_ == 3) {
+            layoutParsingConfigBuilder_.mergeFrom(value);
+          } else {
+            layoutParsingConfigBuilder_.setMessage(value);
+          }
+        }
+        typeDedicatedConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      public Builder clearLayoutParsingConfig() {
+        if (layoutParsingConfigBuilder_ == null) {
+          if (typeDedicatedConfigCase_ == 3) {
+            typeDedicatedConfigCase_ = 0;
+            typeDedicatedConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeDedicatedConfigCase_ == 3) {
+            typeDedicatedConfigCase_ = 0;
+            typeDedicatedConfig_ = null;
+          }
+          layoutParsingConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig.Builder
+          getLayoutParsingConfigBuilder() {
+        return getLayoutParsingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfigOrBuilder
+          getLayoutParsingConfigOrBuilder() {
+        if ((typeDedicatedConfigCase_ == 3) && (layoutParsingConfigBuilder_ != null)) {
+          return layoutParsingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeDedicatedConfigCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig)
+                typeDedicatedConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+              .LayoutParsingConfig.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configurations applied to layout parser.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig layout_parsing_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfig.Builder,
+              com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                  .LayoutParsingConfigOrBuilder>
+          getLayoutParsingConfigFieldBuilder() {
+        if (layoutParsingConfigBuilder_ == null) {
+          if (!(typeDedicatedConfigCase_ == 3)) {
+            typeDedicatedConfig_ =
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig.getDefaultInstance();
+          }
+          layoutParsingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfig.Builder,
+                  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                      .LayoutParsingConfigOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
+                          .LayoutParsingConfig)
+                      typeDedicatedConfig_,
+                  getParentForChildren(),
+                  isClean());
+          typeDedicatedConfig_ = null;
+        }
+        typeDedicatedConfigCase_ = 3;
+        onChanged();
+        return layoutParsingConfigBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3071,6 +5693,67 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
   }
 
+  public static final int CHUNKING_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+      chunkingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   *
+   * @return Whether the chunkingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasChunkingConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   *
+   * @return The chunkingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+      getChunkingConfig() {
+    return chunkingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .getDefaultInstance()
+        : chunkingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder
+      getChunkingConfigOrBuilder() {
+    return chunkingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+            .getDefaultInstance()
+        : chunkingConfig_;
+  }
+
   public static final int DEFAULT_PARSING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
       defaultParsingConfig_;
@@ -3092,7 +5775,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasDefaultParsingConfig() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -3191,9 +5874,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -3226,9 +5911,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -3252,9 +5939,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -3286,9 +5975,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -3329,6 +6020,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getChunkingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getDefaultParsingConfig());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -3349,6 +6043,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getChunkingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDefaultParsingConfig());
     }
@@ -3384,6 +6081,10 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         (com.google.cloud.discoveryengine.v1.DocumentProcessingConfig) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasChunkingConfig() != other.hasChunkingConfig()) return false;
+    if (hasChunkingConfig()) {
+      if (!getChunkingConfig().equals(other.getChunkingConfig())) return false;
+    }
     if (hasDefaultParsingConfig() != other.hasDefaultParsingConfig()) return false;
     if (hasDefaultParsingConfig()) {
       if (!getDefaultParsingConfig().equals(other.getDefaultParsingConfig())) return false;
@@ -3403,6 +6104,10 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasChunkingConfig()) {
+      hash = (37 * hash) + CHUNKING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getChunkingConfig().hashCode();
+    }
     if (hasDefaultParsingConfig()) {
       hash = (37 * hash) + DEFAULT_PARSING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultParsingConfig().hashCode();
@@ -3579,6 +6284,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getChunkingConfigFieldBuilder();
         getDefaultParsingConfigFieldBuilder();
       }
     }
@@ -3588,6 +6294,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      chunkingConfig_ = null;
+      if (chunkingConfigBuilder_ != null) {
+        chunkingConfigBuilder_.dispose();
+        chunkingConfigBuilder_ = null;
+      }
       defaultParsingConfig_ = null;
       if (defaultParsingConfigBuilder_ != null) {
         defaultParsingConfigBuilder_.dispose();
@@ -3637,13 +6348,18 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.chunkingConfig_ =
+            chunkingConfigBuilder_ == null ? chunkingConfig_ : chunkingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.defaultParsingConfig_ =
             defaultParsingConfigBuilder_ == null
                 ? defaultParsingConfig_
                 : defaultParsingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.parsingConfigOverrides_ =
             internalGetParsingConfigOverrides()
                 .build(ParsingConfigOverridesDefaultEntryHolder.defaultEntry);
@@ -3703,12 +6419,15 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasChunkingConfig()) {
+        mergeChunkingConfig(other.getChunkingConfig());
+      }
       if (other.hasDefaultParsingConfig()) {
         mergeDefaultParsingConfig(other.getDefaultParsingConfig());
       }
       internalGetMutableParsingConfigOverrides()
           .mergeFrom(other.internalGetParsingConfigOverrides());
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3741,11 +6460,17 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(getChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(
                     getDefaultParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -3761,7 +6486,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                 internalGetMutableParsingConfigOverrides()
                     .ensureBuilderMap()
                     .put(parsingConfigOverrides__.getKey(), parsingConfigOverrides__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -3899,6 +6624,222 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        chunkingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder>
+        chunkingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     *
+     * @return Whether the chunkingConfig field is set.
+     */
+    public boolean hasChunkingConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     *
+     * @return The chunkingConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+        getChunkingConfig() {
+      if (chunkingConfigBuilder_ == null) {
+        return chunkingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .getDefaultInstance()
+            : chunkingConfig_;
+      } else {
+        return chunkingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public Builder setChunkingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig value) {
+      if (chunkingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chunkingConfig_ = value;
+      } else {
+        chunkingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public Builder setChunkingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder
+            builderForValue) {
+      if (chunkingConfigBuilder_ == null) {
+        chunkingConfig_ = builderForValue.build();
+      } else {
+        chunkingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public Builder mergeChunkingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig value) {
+      if (chunkingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && chunkingConfig_ != null
+            && chunkingConfig_
+                != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                    .getDefaultInstance()) {
+          getChunkingConfigBuilder().mergeFrom(value);
+        } else {
+          chunkingConfig_ = value;
+        }
+      } else {
+        chunkingConfigBuilder_.mergeFrom(value);
+      }
+      if (chunkingConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public Builder clearChunkingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      chunkingConfig_ = null;
+      if (chunkingConfigBuilder_ != null) {
+        chunkingConfigBuilder_.dispose();
+        chunkingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder
+        getChunkingConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getChunkingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder
+        getChunkingConfigOrBuilder() {
+      if (chunkingConfigBuilder_ != null) {
+        return chunkingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return chunkingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig
+                .getDefaultInstance()
+            : chunkingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether chunking mode is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder>
+        getChunkingConfigFieldBuilder() {
+      if (chunkingConfigBuilder_ == null) {
+        chunkingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig.Builder,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+                    .ChunkingConfigOrBuilder>(
+                getChunkingConfig(), getParentForChildren(), isClean());
+        chunkingConfig_ = null;
+      }
+      return chunkingConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
         defaultParsingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3923,7 +6864,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * @return Whether the defaultParsingConfig field is set.
      */
     public boolean hasDefaultParsingConfig() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3976,7 +6917,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       } else {
         defaultParsingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4002,7 +6943,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       } else {
         defaultParsingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4023,7 +6964,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public Builder mergeDefaultParsingConfig(
         com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig value) {
       if (defaultParsingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && defaultParsingConfig_ != null
             && defaultParsingConfig_
                 != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
@@ -4036,7 +6977,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         defaultParsingConfigBuilder_.mergeFrom(value);
       }
       if (defaultParsingConfig_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -4056,7 +6997,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearDefaultParsingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultParsingConfig_ = null;
       if (defaultParsingConfigBuilder_ != null) {
         defaultParsingConfigBuilder_.dispose();
@@ -4081,7 +7022,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      */
     public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig.Builder
         getDefaultParsingConfigBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDefaultParsingConfigFieldBuilder().getBuilder();
     }
@@ -4200,7 +7141,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         parsingConfigOverrides_ =
             new com.google.protobuf.MapFieldBuilder<>(parsingConfigOverridesConverter);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return parsingConfigOverrides_;
     }
@@ -4218,9 +7159,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4253,9 +7196,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4279,9 +7224,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4316,9 +7263,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4342,7 +7291,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     }
 
     public Builder clearParsingConfigOverrides() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableParsingConfigOverrides().clear();
       return this;
     }
@@ -4356,9 +7305,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4378,7 +7329,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             java.lang.String,
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig>
         getMutableParsingConfigOverrides() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return internalGetMutableParsingConfigOverrides().ensureMessageMap();
     }
     /**
@@ -4391,9 +7342,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4410,7 +7363,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         throw new NullPointerException("map value");
       }
       internalGetMutableParsingConfigOverrides().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4423,9 +7376,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>
@@ -4446,7 +7401,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
       }
       internalGetMutableParsingConfigOverrides().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4459,9 +7414,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
-     * or layout parsing are supported.
+     * layout parsing are supported.
+     * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
      * </pre>
      *
      * <code>

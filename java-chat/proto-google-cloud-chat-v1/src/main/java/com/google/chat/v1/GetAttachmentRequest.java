@@ -72,7 +72,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the attachment, in the form
-   * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the attachment, in the form
-   * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
    * <code>
@@ -466,7 +466,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the attachment, in the form
-     * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+     * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
      * <code>
@@ -491,7 +491,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the attachment, in the form
-     * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+     * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
      * <code>
@@ -516,7 +516,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the attachment, in the form
-     * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+     * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
      * <code>
@@ -540,7 +540,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the attachment, in the form
-     * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+     * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
      * <code>
@@ -560,7 +560,7 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the attachment, in the form
-     * `spaces/&#42;&#47;messages/&#42;&#47;attachments/&#42;`.
+     * `spaces/{space}/messages/{message}/attachments/{attachment}`.
      * </pre>
      *
      * <code>

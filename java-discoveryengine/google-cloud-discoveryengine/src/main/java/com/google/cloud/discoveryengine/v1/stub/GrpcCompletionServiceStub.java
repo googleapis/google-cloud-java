@@ -26,9 +26,15 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesResponse;
@@ -82,6 +88,28 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsMethodDescriptor =
+          MethodDescriptor.<ImportCompletionSuggestionsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.CompletionService/ImportCompletionSuggestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportCompletionSuggestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsMethodDescriptor =
+          MethodDescriptor.<PurgeCompletionSuggestionsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.CompletionService/PurgeCompletionSuggestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeCompletionSuggestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
   private final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesCallable;
@@ -97,6 +125,20 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
           PurgeSuggestionDenyListEntriesResponse,
           PurgeSuggestionDenyListEntriesMetadata>
       purgeSuggestionDenyListEntriesOperationCallable;
+  private final UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable;
+  private final OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable;
+  private final UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable;
+  private final OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -174,6 +216,28 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ImportCompletionSuggestionsRequest, Operation>
+        importCompletionSuggestionsTransportSettings =
+            GrpcCallSettings.<ImportCompletionSuggestionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(importCompletionSuggestionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<PurgeCompletionSuggestionsRequest, Operation>
+        purgeCompletionSuggestionsTransportSettings =
+            GrpcCallSettings.<PurgeCompletionSuggestionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(purgeCompletionSuggestionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
@@ -198,6 +262,28 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
         callableFactory.createOperationCallable(
             purgeSuggestionDenyListEntriesTransportSettings,
             settings.purgeSuggestionDenyListEntriesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importCompletionSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            importCompletionSuggestionsTransportSettings,
+            settings.importCompletionSuggestionsSettings(),
+            clientContext);
+    this.importCompletionSuggestionsOperationCallable =
+        callableFactory.createOperationCallable(
+            importCompletionSuggestionsTransportSettings,
+            settings.importCompletionSuggestionsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeCompletionSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            purgeCompletionSuggestionsTransportSettings,
+            settings.purgeCompletionSuggestionsSettings(),
+            clientContext);
+    this.purgeCompletionSuggestionsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeCompletionSuggestionsTransportSettings,
+            settings.purgeCompletionSuggestionsOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -242,6 +328,36 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
           PurgeSuggestionDenyListEntriesMetadata>
       purgeSuggestionDenyListEntriesOperationCallable() {
     return purgeSuggestionDenyListEntriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable() {
+    return importCompletionSuggestionsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable() {
+    return importCompletionSuggestionsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable() {
+    return purgeCompletionSuggestionsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable() {
+    return purgeCompletionSuggestionsOperationCallable;
   }
 
   @Override

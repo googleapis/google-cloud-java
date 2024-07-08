@@ -49,6 +49,10 @@ public final class DeploymentResourcePoolServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ListDeploymentResourcePoolsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_fieldAccessorTable;
@@ -84,84 +88,98 @@ public final class DeploymentResourcePoolServiceProto {
           + "to\032)google/cloud/aiplatform/v1/endpoint."
           + "proto\032*google/cloud/aiplatform/v1/operat"
           + "ion.proto\032#google/longrunning/operations"
-          + ".proto\032\033google/protobuf/empty.proto\"\345\001\n#"
-          + "CreateDeploymentResourcePoolRequest\0229\n\006p"
-          + "arent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapi"
-          + "s.com/Location\022Y\n\030deployment_resource_po"
-          + "ol\030\002 \001(\01322.google.cloud.aiplatform.v1.De"
-          + "ploymentResourcePoolB\003\340A\002\022(\n\033deployment_"
-          + "resource_pool_id\030\003 \001(\tB\003\340A\002\"\177\n-CreateDep"
-          + "loymentResourcePoolOperationMetadata\022N\n\020"
-          + "generic_metadata\030\001 \001(\01324.google.cloud.ai"
-          + "platform.v1.GenericOperationMetadata\"j\n "
-          + "GetDeploymentResourcePoolRequest\022F\n\004name"
-          + "\030\001 \001(\tB8\340A\002\372A2\n0aiplatform.googleapis.co"
-          + "m/DeploymentResourcePool\"\206\001\n\"ListDeploym"
-          + "entResourcePoolsRequest\0229\n\006parent\030\001 \001(\tB"
-          + ")\340A\002\372A#\022!locations.googleapis.com/Locati"
-          + "on\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"\225\001\n#ListDeploymentResourcePoolsRespons"
-          + "e\022U\n\031deployment_resource_pools\030\001 \003(\01322.g"
-          + "oogle.cloud.aiplatform.v1.DeploymentReso"
-          + "urcePool\022\027\n\017next_page_token\030\002 \001(\t\"\177\n-Upd"
-          + "ateDeploymentResourcePoolOperationMetada"
-          + "ta\022N\n\020generic_metadata\030\001 \001(\01324.google.cl"
-          + "oud.aiplatform.v1.GenericOperationMetada"
-          + "ta\"m\n#DeleteDeploymentResourcePoolReques"
-          + "t\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0aiplatform.goog"
-          + "leapis.com/DeploymentResourcePool\"j\n\032Que"
-          + "ryDeployedModelsRequest\022%\n\030deployment_re"
-          + "source_pool\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 \001("
-          + "\005\022\022\n\npage_token\030\003 \001(\t\"\213\002\n\033QueryDeployedM"
-          + "odelsResponse\022F\n\017deployed_models\030\001 \003(\0132)"
+          + ".proto\032\033google/protobuf/empty.proto\032 goo"
+          + "gle/protobuf/field_mask.proto\"\345\001\n#Create"
+          + "DeploymentResourcePoolRequest\0229\n\006parent\030"
+          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
+          + "Location\022Y\n\030deployment_resource_pool\030\002 \001"
+          + "(\01322.google.cloud.aiplatform.v1.Deployme"
+          + "ntResourcePoolB\003\340A\002\022(\n\033deployment_resour"
+          + "ce_pool_id\030\003 \001(\tB\003\340A\002\"\177\n-CreateDeploymen"
+          + "tResourcePoolOperationMetadata\022N\n\020generi"
+          + "c_metadata\030\001 \001(\01324.google.cloud.aiplatfo"
+          + "rm.v1.GenericOperationMetadata\"j\n GetDep"
+          + "loymentResourcePoolRequest\022F\n\004name\030\001 \001(\t"
+          + "B8\340A\002\372A2\n0aiplatform.googleapis.com/Depl"
+          + "oymentResourcePool\"\206\001\n\"ListDeploymentRes"
+          + "ourcePoolsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A"
+          + "#\022!locations.googleapis.com/Location\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\225\001\n#"
+          + "ListDeploymentResourcePoolsResponse\022U\n\031d"
+          + "eployment_resource_pools\030\001 \003(\01322.google."
+          + "cloud.aiplatform.v1.DeploymentResourcePo"
+          + "ol\022\027\n\017next_page_token\030\002 \001(\t\"\266\001\n#UpdateDe"
+          + "ploymentResourcePoolRequest\022Y\n\030deploymen"
+          + "t_resource_pool\030\001 \001(\01322.google.cloud.aip"
+          + "latform.v1.DeploymentResourcePoolB\003\340A\002\0224"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMaskB\003\340A\002\"\177\n-UpdateDeploymentResource"
+          + "PoolOperationMetadata\022N\n\020generic_metadat"
+          + "a\030\001 \001(\01324.google.cloud.aiplatform.v1.Gen"
+          + "ericOperationMetadata\"m\n#DeleteDeploymen"
+          + "tResourcePoolRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372"
+          + "A2\n0aiplatform.googleapis.com/Deployment"
+          + "ResourcePool\"j\n\032QueryDeployedModelsReque"
+          + "st\022%\n\030deployment_resource_pool\030\001 \001(\tB\003\340A"
+          + "\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
+          + "\"\213\002\n\033QueryDeployedModelsResponse\022F\n\017depl"
+          + "oyed_models\030\001 \003(\0132).google.cloud.aiplatf"
+          + "orm.v1.DeployedModelB\002\030\001\022\027\n\017next_page_to"
+          + "ken\030\002 \001(\t\022I\n\023deployed_model_refs\030\003 \003(\0132,"
           + ".google.cloud.aiplatform.v1.DeployedMode"
-          + "lB\002\030\001\022\027\n\017next_page_token\030\002 \001(\t\022I\n\023deploy"
-          + "ed_model_refs\030\003 \003(\0132,.google.cloud.aipla"
-          + "tform.v1.DeployedModelRef\022\"\n\032total_deplo"
-          + "yed_model_count\030\004 \001(\005\022\034\n\024total_endpoint_"
-          + "count\030\005 \001(\0052\235\013\n\035DeploymentResourcePoolSe"
-          + "rvice\022\317\002\n\034CreateDeploymentResourcePool\022?"
-          + ".google.cloud.aiplatform.v1.CreateDeploy"
-          + "mentResourcePoolRequest\032\035.google.longrun"
-          + "ning.Operation\"\316\001\312AG\n\026DeploymentResource"
-          + "Pool\022-CreateDeploymentResourcePoolOperat"
-          + "ionMetadata\332A;parent,deployment_resource"
-          + "_pool,deployment_resource_pool_id\202\323\344\223\002@\""
-          + ";/v1/{parent=projects/*/locations/*}/dep"
-          + "loymentResourcePools:\001*\022\331\001\n\031GetDeploymen"
-          + "tResourcePool\022<.google.cloud.aiplatform."
-          + "v1.GetDeploymentResourcePoolRequest\0322.go"
-          + "ogle.cloud.aiplatform.v1.DeploymentResou"
-          + "rcePool\"J\332A\004name\202\323\344\223\002=\022;/v1/{name=projec"
-          + "ts/*/locations/*/deploymentResourcePools"
-          + "/*}\022\354\001\n\033ListDeploymentResourcePools\022>.go"
-          + "ogle.cloud.aiplatform.v1.ListDeploymentR"
-          + "esourcePoolsRequest\032?.google.cloud.aipla"
-          + "tform.v1.ListDeploymentResourcePoolsResp"
-          + "onse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=proje"
-          + "cts/*/locations/*}/deploymentResourcePoo"
-          + "ls\022\375\001\n\034DeleteDeploymentResourcePool\022?.go"
-          + "ogle.cloud.aiplatform.v1.DeleteDeploymen"
-          + "tResourcePoolRequest\032\035.google.longrunnin"
-          + "g.Operation\"}\312A0\n\025google.protobuf.Empty\022"
-          + "\027DeleteOperationMetadata\332A\004name\202\323\344\223\002=*;/"
-          + "v1/{name=projects/*/locations/*/deployme"
-          + "ntResourcePools/*}\022\217\002\n\023QueryDeployedMode"
-          + "ls\0226.google.cloud.aiplatform.v1.QueryDep"
-          + "loyedModelsRequest\0327.google.cloud.aiplat"
-          + "form.v1.QueryDeployedModelsResponse\"\206\001\332A"
-          + "\030deployment_resource_pool\202\323\344\223\002e\022c/v1/{de"
-          + "ployment_resource_pool=projects/*/locati"
-          + "ons/*/deploymentResourcePools/*}:queryDe"
-          + "ployedModels\032M\312A\031aiplatform.googleapis.c"
-          + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\340\001\n\036com.google.cloud.aiplatf"
-          + "orm.v1B\"DeploymentResourcePoolServicePro"
-          + "toP\001Z>cloud.google.com/go/aiplatform/api"
-          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
-          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
-          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006"
-          + "proto3"
+          + "lRef\022\"\n\032total_deployed_model_count\030\004 \001(\005"
+          + "\022\034\n\024total_endpoint_count\030\005 \001(\0052\210\016\n\035Deplo"
+          + "ymentResourcePoolService\022\317\002\n\034CreateDeplo"
+          + "ymentResourcePool\022?.google.cloud.aiplatf"
+          + "orm.v1.CreateDeploymentResourcePoolReque"
+          + "st\032\035.google.longrunning.Operation\"\316\001\312AG\n"
+          + "\026DeploymentResourcePool\022-CreateDeploymen"
+          + "tResourcePoolOperationMetadata\332A;parent,"
+          + "deployment_resource_pool,deployment_reso"
+          + "urce_pool_id\202\323\344\223\002@\";/v1/{parent=projects"
+          + "/*/locations/*}/deploymentResourcePools:"
+          + "\001*\022\331\001\n\031GetDeploymentResourcePool\022<.googl"
+          + "e.cloud.aiplatform.v1.GetDeploymentResou"
+          + "rcePoolRequest\0322.google.cloud.aiplatform"
+          + ".v1.DeploymentResourcePool\"J\332A\004name\202\323\344\223\002"
+          + "=\022;/v1/{name=projects/*/locations/*/depl"
+          + "oymentResourcePools/*}\022\354\001\n\033ListDeploymen"
+          + "tResourcePools\022>.google.cloud.aiplatform"
+          + ".v1.ListDeploymentResourcePoolsRequest\032?"
+          + ".google.cloud.aiplatform.v1.ListDeployme"
+          + "ntResourcePoolsResponse\"L\332A\006parent\202\323\344\223\002="
+          + "\022;/v1/{parent=projects/*/locations/*}/de"
+          + "ploymentResourcePools\022\350\002\n\034UpdateDeployme"
+          + "ntResourcePool\022?.google.cloud.aiplatform"
+          + ".v1.UpdateDeploymentResourcePoolRequest\032"
+          + "\035.google.longrunning.Operation\"\347\001\312AG\n\026De"
+          + "ploymentResourcePool\022-UpdateDeploymentRe"
+          + "sourcePoolOperationMetadata\332A$deployment"
+          + "_resource_pool,update_mask\202\323\344\223\002p2T/v1/{d"
+          + "eployment_resource_pool.name=projects/*/"
+          + "locations/*/deploymentResourcePools/*}:\030"
+          + "deployment_resource_pool\022\375\001\n\034DeleteDeplo"
+          + "ymentResourcePool\022?.google.cloud.aiplatf"
+          + "orm.v1.DeleteDeploymentResourcePoolReque"
+          + "st\032\035.google.longrunning.Operation\"}\312A0\n\025"
+          + "google.protobuf.Empty\022\027DeleteOperationMe"
+          + "tadata\332A\004name\202\323\344\223\002=*;/v1/{name=projects/"
+          + "*/locations/*/deploymentResourcePools/*}"
+          + "\022\217\002\n\023QueryDeployedModels\0226.google.cloud."
+          + "aiplatform.v1.QueryDeployedModelsRequest"
+          + "\0327.google.cloud.aiplatform.v1.QueryDeplo"
+          + "yedModelsResponse\"\206\001\332A\030deployment_resour"
+          + "ce_pool\202\323\344\223\002e\022c/v1/{deployment_resource_"
+          + "pool=projects/*/locations/*/deploymentRe"
+          + "sourcePools/*}:queryDeployedModels\032M\312A\031a"
+          + "iplatform.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\340\001\n\036co"
+          + "m.google.cloud.aiplatform.v1B\"Deployment"
+          + "ResourcePoolServiceProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -177,6 +195,7 @@ public final class DeploymentResourcePoolServiceProto {
               com.google.cloud.aiplatform.v1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_CreateDeploymentResourcePoolRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -218,8 +237,16 @@ public final class DeploymentResourcePoolServiceProto {
             new java.lang.String[] {
               "DeploymentResourcePools", "NextPageToken",
             });
-    internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_descriptor =
+    internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolRequest_descriptor,
+            new java.lang.String[] {
+              "DeploymentResourcePool", "UpdateMask",
+            });
+    internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_UpdateDeploymentResourcePoolOperationMetadata_descriptor,
@@ -227,7 +254,7 @@ public final class DeploymentResourcePoolServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1_DeleteDeploymentResourcePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1_DeleteDeploymentResourcePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DeleteDeploymentResourcePoolRequest_descriptor,
@@ -235,7 +262,7 @@ public final class DeploymentResourcePoolServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsRequest_descriptor,
@@ -243,7 +270,7 @@ public final class DeploymentResourcePoolServiceProto {
               "DeploymentResourcePool", "PageSize", "PageToken",
             });
     internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_QueryDeployedModelsResponse_descriptor,
@@ -275,6 +302,7 @@ public final class DeploymentResourcePoolServiceProto {
     com.google.cloud.aiplatform.v1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

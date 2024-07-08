@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1.SearchRequest;
 import com.google.cloud.discoveryengine.v1.SearchResponse;
 import com.google.cloud.discoveryengine.v1.SearchServiceClient;
 import com.google.cloud.discoveryengine.v1.ServingConfigName;
+import com.google.cloud.discoveryengine.v1.SessionName;
 import com.google.cloud.discoveryengine.v1.UserInfo;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
@@ -61,6 +62,7 @@ public class AsyncSearch {
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -70,6 +72,12 @@ public class AsyncSearch {
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

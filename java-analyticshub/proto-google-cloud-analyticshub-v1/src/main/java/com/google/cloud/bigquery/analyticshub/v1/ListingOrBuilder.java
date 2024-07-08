@@ -486,5 +486,48 @@ public interface ListingOrBuilder
   com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfigOrBuilder
       getRestrictedExportConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discoveryType field is set.
+   */
+  boolean hasDiscoveryType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for discoveryType.
+   */
+  int getDiscoveryTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discoveryType.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType();
+
   com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
 }

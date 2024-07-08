@@ -183,6 +183,43 @@ public interface ImportDataRequestOrBuilder
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * performing the transfer.
+   * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+   * If unspecified, the Parallelstore service agent is used:
+   * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+   * </pre>
+   *
+   * <code>
+   * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * performing the transfer.
+   * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+   * If unspecified, the Parallelstore service agent is used:
+   * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+   * </pre>
+   *
+   * <code>
+   * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
   com.google.cloud.parallelstore.v1beta.ImportDataRequest.SourceCase getSourceCase();
 
   com.google.cloud.parallelstore.v1beta.ImportDataRequest.DestinationCase getDestinationCase();

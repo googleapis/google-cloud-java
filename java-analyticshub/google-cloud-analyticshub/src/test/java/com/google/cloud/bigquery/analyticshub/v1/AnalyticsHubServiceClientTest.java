@@ -246,6 +246,7 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -291,6 +292,7 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -336,6 +338,7 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -384,6 +387,7 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -432,6 +436,7 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -641,6 +646,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -691,6 +697,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -741,6 +748,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -794,6 +802,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -847,6 +856,7 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 

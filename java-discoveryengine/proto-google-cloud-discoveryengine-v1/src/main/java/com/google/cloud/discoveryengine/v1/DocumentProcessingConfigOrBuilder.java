@@ -57,6 +57,48 @@ public interface DocumentProcessingConfigOrBuilder
    *
    *
    * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   *
+   * @return Whether the chunkingConfig field is set.
+   */
+  boolean hasChunkingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   *
+   * @return The chunkingConfig.
+   */
+  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig getChunkingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Whether chunking mode is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig chunking_config = 3;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfigOrBuilder
+      getChunkingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configurations for default Document parser.
    * If not specified, we will configure it as default DigitalParsingConfig, and
    * the default parsing config will be applied to all file types for Document
@@ -115,9 +157,11 @@ public interface DocumentProcessingConfigOrBuilder
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -135,9 +179,11 @@ public interface DocumentProcessingConfigOrBuilder
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -161,9 +207,11 @@ public interface DocumentProcessingConfigOrBuilder
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -184,9 +232,11 @@ public interface DocumentProcessingConfigOrBuilder
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>
@@ -209,9 +259,11 @@ public interface DocumentProcessingConfigOrBuilder
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
-   * or layout parsing are supported.
+   * layout parsing are supported.
+   * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
    * </pre>
    *
    * <code>

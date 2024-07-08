@@ -1364,6 +1364,9 @@ public final class ChatServiceGrpc {
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
+     * To list all named spaces by Google Workspace organization, use the
+     * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+     * method using Workspace administrator privileges instead.
      * </pre>
      */
     default void listSpaces(
@@ -2036,6 +2039,9 @@ public final class ChatServiceGrpc {
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
+     * To list all named spaces by Google Workspace organization, use the
+     * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+     * method using Workspace administrator privileges instead.
      * </pre>
      */
     public void listSpaces(
@@ -2697,6 +2703,9 @@ public final class ChatServiceGrpc {
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
+     * To list all named spaces by Google Workspace organization, use the
+     * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+     * method using Workspace administrator privileges instead.
      * </pre>
      */
     public com.google.chat.v1.ListSpacesResponse listSpaces(
@@ -3311,6 +3320,9 @@ public final class ChatServiceGrpc {
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
+     * To list all named spaces by Google Workspace organization, use the
+     * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+     * method using Workspace administrator privileges instead.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.ListSpacesResponse>

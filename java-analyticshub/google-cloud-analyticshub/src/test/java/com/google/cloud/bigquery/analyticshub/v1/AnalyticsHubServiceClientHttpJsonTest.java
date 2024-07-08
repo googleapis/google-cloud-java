@@ -259,6 +259,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -310,6 +311,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -361,6 +363,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -414,6 +417,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -467,6 +471,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -480,6 +485,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -519,6 +525,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setListingCount(-1101038700)
               .setIcon(ByteString.EMPTY)
               .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+              .setDiscoveryType(DiscoveryType.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataExchange(dataExchange, updateMask);
@@ -726,6 +733,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -782,6 +790,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -840,6 +849,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -898,6 +908,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -957,6 +968,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -975,6 +987,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1019,6 +1032,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setPublisher(Publisher.newBuilder().build())
               .setRequestAccess("requestAccess871967955")
               .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+              .setDiscoveryType(DiscoveryType.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateListing(listing, updateMask);

@@ -21,9 +21,15 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesResponse;
@@ -80,6 +86,36 @@ public abstract class CompletionServiceStub implements BackgroundResource {
       purgeSuggestionDenyListEntriesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: purgeSuggestionDenyListEntriesCallable()");
+  }
+
+  public OperationCallable<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importCompletionSuggestionsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importCompletionSuggestionsCallable()");
+  }
+
+  public OperationCallable<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeCompletionSuggestionsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeCompletionSuggestionsCallable()");
   }
 
   @Override

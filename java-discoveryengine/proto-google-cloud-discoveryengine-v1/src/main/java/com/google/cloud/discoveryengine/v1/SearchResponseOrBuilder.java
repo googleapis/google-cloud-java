@@ -357,4 +357,51 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfoOrBuilder
       getQueryExpansionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return Whether the sessionInfo field is set.
+   */
+  boolean hasSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return The sessionInfo.
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo getSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder getSessionInfoOrBuilder();
 }

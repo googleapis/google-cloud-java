@@ -554,6 +554,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
     Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
     Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getAlloyDbSource(), actualRequest.getAlloyDbSource());
     Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());

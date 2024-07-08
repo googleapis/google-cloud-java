@@ -98,11 +98,13 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: use CHANNEL_STANDARD instead.
      * Gateway API support is enabled, experimental CRDs are installed
      * </pre>
      *
-     * <code>CHANNEL_EXPERIMENTAL = 3;</code>
+     * <code>CHANNEL_EXPERIMENTAL = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     CHANNEL_EXPERIMENTAL(3),
     /**
      *
@@ -141,12 +143,13 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: use CHANNEL_STANDARD instead.
      * Gateway API support is enabled, experimental CRDs are installed
      * </pre>
      *
-     * <code>CHANNEL_EXPERIMENTAL = 3;</code>
+     * <code>CHANNEL_EXPERIMENTAL = 3 [deprecated = true];</code>
      */
-    public static final int CHANNEL_EXPERIMENTAL_VALUE = 3;
+    @java.lang.Deprecated public static final int CHANNEL_EXPERIMENTAL_VALUE = 3;
     /**
      *
      *

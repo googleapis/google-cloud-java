@@ -41,6 +41,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
   private TokensInfo() {
     tokens_ = emptyList(com.google.protobuf.ByteString.class);
     tokenIds_ = emptyLongList();
+    role_ = "";
   }
 
   @java.lang.Override
@@ -165,6 +166,57 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int tokenIdsMemoizedSerializedSize = -1;
 
+  public static final int ROLE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object role_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional fields for the role from the corresponding Content.
+   * </pre>
+   *
+   * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The role.
+   */
+  @java.lang.Override
+  public java.lang.String getRole() {
+    java.lang.Object ref = role_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      role_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional fields for the role from the corresponding Content.
+   * </pre>
+   *
+   * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for role.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRoleBytes() {
+    java.lang.Object ref = role_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      role_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -189,6 +241,9 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < tokenIds_.size(); i++) {
       output.writeInt64NoTag(tokenIds_.getLong(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, role_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -220,6 +275,9 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       }
       tokenIdsMemoizedSerializedSize = dataSize;
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, role_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -238,6 +296,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (!getTokensList().equals(other.getTokensList())) return false;
     if (!getTokenIdsList().equals(other.getTokenIdsList())) return false;
+    if (!getRole().equals(other.getRole())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -257,6 +316,8 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TOKEN_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTokenIdsList().hashCode();
     }
+    hash = (37 * hash) + ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getRole().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -398,6 +459,7 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       tokens_ = emptyList(com.google.protobuf.ByteString.class);
       tokenIds_ = emptyLongList();
+      role_ = "";
       return this;
     }
 
@@ -441,6 +503,9 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         tokenIds_.makeImmutable();
         result.tokenIds_ = tokenIds_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.role_ = role_;
       }
     }
 
@@ -511,6 +576,11 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getRole().isEmpty()) {
+        role_ = other.role_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -562,6 +632,12 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(limit);
                 break;
               } // case 18
+            case 26:
+              {
+                role_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -843,6 +919,112 @@ public final class TokensInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTokenIds() {
       tokenIds_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object role_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional fields for the role from the corresponding Content.
+     * </pre>
+     *
+     * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The role.
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional fields for the role from the corresponding Content.
+     * </pre>
+     *
+     * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for role.
+     */
+    public com.google.protobuf.ByteString getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional fields for the role from the corresponding Content.
+     * </pre>
+     *
+     * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRole(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      role_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional fields for the role from the corresponding Content.
+     * </pre>
+     *
+     * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRole() {
+      role_ = getDefaultInstance().getRole();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional fields for the role from the corresponding Content.
+     * </pre>
+     *
+     * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      role_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
