@@ -320,6 +320,10 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-pubsub/tree/m
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
+## Transport
+
+Cloud Pub/Sub uses both gRPC and HTTP/JSON for the transport layer.
+
 ## Supported Java Versions
 
 Java 8 or above is required for using this client.
