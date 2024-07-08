@@ -15,7 +15,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
       - javadoc
@@ -34,7 +33,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -50,7 +48,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
   - pattern: 1.114.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -66,7 +63,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
   - pattern: 1.116.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -82,7 +78,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
   - pattern: 1.117.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -98,7 +93,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
   - pattern: 1.120.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -114,7 +108,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: 1.121.x
@@ -132,7 +125,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: 1.123.x
@@ -149,7 +141,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - Kokoro - Against Pub/Sub Lite samples
       - cla/google
-      - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: 1.125.x
@@ -165,7 +156,6 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
       - javadoc
