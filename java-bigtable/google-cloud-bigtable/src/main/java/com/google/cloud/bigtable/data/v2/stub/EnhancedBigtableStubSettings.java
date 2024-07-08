@@ -100,6 +100,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
+  // TODO(meeral-k): add documentation
+  private static final String CBT_ENABLE_DIRECTPATH = "CBT_ENABLE_DIRECTPATH";
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
 
@@ -345,7 +347,15 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
+    Boolean isDirectpathEnabled = Boolean.parseBoolean(System.getenv(CBT_ENABLE_DIRECTPATH));
+    InstantiatingGrpcChannelProvider.Builder grpcTransportProviderBuilder =
+        BigtableStubSettings.defaultGrpcTransportProviderBuilder();
+    if (isDirectpathEnabled) {
+      // Attempts direct access to CBT service over gRPC to improve throughput,
+      // whether the attempt is allowed is totally controlled by service owner.
+      grpcTransportProviderBuilder.setAttemptDirectPathXds().setAttemptDirectPath(true);
+    }
+    return grpcTransportProviderBuilder
         .setChannelPoolSettings(
             ChannelPoolSettings.builder()
                 .setInitialChannelCount(10)

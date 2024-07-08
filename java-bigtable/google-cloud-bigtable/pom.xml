@@ -499,6 +499,9 @@
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
                   </systemPropertyVariables>
+                  <environmentVariables>
+                    <CBT_ENABLE_DIRECTPATH>true</CBT_ENABLE_DIRECTPATH>
+                  </environmentVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                     <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
@@ -575,6 +578,9 @@
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
                   </systemPropertyVariables>
+                  <environmentVariables>
+                    <CBT_ENABLE_DIRECTPATH>true</CBT_ENABLE_DIRECTPATH>
+                  </environmentVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                     <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
