@@ -29,8 +29,8 @@ public interface CreateBigQueryExportRequestOrBuilder
    *
    * <pre>
    * Required. The name of the parent resource of the new BigQuery export. Its
-   * format is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * format is `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface CreateBigQueryExportRequestOrBuilder
    *
    * <pre>
    * Required. The name of the parent resource of the new BigQuery export. Its
-   * format is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * format is `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>

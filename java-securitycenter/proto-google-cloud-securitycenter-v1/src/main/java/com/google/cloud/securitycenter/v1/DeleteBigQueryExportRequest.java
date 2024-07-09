@@ -72,9 +72,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the BigQuery export to delete. Its format is
-   * organizations/{organization}/bigQueryExports/{export_id},
-   * folders/{folder}/bigQueryExports/{export_id}, or
-   * projects/{project}/bigQueryExports/{export_id}
+   * `organizations/{organization}/bigQueryExports/{export_id}`,
+   * `folders/{folder}/bigQueryExports/{export_id}`, or
+   * `projects/{project}/bigQueryExports/{export_id}`
    * </pre>
    *
    * <code>
@@ -100,9 +100,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the BigQuery export to delete. Its format is
-   * organizations/{organization}/bigQueryExports/{export_id},
-   * folders/{folder}/bigQueryExports/{export_id}, or
-   * projects/{project}/bigQueryExports/{export_id}
+   * `organizations/{organization}/bigQueryExports/{export_id}`,
+   * `folders/{folder}/bigQueryExports/{export_id}`, or
+   * `projects/{project}/bigQueryExports/{export_id}`
    * </pre>
    *
    * <code>
@@ -476,9 +476,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the BigQuery export to delete. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -503,9 +503,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the BigQuery export to delete. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -530,9 +530,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the BigQuery export to delete. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -556,9 +556,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the BigQuery export to delete. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -578,9 +578,9 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the BigQuery export to delete. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>

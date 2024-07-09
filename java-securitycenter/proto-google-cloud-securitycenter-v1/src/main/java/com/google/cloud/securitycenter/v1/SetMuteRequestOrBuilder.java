@@ -31,9 +31,9 @@ public interface SetMuteRequestOrBuilder
    * Required. The [relative resource
    * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
    * of the finding. Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
-   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
-   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
+   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
+   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
+   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
    * </pre>
    *
    * <code>
@@ -50,9 +50,9 @@ public interface SetMuteRequestOrBuilder
    * Required. The [relative resource
    * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
    * of the finding. Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
-   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
-   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
+   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
+   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
+   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
    * </pre>
    *
    * <code>

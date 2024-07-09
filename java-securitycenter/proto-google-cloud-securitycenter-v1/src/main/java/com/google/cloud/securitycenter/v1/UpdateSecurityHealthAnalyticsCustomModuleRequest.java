@@ -134,7 +134,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * The list of fields to update.
+   * The list of fields to be updated. The only fields that can be updated are
+   * `enablement_state` and `custom_config`. If empty or set to the wildcard
+   * value `*`, both `enablement_state` and `custom_config` are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -149,7 +151,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * The list of fields to update.
+   * The list of fields to be updated. The only fields that can be updated are
+   * `enablement_state` and `custom_config`. If empty or set to the wildcard
+   * value `*`, both `enablement_state` and `custom_config` are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -164,7 +168,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * The list of fields to update.
+   * The list of fields to be updated. The only fields that can be updated are
+   * `enablement_state` and `custom_config`. If empty or set to the wildcard
+   * value `*`, both `enablement_state` and `custom_config` are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -830,7 +836,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -844,7 +852,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -864,7 +874,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -886,7 +898,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -905,7 +919,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -932,7 +948,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -951,7 +969,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -965,7 +985,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -983,7 +1005,9 @@ public final class UpdateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * The list of fields to update.
+     * The list of fields to be updated. The only fields that can be updated are
+     * `enablement_state` and `custom_config`. If empty or set to the wildcard
+     * value `*`, both `enablement_state` and `custom_config` are updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

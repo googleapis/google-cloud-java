@@ -74,8 +74,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]".
+   * is `organizations/[organization_id]`, `folders/[folder_id]`,
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]".
+   * is `organizations/[organization_id]`, `folders/[folder_id]`,
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -600,8 +600,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent, which owns the collection of mute configs. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -626,8 +626,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent, which owns the collection of mute configs. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -652,8 +652,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent, which owns the collection of mute configs. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -677,8 +677,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent, which owns the collection of mute configs. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -698,8 +698,8 @@ public final class ListMuteConfigsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent, which owns the collection of mute configs. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>

@@ -37,6 +37,15 @@ public class MuteConfigName implements ResourceName {
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/muteConfigs/{mute_config}");
   private static final PathTemplate PROJECT_MUTE_CONFIG =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/muteConfigs/{mute_config}");
+  private static final PathTemplate ORGANIZATION_LOCATION_MUTE_CONFIG =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/locations/{location}/muteConfigs/{mute_config}");
+  private static final PathTemplate FOLDER_LOCATION_MUTE_CONFIG =
+      PathTemplate.createWithoutUrlEncoding(
+          "folders/{folder}/locations/{location}/muteConfigs/{mute_config}");
+  private static final PathTemplate PROJECT_LOCATION_MUTE_CONFIG =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/muteConfigs/{mute_config}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -44,6 +53,7 @@ public class MuteConfigName implements ResourceName {
   private final String muteConfig;
   private final String folder;
   private final String project;
+  private final String location;
 
   @Deprecated
   protected MuteConfigName() {
@@ -51,6 +61,7 @@ public class MuteConfigName implements ResourceName {
     muteConfig = null;
     folder = null;
     project = null;
+    location = null;
   }
 
   private MuteConfigName(Builder builder) {
@@ -58,6 +69,7 @@ public class MuteConfigName implements ResourceName {
     muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
     folder = null;
     project = null;
+    location = null;
     pathTemplate = ORGANIZATION_MUTE_CONFIG;
   }
 
@@ -66,6 +78,7 @@ public class MuteConfigName implements ResourceName {
     muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
     organization = null;
     project = null;
+    location = null;
     pathTemplate = FOLDER_MUTE_CONFIG;
   }
 
@@ -74,7 +87,35 @@ public class MuteConfigName implements ResourceName {
     muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
     organization = null;
     folder = null;
+    location = null;
     pathTemplate = PROJECT_MUTE_CONFIG;
+  }
+
+  private MuteConfigName(OrganizationLocationMuteConfigBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
+    folder = null;
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_MUTE_CONFIG;
+  }
+
+  private MuteConfigName(FolderLocationMuteConfigBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
+    organization = null;
+    project = null;
+    pathTemplate = FOLDER_LOCATION_MUTE_CONFIG;
+  }
+
+  private MuteConfigName(ProjectLocationMuteConfigBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    muteConfig = Preconditions.checkNotNull(builder.getMuteConfig());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_LOCATION_MUTE_CONFIG;
   }
 
   public String getOrganization() {
@@ -93,6 +134,10 @@ public class MuteConfigName implements ResourceName {
     return project;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -107,6 +152,18 @@ public class MuteConfigName implements ResourceName {
 
   public static ProjectMuteConfigBuilder newProjectMuteConfigBuilder() {
     return new ProjectMuteConfigBuilder();
+  }
+
+  public static OrganizationLocationMuteConfigBuilder newOrganizationLocationMuteConfigBuilder() {
+    return new OrganizationLocationMuteConfigBuilder();
+  }
+
+  public static FolderLocationMuteConfigBuilder newFolderLocationMuteConfigBuilder() {
+    return new FolderLocationMuteConfigBuilder();
+  }
+
+  public static ProjectLocationMuteConfigBuilder newProjectLocationMuteConfigBuilder() {
+    return new ProjectLocationMuteConfigBuilder();
   }
 
   public Builder toBuilder() {
@@ -128,6 +185,33 @@ public class MuteConfigName implements ResourceName {
 
   public static MuteConfigName ofProjectMuteConfigName(String project, String muteConfig) {
     return newProjectMuteConfigBuilder().setProject(project).setMuteConfig(muteConfig).build();
+  }
+
+  public static MuteConfigName ofOrganizationLocationMuteConfigName(
+      String organization, String location, String muteConfig) {
+    return newOrganizationLocationMuteConfigBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build();
+  }
+
+  public static MuteConfigName ofFolderLocationMuteConfigName(
+      String folder, String location, String muteConfig) {
+    return newFolderLocationMuteConfigBuilder()
+        .setFolder(folder)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build();
+  }
+
+  public static MuteConfigName ofProjectLocationMuteConfigName(
+      String project, String location, String muteConfig) {
+    return newProjectLocationMuteConfigBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build();
   }
 
   public static String format(String organization, String muteConfig) {
@@ -154,6 +238,36 @@ public class MuteConfigName implements ResourceName {
         .toString();
   }
 
+  public static String formatOrganizationLocationMuteConfigName(
+      String organization, String location, String muteConfig) {
+    return newOrganizationLocationMuteConfigBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build()
+        .toString();
+  }
+
+  public static String formatFolderLocationMuteConfigName(
+      String folder, String location, String muteConfig) {
+    return newFolderLocationMuteConfigBuilder()
+        .setFolder(folder)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationMuteConfigName(
+      String project, String location, String muteConfig) {
+    return newProjectLocationMuteConfigBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setMuteConfig(muteConfig)
+        .build()
+        .toString();
+  }
+
   public static MuteConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -168,6 +282,18 @@ public class MuteConfigName implements ResourceName {
     } else if (PROJECT_MUTE_CONFIG.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT_MUTE_CONFIG.match(formattedString);
       return ofProjectMuteConfigName(matchMap.get("project"), matchMap.get("mute_config"));
+    } else if (ORGANIZATION_LOCATION_MUTE_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_MUTE_CONFIG.match(formattedString);
+      return ofOrganizationLocationMuteConfigName(
+          matchMap.get("organization"), matchMap.get("location"), matchMap.get("mute_config"));
+    } else if (FOLDER_LOCATION_MUTE_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_LOCATION_MUTE_CONFIG.match(formattedString);
+      return ofFolderLocationMuteConfigName(
+          matchMap.get("folder"), matchMap.get("location"), matchMap.get("mute_config"));
+    } else if (PROJECT_LOCATION_MUTE_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_MUTE_CONFIG.match(formattedString);
+      return ofProjectLocationMuteConfigName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("mute_config"));
     }
     throw new ValidationException("MuteConfigName.parse: formattedString not in valid format");
   }
@@ -195,7 +321,10 @@ public class MuteConfigName implements ResourceName {
   public static boolean isParsableFrom(String formattedString) {
     return ORGANIZATION_MUTE_CONFIG.matches(formattedString)
         || FOLDER_MUTE_CONFIG.matches(formattedString)
-        || PROJECT_MUTE_CONFIG.matches(formattedString);
+        || PROJECT_MUTE_CONFIG.matches(formattedString)
+        || ORGANIZATION_LOCATION_MUTE_CONFIG.matches(formattedString)
+        || FOLDER_LOCATION_MUTE_CONFIG.matches(formattedString)
+        || PROJECT_LOCATION_MUTE_CONFIG.matches(formattedString);
   }
 
   @Override
@@ -215,6 +344,9 @@ public class MuteConfigName implements ResourceName {
           }
           if (project != null) {
             fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -242,7 +374,8 @@ public class MuteConfigName implements ResourceName {
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.muteConfig, that.muteConfig)
           && Objects.equals(this.folder, that.folder)
-          && Objects.equals(this.project, that.project);
+          && Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -260,6 +393,8 @@ public class MuteConfigName implements ResourceName {
     h ^= Objects.hashCode(folder);
     h *= 1000003;
     h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -352,6 +487,126 @@ public class MuteConfigName implements ResourceName {
     }
 
     public ProjectMuteConfigBuilder setMuteConfig(String muteConfig) {
+      this.muteConfig = muteConfig;
+      return this;
+    }
+
+    public MuteConfigName build() {
+      return new MuteConfigName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/locations/{location}/muteConfigs/{mute_config}. */
+  public static class OrganizationLocationMuteConfigBuilder {
+    private String organization;
+    private String location;
+    private String muteConfig;
+
+    protected OrganizationLocationMuteConfigBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getMuteConfig() {
+      return muteConfig;
+    }
+
+    public OrganizationLocationMuteConfigBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationLocationMuteConfigBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public OrganizationLocationMuteConfigBuilder setMuteConfig(String muteConfig) {
+      this.muteConfig = muteConfig;
+      return this;
+    }
+
+    public MuteConfigName build() {
+      return new MuteConfigName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/locations/{location}/muteConfigs/{mute_config}. */
+  public static class FolderLocationMuteConfigBuilder {
+    private String folder;
+    private String location;
+    private String muteConfig;
+
+    protected FolderLocationMuteConfigBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getMuteConfig() {
+      return muteConfig;
+    }
+
+    public FolderLocationMuteConfigBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderLocationMuteConfigBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public FolderLocationMuteConfigBuilder setMuteConfig(String muteConfig) {
+      this.muteConfig = muteConfig;
+      return this;
+    }
+
+    public MuteConfigName build() {
+      return new MuteConfigName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/muteConfigs/{mute_config}. */
+  public static class ProjectLocationMuteConfigBuilder {
+    private String project;
+    private String location;
+    private String muteConfig;
+
+    protected ProjectLocationMuteConfigBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getMuteConfig() {
+      return muteConfig;
+    }
+
+    public ProjectLocationMuteConfigBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationMuteConfigBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationMuteConfigBuilder setMuteConfig(String muteConfig) {
       this.muteConfig = muteConfig;
       return this;
     }

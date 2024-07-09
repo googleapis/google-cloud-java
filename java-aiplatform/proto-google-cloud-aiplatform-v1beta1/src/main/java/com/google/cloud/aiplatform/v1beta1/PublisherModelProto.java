@@ -73,6 +73,14 @@ public final class PublisherModelProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_fieldAccessorTable;
@@ -91,7 +99,7 @@ public final class PublisherModelProto {
           + "o\032\031google/api/resource.proto\0327google/clo"
           + "ud/aiplatform/v1beta1/machine_resources."
           + "proto\032+google/cloud/aiplatform/v1beta1/m"
-          + "odel.proto\"\356#\n\016PublisherModel\022\021\n\004name\030\001 "
+          + "odel.proto\"\260&\n\016PublisherModel\022\021\n\004name\030\001 "
           + "\001(\tB\003\340A\003\022\032\n\nversion_id\030\002 \001(\tB\006\340A\005\340A\003\022e\n\024"
           + "open_source_category\030\007 \001(\0162B.google.clou"
           + "d.aiplatform.v1beta1.PublisherModel.Open"
@@ -115,7 +123,7 @@ public final class PublisherModelProto {
           + "\n\treference\030\002 \001(\0132A.google.cloud.aiplatf"
           + "orm.v1beta1.PublisherModel.ResourceRefer"
           + "enceB\003\340A\001\0329\n\rDocumentation\022\022\n\005title\030\001 \001("
-          + "\tB\003\340A\002\022\024\n\007content\030\002 \001(\tB\003\340A\002\032\223\030\n\014CallToA"
+          + "\tB\003\340A\002\022\024\n\007content\030\002 \001(\tB\003\340A\002\032\325\032\n\014CallToA"
           + "ction\022d\n\rview_rest_api\030\001 \001(\0132H.google.cl"
           + "oud.aiplatform.v1beta1.PublisherModel.Ca"
           + "llToAction.ViewRestApiB\003\340A\001\022s\n\ropen_note"
@@ -176,7 +184,7 @@ public final class PublisherModelProto {
           + "Pipelines\022{\n\025fine_tuning_pipelines\030\001 \003(\013"
           + "2W.google.cloud.aiplatform.v1beta1.Publi"
           + "sherModel.CallToAction.RegionalResourceR"
-          + "eferencesB\003\340A\002\032\273\004\n\006Deploy\022R\n\023dedicated_r"
+          + "eferencesB\003\340A\002\032\375\006\n\006Deploy\022R\n\023dedicated_r"
           + "esources\030\005 \001(\01323.google.cloud.aiplatform"
           + ".v1beta1.DedicatedResourcesH\000\022R\n\023automat"
           + "ic_resources\030\006 \001(\01323.google.cloud.aiplat"
@@ -188,31 +196,39 @@ public final class PublisherModelProto {
           + "ec\030\003 \001(\01323.google.cloud.aiplatform.v1bet"
           + "a1.ModelContainerSpecB\003\340A\001\022\031\n\014artifact_u"
           + "ri\030\004 \001(\tB\003\340A\001\022\"\n\020deploy_task_name\030\n \001(\tB"
-          + "\003\340A\001H\001\210\001\001\022\022\n\005title\030\010 \001(\tB\003\340A\002\022 \n\023public_"
-          + "artifact_uri\030\t \001(\tB\003\340A\001B\026\n\024prediction_re"
-          + "sourcesB\023\n\021_deploy_task_name\032*\n\tDeployGk"
-          + "e\022\035\n\020gke_yaml_configs\030\001 \003(\tB\003\340A\001B\021\n\017_ope"
-          + "n_notebooksB\035\n\033_open_fine_tuning_pipelin"
-          + "es\"\333\001\n\022OpenSourceCategory\022$\n OPEN_SOURCE"
-          + "_CATEGORY_UNSPECIFIED\020\000\022\017\n\013PROPRIETARY\020\001"
-          + "\022+\n\'GOOGLE_OWNED_OSS_WITH_GOOGLE_CHECKPO"
-          + "INT\020\002\0220\n,THIRD_PARTY_OWNED_OSS_WITH_GOOG"
-          + "LE_CHECKPOINT\020\003\022\024\n\020GOOGLE_OWNED_OSS\020\004\022\031\n"
-          + "\025THIRD_PARTY_OWNED_OSS\020\005\"n\n\013LaunchStage\022"
-          + "\034\n\030LAUNCH_STAGE_UNSPECIFIED\020\000\022\020\n\014EXPERIM"
-          + "ENTAL\020\001\022\023\n\017PRIVATE_PREVIEW\020\002\022\022\n\016PUBLIC_P"
-          + "REVIEW\020\003\022\006\n\002GA\020\004\"c\n\014VersionState\022\035\n\031VERS"
-          + "ION_STATE_UNSPECIFIED\020\000\022\030\n\024VERSION_STATE"
-          + "_STABLE\020\001\022\032\n\026VERSION_STATE_UNSTABLE\020\002:T\352"
-          + "AQ\n(aiplatform.googleapis.com/PublisherM"
-          + "odel\022%publishers/{publisher}/models/{mod"
-          + "el}B\352\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\023PublisherModelProtoP\001ZCcloud.google"
-          + ".com/go/aiplatform/apiv1beta1/aiplatform"
-          + "pb;aiplatformpb\252\002\037Google.Cloud.AIPlatfor"
-          + "m.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1be"
-          + "ta1\352\002\"Google::Cloud::AIPlatform::V1beta1"
-          + "b\006proto3"
+          + "\003\340A\001H\001\210\001\001\022u\n\017deploy_metadata\030\013 \001(\0132R.goo"
+          + "gle.cloud.aiplatform.v1beta1.PublisherMo"
+          + "del.CallToAction.Deploy.DeployMetadataB\003"
+          + "\340A\001H\002\210\001\001\022\022\n\005title\030\010 \001(\tB\003\340A\002\022 \n\023public_a"
+          + "rtifact_uri\030\t \001(\tB\003\340A\001\032\264\001\n\016DeployMetadat"
+          + "a\022s\n\006labels\030\001 \003(\0132^.google.cloud.aiplatf"
+          + "orm.v1beta1.PublisherModel.CallToAction."
+          + "Deploy.DeployMetadata.LabelsEntryB\003\340A\001\032-"
+          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001B\026\n\024prediction_resourcesB\023\n\021_deploy"
+          + "_task_nameB\022\n\020_deploy_metadata\032*\n\tDeploy"
+          + "Gke\022\035\n\020gke_yaml_configs\030\001 \003(\tB\003\340A\001B\021\n\017_o"
+          + "pen_notebooksB\035\n\033_open_fine_tuning_pipel"
+          + "ines\"\333\001\n\022OpenSourceCategory\022$\n OPEN_SOUR"
+          + "CE_CATEGORY_UNSPECIFIED\020\000\022\017\n\013PROPRIETARY"
+          + "\020\001\022+\n\'GOOGLE_OWNED_OSS_WITH_GOOGLE_CHECK"
+          + "POINT\020\002\0220\n,THIRD_PARTY_OWNED_OSS_WITH_GO"
+          + "OGLE_CHECKPOINT\020\003\022\024\n\020GOOGLE_OWNED_OSS\020\004\022"
+          + "\031\n\025THIRD_PARTY_OWNED_OSS\020\005\"n\n\013LaunchStag"
+          + "e\022\034\n\030LAUNCH_STAGE_UNSPECIFIED\020\000\022\020\n\014EXPER"
+          + "IMENTAL\020\001\022\023\n\017PRIVATE_PREVIEW\020\002\022\022\n\016PUBLIC"
+          + "_PREVIEW\020\003\022\006\n\002GA\020\004\"c\n\014VersionState\022\035\n\031VE"
+          + "RSION_STATE_UNSPECIFIED\020\000\022\030\n\024VERSION_STA"
+          + "TE_STABLE\020\001\022\032\n\026VERSION_STATE_UNSTABLE\020\002:"
+          + "T\352AQ\n(aiplatform.googleapis.com/Publishe"
+          + "rModel\022%publishers/{publisher}/models/{m"
+          + "odel}B\352\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\023PublisherModelProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -358,9 +374,30 @@ public final class PublisherModelProto {
               "ContainerSpec",
               "ArtifactUri",
               "DeployTaskName",
+              "DeployMetadata",
               "Title",
               "PublicArtifactUri",
               "PredictionResources",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_descriptor,
+            new java.lang.String[] {
+              "Labels",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_Deploy_DeployMetadata_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_DeployGke_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_descriptor

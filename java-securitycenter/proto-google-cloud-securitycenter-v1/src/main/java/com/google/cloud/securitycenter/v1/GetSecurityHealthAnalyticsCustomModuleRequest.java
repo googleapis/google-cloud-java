@@ -76,10 +76,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. Name of the custom module to get. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
    * </pre>
    *
    * <code>
@@ -105,10 +105,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. Name of the custom module to get. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
    * </pre>
    *
    * <code>
@@ -504,10 +504,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. Name of the custom module to get. Its format is
-     * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-     * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+     * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+     * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
      * or
-     * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
      * </pre>
      *
      * <code>
@@ -532,10 +532,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. Name of the custom module to get. Its format is
-     * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-     * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+     * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+     * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
      * or
-     * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
      * </pre>
      *
      * <code>
@@ -560,10 +560,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. Name of the custom module to get. Its format is
-     * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-     * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+     * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+     * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
      * or
-     * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
      * </pre>
      *
      * <code>
@@ -587,10 +587,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. Name of the custom module to get. Its format is
-     * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-     * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+     * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+     * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
      * or
-     * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
      * </pre>
      *
      * <code>
@@ -610,10 +610,10 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. Name of the custom module to get. Its format is
-     * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-     * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+     * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+     * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
      * or
-     * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+     * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
      * </pre>
      *
      * <code>

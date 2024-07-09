@@ -51,6 +51,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     icon_ = com.google.protobuf.ByteString.EMPTY;
     categories_ = java.util.Collections.emptyList();
     requestAccess_ = "";
+    discoveryType_ = 0;
   }
 
   @java.lang.Override
@@ -538,6 +539,53 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
             .SelectedResourceOrBuilder
         getSelectedResourcesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the restrictedExportPolicy field is set.
+     */
+    boolean hasRestrictedExportPolicy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The restrictedExportPolicy.
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy
+        getRestrictedExportPolicy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .RestrictedExportPolicyOrBuilder
+        getRestrictedExportPolicyOrBuilder();
   }
   /**
    *
@@ -1506,6 +1554,1545 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface RestrictedExportPolicyOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the enabled field is set.
+       */
+      boolean hasEnabled();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enabled.
+       */
+      com.google.protobuf.BoolValue getEnabled();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the restrictDirectTableAccess field is set.
+       */
+      boolean hasRestrictDirectTableAccess();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The restrictDirectTableAccess.
+       */
+      com.google.protobuf.BoolValue getRestrictDirectTableAccess();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.protobuf.BoolValueOrBuilder getRestrictDirectTableAccessOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the restrictQueryResult field is set.
+       */
+      boolean hasRestrictQueryResult();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The restrictQueryResult.
+       */
+      com.google.protobuf.BoolValue getRestrictQueryResult();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.protobuf.BoolValueOrBuilder getRestrictQueryResultOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Restricted export policy used to configure restricted export on linked
+     * dataset.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy}
+     */
+    public static final class RestrictedExportPolicy extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
+        RestrictedExportPolicyOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RestrictedExportPolicy.newBuilder() to construct.
+      private RestrictedExportPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RestrictedExportPolicy() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RestrictedExportPolicy();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .RestrictedExportPolicy.class,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .RestrictedExportPolicy.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int ENABLED_FIELD_NUMBER = 1;
+      private com.google.protobuf.BoolValue enabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the enabled field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnabled() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValue getEnabled() {
+        return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable restricted export.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder() {
+        return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
+      }
+
+      public static final int RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER = 2;
+      private com.google.protobuf.BoolValue restrictDirectTableAccess_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the restrictDirectTableAccess field is set.
+       */
+      @java.lang.Override
+      public boolean hasRestrictDirectTableAccess() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The restrictDirectTableAccess.
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValue getRestrictDirectTableAccess() {
+        return restrictDirectTableAccess_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : restrictDirectTableAccess_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict direct table access (read
+       * api/tabledata.list) on linked table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValueOrBuilder getRestrictDirectTableAccessOrBuilder() {
+        return restrictDirectTableAccess_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : restrictDirectTableAccess_;
+      }
+
+      public static final int RESTRICT_QUERY_RESULT_FIELD_NUMBER = 3;
+      private com.google.protobuf.BoolValue restrictQueryResult_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the restrictQueryResult field is set.
+       */
+      @java.lang.Override
+      public boolean hasRestrictQueryResult() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The restrictQueryResult.
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValue getRestrictQueryResult() {
+        return restrictQueryResult_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : restrictQueryResult_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, restrict export of query result derived from
+       * restricted linked dataset table.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.BoolValueOrBuilder getRestrictQueryResultOrBuilder() {
+        return restrictQueryResult_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : restrictQueryResult_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getEnabled());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getRestrictDirectTableAccess());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          output.writeMessage(3, getRestrictQueryResult());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEnabled());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, getRestrictDirectTableAccess());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRestrictQueryResult());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy
+            other =
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                        .RestrictedExportPolicy)
+                    obj;
+
+        if (hasEnabled() != other.hasEnabled()) return false;
+        if (hasEnabled()) {
+          if (!getEnabled().equals(other.getEnabled())) return false;
+        }
+        if (hasRestrictDirectTableAccess() != other.hasRestrictDirectTableAccess()) return false;
+        if (hasRestrictDirectTableAccess()) {
+          if (!getRestrictDirectTableAccess().equals(other.getRestrictDirectTableAccess()))
+            return false;
+        }
+        if (hasRestrictQueryResult() != other.hasRestrictQueryResult()) return false;
+        if (hasRestrictQueryResult()) {
+          if (!getRestrictQueryResult().equals(other.getRestrictQueryResult())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasEnabled()) {
+          hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+          hash = (53 * hash) + getEnabled().hashCode();
+        }
+        if (hasRestrictDirectTableAccess()) {
+          hash = (37 * hash) + RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER;
+          hash = (53 * hash) + getRestrictDirectTableAccess().hashCode();
+        }
+        if (hasRestrictQueryResult()) {
+          hash = (37 * hash) + RESTRICT_QUERY_RESULT_FIELD_NUMBER;
+          hash = (53 * hash) + getRestrictQueryResult().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Restricted export policy used to configure restricted export on linked
+       * dataset.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicyOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy.class,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getEnabledFieldBuilder();
+            getRestrictDirectTableAccessFieldBuilder();
+            getRestrictQueryResultFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          enabled_ = null;
+          if (enabledBuilder_ != null) {
+            enabledBuilder_.dispose();
+            enabledBuilder_ = null;
+          }
+          restrictDirectTableAccess_ = null;
+          if (restrictDirectTableAccessBuilder_ != null) {
+            restrictDirectTableAccessBuilder_.dispose();
+            restrictDirectTableAccessBuilder_ = null;
+          }
+          restrictQueryResult_ = null;
+          if (restrictQueryResultBuilder_ != null) {
+            restrictQueryResultBuilder_.dispose();
+            restrictQueryResultBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy
+            getDefaultInstanceForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy
+            build() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy
+            buildPartial() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy
+              result =
+                  new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .RestrictedExportPolicy
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.enabled_ = enabledBuilder_ == null ? enabled_ : enabledBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.restrictDirectTableAccess_ =
+                restrictDirectTableAccessBuilder_ == null
+                    ? restrictDirectTableAccess_
+                    : restrictDirectTableAccessBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.restrictQueryResult_ =
+                restrictQueryResultBuilder_ == null
+                    ? restrictQueryResult_
+                    : restrictQueryResultBuilder_.build();
+            to_bitField0_ |= 0x00000004;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy) {
+            return mergeFrom(
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                        .RestrictedExportPolicy)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .RestrictedExportPolicy
+                other) {
+          if (other
+              == com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.getDefaultInstance()) return this;
+          if (other.hasEnabled()) {
+            mergeEnabled(other.getEnabled());
+          }
+          if (other.hasRestrictDirectTableAccess()) {
+            mergeRestrictDirectTableAccess(other.getRestrictDirectTableAccess());
+          }
+          if (other.hasRestrictQueryResult()) {
+            mergeRestrictQueryResult(other.getRestrictQueryResult());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getEnabledFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getRestrictDirectTableAccessFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(
+                        getRestrictQueryResultFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.BoolValue enabled_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            enabledBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the enabled field is set.
+         */
+        public boolean hasEnabled() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enabled.
+         */
+        public com.google.protobuf.BoolValue getEnabled() {
+          if (enabledBuilder_ == null) {
+            return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
+          } else {
+            return enabledBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setEnabled(com.google.protobuf.BoolValue value) {
+          if (enabledBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            enabled_ = value;
+          } else {
+            enabledBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setEnabled(com.google.protobuf.BoolValue.Builder builderForValue) {
+          if (enabledBuilder_ == null) {
+            enabled_ = builderForValue.build();
+          } else {
+            enabledBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeEnabled(com.google.protobuf.BoolValue value) {
+          if (enabledBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && enabled_ != null
+                && enabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+              getEnabledBuilder().mergeFrom(value);
+            } else {
+              enabled_ = value;
+            }
+          } else {
+            enabledBuilder_.mergeFrom(value);
+          }
+          if (enabled_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearEnabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          enabled_ = null;
+          if (enabledBuilder_ != null) {
+            enabledBuilder_.dispose();
+            enabledBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValue.Builder getEnabledBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getEnabledFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder() {
+          if (enabledBuilder_ != null) {
+            return enabledBuilder_.getMessageOrBuilder();
+          } else {
+            return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable restricted export.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue enabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            getEnabledFieldBuilder() {
+          if (enabledBuilder_ == null) {
+            enabledBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.BoolValue,
+                    com.google.protobuf.BoolValue.Builder,
+                    com.google.protobuf.BoolValueOrBuilder>(
+                    getEnabled(), getParentForChildren(), isClean());
+            enabled_ = null;
+          }
+          return enabledBuilder_;
+        }
+
+        private com.google.protobuf.BoolValue restrictDirectTableAccess_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            restrictDirectTableAccessBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the restrictDirectTableAccess field is set.
+         */
+        public boolean hasRestrictDirectTableAccess() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The restrictDirectTableAccess.
+         */
+        public com.google.protobuf.BoolValue getRestrictDirectTableAccess() {
+          if (restrictDirectTableAccessBuilder_ == null) {
+            return restrictDirectTableAccess_ == null
+                ? com.google.protobuf.BoolValue.getDefaultInstance()
+                : restrictDirectTableAccess_;
+          } else {
+            return restrictDirectTableAccessBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setRestrictDirectTableAccess(com.google.protobuf.BoolValue value) {
+          if (restrictDirectTableAccessBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            restrictDirectTableAccess_ = value;
+          } else {
+            restrictDirectTableAccessBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setRestrictDirectTableAccess(
+            com.google.protobuf.BoolValue.Builder builderForValue) {
+          if (restrictDirectTableAccessBuilder_ == null) {
+            restrictDirectTableAccess_ = builderForValue.build();
+          } else {
+            restrictDirectTableAccessBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeRestrictDirectTableAccess(com.google.protobuf.BoolValue value) {
+          if (restrictDirectTableAccessBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && restrictDirectTableAccess_ != null
+                && restrictDirectTableAccess_
+                    != com.google.protobuf.BoolValue.getDefaultInstance()) {
+              getRestrictDirectTableAccessBuilder().mergeFrom(value);
+            } else {
+              restrictDirectTableAccess_ = value;
+            }
+          } else {
+            restrictDirectTableAccessBuilder_.mergeFrom(value);
+          }
+          if (restrictDirectTableAccess_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearRestrictDirectTableAccess() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          restrictDirectTableAccess_ = null;
+          if (restrictDirectTableAccessBuilder_ != null) {
+            restrictDirectTableAccessBuilder_.dispose();
+            restrictDirectTableAccessBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValue.Builder getRestrictDirectTableAccessBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getRestrictDirectTableAccessFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValueOrBuilder getRestrictDirectTableAccessOrBuilder() {
+          if (restrictDirectTableAccessBuilder_ != null) {
+            return restrictDirectTableAccessBuilder_.getMessageOrBuilder();
+          } else {
+            return restrictDirectTableAccess_ == null
+                ? com.google.protobuf.BoolValue.getDefaultInstance()
+                : restrictDirectTableAccess_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict direct table access (read
+         * api/tabledata.list) on linked table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_direct_table_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            getRestrictDirectTableAccessFieldBuilder() {
+          if (restrictDirectTableAccessBuilder_ == null) {
+            restrictDirectTableAccessBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.BoolValue,
+                    com.google.protobuf.BoolValue.Builder,
+                    com.google.protobuf.BoolValueOrBuilder>(
+                    getRestrictDirectTableAccess(), getParentForChildren(), isClean());
+            restrictDirectTableAccess_ = null;
+          }
+          return restrictDirectTableAccessBuilder_;
+        }
+
+        private com.google.protobuf.BoolValue restrictQueryResult_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            restrictQueryResultBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the restrictQueryResult field is set.
+         */
+        public boolean hasRestrictQueryResult() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The restrictQueryResult.
+         */
+        public com.google.protobuf.BoolValue getRestrictQueryResult() {
+          if (restrictQueryResultBuilder_ == null) {
+            return restrictQueryResult_ == null
+                ? com.google.protobuf.BoolValue.getDefaultInstance()
+                : restrictQueryResult_;
+          } else {
+            return restrictQueryResultBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setRestrictQueryResult(com.google.protobuf.BoolValue value) {
+          if (restrictQueryResultBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            restrictQueryResult_ = value;
+          } else {
+            restrictQueryResultBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setRestrictQueryResult(
+            com.google.protobuf.BoolValue.Builder builderForValue) {
+          if (restrictQueryResultBuilder_ == null) {
+            restrictQueryResult_ = builderForValue.build();
+          } else {
+            restrictQueryResultBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeRestrictQueryResult(com.google.protobuf.BoolValue value) {
+          if (restrictQueryResultBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && restrictQueryResult_ != null
+                && restrictQueryResult_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+              getRestrictQueryResultBuilder().mergeFrom(value);
+            } else {
+              restrictQueryResult_ = value;
+            }
+          } else {
+            restrictQueryResultBuilder_.mergeFrom(value);
+          }
+          if (restrictQueryResult_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearRestrictQueryResult() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          restrictQueryResult_ = null;
+          if (restrictQueryResultBuilder_ != null) {
+            restrictQueryResultBuilder_.dispose();
+            restrictQueryResultBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValue.Builder getRestrictQueryResultBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getRestrictQueryResultFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.BoolValueOrBuilder getRestrictQueryResultOrBuilder() {
+          if (restrictQueryResultBuilder_ != null) {
+            return restrictQueryResultBuilder_.getMessageOrBuilder();
+          } else {
+            return restrictQueryResult_ == null
+                ? com.google.protobuf.BoolValue.getDefaultInstance()
+                : restrictQueryResult_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, restrict export of query result derived from
+         * restricted linked dataset table.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.BoolValue restrict_query_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>
+            getRestrictQueryResultFieldBuilder() {
+          if (restrictQueryResultBuilder_ == null) {
+            restrictQueryResultBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.BoolValue,
+                    com.google.protobuf.BoolValue.Builder,
+                    com.google.protobuf.BoolValueOrBuilder>(
+                    getRestrictQueryResult(), getParentForChildren(), isClean());
+            restrictQueryResult_ = null;
+          }
+          return restrictQueryResultBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
+      private static final com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .RestrictedExportPolicy();
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RestrictedExportPolicy> PARSER =
+          new com.google.protobuf.AbstractParser<RestrictedExportPolicy>() {
+            @java.lang.Override
+            public RestrictedExportPolicy parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RestrictedExportPolicy> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RestrictedExportPolicy> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int DATASET_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -1662,6 +3249,73 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return selectedResources_.get(index);
     }
 
+    public static final int RESTRICTED_EXPORT_POLICY_FIELD_NUMBER = 3;
+    private com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .RestrictedExportPolicy
+        restrictedExportPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the restrictedExportPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasRestrictedExportPolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The restrictedExportPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .RestrictedExportPolicy
+        getRestrictedExportPolicy() {
+      return restrictedExportPolicy_ == null
+          ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy.getDefaultInstance()
+          : restrictedExportPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, restricted export policy will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .RestrictedExportPolicyOrBuilder
+        getRestrictedExportPolicyOrBuilder() {
+      return restrictedExportPolicy_ == null
+          ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy.getDefaultInstance()
+          : restrictedExportPolicy_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1682,6 +3336,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < selectedResources_.size(); i++) {
         output.writeMessage(2, selectedResources_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getRestrictedExportPolicy());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1697,6 +3354,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < selectedResources_.size(); i++) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(2, selectedResources_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getRestrictedExportPolicy());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1717,6 +3379,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       if (!getDataset().equals(other.getDataset())) return false;
       if (!getSelectedResourcesList().equals(other.getSelectedResourcesList())) return false;
+      if (hasRestrictedExportPolicy() != other.hasRestrictedExportPolicy()) return false;
+      if (hasRestrictedExportPolicy()) {
+        if (!getRestrictedExportPolicy().equals(other.getRestrictedExportPolicy())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1733,6 +3399,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (getSelectedResourcesCount() > 0) {
         hash = (37 * hash) + SELECTED_RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getSelectedResourcesList().hashCode();
+      }
+      if (hasRestrictedExportPolicy()) {
+        hash = (37 * hash) + RESTRICTED_EXPORT_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getRestrictedExportPolicy().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1875,10 +3545,20 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getSelectedResourcesFieldBuilder();
+          getRestrictedExportPolicyFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1893,6 +3573,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           selectedResourcesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        restrictedExportPolicy_ = null;
+        if (restrictedExportPolicyBuilder_ != null) {
+          restrictedExportPolicyBuilder_.dispose();
+          restrictedExportPolicyBuilder_ = null;
+        }
         return this;
       }
 
@@ -1951,6 +3636,15 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.dataset_ = dataset_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.restrictedExportPolicy_ =
+              restrictedExportPolicyBuilder_ == null
+                  ? restrictedExportPolicy_
+                  : restrictedExportPolicyBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2037,6 +3731,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasRestrictedExportPolicy()) {
+          mergeRestrictedExportPolicy(other.getRestrictedExportPolicy());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2086,6 +3783,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getRestrictedExportPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2696,6 +4400,248 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           selectedResources_ = null;
         }
         return selectedResourcesBuilder_;
+      }
+
+      private com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          restrictedExportPolicy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicyOrBuilder>
+          restrictedExportPolicyBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the restrictedExportPolicy field is set.
+       */
+      public boolean hasRestrictedExportPolicy() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The restrictedExportPolicy.
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy
+          getRestrictedExportPolicy() {
+        if (restrictedExportPolicyBuilder_ == null) {
+          return restrictedExportPolicy_ == null
+              ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.getDefaultInstance()
+              : restrictedExportPolicy_;
+        } else {
+          return restrictedExportPolicyBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRestrictedExportPolicy(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy
+              value) {
+        if (restrictedExportPolicyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          restrictedExportPolicy_ = value;
+        } else {
+          restrictedExportPolicyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRestrictedExportPolicy(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.Builder
+              builderForValue) {
+        if (restrictedExportPolicyBuilder_ == null) {
+          restrictedExportPolicy_ = builderForValue.build();
+        } else {
+          restrictedExportPolicyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRestrictedExportPolicy(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy
+              value) {
+        if (restrictedExportPolicyBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && restrictedExportPolicy_ != null
+              && restrictedExportPolicy_
+                  != com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy.getDefaultInstance()) {
+            getRestrictedExportPolicyBuilder().mergeFrom(value);
+          } else {
+            restrictedExportPolicy_ = value;
+          }
+        } else {
+          restrictedExportPolicyBuilder_.mergeFrom(value);
+        }
+        if (restrictedExportPolicy_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRestrictedExportPolicy() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        restrictedExportPolicy_ = null;
+        if (restrictedExportPolicyBuilder_ != null) {
+          restrictedExportPolicyBuilder_.dispose();
+          restrictedExportPolicyBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicy.Builder
+          getRestrictedExportPolicyBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getRestrictedExportPolicyFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .RestrictedExportPolicyOrBuilder
+          getRestrictedExportPolicyOrBuilder() {
+        if (restrictedExportPolicyBuilder_ != null) {
+          return restrictedExportPolicyBuilder_.getMessageOrBuilder();
+        } else {
+          return restrictedExportPolicy_ == null
+              ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.getDefaultInstance()
+              : restrictedExportPolicy_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, restricted export policy will be propagated and
+       * enforced on the linked dataset.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy restricted_export_policy = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicy.Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .RestrictedExportPolicyOrBuilder>
+          getRestrictedExportPolicyFieldBuilder() {
+        if (restrictedExportPolicyBuilder_ == null) {
+          restrictedExportPolicyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicy.Builder,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .RestrictedExportPolicyOrBuilder>(
+                  getRestrictedExportPolicy(), getParentForChildren(), isClean());
+          restrictedExportPolicy_ = null;
+        }
+        return restrictedExportPolicyBuilder_;
       }
 
       @java.lang.Override
@@ -4348,6 +6294,64 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         : restrictedExportConfig_;
   }
 
+  public static final int DISCOVERY_TYPE_FIELD_NUMBER = 14;
+  private int discoveryType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discoveryType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscoveryType() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for discoveryType.
+   */
+  @java.lang.Override
+  public int getDiscoveryTypeValue() {
+    return discoveryType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of discovery of the listing on the discovery page.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discoveryType.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType() {
+    com.google.cloud.bigquery.analyticshub.v1.DiscoveryType result =
+        com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.forNumber(discoveryType_);
+    return result == null
+        ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4407,6 +6411,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getRestrictedExportConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(14, discoveryType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4469,6 +6476,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRestrictedExportConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, discoveryType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4505,6 +6515,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (hasRestrictedExportConfig() != other.hasRestrictedExportConfig()) return false;
     if (hasRestrictedExportConfig()) {
       if (!getRestrictedExportConfig().equals(other.getRestrictedExportConfig())) return false;
+    }
+    if (hasDiscoveryType() != other.hasDiscoveryType()) return false;
+    if (hasDiscoveryType()) {
+      if (discoveryType_ != other.discoveryType_) return false;
     }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
@@ -4556,6 +6570,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (hasRestrictedExportConfig()) {
       hash = (37 * hash) + RESTRICTED_EXPORT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRestrictedExportConfig().hashCode();
+    }
+    if (hasDiscoveryType()) {
+      hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + discoveryType_;
     }
     switch (sourceCase_) {
       case 6:
@@ -4746,6 +6764,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         restrictedExportConfigBuilder_.dispose();
         restrictedExportConfigBuilder_ = null;
       }
+      discoveryType_ = 0;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -4835,6 +6854,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 ? restrictedExportConfig_
                 : restrictedExportConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.discoveryType_ = discoveryType_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4947,6 +6970,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRestrictedExportConfig()) {
         mergeRestrictedExportConfig(other.getRestrictedExportConfig());
+      }
+      if (other.hasDiscoveryType()) {
+        setDiscoveryType(other.getDiscoveryType());
       }
       switch (other.getSourceCase()) {
         case BIGQUERY_DATASET:
@@ -5077,6 +7103,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 112:
+              {
+                discoveryType_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7096,6 +9128,125 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         restrictedExportConfig_ = null;
       }
       return restrictedExportConfigBuilder_;
+    }
+
+    private int discoveryType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the discoveryType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscoveryType() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for discoveryType.
+     */
+    @java.lang.Override
+    public int getDiscoveryTypeValue() {
+      return discoveryType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for discoveryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscoveryTypeValue(int value) {
+      discoveryType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The discoveryType.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType() {
+      com.google.cloud.bigquery.analyticshub.v1.DiscoveryType result =
+          com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.forNumber(discoveryType_);
+      return result == null
+          ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The discoveryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscoveryType(com.google.cloud.bigquery.analyticshub.v1.DiscoveryType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      discoveryType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of discovery of the listing on the discovery page.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.bigquery.analyticshub.v1.DiscoveryType discovery_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiscoveryType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      discoveryType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

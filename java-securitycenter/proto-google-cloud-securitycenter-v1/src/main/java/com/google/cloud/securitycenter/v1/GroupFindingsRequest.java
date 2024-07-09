@@ -76,12 +76,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]",
-   * folders/[folder_id]/sources/[source_id], or
-   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * `organizations/[organization_id]/sources/[source_id]`,
+   * `folders/[folder_id]/sources/[source_id]`, or
+   * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
    * provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-   * or projects/{project_id}/sources/-
+   * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+   * or `projects/{project_id}/sources/-`
    * </pre>
    *
    * <code>
@@ -107,12 +107,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]",
-   * folders/[folder_id]/sources/[source_id], or
-   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * `organizations/[organization_id]/sources/[source_id]`,
+   * `folders/[folder_id]/sources/[source_id]`, or
+   * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
    * provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-   * or projects/{project_id}/sources/-
+   * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+   * or `projects/{project_id}/sources/-`
    * </pre>
    *
    * <code>
@@ -313,14 +313,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * (including `state_change`). The string value should follow SQL syntax:
    * comma separated list of fields. For example: "parent,resource_name".
    *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
-   *
    * The following fields are supported when compare_duration is set:
    *
    * * state_change
@@ -349,14 +341,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * Required. Expression that defines what assets fields to use for grouping
    * (including `state_change`). The string value should follow SQL syntax:
    * comma separated list of fields. For example: "parent,resource_name".
-   *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
    *
    * The following fields are supported when compare_duration is set:
    *
@@ -1172,12 +1156,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the source to groupBy. Its format is
-     * "organizations/[organization_id]/sources/[source_id]",
-     * folders/[folder_id]/sources/[source_id], or
-     * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+     * `organizations/[organization_id]/sources/[source_id]`,
+     * `folders/[folder_id]/sources/[source_id]`, or
+     * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
      * provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-     * or projects/{project_id}/sources/-
+     * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+     * or `projects/{project_id}/sources/-`
      * </pre>
      *
      * <code>
@@ -1202,12 +1186,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the source to groupBy. Its format is
-     * "organizations/[organization_id]/sources/[source_id]",
-     * folders/[folder_id]/sources/[source_id], or
-     * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+     * `organizations/[organization_id]/sources/[source_id]`,
+     * `folders/[folder_id]/sources/[source_id]`, or
+     * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
      * provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-     * or projects/{project_id}/sources/-
+     * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+     * or `projects/{project_id}/sources/-`
      * </pre>
      *
      * <code>
@@ -1232,12 +1216,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the source to groupBy. Its format is
-     * "organizations/[organization_id]/sources/[source_id]",
-     * folders/[folder_id]/sources/[source_id], or
-     * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+     * `organizations/[organization_id]/sources/[source_id]`,
+     * `folders/[folder_id]/sources/[source_id]`, or
+     * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
      * provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-     * or projects/{project_id}/sources/-
+     * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+     * or `projects/{project_id}/sources/-`
      * </pre>
      *
      * <code>
@@ -1261,12 +1245,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the source to groupBy. Its format is
-     * "organizations/[organization_id]/sources/[source_id]",
-     * folders/[folder_id]/sources/[source_id], or
-     * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+     * `organizations/[organization_id]/sources/[source_id]`,
+     * `folders/[folder_id]/sources/[source_id]`, or
+     * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
      * provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-     * or projects/{project_id}/sources/-
+     * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+     * or `projects/{project_id}/sources/-`
      * </pre>
      *
      * <code>
@@ -1286,12 +1270,12 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the source to groupBy. Its format is
-     * "organizations/[organization_id]/sources/[source_id]",
-     * folders/[folder_id]/sources/[source_id], or
-     * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+     * `organizations/[organization_id]/sources/[source_id]`,
+     * `folders/[folder_id]/sources/[source_id]`, or
+     * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
      * provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-     * or projects/{project_id}/sources/-
+     * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+     * or `projects/{project_id}/sources/-`
      * </pre>
      *
      * <code>
@@ -1717,14 +1701,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * (including `state_change`). The string value should follow SQL syntax:
      * comma separated list of fields. For example: "parent,resource_name".
      *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
-     *
      * The following fields are supported when compare_duration is set:
      *
      * * state_change
@@ -1752,14 +1728,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping
      * (including `state_change`). The string value should follow SQL syntax:
      * comma separated list of fields. For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      *
      * The following fields are supported when compare_duration is set:
      *
@@ -1789,14 +1757,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * (including `state_change`). The string value should follow SQL syntax:
      * comma separated list of fields. For example: "parent,resource_name".
      *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
-     *
      * The following fields are supported when compare_duration is set:
      *
      * * state_change
@@ -1824,14 +1784,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * (including `state_change`). The string value should follow SQL syntax:
      * comma separated list of fields. For example: "parent,resource_name".
      *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
-     *
      * The following fields are supported when compare_duration is set:
      *
      * * state_change
@@ -1854,14 +1806,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping
      * (including `state_change`). The string value should follow SQL syntax:
      * comma separated list of fields. For example: "parent,resource_name".
-     *
-     * The following fields are supported:
-     *
-     * * resource_name
-     * * category
-     * * state
-     * * parent
-     * * severity
      *
      * The following fields are supported when compare_duration is set:
      *

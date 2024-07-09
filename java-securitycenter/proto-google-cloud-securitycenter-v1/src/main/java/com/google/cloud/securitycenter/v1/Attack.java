@@ -107,7 +107,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
    * </pre>
    *
    * <code>string classification = 3;</code>
@@ -130,7 +130,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
    * </pre>
    *
    * <code>string classification = 3;</code>
@@ -646,7 +646,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+     * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
      * </pre>
      *
      * <code>string classification = 3;</code>
@@ -668,7 +668,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+     * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
      * </pre>
      *
      * <code>string classification = 3;</code>
@@ -690,7 +690,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+     * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
      * </pre>
      *
      * <code>string classification = 3;</code>
@@ -711,7 +711,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+     * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
      * </pre>
      *
      * <code>string classification = 3;</code>
@@ -728,7 +728,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+     * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
      * </pre>
      *
      * <code>string classification = 3;</code>

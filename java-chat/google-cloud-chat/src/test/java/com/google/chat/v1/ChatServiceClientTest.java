@@ -930,6 +930,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -977,6 +979,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1024,6 +1028,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1071,6 +1077,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1130,6 +1138,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -1288,6 +1298,8 @@ public class ChatServiceClientTest {
             .setImportMode(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setAdminInstalled(true)
+            .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setSpaceUri("spaceUri2047440518")
             .build();
     mockChatService.addResponse(expectedResponse);
 

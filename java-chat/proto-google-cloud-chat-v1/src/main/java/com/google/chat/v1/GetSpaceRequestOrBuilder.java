@@ -28,7 +28,7 @@ public interface GetSpaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the space, in the form "spaces/&#42;".
+   * Required. Resource name of the space, in the form `spaces/{space}`.
    *
    * Format: `spaces/{space}`
    * </pre>
@@ -44,7 +44,7 @@ public interface GetSpaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the space, in the form "spaces/&#42;".
+   * Required. Resource name of the space, in the form `spaces/{space}`.
    *
    * Format: `spaces/{space}`
    * </pre>

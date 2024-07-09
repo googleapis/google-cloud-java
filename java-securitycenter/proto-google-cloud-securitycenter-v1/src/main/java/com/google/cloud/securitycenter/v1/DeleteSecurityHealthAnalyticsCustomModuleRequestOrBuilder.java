@@ -29,10 +29,10 @@ public interface DeleteSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of the custom module to delete. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
    * </pre>
    *
    * <code>
@@ -47,10 +47,10 @@ public interface DeleteSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of the custom module to delete. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
    * </pre>
    *
    * <code>

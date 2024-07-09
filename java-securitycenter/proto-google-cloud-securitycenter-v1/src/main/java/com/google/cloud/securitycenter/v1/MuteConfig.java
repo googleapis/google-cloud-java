@@ -78,9 +78,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field will be ignored if provided on config creation. Format
-   * "organizations/{organization}/muteConfigs/{mute_config}"
-   * "folders/{folder}/muteConfigs/{mute_config}"
-   * "projects/{project}/muteConfigs/{mute_config}"
+   * `organizations/{organization}/muteConfigs/{mute_config}`
+   * `folders/{folder}/muteConfigs/{mute_config}`
+   * `projects/{project}/muteConfigs/{mute_config}`
+   * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+   * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+   * `projects/{project}/locations/global/muteConfigs/{mute_config}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -104,9 +107,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field will be ignored if provided on config creation. Format
-   * "organizations/{organization}/muteConfigs/{mute_config}"
-   * "folders/{folder}/muteConfigs/{mute_config}"
-   * "projects/{project}/muteConfigs/{mute_config}"
+   * `organizations/{organization}/muteConfigs/{mute_config}`
+   * `folders/{folder}/muteConfigs/{mute_config}`
+   * `projects/{project}/muteConfigs/{mute_config}`
+   * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+   * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+   * `projects/{project}/locations/global/muteConfigs/{mute_config}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -140,7 +146,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
    * @return The displayName.
    */
   @java.lang.Override
@@ -166,7 +172,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1008,9 +1014,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field will be ignored if provided on config creation. Format
-     * "organizations/{organization}/muteConfigs/{mute_config}"
-     * "folders/{folder}/muteConfigs/{mute_config}"
-     * "projects/{project}/muteConfigs/{mute_config}"
+     * `organizations/{organization}/muteConfigs/{mute_config}`
+     * `folders/{folder}/muteConfigs/{mute_config}`
+     * `projects/{project}/muteConfigs/{mute_config}`
+     * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+     * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+     * `projects/{project}/locations/global/muteConfigs/{mute_config}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1033,9 +1042,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field will be ignored if provided on config creation. Format
-     * "organizations/{organization}/muteConfigs/{mute_config}"
-     * "folders/{folder}/muteConfigs/{mute_config}"
-     * "projects/{project}/muteConfigs/{mute_config}"
+     * `organizations/{organization}/muteConfigs/{mute_config}`
+     * `folders/{folder}/muteConfigs/{mute_config}`
+     * `projects/{project}/muteConfigs/{mute_config}`
+     * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+     * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+     * `projects/{project}/locations/global/muteConfigs/{mute_config}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1058,9 +1070,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field will be ignored if provided on config creation. Format
-     * "organizations/{organization}/muteConfigs/{mute_config}"
-     * "folders/{folder}/muteConfigs/{mute_config}"
-     * "projects/{project}/muteConfigs/{mute_config}"
+     * `organizations/{organization}/muteConfigs/{mute_config}`
+     * `folders/{folder}/muteConfigs/{mute_config}`
+     * `projects/{project}/muteConfigs/{mute_config}`
+     * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+     * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+     * `projects/{project}/locations/global/muteConfigs/{mute_config}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1082,9 +1097,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field will be ignored if provided on config creation. Format
-     * "organizations/{organization}/muteConfigs/{mute_config}"
-     * "folders/{folder}/muteConfigs/{mute_config}"
-     * "projects/{project}/muteConfigs/{mute_config}"
+     * `organizations/{organization}/muteConfigs/{mute_config}`
+     * `folders/{folder}/muteConfigs/{mute_config}`
+     * `projects/{project}/muteConfigs/{mute_config}`
+     * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+     * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+     * `projects/{project}/locations/global/muteConfigs/{mute_config}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1102,9 +1120,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field will be ignored if provided on config creation. Format
-     * "organizations/{organization}/muteConfigs/{mute_config}"
-     * "folders/{folder}/muteConfigs/{mute_config}"
-     * "projects/{project}/muteConfigs/{mute_config}"
+     * `organizations/{organization}/muteConfigs/{mute_config}`
+     * `folders/{folder}/muteConfigs/{mute_config}`
+     * `projects/{project}/muteConfigs/{mute_config}`
+     * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+     * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+     * `projects/{project}/locations/global/muteConfigs/{mute_config}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1134,7 +1155,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
      * @return The displayName.
      */
     @java.lang.Deprecated
@@ -1159,7 +1180,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated
@@ -1184,7 +1205,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -1208,7 +1229,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1228,7 +1249,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */

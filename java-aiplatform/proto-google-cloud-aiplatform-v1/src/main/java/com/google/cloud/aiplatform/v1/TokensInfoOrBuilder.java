@@ -99,4 +99,29 @@ public interface TokensInfoOrBuilder
    * @return The tokenIds at the given index.
    */
   long getTokenIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional fields for the role from the corresponding Content.
+   * </pre>
+   *
+   * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional fields for the role from the corresponding Content.
+   * </pre>
+   *
+   * <code>string role = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString getRoleBytes();
 }

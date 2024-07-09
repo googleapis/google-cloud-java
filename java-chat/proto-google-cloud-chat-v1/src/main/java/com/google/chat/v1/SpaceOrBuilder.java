@@ -65,7 +65,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=145
    * @return The type.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=157
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -401,4 +401,76 @@ public interface SpaceOrBuilder
    * @return The adminInstalled.
    */
   boolean getAdminInstalled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the [access
+   * setting](https://support.google.com/chat/answer/11971020) of the space.
+   * Only populated when the `space_type` is `SPACE`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.AccessSettings access_settings = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessSettings field is set.
+   */
+  boolean hasAccessSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the [access
+   * setting](https://support.google.com/chat/answer/11971020) of the space.
+   * Only populated when the `space_type` is `SPACE`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.AccessSettings access_settings = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessSettings.
+   */
+  com.google.chat.v1.Space.AccessSettings getAccessSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the [access
+   * setting](https://support.google.com/chat/answer/11971020) of the space.
+   * Only populated when the `space_type` is `SPACE`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Space.AccessSettings access_settings = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.chat.v1.Space.AccessSettingsOrBuilder getAccessSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a user to access the space.
+   * </pre>
+   *
+   * <code>string space_uri = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The spaceUri.
+   */
+  java.lang.String getSpaceUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a user to access the space.
+   * </pre>
+   *
+   * <code>string space_uri = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for spaceUri.
+   */
+  com.google.protobuf.ByteString getSpaceUriBytes();
 }

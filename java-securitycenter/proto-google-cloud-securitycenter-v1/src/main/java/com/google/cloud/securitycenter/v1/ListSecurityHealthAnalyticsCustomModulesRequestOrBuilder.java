@@ -29,9 +29,9 @@ public interface ListSecurityHealthAnalyticsCustomModulesRequestOrBuilder
    *
    * <pre>
    * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings",
-   * "folders/{folder}/securityHealthAnalyticsSettings", or
-   * "projects/{project}/securityHealthAnalyticsSettings"
+   * `organizations/{organization}/securityHealthAnalyticsSettings`,
+   * `folders/{folder}/securityHealthAnalyticsSettings`, or
+   * `projects/{project}/securityHealthAnalyticsSettings`
    * </pre>
    *
    * <code>
@@ -46,9 +46,9 @@ public interface ListSecurityHealthAnalyticsCustomModulesRequestOrBuilder
    *
    * <pre>
    * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings",
-   * "folders/{folder}/securityHealthAnalyticsSettings", or
-   * "projects/{project}/securityHealthAnalyticsSettings"
+   * `organizations/{organization}/securityHealthAnalyticsSettings`,
+   * `folders/{folder}/securityHealthAnalyticsSettings`, or
+   * `projects/{project}/securityHealthAnalyticsSettings`
    * </pre>
    *
    * <code>

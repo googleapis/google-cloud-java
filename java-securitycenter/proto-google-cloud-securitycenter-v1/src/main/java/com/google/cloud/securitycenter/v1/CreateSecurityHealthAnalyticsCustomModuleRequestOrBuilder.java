@@ -29,9 +29,9 @@ public interface CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new custom module's parent. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings",
-   * "folders/{folder}/securityHealthAnalyticsSettings", or
-   * "projects/{project}/securityHealthAnalyticsSettings"
+   * `organizations/{organization}/securityHealthAnalyticsSettings`,
+   * `folders/{folder}/securityHealthAnalyticsSettings`, or
+   * `projects/{project}/securityHealthAnalyticsSettings`
    * </pre>
    *
    * <code>
@@ -46,9 +46,9 @@ public interface CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new custom module's parent. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings",
-   * "folders/{folder}/securityHealthAnalyticsSettings", or
-   * "projects/{project}/securityHealthAnalyticsSettings"
+   * `organizations/{organization}/securityHealthAnalyticsSettings`,
+   * `folders/{folder}/securityHealthAnalyticsSettings`, or
+   * `projects/{project}/securityHealthAnalyticsSettings`
    * </pre>
    *
    * <code>

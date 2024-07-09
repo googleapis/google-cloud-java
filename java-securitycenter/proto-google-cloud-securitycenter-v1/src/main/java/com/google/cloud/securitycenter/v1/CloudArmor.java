@@ -292,8 +292,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Distinguish between volumetric &amp; protocol DDoS attack and
-   * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-   * attacks, or “L_7” for Layer 7 DDoS attacks.
+   * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+   * attacks, or "L_7" for Layer 7 DDoS attacks.
    * </pre>
    *
    * <code>string threat_vector = 5;</code>
@@ -317,8 +317,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Distinguish between volumetric &amp; protocol DDoS attack and
-   * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-   * attacks, or “L_7” for Layer 7 DDoS attacks.
+   * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+   * attacks, or "L_7" for Layer 7 DDoS attacks.
    * </pre>
    *
    * <code>string threat_vector = 5;</code>
@@ -1717,8 +1717,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Distinguish between volumetric &amp; protocol DDoS attack and
-     * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-     * attacks, or “L_7” for Layer 7 DDoS attacks.
+     * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+     * attacks, or "L_7" for Layer 7 DDoS attacks.
      * </pre>
      *
      * <code>string threat_vector = 5;</code>
@@ -1741,8 +1741,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Distinguish between volumetric &amp; protocol DDoS attack and
-     * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-     * attacks, or “L_7” for Layer 7 DDoS attacks.
+     * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+     * attacks, or "L_7" for Layer 7 DDoS attacks.
      * </pre>
      *
      * <code>string threat_vector = 5;</code>
@@ -1765,8 +1765,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Distinguish between volumetric &amp; protocol DDoS attack and
-     * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-     * attacks, or “L_7” for Layer 7 DDoS attacks.
+     * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+     * attacks, or "L_7" for Layer 7 DDoS attacks.
      * </pre>
      *
      * <code>string threat_vector = 5;</code>
@@ -1788,8 +1788,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Distinguish between volumetric &amp; protocol DDoS attack and
-     * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-     * attacks, or “L_7” for Layer 7 DDoS attacks.
+     * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+     * attacks, or "L_7" for Layer 7 DDoS attacks.
      * </pre>
      *
      * <code>string threat_vector = 5;</code>
@@ -1807,8 +1807,8 @@ public final class CloudArmor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Distinguish between volumetric &amp; protocol DDoS attack and
-     * application layer attacks. For example, “L3_4” for Layer 3 and Layer 4 DDoS
-     * attacks, or “L_7” for Layer 7 DDoS attacks.
+     * application layer attacks. For example, "L3_4" for Layer 3 and Layer 4 DDoS
+     * attacks, or "L_7" for Layer 7 DDoS attacks.
      * </pre>
      *
      * <code>string threat_vector = 5;</code>

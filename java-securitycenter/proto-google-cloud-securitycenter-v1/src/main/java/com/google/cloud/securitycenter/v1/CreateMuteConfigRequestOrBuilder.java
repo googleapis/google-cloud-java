@@ -29,8 +29,8 @@ public interface CreateMuteConfigRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new mute configs's parent. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface CreateMuteConfigRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new mute configs's parent. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>

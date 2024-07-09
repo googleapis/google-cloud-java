@@ -42,6 +42,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   private ExportDataRequest() {
     name_ = "";
     requestId_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -398,6 +399,69 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * performing the transfer.
+   * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+   * If unspecified, the Parallelstore service agent is used:
+   * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+   * </pre>
+   *
+   * <code>
+   * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * performing the transfer.
+   * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+   * If unspecified, the Parallelstore service agent is used:
+   * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+   * </pre>
+   *
+   * <code>
+   * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -425,6 +489,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -450,6 +517,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -468,6 +538,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -499,6 +570,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + SOURCE_PARALLELSTORE_FIELD_NUMBER;
@@ -664,6 +737,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       name_ = "";
       requestId_ = "";
+      serviceAccount_ = "";
       sourceCase_ = 0;
       source_ = null;
       destinationCase_ = 0;
@@ -710,6 +784,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
       }
     }
 
@@ -781,6 +858,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
         bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -857,6 +939,12 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1631,6 +1719,142 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-specified Service Account (SA) credentials to be used when
+     * performing the transfer.
+     * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+     * If unspecified, the Parallelstore service agent is used:
+     * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+     * </pre>
+     *
+     * <code>
+     * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-specified Service Account (SA) credentials to be used when
+     * performing the transfer.
+     * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+     * If unspecified, the Parallelstore service agent is used:
+     * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+     * </pre>
+     *
+     * <code>
+     * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-specified Service Account (SA) credentials to be used when
+     * performing the transfer.
+     * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+     * If unspecified, the Parallelstore service agent is used:
+     * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+     * </pre>
+     *
+     * <code>
+     * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-specified Service Account (SA) credentials to be used when
+     * performing the transfer.
+     * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+     * If unspecified, the Parallelstore service agent is used:
+     * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+     * </pre>
+     *
+     * <code>
+     * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-specified Service Account (SA) credentials to be used when
+     * performing the transfer.
+     * Format: `projects/{project_id}/serviceAccounts/{service_account}`
+     * If unspecified, the Parallelstore service agent is used:
+     * service-&lt;PROJECT_NUMBER&gt;&#64;gcp-sa-parallelstore.iam.gserviceaccount.com)
+     * </pre>
+     *
+     * <code>
+     * string service_account = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

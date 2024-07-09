@@ -45,6 +45,38 @@ public final class SecuritycenterService {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_CreateMuteConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_CreateResourceValueConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_CreateResourceValueConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_DeleteResourceValueConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_DeleteResourceValueConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_GetResourceValueConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_GetResourceValueConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_UpdateResourceValueConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_UpdateResourceValueConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_fieldAccessorTable;
@@ -128,6 +160,30 @@ public final class SecuritycenterService {
       internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListValuedResourcesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListValuedResourcesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListValuedResourcesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListValuedResourcesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListAttackPathsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListAttackPathsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListAttackPathsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListAttackPathsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_GetSimulationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_GetSimulationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_GetValuedResourceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_GetValuedResourceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securitycenter_v1_ListMuteConfigsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -276,6 +332,58 @@ public final class SecuritycenterService {
       internal_static_google_cloud_securitycenter_v1_DeleteBigQueryExportRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_DeleteBigQueryExportRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_CreateEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_CreateEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_DeleteEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_DeleteEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_GetEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_GetEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_UpdateEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_UpdateEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_GetEffectiveEventThreatDetectionCustomModuleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_GetEffectiveEventThreatDetectionCustomModuleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -291,686 +399,1020 @@ public final class SecuritycenterService {
           + "oto\032\027google/api/client.proto\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032*google/cloud/securitycenter/v1"
-          + "/asset.proto\0324google/cloud/securitycente"
-          + "r/v1/bigquery_export.proto\032Vgoogle/cloud"
-          + "/securitycenter/v1/effective_security_he"
-          + "alth_analytics_custom_module.proto\0324goog"
-          + "le/cloud/securitycenter/v1/external_syst"
-          + "em.proto\032,google/cloud/securitycenter/v1"
-          + "/finding.proto\032+google/cloud/securitycen"
-          + "ter/v1/folder.proto\0320google/cloud/securi"
-          + "tycenter/v1/mute_config.proto\0328google/cl"
-          + "oud/securitycenter/v1/notification_confi"
-          + "g.proto\032:google/cloud/securitycenter/v1/"
-          + "organization_settings.proto\032Agoogle/clou"
-          + "d/securitycenter/v1/run_asset_discovery_"
-          + "response.proto\032Lgoogle/cloud/securitycen"
-          + "ter/v1/security_health_analytics_custom_"
-          + "config.proto\032Lgoogle/cloud/securitycente"
-          + "r/v1/security_health_analytics_custom_mo"
-          + "dule.proto\0323google/cloud/securitycenter/"
-          + "v1/security_marks.proto\032+google/cloud/se"
-          + "curitycenter/v1/source.proto\032\036google/iam"
-          + "/v1/iam_policy.proto\032\032google/iam/v1/poli"
-          + "cy.proto\032#google/longrunning/operations."
-          + "proto\032\036google/protobuf/duration.proto\032\033g"
-          + "oogle/protobuf/empty.proto\032 google/proto"
-          + "buf/field_mask.proto\032\034google/protobuf/st"
-          + "ruct.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\027google/rpc/status.proto\"a\n\027BulkMute"
-          + "FindingsRequest\022\031\n\006parent\030\001 \001(\tB\t\340A\002\372A\003\n"
-          + "\001*\022\016\n\006filter\030\002 \001(\t\022\033\n\017mute_annotation\030\003 "
-          + "\001(\tB\002\030\001\"\032\n\030BulkMuteFindingsResponse\"\254\001\n\024"
-          + "CreateFindingRequest\022<\n\006parent\030\001 \001(\tB,\340A"
-          + "\002\372A&\n$securitycenter.googleapis.com/Sour"
-          + "ce\022\027\n\nfinding_id\030\002 \001(\tB\003\340A\002\022=\n\007finding\030\003"
-          + " \001(\0132\'.google.cloud.securitycenter.v1.Fi"
-          + "ndingB\003\340A\002\"\276\001\n\027CreateMuteConfigRequest\022@"
-          + "\n\006parent\030\001 \001(\tB0\340A\002\372A*\022(securitycenter.g"
-          + "oogleapis.com/MuteConfig\022D\n\013mute_config\030"
-          + "\002 \001(\0132*.google.cloud.securitycenter.v1.M"
-          + "uteConfigB\003\340A\002\022\033\n\016mute_config_id\030\003 \001(\tB\003"
-          + "\340A\002\"\331\001\n\037CreateNotificationConfigRequest\022"
-          + "H\n\006parent\030\001 \001(\tB8\340A\002\372A2\0220securitycenter."
-          + "googleapis.com/NotificationConfig\022\026\n\tcon"
-          + "fig_id\030\002 \001(\tB\003\340A\002\022T\n\023notification_config"
-          + "\030\003 \001(\01322.google.cloud.securitycenter.v1."
-          + "NotificationConfigB\003\340A\002\"\210\002\n0CreateSecuri"
-          + "tyHealthAnalyticsCustomModuleRequest\022Y\n\006"
-          + "parent\030\001 \001(\tBI\340A\002\372AC\022Asecuritycenter.goo"
-          + "gleapis.com/SecurityHealthAnalyticsCusto"
-          + "mModule\022y\n\'security_health_analytics_cus"
-          + "tom_module\030\002 \001(\0132C.google.cloud.security"
-          + "center.v1.SecurityHealthAnalyticsCustomM"
-          + "oduleB\003\340A\002\"\234\001\n\023CreateSourceRequest\022H\n\006pa"
-          + "rent\030\001 \001(\tB8\340A\002\372A2\n0cloudresourcemanager"
-          + ".googleapis.com/Organization\022;\n\006source\030\002"
-          + " \001(\0132&.google.cloud.securitycenter.v1.So"
-          + "urceB\003\340A\002\"Y\n\027DeleteMuteConfigRequest\022>\n\004"
-          + "name\030\001 \001(\tB0\340A\002\372A*\n(securitycenter.googl"
-          + "eapis.com/MuteConfig\"i\n\037DeleteNotificati"
-          + "onConfigRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0s"
-          + "ecuritycenter.googleapis.com/Notificatio"
-          + "nConfig\"\213\001\n0DeleteSecurityHealthAnalytic"
-          + "sCustomModuleRequest\022W\n\004name\030\001 \001(\tBI\340A\002\372"
-          + "AC\nAsecuritycenter.googleapis.com/Securi"
-          + "tyHealthAnalyticsCustomModule\"^\n\030GetBigQ"
-          + "ueryExportRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",securitycenter.googleapis.com/BigQueryE"
-          + "xport\"V\n\024GetMuteConfigRequest\022>\n\004name\030\001 "
-          + "\001(\tB0\340A\002\372A*\n(securitycenter.googleapis.c"
-          + "om/MuteConfig\"f\n\034GetNotificationConfigRe"
-          + "quest\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0securitycen"
-          + "ter.googleapis.com/NotificationConfig\"j\n"
-          + "\036GetOrganizationSettingsRequest\022H\n\004name\030"
-          + "\001 \001(\tB:\340A\002\372A4\n2securitycenter.googleapis"
-          + ".com/OrganizationSettings\"\232\001\n6GetEffecti"
-          + "veSecurityHealthAnalyticsCustomModuleReq"
-          + "uest\022`\n\004name\030\001 \001(\tBR\340A\002\372AL\nJsecuritycent"
-          + "er.googleapis.com/EffectiveSecurityHealt"
-          + "hAnalyticsCustomModule\"\210\001\n-GetSecurityHe"
-          + "althAnalyticsCustomModuleRequest\022W\n\004name"
-          + "\030\001 \001(\tBI\340A\002\372AC\nAsecuritycenter.googleapi"
-          + "s.com/SecurityHealthAnalyticsCustomModul"
-          + "e\"N\n\020GetSourceRequest\022:\n\004name\030\001 \001(\tB,\340A\002"
-          + "\372A&\n$securitycenter.googleapis.com/Sourc"
-          + "e\"\203\002\n\022GroupAssetsRequest\022;\n\006parent\030\001 \001(\t"
-          + "B+\340A\002\372A%\022#securitycenter.googleapis.com/"
-          + "Asset\022\016\n\006filter\030\002 \001(\t\022\025\n\010group_by\030\003 \001(\tB"
-          + "\003\340A\002\0223\n\020compare_duration\030\004 \001(\0132\031.google."
-          + "protobuf.Duration\022-\n\tread_time\030\005 \001(\0132\032.g"
-          + "oogle.protobuf.Timestamp\022\022\n\npage_token\030\007"
-          + " \001(\t\022\021\n\tpage_size\030\010 \001(\005\"\270\001\n\023GroupAssetsR"
-          + "esponse\022E\n\020group_by_results\030\001 \003(\0132+.goog"
-          + "le.cloud.securitycenter.v1.GroupResult\022-"
-          + "\n\tread_time\030\002 \001(\0132\032.google.protobuf.Time"
-          + "stamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\ntotal_"
-          + "size\030\004 \001(\005\"\206\002\n\024GroupFindingsRequest\022<\n\006p"
-          + "arent\030\001 \001(\tB,\340A\002\372A&\n$securitycenter.goog"
-          + "leapis.com/Source\022\016\n\006filter\030\002 \001(\t\022\025\n\010gro"
-          + "up_by\030\003 \001(\tB\003\340A\002\022-\n\tread_time\030\004 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\0223\n\020compare_durat"
-          + "ion\030\005 \001(\0132\031.google.protobuf.Duration\022\022\n\n"
-          + "page_token\030\007 \001(\t\022\021\n\tpage_size\030\010 \001(\005\"\272\001\n\025"
-          + "GroupFindingsResponse\022E\n\020group_by_result"
-          + "s\030\001 \003(\0132+.google.cloud.securitycenter.v1"
-          + ".GroupResult\022-\n\tread_time\030\002 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022\027\n\017next_page_token\030\003"
-          + " \001(\t\022\022\n\ntotal_size\030\004 \001(\005\"\270\001\n\013GroupResult"
-          + "\022O\n\nproperties\030\001 \003(\0132;.google.cloud.secu"
-          + "ritycenter.v1.GroupResult.PropertiesEntr"
-          + "y\022\r\n\005count\030\002 \001(\003\032I\n\017PropertiesEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobu"
-          + "f.Value:\0028\001\"\275\001\n9ListDescendantSecurityHe"
-          + "althAnalyticsCustomModulesRequest\022Y\n\006par"
-          + "ent\030\001 \001(\tBI\340A\002\372AC\022Asecuritycenter.google"
-          + "apis.com/SecurityHealthAnalyticsCustomMo"
-          + "dule\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
-          + "\001(\t\"\314\001\n:ListDescendantSecurityHealthAnal"
-          + "yticsCustomModulesResponse\022u\n(security_h"
-          + "ealth_analytics_custom_modules\030\001 \003(\0132C.g"
-          + "oogle.cloud.securitycenter.v1.SecurityHe"
-          + "althAnalyticsCustomModule\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\"\201\001\n\026ListMuteConfigsRequest\022@\n"
-          + "\006parent\030\001 \001(\tB0\340A\002\372A*\022(securitycenter.go"
-          + "ogleapis.com/MuteConfig\022\021\n\tpage_size\030\002 \001"
-          + "(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\027ListMuteConfig"
-          + "sResponse\022@\n\014mute_configs\030\001 \003(\0132*.google"
-          + ".cloud.securitycenter.v1.MuteConfig\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\"\221\001\n\036ListNotificatio"
-          + "nConfigsRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\022"
+          + "/asset.proto\0320google/cloud/securitycente"
+          + "r/v1/attack_path.proto\0324google/cloud/sec"
+          + "uritycenter/v1/bigquery_export.proto\032Sgo"
+          + "ogle/cloud/securitycenter/v1/effective_e"
+          + "vent_threat_detection_custom_module.prot"
+          + "o\032Vgoogle/cloud/securitycenter/v1/effect"
+          + "ive_security_health_analytics_custom_mod"
+          + "ule.proto\032Igoogle/cloud/securitycenter/v"
+          + "1/event_threat_detection_custom_module.p"
+          + "roto\032[google/cloud/securitycenter/v1/eve"
+          + "nt_threat_detection_custom_module_valida"
+          + "tion_errors.proto\0324google/cloud/security"
+          + "center/v1/external_system.proto\032,google/"
+          + "cloud/securitycenter/v1/finding.proto\032+g"
+          + "oogle/cloud/securitycenter/v1/folder.pro"
+          + "to\0320google/cloud/securitycenter/v1/mute_"
+          + "config.proto\0328google/cloud/securitycente"
+          + "r/v1/notification_config.proto\032:google/c"
+          + "loud/securitycenter/v1/organization_sett"
+          + "ings.proto\032-google/cloud/securitycenter/"
+          + "v1/resource.proto\032:google/cloud/security"
+          + "center/v1/resource_value_config.proto\032Ag"
+          + "oogle/cloud/securitycenter/v1/run_asset_"
+          + "discovery_response.proto\032Lgoogle/cloud/s"
+          + "ecuritycenter/v1/security_health_analyti"
+          + "cs_custom_config.proto\032Lgoogle/cloud/sec"
+          + "uritycenter/v1/security_health_analytics"
+          + "_custom_module.proto\0323google/cloud/secur"
+          + "itycenter/v1/security_marks.proto\032/googl"
+          + "e/cloud/securitycenter/v1/simulation.pro"
+          + "to\032+google/cloud/securitycenter/v1/sourc"
+          + "e.proto\0324google/cloud/securitycenter/v1/"
+          + "valued_resource.proto\032\036google/iam/v1/iam"
+          + "_policy.proto\032\032google/iam/v1/policy.prot"
+          + "o\032#google/longrunning/operations.proto\032\036"
+          + "google/protobuf/duration.proto\032\033google/p"
+          + "rotobuf/empty.proto\032 google/protobuf/fie"
+          + "ld_mask.proto\032\034google/protobuf/struct.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027go"
+          + "ogle/rpc/status.proto\"a\n\027BulkMuteFinding"
+          + "sRequest\022\031\n\006parent\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022\016\n\006f"
+          + "ilter\030\002 \001(\t\022\033\n\017mute_annotation\030\003 \001(\tB\002\030\001"
+          + "\"\032\n\030BulkMuteFindingsResponse\"\254\001\n\024CreateF"
+          + "indingRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\n$s"
+          + "ecuritycenter.googleapis.com/Source\022\027\n\nf"
+          + "inding_id\030\002 \001(\tB\003\340A\002\022=\n\007finding\030\003 \001(\0132\'."
+          + "google.cloud.securitycenter.v1.FindingB\003"
+          + "\340A\002\"\276\001\n\027CreateMuteConfigRequest\022@\n\006paren"
+          + "t\030\001 \001(\tB0\340A\002\372A*\022(securitycenter.googleap"
+          + "is.com/MuteConfig\022D\n\013mute_config\030\002 \001(\0132*"
+          + ".google.cloud.securitycenter.v1.MuteConf"
+          + "igB\003\340A\002\022\033\n\016mute_config_id\030\003 \001(\tB\003\340A\002\"\306\001\n"
+          + " CreateResourceValueConfigRequest\022I\n\006par"
+          + "ent\030\001 \001(\tB9\340A\002\372A3\0221securitycenter.google"
+          + "apis.com/ResourceValueConfig\022W\n\025resource"
+          + "_value_config\030\002 \001(\01323.google.cloud.secur"
+          + "itycenter.v1.ResourceValueConfigB\003\340A\002\"\314\001"
+          + "\n&BatchCreateResourceValueConfigsRequest"
+          + "\022I\n\006parent\030\001 \001(\tB9\340A\002\372A3\0221securitycenter"
+          + ".googleapis.com/ResourceValueConfig\022W\n\010r"
+          + "equests\030\002 \003(\0132@.google.cloud.securitycen"
+          + "ter.v1.CreateResourceValueConfigRequestB"
+          + "\003\340A\002\"~\n\'BatchCreateResourceValueConfigsR"
+          + "esponse\022S\n\026resource_value_configs\030\001 \003(\0132"
+          + "3.google.cloud.securitycenter.v1.Resourc"
+          + "eValueConfig\"k\n DeleteResourceValueConfi"
+          + "gRequest\022G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1security"
+          + "center.googleapis.com/ResourceValueConfi"
+          + "g\"h\n\035GetResourceValueConfigRequest\022G\n\004na"
+          + "me\030\001 \001(\tB9\340A\002\372A3\n1securitycenter.googlea"
+          + "pis.com/ResourceValueConfig\"\223\001\n\037ListReso"
+          + "urceValueConfigsRequest\022I\n\006parent\030\001 \001(\tB"
+          + "9\340A\002\372A3\0221securitycenter.googleapis.com/R"
+          + "esourceValueConfig\022\021\n\tpage_size\030\002 \001(\005\022\022\n"
+          + "\npage_token\030\003 \001(\t\"\220\001\n ListResourceValueC"
+          + "onfigsResponse\022S\n\026resource_value_configs"
+          + "\030\001 \003(\01323.google.cloud.securitycenter.v1."
+          + "ResourceValueConfig\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"\254\001\n UpdateResourceValueConfigReques"
+          + "t\022W\n\025resource_value_config\030\001 \001(\01323.googl"
+          + "e.cloud.securitycenter.v1.ResourceValueC"
+          + "onfigB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMask\"\331\001\n\037CreateNotificati"
+          + "onConfigRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\022"
           + "0securitycenter.googleapis.com/Notificat"
-          + "ionConfig\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_si"
-          + "ze\030\003 \001(\005\"\214\001\n\037ListNotificationConfigsResp"
-          + "onse\022P\n\024notification_configs\030\001 \003(\01322.goo"
-          + "gle.cloud.securitycenter.v1.Notification"
-          + "Config\022\027\n\017next_page_token\030\002 \001(\t\"\274\001\n8List"
-          + "EffectiveSecurityHealthAnalyticsCustomMo"
-          + "dulesRequest\022Y\n\006parent\030\001 \001(\tBI\340A\002\372AC\022Ase"
+          + "ionConfig\022\026\n\tconfig_id\030\002 \001(\tB\003\340A\002\022T\n\023not"
+          + "ification_config\030\003 \001(\01322.google.cloud.se"
+          + "curitycenter.v1.NotificationConfigB\003\340A\002\""
+          + "\210\002\n0CreateSecurityHealthAnalyticsCustomM"
+          + "oduleRequest\022Y\n\006parent\030\001 \001(\tBI\340A\002\372AC\022Ase"
           + "curitycenter.googleapis.com/SecurityHeal"
-          + "thAnalyticsCustomModule\022\021\n\tpage_size\030\002 \001"
-          + "(\005\022\022\n\npage_token\030\003 \001(\t\"\337\001\n9ListEffective"
-          + "SecurityHealthAnalyticsCustomModulesResp"
-          + "onse\022\210\001\n2effective_security_health_analy"
-          + "tics_custom_modules\030\001 \003(\0132L.google.cloud"
-          + ".securitycenter.v1.EffectiveSecurityHeal"
-          + "thAnalyticsCustomModule\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\"\263\001\n/ListSecurityHealthAnalytics"
-          + "CustomModulesRequest\022Y\n\006parent\030\001 \001(\tBI\340A"
-          + "\002\372AC\022Asecuritycenter.googleapis.com/Secu"
-          + "rityHealthAnalyticsCustomModule\022\021\n\tpage_"
-          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\302\001\n0ListS"
-          + "ecurityHealthAnalyticsCustomModulesRespo"
-          + "nse\022u\n(security_health_analytics_custom_"
-          + "modules\030\001 \003(\0132C.google.cloud.securitycen"
-          + "ter.v1.SecurityHealthAnalyticsCustomModu"
-          + "le\022\027\n\017next_page_token\030\002 \001(\t\"y\n\022ListSourc"
-          + "esRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$secur"
-          + "itycenter.googleapis.com/Source\022\022\n\npage_"
-          + "token\030\002 \001(\t\022\021\n\tpage_size\030\007 \001(\005\"g\n\023ListSo"
-          + "urcesResponse\0227\n\007sources\030\001 \003(\0132&.google."
-          + "cloud.securitycenter.v1.Source\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\"\255\002\n\021ListAssetsRequest\022;\n"
-          + "\006parent\030\001 \001(\tB+\340A\002\372A%\022#securitycenter.go"
-          + "ogleapis.com/Asset\022\016\n\006filter\030\002 \001(\t\022\020\n\010or"
-          + "der_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.google"
-          + ".protobuf.Timestamp\0223\n\020compare_duration\030"
-          + "\005 \001(\0132\031.google.protobuf.Duration\022.\n\nfiel"
-          + "d_mask\030\007 \001(\0132\032.google.protobuf.FieldMask"
-          + "\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t \001(\005\""
-          + "\303\003\n\022ListAssetsResponse\022`\n\023list_assets_re"
-          + "sults\030\001 \003(\0132C.google.cloud.securitycente"
-          + "r.v1.ListAssetsResponse.ListAssetsResult"
-          + "\022-\n\tread_time\030\002 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\ntota"
-          + "l_size\030\004 \001(\005\032\356\001\n\020ListAssetsResult\0224\n\005ass"
-          + "et\030\001 \001(\0132%.google.cloud.securitycenter.v"
-          + "1.Asset\022e\n\014state_change\030\002 \001(\0162O.google.c"
-          + "loud.securitycenter.v1.ListAssetsRespons"
-          + "e.ListAssetsResult.StateChange\"=\n\013StateC"
-          + "hange\022\n\n\006UNUSED\020\000\022\t\n\005ADDED\020\001\022\013\n\007REMOVED\020"
-          + "\002\022\n\n\006ACTIVE\020\003\"\260\002\n\023ListFindingsRequest\022<\n"
-          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n$securitycenter.go"
-          + "ogleapis.com/Source\022\016\n\006filter\030\002 \001(\t\022\020\n\010o"
-          + "rder_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\0223\n\020compare_duration"
-          + "\030\005 \001(\0132\031.google.protobuf.Duration\022.\n\nfie"
-          + "ld_mask\030\007 \001(\0132\032.google.protobuf.FieldMas"
-          + "k\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t \001(\005"
-          + "\"\254\006\n\024ListFindingsResponse\022f\n\025list_findin"
-          + "gs_results\030\001 \003(\0132G.google.cloud.security"
-          + "center.v1.ListFindingsResponse.ListFindi"
-          + "ngsResult\022-\n\tread_time\030\002 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\022\027\n\017next_page_token\030\003 \001("
-          + "\t\022\022\n\ntotal_size\030\004 \001(\005\032\317\004\n\022ListFindingsRe"
-          + "sult\0228\n\007finding\030\001 \001(\0132\'.google.cloud.sec"
-          + "uritycenter.v1.Finding\022i\n\014state_change\030\002"
-          + " \001(\0162S.google.cloud.securitycenter.v1.Li"
-          + "stFindingsResponse.ListFindingsResult.St"
-          + "ateChange\022g\n\010resource\030\003 \001(\0132P.google.clo"
-          + "ud.securitycenter.v1.ListFindingsRespons"
-          + "e.ListFindingsResult.ResourceB\003\340A\003\032\333\001\n\010R"
-          + "esource\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\010 "
-          + "\001(\t\022\014\n\004type\030\006 \001(\t\022\024\n\014project_name\030\002 \001(\t\022"
-          + "\034\n\024project_display_name\030\003 \001(\t\022\023\n\013parent_"
-          + "name\030\004 \001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022"
-          + "7\n\007folders\030\007 \003(\0132&.google.cloud.security"
-          + "center.v1.Folder\"M\n\013StateChange\022\n\n\006UNUSE"
-          + "D\020\000\022\013\n\007CHANGED\020\001\022\r\n\tUNCHANGED\020\002\022\t\n\005ADDED"
-          + "\020\003\022\013\n\007REMOVED\020\004\"\315\001\n\026SetFindingStateReque"
-          + "st\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%securitycenter"
-          + ".googleapis.com/Finding\022A\n\005state\030\002 \001(\0162-"
-          + ".google.cloud.securitycenter.v1.Finding."
-          + "StateB\003\340A\002\0223\n\nstart_time\030\003 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\002\"\216\001\n\016SetMuteReque"
-          + "st\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%securitycenter"
-          + ".googleapis.com/Finding\022?\n\004mute\030\002 \001(\0162,."
-          + "google.cloud.securitycenter.v1.Finding.M"
-          + "uteB\003\340A\002\"d\n\030RunAssetDiscoveryRequest\022H\n\006"
-          + "parent\030\001 \001(\tB8\340A\002\372A2\n0cloudresourcemanag"
-          + "er.googleapis.com/Organization\"\254\003\n2Simul"
-          + "ateSecurityHealthAnalyticsCustomModuleRe"
-          + "quest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022H\n\rcustom_con"
-          + "fig\030\002 \001(\0132,.google.cloud.securitycenter."
-          + "v1.CustomConfigB\003\340A\002\022{\n\010resource\030\003 \001(\0132d"
-          + ".google.cloud.securitycenter.v1.Simulate"
-          + "SecurityHealthAnalyticsCustomModuleReque"
-          + "st.SimulatedResourceB\003\340A\002\032\231\001\n\021SimulatedR"
-          + "esource\022\032\n\rresource_type\030\001 \001(\tB\003\340A\002\0223\n\rr"
-          + "esource_data\030\002 \001(\0132\027.google.protobuf.Str"
-          + "uctB\003\340A\001\0223\n\017iam_policy_data\030\003 \001(\0132\025.goog"
-          + "le.iam.v1.PolicyB\003\340A\001\"\331\002\n3SimulateSecuri"
-          + "tyHealthAnalyticsCustomModuleResponse\022s\n"
-          + "\006result\030\001 \001(\0132c.google.cloud.securitycen"
-          + "ter.v1.SimulateSecurityHealthAnalyticsCu"
-          + "stomModuleResponse.SimulatedResult\032\254\001\n\017S"
-          + "imulatedResult\022:\n\007finding\030\001 \001(\0132\'.google"
-          + ".cloud.securitycenter.v1.FindingH\000\022.\n\014no"
-          + "_violation\030\002 \001(\0132\026.google.protobuf.Empty"
-          + "H\000\022#\n\005error\030\003 \001(\0132\022.google.rpc.StatusH\000B"
-          + "\010\n\006result\"\234\001\n\033UpdateExternalSystemReques"
-          + "t\022L\n\017external_system\030\001 \001(\0132..google.clou"
-          + "d.securitycenter.v1.ExternalSystemB\003\340A\002\022"
-          + "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
-          + "ieldMask\"\206\001\n\024UpdateFindingRequest\022=\n\007fin"
-          + "ding\030\001 \001(\0132\'.google.cloud.securitycenter"
-          + ".v1.FindingB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032."
-          + "google.protobuf.FieldMask\"\220\001\n\027UpdateMute"
-          + "ConfigRequest\022D\n\013mute_config\030\001 \001(\0132*.goo"
-          + "gle.cloud.securitycenter.v1.MuteConfigB\003"
-          + "\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
-          + "uf.FieldMask\"\250\001\n\037UpdateNotificationConfi"
-          + "gRequest\022T\n\023notification_config\030\001 \001(\01322."
-          + "google.cloud.securitycenter.v1.Notificat"
-          + "ionConfigB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMask\"\256\001\n!UpdateOrgani"
-          + "zationSettingsRequest\022X\n\025organization_se"
-          + "ttings\030\001 \001(\01324.google.cloud.securitycent"
-          + "er.v1.OrganizationSettingsB\003\340A\002\022/\n\013updat"
-          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
-          + "\"\336\001\n0UpdateSecurityHealthAnalyticsCustom"
-          + "ModuleRequest\022y\n\'security_health_analyti"
-          + "cs_custom_module\030\001 \001(\0132C.google.cloud.se"
-          + "curitycenter.v1.SecurityHealthAnalyticsC"
-          + "ustomModuleB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032."
-          + "google.protobuf.FieldMask\"\203\001\n\023UpdateSour"
-          + "ceRequest\022;\n\006source\030\001 \001(\0132&.google.cloud"
-          + ".securitycenter.v1.SourceB\003\340A\002\022/\n\013update"
-          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\""
-          + "\311\001\n\032UpdateSecurityMarksRequest\022J\n\016securi"
-          + "ty_marks\030\001 \001(\0132-.google.cloud.securityce"
-          + "nter.v1.SecurityMarksB\003\340A\002\022/\n\013update_mas"
-          + "k\030\002 \001(\0132\032.google.protobuf.FieldMask\022.\n\ns"
-          + "tart_time\030\003 \001(\0132\032.google.protobuf.Timest"
-          + "amp\"\324\001\n\033CreateBigQueryExportRequest\022D\n\006p"
-          + "arent\030\001 \001(\tB4\340A\002\372A.\022,securitycenter.goog"
-          + "leapis.com/BigQueryExport\022M\n\020big_query_e"
-          + "xport\030\002 \001(\0132..google.cloud.securitycente"
-          + "r.v1.BigQueryExportB\003\340A\002\022 \n\023big_query_ex"
-          + "port_id\030\003 \001(\tB\003\340A\002\"\235\001\n\033UpdateBigQueryExp"
-          + "ortRequest\022M\n\020big_query_export\030\001 \001(\0132..g"
-          + "oogle.cloud.securitycenter.v1.BigQueryEx"
-          + "portB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google."
-          + "protobuf.FieldMask\"\211\001\n\032ListBigQueryExpor"
-          + "tsRequest\022D\n\006parent\030\001 \001(\tB4\340A\002\372A.\022,secur"
-          + "itycenter.googleapis.com/BigQueryExport\022"
-          + "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\201"
-          + "\001\n\033ListBigQueryExportsResponse\022I\n\021big_qu"
-          + "ery_exports\030\001 \003(\0132..google.cloud.securit"
-          + "ycenter.v1.BigQueryExport\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\"a\n\033DeleteBigQueryExportReques"
-          + "t\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,securitycenter."
-          + "googleapis.com/BigQueryExport2\217x\n\016Securi"
-          + "tyCenter\022\342\002\n\020BulkMuteFindings\0227.google.c"
-          + "loud.securitycenter.v1.BulkMuteFindingsR"
-          + "equest\032\035.google.longrunning.Operation\"\365\001"
-          + "\312AP\n7google.cloud.securitycenter.v1.Bulk"
-          + "MuteFindingsResponse\022\025google.protobuf.Em"
-          + "pty\332A\006parent\202\323\344\223\002\222\001\"./v1/{parent=organiz"
-          + "ations/*}/findings:bulkMute:\001*Z-\"(/v1/{p"
-          + "arent=folders/*}/findings:bulkMute:\001*Z.\""
-          + ")/v1/{parent=projects/*}/findings:bulkMu"
-          + "te:\001*\022\325\004\n)CreateSecurityHealthAnalyticsC"
-          + "ustomModule\022P.google.cloud.securitycente"
-          + "r.v1.CreateSecurityHealthAnalyticsCustom"
-          + "ModuleRequest\032C.google.cloud.securitycen"
-          + "ter.v1.SecurityHealthAnalyticsCustomModu"
-          + "le\"\220\003\332A.parent,security_health_analytics"
-          + "_custom_module\202\323\344\223\002\330\002\"J/v1/{parent=organ"
-          + "izations/*/securityHealthAnalyticsSettin"
-          + "gs}/customModules:\'security_health_analy"
-          + "tics_custom_moduleZo\"D/v1/{parent=folder"
-          + "s/*/securityHealthAnalyticsSettings}/cus"
-          + "tomModules:\'security_health_analytics_cu"
-          + "stom_moduleZp\"E/v1/{parent=projects/*/se"
-          + "curityHealthAnalyticsSettings}/customMod"
-          + "ules:\'security_health_analytics_custom_m"
-          + "odule\022\261\001\n\014CreateSource\0223.google.cloud.se"
-          + "curitycenter.v1.CreateSourceRequest\032&.go"
-          + "ogle.cloud.securitycenter.v1.Source\"D\332A\r"
-          + "parent,source\202\323\344\223\002.\"$/v1/{parent=organiz"
-          + "ations/*}/sources:\006source\022\314\001\n\rCreateFind"
-          + "ing\0224.google.cloud.securitycenter.v1.Cre"
-          + "ateFindingRequest\032\'.google.cloud.securit"
-          + "ycenter.v1.Finding\"\\\332A\031parent,finding_id"
-          + ",finding\202\323\344\223\002:\"//v1/{parent=organization"
-          + "s/*/sources/*}/findings:\007finding\022\330\002\n\020Cre"
-          + "ateMuteConfig\0227.google.cloud.securitycen"
-          + "ter.v1.CreateMuteConfigRequest\032*.google."
-          + "cloud.securitycenter.v1.MuteConfig\"\336\001\332A\022"
-          + "parent,mute_config\332A!parent,mute_config,"
-          + "mute_config_id\202\323\344\223\002\236\001\"(/v1/{parent=organ"
-          + "izations/*}/muteConfigs:\013mute_configZ1\"\""
-          + "/v1/{parent=folders/*}/muteConfigs:\013mute"
-          + "_configZ2\"#/v1/{parent=projects/*}/muteC"
-          + "onfigs:\013mute_config\022\253\003\n\030CreateNotificati"
-          + "onConfig\022?.google.cloud.securitycenter.v"
-          + "1.CreateNotificationConfigRequest\0322.goog"
-          + "le.cloud.securitycenter.v1.NotificationC"
-          + "onfig\"\231\002\332A$parent,config_id,notification"
-          + "_config\332A\032parent,notification_config\202\323\344\223"
-          + "\002\316\001\"0/v1/{parent=organizations/*}/notifi"
-          + "cationConfigs:\023notification_configZA\"*/v"
-          + "1/{parent=folders/*}/notificationConfigs"
-          + ":\023notification_configZB\"+/v1/{parent=pro"
-          + "jects/*}/notificationConfigs:\023notificati"
-          + "on_config\022\352\001\n\020DeleteMuteConfig\0227.google."
-          + "cloud.securitycenter.v1.DeleteMuteConfig"
-          + "Request\032\026.google.protobuf.Empty\"\204\001\332A\004nam"
-          + "e\202\323\344\223\002w*(/v1/{name=organizations/*/muteC"
-          + "onfigs/*}Z$*\"/v1/{name=folders/*/muteCon"
-          + "figs/*}Z%*#/v1/{name=projects/*/muteConf"
-          + "igs/*}\022\223\002\n\030DeleteNotificationConfig\022?.go"
-          + "ogle.cloud.securitycenter.v1.DeleteNotif"
-          + "icationConfigRequest\032\026.google.protobuf.E"
-          + "mpty\"\235\001\332A\004name\202\323\344\223\002\217\001*0/v1/{name=organiz"
-          + "ations/*/notificationConfigs/*}Z,**/v1/{"
-          + "name=folders/*/notificationConfigs/*}Z-*"
-          + "+/v1/{name=projects/*/notificationConfig"
-          + "s/*}\022\203\003\n)DeleteSecurityHealthAnalyticsCu"
-          + "stomModule\022P.google.cloud.securitycenter"
-          + ".v1.DeleteSecurityHealthAnalyticsCustomM"
-          + "oduleRequest\032\026.google.protobuf.Empty\"\353\001\332"
-          + "A\004name\202\323\344\223\002\335\001*J/v1/{name=organizations/*"
-          + "/securityHealthAnalyticsSettings/customM"
-          + "odules/*}ZF*D/v1/{name=folders/*/securit"
-          + "yHealthAnalyticsSettings/customModules/*"
-          + "}ZG*E/v1/{name=projects/*/securityHealth"
-          + "AnalyticsSettings/customModules/*}\022\221\002\n\021G"
-          + "etBigQueryExport\0228.google.cloud.security"
-          + "center.v1.GetBigQueryExportRequest\032..goo"
-          + "gle.cloud.securitycenter.v1.BigQueryExpo"
-          + "rt\"\221\001\332A\004name\202\323\344\223\002\203\001\022,/v1/{name=organizat"
-          + "ions/*/bigQueryExports/*}Z(\022&/v1/{name=f"
-          + "olders/*/bigQueryExports/*}Z)\022\'/v1/{name"
-          + "=projects/*/bigQueryExports/*}\022\226\001\n\014GetIa"
-          + "mPolicy\022\".google.iam.v1.GetIamPolicyRequ"
-          + "est\032\025.google.iam.v1.Policy\"K\332A\010resource\202"
-          + "\323\344\223\002:\"5/v1/{resource=organizations/*/sou"
-          + "rces/*}:getIamPolicy:\001*\022\370\001\n\rGetMuteConfi"
-          + "g\0224.google.cloud.securitycenter.v1.GetMu"
-          + "teConfigRequest\032*.google.cloud.securityc"
-          + "enter.v1.MuteConfig\"\204\001\332A\004name\202\323\344\223\002w\022(/v1"
-          + "/{name=organizations/*/muteConfigs/*}Z$\022"
-          + "\"/v1/{name=folders/*/muteConfigs/*}Z%\022#/"
-          + "v1/{name=projects/*/muteConfigs/*}\022\251\002\n\025G"
-          + "etNotificationConfig\022<.google.cloud.secu"
-          + "ritycenter.v1.GetNotificationConfigReque"
-          + "st\0322.google.cloud.securitycenter.v1.Noti"
-          + "ficationConfig\"\235\001\332A\004name\202\323\344\223\002\217\001\0220/v1/{na"
-          + "me=organizations/*/notificationConfigs/*"
-          + "}Z,\022*/v1/{name=folders/*/notificationCon"
-          + "figs/*}Z-\022+/v1/{name=projects/*/notifica"
-          + "tionConfigs/*}\022\317\001\n\027GetOrganizationSettin"
-          + "gs\022>.google.cloud.securitycenter.v1.GetO"
-          + "rganizationSettingsRequest\0324.google.clou"
-          + "d.securitycenter.v1.OrganizationSettings",
-      "\">\332A\004name\202\323\344\223\0021\022//v1/{name=organizations"
-          + "/*/organizationSettings}\022\340\003\n/GetEffectiv"
-          + "eSecurityHealthAnalyticsCustomModule\022V.g"
-          + "oogle.cloud.securitycenter.v1.GetEffecti"
-          + "veSecurityHealthAnalyticsCustomModuleReq"
-          + "uest\032L.google.cloud.securitycenter.v1.Ef"
-          + "fectiveSecurityHealthAnalyticsCustomModu"
-          + "le\"\206\002\332A\004name\202\323\344\223\002\370\001\022S/v1/{name=organizat"
-          + "ions/*/securityHealthAnalyticsSettings/e"
-          + "ffectiveCustomModules/*}ZO\022M/v1/{name=fo"
-          + "lders/*/securityHealthAnalyticsSettings/"
-          + "effectiveCustomModules/*}ZP\022N/v1/{name=p"
-          + "rojects/*/securityHealthAnalyticsSetting"
-          + "s/effectiveCustomModules/*}\022\252\003\n&GetSecur"
-          + "ityHealthAnalyticsCustomModule\022M.google."
-          + "cloud.securitycenter.v1.GetSecurityHealt"
-          + "hAnalyticsCustomModuleRequest\032C.google.c"
-          + "loud.securitycenter.v1.SecurityHealthAna"
-          + "lyticsCustomModule\"\353\001\332A\004name\202\323\344\223\002\335\001\022J/v1"
-          + "/{name=organizations/*/securityHealthAna"
-          + "lyticsSettings/customModules/*}ZF\022D/v1/{"
-          + "name=folders/*/securityHealthAnalyticsSe"
-          + "ttings/customModules/*}ZG\022E/v1/{name=pro"
-          + "jects/*/securityHealthAnalyticsSettings/"
-          + "customModules/*}\022\232\001\n\tGetSource\0220.google."
-          + "cloud.securitycenter.v1.GetSourceRequest"
-          + "\032&.google.cloud.securitycenter.v1.Source"
-          + "\"3\332A\004name\202\323\344\223\002&\022$/v1/{name=organizations"
-          + "/*/sources/*}\022\206\002\n\013GroupAssets\0222.google.c"
-          + "loud.securitycenter.v1.GroupAssetsReques"
-          + "t\0323.google.cloud.securitycenter.v1.Group"
-          + "AssetsResponse\"\215\001\210\002\001\202\323\344\223\002\203\001\")/v1/{parent"
-          + "=organizations/*}/assets:group:\001*Z(\"#/v1"
-          + "/{parent=folders/*}/assets:group:\001*Z)\"$/"
-          + "v1/{parent=projects/*}/assets:group:\001*\022\277"
-          + "\002\n\rGroupFindings\0224.google.cloud.security"
-          + "center.v1.GroupFindingsRequest\0325.google."
-          + "cloud.securitycenter.v1.GroupFindingsRes"
-          + "ponse\"\300\001\332A\017parent,group_by\202\323\344\223\002\247\001\"5/v1/{"
-          + "parent=organizations/*/sources/*}/findin"
-          + "gs:group:\001*Z4\"//v1/{parent=folders/*/sou"
-          + "rces/*}/findings:group:\001*Z5\"0/v1/{parent"
-          + "=projects/*/sources/*}/findings:group:\001*"
-          + "\022\346\001\n\nListAssets\0221.google.cloud.securityc"
-          + "enter.v1.ListAssetsRequest\0322.google.clou"
-          + "d.securitycenter.v1.ListAssetsResponse\"q"
-          + "\210\002\001\202\323\344\223\002h\022#/v1/{parent=organizations/*}/"
-          + "assetsZ\037\022\035/v1/{parent=folders/*}/assetsZ"
-          + " \022\036/v1/{parent=projects/*}/assets\022\210\004\n2Li"
-          + "stDescendantSecurityHealthAnalyticsCusto"
-          + "mModules\022Y.google.cloud.securitycenter.v"
-          + "1.ListDescendantSecurityHealthAnalyticsC"
-          + "ustomModulesRequest\032Z.google.cloud.secur"
-          + "itycenter.v1.ListDescendantSecurityHealt"
-          + "hAnalyticsCustomModulesResponse\"\232\002\332A\006par"
-          + "ent\202\323\344\223\002\212\002\022Y/v1/{parent=organizations/*/"
-          + "securityHealthAnalyticsSettings}/customM"
-          + "odules:listDescendantZU\022S/v1/{parent=fol"
-          + "ders/*/securityHealthAnalyticsSettings}/"
-          + "customModules:listDescendantZV\022T/v1/{par"
-          + "ent=projects/*/securityHealthAnalyticsSe"
-          + "ttings}/customModules:listDescendant\022\217\002\n"
-          + "\014ListFindings\0223.google.cloud.securitycen"
-          + "ter.v1.ListFindingsRequest\0324.google.clou"
-          + "d.securitycenter.v1.ListFindingsResponse"
-          + "\"\223\001\202\323\344\223\002\214\001\022//v1/{parent=organizations/*/"
-          + "sources/*}/findingsZ+\022)/v1/{parent=folde"
-          + "rs/*/sources/*}/findingsZ,\022*/v1/{parent="
-          + "projects/*/sources/*}/findings\022\213\002\n\017ListM"
-          + "uteConfigs\0226.google.cloud.securitycenter"
-          + ".v1.ListMuteConfigsRequest\0327.google.clou"
-          + "d.securitycenter.v1.ListMuteConfigsRespo"
-          + "nse\"\206\001\332A\006parent\202\323\344\223\002w\022(/v1/{parent=organ"
-          + "izations/*}/muteConfigsZ$\022\"/v1/{parent=f"
-          + "olders/*}/muteConfigsZ%\022#/v1/{parent=pro"
-          + "jects/*}/muteConfigs\022\274\002\n\027ListNotificatio"
-          + "nConfigs\022>.google.cloud.securitycenter.v"
-          + "1.ListNotificationConfigsRequest\032?.googl"
-          + "e.cloud.securitycenter.v1.ListNotificati"
-          + "onConfigsResponse\"\237\001\332A\006parent\202\323\344\223\002\217\001\0220/v"
-          + "1/{parent=organizations/*}/notificationC"
-          + "onfigsZ,\022*/v1/{parent=folders/*}/notific"
-          + "ationConfigsZ-\022+/v1/{parent=projects/*}/"
-          + "notificationConfigs\022\363\003\n1ListEffectiveSec"
-          + "urityHealthAnalyticsCustomModules\022X.goog"
-          + "le.cloud.securitycenter.v1.ListEffective"
-          + "SecurityHealthAnalyticsCustomModulesRequ"
-          + "est\032Y.google.cloud.securitycenter.v1.Lis"
-          + "tEffectiveSecurityHealthAnalyticsCustomM"
-          + "odulesResponse\"\210\002\332A\006parent\202\323\344\223\002\370\001\022S/v1/{"
-          + "parent=organizations/*/securityHealthAna"
-          + "lyticsSettings}/effectiveCustomModulesZO"
-          + "\022M/v1/{parent=folders/*/securityHealthAn"
-          + "alyticsSettings}/effectiveCustomModulesZ"
-          + "P\022N/v1/{parent=projects/*/securityHealth"
-          + "AnalyticsSettings}/effectiveCustomModule"
-          + "s\022\275\003\n(ListSecurityHealthAnalyticsCustomM"
-          + "odules\022O.google.cloud.securitycenter.v1."
-          + "ListSecurityHealthAnalyticsCustomModules"
-          + "Request\032P.google.cloud.securitycenter.v1"
-          + ".ListSecurityHealthAnalyticsCustomModule"
-          + "sResponse\"\355\001\332A\006parent\202\323\344\223\002\335\001\022J/v1/{paren"
-          + "t=organizations/*/securityHealthAnalytic"
-          + "sSettings}/customModulesZF\022D/v1/{parent="
-          + "folders/*/securityHealthAnalyticsSetting"
-          + "s}/customModulesZG\022E/v1/{parent=projects"
-          + "/*/securityHealthAnalyticsSettings}/cust"
-          + "omModules\022\362\001\n\013ListSources\0222.google.cloud"
-          + ".securitycenter.v1.ListSourcesRequest\0323."
-          + "google.cloud.securitycenter.v1.ListSourc"
-          + "esResponse\"z\332A\006parent\202\323\344\223\002k\022$/v1/{parent"
-          + "=organizations/*}/sourcesZ \022\036/v1/{parent"
-          + "=folders/*}/sourcesZ!\022\037/v1/{parent=proje"
-          + "cts/*}/sources\022\212\002\n\021RunAssetDiscovery\0228.g"
-          + "oogle.cloud.securitycenter.v1.RunAssetDi"
-          + "scoveryRequest\032\035.google.longrunning.Oper"
-          + "ation\"\233\001\210\002\001\312AQ\n8google.cloud.securitycen"
-          + "ter.v1.RunAssetDiscoveryResponse\022\025google"
-          + ".protobuf.Empty\332A\006parent\202\323\344\223\0025\"0/v1/{par"
-          + "ent=organizations/*}/assets:runDiscovery"
-          + ":\001*\022\304\002\n\017SetFindingState\0226.google.cloud.s"
-          + "ecuritycenter.v1.SetFindingStateRequest\032"
-          + "\'.google.cloud.securitycenter.v1.Finding"
-          + "\"\317\001\332A\025name,state,start_time\202\323\344\223\002\260\001\"8/v1/"
-          + "{name=organizations/*/sources/*/findings"
-          + "/*}:setState:\001*Z7\"2/v1/{name=folders/*/s"
-          + "ources/*/findings/*}:setState:\001*Z8\"3/v1/"
-          + "{name=projects/*/sources/*/findings/*}:s"
-          + "etState:\001*\022\245\002\n\007SetMute\022..google.cloud.se"
-          + "curitycenter.v1.SetMuteRequest\032\'.google."
-          + "cloud.securitycenter.v1.Finding\"\300\001\332A\tnam"
-          + "e,mute\202\323\344\223\002\255\001\"7/v1/{name=organizations/*"
-          + "/sources/*/findings/*}:setMute:\001*Z6\"1/v1"
-          + "/{name=folders/*/sources/*/findings/*}:s"
-          + "etMute:\001*Z7\"2/v1/{name=projects/*/source"
-          + "s/*/findings/*}:setMute:\001*\022\235\001\n\014SetIamPol"
-          + "icy\022\".google.iam.v1.SetIamPolicyRequest\032"
-          + "\025.google.iam.v1.Policy\"R\332A\017resource,poli"
-          + "cy\202\323\344\223\002:\"5/v1/{resource=organizations/*/"
-          + "sources/*}:setIamPolicy:\001*\022\310\001\n\022TestIamPe"
-          + "rmissions\022(.google.iam.v1.TestIamPermiss"
-          + "ionsRequest\032).google.iam.v1.TestIamPermi"
-          + "ssionsResponse\"]\332A\024resource,permissions\202"
-          + "\323\344\223\002@\";/v1/{resource=organizations/*/sou"
-          + "rces/*}:testIamPermissions:\001*\022\201\004\n+Simula"
-          + "teSecurityHealthAnalyticsCustomModule\022R."
-          + "google.cloud.securitycenter.v1.SimulateS"
-          + "ecurityHealthAnalyticsCustomModuleReques"
-          + "t\032S.google.cloud.securitycenter.v1.Simul"
-          + "ateSecurityHealthAnalyticsCustomModuleRe"
-          + "sponse\"\250\002\332A\035parent,custom_config,resourc"
-          + "e\202\323\344\223\002\201\002\"S/v1/{parent=organizations/*/se"
-          + "curityHealthAnalyticsSettings}/customMod"
-          + "ules:simulate:\001*ZR\"M/v1/{parent=folders/"
-          + "*/securityHealthAnalyticsSettings}/custo"
-          + "mModules:simulate:\001*ZS\"N/v1/{parent=proj"
-          + "ects/*/securityHealthAnalyticsSettings}/"
-          + "customModules:simulate:\001*\022\320\003\n\024UpdateExte"
-          + "rnalSystem\022;.google.cloud.securitycenter"
-          + ".v1.UpdateExternalSystemRequest\032..google"
-          + ".cloud.securitycenter.v1.ExternalSystem\""
-          + "\312\002\332A\033external_system,update_mask\202\323\344\223\002\245\0022"
-          + "Q/v1/{external_system.name=organizations"
-          + "/*/sources/*/findings/*/externalSystems/"
-          + "*}:\017external_systemZ^2K/v1/{external_sys"
-          + "tem.name=folders/*/sources/*/findings/*/"
-          + "externalSystems/*}:\017external_systemZ_2L/"
-          + "v1/{external_system.name=projects/*/sour"
-          + "ces/*/findings/*/externalSystems/*}:\017ext"
-          + "ernal_system\022\301\002\n\rUpdateFinding\0224.google."
-          + "cloud.securitycenter.v1.UpdateFindingReq"
-          + "uest\032\'.google.cloud.securitycenter.v1.Fi"
-          + "nding\"\320\001\332A\007finding\202\323\344\223\002\277\00127/v1/{finding."
-          + "name=organizations/*/sources/*/findings/"
-          + "*}:\007findingZ<21/v1/{finding.name=folders"
-          + "/*/sources/*/findings/*}:\007findingZ=22/v1"
-          + "/{finding.name=projects/*/sources/*/find"
-          + "ings/*}:\007finding\022\335\002\n\020UpdateMuteConfig\0227."
-          + "google.cloud.securitycenter.v1.UpdateMut"
-          + "eConfigRequest\032*.google.cloud.securityce"
-          + "nter.v1.MuteConfig\"\343\001\332A\027mute_config,upda"
-          + "te_mask\202\323\344\223\002\302\00124/v1/{mute_config.name=or"
-          + "ganizations/*/muteConfigs/*}:\013mute_confi"
-          + "gZ=2./v1/{mute_config.name=folders/*/mut"
-          + "eConfigs/*}:\013mute_configZ>2//v1/{mute_co"
-          + "nfig.name=projects/*/muteConfigs/*}:\013mut"
-          + "e_config\022\333\003\n\030UpdateNotificationConfig\022?."
-          + "google.cloud.securitycenter.v1.UpdateNot"
-          + "ificationConfigRequest\0322.google.cloud.se"
-          + "curitycenter.v1.NotificationConfig\"\311\002\332A\023"
-          + "notification_config\332A\037notification_confi"
-          + "g,update_mask\202\323\344\223\002\212\0022D/v1/{notification_"
-          + "config.name=organizations/*/notification"
-          + "Configs/*}:\023notification_configZU2>/v1/{"
-          + "notification_config.name=folders/*/notif"
-          + "icationConfigs/*}:\023notification_configZV"
-          + "2?/v1/{notification_config.name=projects"
-          + "/*/notificationConfigs/*}:\023notification_"
-          + "config\022\223\002\n\032UpdateOrganizationSettings\022A."
-          + "google.cloud.securitycenter.v1.UpdateOrg"
-          + "anizationSettingsRequest\0324.google.cloud."
-          + "securitycenter.v1.OrganizationSettings\"|"
-          + "\332A\025organization_settings\202\323\344\223\002^2E/v1/{org"
-          + "anization_settings.name=organizations/*/"
-          + "organizationSettings}:\025organization_sett"
-          + "ings\022\324\005\n)UpdateSecurityHealthAnalyticsCu"
-          + "stomModule\022P.google.cloud.securitycenter"
-          + ".v1.UpdateSecurityHealthAnalyticsCustomM"
-          + "oduleRequest\032C.google.cloud.securitycent"
+          + "thAnalyticsCustomModule\022y\n\'security_heal"
+          + "th_analytics_custom_module\030\002 \001(\0132C.googl"
+          + "e.cloud.securitycenter.v1.SecurityHealth"
+          + "AnalyticsCustomModuleB\003\340A\002\"\234\001\n\023CreateSou"
+          + "rceRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\n0clou"
+          + "dresourcemanager.googleapis.com/Organiza"
+          + "tion\022;\n\006source\030\002 \001(\0132&.google.cloud.secu"
+          + "ritycenter.v1.SourceB\003\340A\002\"Y\n\027DeleteMuteC"
+          + "onfigRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(secu"
+          + "ritycenter.googleapis.com/MuteConfig\"i\n\037"
+          + "DeleteNotificationConfigRequest\022F\n\004name\030"
+          + "\001 \001(\tB8\340A\002\372A2\n0securitycenter.googleapis"
+          + ".com/NotificationConfig\"\213\001\n0DeleteSecuri"
+          + "tyHealthAnalyticsCustomModuleRequest\022W\n\004"
+          + "name\030\001 \001(\tBI\340A\002\372AC\nAsecuritycenter.googl"
+          + "eapis.com/SecurityHealthAnalyticsCustomM"
+          + "odule\"^\n\030GetBigQueryExportRequest\022B\n\004nam"
+          + "e\030\001 \001(\tB4\340A\002\372A.\n,securitycenter.googleap"
+          + "is.com/BigQueryExport\"V\n\024GetMuteConfigRe"
+          + "quest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(securitycen"
+          + "ter.googleapis.com/MuteConfig\"f\n\034GetNoti"
+          + "ficationConfigRequest\022F\n\004name\030\001 \001(\tB8\340A\002"
+          + "\372A2\n0securitycenter.googleapis.com/Notif"
+          + "icationConfig\"j\n\036GetOrganizationSettings"
+          + "Request\022H\n\004name\030\001 \001(\tB:\340A\002\372A4\n2securityc"
+          + "enter.googleapis.com/OrganizationSetting"
+          + "s\"\232\001\n6GetEffectiveSecurityHealthAnalytic"
+          + "sCustomModuleRequest\022`\n\004name\030\001 \001(\tBR\340A\002\372"
+          + "AL\nJsecuritycenter.googleapis.com/Effect"
+          + "iveSecurityHealthAnalyticsCustomModule\"\210"
+          + "\001\n-GetSecurityHealthAnalyticsCustomModul"
+          + "eRequest\022W\n\004name\030\001 \001(\tBI\340A\002\372AC\nAsecurity"
+          + "center.googleapis.com/SecurityHealthAnal"
+          + "yticsCustomModule\"N\n\020GetSourceRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n$securitycenter.goog"
+          + "leapis.com/Source\"\203\002\n\022GroupAssetsRequest"
+          + "\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#securitycenter"
+          + ".googleapis.com/Asset\022\016\n\006filter\030\002 \001(\t\022\025\n"
+          + "\010group_by\030\003 \001(\tB\003\340A\002\0223\n\020compare_duration"
+          + "\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\trea"
+          + "d_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022\022\n\npage_token\030\007 \001(\t\022\021\n\tpage_size\030\010 \001(\005\""
+          + "\270\001\n\023GroupAssetsResponse\022E\n\020group_by_resu"
+          + "lts\030\001 \003(\0132+.google.cloud.securitycenter."
+          + "v1.GroupResult\022-\n\tread_time\030\002 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022\027\n\017next_page_token"
+          + "\030\003 \001(\t\022\022\n\ntotal_size\030\004 \001(\005\"\206\002\n\024GroupFind"
+          + "ingsRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\n$sec"
+          + "uritycenter.googleapis.com/Source\022\016\n\006fil"
+          + "ter\030\002 \001(\t\022\025\n\010group_by\030\003 \001(\tB\003\340A\002\022-\n\tread"
+          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "3\n\020compare_duration\030\005 \001(\0132\031.google.proto"
+          + "buf.Duration\022\022\n\npage_token\030\007 \001(\t\022\021\n\tpage"
+          + "_size\030\010 \001(\005\"\272\001\n\025GroupFindingsResponse\022E\n"
+          + "\020group_by_results\030\001 \003(\0132+.google.cloud.s"
+          + "ecuritycenter.v1.GroupResult\022-\n\tread_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.Timestamp\022\027\n\017n"
+          + "ext_page_token\030\003 \001(\t\022\022\n\ntotal_size\030\004 \001(\005"
+          + "\"\270\001\n\013GroupResult\022O\n\nproperties\030\001 \003(\0132;.g"
+          + "oogle.cloud.securitycenter.v1.GroupResul"
+          + "t.PropertiesEntry\022\r\n\005count\030\002 \001(\003\032I\n\017Prop"
+          + "ertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132"
+          + "\026.google.protobuf.Value:\0028\001\"\275\001\n9ListDesc"
+          + "endantSecurityHealthAnalyticsCustomModul"
+          + "esRequest\022Y\n\006parent\030\001 \001(\tBI\340A\002\372AC\022Asecur"
+          + "itycenter.googleapis.com/SecurityHealthA"
+          + "nalyticsCustomModule\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\"\314\001\n:ListDescendantSe"
+          + "curityHealthAnalyticsCustomModulesRespon"
+          + "se\022u\n(security_health_analytics_custom_m"
+          + "odules\030\001 \003(\0132C.google.cloud.securitycent"
           + "er.v1.SecurityHealthAnalyticsCustomModul"
-          + "e\"\217\004\332A3security_health_analytics_custom_"
-          + "module,update_mask\202\323\344\223\002\322\0032r/v1/{security"
-          + "_health_analytics_custom_module.name=org"
-          + "anizations/*/securityHealthAnalyticsSett"
-          + "ings/customModules/*}:\'security_health_a"
-          + "nalytics_custom_moduleZ\227\0012l/v1/{security"
-          + "_health_analytics_custom_module.name=fol"
-          + "ders/*/securityHealthAnalyticsSettings/c"
+          + "e\022\027\n\017next_page_token\030\002 \001(\t\"\260\001\n\032ListValue"
+          + "dResourcesRequest\022D\n\006parent\030\001 \001(\tB4\340A\002\372A"
+          + ".\022,securitycenter.googleapis.com/ValuedR"
+          + "esource\022\016\n\006filter\030\002 \001(\t\022\022\n\npage_token\030\003 "
+          + "\001(\t\022\021\n\tpage_size\030\004 \001(\005\022\025\n\010order_by\030\005 \001(\t"
+          + "B\003\340A\001\"\224\001\n\033ListValuedResourcesResponse\022H\n"
+          + "\020valued_resources\030\001 \003(\0132..google.cloud.s"
+          + "ecuritycenter.v1.ValuedResource\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"\221\001\n"
+          + "\026ListAttackPathsRequest\022@\n\006parent\030\001 \001(\tB"
+          + "0\340A\002\372A*\022(securitycenter.googleapis.com/A"
+          + "ttackPath\022\016\n\006filter\030\002 \001(\t\022\022\n\npage_token\030"
+          + "\003 \001(\t\022\021\n\tpage_size\030\004 \001(\005\"t\n\027ListAttackPa"
+          + "thsResponse\022@\n\014attack_paths\030\001 \003(\0132*.goog"
+          + "le.cloud.securitycenter.v1.AttackPath\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"V\n\024GetSimulationR"
+          + "equest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(securityce"
+          + "nter.googleapis.com/Simulation\"^\n\030GetVal"
+          + "uedResourceRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A."
+          + "\n,securitycenter.googleapis.com/ValuedRe"
+          + "source\"\201\001\n\026ListMuteConfigsRequest\022@\n\006par"
+          + "ent\030\001 \001(\tB0\340A\002\372A*\022(securitycenter.google"
+          + "apis.com/MuteConfig\022\021\n\tpage_size\030\002 \001(\005\022\022"
+          + "\n\npage_token\030\003 \001(\t\"t\n\027ListMuteConfigsRes"
+          + "ponse\022@\n\014mute_configs\030\001 \003(\0132*.google.clo"
+          + "ud.securitycenter.v1.MuteConfig\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"\221\001\n\036ListNotificationCon"
+          + "figsRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\0220sec"
+          + "uritycenter.googleapis.com/NotificationC"
+          + "onfig\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003"
+          + " \001(\005\"\214\001\n\037ListNotificationConfigsResponse"
+          + "\022P\n\024notification_configs\030\001 \003(\01322.google."
+          + "cloud.securitycenter.v1.NotificationConf"
+          + "ig\022\027\n\017next_page_token\030\002 \001(\t\"\274\001\n8ListEffe"
+          + "ctiveSecurityHealthAnalyticsCustomModule"
+          + "sRequest\022Y\n\006parent\030\001 \001(\tBI\340A\002\372AC\022Asecuri"
+          + "tycenter.googleapis.com/SecurityHealthAn"
+          + "alyticsCustomModule\022\021\n\tpage_size\030\002 \001(\005\022\022"
+          + "\n\npage_token\030\003 \001(\t\"\337\001\n9ListEffectiveSecu"
+          + "rityHealthAnalyticsCustomModulesResponse"
+          + "\022\210\001\n2effective_security_health_analytics"
+          + "_custom_modules\030\001 \003(\0132L.google.cloud.sec"
+          + "uritycenter.v1.EffectiveSecurityHealthAn"
+          + "alyticsCustomModule\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"\263\001\n/ListSecurityHealthAnalyticsCust"
+          + "omModulesRequest\022Y\n\006parent\030\001 \001(\tBI\340A\002\372AC"
+          + "\022Asecuritycenter.googleapis.com/Security"
+          + "HealthAnalyticsCustomModule\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\302\001\n0ListSecur"
+          + "ityHealthAnalyticsCustomModulesResponse\022"
+          + "u\n(security_health_analytics_custom_modu"
+          + "les\030\001 \003(\0132C.google.cloud.securitycenter."
+          + "v1.SecurityHealthAnalyticsCustomModule\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"y\n\022ListSourcesRe"
+          + "quest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$securityc"
+          + "enter.googleapis.com/Source\022\022\n\npage_toke"
+          + "n\030\002 \001(\t\022\021\n\tpage_size\030\007 \001(\005\"g\n\023ListSource"
+          + "sResponse\0227\n\007sources\030\001 \003(\0132&.google.clou"
+          + "d.securitycenter.v1.Source\022\027\n\017next_page_"
+          + "token\030\002 \001(\t\"\255\002\n\021ListAssetsRequest\022;\n\006par"
+          + "ent\030\001 \001(\tB+\340A\002\372A%\022#securitycenter.google"
+          + "apis.com/Asset\022\016\n\006filter\030\002 \001(\t\022\020\n\010order_"
+          + "by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\0223\n\020compare_duration\030\005 \001("
+          + "\0132\031.google.protobuf.Duration\022.\n\nfield_ma"
+          + "sk\030\007 \001(\0132\032.google.protobuf.FieldMask\022\022\n\n"
+          + "page_token\030\010 \001(\t\022\021\n\tpage_size\030\t \001(\005\"\303\003\n\022"
+          + "ListAssetsResponse\022`\n\023list_assets_result"
+          + "s\030\001 \003(\0132C.google.cloud.securitycenter.v1"
+          + ".ListAssetsResponse.ListAssetsResult\022-\n\t"
+          + "read_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\ntotal_si"
+          + "ze\030\004 \001(\005\032\356\001\n\020ListAssetsResult\0224\n\005asset\030\001"
+          + " \001(\0132%.google.cloud.securitycenter.v1.As"
+          + "set\022e\n\014state_change\030\002 \001(\0162O.google.cloud"
+          + ".securitycenter.v1.ListAssetsResponse.Li"
+          + "stAssetsResult.StateChange\"=\n\013StateChang"
+          + "e\022\n\n\006UNUSED\020\000\022\t\n\005ADDED\020\001\022\013\n\007REMOVED\020\002\022\n\n"
+          + "\006ACTIVE\020\003\"\260\002\n\023ListFindingsRequest\022<\n\006par"
+          + "ent\030\001 \001(\tB,\340A\002\372A&\n$securitycenter.google"
+          + "apis.com/Source\022\016\n\006filter\030\002 \001(\t\022\020\n\010order"
+          + "_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\0223\n\020compare_duration\030\005 \001"
+          + "(\0132\031.google.protobuf.Duration\022.\n\nfield_m"
+          + "ask\030\007 \001(\0132\032.google.protobuf.FieldMask\022\022\n"
+          + "\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t \001(\005\"\270\t\n"
+          + "\024ListFindingsResponse\022f\n\025list_findings_r"
+          + "esults\030\001 \003(\0132G.google.cloud.securitycent"
+          + "er.v1.ListFindingsResponse.ListFindingsR"
+          + "esult\022-\n\tread_time\030\002 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n"
+          + "\ntotal_size\030\004 \001(\005\032\333\007\n\022ListFindingsResult"
+          + "\0228\n\007finding\030\001 \001(\0132\'.google.cloud.securit"
+          + "ycenter.v1.Finding\022i\n\014state_change\030\002 \001(\016"
+          + "2S.google.cloud.securitycenter.v1.ListFi"
+          + "ndingsResponse.ListFindingsResult.StateC"
+          + "hange\022g\n\010resource\030\003 \001(\0132P.google.cloud.s"
+          + "ecuritycenter.v1.ListFindingsResponse.Li"
+          + "stFindingsResult.ResourceB\003\340A\003\032\347\004\n\010Resou"
+          + "rce\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\010 \001(\t\022"
+          + "\014\n\004type\030\006 \001(\t\022\024\n\014project_name\030\002 \001(\t\022\034\n\024p"
+          + "roject_display_name\030\003 \001(\t\022\023\n\013parent_name"
+          + "\030\004 \001(\t\022\033\n\023parent_display_name\030\005 \001(\t\0227\n\007f"
+          + "olders\030\007 \003(\0132&.google.cloud.securitycent"
+          + "er.v1.Folder\022E\n\016cloud_provider\030\t \001(\0162-.g"
+          + "oogle.cloud.securitycenter.v1.CloudProvi"
+          + "der\022\024\n\014organization\030\n \001(\t\022\017\n\007service\030\013 \001"
+          + "(\t\022\020\n\010location\030\014 \001(\t\022C\n\014aws_metadata\030\020 \001"
+          + "(\0132+.google.cloud.securitycenter.v1.AwsM"
+          + "etadataH\000\022G\n\016azure_metadata\030\021 \001(\0132-.goog"
+          + "le.cloud.securitycenter.v1.AzureMetadata"
+          + "H\000\022C\n\rresource_path\030\022 \001(\0132,.google.cloud"
+          + ".securitycenter.v1.ResourcePath\022\034\n\024resou"
+          + "rce_path_string\030\023 \001(\tB\031\n\027cloud_provider_"
+          + "metadata\"M\n\013StateChange\022\n\n\006UNUSED\020\000\022\013\n\007C"
+          + "HANGED\020\001\022\r\n\tUNCHANGED\020\002\022\t\n\005ADDED\020\003\022\013\n\007RE"
+          + "MOVED\020\004\"\315\001\n\026SetFindingStateRequest\022;\n\004na"
+          + "me\030\001 \001(\tB-\340A\002\372A\'\n%securitycenter.googlea"
+          + "pis.com/Finding\022A\n\005state\030\002 \001(\0162-.google."
+          + "cloud.securitycenter.v1.Finding.StateB\003\340"
+          + "A\002\0223\n\nstart_time\030\003 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\002\"\216\001\n\016SetMuteRequest\022;\n\004na"
+          + "me\030\001 \001(\tB-\340A\002\372A\'\n%securitycenter.googlea"
+          + "pis.com/Finding\022?\n\004mute\030\002 \001(\0162,.google.c"
+          + "loud.securitycenter.v1.Finding.MuteB\003\340A\002"
+          + "\"d\n\030RunAssetDiscoveryRequest\022H\n\006parent\030\001"
+          + " \001(\tB8\340A\002\372A2\n0cloudresourcemanager.googl"
+          + "eapis.com/Organization\"\254\003\n2SimulateSecur"
+          + "ityHealthAnalyticsCustomModuleRequest\022\023\n"
+          + "\006parent\030\001 \001(\tB\003\340A\002\022H\n\rcustom_config\030\002 \001("
+          + "\0132,.google.cloud.securitycenter.v1.Custo"
+          + "mConfigB\003\340A\002\022{\n\010resource\030\003 \001(\0132d.google."
+          + "cloud.securitycenter.v1.SimulateSecurity"
+          + "HealthAnalyticsCustomModuleRequest.Simul"
+          + "atedResourceB\003\340A\002\032\231\001\n\021SimulatedResource\022"
+          + "\032\n\rresource_type\030\001 \001(\tB\003\340A\002\0223\n\rresource_"
+          + "data\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001"
+          + "\0223\n\017iam_policy_data\030\003 \001(\0132\025.google.iam.v"
+          + "1.PolicyB\003\340A\001\"\331\002\n3SimulateSecurityHealth"
+          + "AnalyticsCustomModuleResponse\022s\n\006result\030"
+          + "\001 \001(\0132c.google.cloud.securitycenter.v1.S"
+          + "imulateSecurityHealthAnalyticsCustomModu"
+          + "leResponse.SimulatedResult\032\254\001\n\017Simulated"
+          + "Result\022:\n\007finding\030\001 \001(\0132\'.google.cloud.s"
+          + "ecuritycenter.v1.FindingH\000\022.\n\014no_violati"
+          + "on\030\002 \001(\0132\026.google.protobuf.EmptyH\000\022#\n\005er"
+          + "ror\030\003 \001(\0132\022.google.rpc.StatusH\000B\010\n\006resul"
+          + "t\"\234\001\n\033UpdateExternalSystemRequest\022L\n\017ext"
+          + "ernal_system\030\001 \001(\0132..google.cloud.securi"
+          + "tycenter.v1.ExternalSystemB\003\340A\002\022/\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "\"\206\001\n\024UpdateFindingRequest\022=\n\007finding\030\001 \001"
+          + "(\0132\'.google.cloud.securitycenter.v1.Find"
+          + "ingB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
+          + "rotobuf.FieldMask\"\220\001\n\027UpdateMuteConfigRe"
+          + "quest\022D\n\013mute_config\030\001 \001(\0132*.google.clou"
+          + "d.securitycenter.v1.MuteConfigB\003\340A\002\022/\n\013u"
+          + "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+          + "Mask\"\250\001\n\037UpdateNotificationConfigRequest"
+          + "\022T\n\023notification_config\030\001 \001(\01322.google.c"
+          + "loud.securitycenter.v1.NotificationConfi"
+          + "gB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
+          + "tobuf.FieldMask\"\256\001\n!UpdateOrganizationSe"
+          + "ttingsRequest\022X\n\025organization_settings\030\001"
+          + " \001(\01324.google.cloud.securitycenter.v1.Or"
+          + "ganizationSettingsB\003\340A\002\022/\n\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMask\"\336\001\n0Upd"
+          + "ateSecurityHealthAnalyticsCustomModuleRe"
+          + "quest\022y\n\'security_health_analytics_custo"
+          + "m_module\030\001 \001(\0132C.google.cloud.securityce"
+          + "nter.v1.SecurityHealthAnalyticsCustomMod"
+          + "uleB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
+          + "rotobuf.FieldMask\"\203\001\n\023UpdateSourceReques"
+          + "t\022;\n\006source\030\001 \001(\0132&.google.cloud.securit"
+          + "ycenter.v1.SourceB\003\340A\002\022/\n\013update_mask\030\002 "
+          + "\001(\0132\032.google.protobuf.FieldMask\"\311\001\n\032Upda"
+          + "teSecurityMarksRequest\022J\n\016security_marks"
+          + "\030\001 \001(\0132-.google.cloud.securitycenter.v1."
+          + "SecurityMarksB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMask\022.\n\nstart_tim"
+          + "e\030\003 \001(\0132\032.google.protobuf.Timestamp\"\324\001\n\033"
+          + "CreateBigQueryExportRequest\022D\n\006parent\030\001 "
+          + "\001(\tB4\340A\002\372A.\022,securitycenter.googleapis.c"
+          + "om/BigQueryExport\022M\n\020big_query_export\030\002 "
+          + "\001(\0132..google.cloud.securitycenter.v1.Big"
+          + "QueryExportB\003\340A\002\022 \n\023big_query_export_id\030"
+          + "\003 \001(\tB\003\340A\002\"\235\001\n\033UpdateBigQueryExportReque"
+          + "st\022M\n\020big_query_export\030\001 \001(\0132..google.cl"
+          + "oud.securitycenter.v1.BigQueryExportB\003\340A"
+          + "\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
+          + ".FieldMask\"\211\001\n\032ListBigQueryExportsReques"
+          + "t\022D\n\006parent\030\001 \001(\tB4\340A\002\372A.\022,securitycente"
+          + "r.googleapis.com/BigQueryExport\022\021\n\tpage_"
+          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\201\001\n\033ListB"
+          + "igQueryExportsResponse\022I\n\021big_query_expo"
+          + "rts\030\001 \003(\0132..google.cloud.securitycenter."
+          + "v1.BigQueryExport\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"a\n\033DeleteBigQueryExportRequest\022B\n\004nam"
+          + "e\030\001 \001(\tB4\340A\002\372A.\n,securitycenter.googleap"
+          + "is.com/BigQueryExport\"\374\001\n-CreateEventThr"
+          + "eatDetectionCustomModuleRequest\022V\n\006paren"
+          + "t\030\001 \001(\tBF\340A\002\372A@\022>securitycenter.googleap"
+          + "is.com/EventThreatDetectionCustomModule\022"
+          + "s\n$event_threat_detection_custom_module\030"
+          + "\002 \001(\0132@.google.cloud.securitycenter.v1.E"
+          + "ventThreatDetectionCustomModuleB\003\340A\002\"\263\001\n"
+          + "/ValidateEventThreatDetectionCustomModul"
+          + "eRequest\022V\n\006parent\030\001 \001(\tBF\340A\002\372A@\022>securi"
+          + "tycenter.googleapis.com/EventThreatDetec"
+          + "tionCustomModule\022\025\n\010raw_text\030\002 \001(\tB\003\340A\002\022"
+          + "\021\n\004type\030\003 \001(\tB\003\340A\002\"\200\001\n0ValidateEventThre"
+          + "atDetectionCustomModuleResponse\022L\n\006error"
+          + "s\030\002 \001(\0132<.google.cloud.securitycenter.v1"
+          + ".CustomModuleValidationErrors\"\205\001\n-Delete"
+          + "EventThreatDetectionCustomModuleRequest\022"
+          + "T\n\004name\030\001 \001(\tBF\340A\002\372A@\n>securitycenter.go"
+          + "ogleapis.com/EventThreatDetectionCustomM"
+          + "odule\"\202\001\n*GetEventThreatDetectionCustomM"
+          + "oduleRequest\022T\n\004name\030\001 \001(\tBF\340A\002\372A@\n>secu"
+          + "ritycenter.googleapis.com/EventThreatDet"
+          + "ectionCustomModule\"\267\001\n6ListDescendantEve"
+          + "ntThreatDetectionCustomModulesRequest\022V\n"
+          + "\006parent\030\001 \001(\tBF\340A\002\372A@\022>securitycenter.go"
+          + "ogleapis.com/EventThreatDetectionCustomM"
+          + "odule\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003"
+          + " \001(\005\"\303\001\n7ListDescendantEventThreatDetect"
+          + "ionCustomModulesResponse\022o\n%event_threat"
+          + "_detection_custom_modules\030\001 \003(\0132@.google"
+          + ".cloud.securitycenter.v1.EventThreatDete"
+          + "ctionCustomModule\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"\255\001\n,ListEventThreatDetectionCustomMod",
+      "ulesRequest\022V\n\006parent\030\001 \001(\tBF\340A\002\372A@\022>sec"
+          + "uritycenter.googleapis.com/EventThreatDe"
+          + "tectionCustomModule\022\022\n\npage_token\030\002 \001(\t\022"
+          + "\021\n\tpage_size\030\003 \001(\005\"\271\001\n-ListEventThreatDe"
+          + "tectionCustomModulesResponse\022o\n%event_th"
+          + "reat_detection_custom_modules\030\001 \003(\0132@.go"
+          + "ogle.cloud.securitycenter.v1.EventThreat"
+          + "DetectionCustomModule\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\"\325\001\n-UpdateEventThreatDetectionCus"
+          + "tomModuleRequest\022s\n$event_threat_detecti"
+          + "on_custom_module\030\001 \001(\0132@.google.cloud.se"
+          + "curitycenter.v1.EventThreatDetectionCust"
+          + "omModuleB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\"\224\001\n3GetEffectiveE"
+          + "ventThreatDetectionCustomModuleRequest\022]"
+          + "\n\004name\030\001 \001(\tBO\340A\002\372AI\nGsecuritycenter.goo"
+          + "gleapis.com/EffectiveEventThreatDetectio"
+          + "nCustomModule\"\277\001\n5ListEffectiveEventThre"
+          + "atDetectionCustomModulesRequest\022_\n\006paren"
+          + "t\030\001 \001(\tBO\340A\002\372AI\022Gsecuritycenter.googleap"
+          + "is.com/EffectiveEventThreatDetectionCust"
+          + "omModule\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_siz"
+          + "e\030\003 \001(\005\"\326\001\n6ListEffectiveEventThreatDete"
+          + "ctionCustomModulesResponse\022\202\001\n/effective"
+          + "_event_threat_detection_custom_modules\030\001"
+          + " \003(\0132I.google.cloud.securitycenter.v1.Ef"
+          + "fectiveEventThreatDetectionCustomModule\022"
+          + "\027\n\017next_page_token\030\002 \001(\t2\367\262\001\n\016SecurityCe"
+          + "nter\022\342\002\n\020BulkMuteFindings\0227.google.cloud"
+          + ".securitycenter.v1.BulkMuteFindingsReque"
+          + "st\032\035.google.longrunning.Operation\"\365\001\312AP\n"
+          + "7google.cloud.securitycenter.v1.BulkMute"
+          + "FindingsResponse\022\025google.protobuf.Empty\332"
+          + "A\006parent\202\323\344\223\002\222\001\"./v1/{parent=organizatio"
+          + "ns/*}/findings:bulkMute:\001*Z-\"(/v1/{paren"
+          + "t=folders/*}/findings:bulkMute:\001*Z.\")/v1"
+          + "/{parent=projects/*}/findings:bulkMute:\001"
+          + "*\022\325\004\n)CreateSecurityHealthAnalyticsCusto"
+          + "mModule\022P.google.cloud.securitycenter.v1"
+          + ".CreateSecurityHealthAnalyticsCustomModu"
+          + "leRequest\032C.google.cloud.securitycenter."
+          + "v1.SecurityHealthAnalyticsCustomModule\"\220"
+          + "\003\332A.parent,security_health_analytics_cus"
+          + "tom_module\202\323\344\223\002\330\002\"J/v1/{parent=organizat"
+          + "ions/*/securityHealthAnalyticsSettings}/"
+          + "customModules:\'security_health_analytics"
+          + "_custom_moduleZo\"D/v1/{parent=folders/*/"
+          + "securityHealthAnalyticsSettings}/customM"
+          + "odules:\'security_health_analytics_custom"
+          + "_moduleZp\"E/v1/{parent=projects/*/securi"
+          + "tyHealthAnalyticsSettings}/customModules"
+          + ":\'security_health_analytics_custom_modul"
+          + "e\022\261\001\n\014CreateSource\0223.google.cloud.securi"
+          + "tycenter.v1.CreateSourceRequest\032&.google"
+          + ".cloud.securitycenter.v1.Source\"D\332A\rpare"
+          + "nt,source\202\323\344\223\002.\"$/v1/{parent=organizatio"
+          + "ns/*}/sources:\006source\022\314\001\n\rCreateFinding\022"
+          + "4.google.cloud.securitycenter.v1.CreateF"
+          + "indingRequest\032\'.google.cloud.securitycen"
+          + "ter.v1.Finding\"\\\332A\031parent,finding_id,fin"
+          + "ding\202\323\344\223\002:\"//v1/{parent=organizations/*/"
+          + "sources/*}/findings:\007finding\022\234\004\n\020CreateM"
+          + "uteConfig\0227.google.cloud.securitycenter."
+          + "v1.CreateMuteConfigRequest\032*.google.clou"
+          + "d.securitycenter.v1.MuteConfig\"\242\003\332A\022pare"
+          + "nt,mute_config\332A!parent,mute_config,mute"
+          + "_config_id\202\323\344\223\002\342\002\"(/v1/{parent=organizat"
+          + "ions/*}/muteConfigs:\013mute_configZC\"4/v1/"
+          + "{parent=organizations/*/locations/*}/mut"
+          + "eConfigs:\013mute_configZ1\"\"/v1/{parent=fol"
+          + "ders/*}/muteConfigs:\013mute_configZ=\"./v1/"
+          + "{parent=folders/*/locations/*}/muteConfi"
+          + "gs:\013mute_configZ2\"#/v1/{parent=projects/"
+          + "*}/muteConfigs:\013mute_configZ>\"//v1/{pare"
+          + "nt=projects/*/locations/*}/muteConfigs:\013"
+          + "mute_config\022\253\003\n\030CreateNotificationConfig"
+          + "\022?.google.cloud.securitycenter.v1.Create"
+          + "NotificationConfigRequest\0322.google.cloud"
+          + ".securitycenter.v1.NotificationConfig\"\231\002"
+          + "\332A$parent,config_id,notification_config\332"
+          + "A\032parent,notification_config\202\323\344\223\002\316\001\"0/v1"
+          + "/{parent=organizations/*}/notificationCo"
+          + "nfigs:\023notification_configZA\"*/v1/{paren"
+          + "t=folders/*}/notificationConfigs:\023notifi"
+          + "cation_configZB\"+/v1/{parent=projects/*}"
+          + "/notificationConfigs:\023notification_confi"
+          + "g\022\210\003\n\020DeleteMuteConfig\0227.google.cloud.se"
+          + "curitycenter.v1.DeleteMuteConfigRequest\032"
+          + "\026.google.protobuf.Empty\"\242\002\332A\004name\202\323\344\223\002\224\002"
+          + "*(/v1/{name=organizations/*/muteConfigs/"
+          + "*}Z$*\"/v1/{name=folders/*/muteConfigs/*}"
+          + "Z%*#/v1/{name=projects/*/muteConfigs/*}Z"
+          + "6*4/v1/{name=organizations/*/locations/*"
+          + "/muteConfigs/*}Z0*./v1/{name=folders/*/l"
+          + "ocations/*/muteConfigs/*}Z1*//v1/{name=p"
+          + "rojects/*/locations/*/muteConfigs/*}\022\223\002\n"
+          + "\030DeleteNotificationConfig\022?.google.cloud"
+          + ".securitycenter.v1.DeleteNotificationCon"
+          + "figRequest\032\026.google.protobuf.Empty\"\235\001\332A\004"
+          + "name\202\323\344\223\002\217\001*0/v1/{name=organizations/*/n"
+          + "otificationConfigs/*}Z,**/v1/{name=folde"
+          + "rs/*/notificationConfigs/*}Z-*+/v1/{name"
+          + "=projects/*/notificationConfigs/*}\022\203\003\n)D"
+          + "eleteSecurityHealthAnalyticsCustomModule"
+          + "\022P.google.cloud.securitycenter.v1.Delete"
+          + "SecurityHealthAnalyticsCustomModuleReque"
+          + "st\032\026.google.protobuf.Empty\"\353\001\332A\004name\202\323\344\223"
+          + "\002\335\001*J/v1/{name=organizations/*/securityH"
+          + "ealthAnalyticsSettings/customModules/*}Z"
+          + "F*D/v1/{name=folders/*/securityHealthAna"
+          + "lyticsSettings/customModules/*}ZG*E/v1/{"
+          + "name=projects/*/securityHealthAnalyticsS"
+          + "ettings/customModules/*}\022\252\001\n\rGetSimulati"
+          + "on\0224.google.cloud.securitycenter.v1.GetS"
+          + "imulationRequest\032*.google.cloud.security"
+          + "center.v1.Simulation\"7\332A\004name\202\323\344\223\002*\022(/v1"
+          + "/{name=organizations/*/simulations/*}\022\310\001"
+          + "\n\021GetValuedResource\0228.google.cloud.secur"
+          + "itycenter.v1.GetValuedResourceRequest\032.."
+          + "google.cloud.securitycenter.v1.ValuedRes"
+          + "ource\"I\332A\004name\202\323\344\223\002<\022:/v1/{name=organiza"
+          + "tions/*/simulations/*/valuedResources/*}"
+          + "\022\221\002\n\021GetBigQueryExport\0228.google.cloud.se"
+          + "curitycenter.v1.GetBigQueryExportRequest"
+          + "\032..google.cloud.securitycenter.v1.BigQue"
+          + "ryExport\"\221\001\332A\004name\202\323\344\223\002\203\001\022,/v1/{name=org"
+          + "anizations/*/bigQueryExports/*}Z(\022&/v1/{"
+          + "name=folders/*/bigQueryExports/*}Z)\022\'/v1"
+          + "/{name=projects/*/bigQueryExports/*}\022\226\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPoli"
+          + "cyRequest\032\025.google.iam.v1.Policy\"K\332A\010res"
+          + "ource\202\323\344\223\002:\"5/v1/{resource=organizations"
+          + "/*/sources/*}:getIamPolicy:\001*\022\226\003\n\rGetMut"
+          + "eConfig\0224.google.cloud.securitycenter.v1"
+          + ".GetMuteConfigRequest\032*.google.cloud.sec"
+          + "uritycenter.v1.MuteConfig\"\242\002\332A\004name\202\323\344\223\002"
+          + "\224\002\022(/v1/{name=organizations/*/muteConfig"
+          + "s/*}Z$\022\"/v1/{name=folders/*/muteConfigs/"
+          + "*}Z%\022#/v1/{name=projects/*/muteConfigs/*"
+          + "}Z6\0224/v1/{name=organizations/*/locations"
+          + "/*/muteConfigs/*}Z0\022./v1/{name=folders/*"
+          + "/locations/*/muteConfigs/*}Z1\022//v1/{name"
+          + "=projects/*/locations/*/muteConfigs/*}\022\251"
+          + "\002\n\025GetNotificationConfig\022<.google.cloud."
+          + "securitycenter.v1.GetNotificationConfigR"
+          + "equest\0322.google.cloud.securitycenter.v1."
+          + "NotificationConfig\"\235\001\332A\004name\202\323\344\223\002\217\001\0220/v1"
+          + "/{name=organizations/*/notificationConfi"
+          + "gs/*}Z,\022*/v1/{name=folders/*/notificatio"
+          + "nConfigs/*}Z-\022+/v1/{name=projects/*/noti"
+          + "ficationConfigs/*}\022\317\001\n\027GetOrganizationSe"
+          + "ttings\022>.google.cloud.securitycenter.v1."
+          + "GetOrganizationSettingsRequest\0324.google."
+          + "cloud.securitycenter.v1.OrganizationSett"
+          + "ings\">\332A\004name\202\323\344\223\0021\022//v1/{name=organizat"
+          + "ions/*/organizationSettings}\022\340\003\n/GetEffe"
+          + "ctiveSecurityHealthAnalyticsCustomModule"
+          + "\022V.google.cloud.securitycenter.v1.GetEff"
+          + "ectiveSecurityHealthAnalyticsCustomModul"
+          + "eRequest\032L.google.cloud.securitycenter.v"
+          + "1.EffectiveSecurityHealthAnalyticsCustom"
+          + "Module\"\206\002\332A\004name\202\323\344\223\002\370\001\022S/v1/{name=organ"
+          + "izations/*/securityHealthAnalyticsSettin"
+          + "gs/effectiveCustomModules/*}ZO\022M/v1/{nam"
+          + "e=folders/*/securityHealthAnalyticsSetti"
+          + "ngs/effectiveCustomModules/*}ZP\022N/v1/{na"
+          + "me=projects/*/securityHealthAnalyticsSet"
+          + "tings/effectiveCustomModules/*}\022\252\003\n&GetS"
+          + "ecurityHealthAnalyticsCustomModule\022M.goo"
+          + "gle.cloud.securitycenter.v1.GetSecurityH"
+          + "ealthAnalyticsCustomModuleRequest\032C.goog"
+          + "le.cloud.securitycenter.v1.SecurityHealt"
+          + "hAnalyticsCustomModule\"\353\001\332A\004name\202\323\344\223\002\335\001\022"
+          + "J/v1/{name=organizations/*/securityHealt"
+          + "hAnalyticsSettings/customModules/*}ZF\022D/"
+          + "v1/{name=folders/*/securityHealthAnalyti"
+          + "csSettings/customModules/*}ZG\022E/v1/{name"
+          + "=projects/*/securityHealthAnalyticsSetti"
+          + "ngs/customModules/*}\022\232\001\n\tGetSource\0220.goo"
+          + "gle.cloud.securitycenter.v1.GetSourceReq"
+          + "uest\032&.google.cloud.securitycenter.v1.So"
+          + "urce\"3\332A\004name\202\323\344\223\002&\022$/v1/{name=organizat"
+          + "ions/*/sources/*}\022\206\002\n\013GroupAssets\0222.goog"
+          + "le.cloud.securitycenter.v1.GroupAssetsRe"
+          + "quest\0323.google.cloud.securitycenter.v1.G"
+          + "roupAssetsResponse\"\215\001\210\002\001\202\323\344\223\002\203\001\")/v1/{pa"
+          + "rent=organizations/*}/assets:group:\001*Z(\""
+          + "#/v1/{parent=folders/*}/assets:group:\001*Z"
+          + ")\"$/v1/{parent=projects/*}/assets:group:"
+          + "\001*\022\277\002\n\rGroupFindings\0224.google.cloud.secu"
+          + "ritycenter.v1.GroupFindingsRequest\0325.goo"
+          + "gle.cloud.securitycenter.v1.GroupFinding"
+          + "sResponse\"\300\001\332A\017parent,group_by\202\323\344\223\002\247\001\"5/"
+          + "v1/{parent=organizations/*/sources/*}/fi"
+          + "ndings:group:\001*Z4\"//v1/{parent=folders/*"
+          + "/sources/*}/findings:group:\001*Z5\"0/v1/{pa"
+          + "rent=projects/*/sources/*}/findings:grou"
+          + "p:\001*\022\346\001\n\nListAssets\0221.google.cloud.secur"
+          + "itycenter.v1.ListAssetsRequest\0322.google."
+          + "cloud.securitycenter.v1.ListAssetsRespon"
+          + "se\"q\210\002\001\202\323\344\223\002h\022#/v1/{parent=organizations"
+          + "/*}/assetsZ\037\022\035/v1/{parent=folders/*}/ass"
+          + "etsZ \022\036/v1/{parent=projects/*}/assets\022\210\004"
+          + "\n2ListDescendantSecurityHealthAnalyticsC"
+          + "ustomModules\022Y.google.cloud.securitycent"
+          + "er.v1.ListDescendantSecurityHealthAnalyt"
+          + "icsCustomModulesRequest\032Z.google.cloud.s"
+          + "ecuritycenter.v1.ListDescendantSecurityH"
+          + "ealthAnalyticsCustomModulesResponse\"\232\002\332A"
+          + "\006parent\202\323\344\223\002\212\002\022Y/v1/{parent=organization"
+          + "s/*/securityHealthAnalyticsSettings}/cus"
+          + "tomModules:listDescendantZU\022S/v1/{parent"
+          + "=folders/*/securityHealthAnalyticsSettin"
+          + "gs}/customModules:listDescendantZV\022T/v1/"
+          + "{parent=projects/*/securityHealthAnalyti"
+          + "csSettings}/customModules:listDescendant"
+          + "\022\217\002\n\014ListFindings\0223.google.cloud.securit"
+          + "ycenter.v1.ListFindingsRequest\0324.google."
+          + "cloud.securitycenter.v1.ListFindingsResp"
+          + "onse\"\223\001\202\323\344\223\002\214\001\022//v1/{parent=organization"
+          + "s/*/sources/*}/findingsZ+\022)/v1/{parent=f"
+          + "olders/*/sources/*}/findingsZ,\022*/v1/{par"
+          + "ent=projects/*/sources/*}/findings\022\251\003\n\017L"
+          + "istMuteConfigs\0226.google.cloud.securityce"
+          + "nter.v1.ListMuteConfigsRequest\0327.google."
+          + "cloud.securitycenter.v1.ListMuteConfigsR"
+          + "esponse\"\244\002\332A\006parent\202\323\344\223\002\224\002\022(/v1/{parent="
+          + "organizations/*}/muteConfigsZ$\022\"/v1/{par"
+          + "ent=folders/*}/muteConfigsZ%\022#/v1/{paren"
+          + "t=projects/*}/muteConfigsZ6\0224/v1/{parent"
+          + "=organizations/*/locations/*/muteConfigs"
+          + "}Z0\022./v1/{parent=folders/*/locations/*/m"
+          + "uteConfigs}Z1\022//v1/{parent=projects/*/lo"
+          + "cations/*/muteConfigs}\022\274\002\n\027ListNotificat"
+          + "ionConfigs\022>.google.cloud.securitycenter"
+          + ".v1.ListNotificationConfigsRequest\032?.goo"
+          + "gle.cloud.securitycenter.v1.ListNotifica"
+          + "tionConfigsResponse\"\237\001\332A\006parent\202\323\344\223\002\217\001\0220"
+          + "/v1/{parent=organizations/*}/notificatio"
+          + "nConfigsZ,\022*/v1/{parent=folders/*}/notif"
+          + "icationConfigsZ-\022+/v1/{parent=projects/*"
+          + "}/notificationConfigs\022\363\003\n1ListEffectiveS"
+          + "ecurityHealthAnalyticsCustomModules\022X.go"
+          + "ogle.cloud.securitycenter.v1.ListEffecti"
+          + "veSecurityHealthAnalyticsCustomModulesRe"
+          + "quest\032Y.google.cloud.securitycenter.v1.L"
+          + "istEffectiveSecurityHealthAnalyticsCusto"
+          + "mModulesResponse\"\210\002\332A\006parent\202\323\344\223\002\370\001\022S/v1"
+          + "/{parent=organizations/*/securityHealthA"
+          + "nalyticsSettings}/effectiveCustomModules"
+          + "ZO\022M/v1/{parent=folders/*/securityHealth"
+          + "AnalyticsSettings}/effectiveCustomModule"
+          + "sZP\022N/v1/{parent=projects/*/securityHeal"
+          + "thAnalyticsSettings}/effectiveCustomModu"
+          + "les\022\275\003\n(ListSecurityHealthAnalyticsCusto"
+          + "mModules\022O.google.cloud.securitycenter.v"
+          + "1.ListSecurityHealthAnalyticsCustomModul"
+          + "esRequest\032P.google.cloud.securitycenter."
+          + "v1.ListSecurityHealthAnalyticsCustomModu"
+          + "lesResponse\"\355\001\332A\006parent\202\323\344\223\002\335\001\022J/v1/{par"
+          + "ent=organizations/*/securityHealthAnalyt"
+          + "icsSettings}/customModulesZF\022D/v1/{paren"
+          + "t=folders/*/securityHealthAnalyticsSetti"
+          + "ngs}/customModulesZG\022E/v1/{parent=projec"
+          + "ts/*/securityHealthAnalyticsSettings}/cu"
+          + "stomModules\022\362\001\n\013ListSources\0222.google.clo"
+          + "ud.securitycenter.v1.ListSourcesRequest\032"
+          + "3.google.cloud.securitycenter.v1.ListSou"
+          + "rcesResponse\"z\332A\006parent\202\323\344\223\002k\022$/v1/{pare"
+          + "nt=organizations/*}/sourcesZ \022\036/v1/{pare"
+          + "nt=folders/*}/sourcesZ!\022\037/v1/{parent=pro"
+          + "jects/*}/sources\022\212\002\n\021RunAssetDiscovery\0228"
+          + ".google.cloud.securitycenter.v1.RunAsset"
+          + "DiscoveryRequest\032\035.google.longrunning.Op"
+          + "eration\"\233\001\210\002\001\312AQ\n8google.cloud.securityc"
+          + "enter.v1.RunAssetDiscoveryResponse\022\025goog"
+          + "le.protobuf.Empty\332A\006parent\202\323\344\223\0025\"0/v1/{p"
+          + "arent=organizations/*}/assets:runDiscove"
+          + "ry:\001*\022\304\002\n\017SetFindingState\0226.google.cloud"
+          + ".securitycenter.v1.SetFindingStateReques"
+          + "t\032\'.google.cloud.securitycenter.v1.Findi"
+          + "ng\"\317\001\332A\025name,state,start_time\202\323\344\223\002\260\001\"8/v"
+          + "1/{name=organizations/*/sources/*/findin"
+          + "gs/*}:setState:\001*Z7\"2/v1/{name=folders/*"
+          + "/sources/*/findings/*}:setState:\001*Z8\"3/v"
+          + "1/{name=projects/*/sources/*/findings/*}"
+          + ":setState:\001*\022\245\002\n\007SetMute\022..google.cloud."
+          + "securitycenter.v1.SetMuteRequest\032\'.googl"
+          + "e.cloud.securitycenter.v1.Finding\"\300\001\332A\tn"
+          + "ame,mute\202\323\344\223\002\255\001\"7/v1/{name=organizations"
+          + "/*/sources/*/findings/*}:setMute:\001*Z6\"1/"
+          + "v1/{name=folders/*/sources/*/findings/*}"
+          + ":setMute:\001*Z7\"2/v1/{name=projects/*/sour"
+          + "ces/*/findings/*}:setMute:\001*\022\235\001\n\014SetIamP"
+          + "olicy\022\".google.iam.v1.SetIamPolicyReques"
+          + "t\032\025.google.iam.v1.Policy\"R\332A\017resource,po"
+          + "licy\202\323\344\223\002:\"5/v1/{resource=organizations/"
+          + "*/sources/*}:setIamPolicy:\001*\022\310\001\n\022TestIam"
+          + "Permissions\022(.google.iam.v1.TestIamPermi"
+          + "ssionsRequest\032).google.iam.v1.TestIamPer"
+          + "missionsResponse\"]\332A\024resource,permission"
+          + "s\202\323\344\223\002@\";/v1/{resource=organizations/*/s"
+          + "ources/*}:testIamPermissions:\001*\022\201\004\n+Simu"
+          + "lateSecurityHealthAnalyticsCustomModule\022"
+          + "R.google.cloud.securitycenter.v1.Simulat"
+          + "eSecurityHealthAnalyticsCustomModuleRequ"
+          + "est\032S.google.cloud.securitycenter.v1.Sim"
+          + "ulateSecurityHealthAnalyticsCustomModule"
+          + "Response\"\250\002\332A\035parent,custom_config,resou"
+          + "rce\202\323\344\223\002\201\002\"S/v1/{parent=organizations/*/"
+          + "securityHealthAnalyticsSettings}/customM"
+          + "odules:simulate:\001*ZR\"M/v1/{parent=folder"
+          + "s/*/securityHealthAnalyticsSettings}/cus"
+          + "tomModules:simulate:\001*ZS\"N/v1/{parent=pr"
+          + "ojects/*/securityHealthAnalyticsSettings"
+          + "}/customModules:simulate:\001*\022\320\003\n\024UpdateEx"
+          + "ternalSystem\022;.google.cloud.securitycent"
+          + "er.v1.UpdateExternalSystemRequest\032..goog"
+          + "le.cloud.securitycenter.v1.ExternalSyste"
+          + "m\"\312\002\332A\033external_system,update_mask\202\323\344\223\002\245"
+          + "\0022Q/v1/{external_system.name=organizatio"
+          + "ns/*/sources/*/findings/*/externalSystem"
+          + "s/*}:\017external_systemZ^2K/v1/{external_s"
+          + "ystem.name=folders/*/sources/*/findings/"
+          + "*/externalSystems/*}:\017external_systemZ_2"
+          + "L/v1/{external_system.name=projects/*/so"
+          + "urces/*/findings/*/externalSystems/*}:\017e"
+          + "xternal_system\022\301\002\n\rUpdateFinding\0224.googl"
+          + "e.cloud.securitycenter.v1.UpdateFindingR"
+          + "equest\032\'.google.cloud.securitycenter.v1."
+          + "Finding\"\320\001\332A\007finding\202\323\344\223\002\277\00127/v1/{findin"
+          + "g.name=organizations/*/sources/*/finding"
+          + "s/*}:\007findingZ<21/v1/{finding.name=folde"
+          + "rs/*/sources/*/findings/*}:\007findingZ=22/"
+          + "v1/{finding.name=projects/*/sources/*/fi"
+          + "ndings/*}:\007finding\022\305\004\n\020UpdateMuteConfig\022"
+          + "7.google.cloud.securitycenter.v1.UpdateM"
+          + "uteConfigRequest\032*.google.cloud.security"
+          + "center.v1.MuteConfig\"\313\003\332A\027mute_config,up"
+          + "date_mask\202\323\344\223\002\252\00324/v1/{mute_config.name="
+          + "organizations/*/muteConfigs/*}:\013mute_con"
+          + "figZ=2./v1/{mute_config.name=folders/*/m"
+          + "uteConfigs/*}:\013mute_configZ>2//v1/{mute_"
+          + "config.name=projects/*/muteConfigs/*}:\013m"
+          + "ute_configZO2@/v1/{mute_config.name=orga"
+          + "nizations/*/locations/*/muteConfigs/*}:\013"
+          + "mute_configZI2:/v1/{mute_config.name=fol"
+          + "ders/*/locations/*/muteConfigs/*}:\013mute_"
+          + "configZJ2;/v1/{mute_config.name=projects"
+          + "/*/locations/*/muteConfigs/*}:\013mute_conf"
+          + "ig\022\333\003\n\030UpdateNotificationConfig\022?.google"
+          + ".cloud.securitycenter.v1.UpdateNotificat"
+          + "ionConfigRequest\0322.google.cloud.security"
+          + "center.v1.NotificationConfig\"\311\002\332A\023notifi"
+          + "cation_config\332A\037notification_config,upda"
+          + "te_mask\202\323\344\223\002\212\0022D/v1/{notification_config"
+          + ".name=organizations/*/notificationConfig"
+          + "s/*}:\023notification_configZU2>/v1/{notifi"
+          + "cation_config.name=folders/*/notificatio"
+          + "nConfigs/*}:\023notification_configZV2?/v1/"
+          + "{notification_config.name=projects/*/not"
+          + "ificationConfigs/*}:\023notification_config"
+          + "\022\223\002\n\032UpdateOrganizationSettings\022A.google"
+          + ".cloud.securitycenter.v1.UpdateOrganizat"
+          + "ionSettingsRequest\0324.google.cloud.securi"
+          + "tycenter.v1.OrganizationSettings\"|\332A\025org"
+          + "anization_settings\202\323\344\223\002^2E/v1/{organizat"
+          + "ion_settings.name=organizations/*/organi"
+          + "zationSettings}:\025organization_settings\022\324"
+          + "\005\n)UpdateSecurityHealthAnalyticsCustomMo"
+          + "dule\022P.google.cloud.securitycenter.v1.Up"
+          + "dateSecurityHealthAnalyticsCustomModuleR"
+          + "equest\032C.google.cloud.securitycenter.v1."
+          + "SecurityHealthAnalyticsCustomModule\"\217\004\332A"
+          + "3security_health_analytics_custom_module"
+          + ",update_mask\202\323\344\223\002\322\0032r/v1/{security_healt"
+          + "h_analytics_custom_module.name=organizat"
+          + "ions/*/securityHealthAnalyticsSettings/c"
           + "ustomModules/*}:\'security_health_analyti"
-          + "cs_custom_moduleZ\230\0012m/v1/{security_healt"
-          + "h_analytics_custom_module.name=projects/"
-          + "*/securityHealthAnalyticsSettings/custom"
-          + "Modules/*}:\'security_health_analytics_cu"
-          + "stom_module\022\261\001\n\014UpdateSource\0223.google.cl"
-          + "oud.securitycenter.v1.UpdateSourceReques"
-          + "t\032&.google.cloud.securitycenter.v1.Sourc"
-          + "e\"D\332A\006source\202\323\344\223\00252+/v1/{source.name=org"
-          + "anizations/*/sources/*}:\006source\022\237\005\n\023Upda"
-          + "teSecurityMarks\022:.google.cloud.securityc"
-          + "enter.v1.UpdateSecurityMarksRequest\032-.go"
-          + "ogle.cloud.securitycenter.v1.SecurityMar"
-          + "ks\"\234\004\332A\016security_marks\202\323\344\223\002\204\0042@/v1/{secu"
-          + "rity_marks.name=organizations/*/assets/*"
-          + "/securityMarks}:\016security_marksZL2:/v1/{"
-          + "security_marks.name=folders/*/assets/*/s"
-          + "ecurityMarks}:\016security_marksZM2;/v1/{se"
-          + "curity_marks.name=projects/*/assets/*/se"
-          + "curityMarks}:\016security_marksZ^2L/v1/{sec"
-          + "urity_marks.name=organizations/*/sources"
-          + "/*/findings/*/securityMarks}:\016security_m"
-          + "arksZX2F/v1/{security_marks.name=folders"
-          + "/*/sources/*/findings/*/securityMarks}:\016"
-          + "security_marksZY2G/v1/{security_marks.na"
-          + "me=projects/*/sources/*/findings/*/secur"
-          + "ityMarks}:\016security_marks\022\364\002\n\024CreateBigQ"
-          + "ueryExport\022;.google.cloud.securitycenter"
-          + ".v1.CreateBigQueryExportRequest\032..google"
-          + ".cloud.securitycenter.v1.BigQueryExport\""
-          + "\356\001\332A+parent,big_query_export,big_query_e"
-          + "xport_id\202\323\344\223\002\271\001\",/v1/{parent=organizatio"
-          + "ns/*}/bigQueryExports:\020big_query_exportZ"
-          + ":\"&/v1/{parent=folders/*}/bigQueryExport"
-          + "s:\020big_query_exportZ;\"\'/v1/{parent=proje"
-          + "cts/*}/bigQueryExports:\020big_query_export"
-          + "\022\377\001\n\024DeleteBigQueryExport\022;.google.cloud"
-          + ".securitycenter.v1.DeleteBigQueryExportR"
-          + "equest\032\026.google.protobuf.Empty\"\221\001\332A\004name"
-          + "\202\323\344\223\002\203\001*,/v1/{name=organizations/*/bigQu"
-          + "eryExports/*}Z(*&/v1/{name=folders/*/big"
-          + "QueryExports/*}Z)*\'/v1/{name=projects/*/"
-          + "bigQueryExports/*}\022\230\003\n\024UpdateBigQueryExp"
-          + "ort\022;.google.cloud.securitycenter.v1.Upd"
-          + "ateBigQueryExportRequest\032..google.cloud."
-          + "securitycenter.v1.BigQueryExport\"\222\002\332A\034bi"
-          + "g_query_export,update_mask\202\323\344\223\002\354\0012=/v1/{"
-          + "big_query_export.name=organizations/*/bi"
-          + "gQueryExports/*}:\020big_query_exportZK27/v"
-          + "1/{big_query_export.name=folders/*/bigQu"
-          + "eryExports/*}:\020big_query_exportZL28/v1/{"
-          + "big_query_export.name=projects/*/bigQuer"
-          + "yExports/*}:\020big_query_export\022\244\002\n\023ListBi"
-          + "gQueryExports\022:.google.cloud.securitycen"
-          + "ter.v1.ListBigQueryExportsRequest\032;.goog"
-          + "le.cloud.securitycenter.v1.ListBigQueryE"
-          + "xportsResponse\"\223\001\332A\006parent\202\323\344\223\002\203\001\022,/v1/{"
-          + "parent=organizations/*}/bigQueryExportsZ"
-          + "(\022&/v1/{parent=folders/*}/bigQueryExport"
-          + "sZ)\022\'/v1/{parent=projects/*}/bigQueryExp"
-          + "orts\032Q\312A\035securitycenter.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\330\001\n\"com.google.cloud.securitycen"
-          + "ter.v1P\001ZJcloud.google.com/go/securityce"
-          + "nter/apiv1/securitycenterpb;securitycent"
-          + "erpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036"
-          + "Google\\Cloud\\SecurityCenter\\V1\352\002!Google:"
-          + ":Cloud::SecurityCenter::V1b\006proto3"
+          + "cs_custom_moduleZ\227\0012l/v1/{security_healt"
+          + "h_analytics_custom_module.name=folders/*"
+          + "/securityHealthAnalyticsSettings/customM"
+          + "odules/*}:\'security_health_analytics_cus"
+          + "tom_moduleZ\230\0012m/v1/{security_health_anal"
+          + "ytics_custom_module.name=projects/*/secu"
+          + "rityHealthAnalyticsSettings/customModule"
+          + "s/*}:\'security_health_analytics_custom_m"
+          + "odule\022\261\001\n\014UpdateSource\0223.google.cloud.se"
+          + "curitycenter.v1.UpdateSourceRequest\032&.go"
+          + "ogle.cloud.securitycenter.v1.Source\"D\332A\006"
+          + "source\202\323\344\223\00252+/v1/{source.name=organizat"
+          + "ions/*/sources/*}:\006source\022\237\005\n\023UpdateSecu"
+          + "rityMarks\022:.google.cloud.securitycenter."
+          + "v1.UpdateSecurityMarksRequest\032-.google.c"
+          + "loud.securitycenter.v1.SecurityMarks\"\234\004\332"
+          + "A\016security_marks\202\323\344\223\002\204\0042@/v1/{security_m"
+          + "arks.name=organizations/*/assets/*/secur"
+          + "ityMarks}:\016security_marksZL2:/v1/{securi"
+          + "ty_marks.name=folders/*/assets/*/securit"
+          + "yMarks}:\016security_marksZM2;/v1/{security",
+      "_marks.name=projects/*/assets/*/security"
+          + "Marks}:\016security_marksZ^2L/v1/{security_"
+          + "marks.name=organizations/*/sources/*/fin"
+          + "dings/*/securityMarks}:\016security_marksZX"
+          + "2F/v1/{security_marks.name=folders/*/sou"
+          + "rces/*/findings/*/securityMarks}:\016securi"
+          + "ty_marksZY2G/v1/{security_marks.name=pro"
+          + "jects/*/sources/*/findings/*/securityMar"
+          + "ks}:\016security_marks\022\364\002\n\024CreateBigQueryEx"
+          + "port\022;.google.cloud.securitycenter.v1.Cr"
+          + "eateBigQueryExportRequest\032..google.cloud"
+          + ".securitycenter.v1.BigQueryExport\"\356\001\332A+p"
+          + "arent,big_query_export,big_query_export_"
+          + "id\202\323\344\223\002\271\001\",/v1/{parent=organizations/*}/"
+          + "bigQueryExports:\020big_query_exportZ:\"&/v1"
+          + "/{parent=folders/*}/bigQueryExports:\020big"
+          + "_query_exportZ;\"\'/v1/{parent=projects/*}"
+          + "/bigQueryExports:\020big_query_export\022\377\001\n\024D"
+          + "eleteBigQueryExport\022;.google.cloud.secur"
+          + "itycenter.v1.DeleteBigQueryExportRequest"
+          + "\032\026.google.protobuf.Empty\"\221\001\332A\004name\202\323\344\223\002\203"
+          + "\001*,/v1/{name=organizations/*/bigQueryExp"
+          + "orts/*}Z(*&/v1/{name=folders/*/bigQueryE"
+          + "xports/*}Z)*\'/v1/{name=projects/*/bigQue"
+          + "ryExports/*}\022\230\003\n\024UpdateBigQueryExport\022;."
+          + "google.cloud.securitycenter.v1.UpdateBig"
+          + "QueryExportRequest\032..google.cloud.securi"
+          + "tycenter.v1.BigQueryExport\"\222\002\332A\034big_quer"
+          + "y_export,update_mask\202\323\344\223\002\354\0012=/v1/{big_qu"
+          + "ery_export.name=organizations/*/bigQuery"
+          + "Exports/*}:\020big_query_exportZK27/v1/{big"
+          + "_query_export.name=folders/*/bigQueryExp"
+          + "orts/*}:\020big_query_exportZL28/v1/{big_qu"
+          + "ery_export.name=projects/*/bigQueryExpor"
+          + "ts/*}:\020big_query_export\022\244\002\n\023ListBigQuery"
+          + "Exports\022:.google.cloud.securitycenter.v1"
+          + ".ListBigQueryExportsRequest\032;.google.clo"
+          + "ud.securitycenter.v1.ListBigQueryExports"
+          + "Response\"\223\001\332A\006parent\202\323\344\223\002\203\001\022,/v1/{parent"
+          + "=organizations/*}/bigQueryExportsZ(\022&/v1"
+          + "/{parent=folders/*}/bigQueryExportsZ)\022\'/"
+          + "v1/{parent=projects/*}/bigQueryExports\022\267"
+          + "\004\n&CreateEventThreatDetectionCustomModul"
+          + "e\022M.google.cloud.securitycenter.v1.Creat"
+          + "eEventThreatDetectionCustomModuleRequest"
+          + "\032@.google.cloud.securitycenter.v1.EventT"
+          + "hreatDetectionCustomModule\"\373\002\332A+parent,e"
+          + "vent_threat_detection_custom_module\202\323\344\223\002"
+          + "\306\002\"G/v1/{parent=organizations/*/eventThr"
+          + "eatDetectionSettings}/customModules:$eve"
+          + "nt_threat_detection_custom_moduleZi\"A/v1"
+          + "/{parent=folders/*/eventThreatDetectionS"
+          + "ettings}/customModules:$event_threat_det"
+          + "ection_custom_moduleZj\"B/v1/{parent=proj"
+          + "ects/*/eventThreatDetectionSettings}/cus"
+          + "tomModules:$event_threat_detection_custo"
+          + "m_module\022\364\002\n&DeleteEventThreatDetectionC"
+          + "ustomModule\022M.google.cloud.securitycente"
+          + "r.v1.DeleteEventThreatDetectionCustomMod"
+          + "uleRequest\032\026.google.protobuf.Empty\"\342\001\332A\004"
+          + "name\202\323\344\223\002\324\001*G/v1/{name=organizations/*/e"
+          + "ventThreatDetectionSettings/customModule"
+          + "s/*}ZC*A/v1/{name=folders/*/eventThreatD"
+          + "etectionSettings/customModules/*}ZD*B/v1"
+          + "/{name=projects/*/eventThreatDetectionSe"
+          + "ttings/customModules/*}\022\230\003\n#GetEventThre"
+          + "atDetectionCustomModule\022J.google.cloud.s"
+          + "ecuritycenter.v1.GetEventThreatDetection"
+          + "CustomModuleRequest\032@.google.cloud.secur"
+          + "itycenter.v1.EventThreatDetectionCustomM"
+          + "odule\"\342\001\332A\004name\202\323\344\223\002\324\001\022G/v1/{name=organi"
+          + "zations/*/eventThreatDetectionSettings/c"
+          + "ustomModules/*}ZC\022A/v1/{name=folders/*/e"
+          + "ventThreatDetectionSettings/customModule"
+          + "s/*}ZD\022B/v1/{name=projects/*/eventThreat"
+          + "DetectionSettings/customModules/*}\022\366\003\n/L"
+          + "istDescendantEventThreatDetectionCustomM"
+          + "odules\022V.google.cloud.securitycenter.v1."
+          + "ListDescendantEventThreatDetectionCustom"
+          + "ModulesRequest\032W.google.cloud.securityce"
+          + "nter.v1.ListDescendantEventThreatDetecti"
+          + "onCustomModulesResponse\"\221\002\332A\006parent\202\323\344\223\002"
+          + "\201\002\022V/v1/{parent=organizations/*/eventThr"
+          + "eatDetectionSettings}/customModules:list"
+          + "DescendantZR\022P/v1/{parent=folders/*/even"
+          + "tThreatDetectionSettings}/customModules:"
+          + "listDescendantZS\022Q/v1/{parent=projects/*"
+          + "/eventThreatDetectionSettings}/customMod"
+          + "ules:listDescendant\022\253\003\n%ListEventThreatD"
+          + "etectionCustomModules\022L.google.cloud.sec"
+          + "uritycenter.v1.ListEventThreatDetectionC"
+          + "ustomModulesRequest\032M.google.cloud.secur"
+          + "itycenter.v1.ListEventThreatDetectionCus"
+          + "tomModulesResponse\"\344\001\332A\006parent\202\323\344\223\002\324\001\022G/"
+          + "v1/{parent=organizations/*/eventThreatDe"
+          + "tectionSettings}/customModulesZC\022A/v1/{p"
+          + "arent=folders/*/eventThreatDetectionSett"
+          + "ings}/customModulesZD\022B/v1/{parent=proje"
+          + "cts/*/eventThreatDetectionSettings}/cust"
+          + "omModules\022\255\005\n&UpdateEventThreatDetection"
+          + "CustomModule\022M.google.cloud.securitycent"
+          + "er.v1.UpdateEventThreatDetectionCustomMo"
+          + "duleRequest\032@.google.cloud.securitycente"
+          + "r.v1.EventThreatDetectionCustomModule\"\361\003"
+          + "\332A0event_threat_detection_custom_module,"
+          + "update_mask\202\323\344\223\002\267\0032l/v1/{event_threat_de"
+          + "tection_custom_module.name=organizations"
+          + "/*/eventThreatDetectionSettings/customMo"
+          + "dules/*}:$event_threat_detection_custom_"
+          + "moduleZ\216\0012f/v1/{event_threat_detection_c"
+          + "ustom_module.name=folders/*/eventThreatD"
+          + "etectionSettings/customModules/*}:$event"
+          + "_threat_detection_custom_moduleZ\217\0012g/v1/"
+          + "{event_threat_detection_custom_module.na"
+          + "me=projects/*/eventThreatDetectionSettin"
+          + "gs/customModules/*}:$event_threat_detect"
+          + "ion_custom_module\022\311\003\n(ValidateEventThrea"
+          + "tDetectionCustomModule\022O.google.cloud.se"
+          + "curitycenter.v1.ValidateEventThreatDetec"
+          + "tionCustomModuleRequest\032P.google.cloud.s"
+          + "ecuritycenter.v1.ValidateEventThreatDete"
+          + "ctionCustomModuleResponse\"\371\001\202\323\344\223\002\362\001\"N/v1"
+          + "/{parent=organizations/*/eventThreatDete"
+          + "ctionSettings}:validateCustomModule:\001*ZM"
+          + "\"H/v1/{parent=folders/*/eventThreatDetec"
+          + "tionSettings}:validateCustomModule:\001*ZN\""
+          + "I/v1/{parent=projects/*/eventThreatDetec"
+          + "tionSettings}:validateCustomModule:\001*\022\316\003"
+          + "\n,GetEffectiveEventThreatDetectionCustom"
+          + "Module\022S.google.cloud.securitycenter.v1."
+          + "GetEffectiveEventThreatDetectionCustomMo"
+          + "duleRequest\032I.google.cloud.securitycente"
+          + "r.v1.EffectiveEventThreatDetectionCustom"
+          + "Module\"\375\001\332A\004name\202\323\344\223\002\357\001\022P/v1/{name=organ"
+          + "izations/*/eventThreatDetectionSettings/"
+          + "effectiveCustomModules/*}ZL\022J/v1/{name=f"
+          + "olders/*/eventThreatDetectionSettings/ef"
+          + "fectiveCustomModules/*}ZM\022K/v1/{name=pro"
+          + "jects/*/eventThreatDetectionSettings/eff"
+          + "ectiveCustomModules/*}\022\341\003\n.ListEffective"
+          + "EventThreatDetectionCustomModules\022U.goog"
+          + "le.cloud.securitycenter.v1.ListEffective"
+          + "EventThreatDetectionCustomModulesRequest"
+          + "\032V.google.cloud.securitycenter.v1.ListEf"
+          + "fectiveEventThreatDetectionCustomModules"
+          + "Response\"\377\001\332A\006parent\202\323\344\223\002\357\001\022P/v1/{parent"
+          + "=organizations/*/eventThreatDetectionSet"
+          + "tings}/effectiveCustomModulesZL\022J/v1/{pa"
+          + "rent=folders/*/eventThreatDetectionSetti"
+          + "ngs}/effectiveCustomModulesZM\022K/v1/{pare"
+          + "nt=projects/*/eventThreatDetectionSettin"
+          + "gs}/effectiveCustomModules\022\216\002\n\037BatchCrea"
+          + "teResourceValueConfigs\022F.google.cloud.se"
+          + "curitycenter.v1.BatchCreateResourceValue"
+          + "ConfigsRequest\032G.google.cloud.securityce"
+          + "nter.v1.BatchCreateResourceValueConfigsR"
+          + "esponse\"Z\332A\017parent,requests\202\323\344\223\002B\"=/v1/{"
+          + "parent=organizations/*}/resourceValueCon"
+          + "figs:batchCreate:\001*\022\267\001\n\031DeleteResourceVa"
+          + "lueConfig\022@.google.cloud.securitycenter."
+          + "v1.DeleteResourceValueConfigRequest\032\026.go"
+          + "ogle.protobuf.Empty\"@\332A\004name\202\323\344\223\0023*1/v1/"
+          + "{name=organizations/*/resourceValueConfi"
+          + "gs/*}\022\316\001\n\026GetResourceValueConfig\022=.googl"
+          + "e.cloud.securitycenter.v1.GetResourceVal"
+          + "ueConfigRequest\0323.google.cloud.securityc"
+          + "enter.v1.ResourceValueConfig\"@\332A\004name\202\323\344"
+          + "\223\0023\0221/v1/{name=organizations/*/resourceV"
+          + "alueConfigs/*}\022\341\001\n\030ListResourceValueConf"
+          + "igs\022?.google.cloud.securitycenter.v1.Lis"
+          + "tResourceValueConfigsRequest\032@.google.cl"
+          + "oud.securitycenter.v1.ListResourceValueC"
+          + "onfigsResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{pa"
+          + "rent=organizations/*}/resourceValueConfi"
+          + "gs\022\237\002\n\031UpdateResourceValueConfig\022@.googl"
+          + "e.cloud.securitycenter.v1.UpdateResource"
+          + "ValueConfigRequest\0323.google.cloud.securi"
+          + "tycenter.v1.ResourceValueConfig\"\212\001\332A!res"
+          + "ource_value_config,update_mask\202\323\344\223\002`2G/v"
+          + "1/{resource_value_config.name=organizati"
+          + "ons/*/resourceValueConfigs/*}:\025resource_"
+          + "value_config\022\263\002\n\023ListValuedResources\022:.g"
+          + "oogle.cloud.securitycenter.v1.ListValued"
+          + "ResourcesRequest\032;.google.cloud.security"
+          + "center.v1.ListValuedResourcesResponse\"\242\001"
+          + "\332A\006parent\202\323\344\223\002\222\001\022:/v1/{parent=organizati"
+          + "ons/*/simulations/*}/valuedResourcesZT\022R"
+          + "/v1/{parent=organizations/*/simulations/"
+          + "*/attackExposureResults/*}/valuedResourc"
+          + "es\022\353\002\n\017ListAttackPaths\0226.google.cloud.se"
+          + "curitycenter.v1.ListAttackPathsRequest\0327"
+          + ".google.cloud.securitycenter.v1.ListAtta"
+          + "ckPathsResponse\"\346\001\332A\006parent\202\323\344\223\002\326\001\0226/v1/"
+          + "{parent=organizations/*/simulations/*}/a"
+          + "ttackPathsZJ\022H/v1/{parent=organizations/"
+          + "*/simulations/*/valuedResources/*}/attac"
+          + "kPathsZP\022N/v1/{parent=organizations/*/si"
+          + "mulations/*/attackExposureResults/*}/att"
+          + "ackPaths\032Q\312A\035securitycenter.googleapis.c"
+          + "om\322A.https://www.googleapis.com/auth/clo"
+          + "ud-platformB\345\005\n\"com.google.cloud.securit"
+          + "ycenter.v1P\001ZJcloud.google.com/go/securi"
+          + "tycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1\352Ag\n2secur"
+          + "itycenter.googleapis.com/OrganizationLoc"
+          + "ation\0221organizations/{organization}/loca"
+          + "tions/{location}\352AU\n,securitycenter.goog"
+          + "leapis.com/FolderLocation\022%folders/{fold"
+          + "er}/locations/{location}\352Am\n4securitycen"
+          + "ter.googleapis.com/OrganizationSimulatio"
+          + "n\0225organizations/{organization}/simulati"
+          + "ons/{simulation}\352A\327\001\n:securitycenter.goo"
+          + "gleapis.com/EventThreatDetectionSettings"
+          + "\0229organizations/{organization}/eventThre"
+          + "atDetectionSettings\022-folders/{folder}/ev"
+          + "entThreatDetectionSettings\022/projects/{pr"
+          + "oject}/eventThreatDetectionSettingsb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -981,15 +1423,24 @@ public final class SecuritycenterService {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.AssetOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1.AttackPathProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.BigQueryExportProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModuleProto
+                  .getDescriptor(),
               com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModuleProto
                   .getDescriptor(),
+              com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModuleProto
+                  .getDescriptor(),
+              com.google.cloud.securitycenter.v1
+                  .EventThreatDetectionCustomModuleValidationErrorsProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.ExternalSystemProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor(),
               com.google.cloud.securitycenter.v1.FolderProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.MuteConfigProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.NotificationConfigProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.OrganizationSettingsOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.ResourceValueConfigProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass
                   .getDescriptor(),
               com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomConfigProto
@@ -997,7 +1448,9 @@ public final class SecuritycenterService {
               com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModuleProto
                   .getDescriptor(),
               com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1.SimulationProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.SourceOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1.ValuedResourceProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
@@ -1038,8 +1491,72 @@ public final class SecuritycenterService {
             new java.lang.String[] {
               "Parent", "MuteConfig", "MuteConfigId",
             });
-    internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_descriptor =
+    internal_static_google_cloud_securitycenter_v1_CreateResourceValueConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_securitycenter_v1_CreateResourceValueConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_CreateResourceValueConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ResourceValueConfig",
+            });
+    internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_BatchCreateResourceValueConfigsResponse_descriptor,
+            new java.lang.String[] {
+              "ResourceValueConfigs",
+            });
+    internal_static_google_cloud_securitycenter_v1_DeleteResourceValueConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_securitycenter_v1_DeleteResourceValueConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_DeleteResourceValueConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_GetResourceValueConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_securitycenter_v1_GetResourceValueConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_GetResourceValueConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListResourceValueConfigsResponse_descriptor,
+            new java.lang.String[] {
+              "ResourceValueConfigs", "NextPageToken",
+            });
+    internal_static_google_cloud_securitycenter_v1_UpdateResourceValueConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_securitycenter_v1_UpdateResourceValueConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_UpdateResourceValueConfigRequest_descriptor,
+            new java.lang.String[] {
+              "ResourceValueConfig", "UpdateMask",
+            });
+    internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CreateNotificationConfigRequest_descriptor,
@@ -1047,7 +1564,7 @@ public final class SecuritycenterService {
               "Parent", "ConfigId", "NotificationConfig",
             });
     internal_static_google_cloud_securitycenter_v1_CreateSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_securitycenter_v1_CreateSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CreateSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1055,7 +1572,7 @@ public final class SecuritycenterService {
               "Parent", "SecurityHealthAnalyticsCustomModule",
             });
     internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CreateSourceRequest_descriptor,
@@ -1063,7 +1580,7 @@ public final class SecuritycenterService {
               "Parent", "Source",
             });
     internal_static_google_cloud_securitycenter_v1_DeleteMuteConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_securitycenter_v1_DeleteMuteConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_DeleteMuteConfigRequest_descriptor,
@@ -1071,7 +1588,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_DeleteNotificationConfigRequest_descriptor,
@@ -1079,7 +1596,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_DeleteSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_securitycenter_v1_DeleteSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_DeleteSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1087,7 +1604,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetBigQueryExportRequest_descriptor,
@@ -1095,7 +1612,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetMuteConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_securitycenter_v1_GetMuteConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetMuteConfigRequest_descriptor,
@@ -1103,7 +1620,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetNotificationConfigRequest_descriptor,
@@ -1111,7 +1628,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetOrganizationSettingsRequest_descriptor,
@@ -1119,7 +1636,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetEffectiveSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_securitycenter_v1_GetEffectiveSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetEffectiveSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1127,7 +1644,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_securitycenter_v1_GetSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1135,7 +1652,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GetSourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_securitycenter_v1_GetSourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GetSourceRequest_descriptor,
@@ -1143,7 +1660,7 @@ public final class SecuritycenterService {
               "Name",
             });
     internal_static_google_cloud_securitycenter_v1_GroupAssetsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_securitycenter_v1_GroupAssetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupAssetsRequest_descriptor,
@@ -1151,7 +1668,7 @@ public final class SecuritycenterService {
               "Parent", "Filter", "GroupBy", "CompareDuration", "ReadTime", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupAssetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_securitycenter_v1_GroupAssetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupAssetsResponse_descriptor,
@@ -1159,7 +1676,7 @@ public final class SecuritycenterService {
               "GroupByResults", "ReadTime", "NextPageToken", "TotalSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupFindingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_securitycenter_v1_GroupFindingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupFindingsRequest_descriptor,
@@ -1167,7 +1684,7 @@ public final class SecuritycenterService {
               "Parent", "Filter", "GroupBy", "ReadTime", "CompareDuration", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupFindingsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_securitycenter_v1_GroupFindingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupFindingsResponse_descriptor,
@@ -1175,7 +1692,7 @@ public final class SecuritycenterService {
               "GroupByResults", "ReadTime", "NextPageToken", "TotalSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupResult_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_securitycenter_v1_GroupResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupResult_descriptor,
@@ -1193,7 +1710,7 @@ public final class SecuritycenterService {
               "Key", "Value",
             });
     internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesRequest_descriptor,
@@ -1201,15 +1718,63 @@ public final class SecuritycenterService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListDescendantSecurityHealthAnalyticsCustomModulesResponse_descriptor,
             new java.lang.String[] {
               "SecurityHealthAnalyticsCustomModules", "NextPageToken",
             });
+    internal_static_google_cloud_securitycenter_v1_ListValuedResourcesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_securitycenter_v1_ListValuedResourcesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListValuedResourcesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageToken", "PageSize", "OrderBy",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListValuedResourcesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_securitycenter_v1_ListValuedResourcesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListValuedResourcesResponse_descriptor,
+            new java.lang.String[] {
+              "ValuedResources", "NextPageToken", "TotalSize",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListAttackPathsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_securitycenter_v1_ListAttackPathsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListAttackPathsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageToken", "PageSize",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListAttackPathsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_securitycenter_v1_ListAttackPathsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListAttackPathsResponse_descriptor,
+            new java.lang.String[] {
+              "AttackPaths", "NextPageToken",
+            });
+    internal_static_google_cloud_securitycenter_v1_GetSimulationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_securitycenter_v1_GetSimulationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_GetSimulationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_GetValuedResourceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_securitycenter_v1_GetValuedResourceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_GetValuedResourceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_securitycenter_v1_ListMuteConfigsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_securitycenter_v1_ListMuteConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListMuteConfigsRequest_descriptor,
@@ -1217,7 +1782,7 @@ public final class SecuritycenterService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListMuteConfigsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_securitycenter_v1_ListMuteConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListMuteConfigsResponse_descriptor,
@@ -1225,7 +1790,7 @@ public final class SecuritycenterService {
               "MuteConfigs", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsRequest_descriptor,
@@ -1233,7 +1798,7 @@ public final class SecuritycenterService {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListNotificationConfigsResponse_descriptor,
@@ -1241,7 +1806,7 @@ public final class SecuritycenterService {
               "NotificationConfigs", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesRequest_descriptor,
@@ -1249,7 +1814,7 @@ public final class SecuritycenterService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListEffectiveSecurityHealthAnalyticsCustomModulesResponse_descriptor,
@@ -1257,7 +1822,7 @@ public final class SecuritycenterService {
               "EffectiveSecurityHealthAnalyticsCustomModules", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesRequest_descriptor,
@@ -1265,7 +1830,7 @@ public final class SecuritycenterService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListSecurityHealthAnalyticsCustomModulesResponse_descriptor,
@@ -1273,7 +1838,7 @@ public final class SecuritycenterService {
               "SecurityHealthAnalyticsCustomModules", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListSourcesRequest_descriptor,
@@ -1281,7 +1846,7 @@ public final class SecuritycenterService {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_ListSourcesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_securitycenter_v1_ListSourcesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListSourcesResponse_descriptor,
@@ -1289,7 +1854,7 @@ public final class SecuritycenterService {
               "Sources", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListAssetsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_securitycenter_v1_ListAssetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListAssetsRequest_descriptor,
@@ -1304,7 +1869,7 @@ public final class SecuritycenterService {
               "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_ListAssetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_securitycenter_v1_ListAssetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListAssetsResponse_descriptor,
@@ -1322,7 +1887,7 @@ public final class SecuritycenterService {
               "Asset", "StateChange",
             });
     internal_static_google_cloud_securitycenter_v1_ListFindingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_securitycenter_v1_ListFindingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListFindingsRequest_descriptor,
@@ -1337,7 +1902,7 @@ public final class SecuritycenterService {
               "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_descriptor,
@@ -1370,9 +1935,18 @@ public final class SecuritycenterService {
               "ParentName",
               "ParentDisplayName",
               "Folders",
+              "CloudProvider",
+              "Organization",
+              "Service",
+              "Location",
+              "AwsMetadata",
+              "AzureMetadata",
+              "ResourcePath",
+              "ResourcePathString",
+              "CloudProviderMetadata",
             });
     internal_static_google_cloud_securitycenter_v1_SetFindingStateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_securitycenter_v1_SetFindingStateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_SetFindingStateRequest_descriptor,
@@ -1380,7 +1954,7 @@ public final class SecuritycenterService {
               "Name", "State", "StartTime",
             });
     internal_static_google_cloud_securitycenter_v1_SetMuteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_securitycenter_v1_SetMuteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_SetMuteRequest_descriptor,
@@ -1388,7 +1962,7 @@ public final class SecuritycenterService {
               "Name", "Mute",
             });
     internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryRequest_descriptor,
@@ -1396,7 +1970,7 @@ public final class SecuritycenterService {
               "Parent",
             });
     internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1414,7 +1988,7 @@ public final class SecuritycenterService {
               "ResourceType", "ResourceData", "IamPolicyData",
             });
     internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleResponse_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_SimulateSecurityHealthAnalyticsCustomModuleResponse_descriptor,
@@ -1432,7 +2006,7 @@ public final class SecuritycenterService {
               "Finding", "NoViolation", "Error", "Result",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateExternalSystemRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_cloud_securitycenter_v1_UpdateExternalSystemRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateExternalSystemRequest_descriptor,
@@ -1440,7 +2014,7 @@ public final class SecuritycenterService {
               "ExternalSystem", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateFindingRequest_descriptor,
@@ -1448,7 +2022,7 @@ public final class SecuritycenterService {
               "Finding", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateMuteConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_cloud_securitycenter_v1_UpdateMuteConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateMuteConfigRequest_descriptor,
@@ -1456,7 +2030,7 @@ public final class SecuritycenterService {
               "MuteConfig", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateNotificationConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_cloud_securitycenter_v1_UpdateNotificationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateNotificationConfigRequest_descriptor,
@@ -1464,7 +2038,7 @@ public final class SecuritycenterService {
               "NotificationConfig", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateOrganizationSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_cloud_securitycenter_v1_UpdateOrganizationSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateOrganizationSettingsRequest_descriptor,
@@ -1472,7 +2046,7 @@ public final class SecuritycenterService {
               "OrganizationSettings", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateSecurityHealthAnalyticsCustomModuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_cloud_securitycenter_v1_UpdateSecurityHealthAnalyticsCustomModuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateSecurityHealthAnalyticsCustomModuleRequest_descriptor,
@@ -1480,7 +2054,7 @@ public final class SecuritycenterService {
               "SecurityHealthAnalyticsCustomModule", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateSourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_cloud_securitycenter_v1_UpdateSourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateSourceRequest_descriptor,
@@ -1488,7 +2062,7 @@ public final class SecuritycenterService {
               "Source", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateSecurityMarksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_cloud_securitycenter_v1_UpdateSecurityMarksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateSecurityMarksRequest_descriptor,
@@ -1496,7 +2070,7 @@ public final class SecuritycenterService {
               "SecurityMarks", "UpdateMask", "StartTime",
             });
     internal_static_google_cloud_securitycenter_v1_CreateBigQueryExportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_cloud_securitycenter_v1_CreateBigQueryExportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CreateBigQueryExportRequest_descriptor,
@@ -1504,7 +2078,7 @@ public final class SecuritycenterService {
               "Parent", "BigQueryExport", "BigQueryExportId",
             });
     internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_UpdateBigQueryExportRequest_descriptor,
@@ -1512,7 +2086,7 @@ public final class SecuritycenterService {
               "BigQueryExport", "UpdateMask",
             });
     internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsRequest_descriptor,
@@ -1520,7 +2094,7 @@ public final class SecuritycenterService {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ListBigQueryExportsResponse_descriptor,
@@ -1528,12 +2102,116 @@ public final class SecuritycenterService {
               "BigQueryExports", "NextPageToken",
             });
     internal_static_google_cloud_securitycenter_v1_DeleteBigQueryExportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_cloud_securitycenter_v1_DeleteBigQueryExportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_DeleteBigQueryExportRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_CreateEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(70);
+    internal_static_google_cloud_securitycenter_v1_CreateEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_CreateEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "EventThreatDetectionCustomModule",
+            });
+    internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(71);
+    internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RawText", "Type",
+            });
+    internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleResponse_descriptor =
+        getDescriptor().getMessageTypes().get(72);
+    internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ValidateEventThreatDetectionCustomModuleResponse_descriptor,
+            new java.lang.String[] {
+              "Errors",
+            });
+    internal_static_google_cloud_securitycenter_v1_DeleteEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(73);
+    internal_static_google_cloud_securitycenter_v1_DeleteEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_DeleteEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_GetEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(74);
+    internal_static_google_cloud_securitycenter_v1_GetEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_GetEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(75);
+    internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageToken", "PageSize",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(76);
+    internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListDescendantEventThreatDetectionCustomModulesResponse_descriptor,
+            new java.lang.String[] {
+              "EventThreatDetectionCustomModules", "NextPageToken",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(77);
+    internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageToken", "PageSize",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(78);
+    internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListEventThreatDetectionCustomModulesResponse_descriptor,
+            new java.lang.String[] {
+              "EventThreatDetectionCustomModules", "NextPageToken",
+            });
+    internal_static_google_cloud_securitycenter_v1_UpdateEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(79);
+    internal_static_google_cloud_securitycenter_v1_UpdateEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_UpdateEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "EventThreatDetectionCustomModule", "UpdateMask",
+            });
+    internal_static_google_cloud_securitycenter_v1_GetEffectiveEventThreatDetectionCustomModuleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(80);
+    internal_static_google_cloud_securitycenter_v1_GetEffectiveEventThreatDetectionCustomModuleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_GetEffectiveEventThreatDetectionCustomModuleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(81);
+    internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageToken", "PageSize",
+            });
+    internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(82);
+    internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ListEffectiveEventThreatDetectionCustomModulesResponse_descriptor,
+            new java.lang.String[] {
+              "EffectiveEventThreatDetectionCustomModules", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -1542,6 +2220,7 @@ public final class SecuritycenterService {
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
@@ -1551,8 +2230,14 @@ public final class SecuritycenterService {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.AssetOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1.AttackPathProto.getDescriptor();
     com.google.cloud.securitycenter.v1.BigQueryExportProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModuleProto
+        .getDescriptor();
     com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModuleProto
+        .getDescriptor();
+    com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModuleProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModuleValidationErrorsProto
         .getDescriptor();
     com.google.cloud.securitycenter.v1.ExternalSystemProto.getDescriptor();
     com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor();
@@ -1560,11 +2245,15 @@ public final class SecuritycenterService {
     com.google.cloud.securitycenter.v1.MuteConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.NotificationConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.OrganizationSettingsOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.ResourceValueConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponseOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomConfigProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModuleProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1.SimulationProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SourceOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1.ValuedResourceProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();

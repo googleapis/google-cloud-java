@@ -20,6 +20,7 @@ package com.google.cloud.aiplatform.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1.Content;
 import com.google.cloud.aiplatform.v1.EndpointName;
 import com.google.cloud.aiplatform.v1.LlmUtilityServiceClient;
 import com.google.protobuf.Value;
@@ -45,6 +46,8 @@ public class AsyncComputeTokens {
                           "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllInstances(new ArrayList<Value>())
+              .setModel("model104069929")
+              .addAllContents(new ArrayList<Content>())
               .build();
       ApiFuture<ComputeTokensResponse> future =
           llmUtilityServiceClient.computeTokensCallable().futureCall(request);

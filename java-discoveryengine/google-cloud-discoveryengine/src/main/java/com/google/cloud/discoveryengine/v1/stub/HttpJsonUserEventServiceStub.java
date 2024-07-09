@@ -124,7 +124,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect")
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect",
+                          "/v1/{parent=projects/*/locations/*}/userEvents:collect")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

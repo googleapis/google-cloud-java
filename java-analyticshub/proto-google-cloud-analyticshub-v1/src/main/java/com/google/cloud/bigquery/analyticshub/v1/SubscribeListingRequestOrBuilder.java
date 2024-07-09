@@ -28,10 +28,12 @@ public interface SubscribeListingRequestOrBuilder
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return Whether the destinationDataset field is set.
    */
@@ -40,10 +42,12 @@ public interface SubscribeListingRequestOrBuilder
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The destinationDataset.
    */
@@ -52,10 +56,12 @@ public interface SubscribeListingRequestOrBuilder
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
       getDestinationDatasetOrBuilder();

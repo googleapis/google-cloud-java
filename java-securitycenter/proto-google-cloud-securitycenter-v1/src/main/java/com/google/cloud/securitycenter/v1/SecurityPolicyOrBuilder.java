@@ -55,9 +55,9 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * The type of Google Cloud Armor security policy for example, ‘backend
-   * security policy’, ‘edge security policy’, ‘network edge security policy’,
-   * or ‘always-on DDoS protection’.
+   * The type of Google Cloud Armor security policy for example, 'backend
+   * security policy', 'edge security policy', 'network edge security policy',
+   * or 'always-on DDoS protection'.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -69,9 +69,9 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * The type of Google Cloud Armor security policy for example, ‘backend
-   * security policy’, ‘edge security policy’, ‘network edge security policy’,
-   * or ‘always-on DDoS protection’.
+   * The type of Google Cloud Armor security policy for example, 'backend
+   * security policy', 'edge security policy', 'network edge security policy',
+   * or 'always-on DDoS protection'.
    * </pre>
    *
    * <code>string type = 2;</code>

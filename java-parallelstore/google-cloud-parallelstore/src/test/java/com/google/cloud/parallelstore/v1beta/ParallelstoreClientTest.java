@@ -561,6 +561,7 @@ public class ParallelstoreClientTest {
         ImportDataRequest.newBuilder()
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .build();
 
     ImportDataResponse actualResponse = client.importDataAsync(request).get();
@@ -575,6 +576,7 @@ public class ParallelstoreClientTest {
         request.getDestinationParallelstore(), actualRequest.getDestinationParallelstore());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -591,6 +593,7 @@ public class ParallelstoreClientTest {
           ImportDataRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
               .build();
       client.importDataAsync(request).get();
       Assert.fail("No exception raised");
@@ -616,6 +619,7 @@ public class ParallelstoreClientTest {
         ExportDataRequest.newBuilder()
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setRequestId("requestId693933066")
+            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .build();
 
     ExportDataResponse actualResponse = client.exportDataAsync(request).get();
@@ -629,6 +633,7 @@ public class ParallelstoreClientTest {
     Assert.assertEquals(request.getDestinationGcsBucket(), actualRequest.getDestinationGcsBucket());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -645,6 +650,7 @@ public class ParallelstoreClientTest {
           ExportDataRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
+              .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
               .build();
       client.exportDataAsync(request).get();
       Assert.fail("No exception raised");

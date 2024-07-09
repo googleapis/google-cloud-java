@@ -29,9 +29,9 @@ public interface DeleteNotificationConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the notification config to delete. Its format is
-   * "organizations/[organization_id]/notificationConfigs/[config_id]",
-   * "folders/[folder_id]/notificationConfigs/[config_id]",
-   * or "projects/[project_id]/notificationConfigs/[config_id]".
+   * `organizations/[organization_id]/notificationConfigs/[config_id]`,
+   * `folders/[folder_id]/notificationConfigs/[config_id]`,
+   * or `projects/[project_id]/notificationConfigs/[config_id]`.
    * </pre>
    *
    * <code>
@@ -46,9 +46,9 @@ public interface DeleteNotificationConfigRequestOrBuilder
    *
    * <pre>
    * Required. Name of the notification config to delete. Its format is
-   * "organizations/[organization_id]/notificationConfigs/[config_id]",
-   * "folders/[folder_id]/notificationConfigs/[config_id]",
-   * or "projects/[project_id]/notificationConfigs/[config_id]".
+   * `organizations/[organization_id]/notificationConfigs/[config_id]`,
+   * `folders/[folder_id]/notificationConfigs/[config_id]`,
+   * or `projects/[project_id]/notificationConfigs/[config_id]`.
    * </pre>
    *
    * <code>

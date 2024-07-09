@@ -49,8 +49,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     filter_ = "";
     canonicalFilter_ = "";
     orderBy_ = "";
+    languageCode_ = "";
     facetSpecs_ = java.util.Collections.emptyList();
     userPseudoId_ = "";
+    session_ = "";
   }
 
   @java.lang.Override
@@ -937,8 +939,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A struct to define data stores to filter on in a search call and
-   * configurations for those data stores. A maximum of 1 DataStoreSpec per
-   * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   * configurations for those data stores. Otherwise, an `INVALID_ARGUMENT`
+   * error is returned.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec}
@@ -1204,8 +1206,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A struct to define data stores to filter on in a search call and
-     * configurations for those data stores. A maximum of 1 DataStoreSpec per
-     * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     * configurations for those data stores. Otherwise, an `INVALID_ARGUMENT`
+     * error is returned.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec}
@@ -1639,6 +1641,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
+     * For aggregation in healthcare search, when the [FacetKey.key] is
+     * "healthcare_aggregation_key", the limit will be overridden to
+     * 10,000 internally, regardless of the value set here.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -4915,6 +4920,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
+     * For aggregation in healthcare search, when the [FacetKey.key] is
+     * "healthcare_aggregation_key", the limit will be overridden to
+     * 10,000 internally, regardless of the value set here.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -5818,6 +5826,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -5837,6 +5848,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -5860,6 +5874,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -10563,6 +10580,100 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
             .ExtractiveContentSpecOrBuilder
         getExtractiveContentSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode is based on
+     * [DataStore.DocumentProcessingConfig.chunking_config][]:
+     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+     *   it defaults to `CHUNKS`.
+     * * Otherwise, it defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for searchResultMode.
+     */
+    int getSearchResultModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode is based on
+     * [DataStore.DocumentProcessingConfig.chunking_config][]:
+     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+     *   it defaults to `CHUNKS`.
+     * * Otherwise, it defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The searchResultMode.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+        getSearchResultMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return Whether the chunkSpec field is set.
+     */
+    boolean hasChunkSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return The chunkSpec.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec getChunkSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpecOrBuilder
+        getChunkSpecOrBuilder();
   }
   /**
    *
@@ -10583,7 +10694,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private ContentSearchSpec() {}
+    private ContentSearchSpec() {
+      searchResultMode_ = 0;
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -10606,6 +10719,176 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.Builder.class);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode is based on
+     * [DataStore.DocumentProcessingConfig.chunking_config][]:
+     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+     *   it defaults to `CHUNKS`.
+     * * Otherwise, it defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode}
+     */
+    public enum SearchResultMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>SEARCH_RESULT_MODE_UNSPECIFIED = 0;</code>
+       */
+      SEARCH_RESULT_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Returns documents in the search result.
+       * </pre>
+       *
+       * <code>DOCUMENTS = 1;</code>
+       */
+      DOCUMENTS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Returns chunks in the search result. Only available if the
+       * [DataStore.DocumentProcessingConfig.chunking_config][] is specified.
+       * </pre>
+       *
+       * <code>CHUNKS = 2;</code>
+       */
+      CHUNKS(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>SEARCH_RESULT_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SEARCH_RESULT_MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Returns documents in the search result.
+       * </pre>
+       *
+       * <code>DOCUMENTS = 1;</code>
+       */
+      public static final int DOCUMENTS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Returns chunks in the search result. Only available if the
+       * [DataStore.DocumentProcessingConfig.chunking_config][] is specified.
+       * </pre>
+       *
+       * <code>CHUNKS = 2;</code>
+       */
+      public static final int CHUNKS_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SearchResultMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SearchResultMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SEARCH_RESULT_MODE_UNSPECIFIED;
+          case 1:
+            return DOCUMENTS;
+          case 2:
+            return CHUNKS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>() {
+                public SearchResultMode findValueByNumber(int number) {
+                  return SearchResultMode.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SearchResultMode[] VALUES = values();
+
+      public static SearchResultMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SearchResultMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode)
+    }
+
     public interface SnippetSpecOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec)
@@ -10624,7 +10907,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -10642,7 +10925,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=332
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -10723,7 +11006,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -10746,7 +11029,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=332
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -11207,7 +11490,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -11228,7 +11511,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -11253,7 +11536,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -11277,7 +11560,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=332
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -11297,7 +11580,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=332
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -11321,7 +11604,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=332
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -11475,8 +11758,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * At most 10 results for documents mode, or 50 for chunks mode, can be
        * used to generate a summary. The chunks mode is used when
-       * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-       * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -13299,8 +13583,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * At most 10 results for documents mode, or 50 for chunks mode, can be
        * used to generate a summary. The chunks mode is used when
-       * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-       * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -14196,8 +14481,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -14218,8 +14504,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -14244,8 +14531,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -16473,6 +16761,714 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ChunkSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of previous chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no previous chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_previous_chunks = 1;</code>
+       *
+       * @return The numPreviousChunks.
+       */
+      int getNumPreviousChunks();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of next chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no next chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_next_chunks = 2;</code>
+       *
+       * @return The numNextChunks.
+       */
+      int getNumNextChunks();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec}
+     */
+    public static final class ChunkSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+        ChunkSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ChunkSpec.newBuilder() to construct.
+      private ChunkSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ChunkSpec() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ChunkSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_ChunkSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                    .Builder.class);
+      }
+
+      public static final int NUM_PREVIOUS_CHUNKS_FIELD_NUMBER = 1;
+      private int numPreviousChunks_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The number of previous chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no previous chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_previous_chunks = 1;</code>
+       *
+       * @return The numPreviousChunks.
+       */
+      @java.lang.Override
+      public int getNumPreviousChunks() {
+        return numPreviousChunks_;
+      }
+
+      public static final int NUM_NEXT_CHUNKS_FIELD_NUMBER = 2;
+      private int numNextChunks_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The number of next chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no next chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_next_chunks = 2;</code>
+       *
+       * @return The numNextChunks.
+       */
+      @java.lang.Override
+      public int getNumNextChunks() {
+        return numNextChunks_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (numPreviousChunks_ != 0) {
+          output.writeInt32(1, numPreviousChunks_);
+        }
+        if (numNextChunks_ != 0) {
+          output.writeInt32(2, numNextChunks_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (numPreviousChunks_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, numPreviousChunks_);
+        }
+        if (numNextChunks_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, numNextChunks_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec other =
+            (com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec) obj;
+
+        if (getNumPreviousChunks() != other.getNumPreviousChunks()) return false;
+        if (getNumNextChunks() != other.getNumNextChunks()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NUM_PREVIOUS_CHUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumPreviousChunks();
+        hash = (37 * hash) + NUM_NEXT_CHUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumNextChunks();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_ChunkSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          numPreviousChunks_ = 0;
+          numNextChunks_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+            build() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec result =
+              new com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.numPreviousChunks_ = numPreviousChunks_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.numNextChunks_ = numNextChunks_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()) return this;
+          if (other.getNumPreviousChunks() != 0) {
+            setNumPreviousChunks(other.getNumPreviousChunks());
+          }
+          if (other.getNumNextChunks() != 0) {
+            setNumNextChunks(other.getNumNextChunks());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    numPreviousChunks_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    numNextChunks_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int numPreviousChunks_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @return The numPreviousChunks.
+         */
+        @java.lang.Override
+        public int getNumPreviousChunks() {
+          return numPreviousChunks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @param value The numPreviousChunks to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumPreviousChunks(int value) {
+
+          numPreviousChunks_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumPreviousChunks() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          numPreviousChunks_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int numNextChunks_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @return The numNextChunks.
+         */
+        @java.lang.Override
+        public int getNumNextChunks() {
+          return numNextChunks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @param value The numNextChunks to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumNextChunks(int value) {
+
+          numNextChunks_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumNextChunks() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          numNextChunks_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec)
+      private static final com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ChunkSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ChunkSpec>() {
+            @java.lang.Override
+            public ChunkSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ChunkSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ChunkSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int SNIPPET_SPEC_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec
@@ -16668,6 +17664,133 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           : extractiveContentSpec_;
     }
 
+    public static final int SEARCH_RESULT_MODE_FIELD_NUMBER = 4;
+    private int searchResultMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode is based on
+     * [DataStore.DocumentProcessingConfig.chunking_config][]:
+     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+     *   it defaults to `CHUNKS`.
+     * * Otherwise, it defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for searchResultMode.
+     */
+    @java.lang.Override
+    public int getSearchResultModeValue() {
+      return searchResultMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode is based on
+     * [DataStore.DocumentProcessingConfig.chunking_config][]:
+     * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+     *   it defaults to `CHUNKS`.
+     * * Otherwise, it defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The searchResultMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+        getSearchResultMode() {
+      com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode result =
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+              .forNumber(searchResultMode_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int CHUNK_SPEC_FIELD_NUMBER = 5;
+    private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+        chunkSpec_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return Whether the chunkSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunkSpec() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return The chunkSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+        getChunkSpec() {
+      return chunkSpec_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance()
+          : chunkSpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpecOrBuilder
+        getChunkSpecOrBuilder() {
+      return chunkSpec_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance()
+          : chunkSpec_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -16691,6 +17814,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getExtractiveContentSpec());
       }
+      if (searchResultMode_
+          != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+              .SEARCH_RESULT_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, searchResultMode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(5, getChunkSpec());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -16709,6 +17841,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExtractiveContentSpec());
+      }
+      if (searchResultMode_
+          != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+              .SEARCH_RESULT_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, searchResultMode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getChunkSpec());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -16738,6 +17879,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasExtractiveContentSpec()) {
         if (!getExtractiveContentSpec().equals(other.getExtractiveContentSpec())) return false;
       }
+      if (searchResultMode_ != other.searchResultMode_) return false;
+      if (hasChunkSpec() != other.hasChunkSpec()) return false;
+      if (hasChunkSpec()) {
+        if (!getChunkSpec().equals(other.getChunkSpec())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -16760,6 +17906,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasExtractiveContentSpec()) {
         hash = (37 * hash) + EXTRACTIVE_CONTENT_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getExtractiveContentSpec().hashCode();
+      }
+      hash = (37 * hash) + SEARCH_RESULT_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + searchResultMode_;
+      if (hasChunkSpec()) {
+        hash = (37 * hash) + CHUNK_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkSpec().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -16909,6 +18061,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           getSnippetSpecFieldBuilder();
           getSummarySpecFieldBuilder();
           getExtractiveContentSpecFieldBuilder();
+          getChunkSpecFieldBuilder();
         }
       }
 
@@ -16930,6 +18083,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (extractiveContentSpecBuilder_ != null) {
           extractiveContentSpecBuilder_.dispose();
           extractiveContentSpecBuilder_ = null;
+        }
+        searchResultMode_ = 0;
+        chunkSpec_ = null;
+        if (chunkSpecBuilder_ != null) {
+          chunkSpecBuilder_.dispose();
+          chunkSpecBuilder_ = null;
         }
         return this;
       }
@@ -16987,6 +18146,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   ? extractiveContentSpec_
                   : extractiveContentSpecBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.searchResultMode_ = searchResultMode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.chunkSpec_ = chunkSpecBuilder_ == null ? chunkSpec_ : chunkSpecBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -17051,6 +18217,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasExtractiveContentSpec()) {
           mergeExtractiveContentSpec(other.getExtractiveContentSpec());
         }
+        if (other.searchResultMode_ != 0) {
+          setSearchResultModeValue(other.getSearchResultModeValue());
+        }
+        if (other.hasChunkSpec()) {
+          mergeChunkSpec(other.getChunkSpec());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -17096,6 +18268,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  searchResultMode_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(getChunkSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17815,6 +18999,393 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return extractiveContentSpecBuilder_;
       }
 
+      private int searchResultMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode is based on
+       * [DataStore.DocumentProcessingConfig.chunking_config][]:
+       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+       *   it defaults to `CHUNKS`.
+       * * Otherwise, it defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for searchResultMode.
+       */
+      @java.lang.Override
+      public int getSearchResultModeValue() {
+        return searchResultMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode is based on
+       * [DataStore.DocumentProcessingConfig.chunking_config][]:
+       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+       *   it defaults to `CHUNKS`.
+       * * Otherwise, it defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for searchResultMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchResultModeValue(int value) {
+        searchResultMode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode is based on
+       * [DataStore.DocumentProcessingConfig.chunking_config][]:
+       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+       *   it defaults to `CHUNKS`.
+       * * Otherwise, it defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return The searchResultMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+          getSearchResultMode() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+            result =
+                com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+                    .forNumber(searchResultMode_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode is based on
+       * [DataStore.DocumentProcessingConfig.chunking_config][]:
+       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+       *   it defaults to `CHUNKS`.
+       * * Otherwise, it defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @param value The searchResultMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchResultMode(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        searchResultMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode is based on
+       * [DataStore.DocumentProcessingConfig.chunking_config][]:
+       * * If [DataStore.DocumentProcessingConfig.chunking_config][] is specified,
+       *   it defaults to `CHUNKS`.
+       * * Otherwise, it defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSearchResultMode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        searchResultMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          chunkSpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                  .ChunkSpecOrBuilder>
+          chunkSpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       *
+       * @return Whether the chunkSpec field is set.
+       */
+      public boolean hasChunkSpec() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       *
+       * @return The chunkSpec.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+          getChunkSpec() {
+        if (chunkSpecBuilder_ == null) {
+          return chunkSpec_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()
+              : chunkSpec_;
+        } else {
+          return chunkSpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder setChunkSpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec value) {
+        if (chunkSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunkSpec_ = value;
+        } else {
+          chunkSpecBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder setChunkSpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.Builder
+              builderForValue) {
+        if (chunkSpecBuilder_ == null) {
+          chunkSpec_ = builderForValue.build();
+        } else {
+          chunkSpecBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder mergeChunkSpec(
+          com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec value) {
+        if (chunkSpecBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && chunkSpec_ != null
+              && chunkSpec_
+                  != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .getDefaultInstance()) {
+            getChunkSpecBuilder().mergeFrom(value);
+          } else {
+            chunkSpec_ = value;
+          }
+        } else {
+          chunkSpecBuilder_.mergeFrom(value);
+        }
+        if (chunkSpec_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder clearChunkSpec() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        chunkSpec_ = null;
+        if (chunkSpecBuilder_ != null) {
+          chunkSpecBuilder_.dispose();
+          chunkSpecBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.Builder
+          getChunkSpecBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getChunkSpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpecOrBuilder
+          getChunkSpecOrBuilder() {
+        if (chunkSpecBuilder_ != null) {
+          return chunkSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return chunkSpec_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()
+              : chunkSpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec.Builder,
+              com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                  .ChunkSpecOrBuilder>
+          getChunkSpecFieldBuilder() {
+        if (chunkSpecBuilder_ == null) {
+          chunkSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+                      .ChunkSpecOrBuilder>(getChunkSpec(), getParentForChildren(), isClean());
+          chunkSpec_ = null;
+        }
+        return chunkSpecBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -17877,6 +19448,1926 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SearchAsYouTypeSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The condition under which search as you type should occur.
+     * Default to
+     * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for condition.
+     */
+    int getConditionValue();
+    /**
+     *
+     *
+     * <pre>
+     * The condition under which search as you type should occur.
+     * Default to
+     * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+     * </code>
+     *
+     * @return The condition.
+     */
+    com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition getCondition();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification for search as you type in search requests.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec}
+   */
+  public static final class SearchAsYouTypeSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)
+      SearchAsYouTypeSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SearchAsYouTypeSpec.newBuilder() to construct.
+    private SearchAsYouTypeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SearchAsYouTypeSpec() {
+      condition_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SearchAsYouTypeSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SearchAsYouTypeSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SearchAsYouTypeSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum describing under which condition search as you type should occur.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition}
+     */
+    public enum Condition implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Server behavior defaults to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>CONDITION_UNSPECIFIED = 0;</code>
+       */
+      CONDITION_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Disables Search As You Type.
+       * </pre>
+       *
+       * <code>DISABLED = 1;</code>
+       */
+      DISABLED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Enables Search As You Type.
+       * </pre>
+       *
+       * <code>ENABLED = 2;</code>
+       */
+      ENABLED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Server behavior defaults to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>CONDITION_UNSPECIFIED = 0;</code>
+       */
+      public static final int CONDITION_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Disables Search As You Type.
+       * </pre>
+       *
+       * <code>DISABLED = 1;</code>
+       */
+      public static final int DISABLED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Enables Search As You Type.
+       * </pre>
+       *
+       * <code>ENABLED = 2;</code>
+       */
+      public static final int ENABLED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Condition valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Condition forNumber(int value) {
+        switch (value) {
+          case 0:
+            return CONDITION_UNSPECIFIED;
+          case 1:
+            return DISABLED;
+          case 2:
+            return ENABLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Condition> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Condition> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Condition>() {
+            public Condition findValueByNumber(int number) {
+              return Condition.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Condition[] VALUES = values();
+
+      public static Condition valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Condition(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition)
+    }
+
+    public static final int CONDITION_FIELD_NUMBER = 1;
+    private int condition_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The condition under which search as you type should occur.
+     * Default to
+     * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for condition.
+     */
+    @java.lang.Override
+    public int getConditionValue() {
+      return condition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition under which search as you type should occur.
+     * Default to
+     * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+     * </code>
+     *
+     * @return The condition.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+        getCondition() {
+      com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition result =
+          com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.forNumber(
+              condition_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (condition_
+          != com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+              .CONDITION_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, condition_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (condition_
+          != com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+              .CONDITION_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, condition_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec) obj;
+
+      if (condition_ != other.condition_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + condition_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification for search as you type in search requests.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SearchAsYouTypeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SearchAsYouTypeSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        condition_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SearchAsYouTypeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.condition_ = condition_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+                .getDefaultInstance()) return this;
+        if (other.condition_ != 0) {
+          setConditionValue(other.getConditionValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  condition_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int condition_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The condition under which search as you type should occur.
+       * Default to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for condition.
+       */
+      @java.lang.Override
+      public int getConditionValue() {
+        return condition_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition under which search as you type should occur.
+       * Default to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for condition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConditionValue(int value) {
+        condition_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition under which search as you type should occur.
+       * Default to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+       * </code>
+       *
+       * @return The condition.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+          getCondition() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition result =
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+                .forNumber(condition_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition under which search as you type should occur.
+       * Default to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+       * </code>
+       *
+       * @param value The condition to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCondition(
+          com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        condition_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition under which search as you type should occur.
+       * Default to
+       * [Condition.DISABLED][google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition.DISABLED].
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Condition condition = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCondition() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        condition_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchAsYouTypeSpec> PARSER =
+        new com.google.protobuf.AbstractParser<SearchAsYouTypeSpec>() {
+          @java.lang.Override
+          public SearchAsYouTypeSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SearchAsYouTypeSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchAsYouTypeSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SessionSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, the search result gets stored to the "turn" specified by this
+     * query ID.
+     *
+     * Example: Let's say the session looks like this:
+     *   session {
+     *     name: ".../sessions/xxx"
+     *     turns {
+     *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+     *       answer: "Foo is ..."
+     *     }
+     *     turns {
+     *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+     *     }
+     *   }
+     *
+     * The user can call /search API with a request like this:
+     *
+     *    session: ".../sessions/xxx"
+     *    session_spec { query_id: ".../questions/zzz" }
+     *
+     * Then, the API stores the search result, associated with the last turn.
+     * The stored search result can be used by a subsequent /answer API call
+     * (with the session ID and the query ID specified). Also, it is possible
+     * to call /search and /answer in parallel with the same session ID &amp; query
+     * ID.
+     * </pre>
+     *
+     * <code>string query_id = 1;</code>
+     *
+     * @return The queryId.
+     */
+    java.lang.String getQueryId();
+    /**
+     *
+     *
+     * <pre>
+     * If set, the search result gets stored to the "turn" specified by this
+     * query ID.
+     *
+     * Example: Let's say the session looks like this:
+     *   session {
+     *     name: ".../sessions/xxx"
+     *     turns {
+     *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+     *       answer: "Foo is ..."
+     *     }
+     *     turns {
+     *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+     *     }
+     *   }
+     *
+     * The user can call /search API with a request like this:
+     *
+     *    session: ".../sessions/xxx"
+     *    session_spec { query_id: ".../questions/zzz" }
+     *
+     * Then, the API stores the search result, associated with the last turn.
+     * The stored search result can be used by a subsequent /answer API call
+     * (with the session ID and the query ID specified). Also, it is possible
+     * to call /search and /answer in parallel with the same session ID &amp; query
+     * ID.
+     * </pre>
+     *
+     * <code>string query_id = 1;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    com.google.protobuf.ByteString getQueryIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return Whether the searchResultPersistenceCount field is set.
+     */
+    boolean hasSearchResultPersistenceCount();
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return The searchResultPersistenceCount.
+     */
+    int getSearchResultPersistenceCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Multi-turn Search feature is currently at private GA stage. Please use
+   * v1alpha or v1beta version instead before we launch this feature to public
+   * GA. Or ask for allowlisting through Google Support team.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.SessionSpec}
+   */
+  public static final class SessionSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)
+      SessionSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SessionSpec.newBuilder() to construct.
+    private SessionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SessionSpec() {
+      queryId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SessionSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SessionSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SessionSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.class,
+              com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int QUERY_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If set, the search result gets stored to the "turn" specified by this
+     * query ID.
+     *
+     * Example: Let's say the session looks like this:
+     *   session {
+     *     name: ".../sessions/xxx"
+     *     turns {
+     *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+     *       answer: "Foo is ..."
+     *     }
+     *     turns {
+     *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+     *     }
+     *   }
+     *
+     * The user can call /search API with a request like this:
+     *
+     *    session: ".../sessions/xxx"
+     *    session_spec { query_id: ".../questions/zzz" }
+     *
+     * Then, the API stores the search result, associated with the last turn.
+     * The stored search result can be used by a subsequent /answer API call
+     * (with the session ID and the query ID specified). Also, it is possible
+     * to call /search and /answer in parallel with the same session ID &amp; query
+     * ID.
+     * </pre>
+     *
+     * <code>string query_id = 1;</code>
+     *
+     * @return The queryId.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryId() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the search result gets stored to the "turn" specified by this
+     * query ID.
+     *
+     * Example: Let's say the session looks like this:
+     *   session {
+     *     name: ".../sessions/xxx"
+     *     turns {
+     *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+     *       answer: "Foo is ..."
+     *     }
+     *     turns {
+     *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+     *     }
+     *   }
+     *
+     * The user can call /search API with a request like this:
+     *
+     *    session: ".../sessions/xxx"
+     *    session_spec { query_id: ".../questions/zzz" }
+     *
+     * Then, the API stores the search result, associated with the last turn.
+     * The stored search result can be used by a subsequent /answer API call
+     * (with the session ID and the query ID specified). Also, it is possible
+     * to call /search and /answer in parallel with the same session ID &amp; query
+     * ID.
+     * </pre>
+     *
+     * <code>string query_id = 1;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getQueryIdBytes() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEARCH_RESULT_PERSISTENCE_COUNT_FIELD_NUMBER = 2;
+    private int searchResultPersistenceCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return Whether the searchResultPersistenceCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchResultPersistenceCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return The searchResultPersistenceCount.
+     */
+    @java.lang.Override
+    public int getSearchResultPersistenceCount() {
+      return searchResultPersistenceCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(2, searchResultPersistenceCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                2, searchResultPersistenceCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec other =
+          (com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec) obj;
+
+      if (!getQueryId().equals(other.getQueryId())) return false;
+      if (hasSearchResultPersistenceCount() != other.hasSearchResultPersistenceCount())
+        return false;
+      if (hasSearchResultPersistenceCount()) {
+        if (getSearchResultPersistenceCount() != other.getSearchResultPersistenceCount())
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryId().hashCode();
+      if (hasSearchResultPersistenceCount()) {
+        hash = (37 * hash) + SEARCH_RESULT_PERSISTENCE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchResultPersistenceCount();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.SessionSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SessionSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SessionSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.class,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        queryId_ = "";
+        searchResultPersistenceCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchRequest_SessionSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec build() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec result =
+            new com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryId_ = queryId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.searchResultPersistenceCount_ = searchResultPersistenceCount_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance())
+          return this;
+        if (!other.getQueryId().isEmpty()) {
+          queryId_ = other.queryId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasSearchResultPersistenceCount()) {
+          setSearchResultPersistenceCount(other.getSearchResultPersistenceCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  queryId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  searchResultPersistenceCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object queryId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * If set, the search result gets stored to the "turn" specified by this
+       * query ID.
+       *
+       * Example: Let's say the session looks like this:
+       *   session {
+       *     name: ".../sessions/xxx"
+       *     turns {
+       *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+       *       answer: "Foo is ..."
+       *     }
+       *     turns {
+       *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+       *     }
+       *   }
+       *
+       * The user can call /search API with a request like this:
+       *
+       *    session: ".../sessions/xxx"
+       *    session_spec { query_id: ".../questions/zzz" }
+       *
+       * Then, the API stores the search result, associated with the last turn.
+       * The stored search result can be used by a subsequent /answer API call
+       * (with the session ID and the query ID specified). Also, it is possible
+       * to call /search and /answer in parallel with the same session ID &amp; query
+       * ID.
+       * </pre>
+       *
+       * <code>string query_id = 1;</code>
+       *
+       * @return The queryId.
+       */
+      public java.lang.String getQueryId() {
+        java.lang.Object ref = queryId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the search result gets stored to the "turn" specified by this
+       * query ID.
+       *
+       * Example: Let's say the session looks like this:
+       *   session {
+       *     name: ".../sessions/xxx"
+       *     turns {
+       *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+       *       answer: "Foo is ..."
+       *     }
+       *     turns {
+       *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+       *     }
+       *   }
+       *
+       * The user can call /search API with a request like this:
+       *
+       *    session: ".../sessions/xxx"
+       *    session_spec { query_id: ".../questions/zzz" }
+       *
+       * Then, the API stores the search result, associated with the last turn.
+       * The stored search result can be used by a subsequent /answer API call
+       * (with the session ID and the query ID specified). Also, it is possible
+       * to call /search and /answer in parallel with the same session ID &amp; query
+       * ID.
+       * </pre>
+       *
+       * <code>string query_id = 1;</code>
+       *
+       * @return The bytes for queryId.
+       */
+      public com.google.protobuf.ByteString getQueryIdBytes() {
+        java.lang.Object ref = queryId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          queryId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the search result gets stored to the "turn" specified by this
+       * query ID.
+       *
+       * Example: Let's say the session looks like this:
+       *   session {
+       *     name: ".../sessions/xxx"
+       *     turns {
+       *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+       *       answer: "Foo is ..."
+       *     }
+       *     turns {
+       *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+       *     }
+       *   }
+       *
+       * The user can call /search API with a request like this:
+       *
+       *    session: ".../sessions/xxx"
+       *    session_spec { query_id: ".../questions/zzz" }
+       *
+       * Then, the API stores the search result, associated with the last turn.
+       * The stored search result can be used by a subsequent /answer API call
+       * (with the session ID and the query ID specified). Also, it is possible
+       * to call /search and /answer in parallel with the same session ID &amp; query
+       * ID.
+       * </pre>
+       *
+       * <code>string query_id = 1;</code>
+       *
+       * @param value The queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the search result gets stored to the "turn" specified by this
+       * query ID.
+       *
+       * Example: Let's say the session looks like this:
+       *   session {
+       *     name: ".../sessions/xxx"
+       *     turns {
+       *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+       *       answer: "Foo is ..."
+       *     }
+       *     turns {
+       *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+       *     }
+       *   }
+       *
+       * The user can call /search API with a request like this:
+       *
+       *    session: ".../sessions/xxx"
+       *    session_spec { query_id: ".../questions/zzz" }
+       *
+       * Then, the API stores the search result, associated with the last turn.
+       * The stored search result can be used by a subsequent /answer API call
+       * (with the session ID and the query ID specified). Also, it is possible
+       * to call /search and /answer in parallel with the same session ID &amp; query
+       * ID.
+       * </pre>
+       *
+       * <code>string query_id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryId() {
+        queryId_ = getDefaultInstance().getQueryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the search result gets stored to the "turn" specified by this
+       * query ID.
+       *
+       * Example: Let's say the session looks like this:
+       *   session {
+       *     name: ".../sessions/xxx"
+       *     turns {
+       *       query { text: "What is foo?" query_id: ".../questions/yyy" }
+       *       answer: "Foo is ..."
+       *     }
+       *     turns {
+       *       query { text: "How about bar then?" query_id: ".../questions/zzz" }
+       *     }
+       *   }
+       *
+       * The user can call /search API with a request like this:
+       *
+       *    session: ".../sessions/xxx"
+       *    session_spec { query_id: ".../questions/zzz" }
+       *
+       * Then, the API stores the search result, associated with the last turn.
+       * The stored search result can be used by a subsequent /answer API call
+       * (with the session ID and the query ID specified). Also, it is possible
+       * to call /search and /answer in parallel with the same session ID &amp; query
+       * ID.
+       * </pre>
+       *
+       * <code>string query_id = 1;</code>
+       *
+       * @param value The bytes for queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        queryId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int searchResultPersistenceCount_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of top search results to persist. The persisted search results
+       * can be used for the subsequent /answer api call.
+       *
+       * This field is simliar to the `summary_result_count` field in
+       * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+       *
+       * At most 10 results for documents mode, or 50 for chunks mode.
+       * </pre>
+       *
+       * <code>optional int32 search_result_persistence_count = 2;</code>
+       *
+       * @return Whether the searchResultPersistenceCount field is set.
+       */
+      @java.lang.Override
+      public boolean hasSearchResultPersistenceCount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of top search results to persist. The persisted search results
+       * can be used for the subsequent /answer api call.
+       *
+       * This field is simliar to the `summary_result_count` field in
+       * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+       *
+       * At most 10 results for documents mode, or 50 for chunks mode.
+       * </pre>
+       *
+       * <code>optional int32 search_result_persistence_count = 2;</code>
+       *
+       * @return The searchResultPersistenceCount.
+       */
+      @java.lang.Override
+      public int getSearchResultPersistenceCount() {
+        return searchResultPersistenceCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of top search results to persist. The persisted search results
+       * can be used for the subsequent /answer api call.
+       *
+       * This field is simliar to the `summary_result_count` field in
+       * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+       *
+       * At most 10 results for documents mode, or 50 for chunks mode.
+       * </pre>
+       *
+       * <code>optional int32 search_result_persistence_count = 2;</code>
+       *
+       * @param value The searchResultPersistenceCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchResultPersistenceCount(int value) {
+
+        searchResultPersistenceCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of top search results to persist. The persisted search results
+       * can be used for the subsequent /answer api call.
+       *
+       * This field is simliar to the `summary_result_count` field in
+       * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+       *
+       * At most 10 results for documents mode, or 50 for chunks mode.
+       * </pre>
+       *
+       * <code>optional int32 search_result_persistence_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSearchResultPersistenceCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        searchResultPersistenceCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchRequest.SessionSpec)
+    private static final com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SessionSpec> PARSER =
+        new com.google.protobuf.AbstractParser<SessionSpec>() {
+          @java.lang.Override
+          public SessionSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SessionSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SessionSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18602,6 +22093,65 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return userInfo_ == null
         ? com.google.cloud.discoveryengine.v1.UserInfo.getDefaultInstance()
         : userInfo_;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 35;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). This field
+   * helps to better interpret the query. If a value isn't specified, the query
+   * language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 35;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). This field
+   * helps to better interpret the query. If a value isn't specified, the query
+   * language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 35;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int FACET_SPECS_FIELD_NUMBER = 9;
@@ -19354,6 +22904,229 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SEARCH_AS_YOU_TYPE_SPEC_FIELD_NUMBER = 31;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+      searchAsYouTypeSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   *
+   * @return Whether the searchAsYouTypeSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchAsYouTypeSpec() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   *
+   * @return The searchAsYouTypeSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+      getSearchAsYouTypeSpec() {
+    return searchAsYouTypeSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.getDefaultInstance()
+        : searchAsYouTypeSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder
+      getSearchAsYouTypeSpecOrBuilder() {
+    return searchAsYouTypeSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.getDefaultInstance()
+        : searchAsYouTypeSpec_;
+  }
+
+  public static final int SESSION_FIELD_NUMBER = 41;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object session_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The session resource name. Optional.
+   *
+   * Session allows users to do multi-turn /search API calls or coordination
+   * between /search API calls and /answer API calls.
+   *
+   * Example #1 (multi-turn /search API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /search API with the session ID generated in the first call.
+   *      Here, the previous search query gets considered in query
+   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *      and the current query is "How about 2023?", the current query will
+   *      be interpreted as "How did Alphabet do in 2023?".
+   *
+   * Example #2 (coordination between /search API calls and /answer API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /answer API with the session ID generated in the first call.
+   *      Here, the answer generation happens in the context of the search
+   *      results from the first search call.
+   *
+   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+   * gets automatically created. Otherwise, users can use the create-session API
+   * to create a session manually.
+   *
+   * Multi-turn Search feature is currently at private GA stage. Please use
+   * v1alpha or v1beta version instead before we launch this feature to public
+   * GA. Or ask for allowlisting through Google Support team.
+   * </pre>
+   *
+   * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The session.
+   */
+  @java.lang.Override
+  public java.lang.String getSession() {
+    java.lang.Object ref = session_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      session_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The session resource name. Optional.
+   *
+   * Session allows users to do multi-turn /search API calls or coordination
+   * between /search API calls and /answer API calls.
+   *
+   * Example #1 (multi-turn /search API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /search API with the session ID generated in the first call.
+   *      Here, the previous search query gets considered in query
+   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *      and the current query is "How about 2023?", the current query will
+   *      be interpreted as "How did Alphabet do in 2023?".
+   *
+   * Example #2 (coordination between /search API calls and /answer API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /answer API with the session ID generated in the first call.
+   *      Here, the answer generation happens in the context of the search
+   *      results from the first search call.
+   *
+   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+   * gets automatically created. Otherwise, users can use the create-session API
+   * to create a session manually.
+   *
+   * Multi-turn Search feature is currently at private GA stage. Please use
+   * v1alpha or v1beta version instead before we launch this feature to public
+   * GA. Or ask for allowlisting through Google Support team.
+   * </pre>
+   *
+   * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for session.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSessionBytes() {
+    java.lang.Object ref = session_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      session_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SESSION_SPEC_FIELD_NUMBER = 42;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec sessionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+   *
+   * @return Whether the sessionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionSpec() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+   *
+   * @return The sessionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec getSessionSpec() {
+    return sessionSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance()
+        : sessionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder
+      getSessionSpecOrBuilder() {
+    return sessionSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance()
+        : sessionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -19426,8 +23199,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, canonicalFilter_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(31, getSearchAsYouTypeSpec());
+    }
     for (int i = 0; i < dataStoreSpecs_.size(); i++) {
       output.writeMessage(32, dataStoreSpecs_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 35, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 41, session_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(42, getSessionSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -19513,8 +23298,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, canonicalFilter_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(31, getSearchAsYouTypeSpec());
+    }
     for (int i = 0; i < dataStoreSpecs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, dataStoreSpecs_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(35, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, session_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSessionSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -19550,6 +23348,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasUserInfo()) {
       if (!getUserInfo().equals(other.getUserInfo())) return false;
     }
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getFacetSpecsList().equals(other.getFacetSpecsList())) return false;
     if (hasBoostSpec() != other.hasBoostSpec()) return false;
     if (hasBoostSpec()) {
@@ -19571,6 +23370,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (getSafeSearch() != other.getSafeSearch()) return false;
     if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
+    if (hasSearchAsYouTypeSpec() != other.hasSearchAsYouTypeSpec()) return false;
+    if (hasSearchAsYouTypeSpec()) {
+      if (!getSearchAsYouTypeSpec().equals(other.getSearchAsYouTypeSpec())) return false;
+    }
+    if (!getSession().equals(other.getSession())) return false;
+    if (hasSessionSpec() != other.hasSessionSpec()) return false;
+    if (hasSessionSpec()) {
+      if (!getSessionSpec().equals(other.getSessionSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -19612,6 +23420,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getUserInfo().hashCode();
     }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     if (getFacetSpecsCount() > 0) {
       hash = (37 * hash) + FACET_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getFacetSpecsList().hashCode();
@@ -19643,6 +23453,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetUserLabels().getMap().isEmpty()) {
       hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetUserLabels().hashCode();
+    }
+    if (hasSearchAsYouTypeSpec()) {
+      hash = (37 * hash) + SEARCH_AS_YOU_TYPE_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchAsYouTypeSpec().hashCode();
+    }
+    hash = (37 * hash) + SESSION_FIELD_NUMBER;
+    hash = (53 * hash) + getSession().hashCode();
+    if (hasSessionSpec()) {
+      hash = (37 * hash) + SESSION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -19820,6 +23640,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getQueryExpansionSpecFieldBuilder();
         getSpellCorrectionSpecFieldBuilder();
         getContentSearchSpecFieldBuilder();
+        getSearchAsYouTypeSpecFieldBuilder();
+        getSessionSpecFieldBuilder();
       }
     }
 
@@ -19853,13 +23675,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         userInfoBuilder_.dispose();
         userInfoBuilder_ = null;
       }
+      languageCode_ = "";
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
       } else {
         facetSpecs_ = null;
         facetSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -19884,6 +23707,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       safeSearch_ = false;
       internalGetMutableUserLabels().clear();
+      searchAsYouTypeSpec_ = null;
+      if (searchAsYouTypeSpecBuilder_ != null) {
+        searchAsYouTypeSpecBuilder_.dispose();
+        searchAsYouTypeSpecBuilder_ = null;
+      }
+      session_ = "";
+      sessionSpec_ = null;
+      if (sessionSpecBuilder_ != null) {
+        sessionSpecBuilder_.dispose();
+        sessionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -19931,9 +23765,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.dataStoreSpecs_ = dataStoreSpecsBuilder_.build();
       }
       if (facetSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           facetSpecs_ = java.util.Collections.unmodifiableList(facetSpecs_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.facetSpecs_ = facetSpecs_;
       } else {
@@ -19979,43 +23813,61 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.params_ = internalGetParams().build(ParamsDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.queryExpansionSpec_ =
             queryExpansionSpecBuilder_ == null
                 ? queryExpansionSpec_
                 : queryExpansionSpecBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.contentSearchSpec_ =
             contentSearchSpecBuilder_ == null
                 ? contentSearchSpec_
                 : contentSearchSpecBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.safeSearch_ = safeSearch_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.searchAsYouTypeSpec_ =
+            searchAsYouTypeSpecBuilder_ == null
+                ? searchAsYouTypeSpec_
+                : searchAsYouTypeSpecBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.session_ = session_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.sessionSpec_ =
+            sessionSpecBuilder_ == null ? sessionSpec_ : sessionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -20140,11 +23992,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUserInfo()) {
         mergeUserInfo(other.getUserInfo());
       }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (facetSpecsBuilder_ == null) {
         if (!other.facetSpecs_.isEmpty()) {
           if (facetSpecs_.isEmpty()) {
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureFacetSpecsIsMutable();
             facetSpecs_.addAll(other.facetSpecs_);
@@ -20157,7 +24014,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             facetSpecsBuilder_.dispose();
             facetSpecsBuilder_ = null;
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             facetSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFacetSpecsFieldBuilder()
@@ -20171,7 +24028,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         mergeBoostSpec(other.getBoostSpec());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       if (other.hasQueryExpansionSpec()) {
         mergeQueryExpansionSpec(other.getQueryExpansionSpec());
       }
@@ -20180,7 +24037,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasContentSearchSpec()) {
@@ -20190,7 +24047,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         setSafeSearch(other.getSafeSearch());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
+      if (other.hasSearchAsYouTypeSpec()) {
+        mergeSearchAsYouTypeSpec(other.getSearchAsYouTypeSpec());
+      }
+      if (!other.getSession().isEmpty()) {
+        session_ = other.session_;
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      if (other.hasSessionSpec()) {
+        mergeSessionSpec(other.getSessionSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -20282,7 +24150,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 82
             case 90:
@@ -20294,27 +24162,27 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .ensureBuilderMap()
                     .put(params__.getKey(), params__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(
                     getQueryExpansionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 114
             case 122:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 122
             case 154:
@@ -20326,7 +24194,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 safeSearch_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 160
             case 170:
@@ -20344,14 +24212,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 194:
               {
                 input.readMessage(
                     getContentSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 194
             case 234:
@@ -20360,6 +24228,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 234
+            case 250:
+              {
+                input.readMessage(
+                    getSearchAsYouTypeSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 250
             case 258:
               {
                 com.google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec m =
@@ -20374,6 +24249,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 258
+            case 282:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 282
+            case 330:
+              {
+                session_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 330
+            case 338:
+              {
+                input.readMessage(getSessionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -22408,15 +26301,141 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return userInfoBuilder_;
     }
 
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see [Standard
+     * fields](https://cloud.google.com/apis/design/standard_fields). This field
+     * helps to better interpret the query. If a value isn't specified, the query
+     * language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 35;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see [Standard
+     * fields](https://cloud.google.com/apis/design/standard_fields). This field
+     * helps to better interpret the query. If a value isn't specified, the query
+     * language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 35;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see [Standard
+     * fields](https://cloud.google.com/apis/design/standard_fields). This field
+     * helps to better interpret the query. If a value isn't specified, the query
+     * language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 35;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see [Standard
+     * fields](https://cloud.google.com/apis/design/standard_fields). This field
+     * helps to better interpret the query. If a value isn't specified, the query
+     * language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 35;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see [Standard
+     * fields](https://cloud.google.com/apis/design/standard_fields). This field
+     * helps to better interpret the query. If a value isn't specified, the query
+     * language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 35;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>
         facetSpecs_ = java.util.Collections.emptyList();
 
     private void ensureFacetSpecsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         facetSpecs_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec>(
                 facetSpecs_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -22683,7 +26702,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFacetSpecs() {
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         facetSpecsBuilder_.clear();
@@ -22841,7 +26860,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec,
                 com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec.Builder,
                 com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>(
-                facetSpecs_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                facetSpecs_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         facetSpecs_ = null;
       }
       return facetSpecsBuilder_;
@@ -22867,7 +26886,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boostSpec field is set.
      */
     public boolean hasBoostSpec() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -22911,7 +26930,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -22933,7 +26952,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -22951,7 +26970,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBoostSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec value) {
       if (boostSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && boostSpec_ != null
             && boostSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
@@ -22964,7 +26983,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         boostSpecBuilder_.mergeFrom(value);
       }
       if (boostSpec_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -22981,7 +27000,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
      */
     public Builder clearBoostSpec() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -23003,7 +27022,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder
         getBoostSpecBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
@@ -23104,7 +27123,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (params_ == null) {
         params_ = new com.google.protobuf.MapFieldBuilder<>(paramsConverter);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return params_;
     }
@@ -23247,7 +27266,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableParams().clear();
       return this;
     }
@@ -23284,7 +27303,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableParams().ensureMessageMap();
     }
     /**
@@ -23318,7 +27337,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableParams().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -23351,7 +27370,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableParams().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -23414,7 +27433,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionSpec field is set.
      */
     public boolean hasQueryExpansionSpec() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -23463,7 +27482,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -23487,7 +27506,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -23506,7 +27525,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec value) {
       if (queryExpansionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && queryExpansionSpec_ != null
             && queryExpansionSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec
@@ -23519,7 +27538,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         queryExpansionSpecBuilder_.mergeFrom(value);
       }
       if (queryExpansionSpec_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -23537,7 +27556,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionSpec() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       queryExpansionSpec_ = null;
       if (queryExpansionSpecBuilder_ != null) {
         queryExpansionSpecBuilder_.dispose();
@@ -23560,7 +27579,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.QueryExpansionSpec.Builder
         getQueryExpansionSpecBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
@@ -23638,7 +27657,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -23687,7 +27706,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -23711,7 +27730,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -23730,7 +27749,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec
@@ -23743,7 +27762,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
       if (spellCorrectionSpec_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -23761,7 +27780,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -23784,7 +27803,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -23941,7 +27960,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -23971,7 +27990,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -24006,7 +28025,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -24031,7 +28050,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentSearchSpec field is set.
      */
     public boolean hasContentSearchSpec() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -24078,7 +28097,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -24101,7 +28120,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -24119,7 +28138,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContentSearchSpec(
         com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec value) {
       if (contentSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && contentSearchSpec_ != null
             && contentSearchSpec_
                 != com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec
@@ -24132,7 +28151,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         contentSearchSpecBuilder_.mergeFrom(value);
       }
       if (contentSearchSpec_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -24149,7 +28168,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContentSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       contentSearchSpec_ = null;
       if (contentSearchSpecBuilder_ != null) {
         contentSearchSpecBuilder_.dispose();
@@ -24171,7 +28190,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.Builder
         getContentSearchSpecBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getContentSearchSpecFieldBuilder().getBuilder();
     }
@@ -24258,7 +28277,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSafeSearch(boolean value) {
 
       safeSearch_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -24275,7 +28294,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSafeSearch() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       safeSearch_ = false;
       onChanged();
       return this;
@@ -24301,7 +28320,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return userLabels_;
     }
@@ -24450,7 +28469,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -24489,7 +28508,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -24525,7 +28544,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
     /**
@@ -24555,8 +28574,682 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        searchAsYouTypeSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder>
+        searchAsYouTypeSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     *
+     * @return Whether the searchAsYouTypeSpec field is set.
+     */
+    public boolean hasSearchAsYouTypeSpec() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     *
+     * @return The searchAsYouTypeSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+        getSearchAsYouTypeSpec() {
+      if (searchAsYouTypeSpecBuilder_ == null) {
+        return searchAsYouTypeSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+                .getDefaultInstance()
+            : searchAsYouTypeSpec_;
+      } else {
+        return searchAsYouTypeSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public Builder setSearchAsYouTypeSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec value) {
+      if (searchAsYouTypeSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchAsYouTypeSpec_ = value;
+      } else {
+        searchAsYouTypeSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public Builder setSearchAsYouTypeSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder
+            builderForValue) {
+      if (searchAsYouTypeSpecBuilder_ == null) {
+        searchAsYouTypeSpec_ = builderForValue.build();
+      } else {
+        searchAsYouTypeSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public Builder mergeSearchAsYouTypeSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec value) {
+      if (searchAsYouTypeSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && searchAsYouTypeSpec_ != null
+            && searchAsYouTypeSpec_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+                    .getDefaultInstance()) {
+          getSearchAsYouTypeSpecBuilder().mergeFrom(value);
+        } else {
+          searchAsYouTypeSpec_ = value;
+        }
+      } else {
+        searchAsYouTypeSpecBuilder_.mergeFrom(value);
+      }
+      if (searchAsYouTypeSpec_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public Builder clearSearchAsYouTypeSpec() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      searchAsYouTypeSpec_ = null;
+      if (searchAsYouTypeSpecBuilder_ != null) {
+        searchAsYouTypeSpecBuilder_.dispose();
+        searchAsYouTypeSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder
+        getSearchAsYouTypeSpecBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getSearchAsYouTypeSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder
+        getSearchAsYouTypeSpecOrBuilder() {
+      if (searchAsYouTypeSpecBuilder_ != null) {
+        return searchAsYouTypeSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return searchAsYouTypeSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec
+                .getDefaultInstance()
+            : searchAsYouTypeSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search as you type configuration. Only supported for the
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder>
+        getSearchAsYouTypeSpecFieldBuilder() {
+      if (searchAsYouTypeSpecBuilder_ == null) {
+        searchAsYouTypeSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SearchAsYouTypeSpecOrBuilder>(
+                getSearchAsYouTypeSpec(), getParentForChildren(), isClean());
+        searchAsYouTypeSpec_ = null;
+      }
+      return searchAsYouTypeSpecBuilder_;
+    }
+
+    private java.lang.Object session_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The session resource name. Optional.
+     *
+     * Session allows users to do multi-turn /search API calls or coordination
+     * between /search API calls and /answer API calls.
+     *
+     * Example #1 (multi-turn /search API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /search API with the session ID generated in the first call.
+     *      Here, the previous search query gets considered in query
+     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *      and the current query is "How about 2023?", the current query will
+     *      be interpreted as "How did Alphabet do in 2023?".
+     *
+     * Example #2 (coordination between /search API calls and /answer API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /answer API with the session ID generated in the first call.
+     *      Here, the answer generation happens in the context of the search
+     *      results from the first search call.
+     *
+     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+     * gets automatically created. Otherwise, users can use the create-session API
+     * to create a session manually.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The session.
+     */
+    public java.lang.String getSession() {
+      java.lang.Object ref = session_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        session_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The session resource name. Optional.
+     *
+     * Session allows users to do multi-turn /search API calls or coordination
+     * between /search API calls and /answer API calls.
+     *
+     * Example #1 (multi-turn /search API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /search API with the session ID generated in the first call.
+     *      Here, the previous search query gets considered in query
+     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *      and the current query is "How about 2023?", the current query will
+     *      be interpreted as "How did Alphabet do in 2023?".
+     *
+     * Example #2 (coordination between /search API calls and /answer API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /answer API with the session ID generated in the first call.
+     *      Here, the answer generation happens in the context of the search
+     *      results from the first search call.
+     *
+     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+     * gets automatically created. Otherwise, users can use the create-session API
+     * to create a session manually.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for session.
+     */
+    public com.google.protobuf.ByteString getSessionBytes() {
+      java.lang.Object ref = session_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        session_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The session resource name. Optional.
+     *
+     * Session allows users to do multi-turn /search API calls or coordination
+     * between /search API calls and /answer API calls.
+     *
+     * Example #1 (multi-turn /search API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /search API with the session ID generated in the first call.
+     *      Here, the previous search query gets considered in query
+     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *      and the current query is "How about 2023?", the current query will
+     *      be interpreted as "How did Alphabet do in 2023?".
+     *
+     * Example #2 (coordination between /search API calls and /answer API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /answer API with the session ID generated in the first call.
+     *      Here, the answer generation happens in the context of the search
+     *      results from the first search call.
+     *
+     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+     * gets automatically created. Otherwise, users can use the create-session API
+     * to create a session manually.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The session to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSession(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      session_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The session resource name. Optional.
+     *
+     * Session allows users to do multi-turn /search API calls or coordination
+     * between /search API calls and /answer API calls.
+     *
+     * Example #1 (multi-turn /search API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /search API with the session ID generated in the first call.
+     *      Here, the previous search query gets considered in query
+     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *      and the current query is "How about 2023?", the current query will
+     *      be interpreted as "How did Alphabet do in 2023?".
+     *
+     * Example #2 (coordination between /search API calls and /answer API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /answer API with the session ID generated in the first call.
+     *      Here, the answer generation happens in the context of the search
+     *      results from the first search call.
+     *
+     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+     * gets automatically created. Otherwise, users can use the create-session API
+     * to create a session manually.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSession() {
+      session_ = getDefaultInstance().getSession();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The session resource name. Optional.
+     *
+     * Session allows users to do multi-turn /search API calls or coordination
+     * between /search API calls and /answer API calls.
+     *
+     * Example #1 (multi-turn /search API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /search API with the session ID generated in the first call.
+     *      Here, the previous search query gets considered in query
+     *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+     *      and the current query is "How about 2023?", the current query will
+     *      be interpreted as "How did Alphabet do in 2023?".
+     *
+     * Example #2 (coordination between /search API calls and /answer API calls):
+     *   1. Call /search API with the auto-session mode (see below).
+     *   2. Call /answer API with the session ID generated in the first call.
+     *      Here, the answer generation happens in the context of the search
+     *      results from the first search call.
+     *
+     * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+     * gets automatically created. Otherwise, users can use the create-session API
+     * to create a session manually.
+     *
+     * Multi-turn Search feature is currently at private GA stage. Please use
+     * v1alpha or v1beta version instead before we launch this feature to public
+     * GA. Or ask for allowlisting through Google Support team.
+     * </pre>
+     *
+     * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for session to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      session_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec sessionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder>
+        sessionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     *
+     * @return Whether the sessionSpec field is set.
+     */
+    public boolean hasSessionSpec() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     *
+     * @return The sessionSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec getSessionSpec() {
+      if (sessionSpecBuilder_ == null) {
+        return sessionSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance()
+            : sessionSpec_;
+      } else {
+        return sessionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public Builder setSessionSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec value) {
+      if (sessionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionSpec_ = value;
+      } else {
+        sessionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public Builder setSessionSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder builderForValue) {
+      if (sessionSpecBuilder_ == null) {
+        sessionSpec_ = builderForValue.build();
+      } else {
+        sessionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public Builder mergeSessionSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec value) {
+      if (sessionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && sessionSpec_ != null
+            && sessionSpec_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec
+                    .getDefaultInstance()) {
+          getSessionSpecBuilder().mergeFrom(value);
+        } else {
+          sessionSpec_ = value;
+        }
+      } else {
+        sessionSpecBuilder_.mergeFrom(value);
+      }
+      if (sessionSpec_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public Builder clearSessionSpec() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      sessionSpec_ = null;
+      if (sessionSpecBuilder_ != null) {
+        sessionSpecBuilder_.dispose();
+        sessionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder
+        getSessionSpecBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getSessionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder
+        getSessionSpecOrBuilder() {
+      if (sessionSpecBuilder_ != null) {
+        return sessionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.getDefaultInstance()
+            : sessionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session specification.
+     *
+     * Can be used only when `session` is set.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder>
+        getSessionSpecFieldBuilder() {
+      if (sessionSpecBuilder_ == null) {
+        sessionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder>(
+                getSessionSpec(), getParentForChildren(), isClean());
+        sessionSpec_ = null;
+      }
+      return sessionSpecBuilder_;
     }
 
     @java.lang.Override

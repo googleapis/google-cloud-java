@@ -246,7 +246,8 @@ import javax.annotation.Generated;
  *      <td><p> ListSpaces</td>
  *      <td><p> Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first message is sent. For an example, see [List spaces](https://developers.google.com/workspace/chat/list-spaces).
  * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
- * <p>  Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed until the first message is sent.</td>
+ * <p>  Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed until the first message is sent.
+ * <p>  To list all named spaces by Google Workspace organization, use the [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search) method using Workspace administrator privileges instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1931,7 +1932,7 @@ public class ChatServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the attachment, in the form
-   *     `spaces/&#42;/messages/&#42;/attachments/&#42;`.
+   *     `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Attachment getAttachment(AttachmentName name) {
@@ -1963,7 +1964,7 @@ public class ChatServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the attachment, in the form
-   *     `spaces/&#42;/messages/&#42;/attachments/&#42;`.
+   *     `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Attachment getAttachment(String name) {
@@ -2123,6 +2124,10 @@ public class ChatServiceClient implements BackgroundResource {
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
    *
+   * <p>To list all named spaces by Google Workspace organization, use the
+   * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+   * method using Workspace administrator privileges instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2161,6 +2166,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
+   *
+   * <p>To list all named spaces by Google Workspace organization, use the
+   * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+   * method using Workspace administrator privileges instead.
    *
    * <p>Sample code:
    *
@@ -2206,6 +2215,10 @@ public class ChatServiceClient implements BackgroundResource {
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
    *
+   * <p>To list all named spaces by Google Workspace organization, use the
+   * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+   * method using Workspace administrator privileges instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2248,6 +2261,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
+   *
+   * <p>To list all named spaces by Google Workspace organization, use the
+   * [`spaces.search()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/search)
+   * method using Workspace administrator privileges instead.
    *
    * <p>Sample code:
    *
@@ -2309,7 +2326,7 @@ public class ChatServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the space, in the form "spaces/&#42;".
+   * @param name Required. Resource name of the space, in the form `spaces/{space}`.
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2345,7 +2362,7 @@ public class ChatServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the space, in the form "spaces/&#42;".
+   * @param name Required. Resource name of the space, in the form `spaces/{space}`.
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2721,16 +2738,28 @@ public class ChatServiceClient implements BackgroundResource {
    *     space has a non-empty display name and the `SPACE` space type. Including the `space_type`
    *     mask and the `SPACE` type in the specified space when updating the display name is optional
    *     if the existing space already has the `SPACE` type. Trying to update the space type in
-   *     other ways results in an invalid argument error).
+   *     other ways results in an invalid argument error). `space_type` is not supported with admin
+   *     access.
    *     <p>- `space_details`
    *     <p>- `space_history_state` (Supports [turning history on or off for the
    *     space](https://support.google.com/chat/answer/7664687) if [the organization allows users to
    *     change their history setting](https://support.google.com/a/answer/7664184). Warning:
-   *     mutually exclusive with all other field paths.)
-   *     <p>- Developer Preview: `access_settings.audience` (Supports changing the [access
-   *     setting](https://support.google.com/chat/answer/11971020) of a space. If no audience is
-   *     specified in the access setting, the space's access setting is updated to restricted.
-   *     Warning: mutually exclusive with all other field paths.)
+   *     mutually exclusive with all other field paths.) `space_history_state` is not supported with
+   *     admin access.
+   *     <p>- `access_settings.audience` (Supports changing the [access
+   *     setting](https://support.google.com/chat/answer/11971020) of who can discover the space,
+   *     join the space, and preview the messages in space. If no audience is specified in the
+   *     access setting, the space's access setting is updated to private. Warning: mutually
+   *     exclusive with all other field paths.) `access_settings.audience` is not supported with
+   *     admin access.
+   *     <p>- Developer Preview: Supports changing the [permission
+   *     settings](https://support.google.com/chat/answer/13340792) of a space, supported field
+   *     paths include: `permission_settings.manage_members_and_groups`,
+   *     `permission_settings.modify_space_details`, `permission_settings.toggle_history`,
+   *     `permission_settings.use_at_mention_all`, `permission_settings.manage_apps`,
+   *     `permission_settings.manage_webhooks`, `permission_settings.reply_messages` (Warning:
+   *     mutually exclusive with all other non-permission settings field paths).
+   *     `permission_settings` is not supported with admin access.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space updateSpace(Space space, FieldMask updateMask) {

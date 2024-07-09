@@ -19,14 +19,20 @@ package com.google.cloud.securitycenter.v1;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -157,6 +163,16 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       deleteSecurityHealthAnalyticsCustomModuleSettings() {
     return ((SecurityCenterStubSettings) getStubSettings())
         .deleteSecurityHealthAnalyticsCustomModuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSimulation. */
+  public UnaryCallSettings<GetSimulationRequest, Simulation> getSimulationSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getSimulationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getValuedResource. */
+  public UnaryCallSettings<GetValuedResourceRequest, ValuedResource> getValuedResourceSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getValuedResourceSettings();
   }
 
   /** Returns the object with the settings used for calls to getBigQueryExport. */
@@ -436,6 +452,154 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).listBigQueryExportsSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to createEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .createEventThreatDetectionCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .deleteEventThreatDetectionCustomModuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEventThreatDetectionCustomModule. */
+  public UnaryCallSettings<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .getEventThreatDetectionCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listDescendantEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listDescendantEventThreatDetectionCustomModulesSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listEventThreatDetectionCustomModulesSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .updateEventThreatDetectionCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * validateEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .validateEventThreatDetectionCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * getEffectiveEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .getEffectiveEventThreatDetectionCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listEffectiveEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listEffectiveEventThreatDetectionCustomModulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateResourceValueConfigs. */
+  public UnaryCallSettings<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .batchCreateResourceValueConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceValueConfig. */
+  public UnaryCallSettings<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).deleteResourceValueConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceValueConfig. */
+  public UnaryCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getResourceValueConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceValueConfigs. */
+  public PagedCallSettings<
+          ListResourceValueConfigsRequest,
+          ListResourceValueConfigsResponse,
+          ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listResourceValueConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateResourceValueConfig. */
+  public UnaryCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateResourceValueConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listValuedResources. */
+  public PagedCallSettings<
+          ListValuedResourcesRequest, ListValuedResourcesResponse, ListValuedResourcesPagedResponse>
+      listValuedResourcesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listValuedResourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAttackPaths. */
+  public PagedCallSettings<
+          ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+      listAttackPathsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listAttackPathsSettings();
+  }
+
   public static final SecurityCenterSettings create(SecurityCenterStubSettings stub)
       throws IOException {
     return new SecurityCenterSettings.Builder(stub.toBuilder()).build();
@@ -610,6 +774,17 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
         deleteSecurityHealthAnalyticsCustomModuleSettings() {
       return getStubSettingsBuilder().deleteSecurityHealthAnalyticsCustomModuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSimulation. */
+    public UnaryCallSettings.Builder<GetSimulationRequest, Simulation> getSimulationSettings() {
+      return getStubSettingsBuilder().getSimulationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getValuedResource. */
+    public UnaryCallSettings.Builder<GetValuedResourceRequest, ValuedResource>
+        getValuedResourceSettings() {
+      return getStubSettingsBuilder().getValuedResourceSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBigQueryExport. */
@@ -891,6 +1066,151 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
             ListBigQueryExportsPagedResponse>
         listBigQueryExportsSettings() {
       return getStubSettingsBuilder().listBigQueryExportsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        createEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().createEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+        deleteEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().deleteEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        getEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().getEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDescendantEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListDescendantEventThreatDetectionCustomModulesRequest,
+            ListDescendantEventThreatDetectionCustomModulesResponse,
+            ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+        listDescendantEventThreatDetectionCustomModulesSettings() {
+      return getStubSettingsBuilder().listDescendantEventThreatDetectionCustomModulesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEventThreatDetectionCustomModulesRequest,
+            ListEventThreatDetectionCustomModulesResponse,
+            ListEventThreatDetectionCustomModulesPagedResponse>
+        listEventThreatDetectionCustomModulesSettings() {
+      return getStubSettingsBuilder().listEventThreatDetectionCustomModulesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        updateEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().updateEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * validateEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            ValidateEventThreatDetectionCustomModuleRequest,
+            ValidateEventThreatDetectionCustomModuleResponse>
+        validateEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().validateEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getEffectiveEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEffectiveEventThreatDetectionCustomModuleRequest,
+            EffectiveEventThreatDetectionCustomModule>
+        getEffectiveEventThreatDetectionCustomModuleSettings() {
+      return getStubSettingsBuilder().getEffectiveEventThreatDetectionCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listEffectiveEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEffectiveEventThreatDetectionCustomModulesRequest,
+            ListEffectiveEventThreatDetectionCustomModulesResponse,
+            ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+        listEffectiveEventThreatDetectionCustomModulesSettings() {
+      return getStubSettingsBuilder().listEffectiveEventThreatDetectionCustomModulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateResourceValueConfigs. */
+    public UnaryCallSettings.Builder<
+            BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+        batchCreateResourceValueConfigsSettings() {
+      return getStubSettingsBuilder().batchCreateResourceValueConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceValueConfig. */
+    public UnaryCallSettings.Builder<DeleteResourceValueConfigRequest, Empty>
+        deleteResourceValueConfigSettings() {
+      return getStubSettingsBuilder().deleteResourceValueConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceValueConfig. */
+    public UnaryCallSettings.Builder<GetResourceValueConfigRequest, ResourceValueConfig>
+        getResourceValueConfigSettings() {
+      return getStubSettingsBuilder().getResourceValueConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceValueConfigs. */
+    public PagedCallSettings.Builder<
+            ListResourceValueConfigsRequest,
+            ListResourceValueConfigsResponse,
+            ListResourceValueConfigsPagedResponse>
+        listResourceValueConfigsSettings() {
+      return getStubSettingsBuilder().listResourceValueConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateResourceValueConfig. */
+    public UnaryCallSettings.Builder<UpdateResourceValueConfigRequest, ResourceValueConfig>
+        updateResourceValueConfigSettings() {
+      return getStubSettingsBuilder().updateResourceValueConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listValuedResources. */
+    public PagedCallSettings.Builder<
+            ListValuedResourcesRequest,
+            ListValuedResourcesResponse,
+            ListValuedResourcesPagedResponse>
+        listValuedResourcesSettings() {
+      return getStubSettingsBuilder().listValuedResourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAttackPaths. */
+    public PagedCallSettings.Builder<
+            ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+        listAttackPathsSettings() {
+      return getStubSettingsBuilder().listAttackPathsSettings();
     }
 
     @Override

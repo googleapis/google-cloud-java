@@ -29,10 +29,10 @@ public interface GetEffectiveSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of the effective custom module to get. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`
    * </pre>
    *
    * <code>
@@ -47,10 +47,10 @@ public interface GetEffectiveSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of the effective custom module to get. Its format is
-   * "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
-   * "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   * `organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`,
+   * `folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`,
    * or
-   * "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
+   * `projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`
    * </pre>
    *
    * <code>

@@ -22,4 +22,18 @@ package com.google.cloud.aiplatform.v1beta1;
 public interface BleuSpecOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.BleuSpec)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to use_effective_order to compute bleu score.
+   * </pre>
+   *
+   * <code>bool use_effective_order = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useEffectiveOrder.
+   */
+  boolean getUseEffectiveOrder();
+}

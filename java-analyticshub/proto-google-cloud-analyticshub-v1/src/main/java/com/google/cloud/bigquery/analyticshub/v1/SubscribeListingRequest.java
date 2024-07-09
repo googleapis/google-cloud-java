@@ -114,10 +114,12 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return Whether the destinationDataset field is set.
    */
@@ -129,10 +131,12 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The destinationDataset.
    */
@@ -147,10 +151,12 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * BigQuery destination dataset to create for the subscriber.
+   * Input only. BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
@@ -648,10 +654,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return Whether the destinationDataset field is set.
@@ -664,10 +671,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return The destinationDataset.
@@ -690,10 +698,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder setDestinationDataset(
@@ -714,10 +723,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder setDestinationDataset(
@@ -735,10 +745,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder mergeDestinationDataset(
@@ -771,10 +782,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder clearDestinationDataset() {
@@ -797,10 +809,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder
@@ -811,10 +824,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -833,10 +847,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * BigQuery destination dataset to create for the subscriber.
+     * Input only. BigQuery destination dataset to create for the subscriber.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3;
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

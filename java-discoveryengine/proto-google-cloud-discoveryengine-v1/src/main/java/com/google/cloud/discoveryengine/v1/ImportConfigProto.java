@@ -69,6 +69,10 @@ public final class ImportConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CloudSqlSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AlloyDbSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AlloyDbSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_FirestoreSource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_FirestoreSource_fieldAccessorTable;
@@ -124,6 +128,22 @@ public final class ImportConfigProto {
       internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_InlineSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_InlineSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -186,95 +206,123 @@ public final class ImportConfigProto {
           + "SqlSource\022\022\n\nproject_id\030\001 \001(\t\022\030\n\013instanc"
           + "e_id\030\002 \001(\tB\003\340A\002\022\030\n\013database_id\030\003 \001(\tB\003\340A"
           + "\002\022\025\n\010table_id\030\004 \001(\tB\003\340A\002\022\027\n\017gcs_staging_"
-          + "dir\030\005 \001(\t\022\017\n\007offload\030\006 \001(\010\"t\n\017FirestoreS"
-          + "ource\022\022\n\nproject_id\030\001 \001(\t\022\030\n\013database_id"
-          + "\030\002 \001(\tB\003\340A\002\022\032\n\rcollection_id\030\003 \001(\tB\003\340A\002\022"
-          + "\027\n\017gcs_staging_dir\030\004 \001(\t\"8\n\021ImportErrorC"
-          + "onfig\022\024\n\ngcs_prefix\030\001 \001(\tH\000B\r\n\013destinati"
-          + "on\"\363\003\n\027ImportUserEventsRequest\022^\n\rinline"
-          + "_source\030\002 \001(\0132E.google.cloud.discoveryen"
-          + "gine.v1.ImportUserEventsRequest.InlineSo"
-          + "urceH\000\022@\n\ngcs_source\030\003 \001(\0132*.google.clou"
-          + "d.discoveryengine.v1.GcsSourceH\000\022J\n\017bigq"
-          + "uery_source\030\004 \001(\0132/.google.cloud.discove"
-          + "ryengine.v1.BigQuerySourceH\000\022@\n\006parent\030\001"
-          + " \001(\tB0\340A\002\372A*\n(discoveryengine.googleapis"
-          + ".com/DataStore\022H\n\014error_config\030\005 \001(\01322.g"
-          + "oogle.cloud.discoveryengine.v1.ImportErr"
-          + "orConfig\032T\n\014InlineSource\022D\n\013user_events\030"
-          + "\001 \003(\0132*.google.cloud.discoveryengine.v1."
-          + "UserEventB\003\340A\002B\010\n\006source\"\313\001\n\030ImportUserE"
-          + "ventsResponse\022)\n\rerror_samples\030\001 \003(\0132\022.g"
-          + "oogle.rpc.Status\022H\n\014error_config\030\002 \001(\01322"
-          + ".google.cloud.discoveryengine.v1.ImportE"
-          + "rrorConfig\022\033\n\023joined_events_count\030\003 \001(\003\022"
-          + "\035\n\025unjoined_events_count\030\004 \001(\003\"\252\001\n\030Impor"
-          + "tUserEventsMetadata\022/\n\013create_time\030\001 \001(\013"
-          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022\025\n"
-          + "\rsuccess_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 "
-          + "\001(\003\"\276\001\n\027ImportDocumentsMetadata\022/\n\013creat"
-          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022/\n\013update_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\rfail"
-          + "ure_count\030\004 \001(\003\022\023\n\013total_count\030\005 \001(\003\"\210\t\n"
-          + "\026ImportDocumentsRequest\022]\n\rinline_source"
-          + "\030\002 \001(\0132D.google.cloud.discoveryengine.v1"
-          + ".ImportDocumentsRequest.InlineSourceH\000\022@"
-          + "\n\ngcs_source\030\003 \001(\0132*.google.cloud.discov"
-          + "eryengine.v1.GcsSourceH\000\022J\n\017bigquery_sou"
-          + "rce\030\004 \001(\0132/.google.cloud.discoveryengine"
-          + ".v1.BigQuerySourceH\000\022M\n\021fhir_store_sourc"
-          + "e\030\n \001(\01320.google.cloud.discoveryengine.v"
-          + "1.FhirStoreSourceH\000\022H\n\016spanner_source\030\013 "
-          + "\001(\0132..google.cloud.discoveryengine.v1.Sp"
-          + "annerSourceH\000\022K\n\020cloud_sql_source\030\014 \001(\0132"
-          + "/.google.cloud.discoveryengine.v1.CloudS"
-          + "qlSourceH\000\022L\n\020firestore_source\030\r \001(\01320.g"
-          + "oogle.cloud.discoveryengine.v1.Firestore"
-          + "SourceH\000\022J\n\017bigtable_source\030\017 \001(\0132/.goog"
-          + "le.cloud.discoveryengine.v1.BigtableSour"
-          + "ceH\000\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoverye"
-          + "ngine.googleapis.com/Branch\022H\n\014error_con"
-          + "fig\030\005 \001(\01322.google.cloud.discoveryengine"
-          + ".v1.ImportErrorConfig\022g\n\023reconciliation_"
-          + "mode\030\006 \001(\0162J.google.cloud.discoveryengin"
-          + "e.v1.ImportDocumentsRequest.Reconciliati"
-          + "onMode\022/\n\013update_mask\030\007 \001(\0132\032.google.pro"
-          + "tobuf.FieldMask\022\031\n\021auto_generate_ids\030\010 \001"
-          + "(\010\022\020\n\010id_field\030\t \001(\t\032Q\n\014InlineSource\022A\n\t"
-          + "documents\030\001 \003(\0132).google.cloud.discovery"
-          + "engine.v1.DocumentB\003\340A\002\"T\n\022Reconciliatio"
-          + "nMode\022#\n\037RECONCILIATION_MODE_UNSPECIFIED"
-          + "\020\000\022\017\n\013INCREMENTAL\020\001\022\010\n\004FULL\020\002B\010\n\006source\""
-          + "\216\001\n\027ImportDocumentsResponse\022)\n\rerror_sam"
-          + "ples\030\001 \003(\0132\022.google.rpc.Status\022H\n\014error_"
-          + "config\030\002 \001(\01322.google.cloud.discoveryeng"
-          + "ine.v1.ImportErrorConfig\"\205\003\n&ImportSugge"
-          + "stionDenyListEntriesRequest\022m\n\rinline_so"
-          + "urce\030\002 \001(\0132T.google.cloud.discoveryengin"
-          + "e.v1.ImportSuggestionDenyListEntriesRequ"
-          + "est.InlineSourceH\000\022@\n\ngcs_source\030\003 \001(\0132*"
-          + ".google.cloud.discoveryengine.v1.GcsSour"
-          + "ceH\000\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(discoverye"
-          + "ngine.googleapis.com/DataStore\032^\n\014Inline"
-          + "Source\022N\n\007entries\030\001 \003(\01328.google.cloud.d"
-          + "iscoveryengine.v1.SuggestionDenyListEntr"
-          + "yB\003\340A\002B\010\n\006source\"\222\001\n\'ImportSuggestionDen"
-          + "yListEntriesResponse\022)\n\rerror_samples\030\001 "
-          + "\003(\0132\022.google.rpc.Status\022\036\n\026imported_entr"
-          + "ies_count\030\002 \001(\003\022\034\n\024failed_entries_count\030"
-          + "\003 \001(\003\"\213\001\n\'ImportSuggestionDenyListEntrie"
-          + "sMetadata\022/\n\013create_time\030\001 \001(\0132\032.google."
-          + "protobuf.Timestamp\022/\n\013update_time\030\002 \001(\0132"
-          + "\032.google.protobuf.TimestampB\204\002\n#com.goog"
-          + "le.cloud.discoveryengine.v1B\021ImportConfi"
-          + "gProtoP\001ZMcloud.google.com/go/discoverye"
-          + "ngine/apiv1/discoveryenginepb;discoverye"
-          + "nginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud"
-          + ".DiscoveryEngine.V1\312\002\037Google\\Cloud\\Disco"
-          + "veryEngine\\V1\352\002\"Google::Cloud::Discovery"
-          + "Engine::V1b\006proto3"
+          + "dir\030\005 \001(\t\022\017\n\007offload\030\006 \001(\010\"\240\001\n\rAlloyDbSo"
+          + "urce\022\022\n\nproject_id\030\001 \001(\t\022\030\n\013location_id\030"
+          + "\002 \001(\tB\003\340A\002\022\027\n\ncluster_id\030\003 \001(\tB\003\340A\002\022\030\n\013d"
+          + "atabase_id\030\004 \001(\tB\003\340A\002\022\025\n\010table_id\030\005 \001(\tB"
+          + "\003\340A\002\022\027\n\017gcs_staging_dir\030\006 \001(\t\"t\n\017Firesto"
+          + "reSource\022\022\n\nproject_id\030\001 \001(\t\022\030\n\013database"
+          + "_id\030\002 \001(\tB\003\340A\002\022\032\n\rcollection_id\030\003 \001(\tB\003\340"
+          + "A\002\022\027\n\017gcs_staging_dir\030\004 \001(\t\"8\n\021ImportErr"
+          + "orConfig\022\024\n\ngcs_prefix\030\001 \001(\tH\000B\r\n\013destin"
+          + "ation\"\363\003\n\027ImportUserEventsRequest\022^\n\rinl"
+          + "ine_source\030\002 \001(\0132E.google.cloud.discover"
+          + "yengine.v1.ImportUserEventsRequest.Inlin"
+          + "eSourceH\000\022@\n\ngcs_source\030\003 \001(\0132*.google.c"
+          + "loud.discoveryengine.v1.GcsSourceH\000\022J\n\017b"
+          + "igquery_source\030\004 \001(\0132/.google.cloud.disc"
+          + "overyengine.v1.BigQuerySourceH\000\022@\n\006paren"
+          + "t\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.googlea"
+          + "pis.com/DataStore\022H\n\014error_config\030\005 \001(\0132"
+          + "2.google.cloud.discoveryengine.v1.Import"
+          + "ErrorConfig\032T\n\014InlineSource\022D\n\013user_even"
+          + "ts\030\001 \003(\0132*.google.cloud.discoveryengine."
+          + "v1.UserEventB\003\340A\002B\010\n\006source\"\313\001\n\030ImportUs"
+          + "erEventsResponse\022)\n\rerror_samples\030\001 \003(\0132"
+          + "\022.google.rpc.Status\022H\n\014error_config\030\002 \001("
+          + "\01322.google.cloud.discoveryengine.v1.Impo"
+          + "rtErrorConfig\022\033\n\023joined_events_count\030\003 \001"
+          + "(\003\022\035\n\025unjoined_events_count\030\004 \001(\003\"\252\001\n\030Im"
+          + "portUserEventsMetadata\022/\n\013create_time\030\001 "
+          + "\001(\0132\032.google.protobuf.Timestamp\022/\n\013updat"
+          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\rfailure_count"
+          + "\030\004 \001(\003\"\276\001\n\027ImportDocumentsMetadata\022/\n\013cr"
+          + "eate_time\030\001 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022/\n\013update_time\030\002 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\rf"
+          + "ailure_count\030\004 \001(\003\022\023\n\013total_count\030\005 \001(\003\""
+          + "\323\t\n\026ImportDocumentsRequest\022]\n\rinline_sou"
+          + "rce\030\002 \001(\0132D.google.cloud.discoveryengine"
+          + ".v1.ImportDocumentsRequest.InlineSourceH"
+          + "\000\022@\n\ngcs_source\030\003 \001(\0132*.google.cloud.dis"
+          + "coveryengine.v1.GcsSourceH\000\022J\n\017bigquery_"
+          + "source\030\004 \001(\0132/.google.cloud.discoveryeng"
+          + "ine.v1.BigQuerySourceH\000\022M\n\021fhir_store_so"
+          + "urce\030\n \001(\01320.google.cloud.discoveryengin"
+          + "e.v1.FhirStoreSourceH\000\022H\n\016spanner_source"
+          + "\030\013 \001(\0132..google.cloud.discoveryengine.v1"
+          + ".SpannerSourceH\000\022K\n\020cloud_sql_source\030\014 \001"
+          + "(\0132/.google.cloud.discoveryengine.v1.Clo"
+          + "udSqlSourceH\000\022L\n\020firestore_source\030\r \001(\0132"
+          + "0.google.cloud.discoveryengine.v1.Firest"
+          + "oreSourceH\000\022I\n\017alloy_db_source\030\016 \001(\0132..g"
+          + "oogle.cloud.discoveryengine.v1.AlloyDbSo"
+          + "urceH\000\022J\n\017bigtable_source\030\017 \001(\0132/.google"
+          + ".cloud.discoveryengine.v1.BigtableSource"
+          + "H\000\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoveryeng"
+          + "ine.googleapis.com/Branch\022H\n\014error_confi"
+          + "g\030\005 \001(\01322.google.cloud.discoveryengine.v"
+          + "1.ImportErrorConfig\022g\n\023reconciliation_mo"
+          + "de\030\006 \001(\0162J.google.cloud.discoveryengine."
+          + "v1.ImportDocumentsRequest.Reconciliation"
+          + "Mode\022/\n\013update_mask\030\007 \001(\0132\032.google.proto"
+          + "buf.FieldMask\022\031\n\021auto_generate_ids\030\010 \001(\010"
+          + "\022\020\n\010id_field\030\t \001(\t\032Q\n\014InlineSource\022A\n\tdo"
+          + "cuments\030\001 \003(\0132).google.cloud.discoveryen"
+          + "gine.v1.DocumentB\003\340A\002\"T\n\022ReconciliationM"
+          + "ode\022#\n\037RECONCILIATION_MODE_UNSPECIFIED\020\000"
+          + "\022\017\n\013INCREMENTAL\020\001\022\010\n\004FULL\020\002B\010\n\006source\"\216\001"
+          + "\n\027ImportDocumentsResponse\022)\n\rerror_sampl"
+          + "es\030\001 \003(\0132\022.google.rpc.Status\022H\n\014error_co"
+          + "nfig\030\002 \001(\01322.google.cloud.discoveryengin"
+          + "e.v1.ImportErrorConfig\"\205\003\n&ImportSuggest"
+          + "ionDenyListEntriesRequest\022m\n\rinline_sour"
+          + "ce\030\002 \001(\0132T.google.cloud.discoveryengine."
+          + "v1.ImportSuggestionDenyListEntriesReques"
+          + "t.InlineSourceH\000\022@\n\ngcs_source\030\003 \001(\0132*.g"
+          + "oogle.cloud.discoveryengine.v1.GcsSource"
+          + "H\000\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(discoveryeng"
+          + "ine.googleapis.com/DataStore\032^\n\014InlineSo"
+          + "urce\022N\n\007entries\030\001 \003(\01328.google.cloud.dis"
+          + "coveryengine.v1.SuggestionDenyListEntryB"
+          + "\003\340A\002B\010\n\006source\"\222\001\n\'ImportSuggestionDenyL"
+          + "istEntriesResponse\022)\n\rerror_samples\030\001 \003("
+          + "\0132\022.google.rpc.Status\022\036\n\026imported_entrie"
+          + "s_count\030\002 \001(\003\022\034\n\024failed_entries_count\030\003 "
+          + "\001(\003\"\213\001\n\'ImportSuggestionDenyListEntriesM"
+          + "etadata\022/\n\013create_time\030\001 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032."
+          + "google.protobuf.Timestamp\"\224\004\n\"ImportComp"
+          + "letionSuggestionsRequest\022i\n\rinline_sourc"
+          + "e\030\002 \001(\0132P.google.cloud.discoveryengine.v"
+          + "1.ImportCompletionSuggestionsRequest.Inl"
+          + "ineSourceH\000\022@\n\ngcs_source\030\003 \001(\0132*.google"
+          + ".cloud.discoveryengine.v1.GcsSourceH\000\022J\n"
+          + "\017bigquery_source\030\004 \001(\0132/.google.cloud.di"
+          + "scoveryengine.v1.BigQuerySourceH\000\022@\n\006par"
+          + "ent\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.googl"
+          + "eapis.com/DataStore\022H\n\014error_config\030\005 \001("
+          + "\01322.google.cloud.discoveryengine.v1.Impo"
+          + "rtErrorConfig\032_\n\014InlineSource\022O\n\013suggest"
+          + "ions\030\001 \003(\01325.google.cloud.discoveryengin"
+          + "e.v1.CompletionSuggestionB\003\340A\002B\010\n\006source"
+          + "\"\232\001\n#ImportCompletionSuggestionsResponse"
+          + "\022)\n\rerror_samples\030\001 \003(\0132\022.google.rpc.Sta"
+          + "tus\022H\n\014error_config\030\002 \001(\01322.google.cloud"
+          + ".discoveryengine.v1.ImportErrorConfig\"\265\001"
+          + "\n#ImportCompletionSuggestionsMetadata\022/\n"
+          + "\013create_time\030\001 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022/\n\013update_time\030\002 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022\025"
+          + "\n\rfailure_count\030\004 \001(\003B\204\002\n#com.google.clo"
+          + "ud.discoveryengine.v1B\021ImportConfigProto"
+          + "P\001ZMcloud.google.com/go/discoveryengine/"
+          + "apiv1/discoveryenginepb;discoveryenginep"
+          + "b\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Disco"
+          + "veryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEn"
+          + "gine\\V1\352\002\"Google::Cloud::DiscoveryEngine"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -382,8 +430,16 @@ public final class ImportConfigProto {
             new java.lang.String[] {
               "ProjectId", "InstanceId", "DatabaseId", "TableId", "GcsStagingDir", "Offload",
             });
-    internal_static_google_cloud_discoveryengine_v1_FirestoreSource_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_AlloyDbSource_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_discoveryengine_v1_AlloyDbSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AlloyDbSource_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "LocationId", "ClusterId", "DatabaseId", "TableId", "GcsStagingDir",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FirestoreSource_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_discoveryengine_v1_FirestoreSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_FirestoreSource_descriptor,
@@ -391,7 +447,7 @@ public final class ImportConfigProto {
               "ProjectId", "DatabaseId", "CollectionId", "GcsStagingDir",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportErrorConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_discoveryengine_v1_ImportErrorConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportErrorConfig_descriptor,
@@ -399,7 +455,7 @@ public final class ImportConfigProto {
               "GcsPrefix", "Destination",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportUserEventsRequest_descriptor,
@@ -417,7 +473,7 @@ public final class ImportConfigProto {
               "UserEvents",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportUserEventsResponse_descriptor,
@@ -425,7 +481,7 @@ public final class ImportConfigProto {
               "ErrorSamples", "ErrorConfig", "JoinedEventsCount", "UnjoinedEventsCount",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_discoveryengine_v1_ImportUserEventsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportUserEventsMetadata_descriptor,
@@ -433,7 +489,7 @@ public final class ImportConfigProto {
               "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportDocumentsMetadata_descriptor,
@@ -441,7 +497,7 @@ public final class ImportConfigProto {
               "CreateTime", "UpdateTime", "SuccessCount", "FailureCount", "TotalCount",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportDocumentsRequest_descriptor,
@@ -453,6 +509,7 @@ public final class ImportConfigProto {
               "SpannerSource",
               "CloudSqlSource",
               "FirestoreSource",
+              "AlloyDbSource",
               "BigtableSource",
               "Parent",
               "ErrorConfig",
@@ -473,7 +530,7 @@ public final class ImportConfigProto {
               "Documents",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_discoveryengine_v1_ImportDocumentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportDocumentsResponse_descriptor,
@@ -481,7 +538,7 @@ public final class ImportConfigProto {
               "ErrorSamples", "ErrorConfig",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesRequest_descriptor,
@@ -499,7 +556,7 @@ public final class ImportConfigProto {
               "Entries",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesResponse_descriptor,
@@ -507,12 +564,46 @@ public final class ImportConfigProto {
               "ErrorSamples", "ImportedEntriesCount", "FailedEntriesCount",
             });
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ImportSuggestionDenyListEntriesMetadata_descriptor,
             new java.lang.String[] {
               "CreateTime", "UpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_descriptor,
+            new java.lang.String[] {
+              "InlineSource", "GcsSource", "BigquerySource", "Parent", "ErrorConfig", "Source",
+            });
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_InlineSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_InlineSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsRequest_InlineSource_descriptor,
+            new java.lang.String[] {
+              "Suggestions",
+            });
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsResponse_descriptor,
+            new java.lang.String[] {
+              "ErrorSamples", "ErrorConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ImportCompletionSuggestionsMetadata_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

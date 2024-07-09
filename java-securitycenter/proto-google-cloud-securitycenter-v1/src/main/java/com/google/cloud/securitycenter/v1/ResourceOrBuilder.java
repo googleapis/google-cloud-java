@@ -272,4 +272,259 @@ public interface ResourceOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider the resource resides in.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+   *
+   * @return The enum numeric value on the wire for cloudProvider.
+   */
+  int getCloudProviderValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which cloud provider the resource resides in.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+   *
+   * @return The cloudProvider.
+   */
+  com.google.cloud.securitycenter.v1.CloudProvider getCloudProvider();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which organization or tenant in the cloud provider the finding
+   * applies to.
+   * </pre>
+   *
+   * <code>string organization = 10;</code>
+   *
+   * @return The organization.
+   */
+  java.lang.String getOrganization();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which organization or tenant in the cloud provider the finding
+   * applies to.
+   * </pre>
+   *
+   * <code>string organization = 10;</code>
+   *
+   * @return The bytes for organization.
+   */
+  com.google.protobuf.ByteString getOrganizationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parent service or product from which the resource is provided, for
+   * example, GKE or SNS.
+   * </pre>
+   *
+   * <code>string service = 11;</code>
+   *
+   * @return The service.
+   */
+  java.lang.String getService();
+  /**
+   *
+   *
+   * <pre>
+   * The parent service or product from which the resource is provided, for
+   * example, GKE or SNS.
+   * </pre>
+   *
+   * <code>string service = 11;</code>
+   *
+   * @return The bytes for service.
+   */
+  com.google.protobuf.ByteString getServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The region or location of the service (if applicable).
+   * </pre>
+   *
+   * <code>string location = 12;</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * The region or location of the service (if applicable).
+   * </pre>
+   *
+   * <code>string location = 12;</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The AWS metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+   *
+   * @return Whether the awsMetadata field is set.
+   */
+  boolean hasAwsMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The AWS metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+   *
+   * @return The awsMetadata.
+   */
+  com.google.cloud.securitycenter.v1.AwsMetadata getAwsMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The AWS metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+   */
+  com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder getAwsMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Azure metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+   *
+   * @return Whether the azureMetadata field is set.
+   */
+  boolean hasAzureMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The Azure metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+   *
+   * @return The azureMetadata.
+   */
+  com.google.cloud.securitycenter.v1.AzureMetadata getAzureMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The Azure metadata associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+   */
+  com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder getAzureMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provides the path to the resource within the resource hierarchy.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+   *
+   * @return Whether the resourcePath field is set.
+   */
+  boolean hasResourcePath();
+  /**
+   *
+   *
+   * <pre>
+   * Provides the path to the resource within the resource hierarchy.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+   *
+   * @return The resourcePath.
+   */
+  com.google.cloud.securitycenter.v1.ResourcePath getResourcePath();
+  /**
+   *
+   *
+   * <pre>
+   * Provides the path to the resource within the resource hierarchy.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+   */
+  com.google.cloud.securitycenter.v1.ResourcePathOrBuilder getResourcePathOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A string representation of the resource path.
+   * For Google Cloud, it has the format of
+   * `organizations/{organization_id}/folders/{folder_id}/folders/{folder_id}/projects/{project_id}`
+   * where there can be any number of folders.
+   * For AWS, it has the format of
+   * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+   * where there can be any number of organizational units.
+   * For Azure, it has the format of
+   * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+   * where there can be any number of management groups.
+   * </pre>
+   *
+   * <code>string resource_path_string = 19;</code>
+   *
+   * @return The resourcePathString.
+   */
+  java.lang.String getResourcePathString();
+  /**
+   *
+   *
+   * <pre>
+   * A string representation of the resource path.
+   * For Google Cloud, it has the format of
+   * `organizations/{organization_id}/folders/{folder_id}/folders/{folder_id}/projects/{project_id}`
+   * where there can be any number of folders.
+   * For AWS, it has the format of
+   * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+   * where there can be any number of organizational units.
+   * For Azure, it has the format of
+   * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+   * where there can be any number of management groups.
+   * </pre>
+   *
+   * <code>string resource_path_string = 19;</code>
+   *
+   * @return The bytes for resourcePathString.
+   */
+  com.google.protobuf.ByteString getResourcePathStringBytes();
+
+  com.google.cloud.securitycenter.v1.Resource.CloudProviderMetadataCase
+      getCloudProviderMetadataCase();
 }

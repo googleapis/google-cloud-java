@@ -29,7 +29,7 @@ public interface RunAssetDiscoveryRequestOrBuilder
    *
    * <pre>
    * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * is `organizations/[organization_id]`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface RunAssetDiscoveryRequestOrBuilder
    *
    * <pre>
    * Required. Name of the organization to run asset discovery for. Its format
-   * is "organizations/[organization_id]".
+   * is `organizations/[organization_id]`.
    * </pre>
    *
    * <code>

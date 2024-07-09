@@ -32,6 +32,10 @@ public final class CompletionProto {
       internal_static_google_cloud_discoveryengine_v1_SuggestionDenyListEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_SuggestionDenyListEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_CompletionSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_CompletionSuggestion_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,14 +53,19 @@ public final class CompletionProto {
           + "ogle.cloud.discoveryengine.v1.Suggestion"
           + "DenyListEntry.MatchOperatorB\003\340A\002\"N\n\rMatc"
           + "hOperator\022\036\n\032MATCH_OPERATOR_UNSPECIFIED\020"
-          + "\000\022\017\n\013EXACT_MATCH\020\001\022\014\n\010CONTAINS\020\002B\202\002\n#com"
-          + ".google.cloud.discoveryengine.v1B\017Comple"
-          + "tionProtoP\001ZMcloud.google.com/go/discove"
-          + "ryengine/apiv1/discoveryenginepb;discove"
-          + "ryenginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cl"
-          + "oud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Di"
-          + "scoveryEngine\\V1\352\002\"Google::Cloud::Discov"
-          + "eryEngine::V1b\006proto3"
+          + "\000\022\017\n\013EXACT_MATCH\020\001\022\014\n\010CONTAINS\020\002\"\307\001\n\024Com"
+          + "pletionSuggestion\022\026\n\014global_score\030\002 \001(\001H"
+          + "\000\022\023\n\tfrequency\030\003 \001(\003H\000\022\027\n\nsuggestion\030\001 \001"
+          + "(\tB\003\340A\002\022\025\n\rlanguage_code\030\004 \001(\t\022\020\n\010group_"
+          + "id\030\005 \001(\t\022\023\n\013group_score\030\006 \001(\001\022\033\n\023alterna"
+          + "tive_phrases\030\007 \003(\tB\016\n\014ranking_infoB\202\002\n#c"
+          + "om.google.cloud.discoveryengine.v1B\017Comp"
+          + "letionProtoP\001ZMcloud.google.com/go/disco"
+          + "veryengine/apiv1/discoveryenginepb;disco"
+          + "veryenginepb\242\002\017DISCOVERYENGINE\252\002\037Google."
+          + "Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\"
+          + "DiscoveryEngine\\V1\352\002\"Google::Cloud::Disc"
+          + "overyEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,6 +80,21 @@ public final class CompletionProto {
             internal_static_google_cloud_discoveryengine_v1_SuggestionDenyListEntry_descriptor,
             new java.lang.String[] {
               "BlockPhrase", "MatchOperator",
+            });
+    internal_static_google_cloud_discoveryengine_v1_CompletionSuggestion_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_discoveryengine_v1_CompletionSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_CompletionSuggestion_descriptor,
+            new java.lang.String[] {
+              "GlobalScore",
+              "Frequency",
+              "Suggestion",
+              "LanguageCode",
+              "GroupId",
+              "GroupScore",
+              "AlternativePhrases",
+              "RankingInfo",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

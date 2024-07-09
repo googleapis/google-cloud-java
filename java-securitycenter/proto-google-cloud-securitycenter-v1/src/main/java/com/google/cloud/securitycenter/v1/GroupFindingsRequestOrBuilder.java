@@ -29,12 +29,12 @@ public interface GroupFindingsRequestOrBuilder
    *
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]",
-   * folders/[folder_id]/sources/[source_id], or
-   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * `organizations/[organization_id]/sources/[source_id]`,
+   * `folders/[folder_id]/sources/[source_id]`, or
+   * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
    * provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-   * or projects/{project_id}/sources/-
+   * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+   * or `projects/{project_id}/sources/-`
    * </pre>
    *
    * <code>
@@ -49,12 +49,12 @@ public interface GroupFindingsRequestOrBuilder
    *
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]",
-   * folders/[folder_id]/sources/[source_id], or
-   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * `organizations/[organization_id]/sources/[source_id]`,
+   * `folders/[folder_id]/sources/[source_id]`, or
+   * `projects/[project_id]/sources/[source_id]`. To groupBy across all sources
    * provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
-   * or projects/{project_id}/sources/-
+   * `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`,
+   * or `projects/{project_id}/sources/-`
    * </pre>
    *
    * <code>
@@ -214,14 +214,6 @@ public interface GroupFindingsRequestOrBuilder
    * (including `state_change`). The string value should follow SQL syntax:
    * comma separated list of fields. For example: "parent,resource_name".
    *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
-   *
    * The following fields are supported when compare_duration is set:
    *
    * * state_change
@@ -239,14 +231,6 @@ public interface GroupFindingsRequestOrBuilder
    * Required. Expression that defines what assets fields to use for grouping
    * (including `state_change`). The string value should follow SQL syntax:
    * comma separated list of fields. For example: "parent,resource_name".
-   *
-   * The following fields are supported:
-   *
-   * * resource_name
-   * * category
-   * * state
-   * * parent
-   * * severity
    *
    * The following fields are supported when compare_duration is set:
    *
