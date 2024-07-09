@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/googleapis/java-shared-config/compare/v1.8.1...v1.9.0) (2024-07-09)
+
+
+### Features
+
+* Add org.graalvm.sdk:nativeimage dependency ([#852](https://github.com/googleapis/java-shared-config/issues/852)) ([658ebed](https://github.com/googleapis/java-shared-config/commit/658ebed528d2fedca69356979b3201089176da10))
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.3 ([#850](https://github.com/googleapis/java-shared-config/issues/850)) ([43e0d7d](https://github.com/googleapis/java-shared-config/commit/43e0d7dc9f103de1846c117454a7fba3edbee06a))
+
 ## [1.8.1](https://github.com/googleapis/java-shared-config/compare/v1.8.0...v1.8.1) (2024-06-24)
 
 
