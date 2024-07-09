@@ -452,6 +452,44 @@ public abstract class JobStatistics implements Serializable {
       public static final StatementType DROP_FUNCTION = type.createAndRegister("DROP_FUNCTION");
       public static final StatementType DROP_PROCEDURE = type.createAndRegister("DROP_PROCEDURE");
       public static final StatementType MERGE = type.createAndRegister("MERGE");
+      public static final StatementType CREATE_MATERIALIZED_VIEW =
+          type.createAndRegister("CREATE_MATERIALIZED_VIEW");
+      public static final StatementType CREATE_TABLE_FUNCTION =
+          type.createAndRegister("CREATE_TABLE_FUNCTION");
+      public static final StatementType CREATE_ROW_ACCESS_POLICY =
+          type.createAndRegister("CREATE_ROW_ACCESS_POLICY");
+      public static final StatementType CREATE_SCHEMA = type.createAndRegister("CREATE_SCHEMA");
+      public static final StatementType CREATE_SNAPSHOT_TABLE =
+          type.createAndRegister("CREATE_SNAPSHOT_TABLE");
+      public static final StatementType CREATE_SEARCH_INDEX =
+          type.createAndRegister("CREATE_SEARCH_INDEX");
+      public static final StatementType DROP_EXTERNAL_TABLE =
+          type.createAndRegister("DROP_EXTERNAL_TABLE");
+
+      public static final StatementType DROP_MODEL = type.createAndRegister("DROP_MODEL");
+      public static final StatementType DROP_MATERIALIZED_VIEW =
+          type.createAndRegister("DROP_MATERIALIZED_VIEW");
+
+      public static final StatementType DROP_TABLE_FUNCTION =
+          type.createAndRegister("DROP_TABLE_FUNCTION");
+      public static final StatementType DROP_SEARCH_INDEX =
+          type.createAndRegister("DROP_SEARCH_INDEX");
+      public static final StatementType DROP_SCHEMA = type.createAndRegister("DROP_SCHEMA");
+      public static final StatementType DROP_SNAPSHOT_TABLE =
+          type.createAndRegister("DROP_SNAPSHOT_TABLE");
+      public static final StatementType DROP_ROW_ACCESS_POLICY =
+          type.createAndRegister("DROP_ROW_ACCESS_POLICY");
+      public static final StatementType ALTER_MATERIALIZED_VIEW =
+          type.createAndRegister("ALTER_MATERIALIZED_VIEW");
+      public static final StatementType ALTER_SCHEMA = type.createAndRegister("ALTER_SCHEMA");
+      public static final StatementType SCRIPT = type.createAndRegister("SCRIPT");
+      public static final StatementType TRUNCATE_TABLE = type.createAndRegister("TRUNCATE_TABLE");
+      public static final StatementType CREATE_EXTERNAL_TABLE =
+          type.createAndRegister("CREATE_EXTERNAL_TABLE");
+      public static final StatementType EXPORT_DATA = type.createAndRegister("EXPORT_DATA");
+      public static final StatementType EXPORT_MODEL = type.createAndRegister("EXPORT_MODEL");
+      public static final StatementType LOAD_DATA = type.createAndRegister("LOAD_DATA");
+      public static final StatementType CALL = type.createAndRegister("CALL");
 
       private StatementType(String constant) {
         super(constant);

@@ -7033,4 +7033,25 @@ public class ITBigQueryTest {
       bigquery.delete(v2TableId);
     }
   }
+
+  @Test
+  public void testStatementType() throws InterruptedException {
+    String tableName = "test_materialized_view_table_statemnt_type";
+    String createQuery =
+        String.format(
+            "CREATE MATERIALIZED VIEW %s.%s.%s "
+                + "AS (SELECT MAX(TimestampField) AS TimestampField,StringField, MAX(BooleanField) AS BooleanField FROM %s.%s.%s GROUP BY StringField)",
+            PROJECT_ID, DATASET, tableName, PROJECT_ID, DATASET, TABLE_ID.getTable());
+    TableResult result = bigquery.query(QueryJobConfiguration.of(createQuery));
+    assertNotNull(result);
+    Job job = bigquery.getJob(result.getJobId());
+    JobStatistics.QueryStatistics stats = job.getStatistics();
+    assertEquals(StatementType.CREATE_MATERIALIZED_VIEW, stats.getStatementType());
+
+    // cleanup
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.getDefinition() instanceof MaterializedViewDefinition);
+    assertTrue(remoteTable.delete());
+  }
 }
