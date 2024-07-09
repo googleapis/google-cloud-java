@@ -20,6 +20,7 @@ package com.google.cloud.run.v2.samples;
 import com.google.cloud.run.v2.Service;
 import com.google.cloud.run.v2.ServicesClient;
 import com.google.cloud.run.v2.UpdateServiceRequest;
+import com.google.protobuf.FieldMask;
 
 public class SyncUpdateService {
 
@@ -36,6 +37,7 @@ public class SyncUpdateService {
     try (ServicesClient servicesClient = ServicesClient.create()) {
       UpdateServiceRequest request =
           UpdateServiceRequest.newBuilder()
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setService(Service.newBuilder().build())
               .setValidateOnly(true)
               .setAllowMissing(true)

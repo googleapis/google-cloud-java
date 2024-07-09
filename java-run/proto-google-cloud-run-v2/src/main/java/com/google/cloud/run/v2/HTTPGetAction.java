@@ -72,10 +72,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Path to access on the HTTP server. Defaults to '/'.
+   * Optional. Path to access on the HTTP server. Defaults to '/'.
    * </pre>
    *
-   * <code>string path = 1;</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -95,10 +95,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Path to access on the HTTP server. Defaults to '/'.
+   * Optional. Path to access on the HTTP server. Defaults to '/'.
    * </pre>
    *
-   * <code>string path = 1;</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for path.
    */
@@ -123,10 +123,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.run.v2.HTTPHeader> getHttpHeadersList() {
@@ -136,10 +139,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.run.v2.HTTPHeaderOrBuilder>
@@ -150,10 +156,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getHttpHeadersCount() {
@@ -163,10 +172,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.HTTPHeader getHttpHeaders(int index) {
@@ -176,10 +188,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.HTTPHeaderOrBuilder getHttpHeadersOrBuilder(int index) {
@@ -192,12 +207,12 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Port number to access on the container. Must be in the range 1 to 65535.
-   * If not specified, defaults to the exposed port of the container, which is
-   * the value of container.ports[0].containerPort.
+   * Optional. Port number to access on the container. Must be in the range 1 to
+   * 65535. If not specified, defaults to the exposed port of the container,
+   * which is the value of container.ports[0].containerPort.
    * </pre>
    *
-   * <code>int32 port = 5;</code>
+   * <code>int32 port = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */
@@ -643,10 +658,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to access on the HTTP server. Defaults to '/'.
+     * Optional. Path to access on the HTTP server. Defaults to '/'.
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -665,10 +680,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to access on the HTTP server. Defaults to '/'.
+     * Optional. Path to access on the HTTP server. Defaults to '/'.
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -687,10 +702,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to access on the HTTP server. Defaults to '/'.
+     * Optional. Path to access on the HTTP server. Defaults to '/'.
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -708,10 +723,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to access on the HTTP server. Defaults to '/'.
+     * Optional. Path to access on the HTTP server. Defaults to '/'.
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -725,10 +740,10 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to access on the HTTP server. Defaults to '/'.
+     * Optional. Path to access on the HTTP server. Defaults to '/'.
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
@@ -764,10 +779,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.HTTPHeader> getHttpHeadersList() {
       if (httpHeadersBuilder_ == null) {
@@ -780,10 +798,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getHttpHeadersCount() {
       if (httpHeadersBuilder_ == null) {
@@ -796,10 +817,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.HTTPHeader getHttpHeaders(int index) {
       if (httpHeadersBuilder_ == null) {
@@ -812,10 +836,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHttpHeaders(int index, com.google.cloud.run.v2.HTTPHeader value) {
       if (httpHeadersBuilder_ == null) {
@@ -834,10 +861,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHttpHeaders(
         int index, com.google.cloud.run.v2.HTTPHeader.Builder builderForValue) {
@@ -854,10 +884,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addHttpHeaders(com.google.cloud.run.v2.HTTPHeader value) {
       if (httpHeadersBuilder_ == null) {
@@ -876,10 +909,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addHttpHeaders(int index, com.google.cloud.run.v2.HTTPHeader value) {
       if (httpHeadersBuilder_ == null) {
@@ -898,10 +934,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addHttpHeaders(com.google.cloud.run.v2.HTTPHeader.Builder builderForValue) {
       if (httpHeadersBuilder_ == null) {
@@ -917,10 +956,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addHttpHeaders(
         int index, com.google.cloud.run.v2.HTTPHeader.Builder builderForValue) {
@@ -937,10 +979,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllHttpHeaders(
         java.lang.Iterable<? extends com.google.cloud.run.v2.HTTPHeader> values) {
@@ -957,10 +1002,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearHttpHeaders() {
       if (httpHeadersBuilder_ == null) {
@@ -976,10 +1024,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeHttpHeaders(int index) {
       if (httpHeadersBuilder_ == null) {
@@ -995,10 +1046,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.HTTPHeader.Builder getHttpHeadersBuilder(int index) {
       return getHttpHeadersFieldBuilder().getBuilder(index);
@@ -1007,10 +1061,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.HTTPHeaderOrBuilder getHttpHeadersOrBuilder(int index) {
       if (httpHeadersBuilder_ == null) {
@@ -1023,10 +1080,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.run.v2.HTTPHeaderOrBuilder>
         getHttpHeadersOrBuilderList() {
@@ -1040,10 +1100,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.HTTPHeader.Builder addHttpHeadersBuilder() {
       return getHttpHeadersFieldBuilder()
@@ -1053,10 +1116,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.HTTPHeader.Builder addHttpHeadersBuilder(int index) {
       return getHttpHeadersFieldBuilder()
@@ -1066,10 +1132,13 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom headers to set in the request. HTTP allows repeated headers.
+     * Optional. Custom headers to set in the request. HTTP allows repeated
+     * headers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.HTTPHeader.Builder> getHttpHeadersBuilderList() {
       return getHttpHeadersFieldBuilder().getBuilderList();
@@ -1097,12 +1166,12 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number to access on the container. Must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number to access on the container. Must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 5;</code>
+     * <code>int32 port = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The port.
      */
@@ -1114,12 +1183,12 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number to access on the container. Must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number to access on the container. Must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 5;</code>
+     * <code>int32 port = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -1135,12 +1204,12 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number to access on the container. Must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number to access on the container. Must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 5;</code>
+     * <code>int32 port = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

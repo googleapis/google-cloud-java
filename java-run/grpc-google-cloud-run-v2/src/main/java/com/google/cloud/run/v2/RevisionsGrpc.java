@@ -228,7 +228,8 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Lists Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.  Results
+     * are sorted by creation time, descending.
      * </pre>
      */
     default void listRevisions(
@@ -306,7 +307,8 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Lists Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.  Results
+     * are sorted by creation time, descending.
      * </pre>
      */
     public void listRevisions(
@@ -372,7 +374,8 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Lists Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.  Results
+     * are sorted by creation time, descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListRevisionsResponse listRevisions(
@@ -430,7 +433,8 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Lists Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.  Results
+     * are sorted by creation time, descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

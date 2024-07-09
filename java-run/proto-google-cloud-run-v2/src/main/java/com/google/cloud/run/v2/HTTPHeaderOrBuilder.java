@@ -53,10 +53,10 @@ public interface HTTPHeaderOrBuilder
    *
    *
    * <pre>
-   * The header field value
+   * Optional. The header field value
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The value.
    */
@@ -65,10 +65,10 @@ public interface HTTPHeaderOrBuilder
    *
    *
    * <pre>
-   * The header field value
+   * Optional. The header field value
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for value.
    */

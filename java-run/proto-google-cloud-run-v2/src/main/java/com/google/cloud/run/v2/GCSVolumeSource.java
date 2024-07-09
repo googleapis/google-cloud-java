@@ -23,7 +23,8 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * Represents a GCS Bucket mounted as a volume.
+ * Represents a volume backed by a Cloud Storage bucket using Cloud Storage
+ * FUSE.
  * </pre>
  *
  * Protobuf type {@code google.cloud.run.v2.GCSVolumeSource}
@@ -71,7 +72,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * GCS Bucket name
+   * Cloud Storage Bucket name.
    * </pre>
    *
    * <code>string bucket = 1;</code>
@@ -94,7 +95,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * GCS Bucket name
+   * Cloud Storage Bucket name.
    * </pre>
    *
    * <code>string bucket = 1;</code>
@@ -120,7 +121,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * If true, mount the GCS bucket as read-only
+   * If true, the volume will be mounted as read only for all mounts.
    * </pre>
    *
    * <code>bool read_only = 2;</code>
@@ -303,7 +304,8 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a GCS Bucket mounted as a volume.
+   * Represents a volume backed by a Cloud Storage bucket using Cloud Storage
+   * FUSE.
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.GCSVolumeSource}
@@ -499,7 +501,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCS Bucket name
+     * Cloud Storage Bucket name.
      * </pre>
      *
      * <code>string bucket = 1;</code>
@@ -521,7 +523,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCS Bucket name
+     * Cloud Storage Bucket name.
      * </pre>
      *
      * <code>string bucket = 1;</code>
@@ -543,7 +545,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCS Bucket name
+     * Cloud Storage Bucket name.
      * </pre>
      *
      * <code>string bucket = 1;</code>
@@ -564,7 +566,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCS Bucket name
+     * Cloud Storage Bucket name.
      * </pre>
      *
      * <code>string bucket = 1;</code>
@@ -581,7 +583,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCS Bucket name
+     * Cloud Storage Bucket name.
      * </pre>
      *
      * <code>string bucket = 1;</code>
@@ -605,7 +607,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, mount the GCS bucket as read-only
+     * If true, the volume will be mounted as read only for all mounts.
      * </pre>
      *
      * <code>bool read_only = 2;</code>
@@ -620,7 +622,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, mount the GCS bucket as read-only
+     * If true, the volume will be mounted as read only for all mounts.
      * </pre>
      *
      * <code>bool read_only = 2;</code>
@@ -639,7 +641,7 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, mount the GCS bucket as read-only
+     * If true, the volume will be mounted as read only for all mounts.
      * </pre>
      *
      * <code>bool read_only = 2;</code>

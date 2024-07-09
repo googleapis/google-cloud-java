@@ -61,11 +61,13 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Traffic VPC egress settings. If not provided, it defaults to
+   * Optional. Traffic VPC egress settings. If not provided, it defaults to
    * PRIVATE_RANGES_ONLY.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+   * <code>
+   * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for egress.
    */
@@ -74,11 +76,13 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Traffic VPC egress settings. If not provided, it defaults to
+   * Optional. Traffic VPC egress settings. If not provided, it defaults to
    * PRIVATE_RANGES_ONLY.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+   * <code>
+   * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The egress.
    */
@@ -88,44 +92,52 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> getNetworkInterfacesList();
   /**
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index);
   /**
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getNetworkInterfacesCount();
   /**
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
       getNetworkInterfacesOrBuilderList();
@@ -133,11 +145,13 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(
       int index);

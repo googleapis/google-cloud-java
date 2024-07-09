@@ -92,11 +92,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The unique name for the revision. If this field is omitted, it will be
-   * automatically generated based on the Service name.
+   * Optional. The unique name for the revision. If this field is omitted, it
+   * will be automatically generated based on the Service name.
    * </pre>
    *
-   * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The revision.
    */
@@ -116,11 +118,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The unique name for the revision. If this field is omitted, it will be
-   * automatically generated based on the Service name.
+   * Optional. The unique name for the revision. If this field is omitted, it
+   * will be automatically generated based on the Service name.
    * </pre>
    *
-   * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for revision.
    */
@@ -167,11 +171,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -181,7 +184,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -200,11 +203,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -214,7 +216,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -224,11 +226,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -238,7 +239,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -255,11 +256,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -269,7 +269,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -314,9 +314,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -327,7 +327,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -346,9 +347,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -359,7 +360,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -369,9 +371,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -382,7 +384,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -399,9 +402,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -412,7 +415,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -432,10 +436,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the scaling field is set.
    */
@@ -447,10 +453,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The scaling.
    */
@@ -464,10 +472,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.RevisionScalingOrBuilder getScalingOrBuilder() {
@@ -482,11 +492,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the vpcAccess field is set.
    */
@@ -498,11 +510,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The vpcAccess.
    */
@@ -514,11 +528,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder() {
@@ -531,10 +547,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the timeout field is set.
    */
@@ -546,10 +562,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The timeout.
    */
@@ -561,10 +577,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
@@ -579,13 +595,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has. If not
+   * Optional. Email address of the IAM service account associated with the
+   * revision of the service. The service account represents the identity of the
+   * running revision, and determines what permissions the revision has. If not
    * provided, the revision will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 9;</code>
+   * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccount.
    */
@@ -605,13 +621,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has. If not
+   * Optional. Email address of the IAM service account associated with the
+   * revision of the service. The service account represents the identity of the
+   * running revision, and determines what permissions the revision has. If not
    * provided, the revision will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 9;</code>
+   * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccount.
    */
@@ -712,10 +728,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.run.v2.Volume> getVolumesList() {
@@ -725,10 +743,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder>
@@ -739,10 +759,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getVolumesCount() {
@@ -752,10 +774,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.Volume getVolumes(int index) {
@@ -765,10 +789,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VolumeOrBuilder getVolumesOrBuilder(int index) {
@@ -781,10 +807,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The sandbox environment to host this Revision.
+   * Optional. The sandbox environment to host this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for executionEnvironment.
    */
@@ -796,10 +824,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The sandbox environment to host this Revision.
+   * Optional. The sandbox environment to host this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The executionEnvironment.
    */
@@ -871,10 +901,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Sets the maximum number of requests that each serving instance can receive.
+   * Optional. Sets the maximum number of requests that each serving instance
+   * can receive.
    * </pre>
    *
-   * <code>int32 max_instance_request_concurrency = 15;</code>
+   * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maxInstanceRequestConcurrency.
    */
@@ -1754,11 +1786,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique name for the revision. If this field is omitted, it will be
-     * automatically generated based on the Service name.
+     * Optional. The unique name for the revision. If this field is omitted, it
+     * will be automatically generated based on the Service name.
      * </pre>
      *
-     * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The revision.
      */
@@ -1777,11 +1811,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique name for the revision. If this field is omitted, it will be
-     * automatically generated based on the Service name.
+     * Optional. The unique name for the revision. If this field is omitted, it
+     * will be automatically generated based on the Service name.
      * </pre>
      *
-     * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for revision.
      */
@@ -1800,11 +1836,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique name for the revision. If this field is omitted, it will be
-     * automatically generated based on the Service name.
+     * Optional. The unique name for the revision. If this field is omitted, it
+     * will be automatically generated based on the Service name.
      * </pre>
      *
-     * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The revision to set.
      * @return This builder for chaining.
@@ -1822,11 +1860,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique name for the revision. If this field is omitted, it will be
-     * automatically generated based on the Service name.
+     * Optional. The unique name for the revision. If this field is omitted, it
+     * will be automatically generated based on the Service name.
      * </pre>
      *
-     * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1840,11 +1880,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique name for the revision. If this field is omitted, it will be
-     * automatically generated based on the Service name.
+     * Optional. The unique name for the revision. If this field is omitted, it
+     * will be automatically generated based on the Service name.
      * </pre>
      *
-     * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for revision to set.
      * @return This builder for chaining.
@@ -1889,11 +1931,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -1903,7 +1944,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1922,11 +1963,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -1936,7 +1976,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1946,11 +1986,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -1960,7 +1999,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1977,11 +2016,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -1991,7 +2029,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2014,11 +2052,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -2028,7 +2065,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2047,11 +2084,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -2061,7 +2097,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2078,11 +2114,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -2092,7 +2127,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * corresponding field in v2 RevisionTemplate.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2132,9 +2167,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2145,7 +2180,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -2164,9 +2200,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2177,7 +2213,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -2187,9 +2224,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2200,7 +2237,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -2217,9 +2255,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2230,7 +2268,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -2253,9 +2292,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2266,7 +2305,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -2285,9 +2325,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2298,7 +2338,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2315,9 +2356,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -2328,7 +2369,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 3;</code>
+     * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -2346,10 +2388,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the scaling field is set.
      */
@@ -2360,10 +2404,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The scaling.
      */
@@ -2380,10 +2426,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScaling(com.google.cloud.run.v2.RevisionScaling value) {
       if (scalingBuilder_ == null) {
@@ -2402,10 +2450,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScaling(com.google.cloud.run.v2.RevisionScaling.Builder builderForValue) {
       if (scalingBuilder_ == null) {
@@ -2421,10 +2471,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeScaling(com.google.cloud.run.v2.RevisionScaling value) {
       if (scalingBuilder_ == null) {
@@ -2448,10 +2500,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearScaling() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -2467,10 +2521,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.RevisionScaling.Builder getScalingBuilder() {
       bitField0_ |= 0x00000008;
@@ -2481,10 +2537,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.RevisionScalingOrBuilder getScalingOrBuilder() {
       if (scalingBuilder_ != null) {
@@ -2499,10 +2557,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Scaling settings for this Revision.
+     * Optional. Scaling settings for this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+     * <code>
+     * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.run.v2.RevisionScaling,
@@ -2531,11 +2591,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the vpcAccess field is set.
      */
@@ -2546,11 +2609,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The vpcAccess.
      */
@@ -2567,11 +2633,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
@@ -2590,11 +2659,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVpcAccess(com.google.cloud.run.v2.VpcAccess.Builder builderForValue) {
       if (vpcAccessBuilder_ == null) {
@@ -2610,11 +2682,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
@@ -2638,11 +2713,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearVpcAccess() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2658,11 +2736,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.Builder getVpcAccessBuilder() {
       bitField0_ |= 0x00000010;
@@ -2673,11 +2754,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder() {
       if (vpcAccessBuilder_ != null) {
@@ -2692,11 +2776,14 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VPC Access configuration to use for this Revision. For more information,
-     * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+     * Optional. VPC Access configuration to use for this Revision. For more
+     * information, visit
+     * https://cloud.google.com/run/docs/configuring/connecting-vpc.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.run.v2.VpcAccess,
@@ -2725,10 +2812,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the timeout field is set.
      */
@@ -2739,10 +2826,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The timeout.
      */
@@ -2757,10 +2844,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
@@ -2779,10 +2866,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
@@ -2798,10 +2885,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
@@ -2825,10 +2912,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearTimeout() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -2844,10 +2931,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
       bitField0_ |= 0x00000020;
@@ -2858,10 +2945,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
       if (timeoutBuilder_ != null) {
@@ -2874,10 +2961,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Max allowed time for an instance to respond to a request.
+     * Optional. Max allowed time for an instance to respond to a request.
      * </pre>
      *
-     * <code>.google.protobuf.Duration timeout = 8;</code>
+     * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -2901,13 +2988,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Email address of the IAM service account associated with the revision of
-     * the service. The service account represents the identity of the running
-     * revision, and determines what permissions the revision has. If not
+     * Optional. Email address of the IAM service account associated with the
+     * revision of the service. The service account represents the identity of the
+     * running revision, and determines what permissions the revision has. If not
      * provided, the revision will use the project's default service account.
      * </pre>
      *
-     * <code>string service_account = 9;</code>
+     * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The serviceAccount.
      */
@@ -2926,13 +3013,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Email address of the IAM service account associated with the revision of
-     * the service. The service account represents the identity of the running
-     * revision, and determines what permissions the revision has. If not
+     * Optional. Email address of the IAM service account associated with the
+     * revision of the service. The service account represents the identity of the
+     * running revision, and determines what permissions the revision has. If not
      * provided, the revision will use the project's default service account.
      * </pre>
      *
-     * <code>string service_account = 9;</code>
+     * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for serviceAccount.
      */
@@ -2951,13 +3038,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Email address of the IAM service account associated with the revision of
-     * the service. The service account represents the identity of the running
-     * revision, and determines what permissions the revision has. If not
+     * Optional. Email address of the IAM service account associated with the
+     * revision of the service. The service account represents the identity of the
+     * running revision, and determines what permissions the revision has. If not
      * provided, the revision will use the project's default service account.
      * </pre>
      *
-     * <code>string service_account = 9;</code>
+     * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
@@ -2975,13 +3062,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Email address of the IAM service account associated with the revision of
-     * the service. The service account represents the identity of the running
-     * revision, and determines what permissions the revision has. If not
+     * Optional. Email address of the IAM service account associated with the
+     * revision of the service. The service account represents the identity of the
+     * running revision, and determines what permissions the revision has. If not
      * provided, the revision will use the project's default service account.
      * </pre>
      *
-     * <code>string service_account = 9;</code>
+     * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2995,13 +3082,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Email address of the IAM service account associated with the revision of
-     * the service. The service account represents the identity of the running
-     * revision, and determines what permissions the revision has. If not
+     * Optional. Email address of the IAM service account associated with the
+     * revision of the service. The service account represents the identity of the
+     * running revision, and determines what permissions the revision has. If not
      * provided, the revision will use the project's default service account.
      * </pre>
      *
-     * <code>string service_account = 9;</code>
+     * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
@@ -3403,10 +3490,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.Volume> getVolumesList() {
       if (volumesBuilder_ == null) {
@@ -3419,10 +3508,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getVolumesCount() {
       if (volumesBuilder_ == null) {
@@ -3435,10 +3526,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.Volume getVolumes(int index) {
       if (volumesBuilder_ == null) {
@@ -3451,10 +3544,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVolumes(int index, com.google.cloud.run.v2.Volume value) {
       if (volumesBuilder_ == null) {
@@ -3473,10 +3568,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVolumes(int index, com.google.cloud.run.v2.Volume.Builder builderForValue) {
       if (volumesBuilder_ == null) {
@@ -3492,10 +3589,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addVolumes(com.google.cloud.run.v2.Volume value) {
       if (volumesBuilder_ == null) {
@@ -3514,10 +3613,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addVolumes(int index, com.google.cloud.run.v2.Volume value) {
       if (volumesBuilder_ == null) {
@@ -3536,10 +3637,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addVolumes(com.google.cloud.run.v2.Volume.Builder builderForValue) {
       if (volumesBuilder_ == null) {
@@ -3555,10 +3658,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addVolumes(int index, com.google.cloud.run.v2.Volume.Builder builderForValue) {
       if (volumesBuilder_ == null) {
@@ -3574,10 +3679,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllVolumes(
         java.lang.Iterable<? extends com.google.cloud.run.v2.Volume> values) {
@@ -3594,10 +3701,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
@@ -3613,10 +3722,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeVolumes(int index) {
       if (volumesBuilder_ == null) {
@@ -3632,10 +3743,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
@@ -3644,10 +3757,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VolumeOrBuilder getVolumesOrBuilder(int index) {
       if (volumesBuilder_ == null) {
@@ -3660,10 +3775,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder>
         getVolumesOrBuilderList() {
@@ -3677,10 +3794,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.Volume.Builder addVolumesBuilder() {
       return getVolumesFieldBuilder()
@@ -3690,10 +3809,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.Volume.Builder addVolumesBuilder(int index) {
       return getVolumesFieldBuilder()
@@ -3703,10 +3824,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of Volumes to make available to containers.
+     * Optional. A list of Volumes to make available to containers.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.Volume.Builder> getVolumesBuilderList() {
       return getVolumesFieldBuilder().getBuilderList();
@@ -3734,10 +3857,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The sandbox environment to host this Revision.
+     * Optional. The sandbox environment to host this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+     * <code>
+     * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for executionEnvironment.
      */
@@ -3749,10 +3874,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The sandbox environment to host this Revision.
+     * Optional. The sandbox environment to host this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+     * <code>
+     * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for executionEnvironment to set.
      * @return This builder for chaining.
@@ -3767,10 +3894,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The sandbox environment to host this Revision.
+     * Optional. The sandbox environment to host this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+     * <code>
+     * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The executionEnvironment.
      */
@@ -3784,10 +3913,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The sandbox environment to host this Revision.
+     * Optional. The sandbox environment to host this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+     * <code>
+     * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The executionEnvironment to set.
      * @return This builder for chaining.
@@ -3805,10 +3936,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The sandbox environment to host this Revision.
+     * Optional. The sandbox environment to host this Revision.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+     * <code>
+     * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3940,10 +4073,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
+     * Optional. Sets the maximum number of requests that each serving instance
+     * can receive.
      * </pre>
      *
-     * <code>int32 max_instance_request_concurrency = 15;</code>
+     * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The maxInstanceRequestConcurrency.
      */
@@ -3955,10 +4090,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
+     * Optional. Sets the maximum number of requests that each serving instance
+     * can receive.
      * </pre>
      *
-     * <code>int32 max_instance_request_concurrency = 15;</code>
+     * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The maxInstanceRequestConcurrency to set.
      * @return This builder for chaining.
@@ -3974,10 +4111,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
+     * Optional. Sets the maximum number of requests that each serving instance
+     * can receive.
      * </pre>
      *
-     * <code>int32 max_instance_request_concurrency = 15;</code>
+     * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

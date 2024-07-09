@@ -107,7 +107,7 @@
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateService": {
-              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
             }
           }
         }

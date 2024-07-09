@@ -41,6 +41,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
 
   private ExecutionReference() {
     name_ = "";
+    completionStatus_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,231 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.run.v2.ExecutionReference.class,
             com.google.cloud.run.v2.ExecutionReference.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible execution completion status.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.run.v2.ExecutionReference.CompletionStatus}
+   */
+  public enum CompletionStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value is used if the state is omitted.
+     * </pre>
+     *
+     * <code>COMPLETION_STATUS_UNSPECIFIED = 0;</code>
+     */
+    COMPLETION_STATUS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has succeeded.
+     * </pre>
+     *
+     * <code>EXECUTION_SUCCEEDED = 1;</code>
+     */
+    EXECUTION_SUCCEEDED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has failed.
+     * </pre>
+     *
+     * <code>EXECUTION_FAILED = 2;</code>
+     */
+    EXECUTION_FAILED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Job execution is running normally.
+     * </pre>
+     *
+     * <code>EXECUTION_RUNNING = 3;</code>
+     */
+    EXECUTION_RUNNING(3),
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for backing resources to be provisioned.
+     * </pre>
+     *
+     * <code>EXECUTION_PENDING = 4;</code>
+     */
+    EXECUTION_PENDING(4),
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has been cancelled by the user.
+     * </pre>
+     *
+     * <code>EXECUTION_CANCELLED = 5;</code>
+     */
+    EXECUTION_CANCELLED(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default value. This value is used if the state is omitted.
+     * </pre>
+     *
+     * <code>COMPLETION_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int COMPLETION_STATUS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has succeeded.
+     * </pre>
+     *
+     * <code>EXECUTION_SUCCEEDED = 1;</code>
+     */
+    public static final int EXECUTION_SUCCEEDED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has failed.
+     * </pre>
+     *
+     * <code>EXECUTION_FAILED = 2;</code>
+     */
+    public static final int EXECUTION_FAILED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Job execution is running normally.
+     * </pre>
+     *
+     * <code>EXECUTION_RUNNING = 3;</code>
+     */
+    public static final int EXECUTION_RUNNING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for backing resources to be provisioned.
+     * </pre>
+     *
+     * <code>EXECUTION_PENDING = 4;</code>
+     */
+    public static final int EXECUTION_PENDING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Job execution has been cancelled by the user.
+     * </pre>
+     *
+     * <code>EXECUTION_CANCELLED = 5;</code>
+     */
+    public static final int EXECUTION_CANCELLED_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CompletionStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CompletionStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return COMPLETION_STATUS_UNSPECIFIED;
+        case 1:
+          return EXECUTION_SUCCEEDED;
+        case 2:
+          return EXECUTION_FAILED;
+        case 3:
+          return EXECUTION_RUNNING;
+        case 4:
+          return EXECUTION_PENDING;
+        case 5:
+          return EXECUTION_CANCELLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CompletionStatus> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CompletionStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CompletionStatus>() {
+              public CompletionStatus findValueByNumber(int number) {
+                return CompletionStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.run.v2.ExecutionReference.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CompletionStatus[] VALUES = values();
+
+    public static CompletionStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CompletionStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.ExecutionReference.CompletionStatus)
   }
 
   private int bitField0_;
@@ -212,6 +438,92 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         : completionTime_;
   }
 
+  public static final int DELETE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp deleteTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return The deleteTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDeleteTime() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
+  public static final int COMPLETION_STATUS_FIELD_NUMBER = 4;
+  private int completionStatus_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Status for the execution completion.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for completionStatus.
+   */
+  @java.lang.Override
+  public int getCompletionStatusValue() {
+    return completionStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status for the execution completion.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+   *
+   * @return The completionStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ExecutionReference.CompletionStatus getCompletionStatus() {
+    com.google.cloud.run.v2.ExecutionReference.CompletionStatus result =
+        com.google.cloud.run.v2.ExecutionReference.CompletionStatus.forNumber(completionStatus_);
+    return result == null
+        ? com.google.cloud.run.v2.ExecutionReference.CompletionStatus.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -235,6 +547,14 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getCompletionTime());
     }
+    if (completionStatus_
+        != com.google.cloud.run.v2.ExecutionReference.CompletionStatus.COMPLETION_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, completionStatus_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getDeleteTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -252,6 +572,14 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCompletionTime());
+    }
+    if (completionStatus_
+        != com.google.cloud.run.v2.ExecutionReference.CompletionStatus.COMPLETION_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, completionStatus_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDeleteTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -278,6 +606,11 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
     if (hasCompletionTime()) {
       if (!getCompletionTime().equals(other.getCompletionTime())) return false;
     }
+    if (hasDeleteTime() != other.hasDeleteTime()) return false;
+    if (hasDeleteTime()) {
+      if (!getDeleteTime().equals(other.getDeleteTime())) return false;
+    }
+    if (completionStatus_ != other.completionStatus_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -299,6 +632,12 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + COMPLETION_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCompletionTime().hashCode();
     }
+    if (hasDeleteTime()) {
+      hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteTime().hashCode();
+    }
+    hash = (37 * hash) + COMPLETION_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + completionStatus_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -442,6 +781,7 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getCompletionTimeFieldBuilder();
+        getDeleteTimeFieldBuilder();
       }
     }
 
@@ -460,6 +800,12 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         completionTimeBuilder_.dispose();
         completionTimeBuilder_ = null;
       }
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      completionStatus_ = 0;
       return this;
     }
 
@@ -508,6 +854,13 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         result.completionTime_ =
             completionTimeBuilder_ == null ? completionTime_ : completionTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.completionStatus_ = completionStatus_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -568,6 +921,12 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
       if (other.hasCompletionTime()) {
         mergeCompletionTime(other.getCompletionTime());
       }
+      if (other.hasDeleteTime()) {
+        mergeDeleteTime(other.getDeleteTime());
+      }
+      if (other.completionStatus_ != 0) {
+        setCompletionStatusValue(other.getCompletionStatusValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -612,6 +971,18 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                completionStatus_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1105,6 +1476,293 @@ public final class ExecutionReference extends com.google.protobuf.GeneratedMessa
         completionTime_ = null;
       }
       return completionTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp deleteTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        deleteTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     *
+     * @return Whether the deleteTime field is set.
+     */
+    public boolean hasDeleteTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     *
+     * @return The deleteTime.
+     */
+    public com.google.protobuf.Timestamp getDeleteTime() {
+      if (deleteTimeBuilder_ == null) {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      } else {
+        return deleteTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deleteTime_ = value;
+      } else {
+        deleteTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (deleteTimeBuilder_ == null) {
+        deleteTime_ = builderForValue.build();
+      } else {
+        deleteTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
+        } else {
+          deleteTime_ = value;
+        }
+      } else {
+        deleteTimeBuilder_.mergeFrom(value);
+      }
+      if (deleteTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public Builder clearDeleteTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDeleteTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+      if (deleteTimeBuilder_ != null) {
+        return deleteTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deletion time of the execution. It is only
+     * populated as a response to a Delete request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDeleteTimeFieldBuilder() {
+      if (deleteTimeBuilder_ == null) {
+        deleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDeleteTime(), getParentForChildren(), isClean());
+        deleteTime_ = null;
+      }
+      return deleteTimeBuilder_;
+    }
+
+    private int completionStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Status for the execution completion.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+     *
+     * @return The enum numeric value on the wire for completionStatus.
+     */
+    @java.lang.Override
+    public int getCompletionStatusValue() {
+      return completionStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status for the execution completion.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for completionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompletionStatusValue(int value) {
+      completionStatus_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status for the execution completion.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+     *
+     * @return The completionStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.ExecutionReference.CompletionStatus getCompletionStatus() {
+      com.google.cloud.run.v2.ExecutionReference.CompletionStatus result =
+          com.google.cloud.run.v2.ExecutionReference.CompletionStatus.forNumber(completionStatus_);
+      return result == null
+          ? com.google.cloud.run.v2.ExecutionReference.CompletionStatus.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status for the execution completion.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+     *
+     * @param value The completionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompletionStatus(
+        com.google.cloud.run.v2.ExecutionReference.CompletionStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      completionStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status for the execution completion.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCompletionStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      completionStatus_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

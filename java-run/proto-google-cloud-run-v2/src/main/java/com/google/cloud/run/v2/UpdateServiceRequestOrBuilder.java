@@ -28,6 +28,44 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The Service to be updated.
    * </pre>
    *
@@ -80,12 +118,12 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and if the Service does not exist, it will create a new
-   * one. The caller must have 'run.services.create' permissions if this is set
-   * to true and the Service does not exist.
+   * Optional. If set to true, and if the Service does not exist, it will create
+   * a new one. The caller must have 'run.services.create' permissions if this
+   * is set to true and the Service does not exist.
    * </pre>
    *
-   * <code>bool allow_missing = 4;</code>
+   * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */

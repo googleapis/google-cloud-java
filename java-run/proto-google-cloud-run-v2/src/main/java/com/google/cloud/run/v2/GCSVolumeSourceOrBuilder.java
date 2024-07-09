@@ -28,7 +28,7 @@ public interface GCSVolumeSourceOrBuilder
    *
    *
    * <pre>
-   * GCS Bucket name
+   * Cloud Storage Bucket name.
    * </pre>
    *
    * <code>string bucket = 1;</code>
@@ -40,7 +40,7 @@ public interface GCSVolumeSourceOrBuilder
    *
    *
    * <pre>
-   * GCS Bucket name
+   * Cloud Storage Bucket name.
    * </pre>
    *
    * <code>string bucket = 1;</code>
@@ -53,7 +53,7 @@ public interface GCSVolumeSourceOrBuilder
    *
    *
    * <pre>
-   * If true, mount the GCS bucket as read-only
+   * If true, the volume will be mounted as read only for all mounts.
    * </pre>
    *
    * <code>bool read_only = 2;</code>

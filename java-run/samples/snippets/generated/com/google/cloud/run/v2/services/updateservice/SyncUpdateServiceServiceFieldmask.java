@@ -16,38 +16,28 @@
 
 package com.google.cloud.run.v2.samples;
 
-// [START run_v2_generated_Services_UpdateService_LRO_async]
-import com.google.api.gax.longrunning.OperationFuture;
+// [START run_v2_generated_Services_UpdateService_ServiceFieldmask_sync]
 import com.google.cloud.run.v2.Service;
 import com.google.cloud.run.v2.ServicesClient;
-import com.google.cloud.run.v2.UpdateServiceRequest;
 import com.google.protobuf.FieldMask;
 
-public class AsyncUpdateServiceLRO {
+public class SyncUpdateServiceServiceFieldmask {
 
   public static void main(String[] args) throws Exception {
-    asyncUpdateServiceLRO();
+    syncUpdateServiceServiceFieldmask();
   }
 
-  public static void asyncUpdateServiceLRO() throws Exception {
+  public static void syncUpdateServiceServiceFieldmask() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ServicesClient servicesClient = ServicesClient.create()) {
-      UpdateServiceRequest request =
-          UpdateServiceRequest.newBuilder()
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .setService(Service.newBuilder().build())
-              .setValidateOnly(true)
-              .setAllowMissing(true)
-              .build();
-      OperationFuture<Service, Service> future =
-          servicesClient.updateServiceOperationCallable().futureCall(request);
-      // Do something.
-      Service response = future.get();
+      Service service = Service.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      Service response = servicesClient.updateServiceAsync(service, updateMask).get();
     }
   }
 }
-// [END run_v2_generated_Services_UpdateService_LRO_async]
+// [END run_v2_generated_Services_UpdateService_ServiceFieldmask_sync]

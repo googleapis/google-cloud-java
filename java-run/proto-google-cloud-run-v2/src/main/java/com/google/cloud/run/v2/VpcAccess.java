@@ -232,14 +232,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network that the Cloud Run resource will be able to send traffic
-     * to. At least one of network or subnetwork must be specified. If both
-     * network and subnetwork are specified, the given VPC subnetwork must
-     * belong to the given VPC network. If network is not specified, it will be
-     * looked up from the subnetwork.
+     * Optional. The VPC network that the Cloud Run resource will be able to
+     * send traffic to. At least one of network or subnetwork must be specified.
+     * If both network and subnetwork are specified, the given VPC subnetwork
+     * must belong to the given VPC network. If network is not specified, it
+     * will be looked up from the subnetwork.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The network.
      */
@@ -248,14 +248,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network that the Cloud Run resource will be able to send traffic
-     * to. At least one of network or subnetwork must be specified. If both
-     * network and subnetwork are specified, the given VPC subnetwork must
-     * belong to the given VPC network. If network is not specified, it will be
-     * looked up from the subnetwork.
+     * Optional. The VPC network that the Cloud Run resource will be able to
+     * send traffic to. At least one of network or subnetwork must be specified.
+     * If both network and subnetwork are specified, the given VPC subnetwork
+     * must belong to the given VPC network. If network is not specified, it
+     * will be looked up from the subnetwork.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for network.
      */
@@ -265,14 +265,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-     * least one of network or subnetwork must be specified. If both
+     * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+     * from. At least one of network or subnetwork must be specified. If both
      * network and subnetwork are specified, the given VPC subnetwork must
      * belong to the given VPC network. If subnetwork is not specified, the
      * subnetwork with the same name with the network will be used.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The subnetwork.
      */
@@ -281,14 +281,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-     * least one of network or subnetwork must be specified. If both
+     * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+     * from. At least one of network or subnetwork must be specified. If both
      * network and subnetwork are specified, the given VPC subnetwork must
      * belong to the given VPC network. If subnetwork is not specified, the
      * subnetwork with the same name with the network will be used.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -298,10 +298,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the tags.
      */
@@ -310,10 +310,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of tags.
      */
@@ -322,10 +322,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The tags at the given index.
@@ -335,10 +335,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
@@ -399,14 +399,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network that the Cloud Run resource will be able to send traffic
-     * to. At least one of network or subnetwork must be specified. If both
-     * network and subnetwork are specified, the given VPC subnetwork must
-     * belong to the given VPC network. If network is not specified, it will be
-     * looked up from the subnetwork.
+     * Optional. The VPC network that the Cloud Run resource will be able to
+     * send traffic to. At least one of network or subnetwork must be specified.
+     * If both network and subnetwork are specified, the given VPC subnetwork
+     * must belong to the given VPC network. If network is not specified, it
+     * will be looked up from the subnetwork.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The network.
      */
@@ -426,14 +426,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC network that the Cloud Run resource will be able to send traffic
-     * to. At least one of network or subnetwork must be specified. If both
-     * network and subnetwork are specified, the given VPC subnetwork must
-     * belong to the given VPC network. If network is not specified, it will be
-     * looked up from the subnetwork.
+     * Optional. The VPC network that the Cloud Run resource will be able to
+     * send traffic to. At least one of network or subnetwork must be specified.
+     * If both network and subnetwork are specified, the given VPC subnetwork
+     * must belong to the given VPC network. If network is not specified, it
+     * will be looked up from the subnetwork.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for network.
      */
@@ -458,14 +458,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-     * least one of network or subnetwork must be specified. If both
+     * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+     * from. At least one of network or subnetwork must be specified. If both
      * network and subnetwork are specified, the given VPC subnetwork must
      * belong to the given VPC network. If subnetwork is not specified, the
      * subnetwork with the same name with the network will be used.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The subnetwork.
      */
@@ -485,14 +485,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-     * least one of network or subnetwork must be specified. If both
+     * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+     * from. At least one of network or subnetwork must be specified. If both
      * network and subnetwork are specified, the given VPC subnetwork must
      * belong to the given VPC network. If subnetwork is not specified, the
      * subnetwork with the same name with the network will be used.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -518,10 +518,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the tags.
      */
@@ -532,10 +532,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of tags.
      */
@@ -546,10 +546,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The tags at the given index.
@@ -561,10 +561,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Network tags applied to this Cloud Run resource.
+     * Optional. Network tags applied to this Cloud Run resource.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
@@ -986,14 +986,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC network that the Cloud Run resource will be able to send traffic
-       * to. At least one of network or subnetwork must be specified. If both
-       * network and subnetwork are specified, the given VPC subnetwork must
-       * belong to the given VPC network. If network is not specified, it will be
-       * looked up from the subnetwork.
+       * Optional. The VPC network that the Cloud Run resource will be able to
+       * send traffic to. At least one of network or subnetwork must be specified.
+       * If both network and subnetwork are specified, the given VPC subnetwork
+       * must belong to the given VPC network. If network is not specified, it
+       * will be looked up from the subnetwork.
        * </pre>
        *
-       * <code>string network = 1;</code>
+       * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The network.
        */
@@ -1012,14 +1012,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC network that the Cloud Run resource will be able to send traffic
-       * to. At least one of network or subnetwork must be specified. If both
-       * network and subnetwork are specified, the given VPC subnetwork must
-       * belong to the given VPC network. If network is not specified, it will be
-       * looked up from the subnetwork.
+       * Optional. The VPC network that the Cloud Run resource will be able to
+       * send traffic to. At least one of network or subnetwork must be specified.
+       * If both network and subnetwork are specified, the given VPC subnetwork
+       * must belong to the given VPC network. If network is not specified, it
+       * will be looked up from the subnetwork.
        * </pre>
        *
-       * <code>string network = 1;</code>
+       * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for network.
        */
@@ -1038,14 +1038,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC network that the Cloud Run resource will be able to send traffic
-       * to. At least one of network or subnetwork must be specified. If both
-       * network and subnetwork are specified, the given VPC subnetwork must
-       * belong to the given VPC network. If network is not specified, it will be
-       * looked up from the subnetwork.
+       * Optional. The VPC network that the Cloud Run resource will be able to
+       * send traffic to. At least one of network or subnetwork must be specified.
+       * If both network and subnetwork are specified, the given VPC subnetwork
+       * must belong to the given VPC network. If network is not specified, it
+       * will be looked up from the subnetwork.
        * </pre>
        *
-       * <code>string network = 1;</code>
+       * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The network to set.
        * @return This builder for chaining.
@@ -1063,14 +1063,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC network that the Cloud Run resource will be able to send traffic
-       * to. At least one of network or subnetwork must be specified. If both
-       * network and subnetwork are specified, the given VPC subnetwork must
-       * belong to the given VPC network. If network is not specified, it will be
-       * looked up from the subnetwork.
+       * Optional. The VPC network that the Cloud Run resource will be able to
+       * send traffic to. At least one of network or subnetwork must be specified.
+       * If both network and subnetwork are specified, the given VPC subnetwork
+       * must belong to the given VPC network. If network is not specified, it
+       * will be looked up from the subnetwork.
        * </pre>
        *
-       * <code>string network = 1;</code>
+       * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1084,14 +1084,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC network that the Cloud Run resource will be able to send traffic
-       * to. At least one of network or subnetwork must be specified. If both
-       * network and subnetwork are specified, the given VPC subnetwork must
-       * belong to the given VPC network. If network is not specified, it will be
-       * looked up from the subnetwork.
+       * Optional. The VPC network that the Cloud Run resource will be able to
+       * send traffic to. At least one of network or subnetwork must be specified.
+       * If both network and subnetwork are specified, the given VPC subnetwork
+       * must belong to the given VPC network. If network is not specified, it
+       * will be looked up from the subnetwork.
        * </pre>
        *
-       * <code>string network = 1;</code>
+       * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for network to set.
        * @return This builder for chaining.
@@ -1112,14 +1112,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-       * least one of network or subnetwork must be specified. If both
+       * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+       * from. At least one of network or subnetwork must be specified. If both
        * network and subnetwork are specified, the given VPC subnetwork must
        * belong to the given VPC network. If subnetwork is not specified, the
        * subnetwork with the same name with the network will be used.
        * </pre>
        *
-       * <code>string subnetwork = 2;</code>
+       * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The subnetwork.
        */
@@ -1138,14 +1138,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-       * least one of network or subnetwork must be specified. If both
+       * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+       * from. At least one of network or subnetwork must be specified. If both
        * network and subnetwork are specified, the given VPC subnetwork must
        * belong to the given VPC network. If subnetwork is not specified, the
        * subnetwork with the same name with the network will be used.
        * </pre>
        *
-       * <code>string subnetwork = 2;</code>
+       * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for subnetwork.
        */
@@ -1164,14 +1164,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-       * least one of network or subnetwork must be specified. If both
+       * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+       * from. At least one of network or subnetwork must be specified. If both
        * network and subnetwork are specified, the given VPC subnetwork must
        * belong to the given VPC network. If subnetwork is not specified, the
        * subnetwork with the same name with the network will be used.
        * </pre>
        *
-       * <code>string subnetwork = 2;</code>
+       * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The subnetwork to set.
        * @return This builder for chaining.
@@ -1189,14 +1189,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-       * least one of network or subnetwork must be specified. If both
+       * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+       * from. At least one of network or subnetwork must be specified. If both
        * network and subnetwork are specified, the given VPC subnetwork must
        * belong to the given VPC network. If subnetwork is not specified, the
        * subnetwork with the same name with the network will be used.
        * </pre>
        *
-       * <code>string subnetwork = 2;</code>
+       * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1210,14 +1210,14 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
-       * least one of network or subnetwork must be specified. If both
+       * Optional. The VPC subnetwork that the Cloud Run resource will get IPs
+       * from. At least one of network or subnetwork must be specified. If both
        * network and subnetwork are specified, the given VPC subnetwork must
        * belong to the given VPC network. If subnetwork is not specified, the
        * subnetwork with the same name with the network will be used.
        * </pre>
        *
-       * <code>string subnetwork = 2;</code>
+       * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for subnetwork to set.
        * @return This builder for chaining.
@@ -1246,10 +1246,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the tags.
        */
@@ -1261,10 +1261,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of tags.
        */
@@ -1275,10 +1275,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The tags at the given index.
@@ -1290,10 +1290,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
@@ -1305,10 +1305,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The tags to set.
@@ -1328,10 +1328,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The tags to add.
        * @return This builder for chaining.
@@ -1350,10 +1350,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The tags to add.
        * @return This builder for chaining.
@@ -1369,10 +1369,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1387,10 +1387,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Network tags applied to this Cloud Run resource.
+       * Optional. Network tags applied to this Cloud Run resource.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>repeated string tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the tags to add.
        * @return This builder for chaining.
@@ -1536,11 +1536,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Traffic VPC egress settings. If not provided, it defaults to
+   * Optional. Traffic VPC egress settings. If not provided, it defaults to
    * PRIVATE_RANGES_ONLY.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+   * <code>
+   * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for egress.
    */
@@ -1552,11 +1554,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Traffic VPC egress settings. If not provided, it defaults to
+   * Optional. Traffic VPC egress settings. If not provided, it defaults to
    * PRIVATE_RANGES_ONLY.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+   * <code>
+   * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The egress.
    */
@@ -1575,11 +1579,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface>
@@ -1590,11 +1596,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
@@ -1605,11 +1613,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getNetworkInterfacesCount() {
@@ -1619,11 +1629,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index) {
@@ -1633,11 +1645,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Direct VPC egress settings. Currently only single network interface is
-   * supported.
+   * Optional. Direct VPC egress settings. Currently only single network
+   * interface is supported.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(
@@ -2210,11 +2224,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings. If not provided, it defaults to
+     * Optional. Traffic VPC egress settings. If not provided, it defaults to
      * PRIVATE_RANGES_ONLY.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for egress.
      */
@@ -2226,11 +2242,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings. If not provided, it defaults to
+     * Optional. Traffic VPC egress settings. If not provided, it defaults to
      * PRIVATE_RANGES_ONLY.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for egress to set.
      * @return This builder for chaining.
@@ -2245,11 +2263,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings. If not provided, it defaults to
+     * Optional. Traffic VPC egress settings. If not provided, it defaults to
      * PRIVATE_RANGES_ONLY.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The egress.
      */
@@ -2263,11 +2283,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings. If not provided, it defaults to
+     * Optional. Traffic VPC egress settings. If not provided, it defaults to
      * PRIVATE_RANGES_ONLY.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The egress to set.
      * @return This builder for chaining.
@@ -2285,11 +2307,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings. If not provided, it defaults to
+     * Optional. Traffic VPC egress settings. If not provided, it defaults to
      * PRIVATE_RANGES_ONLY.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
+     * <code>
+     * .google.cloud.run.v2.VpcAccess.VpcEgress egress = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2322,11 +2346,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface>
         getNetworkInterfacesList() {
@@ -2340,11 +2366,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getNetworkInterfacesCount() {
       if (networkInterfacesBuilder_ == null) {
@@ -2357,11 +2385,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index) {
       if (networkInterfacesBuilder_ == null) {
@@ -2374,11 +2404,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNetworkInterfaces(
         int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
@@ -2398,11 +2430,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNetworkInterfaces(
         int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
@@ -2419,11 +2453,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNetworkInterfaces(com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
       if (networkInterfacesBuilder_ == null) {
@@ -2442,11 +2478,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNetworkInterfaces(
         int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
@@ -2466,11 +2504,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNetworkInterfaces(
         com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
@@ -2487,11 +2527,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNetworkInterfaces(
         int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
@@ -2508,11 +2550,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllNetworkInterfaces(
         java.lang.Iterable<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterface> values) {
@@ -2529,11 +2573,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearNetworkInterfaces() {
       if (networkInterfacesBuilder_ == null) {
@@ -2549,11 +2595,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeNetworkInterfaces(int index) {
       if (networkInterfacesBuilder_ == null) {
@@ -2569,11 +2617,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder getNetworkInterfacesBuilder(
         int index) {
@@ -2583,11 +2633,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder
         getNetworkInterfacesOrBuilder(int index) {
@@ -2601,11 +2653,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
         getNetworkInterfacesOrBuilderList() {
@@ -2619,11 +2673,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder
         addNetworkInterfacesBuilder() {
@@ -2634,11 +2690,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder addNetworkInterfacesBuilder(
         int index) {
@@ -2650,11 +2708,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Direct VPC egress settings. Currently only single network interface is
-     * supported.
+     * Optional. Direct VPC egress settings. Currently only single network
+     * interface is supported.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder>
         getNetworkInterfacesBuilderList() {

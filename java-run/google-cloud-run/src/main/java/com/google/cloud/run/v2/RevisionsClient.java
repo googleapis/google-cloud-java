@@ -87,7 +87,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRevisions</td>
- *      <td><p> Lists Revisions from a given Service, or from a given location.</td>
+ *      <td><p> Lists Revisions from a given Service, or from a given location.  Results are sorted by creation time, descending.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -367,7 +367,8 @@ public class RevisionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Revisions from a given Service, or from a given location.
+   * Lists Revisions from a given Service, or from a given location. Results are sorted by creation
+   * time, descending.
    *
    * <p>Sample code:
    *
@@ -400,7 +401,8 @@ public class RevisionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Revisions from a given Service, or from a given location.
+   * Lists Revisions from a given Service, or from a given location. Results are sorted by creation
+   * time, descending.
    *
    * <p>Sample code:
    *
@@ -430,7 +432,8 @@ public class RevisionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Revisions from a given Service, or from a given location.
+   * Lists Revisions from a given Service, or from a given location. Results are sorted by creation
+   * time, descending.
    *
    * <p>Sample code:
    *
@@ -463,7 +466,8 @@ public class RevisionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Revisions from a given Service, or from a given location.
+   * Lists Revisions from a given Service, or from a given location. Results are sorted by creation
+   * time, descending.
    *
    * <p>Sample code:
    *
@@ -496,7 +500,8 @@ public class RevisionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Revisions from a given Service, or from a given location.
+   * Lists Revisions from a given Service, or from a given location. Results are sorted by creation
+   * time, descending.
    *
    * <p>Sample code:
    *

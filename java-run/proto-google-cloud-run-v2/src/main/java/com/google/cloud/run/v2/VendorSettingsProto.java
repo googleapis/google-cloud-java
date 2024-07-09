@@ -58,40 +58,43 @@ public final class VendorSettingsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/run/v2/vendor_settings.pr"
-          + "oto\022\023google.cloud.run.v2\032\031google/api/res"
-          + "ource.proto\"\350\002\n\tVpcAccess\022:\n\tconnector\030\001"
-          + " \001(\tB\'\372A$\n\"vpcaccess.googleapis.com/Conn"
-          + "ector\0228\n\006egress\030\002 \001(\0162(.google.cloud.run"
-          + ".v2.VpcAccess.VpcEgress\022K\n\022network_inter"
-          + "faces\030\003 \003(\0132/.google.cloud.run.v2.VpcAcc"
-          + "ess.NetworkInterface\032E\n\020NetworkInterface"
-          + "\022\017\n\007network\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001(\t\022\014\n"
-          + "\004tags\030\003 \003(\t\"Q\n\tVpcEgress\022\032\n\026VPC_EGRESS_U"
-          + "NSPECIFIED\020\000\022\017\n\013ALL_TRAFFIC\020\001\022\027\n\023PRIVATE"
-          + "_RANGES_ONLY\020\002\"a\n\023BinaryAuthorization\022\025\n"
-          + "\013use_default\030\001 \001(\010H\000\022 \n\030breakglass_justi"
-          + "fication\030\002 \001(\tB\021\n\017binauthz_method\"I\n\017Rev"
-          + "isionScaling\022\032\n\022min_instance_count\030\001 \001(\005"
-          + "\022\032\n\022max_instance_count\030\002 \001(\005\",\n\016ServiceS"
-          + "caling\022\032\n\022min_instance_count\030\001 \001(\005*\231\001\n\016I"
-          + "ngressTraffic\022\037\n\033INGRESS_TRAFFIC_UNSPECI"
-          + "FIED\020\000\022\027\n\023INGRESS_TRAFFIC_ALL\020\001\022!\n\035INGRE"
-          + "SS_TRAFFIC_INTERNAL_ONLY\020\002\022*\n&INGRESS_TR"
-          + "AFFIC_INTERNAL_LOAD_BALANCER\020\003*}\n\024Execut"
-          + "ionEnvironment\022%\n!EXECUTION_ENVIRONMENT_"
-          + "UNSPECIFIED\020\000\022\036\n\032EXECUTION_ENVIRONMENT_G"
-          + "EN1\020\001\022\036\n\032EXECUTION_ENVIRONMENT_GEN2\020\002*p\n"
-          + "\035EncryptionKeyRevocationAction\0220\n,ENCRYP"
-          + "TION_KEY_REVOCATION_ACTION_UNSPECIFIED\020\000"
-          + "\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHUTDOWN\020\002B[\n\027com.g"
-          + "oogle.cloud.run.v2B\023VendorSettingsProtoP"
-          + "\001Z)cloud.google.com/go/run/apiv2/runpb;r"
-          + "unpbb\006proto3"
+          + "oto\022\023google.cloud.run.v2\032\037google/api/fie"
+          + "ld_behavior.proto\032\031google/api/resource.p"
+          + "roto\"\201\003\n\tVpcAccess\022:\n\tconnector\030\001 \001(\tB\'\372"
+          + "A$\n\"vpcaccess.googleapis.com/Connector\022="
+          + "\n\006egress\030\002 \001(\0162(.google.cloud.run.v2.Vpc"
+          + "Access.VpcEgressB\003\340A\001\022P\n\022network_interfa"
+          + "ces\030\003 \003(\0132/.google.cloud.run.v2.VpcAcces"
+          + "s.NetworkInterfaceB\003\340A\001\032T\n\020NetworkInterf"
+          + "ace\022\024\n\007network\030\001 \001(\tB\003\340A\001\022\027\n\nsubnetwork\030"
+          + "\002 \001(\tB\003\340A\001\022\021\n\004tags\030\003 \003(\tB\003\340A\001\"Q\n\tVpcEgre"
+          + "ss\022\032\n\026VPC_EGRESS_UNSPECIFIED\020\000\022\017\n\013ALL_TR"
+          + "AFFIC\020\001\022\027\n\023PRIVATE_RANGES_ONLY\020\002\"\202\001\n\023Bin"
+          + "aryAuthorization\022\032\n\013use_default\030\001 \001(\010B\003\340"
+          + "A\001H\000\022\025\n\006policy\030\003 \001(\tB\003\340A\001H\000\022%\n\030breakglas"
+          + "s_justification\030\002 \001(\tB\003\340A\001B\021\n\017binauthz_m"
+          + "ethod\"S\n\017RevisionScaling\022\037\n\022min_instance"
+          + "_count\030\001 \001(\005B\003\340A\001\022\037\n\022max_instance_count\030"
+          + "\002 \001(\005B\003\340A\001\"1\n\016ServiceScaling\022\037\n\022min_inst"
+          + "ance_count\030\001 \001(\005B\003\340A\001*\231\001\n\016IngressTraffic"
+          + "\022\037\n\033INGRESS_TRAFFIC_UNSPECIFIED\020\000\022\027\n\023ING"
+          + "RESS_TRAFFIC_ALL\020\001\022!\n\035INGRESS_TRAFFIC_IN"
+          + "TERNAL_ONLY\020\002\022*\n&INGRESS_TRAFFIC_INTERNA"
+          + "L_LOAD_BALANCER\020\003*}\n\024ExecutionEnvironmen"
+          + "t\022%\n!EXECUTION_ENVIRONMENT_UNSPECIFIED\020\000"
+          + "\022\036\n\032EXECUTION_ENVIRONMENT_GEN1\020\001\022\036\n\032EXEC"
+          + "UTION_ENVIRONMENT_GEN2\020\002*p\n\035EncryptionKe"
+          + "yRevocationAction\0220\n,ENCRYPTION_KEY_REVO"
+          + "CATION_ACTION_UNSPECIFIED\020\000\022\017\n\013PREVENT_N"
+          + "EW\020\001\022\014\n\010SHUTDOWN\020\002B[\n\027com.google.cloud.r"
+          + "un.v2B\023VendorSettingsProtoP\001Z)cloud.goog"
+          + "le.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_VpcAccess_descriptor =
@@ -116,7 +119,7 @@ public final class VendorSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_BinaryAuthorization_descriptor,
             new java.lang.String[] {
-              "UseDefault", "BreakglassJustification", "BinauthzMethod",
+              "UseDefault", "Policy", "BreakglassJustification", "BinauthzMethod",
             });
     internal_static_google_cloud_run_v2_RevisionScaling_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -136,9 +139,11 @@ public final class VendorSettingsProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 

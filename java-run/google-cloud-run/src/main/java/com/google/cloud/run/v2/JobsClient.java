@@ -112,7 +112,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListJobs</td>
- *      <td><p> Lists Jobs.</td>
+ *      <td><p> Lists Jobs. Results are sorted by creation time, descending.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -635,7 +635,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs.
+   * Lists Jobs. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -665,7 +665,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs.
+   * Lists Jobs. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -694,7 +694,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs.
+   * Lists Jobs. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -727,7 +727,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs.
+   * Lists Jobs. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -759,7 +759,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs.
+   * Lists Jobs. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *

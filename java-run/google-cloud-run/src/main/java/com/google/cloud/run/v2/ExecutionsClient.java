@@ -87,7 +87,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListExecutions</td>
- *      <td><p> Lists Executions from a Job.</td>
+ *      <td><p> Lists Executions from a Job. Results are sorted by creation time, descending.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -388,7 +388,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Executions from a Job.
+   * Lists Executions from a Job. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -422,7 +422,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Executions from a Job.
+   * Lists Executions from a Job. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -453,7 +453,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Executions from a Job.
+   * Lists Executions from a Job. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -486,7 +486,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Executions from a Job.
+   * Lists Executions from a Job. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -520,7 +520,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Executions from a Job.
+   * Lists Executions from a Job. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *

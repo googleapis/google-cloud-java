@@ -171,10 +171,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A common (service-level) reason for this condition.
+   * Output only. A common (service-level) reason for this condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.CommonReason reason = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.CommonReason reason = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the reason field is set.
    */
@@ -183,10 +185,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A common (service-level) reason for this condition.
+   * Output only. A common (service-level) reason for this condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.CommonReason reason = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.CommonReason reason = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for reason.
    */
@@ -195,10 +199,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A common (service-level) reason for this condition.
+   * Output only. A common (service-level) reason for this condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.CommonReason reason = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.CommonReason reason = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The reason.
    */
@@ -208,10 +214,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the revision condition.
+   * Output only. A reason for the revision condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.RevisionReason revision_reason = 9;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.RevisionReason revision_reason = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the revisionReason field is set.
    */
@@ -220,10 +228,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the revision condition.
+   * Output only. A reason for the revision condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.RevisionReason revision_reason = 9;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.RevisionReason revision_reason = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for revisionReason.
    */
@@ -232,10 +242,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the revision condition.
+   * Output only. A reason for the revision condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.RevisionReason revision_reason = 9;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.RevisionReason revision_reason = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The revisionReason.
    */
@@ -245,10 +257,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the execution condition.
+   * Output only. A reason for the execution condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the executionReason field is set.
    */
@@ -257,10 +271,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the execution condition.
+   * Output only. A reason for the execution condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for executionReason.
    */
@@ -269,10 +285,12 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * A reason for the execution condition.
+   * Output only. A reason for the execution condition.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11;</code>
+   * <code>
+   * .google.cloud.run.v2.Condition.ExecutionReason execution_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The executionReason.
    */

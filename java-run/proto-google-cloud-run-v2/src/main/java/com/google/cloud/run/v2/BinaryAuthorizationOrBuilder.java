@@ -28,11 +28,11 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * If True, indicates to use the default project's binary authorization
-   * policy. If False, binary authorization will be disabled.
+   * Optional. If True, indicates to use the default project's binary
+   * authorization policy. If False, binary authorization will be disabled.
    * </pre>
    *
-   * <code>bool use_default = 1;</code>
+   * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the useDefault field is set.
    */
@@ -41,11 +41,11 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * If True, indicates to use the default project's binary authorization
-   * policy. If False, binary authorization will be disabled.
+   * Optional. If True, indicates to use the default project's binary
+   * authorization policy. If False, binary authorization will be disabled.
    * </pre>
    *
-   * <code>bool use_default = 1;</code>
+   * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useDefault.
    */
@@ -55,13 +55,53 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * If present, indicates to use Breakglass using this justification.
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the policy field is set.
+   */
+  boolean hasPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The policy.
+   */
+  java.lang.String getPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for policy.
+   */
+  com.google.protobuf.ByteString getPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If present, indicates to use Breakglass using this justification.
    * If use_default is False, then it must be empty.
    * For more information on breakglass, see
    * https://cloud.google.com/binary-authorization/docs/using-breakglass
    * </pre>
    *
-   * <code>string breakglass_justification = 2;</code>
+   * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The breakglassJustification.
    */
@@ -70,13 +110,13 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * If present, indicates to use Breakglass using this justification.
+   * Optional. If present, indicates to use Breakglass using this justification.
    * If use_default is False, then it must be empty.
    * For more information on breakglass, see
    * https://cloud.google.com/binary-authorization/docs/using-breakglass
    * </pre>
    *
-   * <code>string breakglass_justification = 2;</code>
+   * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for breakglassJustification.
    */

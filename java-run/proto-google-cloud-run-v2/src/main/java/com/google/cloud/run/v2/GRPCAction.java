@@ -69,12 +69,12 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Port number of the gRPC service. Number must be in the range 1 to 65535.
-   * If not specified, defaults to the exposed port of the container, which is
-   * the value of container.ports[0].containerPort.
+   * Optional. Port number of the gRPC service. Number must be in the range 1 to
+   * 65535. If not specified, defaults to the exposed port of the container,
+   * which is the value of container.ports[0].containerPort.
    * </pre>
    *
-   * <code>int32 port = 1;</code>
+   * <code>int32 port = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */
@@ -91,12 +91,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service is the name of the service to place in the gRPC HealthCheckRequest
-   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-   * this is not specified, the default behavior is defined by gRPC.
+   * Optional. Service is the name of the service to place in the gRPC
+   * HealthCheckRequest (see
+   * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+   * is not specified, the default behavior is defined by gRPC.
    * </pre>
    *
-   * <code>string service = 2;</code>
+   * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The service.
    */
@@ -116,12 +117,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Service is the name of the service to place in the gRPC HealthCheckRequest
-   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-   * this is not specified, the default behavior is defined by gRPC.
+   * Optional. Service is the name of the service to place in the gRPC
+   * HealthCheckRequest (see
+   * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+   * is not specified, the default behavior is defined by gRPC.
    * </pre>
    *
-   * <code>string service = 2;</code>
+   * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for service.
    */
@@ -503,12 +505,12 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number of the gRPC service. Number must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The port.
      */
@@ -520,12 +522,12 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number of the gRPC service. Number must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -541,12 +543,12 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to the exposed port of the container, which is
-     * the value of container.ports[0].containerPort.
+     * Optional. Port number of the gRPC service. Number must be in the range 1 to
+     * 65535. If not specified, defaults to the exposed port of the container,
+     * which is the value of container.ports[0].containerPort.
      * </pre>
      *
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -562,12 +564,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-     * this is not specified, the default behavior is defined by gRPC.
+     * Optional. Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+     * is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
-     * <code>string service = 2;</code>
+     * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The service.
      */
@@ -586,12 +589,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-     * this is not specified, the default behavior is defined by gRPC.
+     * Optional. Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+     * is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
-     * <code>string service = 2;</code>
+     * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for service.
      */
@@ -610,12 +614,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-     * this is not specified, the default behavior is defined by gRPC.
+     * Optional. Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+     * is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
-     * <code>string service = 2;</code>
+     * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -633,12 +638,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-     * this is not specified, the default behavior is defined by gRPC.
+     * Optional. Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+     * is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
-     * <code>string service = 2;</code>
+     * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -652,12 +658,13 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
-     * this is not specified, the default behavior is defined by gRPC.
+     * Optional. Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If this
+     * is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
-     * <code>string service = 2;</code>
+     * <code>string service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.

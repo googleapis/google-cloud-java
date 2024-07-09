@@ -84,50 +84,60 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 2;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 2;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 2;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getVolumesCount();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 2;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 2;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VolumeOrBuilder getVolumesOrBuilder(int index);
 
@@ -162,13 +172,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time duration the Task may be active before the system will
-   * actively try to mark it failed and kill associated containers. This applies
-   * per attempt of a task, meaning each retry can run for the full timeout.
-   * Defaults to 600 seconds.
+   * Optional. Max allowed time duration the Task may be active before the
+   * system will actively try to mark it failed and kill associated containers.
+   * This applies per attempt of a task, meaning each retry can run for the full
+   * timeout. Defaults to 600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 4;</code>
+   * <code>.google.protobuf.Duration timeout = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the timeout field is set.
    */
@@ -177,13 +187,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time duration the Task may be active before the system will
-   * actively try to mark it failed and kill associated containers. This applies
-   * per attempt of a task, meaning each retry can run for the full timeout.
-   * Defaults to 600 seconds.
+   * Optional. Max allowed time duration the Task may be active before the
+   * system will actively try to mark it failed and kill associated containers.
+   * This applies per attempt of a task, meaning each retry can run for the full
+   * timeout. Defaults to 600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 4;</code>
+   * <code>.google.protobuf.Duration timeout = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The timeout.
    */
@@ -192,13 +202,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time duration the Task may be active before the system will
-   * actively try to mark it failed and kill associated containers. This applies
-   * per attempt of a task, meaning each retry can run for the full timeout.
-   * Defaults to 600 seconds.
+   * Optional. Max allowed time duration the Task may be active before the
+   * system will actively try to mark it failed and kill associated containers.
+   * This applies per attempt of a task, meaning each retry can run for the full
+   * timeout. Defaults to 600 seconds.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 4;</code>
+   * <code>.google.protobuf.Duration timeout = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
 
@@ -206,13 +216,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the Task of a
-   * Job. The service account represents the identity of the
-   * running task, and determines what permissions the task has. If
-   * not provided, the task will use the project's default service account.
+   * Optional. Email address of the IAM service account associated with the Task
+   * of a Job. The service account represents the identity of the running task,
+   * and determines what permissions the task has. If not provided, the task
+   * will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 5;</code>
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccount.
    */
@@ -221,13 +231,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the Task of a
-   * Job. The service account represents the identity of the
-   * running task, and determines what permissions the task has. If
-   * not provided, the task will use the project's default service account.
+   * Optional. Email address of the IAM service account associated with the Task
+   * of a Job. The service account represents the identity of the running task,
+   * and determines what permissions the task has. If not provided, the task
+   * will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 5;</code>
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccount.
    */
@@ -237,10 +247,12 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * The execution environment being used to host this Task.
+   * Optional. The execution environment being used to host this Task.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for executionEnvironment.
    */
@@ -249,10 +261,12 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * The execution environment being used to host this Task.
+   * Optional. The execution environment being used to host this Task.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The executionEnvironment.
    */
@@ -291,11 +305,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the vpcAccess field is set.
    */
@@ -304,11 +320,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The vpcAccess.
    */
@@ -317,11 +335,13 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Task. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Task. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
 

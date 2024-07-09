@@ -67,10 +67,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Minimum number of serving instances that this resource should have.
+   * Optional. Minimum number of serving instances that this resource should
+   * have.
    * </pre>
    *
-   * <code>int32 min_instance_count = 1;</code>
+   * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The minInstanceCount.
    */
@@ -85,10 +86,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Maximum number of serving instances that this resource should have.
+   * Optional. Maximum number of serving instances that this resource should
+   * have.
    * </pre>
    *
-   * <code>int32 max_instance_count = 2;</code>
+   * <code>int32 max_instance_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxInstanceCount.
    */
@@ -462,10 +464,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Minimum number of serving instances that this resource should have.
+     * Optional. Minimum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The minInstanceCount.
      */
@@ -477,10 +480,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Minimum number of serving instances that this resource should have.
+     * Optional. Minimum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The minInstanceCount to set.
      * @return This builder for chaining.
@@ -496,10 +500,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Minimum number of serving instances that this resource should have.
+     * Optional. Minimum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -515,10 +520,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Maximum number of serving instances that this resource should have.
+     * Optional. Maximum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 max_instance_count = 2;</code>
+     * <code>int32 max_instance_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxInstanceCount.
      */
@@ -530,10 +536,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Maximum number of serving instances that this resource should have.
+     * Optional. Maximum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 max_instance_count = 2;</code>
+     * <code>int32 max_instance_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The maxInstanceCount to set.
      * @return This builder for chaining.
@@ -549,10 +556,11 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Maximum number of serving instances that this resource should have.
+     * Optional. Maximum number of serving instances that this resource should
+     * have.
      * </pre>
      *
-     * <code>int32 max_instance_count = 2;</code>
+     * <code>int32 max_instance_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
