@@ -1477,6 +1477,41 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * The results of an attack path simulation relevant to this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AttackExposure attack_exposure = 45;</code>
+   *
+   * @return Whether the attackExposure field is set.
+   */
+  boolean hasAttackExposure();
+  /**
+   *
+   *
+   * <pre>
+   * The results of an attack path simulation relevant to this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AttackExposure attack_exposure = 45;</code>
+   *
+   * @return The attackExposure.
+   */
+  com.google.cloud.securitycenter.v1.AttackExposure getAttackExposure();
+  /**
+   *
+   *
+   * <pre>
+   * The results of an attack path simulation relevant to this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AttackExposure attack_exposure = 45;</code>
+   */
+  com.google.cloud.securitycenter.v1.AttackExposureOrBuilder getAttackExposureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * File associated with the finding.
    * </pre>
    *

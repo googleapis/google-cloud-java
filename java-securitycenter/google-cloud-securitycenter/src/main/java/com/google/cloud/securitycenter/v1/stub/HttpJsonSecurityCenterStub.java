@@ -19,14 +19,20 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -44,54 +50,79 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.CreateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.DeleteEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
+import com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetSimulationRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
+import com.google.cloud.securitycenter.v1.GetValuedResourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
 import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
 import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListAttackPathsRequest;
+import com.google.cloud.securitycenter.v1.ListAttackPathsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesRequest;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
+import com.google.cloud.securitycenter.v1.ResourceValueConfig;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
@@ -100,16 +131,22 @@ import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.Simulation;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.UpdateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.ValuedResource;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -327,8 +364,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             return fields;
                           })
                       .setAdditionalPaths(
+                          "/v1/{parent=organizations/*/locations/*}/muteConfigs",
                           "/v1/{parent=folders/*}/muteConfigs",
-                          "/v1/{parent=projects/*}/muteConfigs")
+                          "/v1/{parent=folders/*/locations/*}/muteConfigs",
+                          "/v1/{parent=projects/*}/muteConfigs",
+                          "/v1/{parent=projects/*/locations/*}/muteConfigs")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -413,7 +453,10 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{name=folders/*/muteConfigs/*}",
-                          "/v1/{name=projects/*/muteConfigs/*}")
+                          "/v1/{name=projects/*/muteConfigs/*}",
+                          "/v1/{name=organizations/*/locations/*/muteConfigs/*}",
+                          "/v1/{name=folders/*/locations/*/muteConfigs/*}",
+                          "/v1/{name=projects/*/locations/*/muteConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -504,6 +547,74 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
                       .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSimulationRequest, Simulation>
+      getSimulationMethodDescriptor =
+          ApiMethodDescriptor.<GetSimulationRequest, Simulation>newBuilder()
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetSimulation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSimulationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/simulations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSimulationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSimulationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Simulation>newBuilder()
+                      .setDefaultInstance(Simulation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetValuedResourceRequest, ValuedResource>
+      getValuedResourceMethodDescriptor =
+          ApiMethodDescriptor.<GetValuedResourceRequest, ValuedResource>newBuilder()
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetValuedResource")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetValuedResourceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/simulations/*/valuedResources/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetValuedResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetValuedResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ValuedResource>newBuilder()
+                      .setDefaultInstance(ValuedResource.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -601,7 +712,10 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{name=folders/*/muteConfigs/*}",
-                          "/v1/{name=projects/*/muteConfigs/*}")
+                          "/v1/{name=projects/*/muteConfigs/*}",
+                          "/v1/{name=organizations/*/locations/*/muteConfigs/*}",
+                          "/v1/{name=folders/*/locations/*/muteConfigs/*}",
+                          "/v1/{name=projects/*/locations/*/muteConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1054,7 +1168,10 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{parent=folders/*}/muteConfigs",
-                          "/v1/{parent=projects/*}/muteConfigs")
+                          "/v1/{parent=projects/*}/muteConfigs",
+                          "/v1/{parent=organizations/*/locations/*/muteConfigs}",
+                          "/v1/{parent=folders/*/locations/*/muteConfigs}",
+                          "/v1/{parent=projects/*/locations/*/muteConfigs}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1602,7 +1719,10 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{muteConfig.name=folders/*/muteConfigs/*}",
-                          "/v1/{muteConfig.name=projects/*/muteConfigs/*}")
+                          "/v1/{muteConfig.name=projects/*/muteConfigs/*}",
+                          "/v1/{muteConfig.name=organizations/*/locations/*/muteConfigs/*}",
+                          "/v1/{muteConfig.name=folders/*/locations/*/muteConfigs/*}",
+                          "/v1/{muteConfig.name=projects/*/locations/*/muteConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2020,6 +2140,708 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateEventThreatDetectionCustomModule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/eventThreatDetectionSettings}/customModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/eventThreatDetectionSettings}/customModules",
+                          "/v1/{parent=projects/*/eventThreatDetectionSettings}/customModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "eventThreatDetectionCustomModule",
+                                      request.getEventThreatDetectionCustomModule(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventThreatDetectionCustomModule>newBuilder()
+                      .setDefaultInstance(EventThreatDetectionCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteEventThreatDetectionCustomModuleRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteEventThreatDetectionCustomModule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DeleteEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/eventThreatDetectionSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/eventThreatDetectionSettings/customModules/*}",
+                          "/v1/{name=projects/*/eventThreatDetectionSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEventThreatDetectionCustomModule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/eventThreatDetectionSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/eventThreatDetectionSettings/customModules/*}",
+                          "/v1/{name=projects/*/eventThreatDetectionSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventThreatDetectionCustomModule>newBuilder()
+                      .setDefaultInstance(EventThreatDetectionCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDescendantEventThreatDetectionCustomModulesRequest,
+                  ListDescendantEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListDescendantEventThreatDetectionCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListDescendantEventThreatDetectionCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/eventThreatDetectionSettings}/customModules:listDescendant",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListDescendantEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/eventThreatDetectionSettings}/customModules:listDescendant",
+                          "/v1/{parent=projects/*/eventThreatDetectionSettings}/customModules:listDescendant")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListDescendantEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListDescendantEventThreatDetectionCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListDescendantEventThreatDetectionCustomModulesResponse
+                              .getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListEventThreatDetectionCustomModulesRequest,
+                  ListEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEventThreatDetectionCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListEventThreatDetectionCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/eventThreatDetectionSettings}/customModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/eventThreatDetectionSettings}/customModules",
+                          "/v1/{parent=projects/*/eventThreatDetectionSettings}/customModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListEventThreatDetectionCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListEventThreatDetectionCustomModulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateEventThreatDetectionCustomModule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<UpdateEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{eventThreatDetectionCustomModule.name=organizations/*/eventThreatDetectionSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "eventThreatDetectionCustomModule.name",
+                                request.getEventThreatDetectionCustomModule().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{eventThreatDetectionCustomModule.name=folders/*/eventThreatDetectionSettings/customModules/*}",
+                          "/v1/{eventThreatDetectionCustomModule.name=projects/*/eventThreatDetectionSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "eventThreatDetectionCustomModule",
+                                      request.getEventThreatDetectionCustomModule(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventThreatDetectionCustomModule>newBuilder()
+                      .setDefaultInstance(EventThreatDetectionCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<ValidateEventThreatDetectionCustomModuleRequest,
+                  ValidateEventThreatDetectionCustomModuleResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ValidateEventThreatDetectionCustomModule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ValidateEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/eventThreatDetectionSettings}:validateCustomModule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/eventThreatDetectionSettings}:validateCustomModule",
+                          "/v1/{parent=projects/*/eventThreatDetectionSettings}:validateCustomModule")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ValidateEventThreatDetectionCustomModuleResponse>newBuilder()
+                      .setDefaultInstance(
+                          ValidateEventThreatDetectionCustomModuleResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveEventThreatDetectionCustomModuleRequest,
+                  EffectiveEventThreatDetectionCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEffectiveEventThreatDetectionCustomModule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetEffectiveEventThreatDetectionCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/eventThreatDetectionSettings/effectiveCustomModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/eventThreatDetectionSettings/effectiveCustomModules/*}",
+                          "/v1/{name=projects/*/eventThreatDetectionSettings/effectiveCustomModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEffectiveEventThreatDetectionCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EffectiveEventThreatDetectionCustomModule>newBuilder()
+                      .setDefaultInstance(
+                          EffectiveEventThreatDetectionCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListEffectiveEventThreatDetectionCustomModulesRequest,
+                  ListEffectiveEventThreatDetectionCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEffectiveEventThreatDetectionCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListEffectiveEventThreatDetectionCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/eventThreatDetectionSettings}/effectiveCustomModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListEffectiveEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/eventThreatDetectionSettings}/effectiveCustomModules",
+                          "/v1/{parent=projects/*/eventThreatDetectionSettings}/effectiveCustomModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListEffectiveEventThreatDetectionCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListEffectiveEventThreatDetectionCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListEffectiveEventThreatDetectionCustomModulesResponse
+                              .getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/BatchCreateResourceValueConfigs")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateResourceValueConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*}/resourceValueConfigs:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateResourceValueConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateResourceValueConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateResourceValueConfigsResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchCreateResourceValueConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteResourceValueConfigRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteResourceValueConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteResourceValueConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/resourceValueConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetResourceValueConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceValueConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/resourceValueConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceValueConfig>newBuilder()
+                      .setDefaultInstance(ResourceValueConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListResourceValueConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceValueConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*}/resourceValueConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceValueConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceValueConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceValueConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListResourceValueConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateResourceValueConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateResourceValueConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resourceValueConfig.name=organizations/*/resourceValueConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "resourceValueConfig.name",
+                                request.getResourceValueConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateResourceValueConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "resourceValueConfig",
+                                      request.getResourceValueConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceValueConfig>newBuilder()
+                      .setDefaultInstance(ResourceValueConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesMethodDescriptor =
+          ApiMethodDescriptor.<ListValuedResourcesRequest, ListValuedResourcesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListValuedResources")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListValuedResourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/simulations/*}/valuedResources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListValuedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListValuedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListValuedResourcesResponse>newBuilder()
+                      .setDefaultInstance(ListValuedResourcesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAttackPathsRequest, ListAttackPathsResponse>
+      listAttackPathsMethodDescriptor =
+          ApiMethodDescriptor.<ListAttackPathsRequest, ListAttackPathsResponse>newBuilder()
+              .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/ListAttackPaths")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAttackPathsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/simulations/*}/attackPaths",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAttackPathsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=organizations/*/simulations/*/valuedResources/*}/attackPaths",
+                          "/v1/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAttackPathsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAttackPathsResponse>newBuilder()
+                      .setDefaultInstance(ListAttackPathsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
   private final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationCallable;
@@ -2036,6 +2858,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       deleteNotificationConfigCallable;
   private final UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleCallable;
+  private final UnaryCallable<GetSimulationRequest, Simulation> getSimulationCallable;
+  private final UnaryCallable<GetValuedResourceRequest, ValuedResource> getValuedResourceCallable;
   private final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
@@ -2132,6 +2956,71 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       listBigQueryExportsCallable;
   private final UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
       listBigQueryExportsPagedCallable;
+  private final UnaryCallable<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesCallable;
+  private final UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesPagedCallable;
+  private final UnaryCallable<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsCallable;
+  private final UnaryCallable<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigCallable;
+  private final UnaryCallable<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigCallable;
+  private final UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsCallable;
+  private final UnaryCallable<
+          ListResourceValueConfigsRequest, ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsPagedCallable;
+  private final UnaryCallable<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigCallable;
+  private final UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesCallable;
+  private final UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesPagedResponse>
+      listValuedResourcesPagedCallable;
+  private final UnaryCallable<ListAttackPathsRequest, ListAttackPathsResponse>
+      listAttackPathsCallable;
+  private final UnaryCallable<ListAttackPathsRequest, ListAttackPathsPagedResponse>
+      listAttackPathsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -2299,6 +3188,29 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             HttpJsonCallSettings
                 .<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetSimulationRequest, Simulation> getSimulationTransportSettings =
+        HttpJsonCallSettings.<GetSimulationRequest, Simulation>newBuilder()
+            .setMethodDescriptor(getSimulationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetValuedResourceRequest, ValuedResource>
+        getValuedResourceTransportSettings =
+            HttpJsonCallSettings.<GetValuedResourceRequest, ValuedResource>newBuilder()
+                .setMethodDescriptor(getValuedResourceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -2777,6 +3689,242 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<
+            CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        createEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(createEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+        deleteEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings.<DeleteEventThreatDetectionCustomModuleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        getEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListDescendantEventThreatDetectionCustomModulesRequest,
+            ListDescendantEventThreatDetectionCustomModulesResponse>
+        listDescendantEventThreatDetectionCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDescendantEventThreatDetectionCustomModulesRequest,
+                    ListDescendantEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listDescendantEventThreatDetectionCustomModulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListEventThreatDetectionCustomModulesRequest,
+            ListEventThreatDetectionCustomModulesResponse>
+        listEventThreatDetectionCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListEventThreatDetectionCustomModulesRequest,
+                    ListEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listEventThreatDetectionCustomModulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        updateEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(updateEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "event_threat_detection_custom_module.name",
+                          String.valueOf(request.getEventThreatDetectionCustomModule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ValidateEventThreatDetectionCustomModuleRequest,
+            ValidateEventThreatDetectionCustomModuleResponse>
+        validateEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<ValidateEventThreatDetectionCustomModuleRequest,
+                    ValidateEventThreatDetectionCustomModuleResponse>
+                    newBuilder()
+                .setMethodDescriptor(validateEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            GetEffectiveEventThreatDetectionCustomModuleRequest,
+            EffectiveEventThreatDetectionCustomModule>
+        getEffectiveEventThreatDetectionCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveEventThreatDetectionCustomModuleRequest,
+                    EffectiveEventThreatDetectionCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveEventThreatDetectionCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListEffectiveEventThreatDetectionCustomModulesRequest,
+            ListEffectiveEventThreatDetectionCustomModulesResponse>
+        listEffectiveEventThreatDetectionCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListEffectiveEventThreatDetectionCustomModulesRequest,
+                    ListEffectiveEventThreatDetectionCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listEffectiveEventThreatDetectionCustomModulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+        batchCreateResourceValueConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateResourceValueConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteResourceValueConfigRequest, Empty>
+        deleteResourceValueConfigTransportSettings =
+            HttpJsonCallSettings.<DeleteResourceValueConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteResourceValueConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
+        getResourceValueConfigTransportSettings =
+            HttpJsonCallSettings.<GetResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+                .setMethodDescriptor(getResourceValueConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+        listResourceValueConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>newBuilder()
+                .setMethodDescriptor(listResourceValueConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
+        updateResourceValueConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateResourceValueConfigRequest, ResourceValueConfig>newBuilder()
+                .setMethodDescriptor(updateResourceValueConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "resource_value_config.name",
+                          String.valueOf(request.getResourceValueConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListValuedResourcesRequest, ListValuedResourcesResponse>
+        listValuedResourcesTransportSettings =
+            HttpJsonCallSettings
+                .<ListValuedResourcesRequest, ListValuedResourcesResponse>newBuilder()
+                .setMethodDescriptor(listValuedResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAttackPathsRequest, ListAttackPathsResponse>
+        listAttackPathsTransportSettings =
+            HttpJsonCallSettings.<ListAttackPathsRequest, ListAttackPathsResponse>newBuilder()
+                .setMethodDescriptor(listAttackPathsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.bulkMuteFindingsCallable =
         callableFactory.createUnaryCallable(
@@ -2818,6 +3966,14 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             deleteSecurityHealthAnalyticsCustomModuleTransportSettings,
             settings.deleteSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
+    this.getSimulationCallable =
+        callableFactory.createUnaryCallable(
+            getSimulationTransportSettings, settings.getSimulationSettings(), clientContext);
+    this.getValuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            getValuedResourceTransportSettings,
+            settings.getValuedResourceSettings(),
             clientContext);
     this.getBigQueryExportCallable =
         callableFactory.createUnaryCallable(
@@ -3018,6 +4174,112 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             listBigQueryExportsTransportSettings,
             settings.listBigQueryExportsSettings(),
             clientContext);
+    this.createEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            createEventThreatDetectionCustomModuleTransportSettings,
+            settings.createEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.deleteEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventThreatDetectionCustomModuleTransportSettings,
+            settings.deleteEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.getEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEventThreatDetectionCustomModuleTransportSettings,
+            settings.getEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.listDescendantEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listDescendantEventThreatDetectionCustomModulesTransportSettings,
+            settings.listDescendantEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listDescendantEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDescendantEventThreatDetectionCustomModulesTransportSettings,
+            settings.listDescendantEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.updateEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            updateEventThreatDetectionCustomModuleTransportSettings,
+            settings.updateEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.validateEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            validateEventThreatDetectionCustomModuleTransportSettings,
+            settings.validateEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.getEffectiveEventThreatDetectionCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveEventThreatDetectionCustomModuleTransportSettings,
+            settings.getEffectiveEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.listEffectiveEventThreatDetectionCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEffectiveEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.listEffectiveEventThreatDetectionCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveEventThreatDetectionCustomModulesTransportSettings,
+            settings.listEffectiveEventThreatDetectionCustomModulesSettings(),
+            clientContext);
+    this.batchCreateResourceValueConfigsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateResourceValueConfigsTransportSettings,
+            settings.batchCreateResourceValueConfigsSettings(),
+            clientContext);
+    this.deleteResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteResourceValueConfigTransportSettings,
+            settings.deleteResourceValueConfigSettings(),
+            clientContext);
+    this.getResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            getResourceValueConfigTransportSettings,
+            settings.getResourceValueConfigSettings(),
+            clientContext);
+    this.listResourceValueConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listResourceValueConfigsTransportSettings,
+            settings.listResourceValueConfigsSettings(),
+            clientContext);
+    this.listResourceValueConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceValueConfigsTransportSettings,
+            settings.listResourceValueConfigsSettings(),
+            clientContext);
+    this.updateResourceValueConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateResourceValueConfigTransportSettings,
+            settings.updateResourceValueConfigSettings(),
+            clientContext);
+    this.listValuedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            listValuedResourcesTransportSettings,
+            settings.listValuedResourcesSettings(),
+            clientContext);
+    this.listValuedResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listValuedResourcesTransportSettings,
+            settings.listValuedResourcesSettings(),
+            clientContext);
+    this.listAttackPathsCallable =
+        callableFactory.createUnaryCallable(
+            listAttackPathsTransportSettings, settings.listAttackPathsSettings(), clientContext);
+    this.listAttackPathsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAttackPathsTransportSettings, settings.listAttackPathsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3035,6 +4297,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
     methodDescriptors.add(deleteMuteConfigMethodDescriptor);
     methodDescriptors.add(deleteNotificationConfigMethodDescriptor);
     methodDescriptors.add(deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor);
+    methodDescriptors.add(getSimulationMethodDescriptor);
+    methodDescriptors.add(getValuedResourceMethodDescriptor);
     methodDescriptors.add(getBigQueryExportMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(getMuteConfigMethodDescriptor);
@@ -3071,6 +4335,22 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
     methodDescriptors.add(deleteBigQueryExportMethodDescriptor);
     methodDescriptors.add(updateBigQueryExportMethodDescriptor);
     methodDescriptors.add(listBigQueryExportsMethodDescriptor);
+    methodDescriptors.add(createEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(deleteEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(getEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(listDescendantEventThreatDetectionCustomModulesMethodDescriptor);
+    methodDescriptors.add(listEventThreatDetectionCustomModulesMethodDescriptor);
+    methodDescriptors.add(updateEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(validateEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(getEffectiveEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(listEffectiveEventThreatDetectionCustomModulesMethodDescriptor);
+    methodDescriptors.add(batchCreateResourceValueConfigsMethodDescriptor);
+    methodDescriptors.add(deleteResourceValueConfigMethodDescriptor);
+    methodDescriptors.add(getResourceValueConfigMethodDescriptor);
+    methodDescriptors.add(listResourceValueConfigsMethodDescriptor);
+    methodDescriptors.add(updateResourceValueConfigMethodDescriptor);
+    methodDescriptors.add(listValuedResourcesMethodDescriptor);
+    methodDescriptors.add(listAttackPathsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3131,6 +4411,16 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleCallable() {
     return deleteSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSimulationRequest, Simulation> getSimulationCallable() {
+    return getSimulationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetValuedResourceRequest, ValuedResource> getValuedResourceCallable() {
+    return getValuedResourceCallable;
   }
 
   @Override
@@ -3411,6 +4701,156 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<ListBigQueryExportsRequest, ListBigQueryExportsPagedResponse>
       listBigQueryExportsPagedCallable() {
     return listBigQueryExportsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleCallable() {
+    return createEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleCallable() {
+    return deleteEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleCallable() {
+    return getEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse>
+      listDescendantEventThreatDetectionCustomModulesCallable() {
+    return listDescendantEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesPagedCallable() {
+    return listDescendantEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse>
+      listEventThreatDetectionCustomModulesCallable() {
+    return listEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesPagedCallable() {
+    return listEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleCallable() {
+    return updateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleCallable() {
+    return validateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleCallable() {
+    return getEffectiveEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse>
+      listEffectiveEventThreatDetectionCustomModulesCallable() {
+    return listEffectiveEventThreatDetectionCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesPagedCallable() {
+    return listEffectiveEventThreatDetectionCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsCallable() {
+    return batchCreateResourceValueConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigCallable() {
+    return deleteResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigCallable() {
+    return getResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+      listResourceValueConfigsCallable() {
+    return listResourceValueConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsPagedCallable() {
+    return listResourceValueConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigCallable() {
+    return updateResourceValueConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesResponse>
+      listValuedResourcesCallable() {
+    return listValuedResourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesPagedResponse>
+      listValuedResourcesPagedCallable() {
+    return listValuedResourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttackPathsRequest, ListAttackPathsResponse> listAttackPathsCallable() {
+    return listAttackPathsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttackPathsRequest, ListAttackPathsPagedResponse>
+      listAttackPathsPagedCallable() {
+    return listAttackPathsPagedCallable;
   }
 
   @Override

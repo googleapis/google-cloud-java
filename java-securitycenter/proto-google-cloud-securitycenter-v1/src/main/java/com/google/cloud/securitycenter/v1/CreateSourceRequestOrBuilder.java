@@ -29,7 +29,7 @@ public interface CreateSourceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * `organizations/[organization_id]`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface CreateSourceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new source's parent. Its format should be
-   * "organizations/[organization_id]".
+   * `organizations/[organization_id]`.
    * </pre>
    *
    * <code>

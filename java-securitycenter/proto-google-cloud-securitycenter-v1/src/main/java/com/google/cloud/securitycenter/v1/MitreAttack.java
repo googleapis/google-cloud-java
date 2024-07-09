@@ -496,7 +496,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
    * See: https://attack.mitre.org/techniques/enterprise/
-   * Next ID: 59
+   * Next ID: 63
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v1.MitreAttack.Technique}
@@ -592,6 +592,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>UNIX_SHELL = 7;</code>
      */
     UNIX_SHELL(7),
+    /**
+     *
+     *
+     * <pre>
+     * T1059.006
+     * </pre>
+     *
+     * <code>PYTHON = 59;</code>
+     */
+    PYTHON(59),
     /**
      *
      *
@@ -1086,12 +1096,42 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1609
+     * </pre>
+     *
+     * <code>CONTAINER_ADMINISTRATION_COMMAND = 60;</code>
+     */
+    CONTAINER_ADMINISTRATION_COMMAND(60),
+    /**
+     *
+     *
+     * <pre>
+     * T1611
+     * </pre>
+     *
+     * <code>ESCAPE_TO_HOST = 61;</code>
+     */
+    ESCAPE_TO_HOST(61),
+    /**
+     *
+     *
+     * <pre>
      * T1613
      * </pre>
      *
      * <code>CONTAINER_AND_RESOURCE_DISCOVERY = 57;</code>
      */
     CONTAINER_AND_RESOURCE_DISCOVERY(57),
+    /**
+     *
+     *
+     * <pre>
+     * T1649
+     * </pre>
+     *
+     * <code>STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES = 62;</code>
+     */
+    STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES(62),
     UNRECOGNIZED(-1),
     ;
 
@@ -1185,6 +1225,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>UNIX_SHELL = 7;</code>
      */
     public static final int UNIX_SHELL_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * T1059.006
+     * </pre>
+     *
+     * <code>PYTHON = 59;</code>
+     */
+    public static final int PYTHON_VALUE = 59;
     /**
      *
      *
@@ -1679,12 +1729,42 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1609
+     * </pre>
+     *
+     * <code>CONTAINER_ADMINISTRATION_COMMAND = 60;</code>
+     */
+    public static final int CONTAINER_ADMINISTRATION_COMMAND_VALUE = 60;
+    /**
+     *
+     *
+     * <pre>
+     * T1611
+     * </pre>
+     *
+     * <code>ESCAPE_TO_HOST = 61;</code>
+     */
+    public static final int ESCAPE_TO_HOST_VALUE = 61;
+    /**
+     *
+     *
+     * <pre>
      * T1613
      * </pre>
      *
      * <code>CONTAINER_AND_RESOURCE_DISCOVERY = 57;</code>
      */
     public static final int CONTAINER_AND_RESOURCE_DISCOVERY_VALUE = 57;
+    /**
+     *
+     *
+     * <pre>
+     * T1649
+     * </pre>
+     *
+     * <code>STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES = 62;</code>
+     */
+    public static final int STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES_VALUE = 62;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1728,6 +1808,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return COMMAND_AND_SCRIPTING_INTERPRETER;
         case 7:
           return UNIX_SHELL;
+        case 59:
+          return PYTHON;
         case 18:
           return PERMISSION_GROUPS_DISCOVERY;
         case 19:
@@ -1826,8 +1908,14 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return ACTIVE_SCANNING;
         case 2:
           return SCANNING_IP_BLOCKS;
+        case 60:
+          return CONTAINER_ADMINISTRATION_COMMAND;
+        case 61:
+          return ESCAPE_TO_HOST;
         case 57:
           return CONTAINER_AND_RESOURCE_DISCOVERY;
+        case 62:
+          return STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES;
         default:
           return null;
       }

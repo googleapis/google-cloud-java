@@ -75,8 +75,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -673,8 +673,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]", or
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -699,8 +699,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]", or
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -725,8 +725,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]", or
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -750,8 +750,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]", or
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -771,8 +771,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]", "folders/[folder_id]", or
-     * "projects/[project_id]".
+     * is `organizations/[organization_id]`, `folders/[folder_id]`, or
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>

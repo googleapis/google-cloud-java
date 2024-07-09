@@ -683,6 +683,258 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 7;</code>
        */
       com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which cloud provider the finding is from.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+       *
+       * @return The enum numeric value on the wire for cloudProvider.
+       */
+      int getCloudProviderValue();
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which cloud provider the finding is from.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+       *
+       * @return The cloudProvider.
+       */
+      com.google.cloud.securitycenter.v1.CloudProvider getCloudProvider();
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which organization / tenant the finding is for.
+       * </pre>
+       *
+       * <code>string organization = 10;</code>
+       *
+       * @return The organization.
+       */
+      java.lang.String getOrganization();
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which organization / tenant the finding is for.
+       * </pre>
+       *
+       * <code>string organization = 10;</code>
+       *
+       * @return The bytes for organization.
+       */
+      com.google.protobuf.ByteString getOrganizationBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The service or resource provider associated with the resource.
+       * </pre>
+       *
+       * <code>string service = 11;</code>
+       *
+       * @return The service.
+       */
+      java.lang.String getService();
+      /**
+       *
+       *
+       * <pre>
+       * The service or resource provider associated with the resource.
+       * </pre>
+       *
+       * <code>string service = 11;</code>
+       *
+       * @return The bytes for service.
+       */
+      com.google.protobuf.ByteString getServiceBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The region or location of the service (if applicable).
+       * </pre>
+       *
+       * <code>string location = 12;</code>
+       *
+       * @return The location.
+       */
+      java.lang.String getLocation();
+      /**
+       *
+       *
+       * <pre>
+       * The region or location of the service (if applicable).
+       * </pre>
+       *
+       * <code>string location = 12;</code>
+       *
+       * @return The bytes for location.
+       */
+      com.google.protobuf.ByteString getLocationBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       *
+       * @return Whether the awsMetadata field is set.
+       */
+      boolean hasAwsMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       *
+       * @return The awsMetadata.
+       */
+      com.google.cloud.securitycenter.v1.AwsMetadata getAwsMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       */
+      com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder getAwsMetadataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       *
+       * @return Whether the azureMetadata field is set.
+       */
+      boolean hasAzureMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       *
+       * @return The azureMetadata.
+       */
+      com.google.cloud.securitycenter.v1.AzureMetadata getAzureMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       */
+      com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder getAzureMetadataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       *
+       * @return Whether the resourcePath field is set.
+       */
+      boolean hasResourcePath();
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       *
+       * @return The resourcePath.
+       */
+      com.google.cloud.securitycenter.v1.ResourcePath getResourcePath();
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       */
+      com.google.cloud.securitycenter.v1.ResourcePathOrBuilder getResourcePathOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * A string representation of the resource path.
+       * For Google Cloud, it has the format of
+       * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+       * where there can be any number of folders.
+       * For AWS, it has the format of
+       * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+       * where there can be any number of organizational units.
+       * For Azure, it has the format of
+       * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+       * where there can be any number of management groups.
+       * </pre>
+       *
+       * <code>string resource_path_string = 19;</code>
+       *
+       * @return The resourcePathString.
+       */
+      java.lang.String getResourcePathString();
+      /**
+       *
+       *
+       * <pre>
+       * A string representation of the resource path.
+       * For Google Cloud, it has the format of
+       * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+       * where there can be any number of folders.
+       * For AWS, it has the format of
+       * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+       * where there can be any number of organizational units.
+       * For Azure, it has the format of
+       * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+       * where there can be any number of management groups.
+       * </pre>
+       *
+       * <code>string resource_path_string = 19;</code>
+       *
+       * @return The bytes for resourcePathString.
+       */
+      com.google.protobuf.ByteString getResourcePathStringBytes();
+
+      com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+              .CloudProviderMetadataCase
+          getCloudProviderMetadataCase();
     }
     /**
      *
@@ -714,6 +966,11 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         parentName_ = "";
         parentDisplayName_ = "";
         folders_ = java.util.Collections.emptyList();
+        cloudProvider_ = 0;
+        organization_ = "";
+        service_ = "";
+        location_ = "";
+        resourcePathString_ = "";
       }
 
       @java.lang.Override
@@ -737,6 +994,56 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                     .class,
                 com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
                     .Builder.class);
+      }
+
+      private int bitField0_;
+      private int cloudProviderMetadataCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object cloudProviderMetadata_;
+
+      public enum CloudProviderMetadataCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        AWS_METADATA(16),
+        AZURE_METADATA(17),
+        CLOUDPROVIDERMETADATA_NOT_SET(0);
+        private final int value;
+
+        private CloudProviderMetadataCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static CloudProviderMetadataCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static CloudProviderMetadataCase forNumber(int value) {
+          switch (value) {
+            case 16:
+              return AWS_METADATA;
+            case 17:
+              return AZURE_METADATA;
+            case 0:
+              return CLOUDPROVIDERMETADATA_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public CloudProviderMetadataCase getCloudProviderMetadataCase() {
+        return CloudProviderMetadataCase.forNumber(cloudProviderMetadataCase_);
       }
 
       public static final int NAME_FIELD_NUMBER = 1;
@@ -1179,6 +1486,417 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         return folders_.get(index);
       }
 
+      public static final int CLOUD_PROVIDER_FIELD_NUMBER = 9;
+      private int cloudProvider_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which cloud provider the finding is from.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+       *
+       * @return The enum numeric value on the wire for cloudProvider.
+       */
+      @java.lang.Override
+      public int getCloudProviderValue() {
+        return cloudProvider_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which cloud provider the finding is from.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+       *
+       * @return The cloudProvider.
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.CloudProvider getCloudProvider() {
+        com.google.cloud.securitycenter.v1.CloudProvider result =
+            com.google.cloud.securitycenter.v1.CloudProvider.forNumber(cloudProvider_);
+        return result == null
+            ? com.google.cloud.securitycenter.v1.CloudProvider.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int ORGANIZATION_FIELD_NUMBER = 10;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object organization_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which organization / tenant the finding is for.
+       * </pre>
+       *
+       * <code>string organization = 10;</code>
+       *
+       * @return The organization.
+       */
+      @java.lang.Override
+      public java.lang.String getOrganization() {
+        java.lang.Object ref = organization_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organization_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates which organization / tenant the finding is for.
+       * </pre>
+       *
+       * <code>string organization = 10;</code>
+       *
+       * @return The bytes for organization.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getOrganizationBytes() {
+        java.lang.Object ref = organization_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          organization_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SERVICE_FIELD_NUMBER = 11;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object service_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The service or resource provider associated with the resource.
+       * </pre>
+       *
+       * <code>string service = 11;</code>
+       *
+       * @return The service.
+       */
+      @java.lang.Override
+      public java.lang.String getService() {
+        java.lang.Object ref = service_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          service_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The service or resource provider associated with the resource.
+       * </pre>
+       *
+       * <code>string service = 11;</code>
+       *
+       * @return The bytes for service.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getServiceBytes() {
+        java.lang.Object ref = service_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          service_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LOCATION_FIELD_NUMBER = 12;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The region or location of the service (if applicable).
+       * </pre>
+       *
+       * <code>string location = 12;</code>
+       *
+       * @return The location.
+       */
+      @java.lang.Override
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The region or location of the service (if applicable).
+       * </pre>
+       *
+       * <code>string location = 12;</code>
+       *
+       * @return The bytes for location.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int AWS_METADATA_FIELD_NUMBER = 16;
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       *
+       * @return Whether the awsMetadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasAwsMetadata() {
+        return cloudProviderMetadataCase_ == 16;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       *
+       * @return The awsMetadata.
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.AwsMetadata getAwsMetadata() {
+        if (cloudProviderMetadataCase_ == 16) {
+          return (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_;
+        }
+        return com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The AWS metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder getAwsMetadataOrBuilder() {
+        if (cloudProviderMetadataCase_ == 16) {
+          return (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_;
+        }
+        return com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+      }
+
+      public static final int AZURE_METADATA_FIELD_NUMBER = 17;
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       *
+       * @return Whether the azureMetadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasAzureMetadata() {
+        return cloudProviderMetadataCase_ == 17;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       *
+       * @return The azureMetadata.
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.AzureMetadata getAzureMetadata() {
+        if (cloudProviderMetadataCase_ == 17) {
+          return (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_;
+        }
+        return com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Azure metadata associated with the finding.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder getAzureMetadataOrBuilder() {
+        if (cloudProviderMetadataCase_ == 17) {
+          return (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_;
+        }
+        return com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+      }
+
+      public static final int RESOURCE_PATH_FIELD_NUMBER = 18;
+      private com.google.cloud.securitycenter.v1.ResourcePath resourcePath_;
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       *
+       * @return Whether the resourcePath field is set.
+       */
+      @java.lang.Override
+      public boolean hasResourcePath() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       *
+       * @return The resourcePath.
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.ResourcePath getResourcePath() {
+        return resourcePath_ == null
+            ? com.google.cloud.securitycenter.v1.ResourcePath.getDefaultInstance()
+            : resourcePath_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides the path to the resource within the resource hierarchy.
+       * </pre>
+       *
+       * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.ResourcePathOrBuilder getResourcePathOrBuilder() {
+        return resourcePath_ == null
+            ? com.google.cloud.securitycenter.v1.ResourcePath.getDefaultInstance()
+            : resourcePath_;
+      }
+
+      public static final int RESOURCE_PATH_STRING_FIELD_NUMBER = 19;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resourcePathString_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A string representation of the resource path.
+       * For Google Cloud, it has the format of
+       * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+       * where there can be any number of folders.
+       * For AWS, it has the format of
+       * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+       * where there can be any number of organizational units.
+       * For Azure, it has the format of
+       * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+       * where there can be any number of management groups.
+       * </pre>
+       *
+       * <code>string resource_path_string = 19;</code>
+       *
+       * @return The resourcePathString.
+       */
+      @java.lang.Override
+      public java.lang.String getResourcePathString() {
+        java.lang.Object ref = resourcePathString_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourcePathString_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string representation of the resource path.
+       * For Google Cloud, it has the format of
+       * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+       * where there can be any number of folders.
+       * For AWS, it has the format of
+       * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+       * where there can be any number of organizational units.
+       * For Azure, it has the format of
+       * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+       * where there can be any number of management groups.
+       * </pre>
+       *
+       * <code>string resource_path_string = 19;</code>
+       *
+       * @return The bytes for resourcePathString.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourcePathStringBytes() {
+        java.lang.Object ref = resourcePathString_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourcePathString_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1217,6 +1935,34 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
         }
+        if (cloudProvider_
+            != com.google.cloud.securitycenter.v1.CloudProvider.CLOUD_PROVIDER_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(9, cloudProvider_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 10, organization_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 11, service_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 12, location_);
+        }
+        if (cloudProviderMetadataCase_ == 16) {
+          output.writeMessage(
+              16, (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_);
+        }
+        if (cloudProviderMetadataCase_ == 17) {
+          output.writeMessage(
+              17, (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(18, getResourcePath());
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourcePathString_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 19, resourcePathString_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1250,6 +1996,36 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
         }
+        if (cloudProvider_
+            != com.google.cloud.securitycenter.v1.CloudProvider.CLOUD_PROVIDER_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, cloudProvider_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, organization_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, service_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, location_);
+        }
+        if (cloudProviderMetadataCase_ == 16) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  16, (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_);
+        }
+        if (cloudProviderMetadataCase_ == 17) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  17, (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getResourcePath());
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourcePathString_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, resourcePathString_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1277,6 +2053,27 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (!getParentName().equals(other.getParentName())) return false;
         if (!getParentDisplayName().equals(other.getParentDisplayName())) return false;
         if (!getFoldersList().equals(other.getFoldersList())) return false;
+        if (cloudProvider_ != other.cloudProvider_) return false;
+        if (!getOrganization().equals(other.getOrganization())) return false;
+        if (!getService().equals(other.getService())) return false;
+        if (!getLocation().equals(other.getLocation())) return false;
+        if (hasResourcePath() != other.hasResourcePath()) return false;
+        if (hasResourcePath()) {
+          if (!getResourcePath().equals(other.getResourcePath())) return false;
+        }
+        if (!getResourcePathString().equals(other.getResourcePathString())) return false;
+        if (!getCloudProviderMetadataCase().equals(other.getCloudProviderMetadataCase()))
+          return false;
+        switch (cloudProviderMetadataCase_) {
+          case 16:
+            if (!getAwsMetadata().equals(other.getAwsMetadata())) return false;
+            break;
+          case 17:
+            if (!getAzureMetadata().equals(other.getAzureMetadata())) return false;
+            break;
+          case 0:
+          default:
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1305,6 +2102,32 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
         if (getFoldersCount() > 0) {
           hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
           hash = (53 * hash) + getFoldersList().hashCode();
+        }
+        hash = (37 * hash) + CLOUD_PROVIDER_FIELD_NUMBER;
+        hash = (53 * hash) + cloudProvider_;
+        hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+        hash = (53 * hash) + getOrganization().hashCode();
+        hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getService().hashCode();
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
+        if (hasResourcePath()) {
+          hash = (37 * hash) + RESOURCE_PATH_FIELD_NUMBER;
+          hash = (53 * hash) + getResourcePath().hashCode();
+        }
+        hash = (37 * hash) + RESOURCE_PATH_STRING_FIELD_NUMBER;
+        hash = (53 * hash) + getResourcePathString().hashCode();
+        switch (cloudProviderMetadataCase_) {
+          case 16:
+            hash = (37 * hash) + AWS_METADATA_FIELD_NUMBER;
+            hash = (53 * hash) + getAwsMetadata().hashCode();
+            break;
+          case 17:
+            hash = (37 * hash) + AZURE_METADATA_FIELD_NUMBER;
+            hash = (53 * hash) + getAzureMetadata().hashCode();
+            break;
+          case 0:
+          default:
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -1465,10 +2288,20 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
 
         // Construct using
         // com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource.newBuilder()
-        private Builder() {}
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getFoldersFieldBuilder();
+            getResourcePathFieldBuilder();
+          }
         }
 
         @java.lang.Override
@@ -1489,6 +2322,24 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             foldersBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000080);
+          cloudProvider_ = 0;
+          organization_ = "";
+          service_ = "";
+          location_ = "";
+          if (awsMetadataBuilder_ != null) {
+            awsMetadataBuilder_.clear();
+          }
+          if (azureMetadataBuilder_ != null) {
+            azureMetadataBuilder_.clear();
+          }
+          resourcePath_ = null;
+          if (resourcePathBuilder_ != null) {
+            resourcePathBuilder_.dispose();
+            resourcePathBuilder_ = null;
+          }
+          resourcePathString_ = "";
+          cloudProviderMetadataCase_ = 0;
+          cloudProviderMetadata_ = null;
           return this;
         }
 
@@ -1527,6 +2378,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
+          buildPartialOneofs(result);
           onBuilt();
           return result;
         }
@@ -1569,6 +2421,41 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           }
           if (((from_bitField0_ & 0x00000040) != 0)) {
             result.parentDisplayName_ = parentDisplayName_;
+          }
+          if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.cloudProvider_ = cloudProvider_;
+          }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
+            result.organization_ = organization_;
+          }
+          if (((from_bitField0_ & 0x00000400) != 0)) {
+            result.service_ = service_;
+          }
+          if (((from_bitField0_ & 0x00000800) != 0)) {
+            result.location_ = location_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00004000) != 0)) {
+            result.resourcePath_ =
+                resourcePathBuilder_ == null ? resourcePath_ : resourcePathBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00008000) != 0)) {
+            result.resourcePathString_ = resourcePathString_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
+                result) {
+          result.cloudProviderMetadataCase_ = cloudProviderMetadataCase_;
+          result.cloudProviderMetadata_ = this.cloudProviderMetadata_;
+          if (cloudProviderMetadataCase_ == 16 && awsMetadataBuilder_ != null) {
+            result.cloudProviderMetadata_ = awsMetadataBuilder_.build();
+          }
+          if (cloudProviderMetadataCase_ == 17 && azureMetadataBuilder_ != null) {
+            result.cloudProviderMetadata_ = azureMetadataBuilder_.build();
           }
         }
 
@@ -1690,6 +2577,48 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
               }
             }
           }
+          if (other.cloudProvider_ != 0) {
+            setCloudProviderValue(other.getCloudProviderValue());
+          }
+          if (!other.getOrganization().isEmpty()) {
+            organization_ = other.organization_;
+            bitField0_ |= 0x00000200;
+            onChanged();
+          }
+          if (!other.getService().isEmpty()) {
+            service_ = other.service_;
+            bitField0_ |= 0x00000400;
+            onChanged();
+          }
+          if (!other.getLocation().isEmpty()) {
+            location_ = other.location_;
+            bitField0_ |= 0x00000800;
+            onChanged();
+          }
+          if (other.hasResourcePath()) {
+            mergeResourcePath(other.getResourcePath());
+          }
+          if (!other.getResourcePathString().isEmpty()) {
+            resourcePathString_ = other.resourcePathString_;
+            bitField0_ |= 0x00008000;
+            onChanged();
+          }
+          switch (other.getCloudProviderMetadataCase()) {
+            case AWS_METADATA:
+              {
+                mergeAwsMetadata(other.getAwsMetadata());
+                break;
+              }
+            case AZURE_METADATA:
+              {
+                mergeAzureMetadata(other.getAzureMetadata());
+                break;
+              }
+            case CLOUDPROVIDERMETADATA_NOT_SET:
+              {
+                break;
+              }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -1771,6 +2700,56 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 66
+                case 72:
+                  {
+                    cloudProvider_ = input.readEnum();
+                    bitField0_ |= 0x00000100;
+                    break;
+                  } // case 72
+                case 82:
+                  {
+                    organization_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000200;
+                    break;
+                  } // case 82
+                case 90:
+                  {
+                    service_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000400;
+                    break;
+                  } // case 90
+                case 98:
+                  {
+                    location_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000800;
+                    break;
+                  } // case 98
+                case 130:
+                  {
+                    input.readMessage(getAwsMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                    cloudProviderMetadataCase_ = 16;
+                    break;
+                  } // case 130
+                case 138:
+                  {
+                    input.readMessage(
+                        getAzureMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                    cloudProviderMetadataCase_ = 17;
+                    break;
+                  } // case 138
+                case 146:
+                  {
+                    input.readMessage(
+                        getResourcePathFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00004000;
+                    break;
+                  } // case 146
+                case 154:
+                  {
+                    resourcePathString_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00008000;
+                    break;
+                  } // case 154
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1785,6 +2764,20 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           } finally {
             onChanged();
           } // finally
+          return this;
+        }
+
+        private int cloudProviderMetadataCase_ = 0;
+        private java.lang.Object cloudProviderMetadata_;
+
+        public CloudProviderMetadataCase getCloudProviderMetadataCase() {
+          return CloudProviderMetadataCase.forNumber(cloudProviderMetadataCase_);
+        }
+
+        public Builder clearCloudProviderMetadata() {
+          cloudProviderMetadataCase_ = 0;
+          cloudProviderMetadata_ = null;
+          onChanged();
           return this;
         }
 
@@ -2921,6 +3914,1177 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
             folders_ = null;
           }
           return foldersBuilder_;
+        }
+
+        private int cloudProvider_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which cloud provider the finding is from.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+         *
+         * @return The enum numeric value on the wire for cloudProvider.
+         */
+        @java.lang.Override
+        public int getCloudProviderValue() {
+          return cloudProvider_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which cloud provider the finding is from.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+         *
+         * @param value The enum numeric value on the wire for cloudProvider to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCloudProviderValue(int value) {
+          cloudProvider_ = value;
+          bitField0_ |= 0x00000100;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which cloud provider the finding is from.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+         *
+         * @return The cloudProvider.
+         */
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.CloudProvider getCloudProvider() {
+          com.google.cloud.securitycenter.v1.CloudProvider result =
+              com.google.cloud.securitycenter.v1.CloudProvider.forNumber(cloudProvider_);
+          return result == null
+              ? com.google.cloud.securitycenter.v1.CloudProvider.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which cloud provider the finding is from.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+         *
+         * @param value The cloudProvider to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCloudProvider(com.google.cloud.securitycenter.v1.CloudProvider value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000100;
+          cloudProvider_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which cloud provider the finding is from.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.CloudProvider cloud_provider = 9;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCloudProvider() {
+          bitField0_ = (bitField0_ & ~0x00000100);
+          cloudProvider_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object organization_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which organization / tenant the finding is for.
+         * </pre>
+         *
+         * <code>string organization = 10;</code>
+         *
+         * @return The organization.
+         */
+        public java.lang.String getOrganization() {
+          java.lang.Object ref = organization_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            organization_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which organization / tenant the finding is for.
+         * </pre>
+         *
+         * <code>string organization = 10;</code>
+         *
+         * @return The bytes for organization.
+         */
+        public com.google.protobuf.ByteString getOrganizationBytes() {
+          java.lang.Object ref = organization_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            organization_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which organization / tenant the finding is for.
+         * </pre>
+         *
+         * <code>string organization = 10;</code>
+         *
+         * @param value The organization to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOrganization(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          organization_ = value;
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which organization / tenant the finding is for.
+         * </pre>
+         *
+         * <code>string organization = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOrganization() {
+          organization_ = getDefaultInstance().getOrganization();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicates which organization / tenant the finding is for.
+         * </pre>
+         *
+         * <code>string organization = 10;</code>
+         *
+         * @param value The bytes for organization to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOrganizationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          organization_ = value;
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object service_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The service or resource provider associated with the resource.
+         * </pre>
+         *
+         * <code>string service = 11;</code>
+         *
+         * @return The service.
+         */
+        public java.lang.String getService() {
+          java.lang.Object ref = service_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            service_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The service or resource provider associated with the resource.
+         * </pre>
+         *
+         * <code>string service = 11;</code>
+         *
+         * @return The bytes for service.
+         */
+        public com.google.protobuf.ByteString getServiceBytes() {
+          java.lang.Object ref = service_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            service_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The service or resource provider associated with the resource.
+         * </pre>
+         *
+         * <code>string service = 11;</code>
+         *
+         * @param value The service to set.
+         * @return This builder for chaining.
+         */
+        public Builder setService(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          service_ = value;
+          bitField0_ |= 0x00000400;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The service or resource provider associated with the resource.
+         * </pre>
+         *
+         * <code>string service = 11;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearService() {
+          service_ = getDefaultInstance().getService();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The service or resource provider associated with the resource.
+         * </pre>
+         *
+         * <code>string service = 11;</code>
+         *
+         * @param value The bytes for service to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          service_ = value;
+          bitField0_ |= 0x00000400;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object location_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The region or location of the service (if applicable).
+         * </pre>
+         *
+         * <code>string location = 12;</code>
+         *
+         * @return The location.
+         */
+        public java.lang.String getLocation() {
+          java.lang.Object ref = location_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            location_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The region or location of the service (if applicable).
+         * </pre>
+         *
+         * <code>string location = 12;</code>
+         *
+         * @return The bytes for location.
+         */
+        public com.google.protobuf.ByteString getLocationBytes() {
+          java.lang.Object ref = location_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            location_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The region or location of the service (if applicable).
+         * </pre>
+         *
+         * <code>string location = 12;</code>
+         *
+         * @param value The location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocation(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          bitField0_ |= 0x00000800;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The region or location of the service (if applicable).
+         * </pre>
+         *
+         * <code>string location = 12;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLocation() {
+          location_ = getDefaultInstance().getLocation();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The region or location of the service (if applicable).
+         * </pre>
+         *
+         * <code>string location = 12;</code>
+         *
+         * @param value The bytes for location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          location_ = value;
+          bitField0_ |= 0x00000800;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.AwsMetadata,
+                com.google.cloud.securitycenter.v1.AwsMetadata.Builder,
+                com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder>
+            awsMetadataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         *
+         * @return Whether the awsMetadata field is set.
+         */
+        @java.lang.Override
+        public boolean hasAwsMetadata() {
+          return cloudProviderMetadataCase_ == 16;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         *
+         * @return The awsMetadata.
+         */
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.AwsMetadata getAwsMetadata() {
+          if (awsMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 16) {
+              return (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_;
+            }
+            return com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+          } else {
+            if (cloudProviderMetadataCase_ == 16) {
+              return awsMetadataBuilder_.getMessage();
+            }
+            return com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        public Builder setAwsMetadata(com.google.cloud.securitycenter.v1.AwsMetadata value) {
+          if (awsMetadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            cloudProviderMetadata_ = value;
+            onChanged();
+          } else {
+            awsMetadataBuilder_.setMessage(value);
+          }
+          cloudProviderMetadataCase_ = 16;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        public Builder setAwsMetadata(
+            com.google.cloud.securitycenter.v1.AwsMetadata.Builder builderForValue) {
+          if (awsMetadataBuilder_ == null) {
+            cloudProviderMetadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            awsMetadataBuilder_.setMessage(builderForValue.build());
+          }
+          cloudProviderMetadataCase_ = 16;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        public Builder mergeAwsMetadata(com.google.cloud.securitycenter.v1.AwsMetadata value) {
+          if (awsMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 16
+                && cloudProviderMetadata_
+                    != com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance()) {
+              cloudProviderMetadata_ =
+                  com.google.cloud.securitycenter.v1.AwsMetadata.newBuilder(
+                          (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              cloudProviderMetadata_ = value;
+            }
+            onChanged();
+          } else {
+            if (cloudProviderMetadataCase_ == 16) {
+              awsMetadataBuilder_.mergeFrom(value);
+            } else {
+              awsMetadataBuilder_.setMessage(value);
+            }
+          }
+          cloudProviderMetadataCase_ = 16;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        public Builder clearAwsMetadata() {
+          if (awsMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 16) {
+              cloudProviderMetadataCase_ = 0;
+              cloudProviderMetadata_ = null;
+              onChanged();
+            }
+          } else {
+            if (cloudProviderMetadataCase_ == 16) {
+              cloudProviderMetadataCase_ = 0;
+              cloudProviderMetadata_ = null;
+            }
+            awsMetadataBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        public com.google.cloud.securitycenter.v1.AwsMetadata.Builder getAwsMetadataBuilder() {
+          return getAwsMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder getAwsMetadataOrBuilder() {
+          if ((cloudProviderMetadataCase_ == 16) && (awsMetadataBuilder_ != null)) {
+            return awsMetadataBuilder_.getMessageOrBuilder();
+          } else {
+            if (cloudProviderMetadataCase_ == 16) {
+              return (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_;
+            }
+            return com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The AWS metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AwsMetadata aws_metadata = 16;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.AwsMetadata,
+                com.google.cloud.securitycenter.v1.AwsMetadata.Builder,
+                com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder>
+            getAwsMetadataFieldBuilder() {
+          if (awsMetadataBuilder_ == null) {
+            if (!(cloudProviderMetadataCase_ == 16)) {
+              cloudProviderMetadata_ =
+                  com.google.cloud.securitycenter.v1.AwsMetadata.getDefaultInstance();
+            }
+            awsMetadataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.securitycenter.v1.AwsMetadata,
+                    com.google.cloud.securitycenter.v1.AwsMetadata.Builder,
+                    com.google.cloud.securitycenter.v1.AwsMetadataOrBuilder>(
+                    (com.google.cloud.securitycenter.v1.AwsMetadata) cloudProviderMetadata_,
+                    getParentForChildren(),
+                    isClean());
+            cloudProviderMetadata_ = null;
+          }
+          cloudProviderMetadataCase_ = 16;
+          onChanged();
+          return awsMetadataBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.AzureMetadata,
+                com.google.cloud.securitycenter.v1.AzureMetadata.Builder,
+                com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder>
+            azureMetadataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         *
+         * @return Whether the azureMetadata field is set.
+         */
+        @java.lang.Override
+        public boolean hasAzureMetadata() {
+          return cloudProviderMetadataCase_ == 17;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         *
+         * @return The azureMetadata.
+         */
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.AzureMetadata getAzureMetadata() {
+          if (azureMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 17) {
+              return (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_;
+            }
+            return com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+          } else {
+            if (cloudProviderMetadataCase_ == 17) {
+              return azureMetadataBuilder_.getMessage();
+            }
+            return com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        public Builder setAzureMetadata(com.google.cloud.securitycenter.v1.AzureMetadata value) {
+          if (azureMetadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            cloudProviderMetadata_ = value;
+            onChanged();
+          } else {
+            azureMetadataBuilder_.setMessage(value);
+          }
+          cloudProviderMetadataCase_ = 17;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        public Builder setAzureMetadata(
+            com.google.cloud.securitycenter.v1.AzureMetadata.Builder builderForValue) {
+          if (azureMetadataBuilder_ == null) {
+            cloudProviderMetadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            azureMetadataBuilder_.setMessage(builderForValue.build());
+          }
+          cloudProviderMetadataCase_ = 17;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        public Builder mergeAzureMetadata(com.google.cloud.securitycenter.v1.AzureMetadata value) {
+          if (azureMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 17
+                && cloudProviderMetadata_
+                    != com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance()) {
+              cloudProviderMetadata_ =
+                  com.google.cloud.securitycenter.v1.AzureMetadata.newBuilder(
+                          (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              cloudProviderMetadata_ = value;
+            }
+            onChanged();
+          } else {
+            if (cloudProviderMetadataCase_ == 17) {
+              azureMetadataBuilder_.mergeFrom(value);
+            } else {
+              azureMetadataBuilder_.setMessage(value);
+            }
+          }
+          cloudProviderMetadataCase_ = 17;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        public Builder clearAzureMetadata() {
+          if (azureMetadataBuilder_ == null) {
+            if (cloudProviderMetadataCase_ == 17) {
+              cloudProviderMetadataCase_ = 0;
+              cloudProviderMetadata_ = null;
+              onChanged();
+            }
+          } else {
+            if (cloudProviderMetadataCase_ == 17) {
+              cloudProviderMetadataCase_ = 0;
+              cloudProviderMetadata_ = null;
+            }
+            azureMetadataBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        public com.google.cloud.securitycenter.v1.AzureMetadata.Builder getAzureMetadataBuilder() {
+          return getAzureMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder
+            getAzureMetadataOrBuilder() {
+          if ((cloudProviderMetadataCase_ == 17) && (azureMetadataBuilder_ != null)) {
+            return azureMetadataBuilder_.getMessageOrBuilder();
+          } else {
+            if (cloudProviderMetadataCase_ == 17) {
+              return (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_;
+            }
+            return com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The Azure metadata associated with the finding.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.AzureMetadata azure_metadata = 17;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.AzureMetadata,
+                com.google.cloud.securitycenter.v1.AzureMetadata.Builder,
+                com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder>
+            getAzureMetadataFieldBuilder() {
+          if (azureMetadataBuilder_ == null) {
+            if (!(cloudProviderMetadataCase_ == 17)) {
+              cloudProviderMetadata_ =
+                  com.google.cloud.securitycenter.v1.AzureMetadata.getDefaultInstance();
+            }
+            azureMetadataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.securitycenter.v1.AzureMetadata,
+                    com.google.cloud.securitycenter.v1.AzureMetadata.Builder,
+                    com.google.cloud.securitycenter.v1.AzureMetadataOrBuilder>(
+                    (com.google.cloud.securitycenter.v1.AzureMetadata) cloudProviderMetadata_,
+                    getParentForChildren(),
+                    isClean());
+            cloudProviderMetadata_ = null;
+          }
+          cloudProviderMetadataCase_ = 17;
+          onChanged();
+          return azureMetadataBuilder_;
+        }
+
+        private com.google.cloud.securitycenter.v1.ResourcePath resourcePath_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.ResourcePath,
+                com.google.cloud.securitycenter.v1.ResourcePath.Builder,
+                com.google.cloud.securitycenter.v1.ResourcePathOrBuilder>
+            resourcePathBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         *
+         * @return Whether the resourcePath field is set.
+         */
+        public boolean hasResourcePath() {
+          return ((bitField0_ & 0x00004000) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         *
+         * @return The resourcePath.
+         */
+        public com.google.cloud.securitycenter.v1.ResourcePath getResourcePath() {
+          if (resourcePathBuilder_ == null) {
+            return resourcePath_ == null
+                ? com.google.cloud.securitycenter.v1.ResourcePath.getDefaultInstance()
+                : resourcePath_;
+          } else {
+            return resourcePathBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public Builder setResourcePath(com.google.cloud.securitycenter.v1.ResourcePath value) {
+          if (resourcePathBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            resourcePath_ = value;
+          } else {
+            resourcePathBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00004000;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public Builder setResourcePath(
+            com.google.cloud.securitycenter.v1.ResourcePath.Builder builderForValue) {
+          if (resourcePathBuilder_ == null) {
+            resourcePath_ = builderForValue.build();
+          } else {
+            resourcePathBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00004000;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public Builder mergeResourcePath(com.google.cloud.securitycenter.v1.ResourcePath value) {
+          if (resourcePathBuilder_ == null) {
+            if (((bitField0_ & 0x00004000) != 0)
+                && resourcePath_ != null
+                && resourcePath_
+                    != com.google.cloud.securitycenter.v1.ResourcePath.getDefaultInstance()) {
+              getResourcePathBuilder().mergeFrom(value);
+            } else {
+              resourcePath_ = value;
+            }
+          } else {
+            resourcePathBuilder_.mergeFrom(value);
+          }
+          if (resourcePath_ != null) {
+            bitField0_ |= 0x00004000;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public Builder clearResourcePath() {
+          bitField0_ = (bitField0_ & ~0x00004000);
+          resourcePath_ = null;
+          if (resourcePathBuilder_ != null) {
+            resourcePathBuilder_.dispose();
+            resourcePathBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public com.google.cloud.securitycenter.v1.ResourcePath.Builder getResourcePathBuilder() {
+          bitField0_ |= 0x00004000;
+          onChanged();
+          return getResourcePathFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        public com.google.cloud.securitycenter.v1.ResourcePathOrBuilder getResourcePathOrBuilder() {
+          if (resourcePathBuilder_ != null) {
+            return resourcePathBuilder_.getMessageOrBuilder();
+          } else {
+            return resourcePath_ == null
+                ? com.google.cloud.securitycenter.v1.ResourcePath.getDefaultInstance()
+                : resourcePath_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Provides the path to the resource within the resource hierarchy.
+         * </pre>
+         *
+         * <code>.google.cloud.securitycenter.v1.ResourcePath resource_path = 18;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.ResourcePath,
+                com.google.cloud.securitycenter.v1.ResourcePath.Builder,
+                com.google.cloud.securitycenter.v1.ResourcePathOrBuilder>
+            getResourcePathFieldBuilder() {
+          if (resourcePathBuilder_ == null) {
+            resourcePathBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.securitycenter.v1.ResourcePath,
+                    com.google.cloud.securitycenter.v1.ResourcePath.Builder,
+                    com.google.cloud.securitycenter.v1.ResourcePathOrBuilder>(
+                    getResourcePath(), getParentForChildren(), isClean());
+            resourcePath_ = null;
+          }
+          return resourcePathBuilder_;
+        }
+
+        private java.lang.Object resourcePathString_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * A string representation of the resource path.
+         * For Google Cloud, it has the format of
+         * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+         * where there can be any number of folders.
+         * For AWS, it has the format of
+         * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+         * where there can be any number of organizational units.
+         * For Azure, it has the format of
+         * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+         * where there can be any number of management groups.
+         * </pre>
+         *
+         * <code>string resource_path_string = 19;</code>
+         *
+         * @return The resourcePathString.
+         */
+        public java.lang.String getResourcePathString() {
+          java.lang.Object ref = resourcePathString_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resourcePathString_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A string representation of the resource path.
+         * For Google Cloud, it has the format of
+         * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+         * where there can be any number of folders.
+         * For AWS, it has the format of
+         * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+         * where there can be any number of organizational units.
+         * For Azure, it has the format of
+         * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+         * where there can be any number of management groups.
+         * </pre>
+         *
+         * <code>string resource_path_string = 19;</code>
+         *
+         * @return The bytes for resourcePathString.
+         */
+        public com.google.protobuf.ByteString getResourcePathStringBytes() {
+          java.lang.Object ref = resourcePathString_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resourcePathString_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A string representation of the resource path.
+         * For Google Cloud, it has the format of
+         * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+         * where there can be any number of folders.
+         * For AWS, it has the format of
+         * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+         * where there can be any number of organizational units.
+         * For Azure, it has the format of
+         * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+         * where there can be any number of management groups.
+         * </pre>
+         *
+         * <code>string resource_path_string = 19;</code>
+         *
+         * @param value The resourcePathString to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourcePathString(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourcePathString_ = value;
+          bitField0_ |= 0x00008000;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A string representation of the resource path.
+         * For Google Cloud, it has the format of
+         * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+         * where there can be any number of folders.
+         * For AWS, it has the format of
+         * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+         * where there can be any number of organizational units.
+         * For Azure, it has the format of
+         * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+         * where there can be any number of management groups.
+         * </pre>
+         *
+         * <code>string resource_path_string = 19;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResourcePathString() {
+          resourcePathString_ = getDefaultInstance().getResourcePathString();
+          bitField0_ = (bitField0_ & ~0x00008000);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A string representation of the resource path.
+         * For Google Cloud, it has the format of
+         * `org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id}`
+         * where there can be any number of folders.
+         * For AWS, it has the format of
+         * `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}`
+         * where there can be any number of organizational units.
+         * For Azure, it has the format of
+         * `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}`
+         * where there can be any number of management groups.
+         * </pre>
+         *
+         * <code>string resource_path_string = 19;</code>
+         *
+         * @param value The bytes for resourcePathString to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourcePathStringBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resourcePathString_ = value;
+          bitField0_ |= 0x00008000;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override

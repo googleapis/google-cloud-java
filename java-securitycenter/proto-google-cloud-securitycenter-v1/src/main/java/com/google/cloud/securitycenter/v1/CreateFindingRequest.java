@@ -74,7 +74,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the new finding's parent. Its format should be
-   * "organizations/[organization_id]/sources/[source_id]".
+   * `organizations/[organization_id]/sources/[source_id]`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the new finding's parent. Its format should be
-   * "organizations/[organization_id]/sources/[source_id]".
+   * `organizations/[organization_id]/sources/[source_id]`.
    * </pre>
    *
    * <code>
@@ -652,7 +652,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the new finding's parent. Its format should be
-     * "organizations/[organization_id]/sources/[source_id]".
+     * `organizations/[organization_id]/sources/[source_id]`.
      * </pre>
      *
      * <code>
@@ -677,7 +677,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the new finding's parent. Its format should be
-     * "organizations/[organization_id]/sources/[source_id]".
+     * `organizations/[organization_id]/sources/[source_id]`.
      * </pre>
      *
      * <code>
@@ -702,7 +702,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the new finding's parent. Its format should be
-     * "organizations/[organization_id]/sources/[source_id]".
+     * `organizations/[organization_id]/sources/[source_id]`.
      * </pre>
      *
      * <code>
@@ -726,7 +726,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the new finding's parent. Its format should be
-     * "organizations/[organization_id]/sources/[source_id]".
+     * `organizations/[organization_id]/sources/[source_id]`.
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the new finding's parent. Its format should be
-     * "organizations/[organization_id]/sources/[source_id]".
+     * `organizations/[organization_id]/sources/[source_id]`.
      * </pre>
      *
      * <code>

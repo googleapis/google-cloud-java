@@ -29,9 +29,12 @@ public interface MuteConfigOrBuilder
    *
    * <pre>
    * This field will be ignored if provided on config creation. Format
-   * "organizations/{organization}/muteConfigs/{mute_config}"
-   * "folders/{folder}/muteConfigs/{mute_config}"
-   * "projects/{project}/muteConfigs/{mute_config}"
+   * `organizations/{organization}/muteConfigs/{mute_config}`
+   * `folders/{folder}/muteConfigs/{mute_config}`
+   * `projects/{project}/muteConfigs/{mute_config}`
+   * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+   * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+   * `projects/{project}/locations/global/muteConfigs/{mute_config}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -44,9 +47,12 @@ public interface MuteConfigOrBuilder
    *
    * <pre>
    * This field will be ignored if provided on config creation. Format
-   * "organizations/{organization}/muteConfigs/{mute_config}"
-   * "folders/{folder}/muteConfigs/{mute_config}"
-   * "projects/{project}/muteConfigs/{mute_config}"
+   * `organizations/{organization}/muteConfigs/{mute_config}`
+   * `folders/{folder}/muteConfigs/{mute_config}`
+   * `projects/{project}/muteConfigs/{mute_config}`
+   * `organizations/{organization}/locations/global/muteConfigs/{mute_config}`
+   * `folders/{folder}/locations/global/muteConfigs/{mute_config}`
+   * `projects/{project}/locations/global/muteConfigs/{mute_config}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -65,7 +71,7 @@ public interface MuteConfigOrBuilder
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
    * @return The displayName.
    */
   @java.lang.Deprecated
@@ -80,7 +86,7 @@ public interface MuteConfigOrBuilder
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated

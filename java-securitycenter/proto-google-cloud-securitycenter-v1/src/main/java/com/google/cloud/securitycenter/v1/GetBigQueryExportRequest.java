@@ -72,9 +72,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Name of the BigQuery export to retrieve. Its format is
-   * organizations/{organization}/bigQueryExports/{export_id},
-   * folders/{folder}/bigQueryExports/{export_id}, or
-   * projects/{project}/bigQueryExports/{export_id}
+   * `organizations/{organization}/bigQueryExports/{export_id}`,
+   * `folders/{folder}/bigQueryExports/{export_id}`, or
+   * `projects/{project}/bigQueryExports/{export_id}`
    * </pre>
    *
    * <code>
@@ -100,9 +100,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Name of the BigQuery export to retrieve. Its format is
-   * organizations/{organization}/bigQueryExports/{export_id},
-   * folders/{folder}/bigQueryExports/{export_id}, or
-   * projects/{project}/bigQueryExports/{export_id}
+   * `organizations/{organization}/bigQueryExports/{export_id}`,
+   * `folders/{folder}/bigQueryExports/{export_id}`, or
+   * `projects/{project}/bigQueryExports/{export_id}`
    * </pre>
    *
    * <code>
@@ -473,9 +473,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Name of the BigQuery export to retrieve. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -500,9 +500,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Name of the BigQuery export to retrieve. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -527,9 +527,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Name of the BigQuery export to retrieve. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -553,9 +553,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Name of the BigQuery export to retrieve. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>
@@ -575,9 +575,9 @@ public final class GetBigQueryExportRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Name of the BigQuery export to retrieve. Its format is
-     * organizations/{organization}/bigQueryExports/{export_id},
-     * folders/{folder}/bigQueryExports/{export_id}, or
-     * projects/{project}/bigQueryExports/{export_id}
+     * `organizations/{organization}/bigQueryExports/{export_id}`,
+     * `folders/{folder}/bigQueryExports/{export_id}`, or
+     * `projects/{project}/bigQueryExports/{export_id}`
      * </pre>
      *
      * <code>

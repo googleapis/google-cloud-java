@@ -54,7 +54,7 @@ public interface AttackOrBuilder
    *
    *
    * <pre>
-   * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
    * </pre>
    *
    * <code>string classification = 3;</code>
@@ -66,7 +66,7 @@ public interface AttackOrBuilder
    *
    *
    * <pre>
-   * Type of attack, for example, ‘SYN-flood’, ‘NTP-udp’, or ‘CHARGEN-udp’.
+   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
    * </pre>
    *
    * <code>string classification = 3;</code>

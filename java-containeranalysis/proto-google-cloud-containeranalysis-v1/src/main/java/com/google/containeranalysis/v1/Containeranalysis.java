@@ -93,13 +93,13 @@ public final class Containeranalysis {
           + "rojects/*}/occurrences:vulnerabilitySumm"
           + "ary\032T\312A containeranalysis.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\370\001\n\037com.google.containeranalys"
-          + "is.v1P\001ZUgoogle.golang.org/genproto/goog"
-          + "leapis/devtools/containeranalysis/v1;con"
-          + "taineranalysis\242\002\003GCA\252\002*Google.Cloud.DevT"
-          + "ools.ContainerAnalysis.V1\312\002!Google\\Cloud"
-          + "\\ContainerAnalysis\\V1\352\002$Google::Cloud::C"
-          + "ontainerAnalysis::V1b\006proto3"
+          + "-platformB\366\001\n\037com.google.containeranalys"
+          + "is.v1P\001ZScloud.google.com/go/containeran"
+          + "alysis/apiv1/containeranalysispb;contain"
+          + "eranalysispb\242\002\003GCA\252\002*Google.Cloud.DevToo"
+          + "ls.ContainerAnalysis.V1\312\002!Google\\Cloud\\C"
+          + "ontainerAnalysis\\V1\352\002$Google::Cloud::Con"
+          + "tainerAnalysis::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

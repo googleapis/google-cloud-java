@@ -19,14 +19,20 @@ package com.google.cloud.securitycenter.v1;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -52,6 +58,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
@@ -439,6 +446,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -529,6 +537,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -598,7 +607,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    FolderName parent = FolderName.of("[FOLDER]");
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -622,7 +631,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      FolderName parent = FolderName.of("[FOLDER]");
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -647,7 +656,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -671,7 +680,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -682,6 +691,153 @@ public class SecurityCenterClientTest {
 
   @Test
   public void createMuteConfigTest3() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest4() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest5() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest5() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest6() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -715,7 +871,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest3() throws Exception {
+  public void createMuteConfigExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -730,7 +886,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigTest4() throws Exception {
+  public void createMuteConfigTest7() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -764,7 +920,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest4() throws Exception {
+  public void createMuteConfigExceptionTest7() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -779,7 +935,59 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigTest5() throws Exception {
+  public void createMuteConfigTest8() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest8() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest9() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -815,7 +1023,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest5() throws Exception {
+  public void createMuteConfigExceptionTest9() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -831,7 +1039,111 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigTest6() throws Exception {
+  public void createMuteConfigTest10() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest10() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest11() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMuteConfigRequest actualRequest = ((CreateMuteConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(muteConfig, actualRequest.getMuteConfig());
+    Assert.assertEquals(muteConfigId, actualRequest.getMuteConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest11() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest12() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -867,7 +1179,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest6() throws Exception {
+  public void createMuteConfigExceptionTest12() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -883,7 +1195,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigTest7() throws Exception {
+  public void createMuteConfigTest13() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -919,7 +1231,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest7() throws Exception {
+  public void createMuteConfigExceptionTest13() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -935,7 +1247,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigTest8() throws Exception {
+  public void createMuteConfigTest14() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -971,7 +1283,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest8() throws Exception {
+  public void createMuteConfigExceptionTest14() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -1598,6 +1910,180 @@ public class SecurityCenterClientTest {
     try {
       String name = "name3373707";
       client.deleteSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSimulationTest() throws Exception {
+    Simulation expectedResponse =
+        Simulation.newBuilder()
+            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+
+    Simulation actualResponse = client.getSimulation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSimulationRequest actualRequest = ((GetSimulationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSimulationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      client.getSimulation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSimulationTest2() throws Exception {
+    Simulation expectedResponse =
+        Simulation.newBuilder()
+            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Simulation actualResponse = client.getSimulation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSimulationRequest actualRequest = ((GetSimulationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSimulationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSimulation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getValuedResourceTest() throws Exception {
+    ValuedResource expectedResponse =
+        ValuedResource.newBuilder()
+            .setName(
+                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                    .toString())
+            .setResource("resource-341064690")
+            .setResourceType("resourceType-384364440")
+            .setDisplayName("displayName1714148973")
+            .setExposedScore(-1375686989)
+            .addAllResourceValueConfigsUsed(new ArrayList<ResourceValueConfigMetadata>())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ValuedResourceName name =
+        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ValuedResource actualResponse = client.getValuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetValuedResourceRequest actualRequest = ((GetValuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getValuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ValuedResourceName name =
+          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.getValuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getValuedResourceTest2() throws Exception {
+    ValuedResource expectedResponse =
+        ValuedResource.newBuilder()
+            .setName(
+                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                    .toString())
+            .setResource("resource-341064690")
+            .setResourceType("resourceType-384364440")
+            .setDisplayName("displayName1714148973")
+            .setExposedScore(-1375686989)
+            .addAllResourceValueConfigsUsed(new ArrayList<ResourceValueConfigMetadata>())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ValuedResource actualResponse = client.getValuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetValuedResourceRequest actualRequest = ((GetValuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getValuedResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getValuedResource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2755,7 +3241,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    FolderName parent = FolderName.of("[FOLDER]");
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
 
     ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
 
@@ -2781,7 +3267,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      FolderName parent = FolderName.of("[FOLDER]");
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
       client.listMuteConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2791,6 +3277,138 @@ public class SecurityCenterClientTest {
 
   @Test
   public void listMuteConfigsTest2() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest3() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest4() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMuteConfigsRequest actualRequest = ((ListMuteConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest5() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -2820,7 +3438,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest2() throws Exception {
+  public void listMuteConfigsExceptionTest5() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -2834,7 +3452,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listMuteConfigsTest3() throws Exception {
+  public void listMuteConfigsTest6() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -2864,7 +3482,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest3() throws Exception {
+  public void listMuteConfigsExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -2878,7 +3496,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listMuteConfigsTest4() throws Exception {
+  public void listMuteConfigsTest7() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -2908,7 +3526,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest4() throws Exception {
+  public void listMuteConfigsExceptionTest7() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -3604,6 +4222,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -3696,6 +4315,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -3786,6 +4406,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -3875,6 +4496,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -4230,6 +4852,7 @@ public class SecurityCenterClientTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
@@ -5115,6 +5738,1410 @@ public class SecurityCenterClientTest {
     try {
       String parent = "parent-995424086";
       client.listBigQueryExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEventThreatDetectionCustomModuleRequest actualRequest =
+        ((CreateEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        eventThreatDetectionCustomModule, actualRequest.getEventThreatDetectionCustomModule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder().build();
+      client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleTest2() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEventThreatDetectionCustomModuleRequest actualRequest =
+        ((CreateEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        eventThreatDetectionCustomModule, actualRequest.getEventThreatDetectionCustomModule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder().build();
+      client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModuleName name =
+        EventThreatDetectionCustomModuleName.ofOrganizationModuleName("[ORGANIZATION]", "[MODULE]");
+
+    client.deleteEventThreatDetectionCustomModule(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEventThreatDetectionCustomModuleRequest actualRequest =
+        ((DeleteEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModuleName name =
+          EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.deleteEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteEventThreatDetectionCustomModule(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEventThreatDetectionCustomModuleRequest actualRequest =
+        ((DeleteEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModuleName name =
+        EventThreatDetectionCustomModuleName.ofOrganizationModuleName("[ORGANIZATION]", "[MODULE]");
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.getEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEventThreatDetectionCustomModuleRequest actualRequest =
+        ((GetEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModuleName name =
+          EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.getEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleTest2() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.getEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEventThreatDetectionCustomModuleRequest actualRequest =
+        ((GetEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesTest() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListDescendantEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListDescendantEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListDescendantEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDescendantEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListDescendantEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listDescendantEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesTest2() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListDescendantEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListDescendantEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDescendantEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDescendantEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListDescendantEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDescendantEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesTest() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesTest2() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.updateEventThreatDetectionCustomModule(eventThreatDetectionCustomModule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEventThreatDetectionCustomModuleRequest actualRequest =
+        ((UpdateEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        eventThreatDetectionCustomModule, actualRequest.getEventThreatDetectionCustomModule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEventThreatDetectionCustomModule(eventThreatDetectionCustomModule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void validateEventThreatDetectionCustomModuleTest() throws Exception {
+    ValidateEventThreatDetectionCustomModuleResponse expectedResponse =
+        ValidateEventThreatDetectionCustomModuleResponse.newBuilder()
+            .setErrors(CustomModuleValidationErrors.newBuilder().build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ValidateEventThreatDetectionCustomModuleRequest request =
+        ValidateEventThreatDetectionCustomModuleRequest.newBuilder()
+            .setParent(
+                EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+            .setRawText("rawText985734517")
+            .setType("type3575610")
+            .build();
+
+    ValidateEventThreatDetectionCustomModuleResponse actualResponse =
+        client.validateEventThreatDetectionCustomModule(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ValidateEventThreatDetectionCustomModuleRequest actualRequest =
+        ((ValidateEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRawText(), actualRequest.getRawText());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void validateEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ValidateEventThreatDetectionCustomModuleRequest request =
+          ValidateEventThreatDetectionCustomModuleRequest.newBuilder()
+              .setParent(
+                  EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+              .setRawText("rawText985734517")
+              .setType("type3575610")
+              .build();
+      client.validateEventThreatDetectionCustomModule(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleTest() throws Exception {
+    EffectiveEventThreatDetectionCustomModule expectedResponse =
+        EffectiveEventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EffectiveEventThreatDetectionCustomModuleName name =
+        EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+            "[ORGANIZATION]", "[MODULE]");
+
+    EffectiveEventThreatDetectionCustomModule actualResponse =
+        client.getEffectiveEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEffectiveEventThreatDetectionCustomModuleRequest actualRequest =
+        ((GetEffectiveEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EffectiveEventThreatDetectionCustomModuleName name =
+          EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.getEffectiveEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleTest2() throws Exception {
+    EffectiveEventThreatDetectionCustomModule expectedResponse =
+        EffectiveEventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EffectiveEventThreatDetectionCustomModule actualResponse =
+        client.getEffectiveEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEffectiveEventThreatDetectionCustomModuleRequest actualRequest =
+        ((GetEffectiveEventThreatDetectionCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEffectiveEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesTest() throws Exception {
+    EffectiveEventThreatDetectionCustomModule responsesElement =
+        EffectiveEventThreatDetectionCustomModule.newBuilder().build();
+    ListEffectiveEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEffectiveEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListEffectiveEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveEventThreatDetectionCustomModules(parent);
+
+    List<EffectiveEventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveEventThreatDetectionCustomModulesList().get(0),
+        resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEffectiveEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListEffectiveEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listEffectiveEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesTest2() throws Exception {
+    EffectiveEventThreatDetectionCustomModule responsesElement =
+        EffectiveEventThreatDetectionCustomModule.newBuilder().build();
+    ListEffectiveEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEffectiveEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEffectiveEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveEventThreatDetectionCustomModules(parent);
+
+    List<EffectiveEventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveEventThreatDetectionCustomModulesList().get(0),
+        resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEffectiveEventThreatDetectionCustomModulesRequest actualRequest =
+        ((ListEffectiveEventThreatDetectionCustomModulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEffectiveEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateResourceValueConfigsRequest actualRequest =
+        ((BatchCreateResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest2() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateResourceValueConfigsRequest actualRequest =
+        ((BatchCreateResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteResourceValueConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ResourceValueConfigName name =
+        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+
+    client.deleteResourceValueConfig(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteResourceValueConfigRequest actualRequest =
+        ((DeleteResourceValueConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteResourceValueConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ResourceValueConfigName name =
+          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+      client.deleteResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteResourceValueConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteResourceValueConfig(name);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteResourceValueConfigRequest actualRequest =
+        ((DeleteResourceValueConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteResourceValueConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceValueConfigTest() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ResourceValueConfigName name =
+        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+
+    ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceValueConfigRequest actualRequest =
+        ((GetResourceValueConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceValueConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ResourceValueConfigName name =
+          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+      client.getResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceValueConfigTest2() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetResourceValueConfigRequest actualRequest =
+        ((GetResourceValueConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getResourceValueConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceValueConfigsRequest actualRequest =
+        ((ListResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest2() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListResourceValueConfigsRequest actualRequest =
+        ((ListResourceValueConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateResourceValueConfigTest() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ResourceValueConfig resourceValueConfig = ResourceValueConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ResourceValueConfig actualResponse =
+        client.updateResourceValueConfig(resourceValueConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateResourceValueConfigRequest actualRequest =
+        ((UpdateResourceValueConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resourceValueConfig, actualRequest.getResourceValueConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateResourceValueConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ResourceValueConfig resourceValueConfig = ResourceValueConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateResourceValueConfig(resourceValueConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listValuedResourcesTest() throws Exception {
+    ValuedResource responsesElement = ValuedResource.newBuilder().build();
+    ListValuedResourcesResponse expectedResponse =
+        ListValuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllValuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationSimulationName parent =
+        OrganizationSimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+
+    ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
+
+    List<ValuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getValuedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListValuedResourcesRequest actualRequest = ((ListValuedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listValuedResourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationSimulationName parent =
+          OrganizationSimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      client.listValuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listValuedResourcesTest2() throws Exception {
+    ValuedResource responsesElement = ValuedResource.newBuilder().build();
+    ListValuedResourcesResponse expectedResponse =
+        ListValuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllValuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
+
+    List<ValuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getValuedResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListValuedResourcesRequest actualRequest = ((ListValuedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listValuedResourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listValuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ValuedResourceName parent =
+        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAttackPathsRequest actualRequest = ((ListAttackPathsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ValuedResourceName parent =
+          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.listAttackPaths(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest2() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAttackPathsRequest actualRequest = ((ListAttackPathsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAttackPaths(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

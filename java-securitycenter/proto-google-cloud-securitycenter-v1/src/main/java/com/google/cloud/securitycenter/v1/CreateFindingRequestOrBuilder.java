@@ -29,7 +29,7 @@ public interface CreateFindingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new finding's parent. Its format should be
-   * "organizations/[organization_id]/sources/[source_id]".
+   * `organizations/[organization_id]/sources/[source_id]`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface CreateFindingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new finding's parent. Its format should be
-   * "organizations/[organization_id]/sources/[source_id]".
+   * `organizations/[organization_id]/sources/[source_id]`.
    * </pre>
    *
    * <code>

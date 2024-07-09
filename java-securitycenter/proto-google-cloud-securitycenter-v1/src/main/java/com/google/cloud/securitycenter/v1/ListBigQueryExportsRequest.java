@@ -74,8 +74,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns the collection of BigQuery exports. Its
-   * format is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]".
+   * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns the collection of BigQuery exports. Its
-   * format is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]".
+   * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+   * `projects/[project_id]`.
    * </pre>
    *
    * <code>
@@ -601,8 +601,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns the collection of BigQuery exports. Its
-     * format is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -627,8 +627,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns the collection of BigQuery exports. Its
-     * format is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -653,8 +653,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns the collection of BigQuery exports. Its
-     * format is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -678,8 +678,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns the collection of BigQuery exports. Its
-     * format is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
@@ -699,8 +699,8 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns the collection of BigQuery exports. Its
-     * format is "organizations/[organization_id]", "folders/[folder_id]",
-     * "projects/[project_id]".
+     * format is `organizations/[organization_id]`, `folders/[folder_id]`,
+     * `projects/[project_id]`.
      * </pre>
      *
      * <code>
