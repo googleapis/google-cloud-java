@@ -28,6 +28,89 @@ public interface VerifyAttestationRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tdCcel field is set.
+   */
+  boolean hasTdCcel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tdCcel.
+   */
+  com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation getTdCcel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder getTdCcelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sevSnpAttestation field is set.
+   */
+  boolean hasSevSnpAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sevSnpAttestation.
+   */
+  com.google.cloud.confidentialcomputing.v1.SevSnpAttestation getSevSnpAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder
+      getSevSnpAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The name of the Challenge whose nonce was used to generate the
    * attestation, in the format `projects/&#42;&#47;locations/&#42;&#47;challenges/&#42;`. The
    * provided Challenge will be consumed, and cannot be used again.
@@ -230,4 +313,7 @@ public interface VerifyAttestationRequestOrBuilder
    * </code>
    */
   com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder getTokenOptionsOrBuilder();
+
+  com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest.TeeAttestationCase
+      getTeeAttestationCase();
 }

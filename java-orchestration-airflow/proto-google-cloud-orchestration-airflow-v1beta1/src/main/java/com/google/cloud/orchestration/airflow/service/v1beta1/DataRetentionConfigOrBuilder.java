@@ -28,6 +28,28 @@ public interface DataRetentionConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The number of days describing for how long to store event-based
+   * records in airflow database. If the retention mechanism is enabled this
+   * value must be a positive integer otherwise, value should be set to 0.
+   * </pre>
+   *
+   * <code>
+   * int32 airflow_database_retention_days = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated
+   *     google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig.airflow_database_retention_days
+   *     is deprecated. See
+   *     google/cloud/orchestration/airflow/service/v1beta1/environments.proto;l=1889
+   * @return The airflowDatabaseRetentionDays.
+   */
+  @java.lang.Deprecated
+  int getAirflowDatabaseRetentionDays();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The configuration settings for task logs retention
    * </pre>
    *
@@ -66,4 +88,48 @@ public interface DataRetentionConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.TaskLogsRetentionConfigOrBuilder
       getTaskLogsRetentionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the airflowMetadataRetentionConfig field is set.
+   */
+  boolean hasAirflowMetadataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The airflowMetadataRetentionConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.AirflowMetadataRetentionPolicyConfig
+      getAirflowMetadataRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retention policy for airflow metadata database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.AirflowMetadataRetentionPolicyConfig airflow_metadata_retention_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1
+          .AirflowMetadataRetentionPolicyConfigOrBuilder
+      getAirflowMetadataRetentionConfigOrBuilder();
 }

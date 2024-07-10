@@ -65,6 +65,171 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
   }
 
   private int bitField0_;
+  private int teeAttestationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object teeAttestation_;
+
+  public enum TeeAttestationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    TD_CCEL(6),
+    SEV_SNP_ATTESTATION(7),
+    TEEATTESTATION_NOT_SET(0);
+    private final int value;
+
+    private TeeAttestationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TeeAttestationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static TeeAttestationCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return TD_CCEL;
+        case 7:
+          return SEV_SNP_ATTESTATION;
+        case 0:
+          return TEEATTESTATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public TeeAttestationCase getTeeAttestationCase() {
+    return TeeAttestationCase.forNumber(teeAttestationCase_);
+  }
+
+  public static final int TD_CCEL_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tdCcel field is set.
+   */
+  @java.lang.Override
+  public boolean hasTdCcel() {
+    return teeAttestationCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tdCcel.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation getTdCcel() {
+    if (teeAttestationCase_ == 6) {
+      return (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A TDX with CCEL and RTMR Attestation Quote.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder
+      getTdCcelOrBuilder() {
+    if (teeAttestationCase_ == 6) {
+      return (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+  }
+
+  public static final int SEV_SNP_ATTESTATION_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sevSnpAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasSevSnpAttestation() {
+    return teeAttestationCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sevSnpAttestation.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.SevSnpAttestation getSevSnpAttestation() {
+    if (teeAttestationCase_ == 7) {
+      return (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An SEV-SNP Attestation Report.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder
+      getSevSnpAttestationOrBuilder() {
+    if (teeAttestationCase_ == 7) {
+      return (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+  }
+
   public static final int CHALLENGE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -391,6 +556,14 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getTokenOptions());
     }
+    if (teeAttestationCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_);
+    }
+    if (teeAttestationCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -415,6 +588,16 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTokenOptions());
+    }
+    if (teeAttestationCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_);
+    }
+    if (teeAttestationCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -449,6 +632,17 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (hasTokenOptions()) {
       if (!getTokenOptions().equals(other.getTokenOptions())) return false;
     }
+    if (!getTeeAttestationCase().equals(other.getTeeAttestationCase())) return false;
+    switch (teeAttestationCase_) {
+      case 6:
+        if (!getTdCcel().equals(other.getTdCcel())) return false;
+        break;
+      case 7:
+        if (!getSevSnpAttestation().equals(other.getSevSnpAttestation())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -477,6 +671,18 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (hasTokenOptions()) {
       hash = (37 * hash) + TOKEN_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getTokenOptions().hashCode();
+    }
+    switch (teeAttestationCase_) {
+      case 6:
+        hash = (37 * hash) + TD_CCEL_FIELD_NUMBER;
+        hash = (53 * hash) + getTdCcel().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + SEV_SNP_ATTESTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getSevSnpAttestation().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -633,6 +839,12 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (tdCcelBuilder_ != null) {
+        tdCcelBuilder_.clear();
+      }
+      if (sevSnpAttestationBuilder_ != null) {
+        sevSnpAttestationBuilder_.clear();
+      }
       challenge_ = "";
       gcpCredentials_ = null;
       if (gcpCredentialsBuilder_ != null) {
@@ -654,6 +866,8 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptionsBuilder_.dispose();
         tokenOptionsBuilder_ = null;
       }
+      teeAttestationCase_ = 0;
+      teeAttestation_ = null;
       return this;
     }
 
@@ -686,6 +900,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -693,33 +908,45 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.challenge_ = challenge_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.gcpCredentials_ =
             gcpCredentialsBuilder_ == null ? gcpCredentials_ : gcpCredentialsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.tpmAttestation_ =
             tpmAttestationBuilder_ == null ? tpmAttestation_ : tpmAttestationBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.confidentialSpaceInfo_ =
             confidentialSpaceInfoBuilder_ == null
                 ? confidentialSpaceInfo_
                 : confidentialSpaceInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.tokenOptions_ =
             tokenOptionsBuilder_ == null ? tokenOptions_ : tokenOptionsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest result) {
+      result.teeAttestationCase_ = teeAttestationCase_;
+      result.teeAttestation_ = this.teeAttestation_;
+      if (teeAttestationCase_ == 6 && tdCcelBuilder_ != null) {
+        result.teeAttestation_ = tdCcelBuilder_.build();
+      }
+      if (teeAttestationCase_ == 7 && sevSnpAttestationBuilder_ != null) {
+        result.teeAttestation_ = sevSnpAttestationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -773,7 +1000,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
               .getDefaultInstance()) return this;
       if (!other.getChallenge().isEmpty()) {
         challenge_ = other.challenge_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasGcpCredentials()) {
@@ -787,6 +1014,22 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       if (other.hasTokenOptions()) {
         mergeTokenOptions(other.getTokenOptions());
+      }
+      switch (other.getTeeAttestationCase()) {
+        case TD_CCEL:
+          {
+            mergeTdCcel(other.getTdCcel());
+            break;
+          }
+        case SEV_SNP_ATTESTATION:
+          {
+            mergeSevSnpAttestation(other.getSevSnpAttestation());
+            break;
+          }
+        case TEEATTESTATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -817,34 +1060,47 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
             case 10:
               {
                 challenge_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getGcpCredentialsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTpmAttestationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getConfidentialSpaceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getTokenOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getTdCcelFieldBuilder().getBuilder(), extensionRegistry);
+                teeAttestationCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getSevSnpAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                teeAttestationCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -862,7 +1118,487 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       return this;
     }
 
+    private int teeAttestationCase_ = 0;
+    private java.lang.Object teeAttestation_;
+
+    public TeeAttestationCase getTeeAttestationCase() {
+      return TeeAttestationCase.forNumber(teeAttestationCase_);
+    }
+
+    public Builder clearTeeAttestation() {
+      teeAttestationCase_ = 0;
+      teeAttestation_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation,
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder>
+        tdCcelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tdCcel field is set.
+     */
+    @java.lang.Override
+    public boolean hasTdCcel() {
+      return teeAttestationCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tdCcel.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation getTdCcel() {
+      if (tdCcelBuilder_ == null) {
+        if (teeAttestationCase_ == 6) {
+          return (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+      } else {
+        if (teeAttestationCase_ == 6) {
+          return tdCcelBuilder_.getMessage();
+        }
+        return com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTdCcel(com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation value) {
+      if (tdCcelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        teeAttestation_ = value;
+        onChanged();
+      } else {
+        tdCcelBuilder_.setMessage(value);
+      }
+      teeAttestationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTdCcel(
+        com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.Builder builderForValue) {
+      if (tdCcelBuilder_ == null) {
+        teeAttestation_ = builderForValue.build();
+        onChanged();
+      } else {
+        tdCcelBuilder_.setMessage(builderForValue.build());
+      }
+      teeAttestationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTdCcel(com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation value) {
+      if (tdCcelBuilder_ == null) {
+        if (teeAttestationCase_ == 6
+            && teeAttestation_
+                != com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation
+                    .getDefaultInstance()) {
+          teeAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.newBuilder(
+                      (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation)
+                          teeAttestation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          teeAttestation_ = value;
+        }
+        onChanged();
+      } else {
+        if (teeAttestationCase_ == 6) {
+          tdCcelBuilder_.mergeFrom(value);
+        } else {
+          tdCcelBuilder_.setMessage(value);
+        }
+      }
+      teeAttestationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTdCcel() {
+      if (tdCcelBuilder_ == null) {
+        if (teeAttestationCase_ == 6) {
+          teeAttestationCase_ = 0;
+          teeAttestation_ = null;
+          onChanged();
+        }
+      } else {
+        if (teeAttestationCase_ == 6) {
+          teeAttestationCase_ = 0;
+          teeAttestation_ = null;
+        }
+        tdCcelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.Builder getTdCcelBuilder() {
+      return getTdCcelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder
+        getTdCcelOrBuilder() {
+      if ((teeAttestationCase_ == 6) && (tdCcelBuilder_ != null)) {
+        return tdCcelBuilder_.getMessageOrBuilder();
+      } else {
+        if (teeAttestationCase_ == 6) {
+          return (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A TDX with CCEL and RTMR Attestation Quote.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TdxCcelAttestation td_ccel = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation,
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder>
+        getTdCcelFieldBuilder() {
+      if (tdCcelBuilder_ == null) {
+        if (!(teeAttestationCase_ == 6)) {
+          teeAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.getDefaultInstance();
+        }
+        tdCcelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation,
+                com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation.Builder,
+                com.google.cloud.confidentialcomputing.v1.TdxCcelAttestationOrBuilder>(
+                (com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation) teeAttestation_,
+                getParentForChildren(),
+                isClean());
+        teeAttestation_ = null;
+      }
+      teeAttestationCase_ = 6;
+      onChanged();
+      return tdCcelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestation,
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder>
+        sevSnpAttestationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sevSnpAttestation field is set.
+     */
+    @java.lang.Override
+    public boolean hasSevSnpAttestation() {
+      return teeAttestationCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sevSnpAttestation.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.SevSnpAttestation getSevSnpAttestation() {
+      if (sevSnpAttestationBuilder_ == null) {
+        if (teeAttestationCase_ == 7) {
+          return (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+      } else {
+        if (teeAttestationCase_ == 7) {
+          return sevSnpAttestationBuilder_.getMessage();
+        }
+        return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSevSnpAttestation(
+        com.google.cloud.confidentialcomputing.v1.SevSnpAttestation value) {
+      if (sevSnpAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        teeAttestation_ = value;
+        onChanged();
+      } else {
+        sevSnpAttestationBuilder_.setMessage(value);
+      }
+      teeAttestationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSevSnpAttestation(
+        com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.Builder builderForValue) {
+      if (sevSnpAttestationBuilder_ == null) {
+        teeAttestation_ = builderForValue.build();
+        onChanged();
+      } else {
+        sevSnpAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      teeAttestationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSevSnpAttestation(
+        com.google.cloud.confidentialcomputing.v1.SevSnpAttestation value) {
+      if (sevSnpAttestationBuilder_ == null) {
+        if (teeAttestationCase_ == 7
+            && teeAttestation_
+                != com.google.cloud.confidentialcomputing.v1.SevSnpAttestation
+                    .getDefaultInstance()) {
+          teeAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.newBuilder(
+                      (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          teeAttestation_ = value;
+        }
+        onChanged();
+      } else {
+        if (teeAttestationCase_ == 7) {
+          sevSnpAttestationBuilder_.mergeFrom(value);
+        } else {
+          sevSnpAttestationBuilder_.setMessage(value);
+        }
+      }
+      teeAttestationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSevSnpAttestation() {
+      if (sevSnpAttestationBuilder_ == null) {
+        if (teeAttestationCase_ == 7) {
+          teeAttestationCase_ = 0;
+          teeAttestation_ = null;
+          onChanged();
+        }
+      } else {
+        if (teeAttestationCase_ == 7) {
+          teeAttestationCase_ = 0;
+          teeAttestation_ = null;
+        }
+        sevSnpAttestationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.Builder
+        getSevSnpAttestationBuilder() {
+      return getSevSnpAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder
+        getSevSnpAttestationOrBuilder() {
+      if ((teeAttestationCase_ == 7) && (sevSnpAttestationBuilder_ != null)) {
+        return sevSnpAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        if (teeAttestationCase_ == 7) {
+          return (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An SEV-SNP Attestation Report.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.SevSnpAttestation sev_snp_attestation = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestation,
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.Builder,
+            com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder>
+        getSevSnpAttestationFieldBuilder() {
+      if (sevSnpAttestationBuilder_ == null) {
+        if (!(teeAttestationCase_ == 7)) {
+          teeAttestation_ =
+              com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.getDefaultInstance();
+        }
+        sevSnpAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.SevSnpAttestation,
+                com.google.cloud.confidentialcomputing.v1.SevSnpAttestation.Builder,
+                com.google.cloud.confidentialcomputing.v1.SevSnpAttestationOrBuilder>(
+                (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_,
+                getParentForChildren(),
+                isClean());
+        teeAttestation_ = null;
+      }
+      teeAttestationCase_ = 7;
+      onChanged();
+      return sevSnpAttestationBuilder_;
+    }
 
     private java.lang.Object challenge_ = "";
     /**
@@ -938,7 +1674,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       challenge_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -959,7 +1695,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public Builder clearChallenge() {
       challenge_ = getDefaultInstance().getChallenge();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -985,7 +1721,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       challenge_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1011,7 +1747,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the gcpCredentials field is set.
      */
     public boolean hasGcpCredentials() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1058,7 +1794,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         gcpCredentialsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1081,7 +1817,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         gcpCredentialsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1100,7 +1836,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeGcpCredentials(
         com.google.cloud.confidentialcomputing.v1.GcpCredentials value) {
       if (gcpCredentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && gcpCredentials_ != null
             && gcpCredentials_
                 != com.google.cloud.confidentialcomputing.v1.GcpCredentials.getDefaultInstance()) {
@@ -1112,7 +1848,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         gcpCredentialsBuilder_.mergeFrom(value);
       }
       if (gcpCredentials_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1130,7 +1866,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearGcpCredentials() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       gcpCredentials_ = null;
       if (gcpCredentialsBuilder_ != null) {
         gcpCredentialsBuilder_.dispose();
@@ -1153,7 +1889,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.GcpCredentials.Builder
         getGcpCredentialsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGcpCredentialsFieldBuilder().getBuilder();
     }
@@ -1229,7 +1965,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the tpmAttestation field is set.
      */
     public boolean hasTpmAttestation() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1276,7 +2012,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tpmAttestationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1299,7 +2035,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tpmAttestationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1318,7 +2054,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeTpmAttestation(
         com.google.cloud.confidentialcomputing.v1.TpmAttestation value) {
       if (tpmAttestationBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && tpmAttestation_ != null
             && tpmAttestation_
                 != com.google.cloud.confidentialcomputing.v1.TpmAttestation.getDefaultInstance()) {
@@ -1330,7 +2066,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tpmAttestationBuilder_.mergeFrom(value);
       }
       if (tpmAttestation_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1348,7 +2084,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTpmAttestation() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       tpmAttestation_ = null;
       if (tpmAttestationBuilder_ != null) {
         tpmAttestationBuilder_.dispose();
@@ -1371,7 +2107,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.TpmAttestation.Builder
         getTpmAttestationBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTpmAttestationFieldBuilder().getBuilder();
     }
@@ -1446,7 +2182,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the confidentialSpaceInfo field is set.
      */
     public boolean hasConfidentialSpaceInfo() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1492,7 +2228,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         confidentialSpaceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1514,7 +2250,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         confidentialSpaceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1532,7 +2268,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     public Builder mergeConfidentialSpaceInfo(
         com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo value) {
       if (confidentialSpaceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && confidentialSpaceInfo_ != null
             && confidentialSpaceInfo_
                 != com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo
@@ -1545,7 +2281,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         confidentialSpaceInfoBuilder_.mergeFrom(value);
       }
       if (confidentialSpaceInfo_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1562,7 +2298,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearConfidentialSpaceInfo() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       confidentialSpaceInfo_ = null;
       if (confidentialSpaceInfoBuilder_ != null) {
         confidentialSpaceInfoBuilder_.dispose();
@@ -1584,7 +2320,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder
         getConfidentialSpaceInfoBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConfidentialSpaceInfoFieldBuilder().getBuilder();
     }
@@ -1658,7 +2394,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * @return Whether the tokenOptions field is set.
      */
     public boolean hasTokenOptions() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1704,7 +2440,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tokenOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1727,7 +2463,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       } else {
         tokenOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1745,7 +2481,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      */
     public Builder mergeTokenOptions(com.google.cloud.confidentialcomputing.v1.TokenOptions value) {
       if (tokenOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && tokenOptions_ != null
             && tokenOptions_
                 != com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()) {
@@ -1757,7 +2493,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptionsBuilder_.mergeFrom(value);
       }
       if (tokenOptions_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1775,7 +2511,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTokenOptions() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       tokenOptions_ = null;
       if (tokenOptionsBuilder_ != null) {
         tokenOptionsBuilder_.dispose();
@@ -1797,7 +2533,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder getTokenOptionsBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTokenOptionsFieldBuilder().getBuilder();
     }

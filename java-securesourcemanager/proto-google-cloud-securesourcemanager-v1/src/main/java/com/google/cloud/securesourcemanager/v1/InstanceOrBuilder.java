@@ -209,6 +209,48 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the privateConfig field is set.
+   */
+  boolean hasPrivateConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The privateConfig.
+   */
+  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig getPrivateConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder
+      getPrivateConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Current state of the instance.
    * </pre>
    *

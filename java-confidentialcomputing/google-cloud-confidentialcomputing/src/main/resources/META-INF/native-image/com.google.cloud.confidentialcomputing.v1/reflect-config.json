@@ -468,6 +468,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.confidentialcomputing.v1.SevSnpAttestation",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.SevSnpAttestation$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.confidentialcomputing.v1.SignedEntity",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -487,6 +505,24 @@
   },
   {
     "name": "com.google.cloud.confidentialcomputing.v1.SigningAlgorithm",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.confidentialcomputing.v1.TdxCcelAttestation$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
