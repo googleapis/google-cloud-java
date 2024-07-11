@@ -9,8 +9,7 @@ Client libraries have two types of retry parameters to configure:
 2. Retry Timeout/Attempt Bounds: Configurable [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) to define the bounds.
 
 ### Default RPC Retry Configuration Location
-The default retry configurations are defined in the generated `{Client}StubSettings` file. Using the ExportAssets RPC in
-Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
+The default retry configurations are defined in the generated `{Client}StubSettings` file. Using the ExportAssets RPC in Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
 <br>
 - Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082). Example:
     ```java
