@@ -60,9 +60,7 @@ settings =
       .setTotalTimeout(Duration.ofMillis(60000L))
       .build();
 ```
-The configuration above modifies the retry settings for both an RPC's attempt and operation. An RPC attempt is the
-individual attempt made and an RPC operation is collection of all attempts made. A single RPC invocation will
-have one or more attempts in a single operation.
+The configuration above modifies the retry settings for both an RPC's attempt and operation. An RPC attempt is the individual attempt made, and an RPC operation is the collection of all attempts made. A single RPC invocation will have one or more attempts in a single operation.
 
 Individual RPC Bounds (an attempt) are controlled by the following settings:
 - [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_): Delay before the first attempt
