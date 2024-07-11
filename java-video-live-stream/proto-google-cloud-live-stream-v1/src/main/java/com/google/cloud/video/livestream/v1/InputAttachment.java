@@ -903,7 +903,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A unique key for this input attachment.
+   * A unique key for this input attachment. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -926,7 +928,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A unique key for this input attachment.
+   * A unique key for this input attachment. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -1477,7 +1481,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A unique key for this input attachment.
+     * A unique key for this input attachment. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1499,7 +1505,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A unique key for this input attachment.
+     * A unique key for this input attachment. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1521,7 +1529,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A unique key for this input attachment.
+     * A unique key for this input attachment. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1542,7 +1552,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A unique key for this input attachment.
+     * A unique key for this input attachment. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1559,7 +1571,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A unique key for this input attachment.
+     * A unique key for this input attachment. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>

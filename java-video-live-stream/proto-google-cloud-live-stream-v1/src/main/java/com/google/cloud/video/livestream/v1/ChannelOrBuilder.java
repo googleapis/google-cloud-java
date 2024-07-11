@@ -787,4 +787,112 @@ public interface ChannelOrBuilder
    * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
    */
   com.google.cloud.video.livestream.v1.InputConfigOrBuilder getInputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retentionConfig field is set.
+   */
+  boolean hasRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retentionConfig.
+   */
+  com.google.cloud.video.livestream.v1.RetentionConfig getRetentionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder getRetentionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay> getStaticOverlaysList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.StaticOverlay getStaticOverlays(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getStaticOverlaysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
+      getStaticOverlaysOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder getStaticOverlaysOrBuilder(int index);
 }

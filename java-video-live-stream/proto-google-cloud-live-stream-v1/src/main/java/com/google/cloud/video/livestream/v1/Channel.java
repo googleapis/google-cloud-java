@@ -52,6 +52,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     spriteSheets_ = java.util.Collections.emptyList();
     streamingState_ = 0;
     encryptions_ = java.util.Collections.emptyList();
+    staticOverlays_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2090,6 +2091,151 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         : inputConfig_;
   }
 
+  public static final int RETENTION_CONFIG_FIELD_NUMBER = 26;
+  private com.google.cloud.video.livestream.v1.RetentionConfig retentionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retentionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetentionConfig() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retentionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.RetentionConfig getRetentionConfig() {
+    return retentionConfig_ == null
+        ? com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()
+        : retentionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for retention of output files for this channel.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder
+      getRetentionConfigOrBuilder() {
+    return retentionConfig_ == null
+        ? com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()
+        : retentionConfig_;
+  }
+
+  public static final int STATIC_OVERLAYS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay> staticOverlays_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay>
+      getStaticOverlaysList() {
+    return staticOverlays_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
+      getStaticOverlaysOrBuilderList() {
+    return staticOverlays_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getStaticOverlaysCount() {
+    return staticOverlays_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.StaticOverlay getStaticOverlays(int index) {
+    return staticOverlays_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of static overlay images. Those images display over the
+   * output content for the whole duration of the live stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder getStaticOverlaysOrBuilder(
+      int index) {
+    return staticOverlays_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2155,6 +2301,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(25, getInputConfig());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(26, getRetentionConfig());
+    }
+    for (int i = 0; i < staticOverlays_.size(); i++) {
+      output.writeMessage(27, staticOverlays_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2227,6 +2379,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getInputConfig());
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getRetentionConfig());
+    }
+    for (int i = 0; i < staticOverlays_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, staticOverlays_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2281,6 +2439,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (hasInputConfig()) {
       if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
+    if (hasRetentionConfig() != other.hasRetentionConfig()) return false;
+    if (hasRetentionConfig()) {
+      if (!getRetentionConfig().equals(other.getRetentionConfig())) return false;
+    }
+    if (!getStaticOverlaysList().equals(other.getStaticOverlaysList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2353,6 +2516,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (hasInputConfig()) {
       hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfig().hashCode();
+    }
+    if (hasRetentionConfig()) {
+      hash = (37 * hash) + RETENTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRetentionConfig().hashCode();
+    }
+    if (getStaticOverlaysCount() > 0) {
+      hash = (37 * hash) + STATIC_OVERLAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getStaticOverlaysList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2533,6 +2704,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         getTimecodeConfigFieldBuilder();
         getEncryptionsFieldBuilder();
         getInputConfigFieldBuilder();
+        getRetentionConfigFieldBuilder();
+        getStaticOverlaysFieldBuilder();
       }
     }
 
@@ -2621,6 +2794,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
+      retentionConfig_ = null;
+      if (retentionConfigBuilder_ != null) {
+        retentionConfigBuilder_.dispose();
+        retentionConfigBuilder_ = null;
+      }
+      if (staticOverlaysBuilder_ == null) {
+        staticOverlays_ = java.util.Collections.emptyList();
+      } else {
+        staticOverlays_ = null;
+        staticOverlaysBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -2711,6 +2896,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptions_ = encryptionsBuilder_.build();
       }
+      if (staticOverlaysBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)) {
+          staticOverlays_ = java.util.Collections.unmodifiableList(staticOverlays_);
+          bitField0_ = (bitField0_ & ~0x00040000);
+        }
+        result.staticOverlays_ = staticOverlays_;
+      } else {
+        result.staticOverlays_ = staticOverlaysBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.video.livestream.v1.Channel result) {
@@ -2759,6 +2953,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         result.inputConfig_ =
             inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.retentionConfig_ =
+            retentionConfigBuilder_ == null ? retentionConfig_ : retentionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3006,6 +3205,36 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
       }
+      if (other.hasRetentionConfig()) {
+        mergeRetentionConfig(other.getRetentionConfig());
+      }
+      if (staticOverlaysBuilder_ == null) {
+        if (!other.staticOverlays_.isEmpty()) {
+          if (staticOverlays_.isEmpty()) {
+            staticOverlays_ = other.staticOverlays_;
+            bitField0_ = (bitField0_ & ~0x00040000);
+          } else {
+            ensureStaticOverlaysIsMutable();
+            staticOverlays_.addAll(other.staticOverlays_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.staticOverlays_.isEmpty()) {
+          if (staticOverlaysBuilder_.isEmpty()) {
+            staticOverlaysBuilder_.dispose();
+            staticOverlaysBuilder_ = null;
+            staticOverlays_ = other.staticOverlays_;
+            bitField0_ = (bitField0_ & ~0x00040000);
+            staticOverlaysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStaticOverlaysFieldBuilder()
+                    : null;
+          } else {
+            staticOverlaysBuilder_.addAllMessages(other.staticOverlays_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3186,6 +3415,26 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(getRetentionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 210
+            case 218:
+              {
+                com.google.cloud.video.livestream.v1.StaticOverlay m =
+                    input.readMessage(
+                        com.google.cloud.video.livestream.v1.StaticOverlay.parser(),
+                        extensionRegistry);
+                if (staticOverlaysBuilder_ == null) {
+                  ensureStaticOverlaysIsMutable();
+                  staticOverlays_.add(m);
+                } else {
+                  staticOverlaysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7374,6 +7623,630 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         inputConfig_ = null;
       }
       return inputConfigBuilder_;
+    }
+
+    private com.google.cloud.video.livestream.v1.RetentionConfig retentionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.RetentionConfig,
+            com.google.cloud.video.livestream.v1.RetentionConfig.Builder,
+            com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder>
+        retentionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retentionConfig field is set.
+     */
+    public boolean hasRetentionConfig() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retentionConfig.
+     */
+    public com.google.cloud.video.livestream.v1.RetentionConfig getRetentionConfig() {
+      if (retentionConfigBuilder_ == null) {
+        return retentionConfig_ == null
+            ? com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()
+            : retentionConfig_;
+      } else {
+        return retentionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetentionConfig(com.google.cloud.video.livestream.v1.RetentionConfig value) {
+      if (retentionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retentionConfig_ = value;
+      } else {
+        retentionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetentionConfig(
+        com.google.cloud.video.livestream.v1.RetentionConfig.Builder builderForValue) {
+      if (retentionConfigBuilder_ == null) {
+        retentionConfig_ = builderForValue.build();
+      } else {
+        retentionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetentionConfig(
+        com.google.cloud.video.livestream.v1.RetentionConfig value) {
+      if (retentionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && retentionConfig_ != null
+            && retentionConfig_
+                != com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()) {
+          getRetentionConfigBuilder().mergeFrom(value);
+        } else {
+          retentionConfig_ = value;
+        }
+      } else {
+        retentionConfigBuilder_.mergeFrom(value);
+      }
+      if (retentionConfig_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetentionConfig() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      retentionConfig_ = null;
+      if (retentionConfigBuilder_ != null) {
+        retentionConfigBuilder_.dispose();
+        retentionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.RetentionConfig.Builder
+        getRetentionConfigBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getRetentionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder
+        getRetentionConfigOrBuilder() {
+      if (retentionConfigBuilder_ != null) {
+        return retentionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return retentionConfig_ == null
+            ? com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()
+            : retentionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for retention of output files for this channel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.RetentionConfig retention_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.RetentionConfig,
+            com.google.cloud.video.livestream.v1.RetentionConfig.Builder,
+            com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder>
+        getRetentionConfigFieldBuilder() {
+      if (retentionConfigBuilder_ == null) {
+        retentionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.RetentionConfig,
+                com.google.cloud.video.livestream.v1.RetentionConfig.Builder,
+                com.google.cloud.video.livestream.v1.RetentionConfigOrBuilder>(
+                getRetentionConfig(), getParentForChildren(), isClean());
+        retentionConfig_ = null;
+      }
+      return retentionConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay> staticOverlays_ =
+        java.util.Collections.emptyList();
+
+    private void ensureStaticOverlaysIsMutable() {
+      if (!((bitField0_ & 0x00040000) != 0)) {
+        staticOverlays_ =
+            new java.util.ArrayList<com.google.cloud.video.livestream.v1.StaticOverlay>(
+                staticOverlays_);
+        bitField0_ |= 0x00040000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.StaticOverlay,
+            com.google.cloud.video.livestream.v1.StaticOverlay.Builder,
+            com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
+        staticOverlaysBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay>
+        getStaticOverlaysList() {
+      if (staticOverlaysBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(staticOverlays_);
+      } else {
+        return staticOverlaysBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getStaticOverlaysCount() {
+      if (staticOverlaysBuilder_ == null) {
+        return staticOverlays_.size();
+      } else {
+        return staticOverlaysBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.StaticOverlay getStaticOverlays(int index) {
+      if (staticOverlaysBuilder_ == null) {
+        return staticOverlays_.get(index);
+      } else {
+        return staticOverlaysBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStaticOverlays(
+        int index, com.google.cloud.video.livestream.v1.StaticOverlay value) {
+      if (staticOverlaysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.set(index, value);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStaticOverlays(
+        int index, com.google.cloud.video.livestream.v1.StaticOverlay.Builder builderForValue) {
+      if (staticOverlaysBuilder_ == null) {
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addStaticOverlays(com.google.cloud.video.livestream.v1.StaticOverlay value) {
+      if (staticOverlaysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.add(value);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addStaticOverlays(
+        int index, com.google.cloud.video.livestream.v1.StaticOverlay value) {
+      if (staticOverlaysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.add(index, value);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addStaticOverlays(
+        com.google.cloud.video.livestream.v1.StaticOverlay.Builder builderForValue) {
+      if (staticOverlaysBuilder_ == null) {
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.add(builderForValue.build());
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addStaticOverlays(
+        int index, com.google.cloud.video.livestream.v1.StaticOverlay.Builder builderForValue) {
+      if (staticOverlaysBuilder_ == null) {
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllStaticOverlays(
+        java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.StaticOverlay> values) {
+      if (staticOverlaysBuilder_ == null) {
+        ensureStaticOverlaysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, staticOverlays_);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStaticOverlays() {
+      if (staticOverlaysBuilder_ == null) {
+        staticOverlays_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00040000);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeStaticOverlays(int index) {
+      if (staticOverlaysBuilder_ == null) {
+        ensureStaticOverlaysIsMutable();
+        staticOverlays_.remove(index);
+        onChanged();
+      } else {
+        staticOverlaysBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.StaticOverlay.Builder getStaticOverlaysBuilder(
+        int index) {
+      return getStaticOverlaysFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder getStaticOverlaysOrBuilder(
+        int index) {
+      if (staticOverlaysBuilder_ == null) {
+        return staticOverlays_.get(index);
+      } else {
+        return staticOverlaysBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
+        getStaticOverlaysOrBuilderList() {
+      if (staticOverlaysBuilder_ != null) {
+        return staticOverlaysBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(staticOverlays_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.StaticOverlay.Builder addStaticOverlaysBuilder() {
+      return getStaticOverlaysFieldBuilder()
+          .addBuilder(com.google.cloud.video.livestream.v1.StaticOverlay.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.StaticOverlay.Builder addStaticOverlaysBuilder(
+        int index) {
+      return getStaticOverlaysFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.video.livestream.v1.StaticOverlay.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of static overlay images. Those images display over the
+     * output content for the whole duration of the live stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.StaticOverlay static_overlays = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay.Builder>
+        getStaticOverlaysBuilderList() {
+      return getStaticOverlaysFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.StaticOverlay,
+            com.google.cloud.video.livestream.v1.StaticOverlay.Builder,
+            com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
+        getStaticOverlaysFieldBuilder() {
+      if (staticOverlaysBuilder_ == null) {
+        staticOverlaysBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.StaticOverlay,
+                com.google.cloud.video.livestream.v1.StaticOverlay.Builder,
+                com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>(
+                staticOverlays_,
+                ((bitField0_ & 0x00040000) != 0),
+                getParentForChildren(),
+                isClean());
+        staticOverlays_ = null;
+      }
+      return staticOverlaysBuilder_;
     }
 
     @java.lang.Override

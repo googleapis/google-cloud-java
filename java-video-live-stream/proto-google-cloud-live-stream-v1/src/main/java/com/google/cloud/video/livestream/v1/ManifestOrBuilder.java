@@ -185,6 +185,12 @@ public interface ManifestOrBuilder
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -202,6 +208,12 @@ public interface ManifestOrBuilder
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -219,6 +231,12 @@ public interface ManifestOrBuilder
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -243,4 +261,29 @@ public interface ManifestOrBuilder
    * @return The useTimecodeAsTimeline.
    */
   boolean getUseTimecodeAsTimeline();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique key for this manifest.
+   * </pre>
+   *
+   * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The key.
+   */
+  java.lang.String getKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique key for this manifest.
+   * </pre>
+   *
+   * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for key.
+   */
+  com.google.protobuf.ByteString getKeyBytes();
 }

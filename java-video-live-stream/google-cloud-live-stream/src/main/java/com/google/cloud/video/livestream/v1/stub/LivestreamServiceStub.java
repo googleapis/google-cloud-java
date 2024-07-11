@@ -18,6 +18,7 @@ package com.google.cloud.video.livestream.v1.stub;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -32,17 +33,21 @@ import com.google.cloud.location.Location;
 import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
+import com.google.cloud.video.livestream.v1.CreateClipRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
+import com.google.cloud.video.livestream.v1.DeleteClipRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
+import com.google.cloud.video.livestream.v1.GetClipRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -51,6 +56,8 @@ import com.google.cloud.video.livestream.v1.ListAssetsRequest;
 import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
+import com.google.cloud.video.livestream.v1.ListClipsRequest;
+import com.google.cloud.video.livestream.v1.ListClipsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
@@ -198,6 +205,36 @@ public abstract class LivestreamServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEventCallable()");
+  }
+
+  public UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listClipsPagedCallable()");
+  }
+
+  public UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listClipsCallable()");
+  }
+
+  public UnaryCallable<GetClipRequest, Clip> getClipCallable() {
+    throw new UnsupportedOperationException("Not implemented: getClipCallable()");
+  }
+
+  public OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createClipOperationCallable()");
+  }
+
+  public UnaryCallable<CreateClipRequest, Operation> createClipCallable() {
+    throw new UnsupportedOperationException("Not implemented: createClipCallable()");
+  }
+
+  public OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteClipOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteClipCallable()");
   }
 
   public OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
