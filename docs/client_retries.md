@@ -44,8 +44,7 @@ The default retry configurations are defined in the generated `{Client}StubSetti
     ```
 
 ## Client Library Retry Concepts
-Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
-is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
+Enabling retries allows an RPC multiple attempts to achieve a successful call. A successful call is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
 
 ### Attempt vs Operation
 Take a sample RetrySettings configuration
