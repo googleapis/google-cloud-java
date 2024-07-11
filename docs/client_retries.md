@@ -47,7 +47,7 @@ The default retry configurations are defined in the generated `{Client}StubSetti
 Enabling retries allows an RPC multiple attempts to achieve a successful call. A successful call is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
 
 ### Attempt vs Operation
-Take a sample RetrySettings configuration
+Take a sample RetrySettings configuration:
 ```java
 settings =
   RetrySettings.newBuilder()
