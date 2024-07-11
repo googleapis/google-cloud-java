@@ -1,9 +1,7 @@
 # Client Side Retries
 Client libraries use retries to handle unexpected, transient failures (i.e., when the server is temporarily unavailable). Multiple attempts will hopefully result in a successful response from the server.
 
-Default retry values are selected by the team operating the cloud service. These retry values are configured
-per RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that each RPC for
-a service is configured differently.
+Default retry values are selected by the team operating the cloud service. These retry values are configured per RPC. A service *may* choose to enable retries only for a subset of RPCs. It is possible that each RPC for a service is configured differently.
 
 ## Retry Parameters
 Client libraries have two types of retry parameters to configure:
