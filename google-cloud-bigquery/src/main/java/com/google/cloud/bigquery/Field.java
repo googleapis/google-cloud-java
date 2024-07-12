@@ -201,7 +201,7 @@ public final class Field implements Serializable {
 
     /** Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used. */
     public Builder setMode(Mode mode) {
-      this.mode = mode != null ? mode.name() : Data.<String>nullOf(String.class);
+      this.mode = mode != null ? mode.name() : null;
       return this;
     }
 

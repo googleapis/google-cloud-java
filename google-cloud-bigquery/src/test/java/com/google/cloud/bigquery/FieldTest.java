@@ -30,6 +30,8 @@ public class FieldTest {
   private static final String FIELD_NAME1 = "StringField";
   private static final String FIELD_NAME2 = "IntegerField";
   private static final String FIELD_NAME3 = "RecordField";
+  private static final String FIELD_NAME4 = "NullModeField";
+  private static final String FIELD_NAME5 = "NullModeField2";
   private static final LegacySQLTypeName FIELD_TYPE1 = LegacySQLTypeName.STRING;
   private static final LegacySQLTypeName FIELD_TYPE2 = LegacySQLTypeName.INTEGER;
   private static final StandardSQLTypeName FIELD_TYPE1_STANDARD = StandardSQLTypeName.STRING;
@@ -79,6 +81,10 @@ public class FieldTest {
           .setMode(FIELD_MODE3)
           .setDescription(FIELD_DESCRIPTION3)
           .build();
+  private static final Field STANDARD_FIELD_SCHEMA4 =
+      Field.newBuilder(FIELD_NAME4, StandardSQLTypeName.INT64).setMode(null).build();
+  private static final Field STANDARD_FIELD_SCHEMA5 =
+      Field.newBuilder(FIELD_NAME5, StandardSQLTypeName.STRING).build();
 
   @Test
   public void testToBuilder() {
@@ -96,6 +102,8 @@ public class FieldTest {
     compareFieldSchemas(STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA1.toBuilder().build());
     compareFieldSchemas(STANDARD_FIELD_SCHEMA2, STANDARD_FIELD_SCHEMA2.toBuilder().build());
     compareFieldSchemas(STANDARD_FIELD_SCHEMA3, STANDARD_FIELD_SCHEMA3.toBuilder().build());
+    compareFieldSchemas(STANDARD_FIELD_SCHEMA4, STANDARD_FIELD_SCHEMA4.toBuilder().build());
+    compareFieldSchemas(STANDARD_FIELD_SCHEMA5, STANDARD_FIELD_SCHEMA5.toBuilder().build());
     Field field = STANDARD_FIELD_SCHEMA1.toBuilder().setDescription("New Description").build();
     assertEquals("New Description", field.getDescription());
     field = field.toBuilder().setDescription(FIELD_DESCRIPTION1).build();
@@ -162,6 +170,8 @@ public class FieldTest {
     assertEquals(FIELD_TYPE3, STANDARD_FIELD_SCHEMA3.getType());
     assertEquals(FIELD_MODE3, STANDARD_FIELD_SCHEMA3.getMode());
     assertEquals(FIELD_DESCRIPTION3, STANDARD_FIELD_SCHEMA3.getDescription());
+    assertEquals(null, STANDARD_FIELD_SCHEMA4.getMode());
+    assertEquals(null, STANDARD_FIELD_SCHEMA5.getMode());
     assertEquals(
         FieldList.of(STANDARD_FIELD_SCHEMA1, STANDARD_FIELD_SCHEMA2),
         STANDARD_FIELD_SCHEMA3.getSubFields());
@@ -181,6 +191,8 @@ public class FieldTest {
     compareFieldSchemas(STANDARD_FIELD_SCHEMA1, Field.fromPb(STANDARD_FIELD_SCHEMA1.toPb()));
     compareFieldSchemas(STANDARD_FIELD_SCHEMA2, Field.fromPb(STANDARD_FIELD_SCHEMA2.toPb()));
     compareFieldSchemas(STANDARD_FIELD_SCHEMA3, Field.fromPb(STANDARD_FIELD_SCHEMA3.toPb()));
+    compareFieldSchemas(STANDARD_FIELD_SCHEMA4, Field.fromPb(STANDARD_FIELD_SCHEMA4.toPb()));
+    compareFieldSchemas(STANDARD_FIELD_SCHEMA5, Field.fromPb(STANDARD_FIELD_SCHEMA5.toPb()));
     Field field = Field.newBuilder(FIELD_NAME1, FIELD_TYPE1).build();
     compareFieldSchemas(field, Field.fromPb(field.toPb()));
   }
