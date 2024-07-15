@@ -124,7 +124,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin
             </artifactId> <!-- Must use older version of surefire plugin for native-image testing. -->
-            <version>3.3.0</version>
+            <version>3.3.1</version>
             <configuration>
               <includes>
                 <include>**/*IT</include>
