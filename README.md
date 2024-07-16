@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.40.0</version>
+      <version>26.43.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -52,7 +52,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.42.0')
+implementation platform('com.google.cloud:libraries-bom:26.43.0')
 
 implementation 'com.google.cloud:google-cloud-logging'
 ```
@@ -82,7 +82,7 @@ The client application making API calls must be granted [authorization scopes][a
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Logging [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Logging.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -282,7 +282,7 @@ Cloud Function or GKE. The logger agent installed on these environments can capt
 The agent can parse structured logs printed to STDOUT and capture additional log metadata beside the log payload.
 The parsed information includes severity, source location, user labels, http request and tracing information.
 
-#### Auto-population of log entrys' metadata
+#### Auto-population of Metadata in a LogEntry
 
 LogEntry object metadata information such as [monitored resource](https://cloud.google.com/logging/docs/reference/v2/rest/v2/MonitoredResource), 
 [Http request](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#HttpRequest) or 
@@ -329,6 +329,19 @@ If you use Maven, to use the servlet initializer add the following dependency to
       <artifactId>google-cloud-logging-servlet-initializer</artifactId>
     </dependency>      
     ```
+#### Population of Trace/Span ID fields in a LogEntry
+Cloud Logging libraries use [trace fields within LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace) to capture trace contexts, which enables the [correlation of logs and traces](https://cloud.google.com/logging/docs/view/correlate-logs), and distributed tracing troubleshooting. 
+These tracing fields, including [trace](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace), [spanId](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.span_id), and [traceSampled](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace_sampled), define the trace context for a `LogEntry`.
+
+Tracing information set manually takes precedence over information set by the following methods:
+
+* Auto-populate Trace/Span ID from OpenTelemetry Context
+If you are using OpenTelemetry and there is an active span in the OpenTelemetry Context, the `trace`, `span_id`, and `trace_sampled` fields in the log entry are populated from the active span. More information about OpenTelemetry can be found [here](https://opentelemetry.io/docs/languages/java/).
+
+* Use the [servlet initializer](https://github.com/googleapis/java-logging-servlet-initializer) to Populate Trace/Span ID from HTTP Headers
+If trace/span Id are not manually set or auto-populated from OpenTelemetry context, you can use the [servlet initializer](https://github.com/googleapis/java-logging-servlet-initializer) to populate trace/span Id from HTTP headers.
+This package filters all servlet requests to automatically capture the execution context of the servlet request and stores it by using ContextHandler class. Http request and trace/span Id information are populated from the stored Context class instances.  
+Using this method, trace/span Id can be automatically populated from either the [W3C Traceparent](https://www.w3.org/TR/trace-context) or [X-Cloud-Trace-Context](https://cloud.google.com/trace/docs/trace-context#legacy-http-header) headers.
 
 
 
@@ -464,7 +477,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [contributing]: https://github.com/googleapis/java-logging/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-logging/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-logging/blob/main/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=logging.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

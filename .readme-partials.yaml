@@ -227,4 +227,17 @@ custom_content: |
         <artifactId>google-cloud-logging-servlet-initializer</artifactId>
       </dependency>      
       ```
+  #### Population of Trace/Span ID fields in a LogEntry
+  Cloud Logging libraries use [trace fields within LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace) to capture trace contexts, which enables the [correlation of logs and traces](https://cloud.google.com/logging/docs/view/correlate-logs), and distributed tracing troubleshooting. 
+  These tracing fields, including [trace](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace), [spanId](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.span_id), and [traceSampled](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#FIELDS.trace_sampled), define the trace context for a `LogEntry`.
+  
+  Tracing information set manually takes precedence over information set by the following methods:
+  
+  * Auto-populate Trace/Span ID from OpenTelemetry Context
+  If you are using OpenTelemetry and there is an active span in the OpenTelemetry Context, the `trace`, `span_id`, and `trace_sampled` fields in the log entry are populated from the active span. More information about OpenTelemetry can be found [here](https://opentelemetry.io/docs/languages/java/).
+  
+  * Use the [servlet initializer](https://github.com/googleapis/java-logging-servlet-initializer) to Populate Trace/Span ID from HTTP Headers
+  If trace/span Id are not manually set or auto-populated from OpenTelemetry context, you can use the [servlet initializer](https://github.com/googleapis/java-logging-servlet-initializer) to populate trace/span Id from HTTP headers.
+  This package filters all servlet requests to automatically capture the execution context of the servlet request and stores it by using ContextHandler class. Http request and trace/span Id information are populated from the stored Context class instances.  
+  Using this method, trace/span Id can be automatically populated from either the [W3C Traceparent](https://www.w3.org/TR/trace-context) or [X-Cloud-Trace-Context](https://cloud.google.com/trace/docs/trace-context#legacy-http-header) headers.
 
