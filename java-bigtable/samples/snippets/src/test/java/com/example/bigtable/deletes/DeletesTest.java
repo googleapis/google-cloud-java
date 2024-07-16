@@ -19,11 +19,13 @@ package com.example.bigtable.deletes;
 import com.example.bigtable.MobileTimeSeriesBaseTest;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.common.truth.Correspondence;
 import com.google.common.truth.Truth;
 import java.io.IOException;
 import java.util.List;
@@ -39,6 +41,8 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DeletesTest extends MobileTimeSeriesBaseTest {
+  private static final Correspondence<ColumnFamily, String> COLUMN_FAMILY_ID_CORRESPONDENCE =
+      Correspondence.transforming(ColumnFamily::getId, "ColumnFamily id");
   public static BigtableDataClient bigtableDataClient;
 
   @BeforeClass
@@ -164,13 +168,17 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
   public void test7_testDeleteColumnFamily() throws IOException {
     try (BigtableTableAdminClient tableAdminClient =
         BigtableTableAdminClient.create(projectId, instanceId)) {
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies().size()).isEqualTo(2);
+      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
+          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
+          .contains(COLUMN_FAMILY_NAME_STATS);
 
       DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
       deleteColumnFamilyExample.deleteColumnFamily(
           projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
 
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies().size()).isEqualTo(1);
+      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
+          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
+          .doesNotContain(COLUMN_FAMILY_NAME_STATS);
     }
   }
 
