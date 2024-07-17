@@ -151,25 +151,25 @@ public class StreamWriter implements AutoCloseable {
    * pool in multiplexing mode.
    */
   @AutoOneOf(SingleConnectionOrConnectionPool.Kind.class)
-  public abstract static class SingleConnectionOrConnectionPool {
+  abstract static class SingleConnectionOrConnectionPool {
     /** Kind of connection operation mode. */
     public enum Kind {
       CONNECTION_WORKER,
       CONNECTION_WORKER_POOL
     }
 
-    public abstract Kind getKind();
+    abstract Kind getKind();
 
-    public abstract ConnectionWorker connectionWorker();
+    abstract ConnectionWorker connectionWorker();
 
-    public abstract ConnectionWorkerPool connectionWorkerPool();
+    abstract ConnectionWorkerPool connectionWorkerPool();
 
-    public ApiFuture<AppendRowsResponse> append(
-        StreamWriter streamWriter, ProtoRows protoRows, long offset) {
+    ApiFuture<AppendRowsResponse> append(
+        StreamWriter streamWriter, ProtoRows protoRows, long offset, String requestUniqueId) {
       if (getKind() == Kind.CONNECTION_WORKER) {
-        return connectionWorker().append(streamWriter, protoRows, offset);
+        return connectionWorker().append(streamWriter, protoRows, offset, requestUniqueId);
       } else {
-        return connectionWorkerPool().append(streamWriter, protoRows, offset);
+        return connectionWorkerPool().append(streamWriter, protoRows, offset, requestUniqueId);
       }
     }
 
@@ -182,7 +182,7 @@ public class StreamWriter implements AutoCloseable {
       }
     }
 
-    public void close(StreamWriter streamWriter) {
+    void close(StreamWriter streamWriter) {
       if (getKind() == Kind.CONNECTION_WORKER) {
         connectionWorker().close();
       } else {
@@ -212,12 +212,11 @@ public class StreamWriter implements AutoCloseable {
       return connectionWorker().getWriterId();
     }
 
-    public static SingleConnectionOrConnectionPool ofSingleConnection(ConnectionWorker connection) {
+    static SingleConnectionOrConnectionPool ofSingleConnection(ConnectionWorker connection) {
       return AutoOneOf_StreamWriter_SingleConnectionOrConnectionPool.connectionWorker(connection);
     }
 
-    public static SingleConnectionOrConnectionPool ofConnectionPool(
-        ConnectionWorkerPool connectionPool) {
+    static SingleConnectionOrConnectionPool ofConnectionPool(ConnectionWorkerPool connectionPool) {
       return AutoOneOf_StreamWriter_SingleConnectionOrConnectionPool.connectionWorkerPool(
           connectionPool);
     }
@@ -228,6 +227,12 @@ public class StreamWriter implements AutoCloseable {
     this.writerSchema = builder.writerSchema;
     this.defaultMissingValueInterpretation = builder.defaultMissingValueInterpretation;
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
+    if (builder.enableRequestProfiler) {
+      // Request profiler is enabled on singleton level, from now on a periodical flush will happen
+      // to generate
+      // detailed latency reports for requests latency.
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.startPeriodicalReportFlushing();
+    }
     if (!builder.enableConnectionPool) {
       this.location = builder.location;
       this.singleConnectionOrConnectionPool =
@@ -455,18 +460,38 @@ public class StreamWriter implements AutoCloseable {
    * @return the append response wrapped in a future.
    */
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
+    String requestUniqueId = generateRequestUniqueId();
+    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+        RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
+    try {
+      return appendWithUniqueId(rows, offset, requestUniqueId);
+    } catch (Exception ex) {
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+          RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
+      throw ex;
+    }
+  }
+
+  ApiFuture<AppendRowsResponse> appendWithUniqueId(
+      ProtoRows rows, long offset, String requestUniqueId) {
     if (userClosed.get()) {
       AppendRequestAndResponse requestWrapper =
-          new AppendRequestAndResponse(AppendRowsRequest.newBuilder().build(), this, null);
+          new AppendRequestAndResponse(
+              AppendRowsRequest.newBuilder().build(),
+              /*StreamWriter=*/ this,
+              /*RetrySettings=*/ null,
+              requestUniqueId);
       requestWrapper.appendResult.setException(
           new Exceptions.StreamWriterClosedException(
               Status.fromCode(Status.Code.FAILED_PRECONDITION)
                   .withDescription("User closed StreamWriter"),
               streamName,
               getWriterId()));
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+          RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
       return requestWrapper.appendResult;
     }
-    return this.singleConnectionOrConnectionPool.append(this, rows, offset);
+    return this.singleConnectionOrConnectionPool.append(this, rows, offset, requestUniqueId);
   }
 
   @VisibleForTesting
@@ -666,6 +691,8 @@ public class StreamWriter implements AutoCloseable {
     private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
 
+    private boolean enableRequestProfiler = false;
+
     private RetrySettings retrySettings = null;
 
     private Builder(String streamName) {
@@ -815,6 +842,15 @@ public class StreamWriter implements AutoCloseable {
     }
 
     /**
+     * Enable a latency profiler that would periodically generate a detailed latency report for the
+     * top latency requests. This is currently an experimental API.
+     */
+    public Builder setEnableLatencyProfiler(boolean enableLatencyProfiler) {
+      this.enableRequestProfiler = enableLatencyProfiler;
+      return this;
+    }
+
+    /**
      * Enable client lib automatic retries on request level errors.
      *
      * <pre>
@@ -855,5 +891,9 @@ public class StreamWriter implements AutoCloseable {
         return clientWithVersion + " " + traceId;
       }
     }
+  }
+
+  private String generateRequestUniqueId() {
+    return getStreamName() + "-" + UUID.randomUUID().toString();
   }
 }

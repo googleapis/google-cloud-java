@@ -384,6 +384,15 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
+     * Enable a latency profiler that would periodically generate a detailed latency report for the
+     * top latency requests. This is currently an experimental API.
+     */
+    public Builder setEnableLatencyProfiler(boolean enableLatencyProfiler) {
+      this.schemaAwareStreamWriterBuilder.setEnableLatencyProfiler(enableLatencyProfiler);
+      return this;
+    }
+
+    /**
      * Sets the default missing value interpretation value if the column is not presented in the
      * missing_value_interpretations map.
      *

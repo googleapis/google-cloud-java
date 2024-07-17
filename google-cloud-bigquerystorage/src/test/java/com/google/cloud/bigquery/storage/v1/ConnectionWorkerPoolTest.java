@@ -540,7 +540,8 @@ public class ConnectionWorkerPoolTest {
       ConnectionWorkerPool connectionWorkerPool,
       String[] messages,
       long offset) {
-    return connectionWorkerPool.append(writeStream, createProtoRows(messages), offset);
+    return connectionWorkerPool.append(
+        writeStream, createProtoRows(messages), offset, /*requestUniqueId=*/ "request_" + offset);
   }
 
   private ProtoRows createProtoRows(String[] messages) {

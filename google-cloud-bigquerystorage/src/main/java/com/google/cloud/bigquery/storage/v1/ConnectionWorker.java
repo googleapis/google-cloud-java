@@ -45,15 +45,7 @@ import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -511,6 +503,8 @@ class ConnectionWorker implements AutoCloseable {
 
   private void waitForBackoffIfNecessary(AppendRequestAndResponse requestWrapper) {
     lock.lock();
+    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+        RequestProfiler.OperationName.RETRY_BACKOFF, requestWrapper.requestUniqueId);
     try {
       Condition condition = lock.newCondition();
       while (shouldWaitForBackoff(requestWrapper)) {
@@ -519,6 +513,8 @@ class ConnectionWorker implements AutoCloseable {
     } catch (InterruptedException e) {
       throw new IllegalStateException(e);
     } finally {
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+          RequestProfiler.OperationName.RETRY_BACKOFF, requestWrapper.requestUniqueId);
       lock.unlock();
     }
   }
@@ -539,6 +535,8 @@ class ConnectionWorker implements AutoCloseable {
     ++this.inflightRequests;
     this.inflightBytes += requestWrapper.messageSize;
     hasMessageInWaitingQueue.signal();
+    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+        RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
     if (addToFront) {
       waitingRequestQueue.addFirst(requestWrapper);
     } else {
@@ -547,7 +545,8 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   /** Schedules the writing of rows at given offset. */
-  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
+  ApiFuture<AppendRowsResponse> append(
+      StreamWriter streamWriter, ProtoRows rows, long offset, String requestUniqueId) {
     if (this.location != null && !this.location.equals(streamWriter.getLocation())) {
       throw new StatusRuntimeException(
           Status.fromCode(Code.INVALID_ARGUMENT)
@@ -584,7 +583,7 @@ class ConnectionWorker implements AutoCloseable {
       requestBuilder.setDefaultMissingValueInterpretation(
           streamWriter.getDefaultValueInterpretation());
     }
-    return appendInternal(streamWriter, requestBuilder.build());
+    return appendInternal(streamWriter, requestBuilder.build(), requestUniqueId);
   }
 
   Boolean isUserClosed() {
@@ -601,9 +600,9 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   private ApiFuture<AppendRowsResponse> appendInternal(
-      StreamWriter streamWriter, AppendRowsRequest message) {
+      StreamWriter streamWriter, AppendRowsRequest message, String requestUniqueId) {
     AppendRequestAndResponse requestWrapper =
-        new AppendRequestAndResponse(message, streamWriter, this.retrySettings);
+        new AppendRequestAndResponse(message, streamWriter, this.retrySettings, requestUniqueId);
     if (requestWrapper.messageSize > getApiMaxRequestBytes()) {
       requestWrapper.appendResult.setException(
           new StatusRuntimeException(
@@ -650,11 +649,14 @@ class ConnectionWorker implements AutoCloseable {
                 writerId));
         return requestWrapper.appendResult;
       }
-
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+          RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
       ++this.inflightRequests;
       this.inflightBytes += requestWrapper.messageSize;
       waitingRequestQueue.addLast(requestWrapper);
       hasMessageInWaitingQueue.signal();
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+          RequestProfiler.OperationName.WAIT_INFLIGHT_QUOTA, requestUniqueId);
       try {
         maybeWaitForInflightQuota();
       } catch (StatusRuntimeException ex) {
@@ -663,6 +665,8 @@ class ConnectionWorker implements AutoCloseable {
         this.inflightBytes -= requestWrapper.messageSize;
         throw ex;
       }
+      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+          RequestProfiler.OperationName.WAIT_INFLIGHT_QUOTA, requestUniqueId);
       return requestWrapper.appendResult;
     } finally {
       this.lock.unlock();
@@ -826,7 +830,12 @@ class ConnectionWorker implements AutoCloseable {
           // prepended as they need to be sent before new requests.
           while (!inflightRequestQueue.isEmpty()) {
             AppendRequestAndResponse requestWrapper = inflightRequestQueue.pollLast();
+            // Consider the backend latency as completed for the current request.
+            RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+                RequestProfiler.OperationName.RESPONSE_LATENCY, requestWrapper.requestUniqueId);
             requestWrapper.requestSendTimeStamp = null;
+            RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+                RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
             waitingRequestQueue.addFirst(requestWrapper);
           }
 
@@ -836,6 +845,8 @@ class ConnectionWorker implements AutoCloseable {
         }
         while (!this.waitingRequestQueue.isEmpty()) {
           AppendRequestAndResponse requestWrapper = this.waitingRequestQueue.pollFirst();
+          RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+              RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
           waitForBackoffIfNecessary(requestWrapper);
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
@@ -876,7 +887,9 @@ class ConnectionWorker implements AutoCloseable {
       }
       while (!localQueue.isEmpty()) {
         localQueue.peekFirst().setRequestSendQueueTime();
-        AppendRowsRequest originalRequest = localQueue.pollFirst().message;
+        AppendRequestAndResponse wrapper = localQueue.pollFirst();
+        AppendRowsRequest originalRequest = wrapper.message;
+        String requestUniqueId = wrapper.requestUniqueId;
         AppendRowsRequest.Builder originalRequestBuilder = originalRequest.toBuilder();
         // Always respect the first writer schema seen by the loop.
         if (writerSchema == null) {
@@ -917,6 +930,9 @@ class ConnectionWorker implements AutoCloseable {
           originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
         }
         firstRequestForTableOrSchemaSwitch = false;
+
+        RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+            RequestProfiler.OperationName.RESPONSE_LATENCY, requestUniqueId);
 
         // Send should only throw an exception if there is a problem with the request. The catch
         // block will handle this case, and return the exception with the result.
@@ -1196,6 +1212,8 @@ class ConnectionWorker implements AutoCloseable {
       }
       if (!this.inflightRequestQueue.isEmpty()) {
         requestWrapper = pollFirstInflightRequestQueue();
+        RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+            RequestProfiler.OperationName.RESPONSE_LATENCY, requestWrapper.requestUniqueId);
       } else if (inflightCleanuped) {
         // It is possible when requestCallback is called, the inflight queue is already drained
         // because we timed out waiting for done.
@@ -1227,35 +1245,40 @@ class ConnectionWorker implements AutoCloseable {
     // the current request callback finishes.
     threadPool.submit(
         () -> {
-          if (response.hasError()) {
-            Exceptions.StorageException storageException =
-                Exceptions.toStorageException(response.getError(), null);
-            log.fine(String.format("Got error message: %s", response.toString()));
-            if (storageException != null) {
-              requestWrapper.appendResult.setException(storageException);
-            } else if (response.getRowErrorsCount() > 0) {
-              Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
-              for (int i = 0; i < response.getRowErrorsCount(); i++) {
-                RowError rowError = response.getRowErrors(i);
-                rowIndexToErrorMessage.put(
-                    Math.toIntExact(rowError.getIndex()), rowError.getMessage());
+          try {
+            if (response.hasError()) {
+              Exceptions.StorageException storageException =
+                  Exceptions.toStorageException(response.getError(), null);
+              log.fine(String.format("Got error message: %s", response.toString()));
+              if (storageException != null) {
+                requestWrapper.appendResult.setException(storageException);
+              } else if (response.getRowErrorsCount() > 0) {
+                Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
+                for (int i = 0; i < response.getRowErrorsCount(); i++) {
+                  RowError rowError = response.getRowErrors(i);
+                  rowIndexToErrorMessage.put(
+                      Math.toIntExact(rowError.getIndex()), rowError.getMessage());
+                }
+                AppendSerializationError exception =
+                    new AppendSerializationError(
+                        response.getError().getCode(),
+                        response.getError().getMessage(),
+                        streamName,
+                        rowIndexToErrorMessage);
+                requestWrapper.appendResult.setException(exception);
+              } else {
+                StatusRuntimeException exception =
+                    new StatusRuntimeException(
+                        Status.fromCodeValue(response.getError().getCode())
+                            .withDescription(response.getError().getMessage()));
+                requestWrapper.appendResult.setException(exception);
               }
-              AppendSerializationError exception =
-                  new AppendSerializationError(
-                      response.getError().getCode(),
-                      response.getError().getMessage(),
-                      streamName,
-                      rowIndexToErrorMessage);
-              requestWrapper.appendResult.setException(exception);
             } else {
-              StatusRuntimeException exception =
-                  new StatusRuntimeException(
-                      Status.fromCodeValue(response.getError().getCode())
-                          .withDescription(response.getError().getMessage()));
-              requestWrapper.appendResult.setException(exception);
+              requestWrapper.appendResult.set(response);
             }
-          } else {
-            requestWrapper.appendResult.set(response);
+          } finally {
+            RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+                RequestProfiler.OperationName.TOTAL_LATENCY, requestWrapper.requestUniqueId);
           }
         });
   }
@@ -1367,6 +1390,9 @@ class ConnectionWorker implements AutoCloseable {
     Instant blockMessageSendDeadline;
 
     Integer retryCount;
+
+    // Unique identifier for the request.
+    String requestUniqueId;
     ExponentialRetryAlgorithm retryAlgorithm;
 
     // The writer that issues the call of the request.
@@ -1379,11 +1405,15 @@ class ConnectionWorker implements AutoCloseable {
     Instant requestSendTimeStamp;
 
     AppendRequestAndResponse(
-        AppendRowsRequest message, StreamWriter streamWriter, RetrySettings retrySettings) {
+        AppendRowsRequest message,
+        StreamWriter streamWriter,
+        RetrySettings retrySettings,
+        String requestUniqueId) {
       this.appendResult = SettableApiFuture.create();
       this.message = message;
       this.messageSize = message.getProtoRows().getSerializedSize();
       this.streamWriter = streamWriter;
+      this.requestUniqueId = requestUniqueId;
       this.blockMessageSendDeadline = Instant.now();
       this.retryCount = 0;
       // To be set after first retry

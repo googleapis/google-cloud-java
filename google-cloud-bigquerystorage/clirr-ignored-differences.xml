@@ -193,5 +193,9 @@
     <className>com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter$Builder</className>
     <method>com.google.cloud.bigquery.storage.v1.SchemaAwareStreamWriter$Builder setTraceIdBase(java.lang.String)</method>
   </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/StreamWriter$SingleConnectionOrConnectionPool</className>
+  </difference>
 </differences>
 

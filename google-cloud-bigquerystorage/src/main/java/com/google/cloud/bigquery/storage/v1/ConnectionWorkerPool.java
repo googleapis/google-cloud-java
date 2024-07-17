@@ -234,11 +234,6 @@ public class ConnectionWorkerPool {
     ConnectionWorkerPool.settings = settings;
   }
 
-  /** Distributes the writing of a message to an underlying connection. */
-  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows) {
-    return append(streamWriter, rows, -1);
-  }
-
   ConnectionWorker getConnectionWorker(StreamWriter streamWriter) {
     ConnectionWorker connectionWorker;
     lock.lock();
@@ -280,12 +275,13 @@ public class ConnectionWorkerPool {
   }
 
   /** Distributes the writing of a message to an underlying connection. */
-  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
+  ApiFuture<AppendRowsResponse> append(
+      StreamWriter streamWriter, ProtoRows rows, long offset, String uniqueRequestId) {
     // We are in multiplexing mode after entering the following logic.
     ConnectionWorker connectionWorker = getConnectionWorker(streamWriter);
     Stopwatch stopwatch = Stopwatch.createStarted();
     ApiFuture<AppendRowsResponse> responseFuture =
-        connectionWorker.append(streamWriter, rows, offset);
+        connectionWorker.append(streamWriter, rows, offset, uniqueRequestId);
     return ApiFutures.transform(
         responseFuture,
         // Add callback for update schema

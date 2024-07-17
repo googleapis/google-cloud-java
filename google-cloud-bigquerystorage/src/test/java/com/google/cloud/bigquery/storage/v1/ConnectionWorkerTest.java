@@ -578,7 +578,8 @@ public class ConnectionWorkerTest {
       StreamWriter streamWriter,
       ProtoRows protoRows,
       long offset) {
-    return connectionWorker.append(streamWriter, protoRows, offset);
+    return connectionWorker.append(
+        streamWriter, protoRows, offset, /*requestUniqueId=*/ "request_" + offset);
   }
 
   private ProtoRows createFooProtoRows(String[] messages) {

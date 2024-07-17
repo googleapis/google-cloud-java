@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -51,6 +52,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
@@ -517,6 +519,59 @@ public class ITBigQueryWriteManualClientTest {
     assertEquals("ccc", currentRow.get(0).getStringValue());
     assertEquals(1664801424000000L, currentRow.get(1).getTimestampValue());
     assertEquals(false, iter.hasNext());
+  }
+
+  @Test
+  public void testRequestProfilerWithCommittedStream()
+      throws DescriptorValidationException, IOException, InterruptedException {
+    String tableName = "TestProfiler";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field col1 = Field.newBuilder("col1", StandardSQLTypeName.STRING).build();
+    Schema schema = Schema.of(col1);
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, StandardTableDefinition.of(schema)).build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(parent.toString())
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    int totalRequest = 50;
+    int rowBatch = 1200;
+    ArrayList<ApiFuture<AppendRowsResponse>> allResponses =
+        new ArrayList<ApiFuture<AppendRowsResponse>>(totalRequest);
+    RequestProfiler.setReportPeriod(Duration.ofMillis(300));
+    // Sends a total of 30MB over the wire.
+    try (JsonStreamWriter jsonStreamWriter =
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
+            .setEnableLatencyProfiler(true)
+            .build()) {
+      for (int k = 0; k < totalRequest; k++) {
+        JSONObject row = new JSONObject();
+        row.put("col1", "aaaaa");
+        JSONArray jsonArr = new JSONArray();
+        // 3MB batch.
+        for (int j = 0; j < rowBatch; j++) {
+          jsonArr.put(row);
+        }
+        LOG.info("Appending: " + k + "/" + totalRequest);
+        Sleeper.DEFAULT.sleep(50);
+        allResponses.add(jsonStreamWriter.append(jsonArr, k * rowBatch));
+      }
+    }
+    LOG.info("Waiting for all responses to come back");
+    for (int i = 0; i < totalRequest; i++) {
+      try {
+        Assert.assertEquals(
+            allResponses.get(i).get().getAppendResult().getOffset().getValue(), i * rowBatch);
+      } catch (ExecutionException ex) {
+        Assert.fail("Unexpected error " + ex);
+      }
+    }
+    RequestProfiler.disableAndClearProfiler();
   }
 
   @Test
