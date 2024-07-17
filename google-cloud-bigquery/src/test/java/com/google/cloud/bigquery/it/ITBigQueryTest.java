@@ -4257,26 +4257,11 @@ public class ITBigQueryTest {
     TableResult result = bigquery.query(dmlConfig);
     assertNotNull(result.getJobId());
     assertEquals(TABLE_SCHEMA, result.getSchema());
-    assertEquals(2, result.getTotalRows());
-    // Verify correctness of table content
-    String sqlQuery = String.format("SELECT * FROM %s.%s", DATASET, tableName);
-    QueryJobConfiguration sqlConfig = QueryJobConfiguration.newBuilder(sqlQuery).build();
-    TableResult resultAfterDML = bigquery.query(sqlConfig);
-    assertNotNull(resultAfterDML.getJobId());
-    for (FieldValueList row : resultAfterDML.getValues()) {
-      FieldValue timestampCell = row.get(0);
-      assertEquals(timestampCell, row.get("TimestampField"));
-      FieldValue stringCell = row.get(1);
-      assertEquals(stringCell, row.get("StringField"));
-      FieldValue booleanCell = row.get(3);
-      assertEquals(booleanCell, row.get("BooleanField"));
-      assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.getAttribute());
-      assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.getAttribute());
-      assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
-      assertEquals(1408452095220000L, timestampCell.getTimestampValue());
-      assertEquals("hello", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
-    }
+    // Using the job reference on the TableResult, lookup and verify DML statistics.
+    Job queryJob = bigquery.getJob(result.getJobId());
+    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    assertEquals(2L, statistics.getNumDmlAffectedRows().longValue());
+    assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
   }
 
   @Test
@@ -6668,7 +6653,7 @@ public class ITBigQueryTest {
   }
 
   private TableResult executeSimpleQuery(BigQuery bigQuery) throws InterruptedException {
-    String query = "SELECT 1 as one";
+    String query = "SELECT CURRENT_TIMESTAMP() as ts";
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
     TableResult result = bigQuery.query(config);
     return result;
