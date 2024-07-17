@@ -15,11 +15,17 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithToken;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingException;
@@ -38,6 +44,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.ExecuteQueryRequest;
+import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
@@ -53,7 +61,12 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.*;
+import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
+import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
 import com.google.common.io.BaseEncoding;
@@ -87,6 +100,7 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
@@ -108,6 +122,7 @@ public class EnhancedBigtableStubTest {
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table");
   private static final String APP_PROFILE_ID = "app-profile-id";
   private static final String WAIT_TIME_TABLE_ID = "test-wait-timeout";
+  private static final String WAIT_TIME_QUERY = "test-wait-timeout";
   private static final Duration WATCHDOG_CHECK_DURATION = Duration.ofMillis(100);
 
   private Server server;
@@ -653,6 +668,57 @@ public class EnhancedBigtableStubTest {
             "Batching finished with 1 batches failed to apply due to: 1 ApiException(1 PERMISSION_DENIED) and 0 partial failures");
   }
 
+  @Test
+  public void testCreateExecuteQueryCallable() throws InterruptedException {
+    ExecuteQueryCallable streamingCallable = enhancedBigtableStub.createExecuteQueryCallable();
+
+    SqlServerStream sqlServerStream = streamingCallable.call(Statement.of("SELECT * FROM table"));
+    ExecuteQueryRequest expectedRequest =
+        ExecuteQueryRequest.newBuilder()
+            .setInstanceName(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
+            .setQuery("SELECT * FROM table")
+            .build();
+    assertThat(sqlServerStream.rows().iterator().next()).isNotNull();
+    assertThat(sqlServerStream.metadataFuture().isDone()).isTrue();
+    assertThat(fakeDataService.popLastExecuteQueryRequest()).isEqualTo(expectedRequest);
+  }
+
+  @Test
+  public void testExecuteQueryWaitTimeoutIsSet() throws IOException {
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    // Set a shorter wait timeout and make watchdog checks more frequently
+    settings.executeQuerySettings().setWaitTimeout(WATCHDOG_CHECK_DURATION.dividedBy(2));
+    settings.setStreamWatchdogProvider(
+        InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
+
+    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
+    Iterator<SqlRow> iterator =
+        stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).rows().iterator();
+    WatchdogTimeoutException e = assertThrows(WatchdogTimeoutException.class, iterator::next);
+    assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+  }
+
+  @Test
+  public void testExecuteQueryWaitTimeoutWorksWithMetadataFuture()
+      throws IOException, InterruptedException {
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    // Set a shorter wait timeout and make watchdog checks more frequently
+    settings.executeQuerySettings().setWaitTimeout(WATCHDOG_CHECK_DURATION.dividedBy(2));
+    settings.setStreamWatchdogProvider(
+        InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
+
+    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
+    ApiFuture<ResultSetMetadata> future =
+        stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).metadataFuture();
+
+    ExecutionException e = assertThrows(ExecutionException.class, future::get);
+    assertThat(e.getCause()).isInstanceOf(WatchdogTimeoutException.class);
+    assertThat(e.getCause().getMessage())
+        .contains("Canceled due to timeout waiting for next response");
+    assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
+  }
+
   private static class MetadataInterceptor implements ServerInterceptor {
     final BlockingQueue<Metadata> headers = Queues.newLinkedBlockingDeque();
 
@@ -684,10 +750,15 @@ public class EnhancedBigtableStubTest {
     final BlockingQueue<ReadChangeStreamRequest> readChangeReadStreamRequests =
         Queues.newLinkedBlockingDeque();
     final BlockingQueue<PingAndWarmRequest> pingRequests = Queues.newLinkedBlockingDeque();
+    final BlockingQueue<ExecuteQueryRequest> executeQueryRequests = Queues.newLinkedBlockingDeque();
 
     @SuppressWarnings("unchecked")
     ReadRowsRequest popLastRequest() throws InterruptedException {
       return requests.poll(1, TimeUnit.SECONDS);
+    }
+
+    ExecuteQueryRequest popLastExecuteQueryRequest() throws InterruptedException {
+      return executeQueryRequests.poll(1, TimeUnit.SECONDS);
     }
 
     @Override
@@ -749,6 +820,21 @@ public class EnhancedBigtableStubTest {
       pingRequests.add(request);
       responseObserver.onNext(PingAndWarmResponse.getDefaultInstance());
       responseObserver.onCompleted();
+    }
+
+    @Override
+    public void executeQuery(
+        ExecuteQueryRequest request, StreamObserver<ExecuteQueryResponse> responseObserver) {
+      if (request.getQuery().contains(WAIT_TIME_QUERY)) {
+        try {
+          Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
+        } catch (Exception e) {
+
+        }
+      }
+      executeQueryRequests.add(request);
+      responseObserver.onNext(metadata(columnMetadata("foo", stringType())));
+      responseObserver.onNext(partialResultSetWithToken(stringValue("test")));
     }
   }
 }

@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
+import com.google.bigtable.v2.ExecuteQueryRequest;
+import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -156,6 +158,16 @@ public class GrpcBigtableStub extends BigtableStub {
                   ProtoUtils.marshaller(ReadChangeStreamResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExecuteQueryRequest, ExecuteQueryResponse>
+      executeQueryMethodDescriptor =
+          MethodDescriptor.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.bigtable.v2.Bigtable/ExecuteQuery")
+              .setRequestMarshaller(ProtoUtils.marshaller(ExecuteQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteQueryResponse.getDefaultInstance()))
+              .build();
+
   private final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable;
   private final ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysCallable;
@@ -172,6 +184,8 @@ public class GrpcBigtableStub extends BigtableStub {
       generateInitialChangeStreamPartitionsCallable;
   private final ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse>
       readChangeStreamCallable;
+  private final ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse>
+      executeQueryCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -223,6 +237,10 @@ public class GrpcBigtableStub extends BigtableStub {
   private static final PathTemplate READ_MODIFY_WRITE_ROW_2_PATH_TEMPLATE =
       PathTemplate.create(
           "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
+  private static final PathTemplate EXECUTE_QUERY_0_PATH_TEMPLATE =
+      PathTemplate.create("{name=projects/*/instances/*}");
+  private static final PathTemplate EXECUTE_QUERY_1_PATH_TEMPLATE =
+      PathTemplate.create("{app_profile_id=**}");
 
   public static final GrpcBigtableStub create(BigtableStubSettings settings) throws IOException {
     return new GrpcBigtableStub(settings, ClientContext.create(settings));
@@ -407,6 +425,18 @@ public class GrpcBigtableStub extends BigtableStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ExecuteQueryRequest, ExecuteQueryResponse> executeQueryTransportSettings =
+        GrpcCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
+            .setMethodDescriptor(executeQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getInstanceName(), "name", EXECUTE_QUERY_0_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAppProfileId(), "app_profile_id", EXECUTE_QUERY_1_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
 
     this.readRowsCallable =
         callableFactory.createServerStreamingCallable(
@@ -441,6 +471,9 @@ public class GrpcBigtableStub extends BigtableStub {
     this.readChangeStreamCallable =
         callableFactory.createServerStreamingCallable(
             readChangeStreamTransportSettings, settings.readChangeStreamSettings(), clientContext);
+    this.executeQueryCallable =
+        callableFactory.createServerStreamingCallable(
+            executeQueryTransportSettings, settings.executeQuerySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -500,6 +533,11 @@ public class GrpcBigtableStub extends BigtableStub {
   public ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse>
       readChangeStreamCallable() {
     return readChangeStreamCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> executeQueryCallable() {
+    return executeQueryCallable;
   }
 
   @Override

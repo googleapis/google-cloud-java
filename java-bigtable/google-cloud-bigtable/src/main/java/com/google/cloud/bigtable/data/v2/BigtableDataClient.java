@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigtable.data.v2.internal.ResultSetImpl;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -47,7 +48,10 @@ import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
+import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
+import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
@@ -2608,6 +2612,34 @@ public class BigtableDataClient implements AutoCloseable {
   public ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
       readChangeStreamCallable() {
     return stub.readChangeStreamCallable();
+  }
+
+  /**
+   * Executes a SQL Query and returns a ResultSet to iterate over the results. The returned
+   * ResultSet instance is not threadsafe, it can only be used from single thread.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String query = "SELECT CAST(cf['stringCol'] AS STRING) FROM [TABLE]";
+   *
+   *   try (ResultSet resultSet = bigtableDataClient.executeQuery(Statement.of(query))) {
+   *     while (resultSet.next()) {
+   *        String s = resultSet.getString("stringCol");
+   *        // do something with data
+   *     }
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   * }</pre>
+   *
+   * @see Statement For query options.
+   */
+  @BetaApi
+  public ResultSet executeQuery(Statement statement) {
+    SqlServerStream stream = stub.createExecuteQueryCallable().call(statement);
+    return ResultSetImpl.create(stream);
   }
 
   /** Close the clients and releases all associated resources. */

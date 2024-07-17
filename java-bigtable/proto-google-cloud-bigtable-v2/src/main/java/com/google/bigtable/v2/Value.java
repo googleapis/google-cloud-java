@@ -62,6 +62,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.Value.class, com.google.bigtable.v2.Value.Builder.class);
   }
 
+  private int bitField0_;
   private int kindCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -73,7 +74,14 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RAW_VALUE(8),
     RAW_TIMESTAMP_MICROS(9),
+    BYTES_VALUE(2),
+    STRING_VALUE(3),
     INT_VALUE(6),
+    BOOL_VALUE(10),
+    FLOAT_VALUE(11),
+    TIMESTAMP_VALUE(12),
+    DATE_VALUE(13),
+    ARRAY_VALUE(4),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -96,8 +104,22 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
           return RAW_VALUE;
         case 9:
           return RAW_TIMESTAMP_MICROS;
+        case 2:
+          return BYTES_VALUE;
+        case 3:
+          return STRING_VALUE;
         case 6:
           return INT_VALUE;
+        case 10:
+          return BOOL_VALUE;
+        case 11:
+          return FLOAT_VALUE;
+        case 12:
+          return TIMESTAMP_VALUE;
+        case 13:
+          return DATE_VALUE;
+        case 4:
+          return ARRAY_VALUE;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -112,6 +134,88 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
 
   public KindCase getKindCase() {
     return KindCase.forNumber(kindCase_);
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 7;
+  private com.google.bigtable.v2.Type type_;
+  /**
+   *
+   *
+   * <pre>
+   * The verified `Type` of this `Value`, if it cannot be inferred.
+   *
+   * Read results will never specify the encoding for `type` since the value
+   * will already have been decoded by the server. Furthermore, the `type` will
+   * be omitted entirely if it can be inferred from a previous response. The
+   * exact semantics for inferring `type` will vary, and are therefore
+   * documented separately for each read method.
+   *
+   * When using composite types (Struct, Array, Map) only the outermost `Value`
+   * will specify the `type`. This top-level `type` will define the types for
+   * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+   * If a nested `Value` provides a `type` on write, the request will be
+   * rejected with INVALID_ARGUMENT.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type type = 7;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The verified `Type` of this `Value`, if it cannot be inferred.
+   *
+   * Read results will never specify the encoding for `type` since the value
+   * will already have been decoded by the server. Furthermore, the `type` will
+   * be omitted entirely if it can be inferred from a previous response. The
+   * exact semantics for inferring `type` will vary, and are therefore
+   * documented separately for each read method.
+   *
+   * When using composite types (Struct, Array, Map) only the outermost `Value`
+   * will specify the `type`. This top-level `type` will define the types for
+   * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+   * If a nested `Value` provides a `type` on write, the request will be
+   * rejected with INVALID_ARGUMENT.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type type = 7;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.Type getType() {
+    return type_ == null ? com.google.bigtable.v2.Type.getDefaultInstance() : type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The verified `Type` of this `Value`, if it cannot be inferred.
+   *
+   * Read results will never specify the encoding for `type` since the value
+   * will already have been decoded by the server. Furthermore, the `type` will
+   * be omitted entirely if it can be inferred from a previous response. The
+   * exact semantics for inferring `type` will vary, and are therefore
+   * documented separately for each read method.
+   *
+   * When using composite types (Struct, Array, Map) only the outermost `Value`
+   * will specify the `type`. This top-level `type` will define the types for
+   * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+   * If a nested `Value` provides a `type` on write, the request will be
+   * rejected with INVALID_ARGUMENT.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type type = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.TypeOrBuilder getTypeOrBuilder() {
+    return type_ == null ? com.google.bigtable.v2.Type.getDefaultInstance() : type_;
   }
 
   public static final int RAW_VALUE_FIELD_NUMBER = 8;
@@ -188,13 +292,117 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     return 0L;
   }
 
+  public static final int BYTES_VALUE_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a byte sequence.
+   * </pre>
+   *
+   * <code>bytes bytes_value = 2;</code>
+   *
+   * @return Whether the bytesValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBytesValue() {
+    return kindCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a byte sequence.
+   * </pre>
+   *
+   * <code>bytes bytes_value = 2;</code>
+   *
+   * @return The bytesValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBytesValue() {
+    if (kindCase_ == 2) {
+      return (com.google.protobuf.ByteString) kind_;
+    }
+    return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int STRING_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a string.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return kindCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a string.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return The stringValue.
+   */
+  public java.lang.String getStringValue() {
+    java.lang.Object ref = "";
+    if (kindCase_ == 3) {
+      ref = kind_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (kindCase_ == 3) {
+        kind_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a string.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return The bytes for stringValue.
+   */
+  public com.google.protobuf.ByteString getStringValueBytes() {
+    java.lang.Object ref = "";
+    if (kindCase_ == 3) {
+      ref = kind_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (kindCase_ == 3) {
+        kind_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int INT_VALUE_FIELD_NUMBER = 6;
   /**
    *
    *
    * <pre>
    * Represents a typed value transported as an integer.
-   * Default type for writes: `Int64`
    * </pre>
    *
    * <code>int64 int_value = 6;</code>
@@ -210,7 +418,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents a typed value transported as an integer.
-   * Default type for writes: `Int64`
    * </pre>
    *
    * <code>int64 int_value = 6;</code>
@@ -223,6 +430,241 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return (java.lang.Long) kind_;
     }
     return 0L;
+  }
+
+  public static final int BOOL_VALUE_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a boolean.
+   * </pre>
+   *
+   * <code>bool bool_value = 10;</code>
+   *
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return kindCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a boolean.
+   * </pre>
+   *
+   * <code>bool bool_value = 10;</code>
+   *
+   * @return The boolValue.
+   */
+  @java.lang.Override
+  public boolean getBoolValue() {
+    if (kindCase_ == 10) {
+      return (java.lang.Boolean) kind_;
+    }
+    return false;
+  }
+
+  public static final int FLOAT_VALUE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a floating point number.
+   * </pre>
+   *
+   * <code>double float_value = 11;</code>
+   *
+   * @return Whether the floatValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloatValue() {
+    return kindCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a floating point number.
+   * </pre>
+   *
+   * <code>double float_value = 11;</code>
+   *
+   * @return The floatValue.
+   */
+  @java.lang.Override
+  public double getFloatValue() {
+    if (kindCase_ == 11) {
+      return (java.lang.Double) kind_;
+    }
+    return 0D;
+  }
+
+  public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+   *
+   * @return Whether the timestampValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimestampValue() {
+    return kindCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+   *
+   * @return The timestampValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getTimestampValue() {
+    if (kindCase_ == 12) {
+      return (com.google.protobuf.Timestamp) kind_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a timestamp.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
+    if (kindCase_ == 12) {
+      return (com.google.protobuf.Timestamp) kind_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int DATE_VALUE_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a date.
+   * </pre>
+   *
+   * <code>.google.type.Date date_value = 13;</code>
+   *
+   * @return Whether the dateValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDateValue() {
+    return kindCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a date.
+   * </pre>
+   *
+   * <code>.google.type.Date date_value = 13;</code>
+   *
+   * @return The dateValue.
+   */
+  @java.lang.Override
+  public com.google.type.Date getDateValue() {
+    if (kindCase_ == 13) {
+      return (com.google.type.Date) kind_;
+    }
+    return com.google.type.Date.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a date.
+   * </pre>
+   *
+   * <code>.google.type.Date date_value = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getDateValueOrBuilder() {
+    if (kindCase_ == 13) {
+      return (com.google.type.Date) kind_;
+    }
+    return com.google.type.Date.getDefaultInstance();
+  }
+
+  public static final int ARRAY_VALUE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a sequence of values.
+   * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+   * `Value` must provide an explicit `type` on write. This `type` will
+   * apply recursively to the nested `Struct` fields, `Array` elements,
+   * or `Map` key/value pairs, which *must not* supply their own `type`.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+   *
+   * @return Whether the arrayValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasArrayValue() {
+    return kindCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a sequence of values.
+   * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+   * `Value` must provide an explicit `type` on write. This `type` will
+   * apply recursively to the nested `Struct` fields, `Array` elements,
+   * or `Map` key/value pairs, which *must not* supply their own `type`.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+   *
+   * @return The arrayValue.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ArrayValue getArrayValue() {
+    if (kindCase_ == 4) {
+      return (com.google.bigtable.v2.ArrayValue) kind_;
+    }
+    return com.google.bigtable.v2.ArrayValue.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a typed value transported as a sequence of values.
+   * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+   * `Value` must provide an explicit `type` on write. This `type` will
+   * apply recursively to the nested `Struct` fields, `Array` elements,
+   * or `Map` key/value pairs, which *must not* supply their own `type`.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ArrayValueOrBuilder getArrayValueOrBuilder() {
+    if (kindCase_ == 4) {
+      return (com.google.bigtable.v2.ArrayValue) kind_;
+    }
+    return com.google.bigtable.v2.ArrayValue.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -239,14 +681,38 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (kindCase_ == 2) {
+      output.writeBytes(2, (com.google.protobuf.ByteString) kind_);
+    }
+    if (kindCase_ == 3) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, kind_);
+    }
+    if (kindCase_ == 4) {
+      output.writeMessage(4, (com.google.bigtable.v2.ArrayValue) kind_);
+    }
     if (kindCase_ == 6) {
       output.writeInt64(6, (long) ((java.lang.Long) kind_));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getType());
     }
     if (kindCase_ == 8) {
       output.writeBytes(8, (com.google.protobuf.ByteString) kind_);
     }
     if (kindCase_ == 9) {
       output.writeInt64(9, (long) ((java.lang.Long) kind_));
+    }
+    if (kindCase_ == 10) {
+      output.writeBool(10, (boolean) ((java.lang.Boolean) kind_));
+    }
+    if (kindCase_ == 11) {
+      output.writeDouble(11, (double) ((java.lang.Double) kind_));
+    }
+    if (kindCase_ == 12) {
+      output.writeMessage(12, (com.google.protobuf.Timestamp) kind_);
+    }
+    if (kindCase_ == 13) {
+      output.writeMessage(13, (com.google.type.Date) kind_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -257,10 +723,26 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (kindCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              2, (com.google.protobuf.ByteString) kind_);
+    }
+    if (kindCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, kind_);
+    }
+    if (kindCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.bigtable.v2.ArrayValue) kind_);
+    }
     if (kindCase_ == 6) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               6, (long) ((java.lang.Long) kind_));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getType());
     }
     if (kindCase_ == 8) {
       size +=
@@ -271,6 +753,26 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               9, (long) ((java.lang.Long) kind_));
+    }
+    if (kindCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              10, (boolean) ((java.lang.Boolean) kind_));
+    }
+    if (kindCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(
+              11, (double) ((java.lang.Double) kind_));
+    }
+    if (kindCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.protobuf.Timestamp) kind_);
+    }
+    if (kindCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.type.Date) kind_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,6 +789,10 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.Value other = (com.google.bigtable.v2.Value) obj;
 
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (!getType().equals(other.getType())) return false;
+    }
     if (!getKindCase().equals(other.getKindCase())) return false;
     switch (kindCase_) {
       case 8:
@@ -295,8 +801,30 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       case 9:
         if (getRawTimestampMicros() != other.getRawTimestampMicros()) return false;
         break;
+      case 2:
+        if (!getBytesValue().equals(other.getBytesValue())) return false;
+        break;
+      case 3:
+        if (!getStringValue().equals(other.getStringValue())) return false;
+        break;
       case 6:
         if (getIntValue() != other.getIntValue()) return false;
+        break;
+      case 10:
+        if (getBoolValue() != other.getBoolValue()) return false;
+        break;
+      case 11:
+        if (java.lang.Double.doubleToLongBits(getFloatValue())
+            != java.lang.Double.doubleToLongBits(other.getFloatValue())) return false;
+        break;
+      case 12:
+        if (!getTimestampValue().equals(other.getTimestampValue())) return false;
+        break;
+      case 13:
+        if (!getDateValue().equals(other.getDateValue())) return false;
+        break;
+      case 4:
+        if (!getArrayValue().equals(other.getArrayValue())) return false;
         break;
       case 0:
       default:
@@ -312,6 +840,10 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+    }
     switch (kindCase_) {
       case 8:
         hash = (37 * hash) + RAW_VALUE_FIELD_NUMBER;
@@ -321,9 +853,40 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + RAW_TIMESTAMP_MICROS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRawTimestampMicros());
         break;
+      case 2:
+        hash = (37 * hash) + BYTES_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getBytesValue().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + STRING_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getStringValue().hashCode();
+        break;
       case 6:
         hash = (37 * hash) + INT_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getIntValue());
+        break;
+      case 10:
+        hash = (37 * hash) + BOOL_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBoolValue());
+        break;
+      case 11:
+        hash = (37 * hash) + FLOAT_VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getFloatValue()));
+        break;
+      case 12:
+        hash = (37 * hash) + TIMESTAMP_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestampValue().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + DATE_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getDateValue().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + ARRAY_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getArrayValue().hashCode();
         break;
       case 0:
       default:
@@ -457,16 +1020,39 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.bigtable.v2.Value.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTypeFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
+        typeBuilder_ = null;
+      }
+      if (timestampValueBuilder_ != null) {
+        timestampValueBuilder_.clear();
+      }
+      if (dateValueBuilder_ != null) {
+        dateValueBuilder_.clear();
+      }
+      if (arrayValueBuilder_ != null) {
+        arrayValueBuilder_.clear();
+      }
       kindCase_ = 0;
       kind_ = null;
       return this;
@@ -504,11 +1090,26 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.bigtable.v2.Value result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = typeBuilder_ == null ? type_ : typeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.bigtable.v2.Value result) {
       result.kindCase_ = kindCase_;
       result.kind_ = this.kind_;
+      if (kindCase_ == 12 && timestampValueBuilder_ != null) {
+        result.kind_ = timestampValueBuilder_.build();
+      }
+      if (kindCase_ == 13 && dateValueBuilder_ != null) {
+        result.kind_ = dateValueBuilder_.build();
+      }
+      if (kindCase_ == 4 && arrayValueBuilder_ != null) {
+        result.kind_ = arrayValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -556,6 +1157,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.bigtable.v2.Value other) {
       if (other == com.google.bigtable.v2.Value.getDefaultInstance()) return this;
+      if (other.hasType()) {
+        mergeType(other.getType());
+      }
       switch (other.getKindCase()) {
         case RAW_VALUE:
           {
@@ -567,9 +1171,46 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             setRawTimestampMicros(other.getRawTimestampMicros());
             break;
           }
+        case BYTES_VALUE:
+          {
+            setBytesValue(other.getBytesValue());
+            break;
+          }
+        case STRING_VALUE:
+          {
+            kindCase_ = 3;
+            kind_ = other.kind_;
+            onChanged();
+            break;
+          }
         case INT_VALUE:
           {
             setIntValue(other.getIntValue());
+            break;
+          }
+        case BOOL_VALUE:
+          {
+            setBoolValue(other.getBoolValue());
+            break;
+          }
+        case FLOAT_VALUE:
+          {
+            setFloatValue(other.getFloatValue());
+            break;
+          }
+        case TIMESTAMP_VALUE:
+          {
+            mergeTimestampValue(other.getTimestampValue());
+            break;
+          }
+        case DATE_VALUE:
+          {
+            mergeDateValue(other.getDateValue());
+            break;
+          }
+        case ARRAY_VALUE:
+          {
+            mergeArrayValue(other.getArrayValue());
             break;
           }
         case KIND_NOT_SET:
@@ -603,12 +1244,37 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 18:
+              {
+                kind_ = input.readBytes();
+                kindCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                kindCase_ = 3;
+                kind_ = s;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getArrayValueFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 4;
+                break;
+              } // case 34
             case 48:
               {
                 kind_ = input.readInt64();
                 kindCase_ = 6;
                 break;
               } // case 48
+            case 58:
+              {
+                input.readMessage(getTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
             case 66:
               {
                 kind_ = input.readBytes();
@@ -621,6 +1287,30 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
                 kindCase_ = 9;
                 break;
               } // case 72
+            case 80:
+              {
+                kind_ = input.readBool();
+                kindCase_ = 10;
+                break;
+              } // case 80
+            case 89:
+              {
+                kind_ = input.readDouble();
+                kindCase_ = 11;
+                break;
+              } // case 89
+            case 98:
+              {
+                input.readMessage(getTimestampValueFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getDateValueFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -653,6 +1343,294 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private com.google.bigtable.v2.Type type_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.Type,
+            com.google.bigtable.v2.Type.Builder,
+            com.google.bigtable.v2.TypeOrBuilder>
+        typeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     *
+     * @return The type.
+     */
+    public com.google.bigtable.v2.Type getType() {
+      if (typeBuilder_ == null) {
+        return type_ == null ? com.google.bigtable.v2.Type.getDefaultInstance() : type_;
+      } else {
+        return typeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public Builder setType(com.google.bigtable.v2.Type value) {
+      if (typeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+      } else {
+        typeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public Builder setType(com.google.bigtable.v2.Type.Builder builderForValue) {
+      if (typeBuilder_ == null) {
+        type_ = builderForValue.build();
+      } else {
+        typeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public Builder mergeType(com.google.bigtable.v2.Type value) {
+      if (typeBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && type_ != null
+            && type_ != com.google.bigtable.v2.Type.getDefaultInstance()) {
+          getTypeBuilder().mergeFrom(value);
+        } else {
+          type_ = value;
+        }
+      } else {
+        typeBuilder_.mergeFrom(value);
+      }
+      if (type_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
+        typeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public com.google.bigtable.v2.Type.Builder getTypeBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    public com.google.bigtable.v2.TypeOrBuilder getTypeOrBuilder() {
+      if (typeBuilder_ != null) {
+        return typeBuilder_.getMessageOrBuilder();
+      } else {
+        return type_ == null ? com.google.bigtable.v2.Type.getDefaultInstance() : type_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The verified `Type` of this `Value`, if it cannot be inferred.
+     *
+     * Read results will never specify the encoding for `type` since the value
+     * will already have been decoded by the server. Furthermore, the `type` will
+     * be omitted entirely if it can be inferred from a previous response. The
+     * exact semantics for inferring `type` will vary, and are therefore
+     * documented separately for each read method.
+     *
+     * When using composite types (Struct, Array, Map) only the outermost `Value`
+     * will specify the `type`. This top-level `type` will define the types for
+     * any nested `Struct' fields, `Array` elements, or `Map` key/value pairs.
+     * If a nested `Value` provides a `type` on write, the request will be
+     * rejected with INVALID_ARGUMENT.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type type = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.Type,
+            com.google.bigtable.v2.Type.Builder,
+            com.google.bigtable.v2.TypeOrBuilder>
+        getTypeFieldBuilder() {
+      if (typeBuilder_ == null) {
+        typeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type,
+                com.google.bigtable.v2.Type.Builder,
+                com.google.bigtable.v2.TypeOrBuilder>(getType(), getParentForChildren(), isClean());
+        type_ = null;
+      }
+      return typeBuilder_;
+    }
 
     /**
      *
@@ -808,8 +1786,213 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Represents a typed value transported as a byte sequence.
+     * </pre>
+     *
+     * <code>bytes bytes_value = 2;</code>
+     *
+     * @return Whether the bytesValue field is set.
+     */
+    public boolean hasBytesValue() {
+      return kindCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a byte sequence.
+     * </pre>
+     *
+     * <code>bytes bytes_value = 2;</code>
+     *
+     * @return The bytesValue.
+     */
+    public com.google.protobuf.ByteString getBytesValue() {
+      if (kindCase_ == 2) {
+        return (com.google.protobuf.ByteString) kind_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a byte sequence.
+     * </pre>
+     *
+     * <code>bytes bytes_value = 2;</code>
+     *
+     * @param value The bytesValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBytesValue(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kindCase_ = 2;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a byte sequence.
+     * </pre>
+     *
+     * <code>bytes bytes_value = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBytesValue() {
+      if (kindCase_ == 2) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return kindCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return The stringValue.
+     */
+    @java.lang.Override
+    public java.lang.String getStringValue() {
+      java.lang.Object ref = "";
+      if (kindCase_ == 3) {
+        ref = kind_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (kindCase_ == 3) {
+          kind_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return The bytes for stringValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStringValueBytes() {
+      java.lang.Object ref = "";
+      if (kindCase_ == 3) {
+        ref = kind_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (kindCase_ == 3) {
+          kind_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStringValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kindCase_ = 3;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStringValue() {
+      if (kindCase_ == 3) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a string.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStringValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kindCase_ = 3;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Represents a typed value transported as an integer.
-     * Default type for writes: `Int64`
      * </pre>
      *
      * <code>int64 int_value = 6;</code>
@@ -824,7 +2007,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as an integer.
-     * Default type for writes: `Int64`
      * </pre>
      *
      * <code>int64 int_value = 6;</code>
@@ -842,7 +2024,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as an integer.
-     * Default type for writes: `Int64`
      * </pre>
      *
      * <code>int64 int_value = 6;</code>
@@ -862,7 +2043,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a typed value transported as an integer.
-     * Default type for writes: `Int64`
      * </pre>
      *
      * <code>int64 int_value = 6;</code>
@@ -876,6 +2056,789 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a boolean.
+     * </pre>
+     *
+     * <code>bool bool_value = 10;</code>
+     *
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return kindCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a boolean.
+     * </pre>
+     *
+     * <code>bool bool_value = 10;</code>
+     *
+     * @return The boolValue.
+     */
+    public boolean getBoolValue() {
+      if (kindCase_ == 10) {
+        return (java.lang.Boolean) kind_;
+      }
+      return false;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a boolean.
+     * </pre>
+     *
+     * <code>bool bool_value = 10;</code>
+     *
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoolValue(boolean value) {
+
+      kindCase_ = 10;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a boolean.
+     * </pre>
+     *
+     * <code>bool bool_value = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBoolValue() {
+      if (kindCase_ == 10) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a floating point number.
+     * </pre>
+     *
+     * <code>double float_value = 11;</code>
+     *
+     * @return Whether the floatValue field is set.
+     */
+    public boolean hasFloatValue() {
+      return kindCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a floating point number.
+     * </pre>
+     *
+     * <code>double float_value = 11;</code>
+     *
+     * @return The floatValue.
+     */
+    public double getFloatValue() {
+      if (kindCase_ == 11) {
+        return (java.lang.Double) kind_;
+      }
+      return 0D;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a floating point number.
+     * </pre>
+     *
+     * <code>double float_value = 11;</code>
+     *
+     * @param value The floatValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFloatValue(double value) {
+
+      kindCase_ = 11;
+      kind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a floating point number.
+     * </pre>
+     *
+     * <code>double float_value = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFloatValue() {
+      if (kindCase_ == 11) {
+        kindCase_ = 0;
+        kind_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        timestampValueBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     *
+     * @return Whether the timestampValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimestampValue() {
+      return kindCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     *
+     * @return The timestampValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getTimestampValue() {
+      if (timestampValueBuilder_ == null) {
+        if (kindCase_ == 12) {
+          return (com.google.protobuf.Timestamp) kind_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (kindCase_ == 12) {
+          return timestampValueBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    public Builder setTimestampValue(com.google.protobuf.Timestamp value) {
+      if (timestampValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        timestampValueBuilder_.setMessage(value);
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    public Builder setTimestampValue(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (timestampValueBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        timestampValueBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    public Builder mergeTimestampValue(com.google.protobuf.Timestamp value) {
+      if (timestampValueBuilder_ == null) {
+        if (kindCase_ == 12 && kind_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          kind_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 12) {
+          timestampValueBuilder_.mergeFrom(value);
+        } else {
+          timestampValueBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    public Builder clearTimestampValue() {
+      if (timestampValueBuilder_ == null) {
+        if (kindCase_ == 12) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 12) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        timestampValueBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
+      return getTimestampValueFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
+      if ((kindCase_ == 12) && (timestampValueBuilder_ != null)) {
+        return timestampValueBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 12) {
+          return (com.google.protobuf.Timestamp) kind_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a timestamp.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp timestamp_value = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getTimestampValueFieldBuilder() {
+      if (timestampValueBuilder_ == null) {
+        if (!(kindCase_ == 12)) {
+          kind_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        timestampValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 12;
+      onChanged();
+      return timestampValueBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        dateValueBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     *
+     * @return Whether the dateValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasDateValue() {
+      return kindCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     *
+     * @return The dateValue.
+     */
+    @java.lang.Override
+    public com.google.type.Date getDateValue() {
+      if (dateValueBuilder_ == null) {
+        if (kindCase_ == 13) {
+          return (com.google.type.Date) kind_;
+        }
+        return com.google.type.Date.getDefaultInstance();
+      } else {
+        if (kindCase_ == 13) {
+          return dateValueBuilder_.getMessage();
+        }
+        return com.google.type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    public Builder setDateValue(com.google.type.Date value) {
+      if (dateValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        dateValueBuilder_.setMessage(value);
+      }
+      kindCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    public Builder setDateValue(com.google.type.Date.Builder builderForValue) {
+      if (dateValueBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        dateValueBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    public Builder mergeDateValue(com.google.type.Date value) {
+      if (dateValueBuilder_ == null) {
+        if (kindCase_ == 13 && kind_ != com.google.type.Date.getDefaultInstance()) {
+          kind_ =
+              com.google.type.Date.newBuilder((com.google.type.Date) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 13) {
+          dateValueBuilder_.mergeFrom(value);
+        } else {
+          dateValueBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    public Builder clearDateValue() {
+      if (dateValueBuilder_ == null) {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        dateValueBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    public com.google.type.Date.Builder getDateValueBuilder() {
+      return getDateValueFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getDateValueOrBuilder() {
+      if ((kindCase_ == 13) && (dateValueBuilder_ != null)) {
+        return dateValueBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 13) {
+          return (com.google.type.Date) kind_;
+        }
+        return com.google.type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a date.
+     * </pre>
+     *
+     * <code>.google.type.Date date_value = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getDateValueFieldBuilder() {
+      if (dateValueBuilder_ == null) {
+        if (!(kindCase_ == 13)) {
+          kind_ = com.google.type.Date.getDefaultInstance();
+        }
+        dateValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                (com.google.type.Date) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 13;
+      onChanged();
+      return dateValueBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.ArrayValue,
+            com.google.bigtable.v2.ArrayValue.Builder,
+            com.google.bigtable.v2.ArrayValueOrBuilder>
+        arrayValueBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     *
+     * @return Whether the arrayValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasArrayValue() {
+      return kindCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     *
+     * @return The arrayValue.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ArrayValue getArrayValue() {
+      if (arrayValueBuilder_ == null) {
+        if (kindCase_ == 4) {
+          return (com.google.bigtable.v2.ArrayValue) kind_;
+        }
+        return com.google.bigtable.v2.ArrayValue.getDefaultInstance();
+      } else {
+        if (kindCase_ == 4) {
+          return arrayValueBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.ArrayValue.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    public Builder setArrayValue(com.google.bigtable.v2.ArrayValue value) {
+      if (arrayValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        arrayValueBuilder_.setMessage(value);
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    public Builder setArrayValue(com.google.bigtable.v2.ArrayValue.Builder builderForValue) {
+      if (arrayValueBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        arrayValueBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    public Builder mergeArrayValue(com.google.bigtable.v2.ArrayValue value) {
+      if (arrayValueBuilder_ == null) {
+        if (kindCase_ == 4 && kind_ != com.google.bigtable.v2.ArrayValue.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.v2.ArrayValue.newBuilder(
+                      (com.google.bigtable.v2.ArrayValue) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 4) {
+          arrayValueBuilder_.mergeFrom(value);
+        } else {
+          arrayValueBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    public Builder clearArrayValue() {
+      if (arrayValueBuilder_ == null) {
+        if (kindCase_ == 4) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 4) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        arrayValueBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    public com.google.bigtable.v2.ArrayValue.Builder getArrayValueBuilder() {
+      return getArrayValueFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ArrayValueOrBuilder getArrayValueOrBuilder() {
+      if ((kindCase_ == 4) && (arrayValueBuilder_ != null)) {
+        return arrayValueBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 4) {
+          return (com.google.bigtable.v2.ArrayValue) kind_;
+        }
+        return com.google.bigtable.v2.ArrayValue.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a typed value transported as a sequence of values.
+     * To differentiate between `Struct`, `Array`, and `Map`, the outermost
+     * `Value` must provide an explicit `type` on write. This `type` will
+     * apply recursively to the nested `Struct` fields, `Array` elements,
+     * or `Map` key/value pairs, which *must not* supply their own `type`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ArrayValue array_value = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.ArrayValue,
+            com.google.bigtable.v2.ArrayValue.Builder,
+            com.google.bigtable.v2.ArrayValueOrBuilder>
+        getArrayValueFieldBuilder() {
+      if (arrayValueBuilder_ == null) {
+        if (!(kindCase_ == 4)) {
+          kind_ = com.google.bigtable.v2.ArrayValue.getDefaultInstance();
+        }
+        arrayValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.ArrayValue,
+                com.google.bigtable.v2.ArrayValue.Builder,
+                com.google.bigtable.v2.ArrayValueOrBuilder>(
+                (com.google.bigtable.v2.ArrayValue) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 4;
+      onChanged();
+      return arrayValueBuilder_;
     }
 
     @java.lang.Override

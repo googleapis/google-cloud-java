@@ -13,6 +13,9 @@
             "CheckAndMutateRow": {
               "methods": ["checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRowCallable"]
             },
+            "ExecuteQuery": {
+              "methods": ["executeQueryCallable"]
+            },
             "GenerateInitialChangeStreamPartitions": {
               "methods": ["generateInitialChangeStreamPartitionsCallable"]
             },

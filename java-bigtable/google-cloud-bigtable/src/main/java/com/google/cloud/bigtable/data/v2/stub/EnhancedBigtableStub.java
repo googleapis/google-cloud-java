@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerFactory;
@@ -56,6 +57,8 @@ import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
+import com.google.bigtable.v2.ExecuteQueryRequest;
+import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -77,6 +80,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamMutation;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
@@ -95,6 +99,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
+import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ChangeStreamRecordMergingCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.GenerateInitialChangeStreamPartitionsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamResumptionStrategy;
@@ -125,6 +130,10 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrateg
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallContext;
+import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.MetadataResolvingCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.SqlRowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.annotations.VisibleForTesting;
@@ -148,6 +157,7 @@ import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -199,6 +209,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private final ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
       readChangeStreamCallable;
+
+  private final ExecuteQueryCallable executeQueryCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -466,6 +478,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     readChangeStreamCallable =
         createReadChangeStreamCallable(new DefaultChangeStreamRecordAdapter());
     pingAndWarmCallable = createPingAndWarmCallable();
+    executeQueryCallable = createExecuteQueryCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -1285,6 +1298,74 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
+   * Creates a callable chain to handle streaming ExecuteQuery RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link Statement} into a {@link ExecuteQueryCallContext}, which passes the
+   *       {@link Statement} & a future for the {@link
+   *       com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata} up the call chain.
+   *   <li>Upon receiving the response stream, it will set the metadata future and translate the
+   *       {@link com.google.bigtable.v2.PartialResultSet}s into {@link SqlRow}s
+   *   <li>Add tracing & metrics.
+   *   <li>Wrap the metadata future & row stream into a {@link
+   *       com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream}
+   * </ul>
+   */
+  @InternalApi("For internal use only")
+  public ExecuteQueryCallable createExecuteQueryCallable() {
+    // TODO support resumption
+    // TODO update codes once resumption is implemented
+    Set<Code> retryableCodes = Collections.emptySet();
+    ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> base =
+        GrpcRawCallableFactory.createServerStreamingCallable(
+            GrpcCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
+                .setMethodDescriptor(BigtableGrpc.getExecuteQueryMethod())
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ExecuteQueryRequest>() {
+                      @Override
+                      public Map<String, String> extract(ExecuteQueryRequest executeQueryRequest) {
+                        return ImmutableMap.of(
+                            "name", executeQueryRequest.getInstanceName(),
+                            "app_profile_id", executeQueryRequest.getAppProfileId());
+                      }
+                    })
+                .build(),
+            retryableCodes);
+
+    ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> withStatsHeaders =
+        new StatsHeadersServerStreamingCallable<>(base);
+
+    ServerStreamingCallSettings<ExecuteQueryRequest, ExecuteQueryResponse> innerSettings =
+        ServerStreamingCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
+            // TODO resumption strategy and retry settings
+            .setIdleTimeout(settings.executeQuerySettings().getIdleTimeout())
+            .setWaitTimeout(settings.executeQuerySettings().getWaitTimeout())
+            .build();
+
+    // Watchdog needs to stay above the metadata observer so that watchdog errors
+    // are passed through to the metadata future.
+    ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> watched =
+        Callables.watched(withStatsHeaders, innerSettings, clientContext);
+
+    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> withMetadataObserver =
+        new MetadataResolvingCallable(watched);
+
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> merging =
+        new SqlRowMergingCallable(withMetadataObserver);
+
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> withBigtableTracer =
+        new BigtableTracerStreamingCallable<>(merging);
+
+    SpanName span = getSpanName("ExecuteQuery");
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> traced =
+        new TracedServerStreamingCallable<>(
+            withBigtableTracer, clientContext.getTracerFactory(), span);
+
+    return new ExecuteQueryCallable(
+        traced.withDefaultCallContext(clientContext.getDefaultCallContext()), requestContext);
+  }
+
+  /**
    * Wraps a callable chain in a user presentable callable that will inject the default call context
    * and trace the call.
    */
@@ -1414,6 +1495,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
       readChangeStreamCallable() {
     return readChangeStreamCallable;
+  }
+
+  /** Returns an {@link com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable} */
+  public ExecuteQueryCallable executeQueryCallable() {
+    return executeQueryCallable;
   }
 
   UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable() {

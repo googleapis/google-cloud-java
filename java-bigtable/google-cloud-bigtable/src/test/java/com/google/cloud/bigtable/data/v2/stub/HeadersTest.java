@@ -42,6 +42,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
 import io.grpc.Server;
@@ -62,8 +63,10 @@ public class HeadersTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "fake-table";
-  private static final String TABLE_NAME =
-      "projects%2F" + PROJECT_ID + "%2Finstances%2F" + INSTANCE_ID + "%2Ftables%2F" + TABLE_ID;
+
+  private static final String INSTANCE_NAME =
+      "projects%2F" + PROJECT_ID + "%2Finstances%2F" + INSTANCE_ID;
+  private static final String TABLE_NAME = INSTANCE_NAME + "%2Ftables%2F" + TABLE_ID;
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final String TEST_FIXED_HEADER_STRING = "test_fixed_header";
 
@@ -160,7 +163,17 @@ public class HeadersTest {
     verifyHeaderSent();
   }
 
+  @Test
+  public void executeQueryTest() {
+    client.executeQuery(Statement.of("SELECT * FROM table"));
+    verifyHeaderSent(true);
+  }
+
   private void verifyHeaderSent() {
+    verifyHeaderSent(false);
+  }
+
+  private void verifyHeaderSent(boolean useInstance) {
     Metadata metadata;
     try {
       metadata = sentMetadata.take();
@@ -169,7 +182,11 @@ public class HeadersTest {
     }
 
     String requestParamsvalue = metadata.get(X_GOOG_REQUEST_PARAMS_KEY);
-    assertThat(requestParamsvalue).containsMatch("(^|.*&)table_name=" + TABLE_NAME + "($|&.*)");
+    if (useInstance) {
+      assertThat(requestParamsvalue).containsMatch("(^|.*&)name=" + INSTANCE_NAME + "($|&.*)");
+    } else {
+      assertThat(requestParamsvalue).containsMatch("(^|.*&)table_name=" + TABLE_NAME + "($|&.*)");
+    }
     assertThat(requestParamsvalue)
         .containsMatch("(^|.*&)app_profile_id=" + APP_PROFILE_ID + "($|&.*)");
 

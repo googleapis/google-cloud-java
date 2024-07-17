@@ -432,6 +432,47 @@ public final class BigtableGrpc {
     return getReadChangeStreamMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.ExecuteQueryRequest, com.google.bigtable.v2.ExecuteQueryResponse>
+      getExecuteQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExecuteQuery",
+      requestType = com.google.bigtable.v2.ExecuteQueryRequest.class,
+      responseType = com.google.bigtable.v2.ExecuteQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.ExecuteQueryRequest, com.google.bigtable.v2.ExecuteQueryResponse>
+      getExecuteQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.ExecuteQueryRequest, com.google.bigtable.v2.ExecuteQueryResponse>
+        getExecuteQueryMethod;
+    if ((getExecuteQueryMethod = BigtableGrpc.getExecuteQueryMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getExecuteQueryMethod = BigtableGrpc.getExecuteQueryMethod) == null) {
+          BigtableGrpc.getExecuteQueryMethod =
+              getExecuteQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.ExecuteQueryRequest,
+                          com.google.bigtable.v2.ExecuteQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExecuteQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.ExecuteQueryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.ExecuteQueryResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new BigtableMethodDescriptorSupplier("ExecuteQuery"))
+                      .build();
+        }
+      }
+    }
+    return getExecuteQueryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigtableStub> factory =
@@ -629,6 +670,20 @@ public final class BigtableGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReadChangeStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a BTQL query against a particular Cloud Bigtable instance.
+     * </pre>
+     */
+    default void executeQuery(
+        com.google.bigtable.v2.ExecuteQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.ExecuteQueryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExecuteQueryMethod(), responseObserver);
     }
   }
 
@@ -828,6 +883,22 @@ public final class BigtableGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a BTQL query against a particular Cloud Bigtable instance.
+     * </pre>
+     */
+    public void executeQuery(
+        com.google.bigtable.v2.ExecuteQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.ExecuteQueryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getExecuteQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -989,6 +1060,19 @@ public final class BigtableGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReadChangeStreamMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a BTQL query against a particular Cloud Bigtable instance.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.bigtable.v2.ExecuteQueryResponse> executeQuery(
+        com.google.bigtable.v2.ExecuteQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getExecuteQueryMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1081,6 +1165,7 @@ public final class BigtableGrpc {
   private static final int METHODID_READ_MODIFY_WRITE_ROW = 6;
   private static final int METHODID_GENERATE_INITIAL_CHANGE_STREAM_PARTITIONS = 7;
   private static final int METHODID_READ_CHANGE_STREAM = 8;
+  private static final int METHODID_EXECUTE_QUERY = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1152,6 +1237,12 @@ public final class BigtableGrpc {
           serviceImpl.readChangeStream(
               (com.google.bigtable.v2.ReadChangeStreamRequest) request,
               (io.grpc.stub.StreamObserver<com.google.bigtable.v2.ReadChangeStreamResponse>)
+                  responseObserver);
+          break;
+        case METHODID_EXECUTE_QUERY:
+          serviceImpl.executeQuery(
+              (com.google.bigtable.v2.ExecuteQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.v2.ExecuteQueryResponse>)
                   responseObserver);
           break;
         default:
@@ -1231,6 +1322,12 @@ public final class BigtableGrpc {
                     com.google.bigtable.v2.ReadChangeStreamRequest,
                     com.google.bigtable.v2.ReadChangeStreamResponse>(
                     service, METHODID_READ_CHANGE_STREAM)))
+        .addMethod(
+            getExecuteQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.bigtable.v2.ExecuteQueryRequest,
+                    com.google.bigtable.v2.ExecuteQueryResponse>(service, METHODID_EXECUTE_QUERY)))
         .build();
   }
 
@@ -1289,6 +1386,7 @@ public final class BigtableGrpc {
                       .addMethod(getReadModifyWriteRowMethod())
                       .addMethod(getGenerateInitialChangeStreamPartitionsMethod())
                       .addMethod(getReadChangeStreamMethod())
+                      .addMethod(getExecuteQueryMethod())
                       .build();
         }
       }
