@@ -50,7 +50,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.42.0')
+implementation platform('com.google.cloud:libraries-bom:26.43.0')
 
 implementation 'com.google.cloud:google-cloud-bigquerystorage'
 ```
@@ -93,9 +93,7 @@ to add `google-cloud-bigquerystorage` as a dependency in your code.
 ## About BigQuery Storage
 
 
-[BigQuery Storage][product-docs] is an API for reading data stored in BigQuery. This API provides direct, high-throughput read
-access to existing BigQuery tables, supports parallel access with automatic liquid sharding, and allows fine-grained
-control over what data is returned.
+[BigQuery Storage][product-docs] is an API for reading data stored in BigQuery. This API provides direct, high-throughput read access to existing BigQuery tables, supports parallel access with automatic liquid sharding, and allows fine-grained control over what data is returned.
 
 See the [BigQuery Storage client library docs][javadocs] to learn how to
 use this BigQuery Storage Client Library.

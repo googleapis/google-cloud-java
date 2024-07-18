@@ -1,12 +1,12 @@
 gapic_generator_version: 2.42.0
-googleapis_commitish: 6f289d775912966eb0cf04bda91e5e355c998d30
-libraries_bom_version: 26.38.0
+googleapis_commitish: 19577edb4d439db98d2fb1f6f48f2e1b29fba099
+libraries_bom_version: 26.43.0
 libraries:
     - api_shortname: bigquerystorage
       name_pretty: BigQuery Storage
       product_documentation: https://cloud.google.com/bigquery/docs/reference/storage/
       client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/history
-      api_description: is an API for reading data stored in BigQuery. This API provides direct, high-throughput read\naccess to existing BigQuery tables, supports parallel access with automatic liquid sharding, and allows fine-grained\ncontrol over what data is returned.
+      api_description: is an API for reading data stored in BigQuery. This API provides direct, high-throughput read access to existing BigQuery tables, supports parallel access with automatic liquid sharding, and allows fine-grained control over what data is returned.
       issue_tracker: https://issuetracker.google.com/savedsearches/559654
       release_level: stable
       language: java
