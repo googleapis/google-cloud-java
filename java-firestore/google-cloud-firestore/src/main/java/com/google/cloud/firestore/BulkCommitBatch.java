@@ -21,13 +21,10 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BatchWriteRequest;
 import com.google.firestore.v1.BatchWriteResponse;
 import io.grpc.Status;
-import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -69,17 +66,9 @@ class BulkCommitBatch extends UpdateBuilder<ApiFuture<WriteResult>> {
    * <p>The writes in the batch are not applied atomically and can be applied out of order.
    */
   ApiFuture<Void> bulkCommit() {
-
     // Follows same thread safety logic as `UpdateBuilder::commit`.
     committed = true;
     BatchWriteRequest request = buildBatchWriteRequest();
-
-    Tracing.getTracer()
-        .getCurrentSpan()
-        .addAnnotation(
-            TraceUtil.SPAN_NAME_BATCHWRITE,
-            ImmutableMap.of(
-                "numDocuments", AttributeValue.longAttributeValue(request.getWritesCount())));
 
     ApiFuture<BatchWriteResponse> response =
         processExceptions(

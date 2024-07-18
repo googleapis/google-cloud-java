@@ -23,6 +23,14 @@
 "methods":[{"name":"<init>","parameterTypes":[] }]}
 ,
 {
+"name": "com.google.cloud.firestore.it.ITTracingTest$Pojo",
+"allDeclaredConstructors": true,
+"allPublicConstructors": true,
+"allDeclaredMethods": true,
+"allPublicMethods": true,
+"allDeclaredFields": true,
+"allPublicFields": true},
+{
 "name":"com.google.cloud.firestore.LocalFirestoreHelper$FooList",
 "methods":[{"name":"<init>","parameterTypes":[] }]}
 ,

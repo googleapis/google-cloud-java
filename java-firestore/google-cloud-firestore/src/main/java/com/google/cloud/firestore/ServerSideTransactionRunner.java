@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.telemetry.TraceUtil.*;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -24,16 +26,15 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
-import com.google.common.collect.ImmutableMap;
+import com.google.cloud.firestore.telemetry.TraceUtil;
+import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
+import com.google.cloud.firestore.telemetry.TraceUtil.Span;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.Context;
-import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Tracer;
-import io.opencensus.trace.Tracing;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nonnull;
 
 /**
  * Implements backoff and retry semantics for Firestore transactions.
@@ -47,15 +48,7 @@ import java.util.concurrent.TimeUnit;
  * customize the backoff settings, you can specify custom settings via {@link FirestoreOptions}.
  */
 final class ServerSideTransactionRunner<T> {
-
-  private static final Tracer tracer = Tracing.getTracer();
-  private static final io.opencensus.trace.Status TOO_MANY_RETRIES_STATUS =
-      io.opencensus.trace.Status.ABORTED.withDescription("too many retries");
-  private static final io.opencensus.trace.Status USER_CALLBACK_FAILED =
-      io.opencensus.trace.Status.ABORTED.withDescription("user callback failed");
-
   private final Transaction.AsyncFunction<T> userCallback;
-  private final Span span;
   private final FirestoreImpl firestore;
   private final ScheduledExecutorService firestoreExecutor;
   private final Executor userCallbackExecutor;
@@ -64,6 +57,8 @@ final class ServerSideTransactionRunner<T> {
   private TimedAttemptSettings nextBackoffAttempt;
   private ServerSideTransaction transaction;
   private int attemptsRemaining;
+  private Span runTransactionSpan;
+  private TraceUtil.Context runTransactionContext;
 
   /**
    * @param firestore The active Firestore instance
@@ -76,7 +71,6 @@ final class ServerSideTransactionRunner<T> {
       Transaction.AsyncFunction<T> userCallback,
       TransactionOptions transactionOptions) {
     this.transactionOptions = transactionOptions;
-    this.span = tracer.spanBuilder("CloudFirestore.Transaction").startSpan();
     this.firestore = firestore;
     this.firestoreExecutor = firestore.getClient().getExecutor();
     this.userCallback = userCallback;
@@ -93,25 +87,57 @@ final class ServerSideTransactionRunner<T> {
     this.nextBackoffAttempt = backoffAlgorithm.createFirstAttempt();
   }
 
+  @Nonnull
+  private TraceUtil getTraceUtil() {
+    return firestore.getOptions().getTraceUtil();
+  }
+
   ApiFuture<T> run() {
-    --attemptsRemaining;
-
-    span.addAnnotation(
-        "Start runTransaction",
-        ImmutableMap.of("attemptsRemaining", AttributeValue.longAttributeValue(attemptsRemaining)));
-
-    return ApiFutures.catchingAsync(
-        ApiFutures.transformAsync(
-            maybeRollback(), this::rollbackCallback, MoreExecutors.directExecutor()),
-        Throwable.class,
-        this::restartTransactionCallback,
-        MoreExecutors.directExecutor());
+    runTransactionSpan = getTraceUtil().startSpan(TraceUtil.SPAN_NAME_TRANSACTION_RUN);
+    runTransactionSpan.setAttribute(
+        ATTRIBUTE_KEY_TRANSACTION_TYPE, transactionOptions.getType().name());
+    runTransactionSpan.setAttribute(
+        ATTRIBUTE_KEY_ATTEMPTS_ALLOWED, transactionOptions.getNumberOfAttempts());
+    runTransactionSpan.setAttribute(ATTRIBUTE_KEY_ATTEMPTS_REMAINING, attemptsRemaining);
+    try (Scope ignored = runTransactionSpan.makeCurrent()) {
+      runTransactionContext = getTraceUtil().currentContext();
+      --attemptsRemaining;
+      ApiFuture<T> result =
+          ApiFutures.catchingAsync(
+              ApiFutures.transformAsync(
+                  maybeRollback(), this::rollbackCallback, MoreExecutors.directExecutor()),
+              Throwable.class,
+              this::restartTransactionCallback,
+              MoreExecutors.directExecutor());
+      runTransactionSpan.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      runTransactionSpan.end(error);
+      throw error;
+    }
   }
 
   ApiFuture<ServerSideTransaction> begin() {
-    ServerSideTransaction previousTransaction = this.transaction;
-    this.transaction = null;
-    return ServerSideTransaction.begin(firestore, transactionOptions, previousTransaction);
+    TraceUtil.Span span =
+        getTraceUtil().startSpan(TraceUtil.SPAN_NAME_TRANSACTION_BEGIN, runTransactionContext);
+    try (Scope ignored = span.makeCurrent()) {
+      ServerSideTransaction previousTransaction = this.transaction;
+      this.transaction = null;
+      ApiFuture<ServerSideTransaction> result =
+          ServerSideTransaction.begin(firestore, transactionOptions, previousTransaction);
+      result =
+          ApiFutures.transform(
+              result,
+              serverSideTransaction -> {
+                serverSideTransaction.setTransactionTraceContext(runTransactionContext);
+                return serverSideTransaction;
+              });
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   private ApiFuture<Void> maybeRollback() {
@@ -192,11 +218,7 @@ final class ServerSideTransactionRunner<T> {
     return ApiFutures.transform(
         transaction.commit(),
         // The callback that is invoked after the Commit RPC returns. It returns the user result.
-        input -> {
-          span.setStatus(io.opencensus.trace.Status.OK);
-          span.end();
-          return userFunctionResult;
-        },
+        input -> userFunctionResult,
         MoreExecutors.directExecutor());
   }
 
@@ -204,24 +226,23 @@ final class ServerSideTransactionRunner<T> {
   private ApiFuture<T> restartTransactionCallback(Throwable throwable) {
     if (!(throwable instanceof ApiException)) {
       // This is likely a failure in the user callback.
-      span.setStatus(USER_CALLBACK_FAILED);
       return rollbackAndReject(throwable);
     }
 
     ApiException apiException = (ApiException) throwable;
     if (isRetryableTransactionError(apiException)) {
       if (attemptsRemaining > 0) {
-        span.addAnnotation("retrying");
+        getTraceUtil()
+            .currentSpan()
+            .addEvent("Initiating transaction retry. Attempts remaining: " + attemptsRemaining);
         return run();
       } else {
-        span.setStatus(TOO_MANY_RETRIES_STATUS);
         final FirestoreException firestoreException =
             FirestoreException.forApiException(
                 apiException, "Transaction was cancelled because of too many retries.");
         return rollbackAndReject(firestoreException);
       }
     } else {
-      span.setStatus(TraceUtil.statusFromApiException(apiException));
       final FirestoreException firestoreException =
           FirestoreException.forApiException(
               apiException, "Transaction failed with non-retryable error");
@@ -262,12 +283,16 @@ final class ServerSideTransactionRunner<T> {
       transaction
           .rollback()
           .addListener(
-              () -> failedTransaction.setException(throwable), MoreExecutors.directExecutor());
+              () -> {
+                runTransactionSpan.end(throwable);
+                failedTransaction.setException(throwable);
+              },
+              MoreExecutors.directExecutor());
     } else {
+      runTransactionSpan.end(throwable);
       failedTransaction.setException(throwable);
     }
 
-    span.end();
     return failedTransaction;
   }
 }

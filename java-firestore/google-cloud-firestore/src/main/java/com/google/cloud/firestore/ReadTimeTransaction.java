@@ -18,10 +18,10 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Timestamp;
-import io.opencensus.trace.Tracing;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nonnull;
@@ -55,37 +55,74 @@ final class ReadTimeTransaction extends Transaction {
   @Nonnull
   @Override
   public ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_GETDOCUMENT);
-    return ApiFutures.transform(
-        firestore.getAll(new DocumentReference[] {documentRef}, /* fieldMask= */ null, readTime),
-        snapshots -> snapshots.isEmpty() ? null : snapshots.get(0),
-        MoreExecutors.directExecutor());
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENT, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      ApiFuture<DocumentSnapshot> result =
+          ApiFutures.transform(
+              firestore.getAll(
+                  new DocumentReference[] {documentRef}, /* fieldMask= */ null, readTime),
+              snapshots -> snapshots.isEmpty() ? null : snapshots.get(0),
+              MoreExecutors.directExecutor());
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   @Nonnull
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
-    return firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      ApiFuture<List<DocumentSnapshot>> result =
+          firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   @Nonnull
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
-    return firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      ApiFuture<List<DocumentSnapshot>> result =
+          firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   @Nonnull
   @Override
   public ApiFuture<QuerySnapshot> get(@Nonnull Query query) {
-    return query.get(null, com.google.cloud.Timestamp.fromProto(readTime));
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return query.get(null, com.google.cloud.Timestamp.fromProto(readTime));
+    }
   }
 
   @Nonnull
   @Override
   public ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query) {
-    return query.get(null, readTime);
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return query.get(null, readTime);
+    }
   }
 
   @Nonnull

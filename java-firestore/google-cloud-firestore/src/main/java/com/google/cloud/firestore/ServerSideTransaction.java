@@ -19,6 +19,7 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.TransactionOptions.TransactionOptionsType;
+import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BeginTransactionRequest;
@@ -27,7 +28,6 @@ import com.google.firestore.v1.RollbackRequest;
 import com.google.firestore.v1.TransactionOptions.ReadOnly;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import io.opencensus.trace.Tracing;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,7 +68,6 @@ final class ServerSideTransaction extends Transaction {
       FirestoreImpl firestore,
       TransactionOptions transactionOptions,
       @Nullable ServerSideTransaction previousTransaction) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_BEGINTRANSACTION);
     BeginTransactionRequest.Builder beginTransaction = BeginTransactionRequest.newBuilder();
     beginTransaction.setDatabase(firestore.getDatabaseName());
     ByteString previousTransactionId =
@@ -101,35 +100,46 @@ final class ServerSideTransaction extends Transaction {
 
   /** Commits a transaction. */
   ApiFuture<List<WriteResult>> commit() {
-    return super.commit(transactionId);
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return super.commit(transactionId);
+    }
   }
 
   /** Rolls a transaction back and releases all read locks. */
   ApiFuture<Void> rollback() {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_ROLLBACK);
-    RollbackRequest req =
-        RollbackRequest.newBuilder()
-            .setTransaction(transactionId)
-            .setDatabase(firestore.getDatabaseName())
-            .build();
+    TraceUtil.Span span =
+        getTraceUtil().startSpan(TraceUtil.SPAN_NAME_TRANSACTION_ROLLBACK, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      RollbackRequest req =
+          RollbackRequest.newBuilder()
+              .setTransaction(transactionId)
+              .setDatabase(firestore.getDatabaseName())
+              .build();
 
-    ApiFuture<Empty> rollbackFuture =
-        firestore.sendRequest(req, firestore.getClient().rollbackCallable());
+      ApiFuture<Empty> rollbackFuture =
+          firestore.sendRequest(req, firestore.getClient().rollbackCallable());
 
-    ApiFuture<Void> transform =
-        ApiFutures.transform(rollbackFuture, resp -> null, MoreExecutors.directExecutor());
+      ApiFuture<Void> transform =
+          ApiFutures.transform(rollbackFuture, resp -> null, MoreExecutors.directExecutor());
 
-    return ApiFutures.catching(
-        transform,
-        Throwable.class,
-        (error) -> {
-          LOGGER.log(
-              Level.WARNING,
-              "Failed best effort to rollback of transaction " + transactionId,
-              error);
-          return null;
-        },
-        MoreExecutors.directExecutor());
+      ApiFuture<Void> result =
+          ApiFutures.catching(
+              transform,
+              Throwable.class,
+              (error) -> {
+                LOGGER.log(
+                    Level.WARNING,
+                    "Failed best effort to rollback of transaction " + transactionId,
+                    error);
+                return null;
+              },
+              MoreExecutors.directExecutor());
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   @Override
@@ -146,16 +156,26 @@ final class ServerSideTransaction extends Transaction {
   @Override
   @Nonnull
   public ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_GETDOCUMENT);
-    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
-    return ApiFutures.transform(
-        firestore.getAll(
-            new DocumentReference[] {documentRef},
-            /* fieldMask= */ null,
-            transactionId,
-            /* readTime= */ null),
-        snapshots -> snapshots.isEmpty() ? null : snapshots.get(0),
-        MoreExecutors.directExecutor());
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENT, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
+      ApiFuture<DocumentSnapshot> result =
+          ApiFutures.transform(
+              firestore.getAll(
+                  new DocumentReference[] {documentRef},
+                  /* fieldMask= */ null,
+                  transactionId,
+                  /* readTime= */ null),
+              snapshots -> snapshots.isEmpty() ? null : snapshots.get(0),
+              MoreExecutors.directExecutor());
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   /**
@@ -169,8 +189,19 @@ final class ServerSideTransaction extends Transaction {
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
-    return firestore.getAll(
-        documentReferences, /* fieldMask= */ null, transactionId, /* readTime= */ null);
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      ApiFuture<List<DocumentSnapshot>> result =
+          firestore.getAll(
+              documentReferences, /* fieldMask= */ null, transactionId, /* readTime= */ null);
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   /**
@@ -186,7 +217,18 @@ final class ServerSideTransaction extends Transaction {
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
-    return firestore.getAll(documentReferences, fieldMask, transactionId, /* readTime= */ null);
+    TraceUtil.Span span =
+        getTraceUtil()
+            .startSpan(TraceUtil.SPAN_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
+    try (TraceUtil.Scope ignored = span.makeCurrent()) {
+      ApiFuture<List<DocumentSnapshot>> result =
+          firestore.getAll(documentReferences, fieldMask, transactionId, /* readTime= */ null);
+      span.endAtFuture(result);
+      return result;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   /**
@@ -199,7 +241,9 @@ final class ServerSideTransaction extends Transaction {
   @Nonnull
   public ApiFuture<QuerySnapshot> get(@Nonnull Query query) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
-    return query.get(transactionId, /* readTime= */ null);
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return query.get(transactionId, /* readTime= */ null);
+    }
   }
 
   /**
@@ -212,6 +256,8 @@ final class ServerSideTransaction extends Transaction {
   @Nonnull
   public ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
-    return query.get(transactionId, null);
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return query.get(transactionId, null);
+    }
   }
 }

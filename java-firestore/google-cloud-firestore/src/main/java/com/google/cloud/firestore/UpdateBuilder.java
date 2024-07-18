@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_DOC_COUNT;
+import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_IS_TRANSACTIONAL;
 import static com.google.common.base.Predicates.not;
 import static java.util.stream.Collectors.toCollection;
 
@@ -23,16 +25,15 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
+import com.google.cloud.firestore.telemetry.TraceUtil;
+import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
-import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -149,7 +150,6 @@ public abstract class UpdateBuilder<T> {
 
   private T performCreate(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_CREATEDOCUMENT);
     DocumentSnapshot documentSnapshot =
         DocumentSnapshot.fromObject(
             firestore, documentReference, fields, UserDataConverter.NO_DELETES);
@@ -537,7 +537,6 @@ public abstract class UpdateBuilder<T> {
       @Nonnull final SortedMap<FieldPath, Object> fields,
       @Nonnull Precondition precondition) {
     Preconditions.checkArgument(!fields.isEmpty(), "Data for update() cannot be empty.");
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_UPDATEDOCUMENT);
     Map<String, Object> deconstructedMap = expandObject(fields);
     DocumentSnapshot documentSnapshot =
         DocumentSnapshot.fromObject(
@@ -599,7 +598,6 @@ public abstract class UpdateBuilder<T> {
 
   private T performDelete(
       @Nonnull DocumentReference documentReference, @Nonnull Precondition precondition) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(TraceUtil.SPAN_NAME_DELETEDOCUMENT);
     Write.Builder write = Write.newBuilder().setDelete(documentReference.getName());
 
     if (!precondition.isEmpty()) {
@@ -611,44 +609,54 @@ public abstract class UpdateBuilder<T> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
+    TraceUtil.Span span =
+        firestore
+            .getOptions()
+            .getTraceUtil()
+            .startSpan(
+                transactionId == null
+                    ? TraceUtil.SPAN_NAME_BATCH_COMMIT
+                    : TraceUtil.SPAN_NAME_TRANSACTION_COMMIT);
+    span.setAttribute(ATTRIBUTE_KEY_DOC_COUNT, writes.size());
+    span.setAttribute(ATTRIBUTE_KEY_IS_TRANSACTIONAL, transactionId != null);
+    try (Scope ignored = span.makeCurrent()) {
+      // Sequence is thread safe.
+      //
+      // 1. Set committed = true
+      // 2. Build commit request
+      //
+      // Step 1 sets uses volatile property to ensure committed is visible to all
+      // threads immediately.
+      //
+      // Step 2 uses `forEach(..)` that is synchronized, therefore will be blocked
+      // until any writes are complete.
+      //
+      // Writes will verify `committed==false` within synchronized block of code
+      // before appending writes. Since committed is set to true before accessing
+      // writes, we are ensured that no more writes will be appended after commit
+      // accesses writes.
+      committed = true;
+      CommitRequest request = buildCommitRequest(transactionId);
 
-    // Sequence is thread safe.
-    //
-    // 1. Set committed = true
-    // 2. Build commit request
-    //
-    // Step 1 sets uses volatile property to ensure committed is visible to all
-    // threads immediately.
-    //
-    // Step 2 uses `forEach(..)` that is synchronized, therefore will be blocked
-    // until any writes are complete.
-    //
-    // Writes will verify `committed==false` within synchronized block of code
-    // before appending writes. Since committed is set to true before accessing
-    // writes, we are ensured that no more writes will be appended after commit
-    // accesses writes.
-    committed = true;
-    CommitRequest request = buildCommitRequest(transactionId);
+      ApiFuture<CommitResponse> response =
+          firestore.sendRequest(request, firestore.getClient().commitCallable());
 
-    Tracing.getTracer()
-        .getCurrentSpan()
-        .addAnnotation(
-            TraceUtil.SPAN_NAME_COMMIT,
-            ImmutableMap.of(
-                "numDocuments", AttributeValue.longAttributeValue(request.getWritesCount())));
-
-    ApiFuture<CommitResponse> response =
-        firestore.sendRequest(request, firestore.getClient().commitCallable());
-
-    return ApiFutures.transform(
-        response,
-        commitResponse -> {
-          Timestamp commitTime = commitResponse.getCommitTime();
-          return commitResponse.getWriteResultsList().stream()
-              .map(writeResult -> WriteResult.fromProto(writeResult, commitTime))
-              .collect(Collectors.toList());
-        },
-        MoreExecutors.directExecutor());
+      ApiFuture<List<WriteResult>> returnValue =
+          ApiFutures.transform(
+              response,
+              commitResponse -> {
+                Timestamp commitTime = commitResponse.getCommitTime();
+                return commitResponse.getWriteResultsList().stream()
+                    .map(writeResult -> WriteResult.fromProto(writeResult, commitTime))
+                    .collect(Collectors.toList());
+              },
+              MoreExecutors.directExecutor());
+      span.endAtFuture(returnValue);
+      return returnValue;
+    } catch (Exception error) {
+      span.end(error);
+      throw error;
+    }
   }
 
   private CommitRequest buildCommitRequest(ByteString transactionId) {

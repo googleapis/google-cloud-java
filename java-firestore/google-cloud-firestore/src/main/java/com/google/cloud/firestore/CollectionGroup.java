@@ -21,15 +21,14 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.cloud.firestore.telemetry.TraceUtil;
+import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreClient.PartitionQueryPagedResponse;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.Cursor;
 import com.google.firestore.v1.PartitionQueryRequest;
-import io.opencensus.common.Scope;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Status;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -77,9 +76,7 @@ public class CollectionGroup extends Query {
       PartitionQueryRequest request = buildRequest(desiredPartitionCount);
 
       final PartitionQueryPagedResponse response;
-      final TraceUtil traceUtil = TraceUtil.getInstance();
-      Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_PARTITIONQUERY);
-      try (Scope scope = traceUtil.getTracer().withSpan(span)) {
+      try {
         response =
             ApiExceptions.callAndTranslateApiException(
                 rpcContext.sendRequest(
@@ -94,10 +91,7 @@ public class CollectionGroup extends Query {
 
         observer.onCompleted();
       } catch (ApiException exception) {
-        span.setStatus(Status.UNKNOWN.withDescription(exception.getMessage()));
         throw FirestoreException.forApiException(exception);
-      } finally {
-        span.end(TraceUtil.END_SPAN_OPTIONS);
       }
     }
   }
@@ -110,27 +104,36 @@ public class CollectionGroup extends Query {
     } else {
       PartitionQueryRequest request = buildRequest(desiredPartitionCount);
 
-      final TraceUtil traceUtil = TraceUtil.getInstance();
-      Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_PARTITIONQUERY);
-      try (Scope scope = traceUtil.getTracer().withSpan(span)) {
-        return ApiFutures.transform(
-            rpcContext.sendRequest(request, rpcContext.getClient().partitionQueryPagedCallable()),
-            response -> {
-              final ImmutableList.Builder<QueryPartition> partitions = ImmutableList.builder();
-              consumePartitions(
-                  response,
-                  queryPartition -> {
-                    partitions.add(queryPartition);
-                    return null;
-                  });
-              return partitions.build();
-            },
-            MoreExecutors.directExecutor());
+      TraceUtil.Span span =
+          rpcContext
+              .getFirestore()
+              .getOptions()
+              .getTraceUtil()
+              .startSpan(TraceUtil.SPAN_NAME_PARTITION_QUERY);
+      try (Scope ignored = span.makeCurrent()) {
+        ApiFuture<List<QueryPartition>> result =
+            ApiFutures.transform(
+                rpcContext.sendRequest(
+                    request, rpcContext.getClient().partitionQueryPagedCallable()),
+                response -> {
+                  final ImmutableList.Builder<QueryPartition> partitions = ImmutableList.builder();
+                  consumePartitions(
+                      response,
+                      queryPartition -> {
+                        partitions.add(queryPartition);
+                        return null;
+                      });
+                  return partitions.build();
+                },
+                MoreExecutors.directExecutor());
+        span.endAtFuture(result);
+        return result;
       } catch (ApiException exception) {
-        span.setStatus(Status.UNKNOWN.withDescription(exception.getMessage()));
+        span.end(exception);
         throw FirestoreException.forApiException(exception);
-      } finally {
-        span.end(TraceUtil.END_SPAN_OPTIONS);
+      } catch (Throwable throwable) {
+        span.end(throwable);
+        throw throwable;
       }
     }
   }
