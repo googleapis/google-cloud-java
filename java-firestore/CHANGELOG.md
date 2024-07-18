@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.24.0](https://github.com/googleapis/java-firestore/compare/v3.23.1...v3.24.0) (2024-07-18)
+
+
+### Features
+
+* Tracing using OpenTelemetry ([#1728](https://github.com/googleapis/java-firestore/issues/1728)) ([00dc240](https://github.com/googleapis/java-firestore/commit/00dc2403d2a5a5b6809762010a716f17541204e0))
+
+
+### Dependencies
+
+* Update dependency org.apache.commons:commons-lang3 to v3.15.0 ([#1745](https://github.com/googleapis/java-firestore/issues/1745)) ([05a6f73](https://github.com/googleapis/java-firestore/commit/05a6f73f259050520880d670e5ab997d12e8cafb))
+
 ## [3.23.1](https://github.com/googleapis/java-firestore/compare/v3.23.0...v3.23.1) (2024-07-10)
 
 
