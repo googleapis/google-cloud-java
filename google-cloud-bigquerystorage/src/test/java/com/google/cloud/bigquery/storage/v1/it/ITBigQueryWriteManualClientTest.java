@@ -571,7 +571,7 @@ public class ITBigQueryWriteManualClientTest {
         Assert.fail("Unexpected error " + ex);
       }
     }
-    RequestProfiler.disableAndClearProfiler();
+    RequestProfiler.disableAndResetProfiler();
   }
 
   @Test

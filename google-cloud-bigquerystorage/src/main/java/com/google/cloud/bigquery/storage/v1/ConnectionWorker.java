@@ -247,6 +247,8 @@ class ConnectionWorker implements AutoCloseable {
    */
   private final RetrySettings retrySettings;
 
+  private final RequestProfiler.RequestProfilerHook requestProfilerHook;
+
   private static String projectMatching = "projects/[^/]+/";
   private static Pattern streamPatternProject = Pattern.compile(projectMatching);
 
@@ -386,7 +388,8 @@ class ConnectionWorker implements AutoCloseable {
       String traceId,
       @Nullable String compressorName,
       BigQueryWriteSettings clientSettings,
-      RetrySettings retrySettings)
+      RetrySettings retrySettings,
+      boolean enableRequestProfiler)
       throws IOException {
     this.lock = new ReentrantLock();
     this.hasMessageInWaitingQueue = lock.newCondition();
@@ -410,6 +413,7 @@ class ConnectionWorker implements AutoCloseable {
     this.compressorName = compressorName;
     this.retrySettings = retrySettings;
     this.telemetryAttributes = buildOpenTelemetryAttributes();
+    this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
     registerOpenTelemetryMetrics();
 
     // Always recreate a client for connection worker.
@@ -503,7 +507,7 @@ class ConnectionWorker implements AutoCloseable {
 
   private void waitForBackoffIfNecessary(AppendRequestAndResponse requestWrapper) {
     lock.lock();
-    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+    requestProfilerHook.startOperation(
         RequestProfiler.OperationName.RETRY_BACKOFF, requestWrapper.requestUniqueId);
     try {
       Condition condition = lock.newCondition();
@@ -513,7 +517,7 @@ class ConnectionWorker implements AutoCloseable {
     } catch (InterruptedException e) {
       throw new IllegalStateException(e);
     } finally {
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+      requestProfilerHook.endOperation(
           RequestProfiler.OperationName.RETRY_BACKOFF, requestWrapper.requestUniqueId);
       lock.unlock();
     }
@@ -535,7 +539,7 @@ class ConnectionWorker implements AutoCloseable {
     ++this.inflightRequests;
     this.inflightBytes += requestWrapper.messageSize;
     hasMessageInWaitingQueue.signal();
-    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+    requestProfilerHook.startOperation(
         RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
     if (addToFront) {
       waitingRequestQueue.addFirst(requestWrapper);
@@ -649,13 +653,12 @@ class ConnectionWorker implements AutoCloseable {
                 writerId));
         return requestWrapper.appendResult;
       }
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
-          RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
+      requestProfilerHook.startOperation(RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
       ++this.inflightRequests;
       this.inflightBytes += requestWrapper.messageSize;
       waitingRequestQueue.addLast(requestWrapper);
       hasMessageInWaitingQueue.signal();
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+      requestProfilerHook.startOperation(
           RequestProfiler.OperationName.WAIT_INFLIGHT_QUOTA, requestUniqueId);
       try {
         maybeWaitForInflightQuota();
@@ -665,7 +668,7 @@ class ConnectionWorker implements AutoCloseable {
         this.inflightBytes -= requestWrapper.messageSize;
         throw ex;
       }
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+      requestProfilerHook.endOperation(
           RequestProfiler.OperationName.WAIT_INFLIGHT_QUOTA, requestUniqueId);
       return requestWrapper.appendResult;
     } finally {
@@ -831,10 +834,10 @@ class ConnectionWorker implements AutoCloseable {
           while (!inflightRequestQueue.isEmpty()) {
             AppendRequestAndResponse requestWrapper = inflightRequestQueue.pollLast();
             // Consider the backend latency as completed for the current request.
-            RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+            requestProfilerHook.endOperation(
                 RequestProfiler.OperationName.RESPONSE_LATENCY, requestWrapper.requestUniqueId);
             requestWrapper.requestSendTimeStamp = null;
-            RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+            requestProfilerHook.startOperation(
                 RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
             waitingRequestQueue.addFirst(requestWrapper);
           }
@@ -845,7 +848,7 @@ class ConnectionWorker implements AutoCloseable {
         }
         while (!this.waitingRequestQueue.isEmpty()) {
           AppendRequestAndResponse requestWrapper = this.waitingRequestQueue.pollFirst();
-          RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+          requestProfilerHook.endOperation(
               RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
           waitForBackoffIfNecessary(requestWrapper);
           this.inflightRequestQueue.add(requestWrapper);
@@ -931,7 +934,7 @@ class ConnectionWorker implements AutoCloseable {
         }
         firstRequestForTableOrSchemaSwitch = false;
 
-        RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+        requestProfilerHook.startOperation(
             RequestProfiler.OperationName.RESPONSE_LATENCY, requestUniqueId);
 
         // Send should only throw an exception if there is a problem with the request. The catch
@@ -1212,7 +1215,7 @@ class ConnectionWorker implements AutoCloseable {
       }
       if (!this.inflightRequestQueue.isEmpty()) {
         requestWrapper = pollFirstInflightRequestQueue();
-        RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+        requestProfilerHook.endOperation(
             RequestProfiler.OperationName.RESPONSE_LATENCY, requestWrapper.requestUniqueId);
       } else if (inflightCleanuped) {
         // It is possible when requestCallback is called, the inflight queue is already drained
@@ -1277,7 +1280,7 @@ class ConnectionWorker implements AutoCloseable {
               requestWrapper.appendResult.set(response);
             }
           } finally {
-            RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+            requestProfilerHook.endOperation(
                 RequestProfiler.OperationName.TOTAL_LATENCY, requestWrapper.requestUniqueId);
           }
         });

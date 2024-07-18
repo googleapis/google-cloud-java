@@ -122,6 +122,9 @@ public class StreamWriter implements AutoCloseable {
   /** Creation timestamp of this streamwriter */
   private final long creationTimestamp;
 
+  /** Provide access to the request profiler tool. */
+  private final RequestProfiler.RequestProfilerHook requestProfilerHook;
+
   private Lock lock;
 
   /** The maximum size of one request. Defined by the API. */
@@ -227,11 +230,13 @@ public class StreamWriter implements AutoCloseable {
     this.writerSchema = builder.writerSchema;
     this.defaultMissingValueInterpretation = builder.defaultMissingValueInterpretation;
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
+    this.requestProfilerHook =
+        new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
     if (builder.enableRequestProfiler) {
-      // Request profiler is enabled on singleton level, from now on a periodical flush will happen
-      // to generate
-      // detailed latency reports for requests latency.
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.startPeriodicalReportFlushing();
+      // Request profiler is enabled on singleton level, from now on a periodical flush will be
+      // started
+      // to generate detailed latency reports for requests latency.
+      requestProfilerHook.startPeriodicalReportFlushing();
     }
     if (!builder.enableConnectionPool) {
       this.location = builder.location;
@@ -248,7 +253,8 @@ public class StreamWriter implements AutoCloseable {
                   builder.getFullTraceId(),
                   builder.compressorName,
                   clientSettings,
-                  builder.retrySettings));
+                  builder.retrySettings,
+                  builder.enableRequestProfiler));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(
@@ -314,7 +320,8 @@ public class StreamWriter implements AutoCloseable {
                         builder.getFullTraceId(),
                         builder.compressorName,
                         client.getSettings(),
-                        builder.retrySettings);
+                        builder.retrySettings,
+                        builder.enableRequestProfiler);
                   }));
       validateFetchedConnectonPool(builder);
       // If the client is not from outside, then shutdown the client we created.
@@ -461,12 +468,12 @@ public class StreamWriter implements AutoCloseable {
    */
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
     String requestUniqueId = generateRequestUniqueId();
-    RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(
+    requestProfilerHook.startOperation(
         RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
     try {
       return appendWithUniqueId(rows, offset, requestUniqueId);
     } catch (Exception ex) {
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+      requestProfilerHook.endOperation(
           RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
       throw ex;
     }
@@ -487,7 +494,7 @@ public class StreamWriter implements AutoCloseable {
                   .withDescription("User closed StreamWriter"),
               streamName,
               getWriterId()));
-      RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(
+      requestProfilerHook.endOperation(
           RequestProfiler.OperationName.TOTAL_LATENCY, requestUniqueId);
       return requestWrapper.appendResult;
     }

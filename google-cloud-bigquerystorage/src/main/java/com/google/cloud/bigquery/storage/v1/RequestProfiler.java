@@ -80,7 +80,7 @@ public class RequestProfiler {
   private static final int MAX_CACHED_REQUEST = 100000;
 
   // Singleton for easier access.
-  static final RequestProfiler REQUEST_PROFILER_SINGLETON = new RequestProfiler();
+  private static final RequestProfiler REQUEST_PROFILER_SINGLETON = new RequestProfiler();
 
   // Tunable static variable indicate how many top longest latency requests we should consider.
   private static final int DEFAULT_TOP_K = 20;
@@ -172,33 +172,35 @@ public class RequestProfiler {
   // Periodically trigger the report generation.
   void startPeriodicalReportFlushing() {
     this.enableProfiiler = true;
-    this.flushThread =
-        new Thread(
-            new Runnable() {
-              @Override
-              public void run() {
-                try {
-                  while (true) {
-                    try {
-                      TimeUnit.MILLISECONDS.sleep(FLUSH_PERIOD.toMillis());
-                    } catch (InterruptedException e) {
-                      log.warning("Flush report thread is interrupted by " + e.toString());
-                      throw new RuntimeException(e);
+    if (this.flushThread == null || !this.flushThread.isAlive()) {
+      this.flushThread =
+          new Thread(
+              new Runnable() {
+                @Override
+                public void run() {
+                  try {
+                    while (true) {
+                      try {
+                        TimeUnit.MILLISECONDS.sleep(FLUSH_PERIOD.toMillis());
+                      } catch (InterruptedException e) {
+                        log.warning("Flush report thread is interrupted by " + e.toString());
+                        throw new RuntimeException(e);
+                      }
+                      flushAndPrintReport();
                     }
-                    flushAndPrintReport();
+                  } catch (Exception ex) {
+                    // Mute any exception thrown from profiler process as we don't want to
+                    // interrupt normal operations.
+                    log.warning(
+                        "Exception thrown request profiler ignored, this is suggesting faulty "
+                            + "implementation of "
+                            + "RequestProfiler, exception context: "
+                            + ex.toString());
                   }
-                } catch (Exception ex) {
-                  // Mute any exception thrown from profiler process as we don't want to
-                  // interrupt normal operations.
-                  log.warning(
-                      "Exception thrown request profiler ignored, this is suggesting faulty "
-                          + "implementation of "
-                          + "RequestProfiler, exception context: "
-                          + ex.toString());
                 }
-              }
-            });
-    this.flushThread.start();
+              });
+      this.flushThread.start();
+    }
   }
 
   String flushAndGenerateReportText() {
@@ -402,7 +404,48 @@ public class RequestProfiler {
     FLUSH_PERIOD = DEFAULT_FLUSH_PERIOD;
   }
 
-  public static void disableAndClearProfiler() {
+  public static void disableAndResetProfiler() {
     REQUEST_PROFILER_SINGLETON.internalDisableAndClearProfiler();
+  }
+
+  /**
+   * A hook for easier access to request profiler. Otherwise we have to trigger tedious if clauses
+   * to check whether profiler is enabled before every caller's trigger of the request profiler.
+   * This is because profiler is shared statically across instances.
+   */
+  static class RequestProfilerHook {
+    private boolean enableRequestProfiler = false;
+
+    RequestProfilerHook(boolean enableRequestProfiler) {
+      this.enableRequestProfiler = enableRequestProfiler;
+    }
+
+    // Mimic the api exposed by the main request profiler.
+    void startOperation(OperationName operationName, String requestUniqueId) {
+      if (this.enableRequestProfiler) {
+        RequestProfiler.REQUEST_PROFILER_SINGLETON.startOperation(operationName, requestUniqueId);
+      }
+    }
+
+    // Mimic the api exposed by the main request profiler.
+    void endOperation(OperationName operationName, String requestUniqueId) {
+      if (this.enableRequestProfiler) {
+        RequestProfiler.REQUEST_PROFILER_SINGLETON.endOperation(operationName, requestUniqueId);
+      }
+    }
+
+    void startPeriodicalReportFlushing() {
+      if (this.enableRequestProfiler) {
+        RequestProfiler.REQUEST_PROFILER_SINGLETON.startPeriodicalReportFlushing();
+      }
+    }
+
+    String flushAndGenerateReportText() {
+      return RequestProfiler.REQUEST_PROFILER_SINGLETON.flushAndGenerateReportText();
+    }
+
+    void enableProfiler() {
+      REQUEST_PROFILER_SINGLETON.enableProfiler();
+    }
   }
 }
