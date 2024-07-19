@@ -55,15 +55,16 @@ public final class ReadRowsRetryingCallable
       ReadRowsRequest request,
       final ResponseObserver<ReadRowsResponse> responseObserver,
       ApiCallContext context) {
+    ApiCallContext actualContext = this.context.merge(context);
     ReadRowsAttemptCallable attemptCallable =
         new ReadRowsAttemptCallable(
             innerCallable,
             resumptionStrategyPrototype.createNew(),
             request,
-            this.context,
+            actualContext,
             responseObserver);
 
-    RetryingFuture<Void> retryingFuture = executor.createFuture(attemptCallable, this.context);
+    RetryingFuture<Void> retryingFuture = executor.createFuture(attemptCallable, actualContext);
     attemptCallable.setExternalFuture(retryingFuture);
     attemptCallable.start();
 
