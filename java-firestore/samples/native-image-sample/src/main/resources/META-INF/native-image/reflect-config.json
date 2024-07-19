@@ -1,8 +1,0 @@
-[
-  {
-    "name" : "com.example.firestore.Person",
-    "allDeclaredConstructors" : true,
-    "allDeclaredMethods" : true,
-    "allDeclaredFields" : true
-  }
-]
