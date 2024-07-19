@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.7.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.6.1...v3.7.0) (2024-07-19)
+
+
+### Features
+
+* Add profiler for request execution details for write api connection worker  ([#2555](https://github.com/googleapis/java-bigquerystorage/issues/2555)) ([5691bd5](https://github.com/googleapis/java-bigquerystorage/commit/5691bd54a5f31bb11bcb610a2e793259fa064656))
+* Enable hermetic library generation ([#2515](https://github.com/googleapis/java-bigquerystorage/issues/2515)) ([e1b14c1](https://github.com/googleapis/java-bigquerystorage/commit/e1b14c133a7fd75c7ddf1019f0e947d8dce30538))
+* Wire and expose profiler api to the StreamWirter/JsonStreamWriter ([#2561](https://github.com/googleapis/java-bigquerystorage/issues/2561)) ([16f19dd](https://github.com/googleapis/java-bigquerystorage/commit/16f19ddb111ff145008d89dddc159bb1a0cb32f4))
+
+
+### Bug Fixes
+
+* Correct hermetic library generation script path ([#2545](https://github.com/googleapis/java-bigquerystorage/issues/2545)) ([55cc139](https://github.com/googleapis/java-bigquerystorage/commit/55cc139ab5d66ef44b6ff4c71477be1f4008bd44))
+* Remove singleton access to request profiler. Use instance of hook instead. ([#2567](https://github.com/googleapis/java-bigquerystorage/issues/2567)) ([2f45fa2](https://github.com/googleapis/java-bigquerystorage/commit/2f45fa2d16eed5fb3a692657142b058f06115d49))
+* Using context from call in ReadRowsRetryingCallable ([#2560](https://github.com/googleapis/java-bigquerystorage/issues/2560)) ([eeb19b7](https://github.com/googleapis/java-bigquerystorage/commit/eeb19b72629f28fd740c61f60cc8856577f4b8a9))
+
+
+### Dependencies
+
+* Update core dependencies to v1.24.0 ([#2554](https://github.com/googleapis/java-bigquerystorage/issues/2554)) ([4797801](https://github.com/googleapis/java-bigquerystorage/commit/4797801120935def1b38834fb752cf552a5c73c3))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.41.0 ([#2539](https://github.com/googleapis/java-bigquerystorage/issues/2539)) ([5d17db5](https://github.com/googleapis/java-bigquerystorage/commit/5d17db52f509e1218f4f4cc0d0295f2e51bad3e1))
+* Update dependency com.google.truth:truth to v1.4.3 ([#2542](https://github.com/googleapis/java-bigquerystorage/issues/2542)) ([f45bf86](https://github.com/googleapis/java-bigquerystorage/commit/f45bf868dfda6b7662617c3259ad637383ffea7e))
+* Update dependency com.google.truth:truth to v1.4.4 ([#2557](https://github.com/googleapis/java-bigquerystorage/issues/2557)) ([41fd95c](https://github.com/googleapis/java-bigquerystorage/commit/41fd95cc37272d094400c49f2114158adb52a95c))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.40.0 ([#2552](https://github.com/googleapis/java-bigquerystorage/issues/2552)) ([ac26913](https://github.com/googleapis/java-bigquerystorage/commit/ac269139bdd53ecb8b453da99bdee68b5c1256a9))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.3 ([#2543](https://github.com/googleapis/java-bigquerystorage/issues/2543)) ([f36d734](https://github.com/googleapis/java-bigquerystorage/commit/f36d734120496d61123c48dab47fb0fb3b134f61))
+
 ## [3.6.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.6.0...v3.6.1) (2024-06-25)
 
 
