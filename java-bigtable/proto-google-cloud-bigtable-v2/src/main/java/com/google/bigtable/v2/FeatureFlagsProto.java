@@ -48,12 +48,11 @@ public final class FeatureFlagsProto {
           + "\005 \001(\010\022\"\n\032last_scanned_row_responses\030\004 \001("
           + "\010\022\026\n\016routing_cookie\030\006 \001(\010\022\022\n\nretry_info\030"
           + "\007 \001(\010\022#\n\033client_side_metrics_enabled\030\010 \001"
-          + "(\010B\275\001\n\026com.google.bigtable.v2B\021FeatureFl"
-          + "agsProtoP\001Z:google.golang.org/genproto/g"
-          + "oogleapis/bigtable/v2;bigtable\252\002\030Google."
-          + "Cloud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtabl"
-          + "e\\V2\352\002\033Google::Cloud::Bigtable::V2b\006prot"
-          + "o3"
+          + "(\010B\273\001\n\026com.google.bigtable.v2B\021FeatureFl"
+          + "agsProtoP\001Z8cloud.google.com/go/bigtable"
+          + "/apiv2/bigtablepb;bigtablepb\252\002\030Google.Cl"
+          + "oud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtable\\"
+          + "V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

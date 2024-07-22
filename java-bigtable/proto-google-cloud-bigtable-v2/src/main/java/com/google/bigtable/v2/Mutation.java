@@ -2670,6 +2670,1636 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface MergeToCellOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Mutation.MergeToCell)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Aggregate` family into which new data should be added.
+     * This must be a family with a `value_type` of `Aggregate`.
+     * Format: `[-_.a-zA-Z0-9]+`
+     * </pre>
+     *
+     * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
+     */
+    java.lang.String getFamilyName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Aggregate` family into which new data should be added.
+     * This must be a family with a `value_type` of `Aggregate`.
+     * Format: `[-_.a-zA-Z0-9]+`
+     * </pre>
+     *
+     * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
+     */
+    com.google.protobuf.ByteString getFamilyNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     *
+     * @return Whether the columnQualifier field is set.
+     */
+    boolean hasColumnQualifier();
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
+     */
+    com.google.bigtable.v2.Value getColumnQualifier();
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     */
+    com.google.bigtable.v2.ValueOrBuilder getColumnQualifierOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     *
+     * @return Whether the timestamp field is set.
+     */
+    boolean hasTimestamp();
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     *
+     * @return The timestamp.
+     */
+    com.google.bigtable.v2.Value getTimestamp();
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     */
+    com.google.bigtable.v2.ValueOrBuilder getTimestampOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     *
+     * @return Whether the input field is set.
+     */
+    boolean hasInput();
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     *
+     * @return The input.
+     */
+    com.google.bigtable.v2.Value getInput();
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     */
+    com.google.bigtable.v2.ValueOrBuilder getInputOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A Mutation which merges accumulated state into a cell in an `Aggregate`
+   * family.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.v2.Mutation.MergeToCell}
+   */
+  public static final class MergeToCell extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.v2.Mutation.MergeToCell)
+      MergeToCellOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MergeToCell.newBuilder() to construct.
+    private MergeToCell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MergeToCell() {
+      familyName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MergeToCell();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_Mutation_MergeToCell_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.v2.Mutation.MergeToCell.class,
+              com.google.bigtable.v2.Mutation.MergeToCell.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int FAMILY_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object familyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Aggregate` family into which new data should be added.
+     * This must be a family with a `value_type` of `Aggregate`.
+     * Format: `[-_.a-zA-Z0-9]+`
+     * </pre>
+     *
+     * <code>string family_name = 1;</code>
+     *
+     * @return The familyName.
+     */
+    @java.lang.Override
+    public java.lang.String getFamilyName() {
+      java.lang.Object ref = familyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        familyName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Aggregate` family into which new data should be added.
+     * This must be a family with a `value_type` of `Aggregate`.
+     * Format: `[-_.a-zA-Z0-9]+`
+     * </pre>
+     *
+     * <code>string family_name = 1;</code>
+     *
+     * @return The bytes for familyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFamilyNameBytes() {
+      java.lang.Object ref = familyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        familyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLUMN_QUALIFIER_FIELD_NUMBER = 2;
+    private com.google.bigtable.v2.Value columnQualifier_;
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     *
+     * @return Whether the columnQualifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasColumnQualifier() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     *
+     * @return The columnQualifier.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Value getColumnQualifier() {
+      return columnQualifier_ == null
+          ? com.google.bigtable.v2.Value.getDefaultInstance()
+          : columnQualifier_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The qualifier of the column into which new data should be added. This
+     * must be a `raw_value`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ValueOrBuilder getColumnQualifierOrBuilder() {
+      return columnQualifier_ == null
+          ? com.google.bigtable.v2.Value.getDefaultInstance()
+          : columnQualifier_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private com.google.bigtable.v2.Value timestamp_;
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     *
+     * @return Whether the timestamp field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     *
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Value getTimestamp() {
+      return timestamp_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : timestamp_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The timestamp of the cell to which new data should be added. This must
+     * be a `raw_timestamp_micros` that matches the table's `granularity`.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ValueOrBuilder getTimestampOrBuilder() {
+      return timestamp_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : timestamp_;
+    }
+
+    public static final int INPUT_FIELD_NUMBER = 4;
+    private com.google.bigtable.v2.Value input_;
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     *
+     * @return Whether the input field is set.
+     */
+    @java.lang.Override
+    public boolean hasInput() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     *
+     * @return The input.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Value getInput() {
+      return input_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : input_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input value to be merged into the specified cell. This must be
+     * compatible with the family's `value_type.state_type`. Merging `NULL` is
+     * allowed, but has no effect.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Value input = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ValueOrBuilder getInputOrBuilder() {
+      return input_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : input_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, familyName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getColumnQualifier());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getTimestamp());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getInput());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, familyName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getColumnQualifier());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTimestamp());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getInput());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.v2.Mutation.MergeToCell)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.v2.Mutation.MergeToCell other =
+          (com.google.bigtable.v2.Mutation.MergeToCell) obj;
+
+      if (!getFamilyName().equals(other.getFamilyName())) return false;
+      if (hasColumnQualifier() != other.hasColumnQualifier()) return false;
+      if (hasColumnQualifier()) {
+        if (!getColumnQualifier().equals(other.getColumnQualifier())) return false;
+      }
+      if (hasTimestamp() != other.hasTimestamp()) return false;
+      if (hasTimestamp()) {
+        if (!getTimestamp().equals(other.getTimestamp())) return false;
+      }
+      if (hasInput() != other.hasInput()) return false;
+      if (hasInput()) {
+        if (!getInput().equals(other.getInput())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FAMILY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFamilyName().hashCode();
+      if (hasColumnQualifier()) {
+        hash = (37 * hash) + COLUMN_QUALIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnQualifier().hashCode();
+      }
+      if (hasTimestamp()) {
+        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestamp().hashCode();
+      }
+      if (hasInput()) {
+        hash = (37 * hash) + INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getInput().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.v2.Mutation.MergeToCell prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Mutation which merges accumulated state into a cell in an `Aggregate`
+     * family.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.v2.Mutation.MergeToCell}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Mutation.MergeToCell)
+        com.google.bigtable.v2.Mutation.MergeToCellOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.v2.DataProto
+            .internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.v2.DataProto
+            .internal_static_google_bigtable_v2_Mutation_MergeToCell_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.v2.Mutation.MergeToCell.class,
+                com.google.bigtable.v2.Mutation.MergeToCell.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.v2.Mutation.MergeToCell.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getColumnQualifierFieldBuilder();
+          getTimestampFieldBuilder();
+          getInputFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        familyName_ = "";
+        columnQualifier_ = null;
+        if (columnQualifierBuilder_ != null) {
+          columnQualifierBuilder_.dispose();
+          columnQualifierBuilder_ = null;
+        }
+        timestamp_ = null;
+        if (timestampBuilder_ != null) {
+          timestampBuilder_.dispose();
+          timestampBuilder_ = null;
+        }
+        input_ = null;
+        if (inputBuilder_ != null) {
+          inputBuilder_.dispose();
+          inputBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.v2.DataProto
+            .internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.v2.Mutation.MergeToCell getDefaultInstanceForType() {
+        return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.v2.Mutation.MergeToCell build() {
+        com.google.bigtable.v2.Mutation.MergeToCell result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.v2.Mutation.MergeToCell buildPartial() {
+        com.google.bigtable.v2.Mutation.MergeToCell result =
+            new com.google.bigtable.v2.Mutation.MergeToCell(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.Mutation.MergeToCell result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.familyName_ = familyName_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.columnQualifier_ =
+              columnQualifierBuilder_ == null ? columnQualifier_ : columnQualifierBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timestamp_ = timestampBuilder_ == null ? timestamp_ : timestampBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.input_ = inputBuilder_ == null ? input_ : inputBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.v2.Mutation.MergeToCell) {
+          return mergeFrom((com.google.bigtable.v2.Mutation.MergeToCell) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.v2.Mutation.MergeToCell other) {
+        if (other == com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance()) return this;
+        if (!other.getFamilyName().isEmpty()) {
+          familyName_ = other.familyName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasColumnQualifier()) {
+          mergeColumnQualifier(other.getColumnQualifier());
+        }
+        if (other.hasTimestamp()) {
+          mergeTimestamp(other.getTimestamp());
+        }
+        if (other.hasInput()) {
+          mergeInput(other.getInput());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  familyName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getColumnQualifierFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getTimestampFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getInputFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object familyName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the `Aggregate` family into which new data should be added.
+       * This must be a family with a `value_type` of `Aggregate`.
+       * Format: `[-_.a-zA-Z0-9]+`
+       * </pre>
+       *
+       * <code>string family_name = 1;</code>
+       *
+       * @return The familyName.
+       */
+      public java.lang.String getFamilyName() {
+        java.lang.Object ref = familyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          familyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the `Aggregate` family into which new data should be added.
+       * This must be a family with a `value_type` of `Aggregate`.
+       * Format: `[-_.a-zA-Z0-9]+`
+       * </pre>
+       *
+       * <code>string family_name = 1;</code>
+       *
+       * @return The bytes for familyName.
+       */
+      public com.google.protobuf.ByteString getFamilyNameBytes() {
+        java.lang.Object ref = familyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          familyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the `Aggregate` family into which new data should be added.
+       * This must be a family with a `value_type` of `Aggregate`.
+       * Format: `[-_.a-zA-Z0-9]+`
+       * </pre>
+       *
+       * <code>string family_name = 1;</code>
+       *
+       * @param value The familyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFamilyName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        familyName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the `Aggregate` family into which new data should be added.
+       * This must be a family with a `value_type` of `Aggregate`.
+       * Format: `[-_.a-zA-Z0-9]+`
+       * </pre>
+       *
+       * <code>string family_name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFamilyName() {
+        familyName_ = getDefaultInstance().getFamilyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the `Aggregate` family into which new data should be added.
+       * This must be a family with a `value_type` of `Aggregate`.
+       * Format: `[-_.a-zA-Z0-9]+`
+       * </pre>
+       *
+       * <code>string family_name = 1;</code>
+       *
+       * @param value The bytes for familyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFamilyNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        familyName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.bigtable.v2.Value columnQualifier_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          columnQualifierBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       *
+       * @return Whether the columnQualifier field is set.
+       */
+      public boolean hasColumnQualifier() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       *
+       * @return The columnQualifier.
+       */
+      public com.google.bigtable.v2.Value getColumnQualifier() {
+        if (columnQualifierBuilder_ == null) {
+          return columnQualifier_ == null
+              ? com.google.bigtable.v2.Value.getDefaultInstance()
+              : columnQualifier_;
+        } else {
+          return columnQualifierBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public Builder setColumnQualifier(com.google.bigtable.v2.Value value) {
+        if (columnQualifierBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          columnQualifier_ = value;
+        } else {
+          columnQualifierBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public Builder setColumnQualifier(com.google.bigtable.v2.Value.Builder builderForValue) {
+        if (columnQualifierBuilder_ == null) {
+          columnQualifier_ = builderForValue.build();
+        } else {
+          columnQualifierBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public Builder mergeColumnQualifier(com.google.bigtable.v2.Value value) {
+        if (columnQualifierBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && columnQualifier_ != null
+              && columnQualifier_ != com.google.bigtable.v2.Value.getDefaultInstance()) {
+            getColumnQualifierBuilder().mergeFrom(value);
+          } else {
+            columnQualifier_ = value;
+          }
+        } else {
+          columnQualifierBuilder_.mergeFrom(value);
+        }
+        if (columnQualifier_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public Builder clearColumnQualifier() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        columnQualifier_ = null;
+        if (columnQualifierBuilder_ != null) {
+          columnQualifierBuilder_.dispose();
+          columnQualifierBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public com.google.bigtable.v2.Value.Builder getColumnQualifierBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getColumnQualifierFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      public com.google.bigtable.v2.ValueOrBuilder getColumnQualifierOrBuilder() {
+        if (columnQualifierBuilder_ != null) {
+          return columnQualifierBuilder_.getMessageOrBuilder();
+        } else {
+          return columnQualifier_ == null
+              ? com.google.bigtable.v2.Value.getDefaultInstance()
+              : columnQualifier_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The qualifier of the column into which new data should be added. This
+       * must be a `raw_value`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value column_qualifier = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          getColumnQualifierFieldBuilder() {
+        if (columnQualifierBuilder_ == null) {
+          columnQualifierBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Value,
+                  com.google.bigtable.v2.Value.Builder,
+                  com.google.bigtable.v2.ValueOrBuilder>(
+                  getColumnQualifier(), getParentForChildren(), isClean());
+          columnQualifier_ = null;
+        }
+        return columnQualifierBuilder_;
+      }
+
+      private com.google.bigtable.v2.Value timestamp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          timestampBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       *
+       * @return Whether the timestamp field is set.
+       */
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       *
+       * @return The timestamp.
+       */
+      public com.google.bigtable.v2.Value getTimestamp() {
+        if (timestampBuilder_ == null) {
+          return timestamp_ == null
+              ? com.google.bigtable.v2.Value.getDefaultInstance()
+              : timestamp_;
+        } else {
+          return timestampBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public Builder setTimestamp(com.google.bigtable.v2.Value value) {
+        if (timestampBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timestamp_ = value;
+        } else {
+          timestampBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public Builder setTimestamp(com.google.bigtable.v2.Value.Builder builderForValue) {
+        if (timestampBuilder_ == null) {
+          timestamp_ = builderForValue.build();
+        } else {
+          timestampBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public Builder mergeTimestamp(com.google.bigtable.v2.Value value) {
+        if (timestampBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && timestamp_ != null
+              && timestamp_ != com.google.bigtable.v2.Value.getDefaultInstance()) {
+            getTimestampBuilder().mergeFrom(value);
+          } else {
+            timestamp_ = value;
+          }
+        } else {
+          timestampBuilder_.mergeFrom(value);
+        }
+        if (timestamp_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timestamp_ = null;
+        if (timestampBuilder_ != null) {
+          timestampBuilder_.dispose();
+          timestampBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public com.google.bigtable.v2.Value.Builder getTimestampBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getTimestampFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      public com.google.bigtable.v2.ValueOrBuilder getTimestampOrBuilder() {
+        if (timestampBuilder_ != null) {
+          return timestampBuilder_.getMessageOrBuilder();
+        } else {
+          return timestamp_ == null
+              ? com.google.bigtable.v2.Value.getDefaultInstance()
+              : timestamp_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The timestamp of the cell to which new data should be added. This must
+       * be a `raw_timestamp_micros` that matches the table's `granularity`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value timestamp = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          getTimestampFieldBuilder() {
+        if (timestampBuilder_ == null) {
+          timestampBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Value,
+                  com.google.bigtable.v2.Value.Builder,
+                  com.google.bigtable.v2.ValueOrBuilder>(
+                  getTimestamp(), getParentForChildren(), isClean());
+          timestamp_ = null;
+        }
+        return timestampBuilder_;
+      }
+
+      private com.google.bigtable.v2.Value input_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          inputBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       *
+       * @return Whether the input field is set.
+       */
+      public boolean hasInput() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       *
+       * @return The input.
+       */
+      public com.google.bigtable.v2.Value getInput() {
+        if (inputBuilder_ == null) {
+          return input_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : input_;
+        } else {
+          return inputBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public Builder setInput(com.google.bigtable.v2.Value value) {
+        if (inputBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          input_ = value;
+        } else {
+          inputBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public Builder setInput(com.google.bigtable.v2.Value.Builder builderForValue) {
+        if (inputBuilder_ == null) {
+          input_ = builderForValue.build();
+        } else {
+          inputBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public Builder mergeInput(com.google.bigtable.v2.Value value) {
+        if (inputBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && input_ != null
+              && input_ != com.google.bigtable.v2.Value.getDefaultInstance()) {
+            getInputBuilder().mergeFrom(value);
+          } else {
+            input_ = value;
+          }
+        } else {
+          inputBuilder_.mergeFrom(value);
+        }
+        if (input_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public Builder clearInput() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        input_ = null;
+        if (inputBuilder_ != null) {
+          inputBuilder_.dispose();
+          inputBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public com.google.bigtable.v2.Value.Builder getInputBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getInputFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      public com.google.bigtable.v2.ValueOrBuilder getInputOrBuilder() {
+        if (inputBuilder_ != null) {
+          return inputBuilder_.getMessageOrBuilder();
+        } else {
+          return input_ == null ? com.google.bigtable.v2.Value.getDefaultInstance() : input_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The input value to be merged into the specified cell. This must be
+       * compatible with the family's `value_type.state_type`. Merging `NULL` is
+       * allowed, but has no effect.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Value input = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Value,
+              com.google.bigtable.v2.Value.Builder,
+              com.google.bigtable.v2.ValueOrBuilder>
+          getInputFieldBuilder() {
+        if (inputBuilder_ == null) {
+          inputBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Value,
+                  com.google.bigtable.v2.Value.Builder,
+                  com.google.bigtable.v2.ValueOrBuilder>(
+                  getInput(), getParentForChildren(), isClean());
+          input_ = null;
+        }
+        return inputBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Mutation.MergeToCell)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.v2.Mutation.MergeToCell)
+    private static final com.google.bigtable.v2.Mutation.MergeToCell DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.v2.Mutation.MergeToCell();
+    }
+
+    public static com.google.bigtable.v2.Mutation.MergeToCell getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MergeToCell> PARSER =
+        new com.google.protobuf.AbstractParser<MergeToCell>() {
+          @java.lang.Override
+          public MergeToCell parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MergeToCell> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MergeToCell> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.v2.Mutation.MergeToCell getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DeleteFromColumnOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Mutation.DeleteFromColumn)
@@ -4834,6 +6464,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SET_CELL(1),
     ADD_TO_CELL(5),
+    MERGE_TO_CELL(6),
     DELETE_FROM_COLUMN(2),
     DELETE_FROM_FAMILY(3),
     DELETE_FROM_ROW(4),
@@ -4859,6 +6490,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           return SET_CELL;
         case 5:
           return ADD_TO_CELL;
+        case 6:
+          return MERGE_TO_CELL;
         case 2:
           return DELETE_FROM_COLUMN;
         case 3:
@@ -4981,6 +6614,57 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       return (com.google.bigtable.v2.Mutation.AddToCell) mutation_;
     }
     return com.google.bigtable.v2.Mutation.AddToCell.getDefaultInstance();
+  }
+
+  public static final int MERGE_TO_CELL_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   *
+   * @return Whether the mergeToCell field is set.
+   */
+  @java.lang.Override
+  public boolean hasMergeToCell() {
+    return mutationCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   *
+   * @return The mergeToCell.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.Mutation.MergeToCell getMergeToCell() {
+    if (mutationCase_ == 6) {
+      return (com.google.bigtable.v2.Mutation.MergeToCell) mutation_;
+    }
+    return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.Mutation.MergeToCellOrBuilder getMergeToCellOrBuilder() {
+    if (mutationCase_ == 6) {
+      return (com.google.bigtable.v2.Mutation.MergeToCell) mutation_;
+    }
+    return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
   }
 
   public static final int DELETE_FROM_COLUMN_FIELD_NUMBER = 2;
@@ -5165,6 +6849,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     if (mutationCase_ == 5) {
       output.writeMessage(5, (com.google.bigtable.v2.Mutation.AddToCell) mutation_);
     }
+    if (mutationCase_ == 6) {
+      output.writeMessage(6, (com.google.bigtable.v2.Mutation.MergeToCell) mutation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5199,6 +6886,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.bigtable.v2.Mutation.AddToCell) mutation_);
     }
+    if (mutationCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.bigtable.v2.Mutation.MergeToCell) mutation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5221,6 +6913,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getAddToCell().equals(other.getAddToCell())) return false;
+        break;
+      case 6:
+        if (!getMergeToCell().equals(other.getMergeToCell())) return false;
         break;
       case 2:
         if (!getDeleteFromColumn().equals(other.getDeleteFromColumn())) return false;
@@ -5253,6 +6948,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + ADD_TO_CELL_FIELD_NUMBER;
         hash = (53 * hash) + getAddToCell().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + MERGE_TO_CELL_FIELD_NUMBER;
+        hash = (53 * hash) + getMergeToCell().hashCode();
         break;
       case 2:
         hash = (37 * hash) + DELETE_FROM_COLUMN_FIELD_NUMBER;
@@ -5412,6 +7111,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       if (addToCellBuilder_ != null) {
         addToCellBuilder_.clear();
       }
+      if (mergeToCellBuilder_ != null) {
+        mergeToCellBuilder_.clear();
+      }
       if (deleteFromColumnBuilder_ != null) {
         deleteFromColumnBuilder_.clear();
       }
@@ -5469,6 +7171,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       if (mutationCase_ == 5 && addToCellBuilder_ != null) {
         result.mutation_ = addToCellBuilder_.build();
+      }
+      if (mutationCase_ == 6 && mergeToCellBuilder_ != null) {
+        result.mutation_ = mergeToCellBuilder_.build();
       }
       if (mutationCase_ == 2 && deleteFromColumnBuilder_ != null) {
         result.mutation_ = deleteFromColumnBuilder_.build();
@@ -5535,6 +7240,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         case ADD_TO_CELL:
           {
             mergeAddToCell(other.getAddToCell());
+            break;
+          }
+        case MERGE_TO_CELL:
+          {
+            mergeMergeToCell(other.getMergeToCell());
             break;
           }
         case DELETE_FROM_COLUMN:
@@ -5615,6 +7325,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
                 mutationCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getMergeToCellFieldBuilder().getBuilder(), extensionRegistry);
+                mutationCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6062,6 +7778,215 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       mutationCase_ = 5;
       onChanged();
       return addToCellBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.Mutation.MergeToCell,
+            com.google.bigtable.v2.Mutation.MergeToCell.Builder,
+            com.google.bigtable.v2.Mutation.MergeToCellOrBuilder>
+        mergeToCellBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     *
+     * @return Whether the mergeToCell field is set.
+     */
+    @java.lang.Override
+    public boolean hasMergeToCell() {
+      return mutationCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     *
+     * @return The mergeToCell.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Mutation.MergeToCell getMergeToCell() {
+      if (mergeToCellBuilder_ == null) {
+        if (mutationCase_ == 6) {
+          return (com.google.bigtable.v2.Mutation.MergeToCell) mutation_;
+        }
+        return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+      } else {
+        if (mutationCase_ == 6) {
+          return mergeToCellBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    public Builder setMergeToCell(com.google.bigtable.v2.Mutation.MergeToCell value) {
+      if (mergeToCellBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mutation_ = value;
+        onChanged();
+      } else {
+        mergeToCellBuilder_.setMessage(value);
+      }
+      mutationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    public Builder setMergeToCell(
+        com.google.bigtable.v2.Mutation.MergeToCell.Builder builderForValue) {
+      if (mergeToCellBuilder_ == null) {
+        mutation_ = builderForValue.build();
+        onChanged();
+      } else {
+        mergeToCellBuilder_.setMessage(builderForValue.build());
+      }
+      mutationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    public Builder mergeMergeToCell(com.google.bigtable.v2.Mutation.MergeToCell value) {
+      if (mergeToCellBuilder_ == null) {
+        if (mutationCase_ == 6
+            && mutation_ != com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance()) {
+          mutation_ =
+              com.google.bigtable.v2.Mutation.MergeToCell.newBuilder(
+                      (com.google.bigtable.v2.Mutation.MergeToCell) mutation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mutation_ = value;
+        }
+        onChanged();
+      } else {
+        if (mutationCase_ == 6) {
+          mergeToCellBuilder_.mergeFrom(value);
+        } else {
+          mergeToCellBuilder_.setMessage(value);
+        }
+      }
+      mutationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    public Builder clearMergeToCell() {
+      if (mergeToCellBuilder_ == null) {
+        if (mutationCase_ == 6) {
+          mutationCase_ = 0;
+          mutation_ = null;
+          onChanged();
+        }
+      } else {
+        if (mutationCase_ == 6) {
+          mutationCase_ = 0;
+          mutation_ = null;
+        }
+        mergeToCellBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    public com.google.bigtable.v2.Mutation.MergeToCell.Builder getMergeToCellBuilder() {
+      return getMergeToCellFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Mutation.MergeToCellOrBuilder getMergeToCellOrBuilder() {
+      if ((mutationCase_ == 6) && (mergeToCellBuilder_ != null)) {
+        return mergeToCellBuilder_.getMessageOrBuilder();
+      } else {
+        if (mutationCase_ == 6) {
+          return (com.google.bigtable.v2.Mutation.MergeToCell) mutation_;
+        }
+        return com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merges accumulated state to an `Aggregate` cell.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.Mutation.MergeToCell,
+            com.google.bigtable.v2.Mutation.MergeToCell.Builder,
+            com.google.bigtable.v2.Mutation.MergeToCellOrBuilder>
+        getMergeToCellFieldBuilder() {
+      if (mergeToCellBuilder_ == null) {
+        if (!(mutationCase_ == 6)) {
+          mutation_ = com.google.bigtable.v2.Mutation.MergeToCell.getDefaultInstance();
+        }
+        mergeToCellBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Mutation.MergeToCell,
+                com.google.bigtable.v2.Mutation.MergeToCell.Builder,
+                com.google.bigtable.v2.Mutation.MergeToCellOrBuilder>(
+                (com.google.bigtable.v2.Mutation.MergeToCell) mutation_,
+                getParentForChildren(),
+                isClean());
+        mutation_ = null;
+      }
+      mutationCase_ = 6;
+      onChanged();
+      return mergeToCellBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

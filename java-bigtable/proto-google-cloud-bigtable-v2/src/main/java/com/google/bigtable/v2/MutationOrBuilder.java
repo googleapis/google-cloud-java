@@ -98,6 +98,41 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   *
+   * @return Whether the mergeToCell field is set.
+   */
+  boolean hasMergeToCell();
+  /**
+   *
+   *
+   * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   *
+   * @return The mergeToCell.
+   */
+  com.google.bigtable.v2.Mutation.MergeToCell getMergeToCell();
+  /**
+   *
+   *
+   * <pre>
+   * Merges accumulated state to an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.MergeToCell merge_to_cell = 6;</code>
+   */
+  com.google.bigtable.v2.Mutation.MergeToCellOrBuilder getMergeToCellOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Deletes cells from a column.
    * </pre>
    *

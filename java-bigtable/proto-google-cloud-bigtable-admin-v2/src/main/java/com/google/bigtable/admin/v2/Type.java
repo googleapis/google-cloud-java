@@ -29,27 +29,22 @@ package com.google.bigtable.admin.v2;
  *
  * For compatibility with Bigtable's existing untyped APIs, each `Type` includes
  * an `Encoding` which describes how to convert to/from the underlying data.
- * This might involve composing a series of steps into an "encoding chain," for
- * example to convert from INT64 -&gt; STRING -&gt; raw bytes. In most cases, a "link"
- * in the encoding chain will be based an on existing GoogleSQL conversion
- * function like `CAST`.
  *
- * Each link in the encoding chain also defines the following properties:
- *  * Natural sort: Does the encoded value sort consistently with the original
- *    typed value? Note that Bigtable will always sort data based on the raw
- *    encoded value, *not* the decoded type.
+ * Each encoding also defines the following properties:
+ *
+ *  * Order-preserving: Does the encoded value sort consistently with the
+ *    original typed value? Note that Bigtable will always sort data based on
+ *    the raw encoded value, *not* the decoded type.
  *     - Example: BYTES values sort in the same order as their raw encodings.
- *     - Counterexample: Encoding INT64 to a fixed-width STRING does *not*
- *       preserve sort order when dealing with negative numbers.
- *       INT64(1) &gt; INT64(-1), but STRING("-00001") &gt; STRING("00001).
- *     - The overall encoding chain has this property if *every* link does.
+ *     - Counterexample: Encoding INT64 as a fixed-width decimal string does
+ *       *not* preserve sort order when dealing with negative numbers.
+ *       `INT64(1) &gt; INT64(-1)`, but `STRING("-00001") &gt; STRING("00001)`.
  *  * Self-delimiting: If we concatenate two encoded values, can we always tell
  *    where the first one ends and the second one begins?
  *     - Example: If we encode INT64s to fixed-width STRINGs, the first value
  *       will always contain exactly N digits, possibly preceded by a sign.
  *     - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have
  *       no way to tell where the first one ends.
- *     - The overall encoding chain has this property if *any* link does.
  *  * Compatibility: Which other systems have matching encoding schemes? For
  *    example, does this encoding have a GoogleSQL equivalent? HBase? Java?
  * </pre>
@@ -265,7 +260,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Leaves the value "as-is"
-       * * Natural sort? Yes
+       * * Order-preserving? Yes
        * * Self-delimiting? No
        * * Compatibility? N/A
        * </pre>
@@ -464,7 +459,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Leaves the value "as-is"
-         * * Natural sort? Yes
+         * * Order-preserving? Yes
          * * Self-delimiting? No
          * * Compatibility? N/A
          * </pre>
@@ -2207,36 +2202,84 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/admin/v2/types.proto;l=97
        * @return Whether the utf8Raw field is set.
        */
+      @java.lang.Deprecated
       boolean hasUtf8Raw();
       /**
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/admin/v2/types.proto;l=97
        * @return The utf8Raw.
        */
+      @java.lang.Deprecated
       com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw getUtf8Raw();
       /**
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.bigtable.admin.v2.Type.String.Encoding.Utf8RawOrBuilder getUtf8RawOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       *
+       * @return Whether the utf8Bytes field is set.
+       */
+      boolean hasUtf8Bytes();
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       *
+       * @return The utf8Bytes.
+       */
+      com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes getUtf8Bytes();
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       */
+      com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder getUtf8BytesOrBuilder();
 
       com.google.bigtable.admin.v2.Type.String.Encoding.EncodingCase getEncodingCase();
     }
@@ -2282,6 +2325,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.String.Encoding.Builder.class);
       }
 
+      @java.lang.Deprecated
       public interface Utf8RawOrBuilder
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw)
@@ -2290,17 +2334,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * UTF-8 encoding
-       * * Natural sort? No (ASCII characters only)
-       * * Self-delimiting? No
-       * * Compatibility?
-       *    - BigQuery Federation `TEXT` encoding
-       *    - HBase `Bytes.toBytes`
-       *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+       * Deprecated: prefer the equivalent `Utf8Bytes`.
        * </pre>
        *
        * Protobuf type {@code google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw}
        */
+      @java.lang.Deprecated
       public static final class Utf8Raw extends com.google.protobuf.GeneratedMessageV3
           implements
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw)
@@ -2492,13 +2531,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * UTF-8 encoding
-         * * Natural sort? No (ASCII characters only)
-         * * Self-delimiting? No
-         * * Compatibility?
-         *    - BigQuery Federation `TEXT` encoding
-         *    - HBase `Bytes.toBytes`
-         *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+         * Deprecated: prefer the equivalent `Utf8Bytes`.
          * </pre>
          *
          * Protobuf type {@code google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw}
@@ -2725,6 +2758,452 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface Utf8BytesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
+          com.google.protobuf.MessageOrBuilder {}
+      /**
+       *
+       *
+       * <pre>
+       * UTF-8 encoding
+       * * Order-preserving? Yes (code point order)
+       * * Self-delimiting? No
+       * * Compatibility?
+       *    - BigQuery Federation `TEXT` encoding
+       *    - HBase `Bytes.toBytes`
+       *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes}
+       */
+      public static final class Utf8Bytes extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
+          Utf8BytesOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Utf8Bytes.newBuilder() to construct.
+        private Utf8Bytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Utf8Bytes() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Utf8Bytes();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_String_Encoding_Utf8Bytes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_String_Encoding_Utf8Bytes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.class,
+                  com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes other =
+              (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * UTF-8 encoding
+         * * Order-preserving? Yes (code point order)
+         * * Self-delimiting? No
+         * * Compatibility?
+         *    - BigQuery Federation `TEXT` encoding
+         *    - HBase `Bytes.toBytes`
+         *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.admin.v2.TypesProto
+                .internal_static_google_bigtable_admin_v2_Type_String_Encoding_Utf8Bytes_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.admin.v2.TypesProto
+                .internal_static_google_bigtable_admin_v2_Type_String_Encoding_Utf8Bytes_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.class,
+                    com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder.class);
+          }
+
+          // Construct using
+          // com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.admin.v2.TypesProto
+                .internal_static_google_bigtable_admin_v2_Type_String_Encoding_Utf8Bytes_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+              getDefaultInstanceForType() {
+            return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes build() {
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes buildPartial() {
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes result =
+                new com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) {
+              return mergeFrom((com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes other) {
+            if (other
+                == com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance())
+              return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
+        private static final com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes();
+        }
+
+        public static com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Utf8Bytes> PARSER =
+            new com.google.protobuf.AbstractParser<Utf8Bytes>() {
+              @java.lang.Override
+              public Utf8Bytes parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Utf8Bytes> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Utf8Bytes> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int encodingCase_ = 0;
 
       @SuppressWarnings("serial")
@@ -2734,7 +3213,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           implements
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        @java.lang.Deprecated
         UTF8_RAW(1),
+        UTF8_BYTES(2),
         ENCODING_NOT_SET(0);
         private final int value;
 
@@ -2755,6 +3236,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           switch (value) {
             case 1:
               return UTF8_RAW;
+            case 2:
+              return UTF8_BYTES;
             case 0:
               return ENCODING_NOT_SET;
             default:
@@ -2776,14 +3259,19 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/admin/v2/types.proto;l=97
        * @return Whether the utf8Raw field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasUtf8Raw() {
         return encodingCase_ == 1;
       }
@@ -2791,14 +3279,19 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/admin/v2/types.proto;l=97
        * @return The utf8Raw.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw getUtf8Raw() {
         if (encodingCase_ == 1) {
           return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw) encoding_;
@@ -2809,18 +3302,73 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Use `Utf8Raw` encoding.
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+       * <code>
+       * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8RawOrBuilder
           getUtf8RawOrBuilder() {
         if (encodingCase_ == 1) {
           return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw) encoding_;
         }
         return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+      }
+
+      public static final int UTF8_BYTES_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       *
+       * @return Whether the utf8Bytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasUtf8Bytes() {
+        return encodingCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       *
+       * @return The utf8Bytes.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes getUtf8Bytes() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_;
+        }
+        return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use `Utf8Bytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder
+          getUtf8BytesOrBuilder() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_;
+        }
+        return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2841,6 +3389,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           output.writeMessage(
               1, (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw) encoding_);
         }
+        if (encodingCase_ == 2) {
+          output.writeMessage(
+              2, (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -2854,6 +3406,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   1, (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw) encoding_);
+        }
+        if (encodingCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2876,6 +3433,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           case 1:
             if (!getUtf8Raw().equals(other.getUtf8Raw())) return false;
             break;
+          case 2:
+            if (!getUtf8Bytes().equals(other.getUtf8Bytes())) return false;
+            break;
           case 0:
           default:
         }
@@ -2894,6 +3454,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           case 1:
             hash = (37 * hash) + UTF8_RAW_FIELD_NUMBER;
             hash = (53 * hash) + getUtf8Raw().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + UTF8_BYTES_FIELD_NUMBER;
+            hash = (53 * hash) + getUtf8Bytes().hashCode();
             break;
           case 0:
           default:
@@ -3043,6 +3607,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           if (utf8RawBuilder_ != null) {
             utf8RawBuilder_.clear();
           }
+          if (utf8BytesBuilder_ != null) {
+            utf8BytesBuilder_.clear();
+          }
           encodingCase_ = 0;
           encoding_ = null;
           return this;
@@ -3089,6 +3656,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           result.encoding_ = this.encoding_;
           if (encodingCase_ == 1 && utf8RawBuilder_ != null) {
             result.encoding_ = utf8RawBuilder_.build();
+          }
+          if (encodingCase_ == 2 && utf8BytesBuilder_ != null) {
+            result.encoding_ = utf8BytesBuilder_.build();
           }
         }
 
@@ -3146,6 +3716,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 mergeUtf8Raw(other.getUtf8Raw());
                 break;
               }
+            case UTF8_BYTES:
+              {
+                mergeUtf8Bytes(other.getUtf8Bytes());
+                break;
+              }
             case ENCODING_NOT_SET:
               {
                 break;
@@ -3183,6 +3758,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                     encodingCase_ = 1;
                     break;
                   } // case 10
+                case 18:
+                  {
+                    input.readMessage(getUtf8BytesFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 2;
+                    break;
+                  } // case 18
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3225,14 +3806,19 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+         *     google/bigtable/admin/v2/types.proto;l=97
          * @return Whether the utf8Raw field is set.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public boolean hasUtf8Raw() {
           return encodingCase_ == 1;
         }
@@ -3240,14 +3826,19 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.bigtable.admin.v2.Type.String.Encoding.utf8_raw is deprecated. See
+         *     google/bigtable/admin/v2/types.proto;l=97
          * @return The utf8Raw.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw getUtf8Raw() {
           if (utf8RawBuilder_ == null) {
             if (encodingCase_ == 1) {
@@ -3265,11 +3856,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setUtf8Raw(com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw value) {
           if (utf8RawBuilder_ == null) {
             if (value == null) {
@@ -3287,11 +3881,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setUtf8Raw(
             com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.Builder builderForValue) {
           if (utf8RawBuilder_ == null) {
@@ -3307,11 +3904,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeUtf8Raw(
             com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw value) {
           if (utf8RawBuilder_ == null) {
@@ -3342,11 +3942,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearUtf8Raw() {
           if (utf8RawBuilder_ == null) {
             if (encodingCase_ == 1) {
@@ -3367,11 +3970,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.Builder
             getUtf8RawBuilder() {
           return getUtf8RawFieldBuilder().getBuilder();
@@ -3380,12 +3986,15 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8RawOrBuilder
             getUtf8RawOrBuilder() {
           if ((encodingCase_ == 1) && (utf8RawBuilder_ != null)) {
@@ -3401,10 +4010,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Use `Utf8Raw` encoding.
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
          * </pre>
          *
-         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1;</code>
+         * <code>
+         * .google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw,
@@ -3429,6 +4040,222 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           onChanged();
           return utf8RawBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes,
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder,
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder>
+            utf8BytesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         *
+         * @return Whether the utf8Bytes field is set.
+         */
+        @java.lang.Override
+        public boolean hasUtf8Bytes() {
+          return encodingCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         *
+         * @return The utf8Bytes.
+         */
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes getUtf8Bytes() {
+          if (utf8BytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_;
+            }
+            return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 2) {
+              return utf8BytesBuilder_.getMessage();
+            }
+            return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        public Builder setUtf8Bytes(
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes value) {
+          if (utf8BytesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            utf8BytesBuilder_.setMessage(value);
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        public Builder setUtf8Bytes(
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder builderForValue) {
+          if (utf8BytesBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            utf8BytesBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        public Builder mergeUtf8Bytes(
+            com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes value) {
+          if (utf8BytesBuilder_ == null) {
+            if (encodingCase_ == 2
+                && encoding_
+                    != com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes
+                        .getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.newBuilder(
+                          (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 2) {
+              utf8BytesBuilder_.mergeFrom(value);
+            } else {
+              utf8BytesBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        public Builder clearUtf8Bytes() {
+          if (utf8BytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            utf8BytesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder
+            getUtf8BytesBuilder() {
+          return getUtf8BytesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder
+            getUtf8BytesOrBuilder() {
+          if ((encodingCase_ == 2) && (utf8BytesBuilder_ != null)) {
+            return utf8BytesBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_;
+            }
+            return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Use `Utf8Bytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes utf8_bytes = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes,
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder,
+                com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder>
+            getUtf8BytesFieldBuilder() {
+          if (utf8BytesBuilder_ == null) {
+            if (!(encodingCase_ == 2)) {
+              encoding_ =
+                  com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
+            }
+            utf8BytesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes,
+                    com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder,
+                    com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder>(
+                    (com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 2;
+          onChanged();
+          return utf8BytesBuilder_;
         }
 
         @java.lang.Override
@@ -4342,7 +5169,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4354,7 +5181,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4366,7 +5193,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4379,7 +5206,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Encodes the value as an 8-byte big endian twos complement `Bytes`
        * value.
-       * * Natural sort? No (positive values only)
+       * * Order-preserving? No (positive values only)
        * * Self-delimiting? Yes
        * * Compatibility?
        *    - BigQuery Federation `BINARY` encoding
@@ -4429,7 +5256,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4444,7 +5271,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4461,7 +5288,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The underlying `Bytes` type, which may be able to encode further.
+         * Deprecated: ignored if set.
          * </pre>
          *
          * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4649,7 +5476,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Encodes the value as an 8-byte big endian twos complement `Bytes`
          * value.
-         * * Natural sort? No (positive values only)
+         * * Order-preserving? No (positive values only)
          * * Self-delimiting? Yes
          * * Compatibility?
          *    - BigQuery Federation `BINARY` encoding
@@ -4868,7 +5695,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4882,7 +5709,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4902,7 +5729,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4924,7 +5751,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4944,7 +5771,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4971,7 +5798,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -4990,7 +5817,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -5004,7 +5831,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -5022,7 +5849,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * The underlying `Bytes` type, which may be able to encode further.
+           * Deprecated: ignored if set.
            * </pre>
            *
            * <code>.google.bigtable.admin.v2.Type.Bytes bytes_type = 1;</code>
@@ -6566,6 +7393,5880 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface BoolOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Bool)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * bool
+   * Values of type `Bool` are stored in `Value.bool_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Bool}
+   */
+  public static final class Bool extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Bool)
+      BoolOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Bool.newBuilder() to construct.
+    private Bool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Bool() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Bool();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Bool_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Bool_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Bool.class,
+              com.google.bigtable.admin.v2.Type.Bool.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Bool)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Bool other = (com.google.bigtable.admin.v2.Type.Bool) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Bool prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * bool
+     * Values of type `Bool` are stored in `Value.bool_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Bool}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Bool)
+        com.google.bigtable.admin.v2.Type.BoolOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Bool_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Bool_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Bool.class,
+                com.google.bigtable.admin.v2.Type.Bool.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Bool.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Bool_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Bool getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Bool build() {
+        com.google.bigtable.admin.v2.Type.Bool result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Bool buildPartial() {
+        com.google.bigtable.admin.v2.Type.Bool result =
+            new com.google.bigtable.admin.v2.Type.Bool(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Bool) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Bool) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Bool other) {
+        if (other == com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Bool)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Bool)
+    private static final com.google.bigtable.admin.v2.Type.Bool DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Bool();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Bool getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Bool> PARSER =
+        new com.google.protobuf.AbstractParser<Bool>() {
+          @java.lang.Override
+          public Bool parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Bool> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Bool> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Bool getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface Float32OrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Float32)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * Values of type `Float32` are stored in `Value.float_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Float32}
+   */
+  public static final class Float32 extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Float32)
+      Float32OrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Float32.newBuilder() to construct.
+    private Float32(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Float32() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Float32();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Float32_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Float32_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Float32.class,
+              com.google.bigtable.admin.v2.Type.Float32.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Float32)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Float32 other =
+          (com.google.bigtable.admin.v2.Type.Float32) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Float32 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * Values of type `Float32` are stored in `Value.float_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Float32}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Float32)
+        com.google.bigtable.admin.v2.Type.Float32OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float32_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float32_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Float32.class,
+                com.google.bigtable.admin.v2.Type.Float32.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Float32.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float32_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float32 getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float32 build() {
+        com.google.bigtable.admin.v2.Type.Float32 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float32 buildPartial() {
+        com.google.bigtable.admin.v2.Type.Float32 result =
+            new com.google.bigtable.admin.v2.Type.Float32(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Float32) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Float32) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Float32 other) {
+        if (other == com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Float32)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Float32)
+    private static final com.google.bigtable.admin.v2.Type.Float32 DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Float32();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float32 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Float32> PARSER =
+        new com.google.protobuf.AbstractParser<Float32>() {
+          @java.lang.Override
+          public Float32 parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Float32> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Float32> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float32 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface Float64OrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Float64)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * Values of type `Float64` are stored in `Value.float_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Float64}
+   */
+  public static final class Float64 extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Float64)
+      Float64OrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Float64.newBuilder() to construct.
+    private Float64(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Float64() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Float64();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Float64_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Float64_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Float64.class,
+              com.google.bigtable.admin.v2.Type.Float64.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Float64)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Float64 other =
+          (com.google.bigtable.admin.v2.Type.Float64) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Float64 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * Values of type `Float64` are stored in `Value.float_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Float64}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Float64)
+        com.google.bigtable.admin.v2.Type.Float64OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float64_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float64_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Float64.class,
+                com.google.bigtable.admin.v2.Type.Float64.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Float64.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Float64_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float64 getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float64 build() {
+        com.google.bigtable.admin.v2.Type.Float64 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Float64 buildPartial() {
+        com.google.bigtable.admin.v2.Type.Float64 result =
+            new com.google.bigtable.admin.v2.Type.Float64(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Float64) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Float64) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Float64 other) {
+        if (other == com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Float64)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Float64)
+    private static final com.google.bigtable.admin.v2.Type.Float64 DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Float64();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Float64 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Float64> PARSER =
+        new com.google.protobuf.AbstractParser<Float64>() {
+          @java.lang.Override
+          public Float64 parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Float64> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Float64> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float64 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TimestampOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Timestamp)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * Values of type `Timestamp` are stored in `Value.timestamp_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Timestamp}
+   */
+  public static final class Timestamp extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Timestamp)
+      TimestampOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Timestamp.newBuilder() to construct.
+    private Timestamp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Timestamp() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Timestamp();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Timestamp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Timestamp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Timestamp.class,
+              com.google.bigtable.admin.v2.Type.Timestamp.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Timestamp)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Timestamp other =
+          (com.google.bigtable.admin.v2.Type.Timestamp) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Timestamp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * Values of type `Timestamp` are stored in `Value.timestamp_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Timestamp}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Timestamp)
+        com.google.bigtable.admin.v2.Type.TimestampOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Timestamp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Timestamp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Timestamp.class,
+                com.google.bigtable.admin.v2.Type.Timestamp.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Timestamp.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Timestamp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Timestamp getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Timestamp build() {
+        com.google.bigtable.admin.v2.Type.Timestamp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Timestamp buildPartial() {
+        com.google.bigtable.admin.v2.Type.Timestamp result =
+            new com.google.bigtable.admin.v2.Type.Timestamp(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Timestamp) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Timestamp) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Timestamp other) {
+        if (other == com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Timestamp)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Timestamp)
+    private static final com.google.bigtable.admin.v2.Type.Timestamp DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Timestamp();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Timestamp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Timestamp> PARSER =
+        new com.google.protobuf.AbstractParser<Timestamp>() {
+          @java.lang.Override
+          public Timestamp parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Timestamp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Timestamp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Timestamp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DateOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Date)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * Values of type `Date` are stored in `Value.date_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Date}
+   */
+  public static final class Date extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Date)
+      DateOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Date.newBuilder() to construct.
+    private Date(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Date() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Date();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Date_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Date_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Date.class,
+              com.google.bigtable.admin.v2.Type.Date.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Date)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Date other = (com.google.bigtable.admin.v2.Type.Date) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Date prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * Values of type `Date` are stored in `Value.date_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Date}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Date)
+        com.google.bigtable.admin.v2.Type.DateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Date_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Date_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Date.class,
+                com.google.bigtable.admin.v2.Type.Date.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Date.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Date_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Date getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Date build() {
+        com.google.bigtable.admin.v2.Type.Date result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Date buildPartial() {
+        com.google.bigtable.admin.v2.Type.Date result =
+            new com.google.bigtable.admin.v2.Type.Date(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Date) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Date) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Date other) {
+        if (other == com.google.bigtable.admin.v2.Type.Date.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Date)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Date)
+    private static final com.google.bigtable.admin.v2.Type.Date DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Date();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Date getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Date> PARSER =
+        new com.google.protobuf.AbstractParser<Date>() {
+          @java.lang.Override
+          public Date parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Date> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Date> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Date getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface StructOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Struct)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> getFieldsList();
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    com.google.bigtable.admin.v2.Type.Struct.Field getFields(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    int getFieldsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    java.util.List<? extends com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
+        getFieldsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder getFieldsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A structured data value, consisting of fields which map to dynamically
+   * typed values.
+   * Values of type `Struct` are stored in `Value.array_value` where entries are
+   * in the same order and number as `field_types`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Struct}
+   */
+  public static final class Struct extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct)
+      StructOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Struct.newBuilder() to construct.
+    private Struct(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Struct() {
+      fields_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Struct();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Struct_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Struct_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Struct.class,
+              com.google.bigtable.admin.v2.Type.Struct.Builder.class);
+    }
+
+    public interface FieldOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Struct.Field)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The field name (optional). Fields without a `field_name` are considered
+       * anonymous and cannot be referenced by name.
+       * </pre>
+       *
+       * <code>string field_name = 1;</code>
+       *
+       * @return The fieldName.
+       */
+      java.lang.String getFieldName();
+      /**
+       *
+       *
+       * <pre>
+       * The field name (optional). Fields without a `field_name` are considered
+       * anonymous and cannot be referenced by name.
+       * </pre>
+       *
+       * <code>string field_name = 1;</code>
+       *
+       * @return The bytes for fieldName.
+       */
+      com.google.protobuf.ByteString getFieldNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       *
+       * @return Whether the type field is set.
+       */
+      boolean hasType();
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       *
+       * @return The type.
+       */
+      com.google.bigtable.admin.v2.Type getType();
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       */
+      com.google.bigtable.admin.v2.TypeOrBuilder getTypeOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct field and its type.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Struct.Field}
+     */
+    public static final class Field extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Field)
+        FieldOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Field.newBuilder() to construct.
+      private Field(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Field() {
+        fieldName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Field();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Struct_Field_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Struct_Field_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Struct.Field.class,
+                com.google.bigtable.admin.v2.Type.Struct.Field.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object fieldName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The field name (optional). Fields without a `field_name` are considered
+       * anonymous and cannot be referenced by name.
+       * </pre>
+       *
+       * <code>string field_name = 1;</code>
+       *
+       * @return The fieldName.
+       */
+      @java.lang.Override
+      public java.lang.String getFieldName() {
+        java.lang.Object ref = fieldName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The field name (optional). Fields without a `field_name` are considered
+       * anonymous and cannot be referenced by name.
+       * </pre>
+       *
+       * <code>string field_name = 1;</code>
+       *
+       * @return The bytes for fieldName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFieldNameBytes() {
+        java.lang.Object ref = fieldName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fieldName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 2;
+      private com.google.bigtable.admin.v2.Type type_;
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       *
+       * @return Whether the type field is set.
+       */
+      @java.lang.Override
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type getType() {
+        return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of values in this field.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.TypeOrBuilder getTypeOrBuilder() {
+        return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getType());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getType());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.bigtable.admin.v2.Type.Struct.Field)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.admin.v2.Type.Struct.Field other =
+            (com.google.bigtable.admin.v2.Type.Struct.Field) obj;
+
+        if (!getFieldName().equals(other.getFieldName())) return false;
+        if (hasType() != other.hasType()) return false;
+        if (hasType()) {
+          if (!getType().equals(other.getType())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldName().hashCode();
+        if (hasType()) {
+          hash = (37 * hash) + TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getType().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Struct.Field prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A struct field and its type.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.admin.v2.Type.Struct.Field}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Struct.Field)
+          com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Struct_Field_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Struct_Field_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.Type.Struct.Field.class,
+                  com.google.bigtable.admin.v2.Type.Struct.Field.Builder.class);
+        }
+
+        // Construct using com.google.bigtable.admin.v2.Type.Struct.Field.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getTypeFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          fieldName_ = "";
+          type_ = null;
+          if (typeBuilder_ != null) {
+            typeBuilder_.dispose();
+            typeBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Struct_Field_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Struct.Field getDefaultInstanceForType() {
+          return com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Struct.Field build() {
+          com.google.bigtable.admin.v2.Type.Struct.Field result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Struct.Field buildPartial() {
+          com.google.bigtable.admin.v2.Type.Struct.Field result =
+              new com.google.bigtable.admin.v2.Type.Struct.Field(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.bigtable.admin.v2.Type.Struct.Field result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.fieldName_ = fieldName_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.type_ = typeBuilder_ == null ? type_ : typeBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.bigtable.admin.v2.Type.Struct.Field) {
+            return mergeFrom((com.google.bigtable.admin.v2.Type.Struct.Field) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Struct.Field other) {
+          if (other == com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance())
+            return this;
+          if (!other.getFieldName().isEmpty()) {
+            fieldName_ = other.fieldName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasType()) {
+            mergeType(other.getType());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    fieldName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getTypeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object fieldName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The field name (optional). Fields without a `field_name` are considered
+         * anonymous and cannot be referenced by name.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        public java.lang.String getFieldName() {
+          java.lang.Object ref = fieldName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The field name (optional). Fields without a `field_name` are considered
+         * anonymous and cannot be referenced by name.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        public com.google.protobuf.ByteString getFieldNameBytes() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The field name (optional). Fields without a `field_name` are considered
+         * anonymous and cannot be referenced by name.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @param value The fieldName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fieldName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The field name (optional). Fields without a `field_name` are considered
+         * anonymous and cannot be referenced by name.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFieldName() {
+          fieldName_ = getDefaultInstance().getFieldName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The field name (optional). Fields without a `field_name` are considered
+         * anonymous and cannot be referenced by name.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @param value The bytes for fieldName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          fieldName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.bigtable.admin.v2.Type type_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type,
+                com.google.bigtable.admin.v2.Type.Builder,
+                com.google.bigtable.admin.v2.TypeOrBuilder>
+            typeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         *
+         * @return Whether the type field is set.
+         */
+        public boolean hasType() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         *
+         * @return The type.
+         */
+        public com.google.bigtable.admin.v2.Type getType() {
+          if (typeBuilder_ == null) {
+            return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
+          } else {
+            return typeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public Builder setType(com.google.bigtable.admin.v2.Type value) {
+          if (typeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+          } else {
+            typeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public Builder setType(com.google.bigtable.admin.v2.Type.Builder builderForValue) {
+          if (typeBuilder_ == null) {
+            type_ = builderForValue.build();
+          } else {
+            typeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public Builder mergeType(com.google.bigtable.admin.v2.Type value) {
+          if (typeBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && type_ != null
+                && type_ != com.google.bigtable.admin.v2.Type.getDefaultInstance()) {
+              getTypeBuilder().mergeFrom(value);
+            } else {
+              type_ = value;
+            }
+          } else {
+            typeBuilder_.mergeFrom(value);
+          }
+          if (type_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public Builder clearType() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          type_ = null;
+          if (typeBuilder_ != null) {
+            typeBuilder_.dispose();
+            typeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public com.google.bigtable.admin.v2.Type.Builder getTypeBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getTypeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        public com.google.bigtable.admin.v2.TypeOrBuilder getTypeOrBuilder() {
+          if (typeBuilder_ != null) {
+            return typeBuilder_.getMessageOrBuilder();
+          } else {
+            return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of values in this field.
+         * </pre>
+         *
+         * <code>.google.bigtable.admin.v2.Type type = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type,
+                com.google.bigtable.admin.v2.Type.Builder,
+                com.google.bigtable.admin.v2.TypeOrBuilder>
+            getTypeFieldBuilder() {
+          if (typeBuilder_ == null) {
+            typeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.admin.v2.Type,
+                    com.google.bigtable.admin.v2.Type.Builder,
+                    com.google.bigtable.admin.v2.TypeOrBuilder>(
+                    getType(), getParentForChildren(), isClean());
+            type_ = null;
+          }
+          return typeBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Struct.Field)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Struct.Field)
+      private static final com.google.bigtable.admin.v2.Type.Struct.Field DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Struct.Field();
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Struct.Field getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Field> PARSER =
+          new com.google.protobuf.AbstractParser<Field>() {
+            @java.lang.Override
+            public Field parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Field> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Field> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Struct.Field getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int FIELDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> fields_;
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> getFieldsList() {
+      return fields_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
+        getFieldsOrBuilderList() {
+      return fields_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    @java.lang.Override
+    public int getFieldsCount() {
+      return fields_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Struct.Field getFields(int index) {
+      return fields_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The names and types of the fields in this struct.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder getFieldsOrBuilder(int index) {
+      return fields_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < fields_.size(); i++) {
+        output.writeMessage(1, fields_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < fields_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fields_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Struct)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Struct other =
+          (com.google.bigtable.admin.v2.Type.Struct) obj;
+
+      if (!getFieldsList().equals(other.getFieldsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFieldsCount() > 0) {
+        hash = (37 * hash) + FIELDS_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Struct prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A structured data value, consisting of fields which map to dynamically
+     * typed values.
+     * Values of type `Struct` are stored in `Value.array_value` where entries are
+     * in the same order and number as `field_types`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Struct}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Struct)
+        com.google.bigtable.admin.v2.Type.StructOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Struct_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Struct_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Struct.class,
+                com.google.bigtable.admin.v2.Type.Struct.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Struct.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (fieldsBuilder_ == null) {
+          fields_ = java.util.Collections.emptyList();
+        } else {
+          fields_ = null;
+          fieldsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Struct_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Struct getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Struct build() {
+        com.google.bigtable.admin.v2.Type.Struct result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Struct buildPartial() {
+        com.google.bigtable.admin.v2.Type.Struct result =
+            new com.google.bigtable.admin.v2.Type.Struct(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.bigtable.admin.v2.Type.Struct result) {
+        if (fieldsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            fields_ = java.util.Collections.unmodifiableList(fields_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.fields_ = fields_;
+        } else {
+          result.fields_ = fieldsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Type.Struct result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Struct) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Struct) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Struct other) {
+        if (other == com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()) return this;
+        if (fieldsBuilder_ == null) {
+          if (!other.fields_.isEmpty()) {
+            if (fields_.isEmpty()) {
+              fields_ = other.fields_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFieldsIsMutable();
+              fields_.addAll(other.fields_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.fields_.isEmpty()) {
+            if (fieldsBuilder_.isEmpty()) {
+              fieldsBuilder_.dispose();
+              fieldsBuilder_ = null;
+              fields_ = other.fields_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              fieldsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFieldsFieldBuilder()
+                      : null;
+            } else {
+              fieldsBuilder_.addAllMessages(other.fields_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.bigtable.admin.v2.Type.Struct.Field m =
+                      input.readMessage(
+                          com.google.bigtable.admin.v2.Type.Struct.Field.parser(),
+                          extensionRegistry);
+                  if (fieldsBuilder_ == null) {
+                    ensureFieldsIsMutable();
+                    fields_.add(m);
+                  } else {
+                    fieldsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> fields_ =
+          java.util.Collections.emptyList();
+
+      private void ensureFieldsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fields_ =
+              new java.util.ArrayList<com.google.bigtable.admin.v2.Type.Struct.Field>(fields_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Struct.Field,
+              com.google.bigtable.admin.v2.Type.Struct.Field.Builder,
+              com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
+          fieldsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> getFieldsList() {
+        if (fieldsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(fields_);
+        } else {
+          return fieldsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public int getFieldsCount() {
+        if (fieldsBuilder_ == null) {
+          return fields_.size();
+        } else {
+          return fieldsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Struct.Field getFields(int index) {
+        if (fieldsBuilder_ == null) {
+          return fields_.get(index);
+        } else {
+          return fieldsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder setFields(int index, com.google.bigtable.admin.v2.Type.Struct.Field value) {
+        if (fieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldsIsMutable();
+          fields_.set(index, value);
+          onChanged();
+        } else {
+          fieldsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder setFields(
+          int index, com.google.bigtable.admin.v2.Type.Struct.Field.Builder builderForValue) {
+        if (fieldsBuilder_ == null) {
+          ensureFieldsIsMutable();
+          fields_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          fieldsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder addFields(com.google.bigtable.admin.v2.Type.Struct.Field value) {
+        if (fieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldsIsMutable();
+          fields_.add(value);
+          onChanged();
+        } else {
+          fieldsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder addFields(int index, com.google.bigtable.admin.v2.Type.Struct.Field value) {
+        if (fieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldsIsMutable();
+          fields_.add(index, value);
+          onChanged();
+        } else {
+          fieldsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder addFields(
+          com.google.bigtable.admin.v2.Type.Struct.Field.Builder builderForValue) {
+        if (fieldsBuilder_ == null) {
+          ensureFieldsIsMutable();
+          fields_.add(builderForValue.build());
+          onChanged();
+        } else {
+          fieldsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder addFields(
+          int index, com.google.bigtable.admin.v2.Type.Struct.Field.Builder builderForValue) {
+        if (fieldsBuilder_ == null) {
+          ensureFieldsIsMutable();
+          fields_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          fieldsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder addAllFields(
+          java.lang.Iterable<? extends com.google.bigtable.admin.v2.Type.Struct.Field> values) {
+        if (fieldsBuilder_ == null) {
+          ensureFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fields_);
+          onChanged();
+        } else {
+          fieldsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder clearFields() {
+        if (fieldsBuilder_ == null) {
+          fields_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          fieldsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public Builder removeFields(int index) {
+        if (fieldsBuilder_ == null) {
+          ensureFieldsIsMutable();
+          fields_.remove(index);
+          onChanged();
+        } else {
+          fieldsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Struct.Field.Builder getFieldsBuilder(int index) {
+        return getFieldsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder getFieldsOrBuilder(int index) {
+        if (fieldsBuilder_ == null) {
+          return fields_.get(index);
+        } else {
+          return fieldsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public java.util.List<? extends com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
+          getFieldsOrBuilderList() {
+        if (fieldsBuilder_ != null) {
+          return fieldsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(fields_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Struct.Field.Builder addFieldsBuilder() {
+        return getFieldsFieldBuilder()
+            .addBuilder(com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Struct.Field.Builder addFieldsBuilder(int index) {
+        return getFieldsFieldBuilder()
+            .addBuilder(index, com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The names and types of the fields in this struct.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
+       */
+      public java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field.Builder>
+          getFieldsBuilderList() {
+        return getFieldsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Struct.Field,
+              com.google.bigtable.admin.v2.Type.Struct.Field.Builder,
+              com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
+          getFieldsFieldBuilder() {
+        if (fieldsBuilder_ == null) {
+          fieldsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type.Struct.Field,
+                  com.google.bigtable.admin.v2.Type.Struct.Field.Builder,
+                  com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>(
+                  fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          fields_ = null;
+        }
+        return fieldsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Struct)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Struct)
+    private static final com.google.bigtable.admin.v2.Type.Struct DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Struct();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Struct getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Struct> PARSER =
+        new com.google.protobuf.AbstractParser<Struct>() {
+          @java.lang.Override
+          public Struct parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Struct> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Struct> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Struct getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ArrayOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Array)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     *
+     * @return Whether the elementType field is set.
+     */
+    boolean hasElementType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     *
+     * @return The elementType.
+     */
+    com.google.bigtable.admin.v2.Type getElementType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     */
+    com.google.bigtable.admin.v2.TypeOrBuilder getElementTypeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An ordered list of elements of a given type.
+   * Values of type `Array` are stored in `Value.array_value`.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Array}
+   */
+  public static final class Array extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Array)
+      ArrayOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Array.newBuilder() to construct.
+    private Array(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Array() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Array();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Array_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Array_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Array.class,
+              com.google.bigtable.admin.v2.Type.Array.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ELEMENT_TYPE_FIELD_NUMBER = 1;
+    private com.google.bigtable.admin.v2.Type elementType_;
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     *
+     * @return Whether the elementType field is set.
+     */
+    @java.lang.Override
+    public boolean hasElementType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     *
+     * @return The elementType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type getElementType() {
+      return elementType_ == null
+          ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+          : elementType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the elements in the array. This must not be `Array`.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.TypeOrBuilder getElementTypeOrBuilder() {
+      return elementType_ == null
+          ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+          : elementType_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getElementType());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getElementType());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Array)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Array other = (com.google.bigtable.admin.v2.Type.Array) obj;
+
+      if (hasElementType() != other.hasElementType()) return false;
+      if (hasElementType()) {
+        if (!getElementType().equals(other.getElementType())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasElementType()) {
+        hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getElementType().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Array prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of elements of a given type.
+     * Values of type `Array` are stored in `Value.array_value`.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Array}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Array)
+        com.google.bigtable.admin.v2.Type.ArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Array_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Array_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Array.class,
+                com.google.bigtable.admin.v2.Type.Array.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Array.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getElementTypeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        elementType_ = null;
+        if (elementTypeBuilder_ != null) {
+          elementTypeBuilder_.dispose();
+          elementTypeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Array_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Array getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Array build() {
+        com.google.bigtable.admin.v2.Type.Array result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Array buildPartial() {
+        com.google.bigtable.admin.v2.Type.Array result =
+            new com.google.bigtable.admin.v2.Type.Array(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Type.Array result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.elementType_ =
+              elementTypeBuilder_ == null ? elementType_ : elementTypeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Array) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Array) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Array other) {
+        if (other == com.google.bigtable.admin.v2.Type.Array.getDefaultInstance()) return this;
+        if (other.hasElementType()) {
+          mergeElementType(other.getElementType());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getElementTypeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.bigtable.admin.v2.Type elementType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          elementTypeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       *
+       * @return Whether the elementType field is set.
+       */
+      public boolean hasElementType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       *
+       * @return The elementType.
+       */
+      public com.google.bigtable.admin.v2.Type getElementType() {
+        if (elementTypeBuilder_ == null) {
+          return elementType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : elementType_;
+        } else {
+          return elementTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public Builder setElementType(com.google.bigtable.admin.v2.Type value) {
+        if (elementTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          elementType_ = value;
+        } else {
+          elementTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public Builder setElementType(com.google.bigtable.admin.v2.Type.Builder builderForValue) {
+        if (elementTypeBuilder_ == null) {
+          elementType_ = builderForValue.build();
+        } else {
+          elementTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public Builder mergeElementType(com.google.bigtable.admin.v2.Type value) {
+        if (elementTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && elementType_ != null
+              && elementType_ != com.google.bigtable.admin.v2.Type.getDefaultInstance()) {
+            getElementTypeBuilder().mergeFrom(value);
+          } else {
+            elementType_ = value;
+          }
+        } else {
+          elementTypeBuilder_.mergeFrom(value);
+        }
+        if (elementType_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public Builder clearElementType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        elementType_ = null;
+        if (elementTypeBuilder_ != null) {
+          elementTypeBuilder_.dispose();
+          elementTypeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Builder getElementTypeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getElementTypeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.TypeOrBuilder getElementTypeOrBuilder() {
+        if (elementTypeBuilder_ != null) {
+          return elementTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return elementType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : elementType_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the elements in the array. This must not be `Array`.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type element_type = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          getElementTypeFieldBuilder() {
+        if (elementTypeBuilder_ == null) {
+          elementTypeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type,
+                  com.google.bigtable.admin.v2.Type.Builder,
+                  com.google.bigtable.admin.v2.TypeOrBuilder>(
+                  getElementType(), getParentForChildren(), isClean());
+          elementType_ = null;
+        }
+        return elementTypeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Array)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Array)
+    private static final com.google.bigtable.admin.v2.Type.Array DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Array();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Array getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Array> PARSER =
+        new com.google.protobuf.AbstractParser<Array>() {
+          @java.lang.Override
+          public Array parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Array> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Array> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Array getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface MapOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Map)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     *
+     * @return Whether the keyType field is set.
+     */
+    boolean hasKeyType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     *
+     * @return The keyType.
+     */
+    com.google.bigtable.admin.v2.Type getKeyType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     */
+    com.google.bigtable.admin.v2.TypeOrBuilder getKeyTypeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     *
+     * @return Whether the valueType field is set.
+     */
+    boolean hasValueType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     *
+     * @return The valueType.
+     */
+    com.google.bigtable.admin.v2.Type getValueType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     */
+    com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of keys to values of a given type.
+   * Values of type `Map` are stored in a `Value.array_value` where each entry
+   * is another `Value.array_value` with two elements (the key and the value,
+   * in that order).
+   * Normally encoded Map values won't have repeated keys, however, clients are
+   * expected to handle the case in which they do. If the same key appears
+   * multiple times, the _last_ value takes precedence.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Type.Map}
+   */
+  public static final class Map extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Map)
+      MapOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Map.newBuilder() to construct.
+    private Map(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Map() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Map();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Map_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.TypesProto
+          .internal_static_google_bigtable_admin_v2_Type_Map_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Type.Map.class,
+              com.google.bigtable.admin.v2.Type.Map.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int KEY_TYPE_FIELD_NUMBER = 1;
+    private com.google.bigtable.admin.v2.Type keyType_;
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     *
+     * @return Whether the keyType field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeyType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     *
+     * @return The keyType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type getKeyType() {
+      return keyType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : keyType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of a map key.
+     * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.TypeOrBuilder getKeyTypeOrBuilder() {
+      return keyType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : keyType_;
+    }
+
+    public static final int VALUE_TYPE_FIELD_NUMBER = 2;
+    private com.google.bigtable.admin.v2.Type valueType_;
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     *
+     * @return Whether the valueType field is set.
+     */
+    @java.lang.Override
+    public boolean hasValueType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     *
+     * @return The valueType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type getValueType() {
+      return valueType_ == null
+          ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+          : valueType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the values in a map.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder() {
+      return valueType_ == null
+          ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+          : valueType_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getKeyType());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getValueType());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getKeyType());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getValueType());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Type.Map)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Type.Map other = (com.google.bigtable.admin.v2.Type.Map) obj;
+
+      if (hasKeyType() != other.hasKeyType()) return false;
+      if (hasKeyType()) {
+        if (!getKeyType().equals(other.getKeyType())) return false;
+      }
+      if (hasValueType() != other.hasValueType()) return false;
+      if (hasValueType()) {
+        if (!getValueType().equals(other.getValueType())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasKeyType()) {
+        hash = (37 * hash) + KEY_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getKeyType().hashCode();
+      }
+      if (hasValueType()) {
+        hash = (37 * hash) + VALUE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getValueType().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Map prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of keys to values of a given type.
+     * Values of type `Map` are stored in a `Value.array_value` where each entry
+     * is another `Value.array_value` with two elements (the key and the value,
+     * in that order).
+     * Normally encoded Map values won't have repeated keys, however, clients are
+     * expected to handle the case in which they do. If the same key appears
+     * multiple times, the _last_ value takes precedence.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Map}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Map)
+        com.google.bigtable.admin.v2.Type.MapOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Map_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Map_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Map.class,
+                com.google.bigtable.admin.v2.Type.Map.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Type.Map.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getKeyTypeFieldBuilder();
+          getValueTypeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        keyType_ = null;
+        if (keyTypeBuilder_ != null) {
+          keyTypeBuilder_.dispose();
+          keyTypeBuilder_ = null;
+        }
+        valueType_ = null;
+        if (valueTypeBuilder_ != null) {
+          valueTypeBuilder_.dispose();
+          valueTypeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Map_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Map getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Map build() {
+        com.google.bigtable.admin.v2.Type.Map result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Map buildPartial() {
+        com.google.bigtable.admin.v2.Type.Map result =
+            new com.google.bigtable.admin.v2.Type.Map(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Type.Map result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keyType_ = keyTypeBuilder_ == null ? keyType_ : keyTypeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.valueType_ = valueTypeBuilder_ == null ? valueType_ : valueTypeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Type.Map) {
+          return mergeFrom((com.google.bigtable.admin.v2.Type.Map) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Map other) {
+        if (other == com.google.bigtable.admin.v2.Type.Map.getDefaultInstance()) return this;
+        if (other.hasKeyType()) {
+          mergeKeyType(other.getKeyType());
+        }
+        if (other.hasValueType()) {
+          mergeValueType(other.getValueType());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getKeyTypeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getValueTypeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.bigtable.admin.v2.Type keyType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          keyTypeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       *
+       * @return Whether the keyType field is set.
+       */
+      public boolean hasKeyType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       *
+       * @return The keyType.
+       */
+      public com.google.bigtable.admin.v2.Type getKeyType() {
+        if (keyTypeBuilder_ == null) {
+          return keyType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : keyType_;
+        } else {
+          return keyTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public Builder setKeyType(com.google.bigtable.admin.v2.Type value) {
+        if (keyTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keyType_ = value;
+        } else {
+          keyTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public Builder setKeyType(com.google.bigtable.admin.v2.Type.Builder builderForValue) {
+        if (keyTypeBuilder_ == null) {
+          keyType_ = builderForValue.build();
+        } else {
+          keyTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public Builder mergeKeyType(com.google.bigtable.admin.v2.Type value) {
+        if (keyTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && keyType_ != null
+              && keyType_ != com.google.bigtable.admin.v2.Type.getDefaultInstance()) {
+            getKeyTypeBuilder().mergeFrom(value);
+          } else {
+            keyType_ = value;
+          }
+        } else {
+          keyTypeBuilder_.mergeFrom(value);
+        }
+        if (keyType_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public Builder clearKeyType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        keyType_ = null;
+        if (keyTypeBuilder_ != null) {
+          keyTypeBuilder_.dispose();
+          keyTypeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Builder getKeyTypeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getKeyTypeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      public com.google.bigtable.admin.v2.TypeOrBuilder getKeyTypeOrBuilder() {
+        if (keyTypeBuilder_ != null) {
+          return keyTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return keyType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : keyType_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of a map key.
+       * Only `Bytes`, `String`, and `Int64` are allowed as key types.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type key_type = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          getKeyTypeFieldBuilder() {
+        if (keyTypeBuilder_ == null) {
+          keyTypeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type,
+                  com.google.bigtable.admin.v2.Type.Builder,
+                  com.google.bigtable.admin.v2.TypeOrBuilder>(
+                  getKeyType(), getParentForChildren(), isClean());
+          keyType_ = null;
+        }
+        return keyTypeBuilder_;
+      }
+
+      private com.google.bigtable.admin.v2.Type valueType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          valueTypeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       *
+       * @return Whether the valueType field is set.
+       */
+      public boolean hasValueType() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       *
+       * @return The valueType.
+       */
+      public com.google.bigtable.admin.v2.Type getValueType() {
+        if (valueTypeBuilder_ == null) {
+          return valueType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : valueType_;
+        } else {
+          return valueTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public Builder setValueType(com.google.bigtable.admin.v2.Type value) {
+        if (valueTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          valueType_ = value;
+        } else {
+          valueTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public Builder setValueType(com.google.bigtable.admin.v2.Type.Builder builderForValue) {
+        if (valueTypeBuilder_ == null) {
+          valueType_ = builderForValue.build();
+        } else {
+          valueTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public Builder mergeValueType(com.google.bigtable.admin.v2.Type value) {
+        if (valueTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && valueType_ != null
+              && valueType_ != com.google.bigtable.admin.v2.Type.getDefaultInstance()) {
+            getValueTypeBuilder().mergeFrom(value);
+          } else {
+            valueType_ = value;
+          }
+        } else {
+          valueTypeBuilder_.mergeFrom(value);
+        }
+        if (valueType_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public Builder clearValueType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        valueType_ = null;
+        if (valueTypeBuilder_ != null) {
+          valueTypeBuilder_.dispose();
+          valueTypeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Builder getValueTypeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getValueTypeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      public com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder() {
+        if (valueTypeBuilder_ != null) {
+          return valueTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return valueType_ == null
+              ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+              : valueType_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the values in a map.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type value_type = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type,
+              com.google.bigtable.admin.v2.Type.Builder,
+              com.google.bigtable.admin.v2.TypeOrBuilder>
+          getValueTypeFieldBuilder() {
+        if (valueTypeBuilder_ == null) {
+          valueTypeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type,
+                  com.google.bigtable.admin.v2.Type.Builder,
+                  com.google.bigtable.admin.v2.TypeOrBuilder>(
+                  getValueType(), getParentForChildren(), isClean());
+          valueType_ = null;
+        }
+        return valueTypeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Map)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Map)
+    private static final com.google.bigtable.admin.v2.Type.Map DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Map();
+    }
+
+    public static com.google.bigtable.admin.v2.Type.Map getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Map> PARSER =
+        new com.google.protobuf.AbstractParser<Map>() {
+          @java.lang.Override
+          public Map parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Map> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Map> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Map getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AggregateOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate)
@@ -6693,6 +13394,119 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.Type.Aggregate.Sum sum = 4;</code>
      */
     com.google.bigtable.admin.v2.Type.Aggregate.SumOrBuilder getSumOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     *
+     * @return Whether the hllppUniqueCount field is set.
+     */
+    boolean hasHllppUniqueCount();
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     *
+     * @return The hllppUniqueCount.
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+        getHllppUniqueCount();
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder
+        getHllppUniqueCountOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     *
+     * @return Whether the max field is set.
+     */
+    boolean hasMax();
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     *
+     * @return The max.
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.Max getMax();
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder getMaxOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     *
+     * @return Whether the min field is set.
+     */
+    boolean hasMin();
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     *
+     * @return The min.
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.Min getMin();
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     */
+    com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder getMinOrBuilder();
 
     com.google.bigtable.admin.v2.Type.Aggregate.AggregatorCase getAggregatorCase();
   }
@@ -7168,6 +13982,1323 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface MaxOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.Max)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Computes the max of the input values.
+     * Allowed input: `Int64`
+     * State: same as input
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Aggregate.Max}
+     */
+    public static final class Max extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.Max)
+        MaxOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Max.newBuilder() to construct.
+      private Max(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Max() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Max();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_Max_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_Max_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Aggregate.Max.class,
+                com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.bigtable.admin.v2.Type.Aggregate.Max)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.admin.v2.Type.Aggregate.Max other =
+            (com.google.bigtable.admin.v2.Type.Aggregate.Max) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Aggregate.Max prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Computes the max of the input values.
+       * Allowed input: `Int64`
+       * State: same as input
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.admin.v2.Type.Aggregate.Max}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Aggregate.Max)
+          com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Max_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Max_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.Type.Aggregate.Max.class,
+                  com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder.class);
+        }
+
+        // Construct using com.google.bigtable.admin.v2.Type.Aggregate.Max.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Max_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Max getDefaultInstanceForType() {
+          return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Max build() {
+          com.google.bigtable.admin.v2.Type.Aggregate.Max result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Max buildPartial() {
+          com.google.bigtable.admin.v2.Type.Aggregate.Max result =
+              new com.google.bigtable.admin.v2.Type.Aggregate.Max(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.bigtable.admin.v2.Type.Aggregate.Max) {
+            return mergeFrom((com.google.bigtable.admin.v2.Type.Aggregate.Max) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Aggregate.Max other) {
+          if (other == com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance())
+            return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Aggregate.Max)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Aggregate.Max)
+      private static final com.google.bigtable.admin.v2.Type.Aggregate.Max DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Aggregate.Max();
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Max getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Max> PARSER =
+          new com.google.protobuf.AbstractParser<Max>() {
+            @java.lang.Override
+            public Max parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Max> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Max> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.Max getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MinOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.Min)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Computes the min of the input values.
+     * Allowed input: `Int64`
+     * State: same as input
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Aggregate.Min}
+     */
+    public static final class Min extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.Min)
+        MinOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Min.newBuilder() to construct.
+      private Min(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Min() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Min();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_Min_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_Min_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Aggregate.Min.class,
+                com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.bigtable.admin.v2.Type.Aggregate.Min)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.admin.v2.Type.Aggregate.Min other =
+            (com.google.bigtable.admin.v2.Type.Aggregate.Min) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(com.google.bigtable.admin.v2.Type.Aggregate.Min prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Computes the min of the input values.
+       * Allowed input: `Int64`
+       * State: same as input
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.admin.v2.Type.Aggregate.Min}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Aggregate.Min)
+          com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Min_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Min_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.Type.Aggregate.Min.class,
+                  com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder.class);
+        }
+
+        // Construct using com.google.bigtable.admin.v2.Type.Aggregate.Min.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_Min_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Min getDefaultInstanceForType() {
+          return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Min build() {
+          com.google.bigtable.admin.v2.Type.Aggregate.Min result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.Min buildPartial() {
+          com.google.bigtable.admin.v2.Type.Aggregate.Min result =
+              new com.google.bigtable.admin.v2.Type.Aggregate.Min(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.bigtable.admin.v2.Type.Aggregate.Min) {
+            return mergeFrom((com.google.bigtable.admin.v2.Type.Aggregate.Min) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.bigtable.admin.v2.Type.Aggregate.Min other) {
+          if (other == com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance())
+            return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Aggregate.Min)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Aggregate.Min)
+      private static final com.google.bigtable.admin.v2.Type.Aggregate.Min DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Type.Aggregate.Min();
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.Min getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Min> PARSER =
+          new com.google.protobuf.AbstractParser<Min>() {
+            @java.lang.Override
+            public Min parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Min> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Min> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.Min getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface HyperLogLogPlusPlusUniqueCountOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Computes an approximate unique count over the input values. When using
+     * raw data as input, be careful to use a consistent encoding. Otherwise
+     * the same value encoded differently could count more than once, or two
+     * distinct values could count as identical.
+     * Input: Any, or omit for Raw
+     * State: TBD
+     * Special state conversions: `Int64` (the unique count estimate)
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount}
+     */
+    public static final class HyperLogLogPlusPlusUniqueCount
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+        HyperLogLogPlusPlusUniqueCountOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use HyperLogLogPlusPlusUniqueCount.newBuilder() to construct.
+      private HyperLogLogPlusPlusUniqueCount(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private HyperLogLogPlusPlusUniqueCount() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new HyperLogLogPlusPlusUniqueCount();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_HyperLogLogPlusPlusUniqueCount_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.TypesProto
+            .internal_static_google_bigtable_admin_v2_Type_Aggregate_HyperLogLogPlusPlusUniqueCount_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.class,
+                com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder
+                    .class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount other =
+            (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Computes an approximate unique count over the input values. When using
+       * raw data as input, be careful to use a consistent encoding. Otherwise
+       * the same value encoded differently could count more than once, or two
+       * distinct values could count as identical.
+       * Input: Any, or omit for Raw
+       * State: TBD
+       * Special state conversions: `Int64` (the unique count estimate)
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_HyperLogLogPlusPlusUniqueCount_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_HyperLogLogPlusPlusUniqueCount_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.class,
+                  com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.admin.v2.TypesProto
+              .internal_static_google_bigtable_admin_v2_Type_Aggregate_HyperLogLogPlusPlusUniqueCount_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+            getDefaultInstanceForType() {
+          return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount build() {
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+            buildPartial() {
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount result =
+              new com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount) {
+            return mergeFrom(
+                (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount other) {
+          if (other
+              == com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+      private static final com.google.bigtable.admin.v2.Type.Aggregate
+              .HyperLogLogPlusPlusUniqueCount
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount();
+      }
+
+      public static com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<HyperLogLogPlusPlusUniqueCount> PARSER =
+          new com.google.protobuf.AbstractParser<HyperLogLogPlusPlusUniqueCount>() {
+            @java.lang.Override
+            public HyperLogLogPlusPlusUniqueCount parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<HyperLogLogPlusPlusUniqueCount> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<HyperLogLogPlusPlusUniqueCount> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     private int aggregatorCase_ = 0;
 
@@ -7179,6 +15310,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SUM(4),
+      HLLPP_UNIQUE_COUNT(5),
+      MAX(6),
+      MIN(7),
       AGGREGATOR_NOT_SET(0);
       private final int value;
 
@@ -7199,6 +15333,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         switch (value) {
           case 4:
             return SUM;
+          case 5:
+            return HLLPP_UNIQUE_COUNT;
+          case 6:
+            return MAX;
+          case 7:
+            return MIN;
           case 0:
             return AGGREGATOR_NOT_SET;
           default:
@@ -7384,6 +15524,171 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       return com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance();
     }
 
+    public static final int HLLPP_UNIQUE_COUNT_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     *
+     * @return Whether the hllppUniqueCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasHllppUniqueCount() {
+      return aggregatorCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     *
+     * @return The hllppUniqueCount.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+        getHllppUniqueCount() {
+      if (aggregatorCase_ == 5) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+            aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HyperLogLogPlusPlusUniqueCount aggregator.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder
+        getHllppUniqueCountOrBuilder() {
+      if (aggregatorCase_ == 5) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+            aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          .getDefaultInstance();
+    }
+
+    public static final int MAX_FIELD_NUMBER = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     *
+     * @return Whether the max field is set.
+     */
+    @java.lang.Override
+    public boolean hasMax() {
+      return aggregatorCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     *
+     * @return The max.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.Max getMax() {
+      if (aggregatorCase_ == 6) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Max aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder getMaxOrBuilder() {
+      if (aggregatorCase_ == 6) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+    }
+
+    public static final int MIN_FIELD_NUMBER = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     *
+     * @return Whether the min field is set.
+     */
+    @java.lang.Override
+    public boolean hasMin() {
+      return aggregatorCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     *
+     * @return The min.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.Min getMin() {
+      if (aggregatorCase_ == 7) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Min aggregator.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder getMinOrBuilder() {
+      if (aggregatorCase_ == 7) {
+        return (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_;
+      }
+      return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7407,6 +15712,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (aggregatorCase_ == 4) {
         output.writeMessage(4, (com.google.bigtable.admin.v2.Type.Aggregate.Sum) aggregator_);
       }
+      if (aggregatorCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                aggregator_);
+      }
+      if (aggregatorCase_ == 6) {
+        output.writeMessage(6, (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_);
+      }
+      if (aggregatorCase_ == 7) {
+        output.writeMessage(7, (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7426,6 +15743,23 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, (com.google.bigtable.admin.v2.Type.Aggregate.Sum) aggregator_);
+      }
+      if (aggregatorCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                    aggregator_);
+      }
+      if (aggregatorCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_);
+      }
+      if (aggregatorCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7456,6 +15790,15 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         case 4:
           if (!getSum().equals(other.getSum())) return false;
           break;
+        case 5:
+          if (!getHllppUniqueCount().equals(other.getHllppUniqueCount())) return false;
+          break;
+        case 6:
+          if (!getMax().equals(other.getMax())) return false;
+          break;
+        case 7:
+          if (!getMin().equals(other.getMin())) return false;
+          break;
         case 0:
         default:
       }
@@ -7482,6 +15825,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         case 4:
           hash = (37 * hash) + SUM_FIELD_NUMBER;
           hash = (53 * hash) + getSum().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + HLLPP_UNIQUE_COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getHllppUniqueCount().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + MAX_FIELD_NUMBER;
+          hash = (53 * hash) + getMax().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MIN_FIELD_NUMBER;
+          hash = (53 * hash) + getMin().hashCode();
           break;
         case 0:
         default:
@@ -7654,6 +16009,15 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         if (sumBuilder_ != null) {
           sumBuilder_.clear();
         }
+        if (hllppUniqueCountBuilder_ != null) {
+          hllppUniqueCountBuilder_.clear();
+        }
+        if (maxBuilder_ != null) {
+          maxBuilder_.clear();
+        }
+        if (minBuilder_ != null) {
+          minBuilder_.clear();
+        }
         aggregatorCase_ = 0;
         aggregator_ = null;
         return this;
@@ -7710,6 +16074,15 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         result.aggregator_ = this.aggregator_;
         if (aggregatorCase_ == 4 && sumBuilder_ != null) {
           result.aggregator_ = sumBuilder_.build();
+        }
+        if (aggregatorCase_ == 5 && hllppUniqueCountBuilder_ != null) {
+          result.aggregator_ = hllppUniqueCountBuilder_.build();
+        }
+        if (aggregatorCase_ == 6 && maxBuilder_ != null) {
+          result.aggregator_ = maxBuilder_.build();
+        }
+        if (aggregatorCase_ == 7 && minBuilder_ != null) {
+          result.aggregator_ = minBuilder_.build();
         }
       }
 
@@ -7772,6 +16145,21 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               mergeSum(other.getSum());
               break;
             }
+          case HLLPP_UNIQUE_COUNT:
+            {
+              mergeHllppUniqueCount(other.getHllppUniqueCount());
+              break;
+            }
+          case MAX:
+            {
+              mergeMax(other.getMax());
+              break;
+            }
+          case MIN:
+            {
+              mergeMin(other.getMin());
+              break;
+            }
           case AGGREGATOR_NOT_SET:
             {
               break;
@@ -7821,6 +16209,25 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   aggregatorCase_ = 4;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getHllppUniqueCountFieldBuilder().getBuilder(), extensionRegistry);
+                  aggregatorCase_ = 5;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(getMaxFieldBuilder().getBuilder(), extensionRegistry);
+                  aggregatorCase_ = 6;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getMinFieldBuilder().getBuilder(), extensionRegistry);
+                  aggregatorCase_ = 7;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8488,6 +16895,673 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return sumBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount,
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder>
+          hllppUniqueCountBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       *
+       * @return Whether the hllppUniqueCount field is set.
+       */
+      @java.lang.Override
+      public boolean hasHllppUniqueCount() {
+        return aggregatorCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       *
+       * @return The hllppUniqueCount.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+          getHllppUniqueCount() {
+        if (hllppUniqueCountBuilder_ == null) {
+          if (aggregatorCase_ == 5) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+              .getDefaultInstance();
+        } else {
+          if (aggregatorCase_ == 5) {
+            return hllppUniqueCountBuilder_.getMessage();
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      public Builder setHllppUniqueCount(
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount value) {
+        if (hllppUniqueCountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          aggregator_ = value;
+          onChanged();
+        } else {
+          hllppUniqueCountBuilder_.setMessage(value);
+        }
+        aggregatorCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      public Builder setHllppUniqueCount(
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder
+              builderForValue) {
+        if (hllppUniqueCountBuilder_ == null) {
+          aggregator_ = builderForValue.build();
+          onChanged();
+        } else {
+          hllppUniqueCountBuilder_.setMessage(builderForValue.build());
+        }
+        aggregatorCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      public Builder mergeHllppUniqueCount(
+          com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount value) {
+        if (hllppUniqueCountBuilder_ == null) {
+          if (aggregatorCase_ == 5
+              && aggregator_
+                  != com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                      .getDefaultInstance()) {
+            aggregator_ =
+                com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                    .newBuilder(
+                        (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                            aggregator_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            aggregator_ = value;
+          }
+          onChanged();
+        } else {
+          if (aggregatorCase_ == 5) {
+            hllppUniqueCountBuilder_.mergeFrom(value);
+          } else {
+            hllppUniqueCountBuilder_.setMessage(value);
+          }
+        }
+        aggregatorCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      public Builder clearHllppUniqueCount() {
+        if (hllppUniqueCountBuilder_ == null) {
+          if (aggregatorCase_ == 5) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+            onChanged();
+          }
+        } else {
+          if (aggregatorCase_ == 5) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+          }
+          hllppUniqueCountBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder
+          getHllppUniqueCountBuilder() {
+        return getHllppUniqueCountFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder
+          getHllppUniqueCountOrBuilder() {
+        if ((aggregatorCase_ == 5) && (hllppUniqueCountBuilder_ != null)) {
+          return hllppUniqueCountBuilder_.getMessageOrBuilder();
+        } else {
+          if (aggregatorCase_ == 5) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * HyperLogLogPlusPlusUniqueCount aggregator.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount hllpp_unique_count = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount,
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder>
+          getHllppUniqueCountFieldBuilder() {
+        if (hllppUniqueCountBuilder_ == null) {
+          if (!(aggregatorCase_ == 5)) {
+            aggregator_ =
+                com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                    .getDefaultInstance();
+          }
+          hllppUniqueCountBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount,
+                  com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                      .Builder,
+                  com.google.bigtable.admin.v2.Type.Aggregate
+                      .HyperLogLogPlusPlusUniqueCountOrBuilder>(
+                  (com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
+                      aggregator_,
+                  getParentForChildren(),
+                  isClean());
+          aggregator_ = null;
+        }
+        aggregatorCase_ = 5;
+        onChanged();
+        return hllppUniqueCountBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.Max,
+              com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder>
+          maxBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       *
+       * @return Whether the max field is set.
+       */
+      @java.lang.Override
+      public boolean hasMax() {
+        return aggregatorCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       *
+       * @return The max.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.Max getMax() {
+        if (maxBuilder_ == null) {
+          if (aggregatorCase_ == 6) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+        } else {
+          if (aggregatorCase_ == 6) {
+            return maxBuilder_.getMessage();
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      public Builder setMax(com.google.bigtable.admin.v2.Type.Aggregate.Max value) {
+        if (maxBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          aggregator_ = value;
+          onChanged();
+        } else {
+          maxBuilder_.setMessage(value);
+        }
+        aggregatorCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      public Builder setMax(
+          com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder builderForValue) {
+        if (maxBuilder_ == null) {
+          aggregator_ = builderForValue.build();
+          onChanged();
+        } else {
+          maxBuilder_.setMessage(builderForValue.build());
+        }
+        aggregatorCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      public Builder mergeMax(com.google.bigtable.admin.v2.Type.Aggregate.Max value) {
+        if (maxBuilder_ == null) {
+          if (aggregatorCase_ == 6
+              && aggregator_
+                  != com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance()) {
+            aggregator_ =
+                com.google.bigtable.admin.v2.Type.Aggregate.Max.newBuilder(
+                        (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            aggregator_ = value;
+          }
+          onChanged();
+        } else {
+          if (aggregatorCase_ == 6) {
+            maxBuilder_.mergeFrom(value);
+          } else {
+            maxBuilder_.setMessage(value);
+          }
+        }
+        aggregatorCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      public Builder clearMax() {
+        if (maxBuilder_ == null) {
+          if (aggregatorCase_ == 6) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+            onChanged();
+          }
+        } else {
+          if (aggregatorCase_ == 6) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+          }
+          maxBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder getMaxBuilder() {
+        return getMaxFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder getMaxOrBuilder() {
+        if ((aggregatorCase_ == 6) && (maxBuilder_ != null)) {
+          return maxBuilder_.getMessageOrBuilder();
+        } else {
+          if (aggregatorCase_ == 6) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Max max = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.Max,
+              com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder>
+          getMaxFieldBuilder() {
+        if (maxBuilder_ == null) {
+          if (!(aggregatorCase_ == 6)) {
+            aggregator_ = com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
+          }
+          maxBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type.Aggregate.Max,
+                  com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder,
+                  com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder>(
+                  (com.google.bigtable.admin.v2.Type.Aggregate.Max) aggregator_,
+                  getParentForChildren(),
+                  isClean());
+          aggregator_ = null;
+        }
+        aggregatorCase_ = 6;
+        onChanged();
+        return maxBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.Min,
+              com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder>
+          minBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       *
+       * @return Whether the min field is set.
+       */
+      @java.lang.Override
+      public boolean hasMin() {
+        return aggregatorCase_ == 7;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       *
+       * @return The min.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.Min getMin() {
+        if (minBuilder_ == null) {
+          if (aggregatorCase_ == 7) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+        } else {
+          if (aggregatorCase_ == 7) {
+            return minBuilder_.getMessage();
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      public Builder setMin(com.google.bigtable.admin.v2.Type.Aggregate.Min value) {
+        if (minBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          aggregator_ = value;
+          onChanged();
+        } else {
+          minBuilder_.setMessage(value);
+        }
+        aggregatorCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      public Builder setMin(
+          com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder builderForValue) {
+        if (minBuilder_ == null) {
+          aggregator_ = builderForValue.build();
+          onChanged();
+        } else {
+          minBuilder_.setMessage(builderForValue.build());
+        }
+        aggregatorCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      public Builder mergeMin(com.google.bigtable.admin.v2.Type.Aggregate.Min value) {
+        if (minBuilder_ == null) {
+          if (aggregatorCase_ == 7
+              && aggregator_
+                  != com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance()) {
+            aggregator_ =
+                com.google.bigtable.admin.v2.Type.Aggregate.Min.newBuilder(
+                        (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            aggregator_ = value;
+          }
+          onChanged();
+        } else {
+          if (aggregatorCase_ == 7) {
+            minBuilder_.mergeFrom(value);
+          } else {
+            minBuilder_.setMessage(value);
+          }
+        }
+        aggregatorCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      public Builder clearMin() {
+        if (minBuilder_ == null) {
+          if (aggregatorCase_ == 7) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+            onChanged();
+          }
+        } else {
+          if (aggregatorCase_ == 7) {
+            aggregatorCase_ = 0;
+            aggregator_ = null;
+          }
+          minBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      public com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder getMinBuilder() {
+        return getMinFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder getMinOrBuilder() {
+        if ((aggregatorCase_ == 7) && (minBuilder_ != null)) {
+          return minBuilder_.getMessageOrBuilder();
+        } else {
+          if (aggregatorCase_ == 7) {
+            return (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_;
+          }
+          return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Min aggregator.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.Type.Aggregate.Min min = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.admin.v2.Type.Aggregate.Min,
+              com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder,
+              com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder>
+          getMinFieldBuilder() {
+        if (minBuilder_ == null) {
+          if (!(aggregatorCase_ == 7)) {
+            aggregator_ = com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
+          }
+          minBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.Type.Aggregate.Min,
+                  com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder,
+                  com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder>(
+                  (com.google.bigtable.admin.v2.Type.Aggregate.Min) aggregator_,
+                  getParentForChildren(),
+                  isClean());
+          aggregator_ = null;
+        }
+        aggregatorCase_ = 7;
+        onChanged();
+        return minBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8564,7 +17638,15 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     BYTES_TYPE(1),
     STRING_TYPE(2),
     INT64_TYPE(5),
+    FLOAT32_TYPE(12),
+    FLOAT64_TYPE(9),
+    BOOL_TYPE(8),
+    TIMESTAMP_TYPE(10),
+    DATE_TYPE(11),
     AGGREGATE_TYPE(6),
+    STRUCT_TYPE(7),
+    ARRAY_TYPE(3),
+    MAP_TYPE(4),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -8589,8 +17671,24 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return STRING_TYPE;
         case 5:
           return INT64_TYPE;
+        case 12:
+          return FLOAT32_TYPE;
+        case 9:
+          return FLOAT64_TYPE;
+        case 8:
+          return BOOL_TYPE;
+        case 10:
+          return TIMESTAMP_TYPE;
+        case 11:
+          return DATE_TYPE;
         case 6:
           return AGGREGATE_TYPE;
+        case 7:
+          return STRUCT_TYPE;
+        case 3:
+          return ARRAY_TYPE;
+        case 4:
+          return MAP_TYPE;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -8760,6 +17858,261 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.Type.Int64.getDefaultInstance();
   }
 
+  public static final int FLOAT32_TYPE_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   *
+   * @return Whether the float32Type field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloat32Type() {
+    return kindCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   *
+   * @return The float32Type.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Float32 getFloat32Type() {
+    if (kindCase_ == 12) {
+      return (com.google.bigtable.admin.v2.Type.Float32) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Float32OrBuilder getFloat32TypeOrBuilder() {
+    if (kindCase_ == 12) {
+      return (com.google.bigtable.admin.v2.Type.Float32) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+  }
+
+  public static final int FLOAT64_TYPE_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   *
+   * @return Whether the float64Type field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloat64Type() {
+    return kindCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   *
+   * @return The float64Type.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Float64 getFloat64Type() {
+    if (kindCase_ == 9) {
+      return (com.google.bigtable.admin.v2.Type.Float64) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Float64OrBuilder getFloat64TypeOrBuilder() {
+    if (kindCase_ == 9) {
+      return (com.google.bigtable.admin.v2.Type.Float64) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+  }
+
+  public static final int BOOL_TYPE_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   *
+   * @return Whether the boolType field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolType() {
+    return kindCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   *
+   * @return The boolType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Bool getBoolType() {
+    if (kindCase_ == 8) {
+      return (com.google.bigtable.admin.v2.Type.Bool) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.BoolOrBuilder getBoolTypeOrBuilder() {
+    if (kindCase_ == 8) {
+      return (com.google.bigtable.admin.v2.Type.Bool) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+  }
+
+  public static final int TIMESTAMP_TYPE_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   *
+   * @return Whether the timestampType field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimestampType() {
+    return kindCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   *
+   * @return The timestampType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Timestamp getTimestampType() {
+    if (kindCase_ == 10) {
+      return (com.google.bigtable.admin.v2.Type.Timestamp) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.TimestampOrBuilder getTimestampTypeOrBuilder() {
+    if (kindCase_ == 10) {
+      return (com.google.bigtable.admin.v2.Type.Timestamp) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+  }
+
+  public static final int DATE_TYPE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   *
+   * @return Whether the dateType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDateType() {
+    return kindCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   *
+   * @return The dateType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Date getDateType() {
+    if (kindCase_ == 11) {
+      return (com.google.bigtable.admin.v2.Type.Date) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.DateOrBuilder getDateTypeOrBuilder() {
+    if (kindCase_ == 11) {
+      return (com.google.bigtable.admin.v2.Type.Date) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+  }
+
   public static final int AGGREGATE_TYPE_FIELD_NUMBER = 6;
   /**
    *
@@ -8811,6 +18164,159 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.Type.Aggregate.getDefaultInstance();
   }
 
+  public static final int STRUCT_TYPE_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   *
+   * @return Whether the structType field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructType() {
+    return kindCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   *
+   * @return The structType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Struct getStructType() {
+    if (kindCase_ == 7) {
+      return (com.google.bigtable.admin.v2.Type.Struct) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.StructOrBuilder getStructTypeOrBuilder() {
+    if (kindCase_ == 7) {
+      return (com.google.bigtable.admin.v2.Type.Struct) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+  }
+
+  public static final int ARRAY_TYPE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   *
+   * @return Whether the arrayType field is set.
+   */
+  @java.lang.Override
+  public boolean hasArrayType() {
+    return kindCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   *
+   * @return The arrayType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Array getArrayType() {
+    if (kindCase_ == 3) {
+      return (com.google.bigtable.admin.v2.Type.Array) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.ArrayOrBuilder getArrayTypeOrBuilder() {
+    if (kindCase_ == 3) {
+      return (com.google.bigtable.admin.v2.Type.Array) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+  }
+
+  public static final int MAP_TYPE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   *
+   * @return Whether the mapType field is set.
+   */
+  @java.lang.Override
+  public boolean hasMapType() {
+    return kindCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   *
+   * @return The mapType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Map getMapType() {
+    if (kindCase_ == 4) {
+      return (com.google.bigtable.admin.v2.Type.Map) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.MapOrBuilder getMapTypeOrBuilder() {
+    if (kindCase_ == 4) {
+      return (com.google.bigtable.admin.v2.Type.Map) kind_;
+    }
+    return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8831,11 +18337,35 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     if (kindCase_ == 2) {
       output.writeMessage(2, (com.google.bigtable.admin.v2.Type.String) kind_);
     }
+    if (kindCase_ == 3) {
+      output.writeMessage(3, (com.google.bigtable.admin.v2.Type.Array) kind_);
+    }
+    if (kindCase_ == 4) {
+      output.writeMessage(4, (com.google.bigtable.admin.v2.Type.Map) kind_);
+    }
     if (kindCase_ == 5) {
       output.writeMessage(5, (com.google.bigtable.admin.v2.Type.Int64) kind_);
     }
     if (kindCase_ == 6) {
       output.writeMessage(6, (com.google.bigtable.admin.v2.Type.Aggregate) kind_);
+    }
+    if (kindCase_ == 7) {
+      output.writeMessage(7, (com.google.bigtable.admin.v2.Type.Struct) kind_);
+    }
+    if (kindCase_ == 8) {
+      output.writeMessage(8, (com.google.bigtable.admin.v2.Type.Bool) kind_);
+    }
+    if (kindCase_ == 9) {
+      output.writeMessage(9, (com.google.bigtable.admin.v2.Type.Float64) kind_);
+    }
+    if (kindCase_ == 10) {
+      output.writeMessage(10, (com.google.bigtable.admin.v2.Type.Timestamp) kind_);
+    }
+    if (kindCase_ == 11) {
+      output.writeMessage(11, (com.google.bigtable.admin.v2.Type.Date) kind_);
+    }
+    if (kindCase_ == 12) {
+      output.writeMessage(12, (com.google.bigtable.admin.v2.Type.Float32) kind_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8856,6 +18386,16 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.bigtable.admin.v2.Type.String) kind_);
     }
+    if (kindCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.bigtable.admin.v2.Type.Array) kind_);
+    }
+    if (kindCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.bigtable.admin.v2.Type.Map) kind_);
+    }
     if (kindCase_ == 5) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -8865,6 +18405,36 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.bigtable.admin.v2.Type.Aggregate) kind_);
+    }
+    if (kindCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.bigtable.admin.v2.Type.Struct) kind_);
+    }
+    if (kindCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.bigtable.admin.v2.Type.Bool) kind_);
+    }
+    if (kindCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.bigtable.admin.v2.Type.Float64) kind_);
+    }
+    if (kindCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.bigtable.admin.v2.Type.Timestamp) kind_);
+    }
+    if (kindCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.bigtable.admin.v2.Type.Date) kind_);
+    }
+    if (kindCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.bigtable.admin.v2.Type.Float32) kind_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8892,8 +18462,32 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getInt64Type().equals(other.getInt64Type())) return false;
         break;
+      case 12:
+        if (!getFloat32Type().equals(other.getFloat32Type())) return false;
+        break;
+      case 9:
+        if (!getFloat64Type().equals(other.getFloat64Type())) return false;
+        break;
+      case 8:
+        if (!getBoolType().equals(other.getBoolType())) return false;
+        break;
+      case 10:
+        if (!getTimestampType().equals(other.getTimestampType())) return false;
+        break;
+      case 11:
+        if (!getDateType().equals(other.getDateType())) return false;
+        break;
       case 6:
         if (!getAggregateType().equals(other.getAggregateType())) return false;
+        break;
+      case 7:
+        if (!getStructType().equals(other.getStructType())) return false;
+        break;
+      case 3:
+        if (!getArrayType().equals(other.getArrayType())) return false;
+        break;
+      case 4:
+        if (!getMapType().equals(other.getMapType())) return false;
         break;
       case 0:
       default:
@@ -8922,9 +18516,41 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + INT64_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getInt64Type().hashCode();
         break;
+      case 12:
+        hash = (37 * hash) + FLOAT32_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getFloat32Type().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + FLOAT64_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getFloat64Type().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + BOOL_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getBoolType().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + TIMESTAMP_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestampType().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + DATE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getDateType().hashCode();
+        break;
       case 6:
         hash = (37 * hash) + AGGREGATE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getAggregateType().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + STRUCT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getStructType().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + ARRAY_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getArrayType().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + MAP_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getMapType().hashCode();
         break;
       case 0:
       default:
@@ -9038,27 +18664,22 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    *
    * For compatibility with Bigtable's existing untyped APIs, each `Type` includes
    * an `Encoding` which describes how to convert to/from the underlying data.
-   * This might involve composing a series of steps into an "encoding chain," for
-   * example to convert from INT64 -&gt; STRING -&gt; raw bytes. In most cases, a "link"
-   * in the encoding chain will be based an on existing GoogleSQL conversion
-   * function like `CAST`.
    *
-   * Each link in the encoding chain also defines the following properties:
-   *  * Natural sort: Does the encoded value sort consistently with the original
-   *    typed value? Note that Bigtable will always sort data based on the raw
-   *    encoded value, *not* the decoded type.
+   * Each encoding also defines the following properties:
+   *
+   *  * Order-preserving: Does the encoded value sort consistently with the
+   *    original typed value? Note that Bigtable will always sort data based on
+   *    the raw encoded value, *not* the decoded type.
    *     - Example: BYTES values sort in the same order as their raw encodings.
-   *     - Counterexample: Encoding INT64 to a fixed-width STRING does *not*
-   *       preserve sort order when dealing with negative numbers.
-   *       INT64(1) &gt; INT64(-1), but STRING("-00001") &gt; STRING("00001).
-   *     - The overall encoding chain has this property if *every* link does.
+   *     - Counterexample: Encoding INT64 as a fixed-width decimal string does
+   *       *not* preserve sort order when dealing with negative numbers.
+   *       `INT64(1) &gt; INT64(-1)`, but `STRING("-00001") &gt; STRING("00001)`.
    *  * Self-delimiting: If we concatenate two encoded values, can we always tell
    *    where the first one ends and the second one begins?
    *     - Example: If we encode INT64s to fixed-width STRINGs, the first value
    *       will always contain exactly N digits, possibly preceded by a sign.
    *     - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have
    *       no way to tell where the first one ends.
-   *     - The overall encoding chain has this property if *any* link does.
    *  * Compatibility: Which other systems have matching encoding schemes? For
    *    example, does this encoding have a GoogleSQL equivalent? HBase? Java?
    * </pre>
@@ -9104,8 +18725,32 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (int64TypeBuilder_ != null) {
         int64TypeBuilder_.clear();
       }
+      if (float32TypeBuilder_ != null) {
+        float32TypeBuilder_.clear();
+      }
+      if (float64TypeBuilder_ != null) {
+        float64TypeBuilder_.clear();
+      }
+      if (boolTypeBuilder_ != null) {
+        boolTypeBuilder_.clear();
+      }
+      if (timestampTypeBuilder_ != null) {
+        timestampTypeBuilder_.clear();
+      }
+      if (dateTypeBuilder_ != null) {
+        dateTypeBuilder_.clear();
+      }
       if (aggregateTypeBuilder_ != null) {
         aggregateTypeBuilder_.clear();
+      }
+      if (structTypeBuilder_ != null) {
+        structTypeBuilder_.clear();
+      }
+      if (arrayTypeBuilder_ != null) {
+        arrayTypeBuilder_.clear();
+      }
+      if (mapTypeBuilder_ != null) {
+        mapTypeBuilder_.clear();
       }
       kindCase_ = 0;
       kind_ = null;
@@ -9159,8 +18804,32 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (kindCase_ == 5 && int64TypeBuilder_ != null) {
         result.kind_ = int64TypeBuilder_.build();
       }
+      if (kindCase_ == 12 && float32TypeBuilder_ != null) {
+        result.kind_ = float32TypeBuilder_.build();
+      }
+      if (kindCase_ == 9 && float64TypeBuilder_ != null) {
+        result.kind_ = float64TypeBuilder_.build();
+      }
+      if (kindCase_ == 8 && boolTypeBuilder_ != null) {
+        result.kind_ = boolTypeBuilder_.build();
+      }
+      if (kindCase_ == 10 && timestampTypeBuilder_ != null) {
+        result.kind_ = timestampTypeBuilder_.build();
+      }
+      if (kindCase_ == 11 && dateTypeBuilder_ != null) {
+        result.kind_ = dateTypeBuilder_.build();
+      }
       if (kindCase_ == 6 && aggregateTypeBuilder_ != null) {
         result.kind_ = aggregateTypeBuilder_.build();
+      }
+      if (kindCase_ == 7 && structTypeBuilder_ != null) {
+        result.kind_ = structTypeBuilder_.build();
+      }
+      if (kindCase_ == 3 && arrayTypeBuilder_ != null) {
+        result.kind_ = arrayTypeBuilder_.build();
+      }
+      if (kindCase_ == 4 && mapTypeBuilder_ != null) {
+        result.kind_ = mapTypeBuilder_.build();
       }
     }
 
@@ -9225,9 +18894,49 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             mergeInt64Type(other.getInt64Type());
             break;
           }
+        case FLOAT32_TYPE:
+          {
+            mergeFloat32Type(other.getFloat32Type());
+            break;
+          }
+        case FLOAT64_TYPE:
+          {
+            mergeFloat64Type(other.getFloat64Type());
+            break;
+          }
+        case BOOL_TYPE:
+          {
+            mergeBoolType(other.getBoolType());
+            break;
+          }
+        case TIMESTAMP_TYPE:
+          {
+            mergeTimestampType(other.getTimestampType());
+            break;
+          }
+        case DATE_TYPE:
+          {
+            mergeDateType(other.getDateType());
+            break;
+          }
         case AGGREGATE_TYPE:
           {
             mergeAggregateType(other.getAggregateType());
+            break;
+          }
+        case STRUCT_TYPE:
+          {
+            mergeStructType(other.getStructType());
+            break;
+          }
+        case ARRAY_TYPE:
+          {
+            mergeArrayType(other.getArrayType());
+            break;
+          }
+        case MAP_TYPE:
+          {
+            mergeMapType(other.getMapType());
             break;
           }
         case KIND_NOT_SET:
@@ -9273,6 +18982,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 kindCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getArrayTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getMapTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 4;
+                break;
+              } // case 34
             case 42:
               {
                 input.readMessage(getInt64TypeFieldBuilder().getBuilder(), extensionRegistry);
@@ -9285,6 +19006,42 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 kindCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getStructTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getBoolTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getFloat64TypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getTimestampTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getDateTypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getFloat32TypeFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9939,6 +19696,1045 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Float32,
+            com.google.bigtable.admin.v2.Type.Float32.Builder,
+            com.google.bigtable.admin.v2.Type.Float32OrBuilder>
+        float32TypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     *
+     * @return Whether the float32Type field is set.
+     */
+    @java.lang.Override
+    public boolean hasFloat32Type() {
+      return kindCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     *
+     * @return The float32Type.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float32 getFloat32Type() {
+      if (float32TypeBuilder_ == null) {
+        if (kindCase_ == 12) {
+          return (com.google.bigtable.admin.v2.Type.Float32) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+      } else {
+        if (kindCase_ == 12) {
+          return float32TypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    public Builder setFloat32Type(com.google.bigtable.admin.v2.Type.Float32 value) {
+      if (float32TypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        float32TypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    public Builder setFloat32Type(
+        com.google.bigtable.admin.v2.Type.Float32.Builder builderForValue) {
+      if (float32TypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        float32TypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    public Builder mergeFloat32Type(com.google.bigtable.admin.v2.Type.Float32 value) {
+      if (float32TypeBuilder_ == null) {
+        if (kindCase_ == 12
+            && kind_ != com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Float32.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Float32) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 12) {
+          float32TypeBuilder_.mergeFrom(value);
+        } else {
+          float32TypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    public Builder clearFloat32Type() {
+      if (float32TypeBuilder_ == null) {
+        if (kindCase_ == 12) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 12) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        float32TypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Float32.Builder getFloat32TypeBuilder() {
+      return getFloat32TypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float32OrBuilder getFloat32TypeOrBuilder() {
+      if ((kindCase_ == 12) && (float32TypeBuilder_ != null)) {
+        return float32TypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 12) {
+          return (com.google.bigtable.admin.v2.Type.Float32) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float32
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Float32,
+            com.google.bigtable.admin.v2.Type.Float32.Builder,
+            com.google.bigtable.admin.v2.Type.Float32OrBuilder>
+        getFloat32TypeFieldBuilder() {
+      if (float32TypeBuilder_ == null) {
+        if (!(kindCase_ == 12)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
+        }
+        float32TypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Float32,
+                com.google.bigtable.admin.v2.Type.Float32.Builder,
+                com.google.bigtable.admin.v2.Type.Float32OrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Float32) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 12;
+      onChanged();
+      return float32TypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Float64,
+            com.google.bigtable.admin.v2.Type.Float64.Builder,
+            com.google.bigtable.admin.v2.Type.Float64OrBuilder>
+        float64TypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     *
+     * @return Whether the float64Type field is set.
+     */
+    @java.lang.Override
+    public boolean hasFloat64Type() {
+      return kindCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     *
+     * @return The float64Type.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float64 getFloat64Type() {
+      if (float64TypeBuilder_ == null) {
+        if (kindCase_ == 9) {
+          return (com.google.bigtable.admin.v2.Type.Float64) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+      } else {
+        if (kindCase_ == 9) {
+          return float64TypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    public Builder setFloat64Type(com.google.bigtable.admin.v2.Type.Float64 value) {
+      if (float64TypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        float64TypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    public Builder setFloat64Type(
+        com.google.bigtable.admin.v2.Type.Float64.Builder builderForValue) {
+      if (float64TypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        float64TypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    public Builder mergeFloat64Type(com.google.bigtable.admin.v2.Type.Float64 value) {
+      if (float64TypeBuilder_ == null) {
+        if (kindCase_ == 9
+            && kind_ != com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Float64.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Float64) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 9) {
+          float64TypeBuilder_.mergeFrom(value);
+        } else {
+          float64TypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    public Builder clearFloat64Type() {
+      if (float64TypeBuilder_ == null) {
+        if (kindCase_ == 9) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 9) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        float64TypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Float64.Builder getFloat64TypeBuilder() {
+      return getFloat64TypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Float64OrBuilder getFloat64TypeOrBuilder() {
+      if ((kindCase_ == 9) && (float64TypeBuilder_ != null)) {
+        return float64TypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 9) {
+          return (com.google.bigtable.admin.v2.Type.Float64) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Float64
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Float64,
+            com.google.bigtable.admin.v2.Type.Float64.Builder,
+            com.google.bigtable.admin.v2.Type.Float64OrBuilder>
+        getFloat64TypeFieldBuilder() {
+      if (float64TypeBuilder_ == null) {
+        if (!(kindCase_ == 9)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
+        }
+        float64TypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Float64,
+                com.google.bigtable.admin.v2.Type.Float64.Builder,
+                com.google.bigtable.admin.v2.Type.Float64OrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Float64) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 9;
+      onChanged();
+      return float64TypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Bool,
+            com.google.bigtable.admin.v2.Type.Bool.Builder,
+            com.google.bigtable.admin.v2.Type.BoolOrBuilder>
+        boolTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     *
+     * @return Whether the boolType field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoolType() {
+      return kindCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     *
+     * @return The boolType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Bool getBoolType() {
+      if (boolTypeBuilder_ == null) {
+        if (kindCase_ == 8) {
+          return (com.google.bigtable.admin.v2.Type.Bool) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+      } else {
+        if (kindCase_ == 8) {
+          return boolTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    public Builder setBoolType(com.google.bigtable.admin.v2.Type.Bool value) {
+      if (boolTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        boolTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    public Builder setBoolType(com.google.bigtable.admin.v2.Type.Bool.Builder builderForValue) {
+      if (boolTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        boolTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    public Builder mergeBoolType(com.google.bigtable.admin.v2.Type.Bool value) {
+      if (boolTypeBuilder_ == null) {
+        if (kindCase_ == 8
+            && kind_ != com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Bool.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Bool) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 8) {
+          boolTypeBuilder_.mergeFrom(value);
+        } else {
+          boolTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    public Builder clearBoolType() {
+      if (boolTypeBuilder_ == null) {
+        if (kindCase_ == 8) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 8) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        boolTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Bool.Builder getBoolTypeBuilder() {
+      return getBoolTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.BoolOrBuilder getBoolTypeOrBuilder() {
+      if ((kindCase_ == 8) && (boolTypeBuilder_ != null)) {
+        return boolTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 8) {
+          return (com.google.bigtable.admin.v2.Type.Bool) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Bool,
+            com.google.bigtable.admin.v2.Type.Bool.Builder,
+            com.google.bigtable.admin.v2.Type.BoolOrBuilder>
+        getBoolTypeFieldBuilder() {
+      if (boolTypeBuilder_ == null) {
+        if (!(kindCase_ == 8)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
+        }
+        boolTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Bool,
+                com.google.bigtable.admin.v2.Type.Bool.Builder,
+                com.google.bigtable.admin.v2.Type.BoolOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Bool) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 8;
+      onChanged();
+      return boolTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Timestamp,
+            com.google.bigtable.admin.v2.Type.Timestamp.Builder,
+            com.google.bigtable.admin.v2.Type.TimestampOrBuilder>
+        timestampTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     *
+     * @return Whether the timestampType field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimestampType() {
+      return kindCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     *
+     * @return The timestampType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Timestamp getTimestampType() {
+      if (timestampTypeBuilder_ == null) {
+        if (kindCase_ == 10) {
+          return (com.google.bigtable.admin.v2.Type.Timestamp) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+      } else {
+        if (kindCase_ == 10) {
+          return timestampTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    public Builder setTimestampType(com.google.bigtable.admin.v2.Type.Timestamp value) {
+      if (timestampTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        timestampTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    public Builder setTimestampType(
+        com.google.bigtable.admin.v2.Type.Timestamp.Builder builderForValue) {
+      if (timestampTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        timestampTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    public Builder mergeTimestampType(com.google.bigtable.admin.v2.Type.Timestamp value) {
+      if (timestampTypeBuilder_ == null) {
+        if (kindCase_ == 10
+            && kind_ != com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Timestamp.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Timestamp) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 10) {
+          timestampTypeBuilder_.mergeFrom(value);
+        } else {
+          timestampTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    public Builder clearTimestampType() {
+      if (timestampTypeBuilder_ == null) {
+        if (kindCase_ == 10) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 10) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        timestampTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Timestamp.Builder getTimestampTypeBuilder() {
+      return getTimestampTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.TimestampOrBuilder getTimestampTypeOrBuilder() {
+      if ((kindCase_ == 10) && (timestampTypeBuilder_ != null)) {
+        return timestampTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 10) {
+          return (com.google.bigtable.admin.v2.Type.Timestamp) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Timestamp,
+            com.google.bigtable.admin.v2.Type.Timestamp.Builder,
+            com.google.bigtable.admin.v2.Type.TimestampOrBuilder>
+        getTimestampTypeFieldBuilder() {
+      if (timestampTypeBuilder_ == null) {
+        if (!(kindCase_ == 10)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
+        }
+        timestampTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Timestamp,
+                com.google.bigtable.admin.v2.Type.Timestamp.Builder,
+                com.google.bigtable.admin.v2.Type.TimestampOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Timestamp) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 10;
+      onChanged();
+      return timestampTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Date,
+            com.google.bigtable.admin.v2.Type.Date.Builder,
+            com.google.bigtable.admin.v2.Type.DateOrBuilder>
+        dateTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     *
+     * @return Whether the dateType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDateType() {
+      return kindCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     *
+     * @return The dateType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Date getDateType() {
+      if (dateTypeBuilder_ == null) {
+        if (kindCase_ == 11) {
+          return (com.google.bigtable.admin.v2.Type.Date) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+      } else {
+        if (kindCase_ == 11) {
+          return dateTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    public Builder setDateType(com.google.bigtable.admin.v2.Type.Date value) {
+      if (dateTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        dateTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    public Builder setDateType(com.google.bigtable.admin.v2.Type.Date.Builder builderForValue) {
+      if (dateTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        dateTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    public Builder mergeDateType(com.google.bigtable.admin.v2.Type.Date value) {
+      if (dateTypeBuilder_ == null) {
+        if (kindCase_ == 11
+            && kind_ != com.google.bigtable.admin.v2.Type.Date.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Date.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Date) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 11) {
+          dateTypeBuilder_.mergeFrom(value);
+        } else {
+          dateTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    public Builder clearDateType() {
+      if (dateTypeBuilder_ == null) {
+        if (kindCase_ == 11) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 11) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        dateTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Date.Builder getDateTypeBuilder() {
+      return getDateTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.DateOrBuilder getDateTypeOrBuilder() {
+      if ((kindCase_ == 11) && (dateTypeBuilder_ != null)) {
+        return dateTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 11) {
+          return (com.google.bigtable.admin.v2.Type.Date) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Date,
+            com.google.bigtable.admin.v2.Type.Date.Builder,
+            com.google.bigtable.admin.v2.Type.DateOrBuilder>
+        getDateTypeFieldBuilder() {
+      if (dateTypeBuilder_ == null) {
+        if (!(kindCase_ == 11)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
+        }
+        dateTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Date,
+                com.google.bigtable.admin.v2.Type.Date.Builder,
+                com.google.bigtable.admin.v2.Type.DateOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Date) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 11;
+      onChanged();
+      return dateTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.Type.Aggregate,
             com.google.bigtable.admin.v2.Type.Aggregate.Builder,
             com.google.bigtable.admin.v2.Type.AggregateOrBuilder>
@@ -10145,6 +20941,625 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       onChanged();
       return aggregateTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Struct,
+            com.google.bigtable.admin.v2.Type.Struct.Builder,
+            com.google.bigtable.admin.v2.Type.StructOrBuilder>
+        structTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     *
+     * @return Whether the structType field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructType() {
+      return kindCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     *
+     * @return The structType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Struct getStructType() {
+      if (structTypeBuilder_ == null) {
+        if (kindCase_ == 7) {
+          return (com.google.bigtable.admin.v2.Type.Struct) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+      } else {
+        if (kindCase_ == 7) {
+          return structTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    public Builder setStructType(com.google.bigtable.admin.v2.Type.Struct value) {
+      if (structTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        structTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    public Builder setStructType(com.google.bigtable.admin.v2.Type.Struct.Builder builderForValue) {
+      if (structTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        structTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    public Builder mergeStructType(com.google.bigtable.admin.v2.Type.Struct value) {
+      if (structTypeBuilder_ == null) {
+        if (kindCase_ == 7
+            && kind_ != com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Struct.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Struct) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 7) {
+          structTypeBuilder_.mergeFrom(value);
+        } else {
+          structTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    public Builder clearStructType() {
+      if (structTypeBuilder_ == null) {
+        if (kindCase_ == 7) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 7) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        structTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Struct.Builder getStructTypeBuilder() {
+      return getStructTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.StructOrBuilder getStructTypeOrBuilder() {
+      if ((kindCase_ == 7) && (structTypeBuilder_ != null)) {
+        return structTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 7) {
+          return (com.google.bigtable.admin.v2.Type.Struct) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Struct
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Struct,
+            com.google.bigtable.admin.v2.Type.Struct.Builder,
+            com.google.bigtable.admin.v2.Type.StructOrBuilder>
+        getStructTypeFieldBuilder() {
+      if (structTypeBuilder_ == null) {
+        if (!(kindCase_ == 7)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
+        }
+        structTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Struct,
+                com.google.bigtable.admin.v2.Type.Struct.Builder,
+                com.google.bigtable.admin.v2.Type.StructOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Struct) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 7;
+      onChanged();
+      return structTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Array,
+            com.google.bigtable.admin.v2.Type.Array.Builder,
+            com.google.bigtable.admin.v2.Type.ArrayOrBuilder>
+        arrayTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     *
+     * @return Whether the arrayType field is set.
+     */
+    @java.lang.Override
+    public boolean hasArrayType() {
+      return kindCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     *
+     * @return The arrayType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Array getArrayType() {
+      if (arrayTypeBuilder_ == null) {
+        if (kindCase_ == 3) {
+          return (com.google.bigtable.admin.v2.Type.Array) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+      } else {
+        if (kindCase_ == 3) {
+          return arrayTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    public Builder setArrayType(com.google.bigtable.admin.v2.Type.Array value) {
+      if (arrayTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        arrayTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    public Builder setArrayType(com.google.bigtable.admin.v2.Type.Array.Builder builderForValue) {
+      if (arrayTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        arrayTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    public Builder mergeArrayType(com.google.bigtable.admin.v2.Type.Array value) {
+      if (arrayTypeBuilder_ == null) {
+        if (kindCase_ == 3
+            && kind_ != com.google.bigtable.admin.v2.Type.Array.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Array.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Array) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 3) {
+          arrayTypeBuilder_.mergeFrom(value);
+        } else {
+          arrayTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    public Builder clearArrayType() {
+      if (arrayTypeBuilder_ == null) {
+        if (kindCase_ == 3) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 3) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        arrayTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Array.Builder getArrayTypeBuilder() {
+      return getArrayTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.ArrayOrBuilder getArrayTypeOrBuilder() {
+      if ((kindCase_ == 3) && (arrayTypeBuilder_ != null)) {
+        return arrayTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 3) {
+          return (com.google.bigtable.admin.v2.Type.Array) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Array
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Array,
+            com.google.bigtable.admin.v2.Type.Array.Builder,
+            com.google.bigtable.admin.v2.Type.ArrayOrBuilder>
+        getArrayTypeFieldBuilder() {
+      if (arrayTypeBuilder_ == null) {
+        if (!(kindCase_ == 3)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
+        }
+        arrayTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Array,
+                com.google.bigtable.admin.v2.Type.Array.Builder,
+                com.google.bigtable.admin.v2.Type.ArrayOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Array) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 3;
+      onChanged();
+      return arrayTypeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Map,
+            com.google.bigtable.admin.v2.Type.Map.Builder,
+            com.google.bigtable.admin.v2.Type.MapOrBuilder>
+        mapTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     *
+     * @return Whether the mapType field is set.
+     */
+    @java.lang.Override
+    public boolean hasMapType() {
+      return kindCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     *
+     * @return The mapType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.Map getMapType() {
+      if (mapTypeBuilder_ == null) {
+        if (kindCase_ == 4) {
+          return (com.google.bigtable.admin.v2.Type.Map) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+      } else {
+        if (kindCase_ == 4) {
+          return mapTypeBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    public Builder setMapType(com.google.bigtable.admin.v2.Type.Map value) {
+      if (mapTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        mapTypeBuilder_.setMessage(value);
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    public Builder setMapType(com.google.bigtable.admin.v2.Type.Map.Builder builderForValue) {
+      if (mapTypeBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        mapTypeBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    public Builder mergeMapType(com.google.bigtable.admin.v2.Type.Map value) {
+      if (mapTypeBuilder_ == null) {
+        if (kindCase_ == 4 && kind_ != com.google.bigtable.admin.v2.Type.Map.getDefaultInstance()) {
+          kind_ =
+              com.google.bigtable.admin.v2.Type.Map.newBuilder(
+                      (com.google.bigtable.admin.v2.Type.Map) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 4) {
+          mapTypeBuilder_.mergeFrom(value);
+        } else {
+          mapTypeBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    public Builder clearMapType() {
+      if (mapTypeBuilder_ == null) {
+        if (kindCase_ == 4) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 4) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        mapTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Map.Builder getMapTypeBuilder() {
+      return getMapTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Type.MapOrBuilder getMapTypeOrBuilder() {
+      if ((kindCase_ == 4) && (mapTypeBuilder_ != null)) {
+        return mapTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 4) {
+          return (com.google.bigtable.admin.v2.Type.Map) kind_;
+        }
+        return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Map
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Map,
+            com.google.bigtable.admin.v2.Type.Map.Builder,
+            com.google.bigtable.admin.v2.Type.MapOrBuilder>
+        getMapTypeFieldBuilder() {
+      if (mapTypeBuilder_ == null) {
+        if (!(kindCase_ == 4)) {
+          kind_ = com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
+        }
+        mapTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Map,
+                com.google.bigtable.admin.v2.Type.Map.Builder,
+                com.google.bigtable.admin.v2.Type.MapOrBuilder>(
+                (com.google.bigtable.admin.v2.Type.Map) kind_, getParentForChildren(), isClean());
+        kind_ = null;
+      }
+      kindCase_ = 4;
+      onChanged();
+      return mapTypeBuilder_;
     }
 
     @java.lang.Override

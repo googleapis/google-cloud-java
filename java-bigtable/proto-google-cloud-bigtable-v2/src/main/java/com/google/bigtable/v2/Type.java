@@ -2195,6 +2195,51 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       *
+       * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/v2/types.proto;l=97
+       * @return Whether the utf8Raw field is set.
+       */
+      @java.lang.Deprecated
+      boolean hasUtf8Raw();
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       *
+       * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/v2/types.proto;l=97
+       * @return The utf8Raw.
+       */
+      @java.lang.Deprecated
+      com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getUtf8Raw();
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder getUtf8RawOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
        * Use `Utf8Bytes` encoding.
        * </pre>
        *
@@ -2268,6 +2313,433 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             .ensureFieldAccessorsInitialized(
                 com.google.bigtable.v2.Type.String.Encoding.class,
                 com.google.bigtable.v2.Type.String.Encoding.Builder.class);
+      }
+
+      @java.lang.Deprecated
+      public interface Utf8RawOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.String.Encoding.Utf8Raw)
+          com.google.protobuf.MessageOrBuilder {}
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: prefer the equivalent `Utf8Bytes`.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.String.Encoding.Utf8Raw}
+       */
+      @java.lang.Deprecated
+      public static final class Utf8Raw extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.String.Encoding.Utf8Raw)
+          Utf8RawOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Utf8Raw.newBuilder() to construct.
+        private Utf8Raw(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Utf8Raw() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Utf8Raw();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_String_Encoding_Utf8Raw_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_String_Encoding_Utf8Raw_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.class,
+                  com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.v2.Type.String.Encoding.Utf8Raw)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.v2.Type.String.Encoding.Utf8Raw other =
+              (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseDelimitedFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.v2.Type.String.Encoding.Utf8Raw prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: prefer the equivalent `Utf8Bytes`.
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.v2.Type.String.Encoding.Utf8Raw}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.String.Encoding.Utf8Raw)
+            com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_String_Encoding_Utf8Raw_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_String_Encoding_Utf8Raw_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.class,
+                    com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder.class);
+          }
+
+          // Construct using com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_String_Encoding_Utf8Raw_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getDefaultInstanceForType() {
+            return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw build() {
+            com.google.bigtable.v2.Type.String.Encoding.Utf8Raw result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw buildPartial() {
+            com.google.bigtable.v2.Type.String.Encoding.Utf8Raw result =
+                new com.google.bigtable.v2.Type.String.Encoding.Utf8Raw(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) {
+              return mergeFrom((com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(com.google.bigtable.v2.Type.String.Encoding.Utf8Raw other) {
+            if (other == com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance())
+              return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.String.Encoding.Utf8Raw)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.String.Encoding.Utf8Raw)
+        private static final com.google.bigtable.v2.Type.String.Encoding.Utf8Raw DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.String.Encoding.Utf8Raw();
+        }
+
+        public static com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Utf8Raw> PARSER =
+            new com.google.protobuf.AbstractParser<Utf8Raw>() {
+              @java.lang.Override
+              public Utf8Raw parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Utf8Raw> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Utf8Raw> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
       }
 
       public interface Utf8BytesOrBuilder
@@ -2716,6 +3188,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           implements
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        @java.lang.Deprecated
+        UTF8_RAW(1),
         UTF8_BYTES(2),
         ENCODING_NOT_SET(0);
         private final int value;
@@ -2735,6 +3209,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
         public static EncodingCase forNumber(int value) {
           switch (value) {
+            case 1:
+              return UTF8_RAW;
             case 2:
               return UTF8_BYTES;
             case 0:
@@ -2751,6 +3227,67 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       public EncodingCase getEncodingCase() {
         return EncodingCase.forNumber(encodingCase_);
+      }
+
+      public static final int UTF8_RAW_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       *
+       * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/v2/types.proto;l=97
+       * @return Whether the utf8Raw field is set.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public boolean hasUtf8Raw() {
+        return encodingCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       *
+       * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+       *     google/bigtable/v2/types.proto;l=97
+       * @return The utf8Raw.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getUtf8Raw() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_;
+        }
+        return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: if set, converts to an empty `utf8_bytes`.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder getUtf8RawOrBuilder() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_;
+        }
+        return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
       }
 
       public static final int UTF8_BYTES_FIELD_NUMBER = 2;
@@ -2819,6 +3356,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (encodingCase_ == 1) {
+          output.writeMessage(1, (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_);
+        }
         if (encodingCase_ == 2) {
           output.writeMessage(2, (com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes) encoding_);
         }
@@ -2831,6 +3371,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
+        if (encodingCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_);
+        }
         if (encodingCase_ == 2) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2854,6 +3399,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
         if (!getEncodingCase().equals(other.getEncodingCase())) return false;
         switch (encodingCase_) {
+          case 1:
+            if (!getUtf8Raw().equals(other.getUtf8Raw())) return false;
+            break;
           case 2:
             if (!getUtf8Bytes().equals(other.getUtf8Bytes())) return false;
             break;
@@ -2872,6 +3420,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         switch (encodingCase_) {
+          case 1:
+            hash = (37 * hash) + UTF8_RAW_FIELD_NUMBER;
+            hash = (53 * hash) + getUtf8Raw().hashCode();
+            break;
           case 2:
             hash = (37 * hash) + UTF8_BYTES_FIELD_NUMBER;
             hash = (53 * hash) + getUtf8Bytes().hashCode();
@@ -3020,6 +3572,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
+          if (utf8RawBuilder_ != null) {
+            utf8RawBuilder_.clear();
+          }
           if (utf8BytesBuilder_ != null) {
             utf8BytesBuilder_.clear();
           }
@@ -3067,6 +3622,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private void buildPartialOneofs(com.google.bigtable.v2.Type.String.Encoding result) {
           result.encodingCase_ = encodingCase_;
           result.encoding_ = this.encoding_;
+          if (encodingCase_ == 1 && utf8RawBuilder_ != null) {
+            result.encoding_ = utf8RawBuilder_.build();
+          }
           if (encodingCase_ == 2 && utf8BytesBuilder_ != null) {
             result.encoding_ = utf8BytesBuilder_.build();
           }
@@ -3121,6 +3679,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           if (other == com.google.bigtable.v2.Type.String.Encoding.getDefaultInstance())
             return this;
           switch (other.getEncodingCase()) {
+            case UTF8_RAW:
+              {
+                mergeUtf8Raw(other.getUtf8Raw());
+                break;
+              }
             case UTF8_BYTES:
               {
                 mergeUtf8Bytes(other.getUtf8Bytes());
@@ -3157,6 +3720,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 case 0:
                   done = true;
                   break;
+                case 10:
+                  {
+                    input.readMessage(getUtf8RawFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 1;
+                    break;
+                  } // case 10
                 case 18:
                   {
                     input.readMessage(getUtf8BytesFieldBuilder().getBuilder(), extensionRegistry);
@@ -3195,6 +3764,237 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.String.Encoding.Utf8Raw,
+                com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder,
+                com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder>
+            utf8RawBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         *
+         * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+         *     google/bigtable/v2/types.proto;l=97
+         * @return Whether the utf8Raw field is set.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public boolean hasUtf8Raw() {
+          return encodingCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         *
+         * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
+         *     google/bigtable/v2/types.proto;l=97
+         * @return The utf8Raw.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw getUtf8Raw() {
+          if (utf8RawBuilder_ == null) {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_;
+            }
+            return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 1) {
+              return utf8RawBuilder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        public Builder setUtf8Raw(com.google.bigtable.v2.Type.String.Encoding.Utf8Raw value) {
+          if (utf8RawBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            utf8RawBuilder_.setMessage(value);
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        public Builder setUtf8Raw(
+            com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder builderForValue) {
+          if (utf8RawBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            utf8RawBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        public Builder mergeUtf8Raw(com.google.bigtable.v2.Type.String.Encoding.Utf8Raw value) {
+          if (utf8RawBuilder_ == null) {
+            if (encodingCase_ == 1
+                && encoding_
+                    != com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.newBuilder(
+                          (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 1) {
+              utf8RawBuilder_.mergeFrom(value);
+            } else {
+              utf8RawBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        public Builder clearUtf8Raw() {
+          if (utf8RawBuilder_ == null) {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            utf8RawBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Deprecated
+        public com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder getUtf8RawBuilder() {
+          return getUtf8RawFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder getUtf8RawOrBuilder() {
+          if ((encodingCase_ == 1) && (utf8RawBuilder_ != null)) {
+            return utf8RawBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_;
+            }
+            return com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Deprecated: if set, converts to an empty `utf8_bytes`.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.String.Encoding.Utf8Raw utf8_raw = 1 [deprecated = true];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.String.Encoding.Utf8Raw,
+                com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder,
+                com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder>
+            getUtf8RawFieldBuilder() {
+          if (utf8RawBuilder_ == null) {
+            if (!(encodingCase_ == 1)) {
+              encoding_ = com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
+            }
+            utf8RawBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.String.Encoding.Utf8Raw,
+                    com.google.bigtable.v2.Type.String.Encoding.Utf8Raw.Builder,
+                    com.google.bigtable.v2.Type.String.Encoding.Utf8RawOrBuilder>(
+                    (com.google.bigtable.v2.Type.String.Encoding.Utf8Raw) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 1;
+          onChanged();
+          return utf8RawBuilder_;
+        }
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes,

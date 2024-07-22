@@ -101,6 +101,10 @@ public final class DataProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_Mutation_AddToCell_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_Mutation_MergeToCell_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_fieldAccessorTable;
@@ -231,54 +235,60 @@ public final class DataProto {
           + "able.v2.RowFilter\0222\n\013true_filter\030\002 \001(\0132\035"
           + ".google.bigtable.v2.RowFilter\0223\n\014false_f"
           + "ilter\030\003 \001(\0132\035.google.bigtable.v2.RowFilt"
-          + "erB\010\n\006filter\"\270\006\n\010Mutation\0228\n\010set_cell\030\001 "
+          + "erB\010\n\006filter\"\255\010\n\010Mutation\0228\n\010set_cell\030\001 "
           + "\001(\0132$.google.bigtable.v2.Mutation.SetCel"
           + "lH\000\022=\n\013add_to_cell\030\005 \001(\0132&.google.bigtab"
-          + "le.v2.Mutation.AddToCellH\000\022K\n\022delete_fro"
-          + "m_column\030\002 \001(\0132-.google.bigtable.v2.Muta"
-          + "tion.DeleteFromColumnH\000\022K\n\022delete_from_f"
-          + "amily\030\003 \001(\0132-.google.bigtable.v2.Mutatio"
-          + "n.DeleteFromFamilyH\000\022E\n\017delete_from_row\030"
-          + "\004 \001(\0132*.google.bigtable.v2.Mutation.Dele"
-          + "teFromRowH\000\032a\n\007SetCell\022\023\n\013family_name\030\001 "
-          + "\001(\t\022\030\n\020column_qualifier\030\002 \001(\014\022\030\n\020timesta"
-          + "mp_micros\030\003 \001(\003\022\r\n\005value\030\004 \001(\014\032\255\001\n\tAddTo"
-          + "Cell\022\023\n\013family_name\030\001 \001(\t\0223\n\020column_qual"
-          + "ifier\030\002 \001(\0132\031.google.bigtable.v2.Value\022,"
-          + "\n\ttimestamp\030\003 \001(\0132\031.google.bigtable.v2.V"
-          + "alue\022(\n\005input\030\004 \001(\0132\031.google.bigtable.v2"
-          + ".Value\032y\n\020DeleteFromColumn\022\023\n\013family_nam"
-          + "e\030\001 \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\0226\n\ntim"
-          + "e_range\030\003 \001(\0132\".google.bigtable.v2.Times"
-          + "tampRange\032\'\n\020DeleteFromFamily\022\023\n\013family_"
-          + "name\030\001 \001(\t\032\017\n\rDeleteFromRowB\n\n\010mutation\""
-          + "\200\001\n\023ReadModifyWriteRule\022\023\n\013family_name\030\001"
-          + " \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\022\026\n\014append"
-          + "_value\030\003 \001(\014H\000\022\032\n\020increment_amount\030\004 \001(\003"
-          + "H\000B\006\n\004rule\"B\n\017StreamPartition\022/\n\trow_ran"
-          + "ge\030\001 \001(\0132\034.google.bigtable.v2.RowRange\"W"
-          + "\n\030StreamContinuationTokens\022;\n\006tokens\030\001 \003"
-          + "(\0132+.google.bigtable.v2.StreamContinuati"
-          + "onToken\"`\n\027StreamContinuationToken\0226\n\tpa"
-          + "rtition\030\001 \001(\0132#.google.bigtable.v2.Strea"
-          + "mPartition\022\r\n\005token\030\002 \001(\t\"\r\n\013ProtoFormat"
-          + "\"F\n\016ColumnMetadata\022\014\n\004name\030\001 \001(\t\022&\n\004type"
-          + "\030\002 \001(\0132\030.google.bigtable.v2.Type\"B\n\013Prot"
-          + "oSchema\0223\n\007columns\030\001 \003(\0132\".google.bigtab"
-          + "le.v2.ColumnMetadata\"V\n\021ResultSetMetadat"
-          + "a\0227\n\014proto_schema\030\001 \001(\0132\037.google.bigtabl"
-          + "e.v2.ProtoSchemaH\000B\010\n\006schema\"6\n\tProtoRow"
-          + "s\022)\n\006values\030\002 \003(\0132\031.google.bigtable.v2.V"
-          + "alue\"$\n\016ProtoRowsBatch\022\022\n\nbatch_data\030\001 \001"
-          + "(\014\"\226\001\n\020PartialResultSet\022>\n\020proto_rows_ba"
-          + "tch\030\003 \001(\0132\".google.bigtable.v2.ProtoRows"
-          + "BatchH\000\022\024\n\014resume_token\030\005 \001(\014\022\034\n\024estimat"
-          + "ed_batch_size\030\004 \001(\005B\016\n\014partial_rowsB\265\001\n\026"
-          + "com.google.bigtable.v2B\tDataProtoP\001Z:goo"
-          + "gle.golang.org/genproto/googleapis/bigta"
-          + "ble/v2;bigtable\252\002\030Google.Cloud.Bigtable."
-          + "V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Google::"
-          + "Cloud::Bigtable::V2b\006proto3"
+          + "le.v2.Mutation.AddToCellH\000\022A\n\rmerge_to_c"
+          + "ell\030\006 \001(\0132(.google.bigtable.v2.Mutation."
+          + "MergeToCellH\000\022K\n\022delete_from_column\030\002 \001("
+          + "\0132-.google.bigtable.v2.Mutation.DeleteFr"
+          + "omColumnH\000\022K\n\022delete_from_family\030\003 \001(\0132-"
+          + ".google.bigtable.v2.Mutation.DeleteFromF"
+          + "amilyH\000\022E\n\017delete_from_row\030\004 \001(\0132*.googl"
+          + "e.bigtable.v2.Mutation.DeleteFromRowH\000\032a"
+          + "\n\007SetCell\022\023\n\013family_name\030\001 \001(\t\022\030\n\020column"
+          + "_qualifier\030\002 \001(\014\022\030\n\020timestamp_micros\030\003 \001"
+          + "(\003\022\r\n\005value\030\004 \001(\014\032\255\001\n\tAddToCell\022\023\n\013famil"
+          + "y_name\030\001 \001(\t\0223\n\020column_qualifier\030\002 \001(\0132\031"
+          + ".google.bigtable.v2.Value\022,\n\ttimestamp\030\003"
+          + " \001(\0132\031.google.bigtable.v2.Value\022(\n\005input"
+          + "\030\004 \001(\0132\031.google.bigtable.v2.Value\032\257\001\n\013Me"
+          + "rgeToCell\022\023\n\013family_name\030\001 \001(\t\0223\n\020column"
+          + "_qualifier\030\002 \001(\0132\031.google.bigtable.v2.Va"
+          + "lue\022,\n\ttimestamp\030\003 \001(\0132\031.google.bigtable"
+          + ".v2.Value\022(\n\005input\030\004 \001(\0132\031.google.bigtab"
+          + "le.v2.Value\032y\n\020DeleteFromColumn\022\023\n\013famil"
+          + "y_name\030\001 \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\0226"
+          + "\n\ntime_range\030\003 \001(\0132\".google.bigtable.v2."
+          + "TimestampRange\032\'\n\020DeleteFromFamily\022\023\n\013fa"
+          + "mily_name\030\001 \001(\t\032\017\n\rDeleteFromRowB\n\n\010muta"
+          + "tion\"\200\001\n\023ReadModifyWriteRule\022\023\n\013family_n"
+          + "ame\030\001 \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\022\026\n\014a"
+          + "ppend_value\030\003 \001(\014H\000\022\032\n\020increment_amount\030"
+          + "\004 \001(\003H\000B\006\n\004rule\"B\n\017StreamPartition\022/\n\tro"
+          + "w_range\030\001 \001(\0132\034.google.bigtable.v2.RowRa"
+          + "nge\"W\n\030StreamContinuationTokens\022;\n\006token"
+          + "s\030\001 \003(\0132+.google.bigtable.v2.StreamConti"
+          + "nuationToken\"`\n\027StreamContinuationToken\022"
+          + "6\n\tpartition\030\001 \001(\0132#.google.bigtable.v2."
+          + "StreamPartition\022\r\n\005token\030\002 \001(\t\"\r\n\013ProtoF"
+          + "ormat\"F\n\016ColumnMetadata\022\014\n\004name\030\001 \001(\t\022&\n"
+          + "\004type\030\002 \001(\0132\030.google.bigtable.v2.Type\"B\n"
+          + "\013ProtoSchema\0223\n\007columns\030\001 \003(\0132\".google.b"
+          + "igtable.v2.ColumnMetadata\"V\n\021ResultSetMe"
+          + "tadata\0227\n\014proto_schema\030\001 \001(\0132\037.google.bi"
+          + "gtable.v2.ProtoSchemaH\000B\010\n\006schema\"6\n\tPro"
+          + "toRows\022)\n\006values\030\002 \003(\0132\031.google.bigtable"
+          + ".v2.Value\"$\n\016ProtoRowsBatch\022\022\n\nbatch_dat"
+          + "a\030\001 \001(\014\"\226\001\n\020PartialResultSet\022>\n\020proto_ro"
+          + "ws_batch\030\003 \001(\0132\".google.bigtable.v2.Prot"
+          + "oRowsBatchH\000\022\024\n\014resume_token\030\005 \001(\014\022\034\n\024es"
+          + "timated_batch_size\030\004 \001(\005B\016\n\014partial_rows"
+          + "B\263\001\n\026com.google.bigtable.v2B\tDataProtoP\001"
+          + "Z8cloud.google.com/go/bigtable/apiv2/big"
+          + "tablepb;bigtablepb\252\002\030Google.Cloud.Bigtab"
+          + "le.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Googl"
+          + "e::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -452,6 +462,7 @@ public final class DataProto {
             new java.lang.String[] {
               "SetCell",
               "AddToCell",
+              "MergeToCell",
               "DeleteFromColumn",
               "DeleteFromFamily",
               "DeleteFromRow",
@@ -473,8 +484,16 @@ public final class DataProto {
             new java.lang.String[] {
               "FamilyName", "ColumnQualifier", "Timestamp", "Input",
             });
-    internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_descriptor =
+    internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor =
         internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(2);
+    internal_static_google_bigtable_v2_Mutation_MergeToCell_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_Mutation_MergeToCell_descriptor,
+            new java.lang.String[] {
+              "FamilyName", "ColumnQualifier", "Timestamp", "Input",
+            });
+    internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_descriptor =
+        internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(3);
     internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_Mutation_DeleteFromColumn_descriptor,
@@ -482,7 +501,7 @@ public final class DataProto {
               "FamilyName", "ColumnQualifier", "TimeRange",
             });
     internal_static_google_bigtable_v2_Mutation_DeleteFromFamily_descriptor =
-        internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(3);
+        internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(4);
     internal_static_google_bigtable_v2_Mutation_DeleteFromFamily_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_Mutation_DeleteFromFamily_descriptor,
@@ -490,7 +509,7 @@ public final class DataProto {
               "FamilyName",
             });
     internal_static_google_bigtable_v2_Mutation_DeleteFromRow_descriptor =
-        internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(4);
+        internal_static_google_bigtable_v2_Mutation_descriptor.getNestedTypes().get(5);
     internal_static_google_bigtable_v2_Mutation_DeleteFromRow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_Mutation_DeleteFromRow_descriptor,

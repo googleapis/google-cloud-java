@@ -133,6 +133,181 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   *
+   * @return Whether the float32Type field is set.
+   */
+  boolean hasFloat32Type();
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   *
+   * @return The float32Type.
+   */
+  com.google.bigtable.admin.v2.Type.Float32 getFloat32Type();
+  /**
+   *
+   *
+   * <pre>
+   * Float32
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float32 float32_type = 12;</code>
+   */
+  com.google.bigtable.admin.v2.Type.Float32OrBuilder getFloat32TypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   *
+   * @return Whether the float64Type field is set.
+   */
+  boolean hasFloat64Type();
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   *
+   * @return The float64Type.
+   */
+  com.google.bigtable.admin.v2.Type.Float64 getFloat64Type();
+  /**
+   *
+   *
+   * <pre>
+   * Float64
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Float64 float64_type = 9;</code>
+   */
+  com.google.bigtable.admin.v2.Type.Float64OrBuilder getFloat64TypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   *
+   * @return Whether the boolType field is set.
+   */
+  boolean hasBoolType();
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   *
+   * @return The boolType.
+   */
+  com.google.bigtable.admin.v2.Type.Bool getBoolType();
+  /**
+   *
+   *
+   * <pre>
+   * Bool
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Bool bool_type = 8;</code>
+   */
+  com.google.bigtable.admin.v2.Type.BoolOrBuilder getBoolTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   *
+   * @return Whether the timestampType field is set.
+   */
+  boolean hasTimestampType();
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   *
+   * @return The timestampType.
+   */
+  com.google.bigtable.admin.v2.Type.Timestamp getTimestampType();
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Timestamp timestamp_type = 10;</code>
+   */
+  com.google.bigtable.admin.v2.Type.TimestampOrBuilder getTimestampTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   *
+   * @return Whether the dateType field is set.
+   */
+  boolean hasDateType();
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   *
+   * @return The dateType.
+   */
+  com.google.bigtable.admin.v2.Type.Date getDateType();
+  /**
+   *
+   *
+   * <pre>
+   * Date
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Date date_type = 11;</code>
+   */
+  com.google.bigtable.admin.v2.Type.DateOrBuilder getDateTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Aggregate
    * </pre>
    *
@@ -163,6 +338,111 @@ public interface TypeOrBuilder
    * <code>.google.bigtable.admin.v2.Type.Aggregate aggregate_type = 6;</code>
    */
   com.google.bigtable.admin.v2.Type.AggregateOrBuilder getAggregateTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   *
+   * @return Whether the structType field is set.
+   */
+  boolean hasStructType();
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   *
+   * @return The structType.
+   */
+  com.google.bigtable.admin.v2.Type.Struct getStructType();
+  /**
+   *
+   *
+   * <pre>
+   * Struct
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct struct_type = 7;</code>
+   */
+  com.google.bigtable.admin.v2.Type.StructOrBuilder getStructTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   *
+   * @return Whether the arrayType field is set.
+   */
+  boolean hasArrayType();
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   *
+   * @return The arrayType.
+   */
+  com.google.bigtable.admin.v2.Type.Array getArrayType();
+  /**
+   *
+   *
+   * <pre>
+   * Array
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Array array_type = 3;</code>
+   */
+  com.google.bigtable.admin.v2.Type.ArrayOrBuilder getArrayTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   *
+   * @return Whether the mapType field is set.
+   */
+  boolean hasMapType();
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   *
+   * @return The mapType.
+   */
+  com.google.bigtable.admin.v2.Type.Map getMapType();
+  /**
+   *
+   *
+   * <pre>
+   * Map
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Map map_type = 4;</code>
+   */
+  com.google.bigtable.admin.v2.Type.MapOrBuilder getMapTypeOrBuilder();
 
   com.google.bigtable.admin.v2.Type.KindCase getKindCase();
 }

@@ -67,12 +67,12 @@ public final class RequestStatsProto {
           + ".bigtable.v2.RequestLatencyStats\"c\n\014Requ"
           + "estStats\022E\n\024full_read_stats_view\030\001 \001(\0132%"
           + ".google.bigtable.v2.FullReadStatsViewH\000B"
-          + "\014\n\nstats_viewB\275\001\n\026com.google.bigtable.v2"
-          + "B\021RequestStatsProtoP\001Z:google.golang.org"
-          + "/genproto/googleapis/bigtable/v2;bigtabl"
-          + "e\252\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Cl"
-          + "oud\\Bigtable\\V2\352\002\033Google::Cloud::Bigtabl"
-          + "e::V2b\006proto3"
+          + "\014\n\nstats_viewB\273\001\n\026com.google.bigtable.v2"
+          + "B\021RequestStatsProtoP\001Z8cloud.google.com/"
+          + "go/bigtable/apiv2/bigtablepb;bigtablepb\252"
+          + "\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Clou"
+          + "d\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
