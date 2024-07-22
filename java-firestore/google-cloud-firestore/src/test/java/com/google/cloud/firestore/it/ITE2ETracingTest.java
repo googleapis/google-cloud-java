@@ -75,6 +75,7 @@ import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
+import io.opentelemetry.sdk.trace.export.SpanExporter;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -245,7 +246,7 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
   // Random int generator for trace ID and span ID
   private static Random random;
 
-  private static TraceExporter traceExporter;
+  private static SpanExporter traceExporter;
 
   // Required for reading back traces from Cloud Trace for validation
   private static TraceServiceClient traceClient_v1;
