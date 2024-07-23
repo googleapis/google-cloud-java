@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/googleapis/java-shared-config/compare/v1.9.0...v1.9.1) (2024-07-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.sdk:nativeimage to v24.0.2 ([#867](https://github.com/googleapis/java-shared-config/issues/867)) ([3f45150](https://github.com/googleapis/java-shared-config/commit/3f45150ae55eb7dfc0adf56e2ceb5e93ae513bda))
+
 ## [1.9.0](https://github.com/googleapis/java-shared-config/compare/v1.8.1...v1.9.0) (2024-07-09)
 
 
