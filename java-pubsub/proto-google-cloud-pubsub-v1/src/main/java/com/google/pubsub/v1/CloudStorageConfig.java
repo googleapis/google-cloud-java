@@ -1865,6 +1865,25 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     return maxBytes_;
   }
 
+  public static final int MAX_MESSAGES_FIELD_NUMBER = 8;
+  private long maxMessages_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum number of messages that can be written to a Cloud
+   * Storage file before a new file is created. Min 1000 messages.
+   * </pre>
+   *
+   * <code>int64 max_messages = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxMessages.
+   */
+  @java.lang.Override
+  public long getMaxMessages() {
+    return maxMessages_;
+  }
+
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
   /**
@@ -2002,6 +2021,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     if (maxBytes_ != 0L) {
       output.writeInt64(7, maxBytes_);
     }
+    if (maxMessages_ != 0L) {
+      output.writeInt64(8, maxMessages_);
+    }
     if (state_ != com.google.pubsub.v1.CloudStorageConfig.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, state_);
     }
@@ -2045,6 +2067,9 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     if (maxBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, maxBytes_);
     }
+    if (maxMessages_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, maxMessages_);
+    }
     if (state_ != com.google.pubsub.v1.CloudStorageConfig.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, state_);
     }
@@ -2078,6 +2103,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       if (!getMaxDuration().equals(other.getMaxDuration())) return false;
     }
     if (getMaxBytes() != other.getMaxBytes()) return false;
+    if (getMaxMessages() != other.getMaxMessages()) return false;
     if (state_ != other.state_) return false;
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (!getOutputFormatCase().equals(other.getOutputFormatCase())) return false;
@@ -2116,6 +2142,8 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + MAX_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxBytes());
+    hash = (37 * hash) + MAX_MESSAGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxMessages());
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
@@ -2296,6 +2324,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         maxDurationBuilder_ = null;
       }
       maxBytes_ = 0L;
+      maxMessages_ = 0L;
       state_ = 0;
       serviceAccountEmail_ = "";
       outputFormatCase_ = 0;
@@ -2359,9 +2388,12 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         result.maxBytes_ = maxBytes_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.state_ = state_;
+        result.maxMessages_ = maxMessages_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.serviceAccountEmail_ = serviceAccountEmail_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2449,12 +2481,15 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       if (other.getMaxBytes() != 0L) {
         setMaxBytes(other.getMaxBytes());
       }
+      if (other.getMaxMessages() != 0L) {
+        setMaxMessages(other.getMaxMessages());
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getOutputFormatCase()) {
@@ -2541,10 +2576,16 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000080;
                 break;
               } // case 56
+            case 64:
+              {
+                maxMessages_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 64
             case 72:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 82:
@@ -2556,7 +2597,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
             case 90:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             default:
@@ -3801,6 +3842,62 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private long maxMessages_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of messages that can be written to a Cloud
+     * Storage file before a new file is created. Min 1000 messages.
+     * </pre>
+     *
+     * <code>int64 max_messages = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxMessages.
+     */
+    @java.lang.Override
+    public long getMaxMessages() {
+      return maxMessages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of messages that can be written to a Cloud
+     * Storage file before a new file is created. Min 1000 messages.
+     * </pre>
+     *
+     * <code>int64 max_messages = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxMessages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxMessages(long value) {
+
+      maxMessages_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of messages that can be written to a Cloud
+     * Storage file before a new file is created. Min 1000 messages.
+     * </pre>
+     *
+     * <code>int64 max_messages = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxMessages() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      maxMessages_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      *
@@ -3837,7 +3934,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3880,7 +3977,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3900,7 +3997,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;
@@ -3983,7 +4080,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4005,7 +4102,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearServiceAccountEmail() {
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4032,7 +4129,7 @@ public final class CloudStorageConfig extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

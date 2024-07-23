@@ -291,6 +291,20 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The maximum number of messages that can be written to a Cloud
+   * Storage file before a new file is created. Min 1000 messages.
+   * </pre>
+   *
+   * <code>int64 max_messages = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxMessages.
+   */
+  long getMaxMessages();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. An output-only field that indicates whether or not the
    * subscription can receive messages.
    * </pre>
