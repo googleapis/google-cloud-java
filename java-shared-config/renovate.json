@@ -15,12 +15,6 @@
   "packageRules": [
     {
       "packagePatterns": [
-        "^com.google.auto.value:"
-      ],
-      "enabled": false
-    },
-    {
-      "packagePatterns": [
         "*"
       ],
       "semanticCommitType": "deps",
