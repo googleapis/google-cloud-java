@@ -105,4 +105,39 @@ public interface SourceEnvOrBuilder
    * @return The bytes of the schemaSearchPath at the given index.
    */
   com.google.protobuf.ByteString getSchemaSearchPathBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+   * project-123.metadata_store_123.  If specified, translation will search and
+   * read the required schema information from a metadata store in this dataset.
+   * If metadata store doesn't exist, translation will parse the metadata file
+   * and upload the schema info to a temp table in the dataset to speed up
+   * future translation jobs.
+   * </pre>
+   *
+   * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The metadataStoreDataset.
+   */
+  java.lang.String getMetadataStoreDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+   * project-123.metadata_store_123.  If specified, translation will search and
+   * read the required schema information from a metadata store in this dataset.
+   * If metadata store doesn't exist, translation will parse the metadata file
+   * and upload the schema info to a temp table in the dataset to speed up
+   * future translation jobs.
+   * </pre>
+   *
+   * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for metadataStoreDataset.
+   */
+  com.google.protobuf.ByteString getMetadataStoreDatasetBytes();
 }

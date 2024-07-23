@@ -167,6 +167,71 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         : tableModifiedCadence_;
   }
 
+  public static final int INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER = 3;
+  private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+      inspectTemplateModifiedCadence_;
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   *
+   * @return Whether the inspectTemplateModifiedCadence field is set.
+   */
+  @java.lang.Override
+  public boolean hasInspectTemplateModifiedCadence() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   *
+   * @return The inspectTemplateModifiedCadence.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+      getInspectTemplateModifiedCadence() {
+    return inspectTemplateModifiedCadence_ == null
+        ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
+        : inspectTemplateModifiedCadence_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder
+      getInspectTemplateModifiedCadenceOrBuilder() {
+    return inspectTemplateModifiedCadence_ == null
+        ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
+        : inspectTemplateModifiedCadence_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -187,6 +252,9 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getTableModifiedCadence());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getInspectTemplateModifiedCadence());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -203,6 +271,11 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTableModifiedCadence());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getInspectTemplateModifiedCadence());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +301,12 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     if (hasTableModifiedCadence()) {
       if (!getTableModifiedCadence().equals(other.getTableModifiedCadence())) return false;
     }
+    if (hasInspectTemplateModifiedCadence() != other.hasInspectTemplateModifiedCadence())
+      return false;
+    if (hasInspectTemplateModifiedCadence()) {
+      if (!getInspectTemplateModifiedCadence().equals(other.getInspectTemplateModifiedCadence()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,6 +325,10 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     if (hasTableModifiedCadence()) {
       hash = (37 * hash) + TABLE_MODIFIED_CADENCE_FIELD_NUMBER;
       hash = (53 * hash) + getTableModifiedCadence().hashCode();
+    }
+    if (hasInspectTemplateModifiedCadence()) {
+      hash = (37 * hash) + INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInspectTemplateModifiedCadence().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -392,6 +475,7 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSchemaModifiedCadenceFieldBuilder();
         getTableModifiedCadenceFieldBuilder();
+        getInspectTemplateModifiedCadenceFieldBuilder();
       }
     }
 
@@ -408,6 +492,11 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       if (tableModifiedCadenceBuilder_ != null) {
         tableModifiedCadenceBuilder_.dispose();
         tableModifiedCadenceBuilder_ = null;
+      }
+      inspectTemplateModifiedCadence_ = null;
+      if (inspectTemplateModifiedCadenceBuilder_ != null) {
+        inspectTemplateModifiedCadenceBuilder_.dispose();
+        inspectTemplateModifiedCadenceBuilder_ = null;
       }
       return this;
     }
@@ -459,6 +548,13 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
                 ? tableModifiedCadence_
                 : tableModifiedCadenceBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.inspectTemplateModifiedCadence_ =
+            inspectTemplateModifiedCadenceBuilder_ == null
+                ? inspectTemplateModifiedCadence_
+                : inspectTemplateModifiedCadenceBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -515,6 +611,9 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       if (other.hasTableModifiedCadence()) {
         mergeTableModifiedCadence(other.getTableModifiedCadence());
       }
+      if (other.hasInspectTemplateModifiedCadence()) {
+        mergeInspectTemplateModifiedCadence(other.getInspectTemplateModifiedCadence());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -555,6 +654,14 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getInspectTemplateModifiedCadenceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -963,6 +1070,236 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         tableModifiedCadence_ = null;
       }
       return tableModifiedCadenceBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+        inspectTemplateModifiedCadence_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence,
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
+        inspectTemplateModifiedCadenceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     *
+     * @return Whether the inspectTemplateModifiedCadence field is set.
+     */
+    public boolean hasInspectTemplateModifiedCadence() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     *
+     * @return The inspectTemplateModifiedCadence.
+     */
+    public com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+        getInspectTemplateModifiedCadence() {
+      if (inspectTemplateModifiedCadenceBuilder_ == null) {
+        return inspectTemplateModifiedCadence_ == null
+            ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
+            : inspectTemplateModifiedCadence_;
+      } else {
+        return inspectTemplateModifiedCadenceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public Builder setInspectTemplateModifiedCadence(
+        com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence value) {
+      if (inspectTemplateModifiedCadenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inspectTemplateModifiedCadence_ = value;
+      } else {
+        inspectTemplateModifiedCadenceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public Builder setInspectTemplateModifiedCadence(
+        com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder builderForValue) {
+      if (inspectTemplateModifiedCadenceBuilder_ == null) {
+        inspectTemplateModifiedCadence_ = builderForValue.build();
+      } else {
+        inspectTemplateModifiedCadenceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public Builder mergeInspectTemplateModifiedCadence(
+        com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence value) {
+      if (inspectTemplateModifiedCadenceBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && inspectTemplateModifiedCadence_ != null
+            && inspectTemplateModifiedCadence_
+                != com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+                    .getDefaultInstance()) {
+          getInspectTemplateModifiedCadenceBuilder().mergeFrom(value);
+        } else {
+          inspectTemplateModifiedCadence_ = value;
+        }
+      } else {
+        inspectTemplateModifiedCadenceBuilder_.mergeFrom(value);
+      }
+      if (inspectTemplateModifiedCadence_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public Builder clearInspectTemplateModifiedCadence() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      inspectTemplateModifiedCadence_ = null;
+      if (inspectTemplateModifiedCadenceBuilder_ != null) {
+        inspectTemplateModifiedCadenceBuilder_.dispose();
+        inspectTemplateModifiedCadenceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder
+        getInspectTemplateModifiedCadenceBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getInspectTemplateModifiedCadenceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder
+        getInspectTemplateModifiedCadenceOrBuilder() {
+      if (inspectTemplateModifiedCadenceBuilder_ != null) {
+        return inspectTemplateModifiedCadenceBuilder_.getMessageOrBuilder();
+      } else {
+        return inspectTemplateModifiedCadence_ == null
+            ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
+            : inspectTemplateModifiedCadence_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Governs when to update data profiles when the inspection rules
+     * defined by the `InspectTemplate` change.
+     * If not set, changing the template will not cause a data profile to update.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence,
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
+            com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
+        getInspectTemplateModifiedCadenceFieldBuilder() {
+      if (inspectTemplateModifiedCadenceBuilder_ == null) {
+        inspectTemplateModifiedCadenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence,
+                com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
+                com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>(
+                getInspectTemplateModifiedCadence(), getParentForChildren(), isClean());
+        inspectTemplateModifiedCadence_ = null;
+      }
+      return inspectTemplateModifiedCadenceBuilder_;
     }
 
     @java.lang.Override

@@ -117,7 +117,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of config fields to order by,
+   * Comma-separated list of config fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.
@@ -140,7 +140,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of config fields to order by,
+   * Comma-separated list of config fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.

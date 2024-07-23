@@ -213,4 +213,30 @@ public interface ProjectDataProfileOrBuilder
    * <code>.google.privacy.dlp.v2.ProfileStatus profile_status = 7;</code>
    */
   com.google.privacy.dlp.v2.ProfileStatusOrBuilder getProfileStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of table data profiles generated for this project.
+   * </pre>
+   *
+   * <code>int64 table_data_profile_count = 9;</code>
+   *
+   * @return The tableDataProfileCount.
+   */
+  long getTableDataProfileCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of file store data profiles generated for this project.
+   * </pre>
+   *
+   * <code>int64 file_store_data_profile_count = 10;</code>
+   *
+   * @return The fileStoreDataProfileCount.
+   */
+  long getFileStoreDataProfileCount();
 }

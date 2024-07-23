@@ -72,7 +72,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Time when the event occurred.
    * If not provided, the time when the event was received by the
-   * Error Reporting system will be used.
+   * Error Reporting system is used. If provided, the time must not
+   * exceed the [logs retention
+   * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+   * the past, or be more than 24 hours in the future.
+   * If an invalid time is provided, then an error is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -90,7 +94,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Time when the event occurred.
    * If not provided, the time when the event was received by the
-   * Error Reporting system will be used.
+   * Error Reporting system is used. If provided, the time must not
+   * exceed the [logs retention
+   * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+   * the past, or be more than 24 hours in the future.
+   * If an invalid time is provided, then an error is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -108,7 +116,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Time when the event occurred.
    * If not provided, the time when the event was received by the
-   * Error Reporting system will be used.
+   * Error Reporting system is used. If provided, the time must not
+   * exceed the [logs retention
+   * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+   * the past, or be more than 24 hours in the future.
+   * If an invalid time is provided, then an error is returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -203,9 +215,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
    * * **C#**: Must be the return value of
    * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-   * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-   * and contain the result of
-   * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+   * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+   * error|Warning): "` and contain the result of
+   * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
    * * **Go**: Must be the return value of
    * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
    * </pre>
@@ -249,9 +261,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
    * * **C#**: Must be the return value of
    * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-   * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-   * and contain the result of
-   * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+   * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+   * error|Warning): "` and contain the result of
+   * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
    * * **Go**: Must be the return value of
    * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
    * </pre>
@@ -803,7 +815,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -820,7 +836,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -841,7 +861,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -866,7 +890,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -888,7 +916,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -918,7 +950,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -940,7 +976,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -957,7 +997,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -976,7 +1020,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Time when the event occurred.
      * If not provided, the time when the event was received by the
-     * Error Reporting system will be used.
+     * Error Reporting system is used. If provided, the time must not
+     * exceed the [logs retention
+     * period](https://cloud.google.com/logging/quotas#logs_retention_periods) in
+     * the past, or be more than 24 hours in the future.
+     * If an invalid time is provided, then an error is returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -1233,9 +1281,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
      * * **C#**: Must be the return value of
      * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-     * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-     * and contain the result of
-     * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+     * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+     * error|Warning): "` and contain the result of
+     * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
      * * **Go**: Must be the return value of
      * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
      * </pre>
@@ -1278,9 +1326,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
      * * **C#**: Must be the return value of
      * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-     * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-     * and contain the result of
-     * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+     * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+     * error|Warning): "` and contain the result of
+     * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
      * * **Go**: Must be the return value of
      * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
      * </pre>
@@ -1323,9 +1371,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
      * * **C#**: Must be the return value of
      * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-     * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-     * and contain the result of
-     * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+     * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+     * error|Warning): "` and contain the result of
+     * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
      * * **Go**: Must be the return value of
      * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
      * </pre>
@@ -1367,9 +1415,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
      * * **C#**: Must be the return value of
      * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-     * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-     * and contain the result of
-     * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+     * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+     * error|Warning): "` and contain the result of
+     * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
      * * **Go**: Must be the return value of
      * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
      * </pre>
@@ -1407,9 +1455,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * [`Exception.backtrace`](https://ruby-doc.org/core-2.2.0/Exception.html#method-i-backtrace).
      * * **C#**: Must be the return value of
      * [`Exception.ToString()`](https://msdn.microsoft.com/en-us/library/system.exception.tostring.aspx).
-     * * **PHP**: Must start with `PHP (Notice|Parse error|Fatal error|Warning)`
-     * and contain the result of
-     * [`(string)$exception`](http://php.net/manual/en/exception.tostring.php).
+     * * **PHP**: Must be prefixed with `"PHP (Notice|Parse error|Fatal
+     * error|Warning): "` and contain the result of
+     * [`(string)$exception`](https://php.net/manual/en/exception.tostring.php).
      * * **Go**: Must be the return value of
      * [`runtime.Stack()`](https://golang.org/pkg/runtime/debug/#Stack).
      * </pre>

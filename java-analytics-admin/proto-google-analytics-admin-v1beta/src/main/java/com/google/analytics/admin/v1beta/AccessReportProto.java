@@ -201,10 +201,10 @@ public final class AccessReportProto {
           + "kens_per_project_per_hour\030\005 \001(\01320.google"
           + ".analytics.admin.v1beta.AccessQuotaStatu"
           + "s\"8\n\021AccessQuotaStatus\022\020\n\010consumed\030\001 \001(\005"
-          + "\022\021\n\tremaining\030\002 \001(\005B|\n!com.google.analyt"
-          + "ics.admin.v1betaB\021AccessReportProtoP\001ZBg"
-          + "oogle.golang.org/genproto/googleapis/ana"
-          + "lytics/admin/v1beta;adminb\006proto3"
+          + "\022\021\n\tremaining\030\002 \001(\005Bw\n!com.google.analyt"
+          + "ics.admin.v1betaB\021AccessReportProtoP\001Z=c"
+          + "loud.google.com/go/analytics/admin/apiv1"
+          + "beta/adminpb;adminpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

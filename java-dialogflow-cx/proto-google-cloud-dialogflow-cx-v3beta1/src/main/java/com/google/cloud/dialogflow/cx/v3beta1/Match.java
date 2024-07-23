@@ -149,6 +149,16 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The query was matched to a Knowledge Connector answer.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_CONNECTOR = 8;</code>
+     */
+    KNOWLEDGE_CONNECTOR(8),
+    /**
+     *
+     *
+     * <pre>
      * The query was handled by a
      * [`Playbook`][google.cloud.dialogflow.cx.v3beta1.Playbook].
      * </pre>
@@ -233,6 +243,16 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The query was matched to a Knowledge Connector answer.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_CONNECTOR = 8;</code>
+     */
+    public static final int KNOWLEDGE_CONNECTOR_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
      * The query was handled by a
      * [`Playbook`][google.cloud.dialogflow.cx.v3beta1.Playbook].
      * </pre>
@@ -279,6 +299,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           return NO_INPUT;
         case 6:
           return EVENT;
+        case 8:
+          return KNOWLEDGE_CONNECTOR;
         case 9:
           return PLAYBOOK;
         default:

@@ -30,8 +30,13 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * <pre>
    * Required. Parent resource name.
    *
-   * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * + Organizations scope:
+   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -53,8 +58,13 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * <pre>
    * Required. Parent resource name.
    *
-   * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * + Organizations scope:
+   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location

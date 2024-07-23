@@ -1202,7 +1202,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=419
+   *     google/cloud/speech/v2/cloud_speech.proto;l=420
    * @return Whether the updateConfigRequest field is set.
    */
   @java.lang.Override
@@ -1222,7 +1222,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=419
+   *     google/cloud/speech/v2/cloud_speech.proto;l=420
    * @return The updateConfigRequest.
    */
   @java.lang.Override
@@ -6079,7 +6079,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=419
+     *     google/cloud/speech/v2/cloud_speech.proto;l=420
      * @return Whether the updateConfigRequest field is set.
      */
     @java.lang.Override
@@ -6099,7 +6099,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=419
+     *     google/cloud/speech/v2/cloud_speech.proto;l=420
      * @return The updateConfigRequest.
      */
     @java.lang.Override

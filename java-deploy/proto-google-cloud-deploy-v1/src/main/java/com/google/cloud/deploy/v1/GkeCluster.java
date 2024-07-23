@@ -40,6 +40,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
 
   private GkeCluster() {
     cluster_ = "";
+    proxyUrl_ = "";
   }
 
   @java.lang.Override
@@ -145,6 +146,61 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     return internalIp_;
   }
 
+  public static final int PROXY_URL_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyUrl_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, used to configure a
+   * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+   * to the Kubernetes server.
+   * </pre>
+   *
+   * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The proxyUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getProxyUrl() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, used to configure a
+   * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+   * to the Kubernetes server.
+   * </pre>
+   *
+   * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for proxyUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProxyUrlBytes() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      proxyUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -165,6 +221,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     if (internalIp_ != false) {
       output.writeBool(2, internalIp_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proxyUrl_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -179,6 +238,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (internalIp_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, internalIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proxyUrl_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -197,6 +259,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
 
     if (!getCluster().equals(other.getCluster())) return false;
     if (getInternalIp() != other.getInternalIp()) return false;
+    if (!getProxyUrl().equals(other.getProxyUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -212,6 +275,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCluster().hashCode();
     hash = (37 * hash) + INTERNAL_IP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInternalIp());
+    hash = (37 * hash) + PROXY_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getProxyUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -352,6 +417,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       cluster_ = "";
       internalIp_ = false;
+      proxyUrl_ = "";
       return this;
     }
 
@@ -393,6 +459,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.internalIp_ = internalIp_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.proxyUrl_ = proxyUrl_;
       }
     }
 
@@ -449,6 +518,11 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       if (other.getInternalIp() != false) {
         setInternalIp(other.getInternalIp());
       }
+      if (!other.getProxyUrl().isEmpty()) {
+        proxyUrl_ = other.proxyUrl_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -487,6 +561,12 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                proxyUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -697,6 +777,122 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInternalIp() {
       bitField0_ = (bitField0_ & ~0x00000002);
       internalIp_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object proxyUrl_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, used to configure a
+     * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+     * to the Kubernetes server.
+     * </pre>
+     *
+     * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The proxyUrl.
+     */
+    public java.lang.String getProxyUrl() {
+      java.lang.Object ref = proxyUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, used to configure a
+     * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+     * to the Kubernetes server.
+     * </pre>
+     *
+     * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for proxyUrl.
+     */
+    public com.google.protobuf.ByteString getProxyUrlBytes() {
+      java.lang.Object ref = proxyUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        proxyUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, used to configure a
+     * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+     * to the Kubernetes server.
+     * </pre>
+     *
+     * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, used to configure a
+     * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+     * to the Kubernetes server.
+     * </pre>
+     *
+     * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyUrl() {
+      proxyUrl_ = getDefaultInstance().getProxyUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, used to configure a
+     * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+     * to the Kubernetes server.
+     * </pre>
+     *
+     * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

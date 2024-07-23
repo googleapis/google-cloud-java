@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -61,6 +62,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -70,6 +72,8 @@ import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
@@ -77,6 +81,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
@@ -199,6 +204,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       updateSpaceReadStateSettings;
   private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings;
+  private final UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
+  private final PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings;
 
   private static final PagedListDescriptor<ListMessagesRequest, ListMessagesResponse, Message>
       LIST_MESSAGES_PAGE_STR_DESC =
@@ -347,6 +356,45 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>
+      LIST_SPACE_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSpaceEventsRequest injectToken(
+                ListSpaceEventsRequest payload, String token) {
+              return ListSpaceEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSpaceEventsRequest injectPageSize(
+                ListSpaceEventsRequest payload, int pageSize) {
+              return ListSpaceEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSpaceEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSpaceEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SpaceEvent> extractResources(ListSpaceEventsResponse payload) {
+              return payload.getSpaceEventsList() == null
+                  ? ImmutableList.<SpaceEvent>of()
+                  : payload.getSpaceEventsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       LIST_MESSAGES_PAGE_STR_FACT =
@@ -412,6 +460,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> pageContext =
                   PageContext.create(callable, LIST_REACTIONS_PAGE_STR_DESC, request, context);
               return ListReactionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      LIST_SPACE_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSpaceEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> callable,
+                ListSpaceEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSpaceEventsResponse> futureResponse) {
+              PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> pageContext =
+                  PageContext.create(callable, LIST_SPACE_EVENTS_PAGE_STR_DESC, request, context);
+              return ListSpaceEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -554,6 +619,18 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return getThreadReadStateSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSpaceEvent. */
+  public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+    return getSpaceEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSpaceEvents. */
+  public PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings() {
+    return listSpaceEventsSettings;
+  }
+
   public ChatServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -690,6 +767,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
     updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
+    getSpaceEventSettings = settingsBuilder.getSpaceEventSettings().build();
+    listSpaceEventsSettings = settingsBuilder.listSpaceEventsSettings().build();
   }
 
   /** Builder for ChatServiceStubSettings. */
@@ -738,6 +817,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         updateSpaceReadStateSettings;
     private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings;
+    private final UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
+    private final PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -802,6 +885,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSpaceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSpaceEventsSettings = PagedCallSettings.newBuilder(LIST_SPACE_EVENTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -830,7 +915,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteReactionSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
-              getThreadReadStateSettings);
+              getThreadReadStateSettings,
+              getSpaceEventSettings,
+              listSpaceEventsSettings);
       initDefaults(this);
     }
 
@@ -863,6 +950,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
       updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
+      getSpaceEventSettings = settings.getSpaceEventSettings.toBuilder();
+      listSpaceEventsSettings = settings.listSpaceEventsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -891,7 +980,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteReactionSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
-              getThreadReadStateSettings);
+              getThreadReadStateSettings,
+              getSpaceEventSettings,
+              listSpaceEventsSettings);
     }
 
     private static Builder createDefault() {
@@ -1046,6 +1137,16 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .getThreadReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSpaceEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1210,6 +1311,18 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings() {
       return getThreadReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceEvent. */
+    public UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+      return getSpaceEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSpaceEvents. */
+    public PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings() {
+      return listSpaceEventsSettings;
     }
 
     @Override

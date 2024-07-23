@@ -75,11 +75,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/{projectID}`, where `{projectID}` is the
-   * [Google Cloud Platform project
-   * ID](https://support.google.com/cloud/answer/6158840).
+   * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+   * where `{projectID}` is the [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+   * a Cloud region.
    *
-   * Example: `projects/my-project-123`.
+   * Examples: `projects/my-project-123`,
+   * `projects/my-project-123/locations/global`.
+   *
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+   * the default when unspecified.
    * </pre>
    *
    * <code>
@@ -105,11 +111,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/{projectID}`, where `{projectID}` is the
-   * [Google Cloud Platform project
-   * ID](https://support.google.com/cloud/answer/6158840).
+   * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+   * where `{projectID}` is the [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+   * a Cloud region.
    *
-   * Example: `projects/my-project-123`.
+   * Examples: `projects/my-project-123`,
+   * `projects/my-project-123/locations/global`.
+   *
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+   * the default when unspecified.
    * </pre>
    *
    * <code>
@@ -140,6 +152,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The group for which events shall be returned.
+   * The `group_id` is a unique identifier for a particular error group. The
+   * identifier is derived from key parts of the error-log content and is
+   * treated as Service Data. For information about how Service Data
+   * is handled, see [Google Cloud Privacy
+   * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
    * </pre>
    *
    * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -163,6 +180,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The group for which events shall be returned.
+   * The `group_id` is a unique identifier for a particular error group. The
+   * identifier is derived from key parts of the error-log content and is
+   * treated as Service Data. For information about how Service Data
+   * is handled, see [Google Cloud Privacy
+   * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
    * </pre>
    *
    * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -879,11 +901,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/{projectID}`, where `{projectID}` is the
-     * [Google Cloud Platform project
-     * ID](https://support.google.com/cloud/answer/6158840).
+     * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+     * where `{projectID}` is the [Google Cloud Platform project
+     * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+     * a Cloud region.
      *
-     * Example: `projects/my-project-123`.
+     * Examples: `projects/my-project-123`,
+     * `projects/my-project-123/locations/global`.
+     *
+     * For a list of supported locations, see [Supported
+     * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+     * the default when unspecified.
      * </pre>
      *
      * <code>
@@ -908,11 +936,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/{projectID}`, where `{projectID}` is the
-     * [Google Cloud Platform project
-     * ID](https://support.google.com/cloud/answer/6158840).
+     * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+     * where `{projectID}` is the [Google Cloud Platform project
+     * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+     * a Cloud region.
      *
-     * Example: `projects/my-project-123`.
+     * Examples: `projects/my-project-123`,
+     * `projects/my-project-123/locations/global`.
+     *
+     * For a list of supported locations, see [Supported
+     * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+     * the default when unspecified.
      * </pre>
      *
      * <code>
@@ -937,11 +971,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/{projectID}`, where `{projectID}` is the
-     * [Google Cloud Platform project
-     * ID](https://support.google.com/cloud/answer/6158840).
+     * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+     * where `{projectID}` is the [Google Cloud Platform project
+     * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+     * a Cloud region.
      *
-     * Example: `projects/my-project-123`.
+     * Examples: `projects/my-project-123`,
+     * `projects/my-project-123/locations/global`.
+     *
+     * For a list of supported locations, see [Supported
+     * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+     * the default when unspecified.
      * </pre>
      *
      * <code>
@@ -965,11 +1005,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/{projectID}`, where `{projectID}` is the
-     * [Google Cloud Platform project
-     * ID](https://support.google.com/cloud/answer/6158840).
+     * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+     * where `{projectID}` is the [Google Cloud Platform project
+     * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+     * a Cloud region.
      *
-     * Example: `projects/my-project-123`.
+     * Examples: `projects/my-project-123`,
+     * `projects/my-project-123/locations/global`.
+     *
+     * For a list of supported locations, see [Supported
+     * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+     * the default when unspecified.
      * </pre>
      *
      * <code>
@@ -989,11 +1035,17 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as `projects/{projectID}`, where `{projectID}` is the
-     * [Google Cloud Platform project
-     * ID](https://support.google.com/cloud/answer/6158840).
+     * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+     * where `{projectID}` is the [Google Cloud Platform project
+     * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+     * a Cloud region.
      *
-     * Example: `projects/my-project-123`.
+     * Examples: `projects/my-project-123`,
+     * `projects/my-project-123/locations/global`.
+     *
+     * For a list of supported locations, see [Supported
+     * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+     * the default when unspecified.
      * </pre>
      *
      * <code>
@@ -1020,6 +1072,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The group for which events shall be returned.
+     * The `group_id` is a unique identifier for a particular error group. The
+     * identifier is derived from key parts of the error-log content and is
+     * treated as Service Data. For information about how Service Data
+     * is handled, see [Google Cloud Privacy
+     * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
      * </pre>
      *
      * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1042,6 +1099,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The group for which events shall be returned.
+     * The `group_id` is a unique identifier for a particular error group. The
+     * identifier is derived from key parts of the error-log content and is
+     * treated as Service Data. For information about how Service Data
+     * is handled, see [Google Cloud Privacy
+     * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
      * </pre>
      *
      * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1064,6 +1126,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The group for which events shall be returned.
+     * The `group_id` is a unique identifier for a particular error group. The
+     * identifier is derived from key parts of the error-log content and is
+     * treated as Service Data. For information about how Service Data
+     * is handled, see [Google Cloud Privacy
+     * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
      * </pre>
      *
      * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1085,6 +1152,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The group for which events shall be returned.
+     * The `group_id` is a unique identifier for a particular error group. The
+     * identifier is derived from key parts of the error-log content and is
+     * treated as Service Data. For information about how Service Data
+     * is handled, see [Google Cloud Privacy
+     * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
      * </pre>
      *
      * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1102,6 +1174,11 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The group for which events shall be returned.
+     * The `group_id` is a unique identifier for a particular error group. The
+     * identifier is derived from key parts of the error-log content and is
+     * treated as Service Data. For information about how Service Data
+     * is handled, see [Google Cloud Privacy
+     * Notice](https://cloud.google.com/terms/cloud-privacy-notice).
      * </pre>
      *
      * <code>string group_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

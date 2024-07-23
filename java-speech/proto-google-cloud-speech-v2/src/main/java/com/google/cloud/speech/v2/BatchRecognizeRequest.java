@@ -427,7 +427,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
-   * The maximum number of files allowed to be specified is 5.
+   * The maximum number of files allowed to be specified is 15.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -441,7 +441,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
-   * The maximum number of files allowed to be specified is 5.
+   * The maximum number of files allowed to be specified is 15.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -456,7 +456,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
-   * The maximum number of files allowed to be specified is 5.
+   * The maximum number of files allowed to be specified is 15.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -470,7 +470,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
-   * The maximum number of files allowed to be specified is 5.
+   * The maximum number of files allowed to be specified is 15.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -484,7 +484,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
-   * The maximum number of files allowed to be specified is 5.
+   * The maximum number of files allowed to be specified is 15.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1823,7 +1823,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1840,7 +1840,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1857,7 +1857,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1874,7 +1874,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1898,7 +1898,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1919,7 +1919,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1942,7 +1942,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1966,7 +1966,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1987,7 +1987,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2008,7 +2008,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2030,7 +2030,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2050,7 +2050,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2070,7 +2070,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2084,7 +2084,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2102,7 +2102,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2120,7 +2120,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2134,7 +2134,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -2150,7 +2150,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
-     * The maximum number of files allowed to be specified is 5.
+     * The maximum number of files allowed to be specified is 15.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>

@@ -99,6 +99,16 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Unable to determine sensitivity.
+     * </pre>
+     *
+     * <code>SENSITIVITY_UNKNOWN = 12;</code>
+     */
+    SENSITIVITY_UNKNOWN(12),
+    /**
+     *
+     *
+     * <pre>
      * Medium risk. Contains personally identifiable information (PII),
      * potentially sensitive data, or fields with free-text data that are at a
      * higher risk of having intermittent sensitive data. Consider limiting
@@ -145,6 +155,16 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * <code>SENSITIVITY_LOW = 10;</code>
      */
     public static final int SENSITIVITY_LOW_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Unable to determine sensitivity.
+     * </pre>
+     *
+     * <code>SENSITIVITY_UNKNOWN = 12;</code>
+     */
+    public static final int SENSITIVITY_UNKNOWN_VALUE = 12;
     /**
      *
      *
@@ -200,6 +220,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
           return SENSITIVITY_SCORE_UNSPECIFIED;
         case 10:
           return SENSITIVITY_LOW;
+        case 12:
+          return SENSITIVITY_UNKNOWN;
         case 20:
           return SENSITIVITY_MODERATE;
         case 30:

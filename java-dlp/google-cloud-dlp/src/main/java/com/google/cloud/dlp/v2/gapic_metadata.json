@@ -52,6 +52,9 @@
             "DeleteDlpJob": {
               "methods": ["deleteDlpJob", "deleteDlpJob", "deleteDlpJob", "deleteDlpJobCallable"]
             },
+            "DeleteFileStoreDataProfile": {
+              "methods": ["deleteFileStoreDataProfile", "deleteFileStoreDataProfile", "deleteFileStoreDataProfile", "deleteFileStoreDataProfileCallable"]
+            },
             "DeleteInspectTemplate": {
               "methods": ["deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplateCallable"]
             },
@@ -81,6 +84,9 @@
             },
             "GetDlpJob": {
               "methods": ["getDlpJob", "getDlpJob", "getDlpJob", "getDlpJobCallable"]
+            },
+            "GetFileStoreDataProfile": {
+              "methods": ["getFileStoreDataProfile", "getFileStoreDataProfile", "getFileStoreDataProfile", "getFileStoreDataProfileCallable"]
             },
             "GetInspectTemplate": {
               "methods": ["getInspectTemplate", "getInspectTemplate", "getInspectTemplate", "getInspectTemplateCallable"]
@@ -120,6 +126,9 @@
             },
             "ListDlpJobs": {
               "methods": ["listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobsPagedCallable", "listDlpJobsCallable"]
+            },
+            "ListFileStoreDataProfiles": {
+              "methods": ["listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfilesPagedCallable", "listFileStoreDataProfilesCallable"]
             },
             "ListInfoTypes": {
               "methods": ["listInfoTypes", "listInfoTypes", "listInfoTypesCallable"]

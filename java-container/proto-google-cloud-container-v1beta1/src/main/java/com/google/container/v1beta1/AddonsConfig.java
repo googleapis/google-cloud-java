@@ -860,6 +860,62 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : statefulHaConfig_;
   }
 
+  public static final int RAY_OPERATOR_CONFIG_FIELD_NUMBER = 21;
+  private com.google.container.v1beta1.RayOperatorConfig rayOperatorConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayOperatorConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRayOperatorConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayOperatorConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.RayOperatorConfig getRayOperatorConfig() {
+    return rayOperatorConfig_ == null
+        ? com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()
+        : rayOperatorConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder() {
+    return rayOperatorConfig_ == null
+        ? com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()
+        : rayOperatorConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -915,6 +971,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(18, getStatefulHaConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(21, getRayOperatorConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -975,6 +1034,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getStatefulHaConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getRayOperatorConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1051,6 +1113,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasStatefulHaConfig()) {
       if (!getStatefulHaConfig().equals(other.getStatefulHaConfig())) return false;
     }
+    if (hasRayOperatorConfig() != other.hasRayOperatorConfig()) return false;
+    if (hasRayOperatorConfig()) {
+      if (!getRayOperatorConfig().equals(other.getRayOperatorConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1117,6 +1183,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasStatefulHaConfig()) {
       hash = (37 * hash) + STATEFUL_HA_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStatefulHaConfig().hashCode();
+    }
+    if (hasRayOperatorConfig()) {
+      hash = (37 * hash) + RAY_OPERATOR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRayOperatorConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1273,6 +1343,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getGkeBackupAgentConfigFieldBuilder();
         getGcsFuseCsiDriverConfigFieldBuilder();
         getStatefulHaConfigFieldBuilder();
+        getRayOperatorConfigFieldBuilder();
       }
     }
 
@@ -1349,6 +1420,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (statefulHaConfigBuilder_ != null) {
         statefulHaConfigBuilder_.dispose();
         statefulHaConfigBuilder_ = null;
+      }
+      rayOperatorConfig_ = null;
+      if (rayOperatorConfigBuilder_ != null) {
+        rayOperatorConfigBuilder_.dispose();
+        rayOperatorConfigBuilder_ = null;
       }
       return this;
     }
@@ -1474,6 +1550,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
             statefulHaConfigBuilder_ == null ? statefulHaConfig_ : statefulHaConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.rayOperatorConfig_ =
+            rayOperatorConfigBuilder_ == null
+                ? rayOperatorConfig_
+                : rayOperatorConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1563,6 +1646,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatefulHaConfig()) {
         mergeStatefulHaConfig(other.getStatefulHaConfig());
+      }
+      if (other.hasRayOperatorConfig()) {
+        mergeRayOperatorConfig(other.getRayOperatorConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1685,6 +1771,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 146
+            case 170:
+              {
+                input.readMessage(
+                    getRayOperatorConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4603,6 +4696,211 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         statefulHaConfig_ = null;
       }
       return statefulHaConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.RayOperatorConfig rayOperatorConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.RayOperatorConfig,
+            com.google.container.v1beta1.RayOperatorConfig.Builder,
+            com.google.container.v1beta1.RayOperatorConfigOrBuilder>
+        rayOperatorConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rayOperatorConfig field is set.
+     */
+    public boolean hasRayOperatorConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rayOperatorConfig.
+     */
+    public com.google.container.v1beta1.RayOperatorConfig getRayOperatorConfig() {
+      if (rayOperatorConfigBuilder_ == null) {
+        return rayOperatorConfig_ == null
+            ? com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()
+            : rayOperatorConfig_;
+      } else {
+        return rayOperatorConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayOperatorConfig(com.google.container.v1beta1.RayOperatorConfig value) {
+      if (rayOperatorConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rayOperatorConfig_ = value;
+      } else {
+        rayOperatorConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayOperatorConfig(
+        com.google.container.v1beta1.RayOperatorConfig.Builder builderForValue) {
+      if (rayOperatorConfigBuilder_ == null) {
+        rayOperatorConfig_ = builderForValue.build();
+      } else {
+        rayOperatorConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRayOperatorConfig(com.google.container.v1beta1.RayOperatorConfig value) {
+      if (rayOperatorConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && rayOperatorConfig_ != null
+            && rayOperatorConfig_
+                != com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()) {
+          getRayOperatorConfigBuilder().mergeFrom(value);
+        } else {
+          rayOperatorConfig_ = value;
+        }
+      } else {
+        rayOperatorConfigBuilder_.mergeFrom(value);
+      }
+      if (rayOperatorConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRayOperatorConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      rayOperatorConfig_ = null;
+      if (rayOperatorConfigBuilder_ != null) {
+        rayOperatorConfigBuilder_.dispose();
+        rayOperatorConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.RayOperatorConfig.Builder getRayOperatorConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getRayOperatorConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder() {
+      if (rayOperatorConfigBuilder_ != null) {
+        return rayOperatorConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return rayOperatorConfig_ == null
+            ? com.google.container.v1beta1.RayOperatorConfig.getDefaultInstance()
+            : rayOperatorConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Ray Operator addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.RayOperatorConfig,
+            com.google.container.v1beta1.RayOperatorConfig.Builder,
+            com.google.container.v1beta1.RayOperatorConfigOrBuilder>
+        getRayOperatorConfigFieldBuilder() {
+      if (rayOperatorConfigBuilder_ == null) {
+        rayOperatorConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.RayOperatorConfig,
+                com.google.container.v1beta1.RayOperatorConfig.Builder,
+                com.google.container.v1beta1.RayOperatorConfigOrBuilder>(
+                getRayOperatorConfig(), getParentForChildren(), isClean());
+        rayOperatorConfig_ = null;
+      }
+      return rayOperatorConfigBuilder_;
     }
 
     @java.lang.Override

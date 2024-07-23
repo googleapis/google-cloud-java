@@ -359,7 +359,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name to the project data profile for this table.
+   * The resource name of the project data profile for this table.
    * </pre>
    *
    * <code>string project_data_profile = 2;</code>
@@ -382,7 +382,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name to the project data profile for this table.
+   * The resource name of the project data profile for this table.
    * </pre>
    *
    * <code>string project_data_profile = 2;</code>
@@ -2950,7 +2950,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name to the project data profile for this table.
+     * The resource name of the project data profile for this table.
      * </pre>
      *
      * <code>string project_data_profile = 2;</code>
@@ -2972,7 +2972,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name to the project data profile for this table.
+     * The resource name of the project data profile for this table.
      * </pre>
      *
      * <code>string project_data_profile = 2;</code>
@@ -2994,7 +2994,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name to the project data profile for this table.
+     * The resource name of the project data profile for this table.
      * </pre>
      *
      * <code>string project_data_profile = 2;</code>
@@ -3015,7 +3015,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name to the project data profile for this table.
+     * The resource name of the project data profile for this table.
      * </pre>
      *
      * <code>string project_data_profile = 2;</code>
@@ -3032,7 +3032,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name to the project data profile for this table.
+     * The resource name of the project data profile for this table.
      * </pre>
      *
      * <code>string project_data_profile = 2;</code>

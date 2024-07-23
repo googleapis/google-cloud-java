@@ -79,7 +79,8 @@ public interface ErrorGroupStatsOrBuilder
    * <pre>
    * Approximate number of affected users in the given group that
    * match the filter criteria.
-   * Users are distinguished by data in the `ErrorContext` of the
+   * Users are distinguished by data in the [ErrorContext]
+   * [google.devtools.clouderrorreporting.v1beta1.ErrorContext] of the
    * individual error events, such as their login name or their remote
    * IP address in case of HTTP requests.
    * The number of affected users can be zero even if the number of

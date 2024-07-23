@@ -24,7 +24,7 @@ package com.google.cloud.deploy.v1;
  *
  * <pre>
  * RepairPhase tracks the repair attempts that have been made for
- * each `RepairMode` specified in the `Automation` resource.
+ * each `RepairPhaseConfig` specified in the `Automation` resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.RepairPhase}
@@ -418,7 +418,7 @@ public final class RepairPhase extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * RepairPhase tracks the repair attempts that have been made for
-   * each `RepairMode` specified in the `Automation` resource.
+   * each `RepairPhaseConfig` specified in the `Automation` resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.RepairPhase}

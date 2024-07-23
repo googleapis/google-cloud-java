@@ -216,6 +216,36 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>TSV = 13;</code>
      */
     TSV(13),
+    /**
+     *
+     *
+     * <pre>
+     * Audio file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>AUDIO = 15;</code>
+     */
+    AUDIO(15),
+    /**
+     *
+     *
+     * <pre>
+     * Video file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>VIDEO = 16;</code>
+     */
+    VIDEO(16),
+    /**
+     *
+     *
+     * <pre>
+     * Executable file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>EXECUTABLE = 17;</code>
+     */
+    EXECUTABLE(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -359,6 +389,36 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>TSV = 13;</code>
      */
     public static final int TSV_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Audio file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>AUDIO = 15;</code>
+     */
+    public static final int AUDIO_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * Video file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>VIDEO = 16;</code>
+     */
+    public static final int VIDEO_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * Executable file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>EXECUTABLE = 17;</code>
+     */
+    public static final int EXECUTABLE_VALUE = 17;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -412,6 +472,12 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return CSV;
         case 13:
           return TSV;
+        case 15:
+          return AUDIO;
+        case 16:
+          return VIDEO;
+        case 17:
+          return EXECUTABLE;
         default:
           return null;
       }

@@ -34,13 +34,13 @@ public interface ListInspectTemplatesRequestOrBuilder
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
+   * + Projects scope, location specified:
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Projects scope, no location specified (defaults to global):
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
+   * + Organizations scope, location specified:
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Organizations scope, no location specified (defaults to global):
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
@@ -67,13 +67,13 @@ public interface ListInspectTemplatesRequestOrBuilder
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
+   * + Projects scope, location specified:
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Projects scope, no location specified (defaults to global):
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
+   * + Organizations scope, location specified:
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Organizations scope, no location specified (defaults to global):
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
@@ -136,7 +136,7 @@ public interface ListInspectTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of fields to order by,
+   * Comma-separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.
@@ -160,7 +160,7 @@ public interface ListInspectTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of fields to order by,
+   * Comma-separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.

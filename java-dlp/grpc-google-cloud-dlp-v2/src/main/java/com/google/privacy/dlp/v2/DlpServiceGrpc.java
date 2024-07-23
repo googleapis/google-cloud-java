@@ -1931,6 +1931,152 @@ public final class DlpServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest,
+          com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+      getListFileStoreDataProfilesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFileStoreDataProfiles",
+      requestType = com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest.class,
+      responseType = com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest,
+          com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+      getListFileStoreDataProfilesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest,
+            com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+        getListFileStoreDataProfilesMethod;
+    if ((getListFileStoreDataProfilesMethod = DlpServiceGrpc.getListFileStoreDataProfilesMethod)
+        == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getListFileStoreDataProfilesMethod = DlpServiceGrpc.getListFileStoreDataProfilesMethod)
+            == null) {
+          DlpServiceGrpc.getListFileStoreDataProfilesMethod =
+              getListFileStoreDataProfilesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest,
+                          com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListFileStoreDataProfiles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("ListFileStoreDataProfiles"))
+                      .build();
+        }
+      }
+    }
+    return getListFileStoreDataProfilesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest,
+          com.google.privacy.dlp.v2.FileStoreDataProfile>
+      getGetFileStoreDataProfileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFileStoreDataProfile",
+      requestType = com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest.class,
+      responseType = com.google.privacy.dlp.v2.FileStoreDataProfile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest,
+          com.google.privacy.dlp.v2.FileStoreDataProfile>
+      getGetFileStoreDataProfileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest,
+            com.google.privacy.dlp.v2.FileStoreDataProfile>
+        getGetFileStoreDataProfileMethod;
+    if ((getGetFileStoreDataProfileMethod = DlpServiceGrpc.getGetFileStoreDataProfileMethod)
+        == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getGetFileStoreDataProfileMethod = DlpServiceGrpc.getGetFileStoreDataProfileMethod)
+            == null) {
+          DlpServiceGrpc.getGetFileStoreDataProfileMethod =
+              getGetFileStoreDataProfileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest,
+                          com.google.privacy.dlp.v2.FileStoreDataProfile>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetFileStoreDataProfile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("GetFileStoreDataProfile"))
+                      .build();
+        }
+      }
+    }
+    return getGetFileStoreDataProfileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest, com.google.protobuf.Empty>
+      getDeleteFileStoreDataProfileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFileStoreDataProfile",
+      requestType = com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest, com.google.protobuf.Empty>
+      getDeleteFileStoreDataProfileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest, com.google.protobuf.Empty>
+        getDeleteFileStoreDataProfileMethod;
+    if ((getDeleteFileStoreDataProfileMethod = DlpServiceGrpc.getDeleteFileStoreDataProfileMethod)
+        == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getDeleteFileStoreDataProfileMethod =
+                DlpServiceGrpc.getDeleteFileStoreDataProfileMethod)
+            == null) {
+          DlpServiceGrpc.getDeleteFileStoreDataProfileMethod =
+              getDeleteFileStoreDataProfileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteFileStoreDataProfile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("DeleteFileStoreDataProfile"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFileStoreDataProfileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.privacy.dlp.v2.GetTableDataProfileRequest,
           com.google.privacy.dlp.v2.TableDataProfile>
       getGetTableDataProfileMethod;
@@ -3201,6 +3347,51 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Lists file store data profiles for an organization.
+     * </pre>
+     */
+    default void listFileStoreDataProfiles(
+        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListFileStoreDataProfilesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file store data profile.
+     * </pre>
+     */
+    default void getFileStoreDataProfile(
+        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.FileStoreDataProfile>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetFileStoreDataProfileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a FileStoreDataProfile. Will not prevent the profile from being
+     * regenerated if the resource is still included in a discovery configuration.
+     * </pre>
+     */
+    default void deleteFileStoreDataProfile(
+        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteFileStoreDataProfileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a table data profile.
      * </pre>
      */
@@ -4209,6 +4400,57 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Lists file store data profiles for an organization.
+     * </pre>
+     */
+    public void listFileStoreDataProfiles(
+        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListFileStoreDataProfilesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file store data profile.
+     * </pre>
+     */
+    public void getFileStoreDataProfile(
+        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.FileStoreDataProfile>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetFileStoreDataProfileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a FileStoreDataProfile. Will not prevent the profile from being
+     * regenerated if the resource is still included in a discovery configuration.
+     * </pre>
+     */
+    public void deleteFileStoreDataProfile(
+        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFileStoreDataProfileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a table data profile.
      * </pre>
      */
@@ -5079,6 +5321,46 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Lists file store data profiles for an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse listFileStoreDataProfiles(
+        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFileStoreDataProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file store data profile.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreDataProfile(
+        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFileStoreDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a FileStoreDataProfile. Will not prevent the profile from being
+     * regenerated if the resource is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFileStoreDataProfile(
+        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFileStoreDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a table data profile.
      * </pre>
      */
@@ -5943,6 +6225,50 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Lists file store data profiles for an organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>
+        listFileStoreDataProfiles(
+            com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFileStoreDataProfilesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file store data profile.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.FileStoreDataProfile>
+        getFileStoreDataProfile(com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetFileStoreDataProfileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a FileStoreDataProfile. Will not prevent the profile from being
+     * regenerated if the resource is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteFileStoreDataProfile(
+            com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFileStoreDataProfileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a table data profile.
      * </pre>
      */
@@ -6133,17 +6459,20 @@ public final class DlpServiceGrpc {
   private static final int METHODID_LIST_TABLE_DATA_PROFILES = 38;
   private static final int METHODID_LIST_COLUMN_DATA_PROFILES = 39;
   private static final int METHODID_GET_PROJECT_DATA_PROFILE = 40;
-  private static final int METHODID_GET_TABLE_DATA_PROFILE = 41;
-  private static final int METHODID_GET_COLUMN_DATA_PROFILE = 42;
-  private static final int METHODID_DELETE_TABLE_DATA_PROFILE = 43;
-  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 44;
-  private static final int METHODID_FINISH_DLP_JOB = 45;
-  private static final int METHODID_CREATE_CONNECTION = 46;
-  private static final int METHODID_GET_CONNECTION = 47;
-  private static final int METHODID_LIST_CONNECTIONS = 48;
-  private static final int METHODID_SEARCH_CONNECTIONS = 49;
-  private static final int METHODID_DELETE_CONNECTION = 50;
-  private static final int METHODID_UPDATE_CONNECTION = 51;
+  private static final int METHODID_LIST_FILE_STORE_DATA_PROFILES = 41;
+  private static final int METHODID_GET_FILE_STORE_DATA_PROFILE = 42;
+  private static final int METHODID_DELETE_FILE_STORE_DATA_PROFILE = 43;
+  private static final int METHODID_GET_TABLE_DATA_PROFILE = 44;
+  private static final int METHODID_GET_COLUMN_DATA_PROFILE = 45;
+  private static final int METHODID_DELETE_TABLE_DATA_PROFILE = 46;
+  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 47;
+  private static final int METHODID_FINISH_DLP_JOB = 48;
+  private static final int METHODID_CREATE_CONNECTION = 49;
+  private static final int METHODID_GET_CONNECTION = 50;
+  private static final int METHODID_LIST_CONNECTIONS = 51;
+  private static final int METHODID_SEARCH_CONNECTIONS = 52;
+  private static final int METHODID_DELETE_CONNECTION = 53;
+  private static final int METHODID_UPDATE_CONNECTION = 54;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6397,6 +6726,24 @@ public final class DlpServiceGrpc {
               (com.google.privacy.dlp.v2.GetProjectDataProfileRequest) request,
               (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ProjectDataProfile>)
                   responseObserver);
+          break;
+        case METHODID_LIST_FILE_STORE_DATA_PROFILES:
+          serviceImpl.listFileStoreDataProfiles(
+              (com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_FILE_STORE_DATA_PROFILE:
+          serviceImpl.getFileStoreDataProfile(
+              (com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.FileStoreDataProfile>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_FILE_STORE_DATA_PROFILE:
+          serviceImpl.deleteFileStoreDataProfile(
+              (com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_TABLE_DATA_PROFILE:
           serviceImpl.getTableDataProfile(
@@ -6750,6 +7097,26 @@ public final class DlpServiceGrpc {
                     com.google.privacy.dlp.v2.ProjectDataProfile>(
                     service, METHODID_GET_PROJECT_DATA_PROFILE)))
         .addMethod(
+            getListFileStoreDataProfilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest,
+                    com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse>(
+                    service, METHODID_LIST_FILE_STORE_DATA_PROFILES)))
+        .addMethod(
+            getGetFileStoreDataProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest,
+                    com.google.privacy.dlp.v2.FileStoreDataProfile>(
+                    service, METHODID_GET_FILE_STORE_DATA_PROFILE)))
+        .addMethod(
+            getDeleteFileStoreDataProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_FILE_STORE_DATA_PROFILE)))
+        .addMethod(
             getGetTableDataProfileMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6912,6 +7279,9 @@ public final class DlpServiceGrpc {
                       .addMethod(getListTableDataProfilesMethod())
                       .addMethod(getListColumnDataProfilesMethod())
                       .addMethod(getGetProjectDataProfileMethod())
+                      .addMethod(getListFileStoreDataProfilesMethod())
+                      .addMethod(getGetFileStoreDataProfileMethod())
+                      .addMethod(getDeleteFileStoreDataProfileMethod())
                       .addMethod(getGetTableDataProfileMethod())
                       .addMethod(getGetColumnDataProfileMethod())
                       .addMethod(getDeleteTableDataProfileMethod())

@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
+import java.util.ArrayList;
 
 public class AsyncCreateReleaseLRO {
 
@@ -46,6 +47,7 @@ public class AsyncCreateReleaseLRO {
               .setRelease(Release.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       OperationFuture<Release, OperationMetadata> future =
           cloudDeployClient.createReleaseOperationCallable().futureCall(request);

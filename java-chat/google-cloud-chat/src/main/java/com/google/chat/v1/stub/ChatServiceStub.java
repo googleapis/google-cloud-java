@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -38,6 +39,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -47,6 +49,8 @@ import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
@@ -54,6 +58,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
@@ -196,6 +201,19 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     throw new UnsupportedOperationException("Not implemented: getThreadReadStateCallable()");
+  }
+
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSpaceEventCallable()");
+  }
+
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSpaceEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSpaceEventsCallable()");
   }
 
   @Override

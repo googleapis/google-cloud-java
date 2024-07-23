@@ -20,6 +20,7 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -270,6 +271,51 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   /** Returns the object with the settings used for calls to abandonRelease. */
   public UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).abandonReleaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeployPolicy. */
+  public OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeployPolicy. */
+  public OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteDeployPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
+  public OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteDeployPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeployPolicies. */
+  public PagedCallSettings<
+          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listDeployPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeployPolicy. */
+  public UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getDeployPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to approveRollout. */
@@ -726,6 +772,55 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     public UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseSettings() {
       return getStubSettingsBuilder().abandonReleaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
+        createDeployPolicySettings() {
+      return getStubSettingsBuilder().createDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeployPolicy. */
+    public OperationCallSettings.Builder<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        createDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().createDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
+        updateDeployPolicySettings() {
+      return getStubSettingsBuilder().updateDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
+    public OperationCallSettings.Builder<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+        updateDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
+        deleteDeployPolicySettings() {
+      return getStubSettingsBuilder().deleteDeployPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
+    public OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+        deleteDeployPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteDeployPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeployPolicies. */
+    public PagedCallSettings.Builder<
+            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
+        listDeployPoliciesSettings() {
+      return getStubSettingsBuilder().listDeployPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeployPolicy. */
+    public UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
+        getDeployPolicySettings() {
+      return getStubSettingsBuilder().getDeployPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to approveRollout. */

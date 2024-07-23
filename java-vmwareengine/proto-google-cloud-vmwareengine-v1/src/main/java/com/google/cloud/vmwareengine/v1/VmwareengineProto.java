@@ -407,15 +407,15 @@ public final class VmwareengineProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/vmwareengine/v1/vmwareeng"
           + "ine.proto\022\034google.cloud.vmwareengine.v1\032"
-          + "#google/longrunning/operations.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\032 google/pr"
-          + "otobuf/field_mask.proto\032\034google/api/anno"
-          + "tations.proto\032\027google/api/client.proto\032\037"
-          + "google/api/field_behavior.proto\032\033google/"
-          + "api/field_info.proto\032\031google/api/resourc"
-          + "e.proto\0329google/cloud/vmwareengine/v1/vm"
-          + "wareengine_resources.proto\032\033google/proto"
-          + "buf/empty.proto\"\236\001\n\030ListPrivateCloudsReq"
+          + "\034google/api/annotations.proto\032\027google/ap"
+          + "i/client.proto\032\037google/api/field_behavio"
+          + "r.proto\032\033google/api/field_info.proto\032\031go"
+          + "ogle/api/resource.proto\0329google/cloud/vm"
+          + "wareengine/v1/vmwareengine_resources.pro"
+          + "to\032#google/longrunning/operations.proto\032"
+          + "\033google/protobuf/empty.proto\032 google/pro"
+          + "tobuf/field_mask.proto\032\037google/protobuf/"
+          + "timestamp.proto\"\236\001\n\030ListPrivateCloudsReq"
           + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
           + "googleapis.com/Location\022\021\n\tpage_size\030\002 \001"
           + "(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020"
@@ -1244,16 +1244,16 @@ public final class VmwareengineProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_vmwareengine_v1_ListPrivateCloudsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -2009,16 +2009,16 @@ public final class VmwareengineProto {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

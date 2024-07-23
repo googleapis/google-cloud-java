@@ -16,6 +16,9 @@
             "DeleteDataset": {
               "methods": ["deleteDataset", "deleteDataset", "deleteDataset", "deleteDatasetCallable"]
             },
+            "FetchDatasetErrors": {
+              "methods": ["fetchDatasetErrors", "fetchDatasetErrors", "fetchDatasetErrors", "fetchDatasetErrorsPagedCallable", "fetchDatasetErrorsCallable"]
+            },
             "GetDataset": {
               "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
             },

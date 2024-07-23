@@ -21,6 +21,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
@@ -48,18 +49,21 @@ import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -82,6 +86,8 @@ import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -349,6 +355,28 @@ public abstract class DlpServiceStub implements BackgroundResource {
   public UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable() {
     throw new UnsupportedOperationException("Not implemented: getProjectDataProfileCallable()");
+  }
+
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listFileStoreDataProfilesPagedCallable()");
+  }
+
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFileStoreDataProfilesCallable()");
+  }
+
+  public UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFileStoreDataProfileCallable()");
+  }
+
+  public UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteFileStoreDataProfileCallable()");
   }
 
   public UnaryCallable<GetTableDataProfileRequest, TableDataProfile> getTableDataProfileCallable() {

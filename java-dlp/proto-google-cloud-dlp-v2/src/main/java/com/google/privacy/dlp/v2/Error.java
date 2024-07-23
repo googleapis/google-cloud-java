@@ -41,6 +41,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   private Error() {
     timestamps_ = java.util.Collections.emptyList();
+    extraInfo_ = 0;
   }
 
   @java.lang.Override
@@ -61,6 +62,163 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_privacy_dlp_v2_Error_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.Error.class, com.google.privacy.dlp.v2.Error.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about the error.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.Error.ErrorExtraInfo}
+   */
+  public enum ErrorExtraInfo implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>ERROR_INFO_UNSPECIFIED = 0;</code>
+     */
+    ERROR_INFO_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Image scan is not available in the region.
+     * </pre>
+     *
+     * <code>IMAGE_SCAN_UNAVAILABLE_IN_REGION = 1;</code>
+     */
+    IMAGE_SCAN_UNAVAILABLE_IN_REGION(1),
+    /**
+     *
+     *
+     * <pre>
+     * File store cluster is not supported for profile generation.
+     * </pre>
+     *
+     * <code>FILE_STORE_CLUSTER_UNSUPPORTED = 2;</code>
+     */
+    FILE_STORE_CLUSTER_UNSUPPORTED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>ERROR_INFO_UNSPECIFIED = 0;</code>
+     */
+    public static final int ERROR_INFO_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Image scan is not available in the region.
+     * </pre>
+     *
+     * <code>IMAGE_SCAN_UNAVAILABLE_IN_REGION = 1;</code>
+     */
+    public static final int IMAGE_SCAN_UNAVAILABLE_IN_REGION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * File store cluster is not supported for profile generation.
+     * </pre>
+     *
+     * <code>FILE_STORE_CLUSTER_UNSUPPORTED = 2;</code>
+     */
+    public static final int FILE_STORE_CLUSTER_UNSUPPORTED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ErrorExtraInfo valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ErrorExtraInfo forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ERROR_INFO_UNSPECIFIED;
+        case 1:
+          return IMAGE_SCAN_UNAVAILABLE_IN_REGION;
+        case 2:
+          return FILE_STORE_CLUSTER_UNSUPPORTED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ErrorExtraInfo> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ErrorExtraInfo> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ErrorExtraInfo>() {
+          public ErrorExtraInfo findValueByNumber(int number) {
+            return ErrorExtraInfo.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.Error.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ErrorExtraInfo[] VALUES = values();
+
+    public static ErrorExtraInfo valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ErrorExtraInfo(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.Error.ErrorExtraInfo)
   }
 
   private int bitField0_;
@@ -186,6 +344,41 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     return timestamps_.get(index);
   }
 
+  public static final int EXTRA_INFO_FIELD_NUMBER = 4;
+  private int extraInfo_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about the error.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+   *
+   * @return The enum numeric value on the wire for extraInfo.
+   */
+  @java.lang.Override
+  public int getExtraInfoValue() {
+    return extraInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about the error.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+   *
+   * @return The extraInfo.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Error.ErrorExtraInfo getExtraInfo() {
+    com.google.privacy.dlp.v2.Error.ErrorExtraInfo result =
+        com.google.privacy.dlp.v2.Error.ErrorExtraInfo.forNumber(extraInfo_);
+    return result == null ? com.google.privacy.dlp.v2.Error.ErrorExtraInfo.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -206,6 +399,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < timestamps_.size(); i++) {
       output.writeMessage(2, timestamps_.get(i));
     }
+    if (extraInfo_
+        != com.google.privacy.dlp.v2.Error.ErrorExtraInfo.ERROR_INFO_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, extraInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -220,6 +417,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < timestamps_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, timestamps_.get(i));
+    }
+    if (extraInfo_
+        != com.google.privacy.dlp.v2.Error.ErrorExtraInfo.ERROR_INFO_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, extraInfo_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -241,6 +442,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (!getDetails().equals(other.getDetails())) return false;
     }
     if (!getTimestampsList().equals(other.getTimestampsList())) return false;
+    if (extraInfo_ != other.extraInfo_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -260,6 +462,8 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TIMESTAMPS_FIELD_NUMBER;
       hash = (53 * hash) + getTimestampsList().hashCode();
     }
+    hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + extraInfo_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -420,6 +624,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         timestampsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      extraInfo_ = 0;
       return this;
     }
 
@@ -472,6 +677,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.extraInfo_ = extraInfo_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -551,6 +759,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.extraInfo_ != 0) {
+        setExtraInfoValue(other.getExtraInfoValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -595,6 +806,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 18
+            case 32:
+              {
+                extraInfo_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1152,6 +1369,96 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         timestamps_ = null;
       }
       return timestampsBuilder_;
+    }
+
+    private int extraInfo_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Additional information about the error.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+     *
+     * @return The enum numeric value on the wire for extraInfo.
+     */
+    @java.lang.Override
+    public int getExtraInfoValue() {
+      return extraInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional information about the error.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for extraInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtraInfoValue(int value) {
+      extraInfo_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional information about the error.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+     *
+     * @return The extraInfo.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Error.ErrorExtraInfo getExtraInfo() {
+      com.google.privacy.dlp.v2.Error.ErrorExtraInfo result =
+          com.google.privacy.dlp.v2.Error.ErrorExtraInfo.forNumber(extraInfo_);
+      return result == null ? com.google.privacy.dlp.v2.Error.ErrorExtraInfo.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional information about the error.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+     *
+     * @param value The extraInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtraInfo(com.google.privacy.dlp.v2.Error.ErrorExtraInfo value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      extraInfo_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional information about the error.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExtraInfo() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      extraInfo_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

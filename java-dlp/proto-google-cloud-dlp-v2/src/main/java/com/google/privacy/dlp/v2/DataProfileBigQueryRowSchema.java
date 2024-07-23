@@ -73,6 +73,7 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TABLE_PROFILE(1),
     COLUMN_PROFILE(2),
+    FILE_STORE_PROFILE(3),
     DATAPROFILE_NOT_SET(0);
     private final int value;
 
@@ -95,6 +96,8 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
           return TABLE_PROFILE;
         case 2:
           return COLUMN_PROFILE;
+        case 3:
+          return FILE_STORE_PROFILE;
         case 0:
           return DATAPROFILE_NOT_SET;
         default:
@@ -213,6 +216,57 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     return com.google.privacy.dlp.v2.ColumnDataProfile.getDefaultInstance();
   }
 
+  public static final int FILE_STORE_PROFILE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return Whether the fileStoreProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasFileStoreProfile() {
+    return dataProfileCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return The fileStoreProfile.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile() {
+    if (dataProfileCase_ == 3) {
+      return (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_;
+    }
+    return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder() {
+    if (dataProfileCase_ == 3) {
+      return (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_;
+    }
+    return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -233,6 +287,9 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
     if (dataProfileCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.ColumnDataProfile) dataProfile_);
     }
+    if (dataProfileCase_ == 3) {
+      output.writeMessage(3, (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -251,6 +308,11 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.ColumnDataProfile) dataProfile_);
+    }
+    if (dataProfileCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -276,6 +338,9 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       case 2:
         if (!getColumnProfile().equals(other.getColumnProfile())) return false;
         break;
+      case 3:
+        if (!getFileStoreProfile().equals(other.getFileStoreProfile())) return false;
+        break;
       case 0:
       default:
     }
@@ -298,6 +363,10 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       case 2:
         hash = (37 * hash) + COLUMN_PROFILE_FIELD_NUMBER;
         hash = (53 * hash) + getColumnProfile().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + FILE_STORE_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getFileStoreProfile().hashCode();
         break;
       case 0:
       default:
@@ -449,6 +518,9 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       if (columnProfileBuilder_ != null) {
         columnProfileBuilder_.clear();
       }
+      if (fileStoreProfileBuilder_ != null) {
+        fileStoreProfileBuilder_.clear();
+      }
       dataProfileCase_ = 0;
       dataProfile_ = null;
       return this;
@@ -498,6 +570,9 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       }
       if (dataProfileCase_ == 2 && columnProfileBuilder_ != null) {
         result.dataProfile_ = columnProfileBuilder_.build();
+      }
+      if (dataProfileCase_ == 3 && fileStoreProfileBuilder_ != null) {
+        result.dataProfile_ = fileStoreProfileBuilder_.build();
       }
     }
 
@@ -558,6 +633,11 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
             mergeColumnProfile(other.getColumnProfile());
             break;
           }
+        case FILE_STORE_PROFILE:
+          {
+            mergeFileStoreProfile(other.getFileStoreProfile());
+            break;
+          }
         case DATAPROFILE_NOT_SET:
           {
             break;
@@ -601,6 +681,13 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
                 dataProfileCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getFileStoreProfileFieldBuilder().getBuilder(), extensionRegistry);
+                dataProfileCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1050,6 +1137,216 @@ public final class DataProfileBigQueryRowSchema extends com.google.protobuf.Gene
       dataProfileCase_ = 2;
       onChanged();
       return columnProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.FileStoreDataProfile,
+            com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+            com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
+        fileStoreProfileBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     *
+     * @return Whether the fileStoreProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasFileStoreProfile() {
+      return dataProfileCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     *
+     * @return The fileStoreProfile.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile() {
+      if (fileStoreProfileBuilder_ == null) {
+        if (dataProfileCase_ == 3) {
+          return (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_;
+        }
+        return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+      } else {
+        if (dataProfileCase_ == 3) {
+          return fileStoreProfileBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder setFileStoreProfile(com.google.privacy.dlp.v2.FileStoreDataProfile value) {
+      if (fileStoreProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataProfile_ = value;
+        onChanged();
+      } else {
+        fileStoreProfileBuilder_.setMessage(value);
+      }
+      dataProfileCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder setFileStoreProfile(
+        com.google.privacy.dlp.v2.FileStoreDataProfile.Builder builderForValue) {
+      if (fileStoreProfileBuilder_ == null) {
+        dataProfile_ = builderForValue.build();
+        onChanged();
+      } else {
+        fileStoreProfileBuilder_.setMessage(builderForValue.build());
+      }
+      dataProfileCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder mergeFileStoreProfile(com.google.privacy.dlp.v2.FileStoreDataProfile value) {
+      if (fileStoreProfileBuilder_ == null) {
+        if (dataProfileCase_ == 3
+            && dataProfile_
+                != com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()) {
+          dataProfile_ =
+              com.google.privacy.dlp.v2.FileStoreDataProfile.newBuilder(
+                      (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataProfile_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataProfileCase_ == 3) {
+          fileStoreProfileBuilder_.mergeFrom(value);
+        } else {
+          fileStoreProfileBuilder_.setMessage(value);
+        }
+      }
+      dataProfileCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder clearFileStoreProfile() {
+      if (fileStoreProfileBuilder_ == null) {
+        if (dataProfileCase_ == 3) {
+          dataProfileCase_ = 0;
+          dataProfile_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataProfileCase_ == 3) {
+          dataProfileCase_ = 0;
+          dataProfile_ = null;
+        }
+        fileStoreProfileBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfile.Builder getFileStoreProfileBuilder() {
+      return getFileStoreProfileFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder() {
+      if ((dataProfileCase_ == 3) && (fileStoreProfileBuilder_ != null)) {
+        return fileStoreProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataProfileCase_ == 3) {
+          return (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_;
+        }
+        return com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File store data profile column.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.FileStoreDataProfile,
+            com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+            com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
+        getFileStoreProfileFieldBuilder() {
+      if (fileStoreProfileBuilder_ == null) {
+        if (!(dataProfileCase_ == 3)) {
+          dataProfile_ = com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance();
+        }
+        fileStoreProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.FileStoreDataProfile,
+                com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+                com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>(
+                (com.google.privacy.dlp.v2.FileStoreDataProfile) dataProfile_,
+                getParentForChildren(),
+                isClean());
+        dataProfile_ = null;
+      }
+      dataProfileCase_ = 3;
+      onChanged();
+      return fileStoreProfileBuilder_;
     }
 
     @java.lang.Override

@@ -41,6 +41,7 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
 
   private TranslationConfigDetails() {
     requestSource_ = "";
+    targetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -596,6 +597,82 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     }
   }
 
+  public static final int TARGET_TYPES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList targetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @return A list containing the targetTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getTargetTypesList() {
+    return targetTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @return The count of targetTypes.
+   */
+  public int getTargetTypesCount() {
+    return targetTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetTypes at the given index.
+   */
+  public java.lang.String getTargetTypes(int index) {
+    return targetTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getTargetTypesBytes(int index) {
+    return targetTypes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -632,6 +709,9 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestSource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, requestSource_);
     }
+    for (int i = 0; i < targetTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, targetTypes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -664,6 +744,14 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestSource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, requestSource_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTargetTypesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -693,6 +781,7 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       if (!getSourceEnv().equals(other.getSourceEnv())) return false;
     }
     if (!getRequestSource().equals(other.getRequestSource())) return false;
+    if (!getTargetTypesList().equals(other.getTargetTypesList())) return false;
     if (!getSourceLocationCase().equals(other.getSourceLocationCase())) return false;
     switch (sourceLocationCase_) {
       case 1:
@@ -742,6 +831,10 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + REQUEST_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getRequestSource().hashCode();
+    if (getTargetTypesCount() > 0) {
+      hash = (37 * hash) + TARGET_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetTypesList().hashCode();
+    }
     switch (sourceLocationCase_) {
       case 1:
         hash = (37 * hash) + GCS_SOURCE_PATH_FIELD_NUMBER;
@@ -937,6 +1030,7 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
         sourceEnvBuilder_ = null;
       }
       requestSource_ = "";
+      targetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sourceLocationCase_ = 0;
       sourceLocation_ = null;
       targetLocationCase_ = 0;
@@ -999,6 +1093,10 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.requestSource_ = requestSource_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        targetTypes_.makeImmutable();
+        result.targetTypes_ = targetTypes_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1076,6 +1174,16 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       if (!other.getRequestSource().isEmpty()) {
         requestSource_ = other.requestSource_;
         bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.targetTypes_.isEmpty()) {
+        if (targetTypes_.isEmpty()) {
+          targetTypes_ = other.targetTypes_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureTargetTypesIsMutable();
+          targetTypes_.addAll(other.targetTypes_);
+        }
         onChanged();
       }
       switch (other.getSourceLocationCase()) {
@@ -1185,6 +1293,13 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTargetTypesIsMutable();
+                targetTypes_.add(s);
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2394,6 +2509,207 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       requestSource_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList targetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTargetTypesIsMutable() {
+      if (!targetTypes_.isModifiable()) {
+        targetTypes_ = new com.google.protobuf.LazyStringArrayList(targetTypes_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @return A list containing the targetTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getTargetTypesList() {
+      targetTypes_.makeImmutable();
+      return targetTypes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @return The count of targetTypes.
+     */
+    public int getTargetTypesCount() {
+      return targetTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetTypes at the given index.
+     */
+    public java.lang.String getTargetTypes(int index) {
+      return targetTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the targetTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getTargetTypesBytes(int index) {
+      return targetTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetTypesIsMutable();
+      targetTypes_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param value The targetTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetTypesIsMutable();
+      targetTypes_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param values The targetTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTargetTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureTargetTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetTypes_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetTypes() {
+      targetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The types of output to generate, e.g. sql, metadata etc. If not specified,
+     * a default set of targets will be generated. Some additional target types
+     * may be slower to generate. See the documentation for the set of available
+     * target types.
+     * </pre>
+     *
+     * <code>repeated string target_types = 9;</code>
+     *
+     * @param value The bytes of the targetTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTargetTypesIsMutable();
+      targetTypes_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

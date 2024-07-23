@@ -264,6 +264,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -298,6 +299,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -323,6 +325,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -355,6 +358,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -1298,6 +1302,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1332,6 +1337,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1357,6 +1363,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1389,6 +1396,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1427,6 +1435,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1461,6 +1470,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1493,6 +1503,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>

@@ -41,6 +41,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
   private SourceEnv() {
     defaultDatabase_ = "";
     schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    metadataStoreDataset_ = "";
   }
 
   @java.lang.Override
@@ -185,6 +186,67 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     return schemaSearchPath_.getByteString(index);
   }
 
+  public static final int METADATA_STORE_DATASET_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadataStoreDataset_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+   * project-123.metadata_store_123.  If specified, translation will search and
+   * read the required schema information from a metadata store in this dataset.
+   * If metadata store doesn't exist, translation will parse the metadata file
+   * and upload the schema info to a temp table in the dataset to speed up
+   * future translation jobs.
+   * </pre>
+   *
+   * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The metadataStoreDataset.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataStoreDataset() {
+    java.lang.Object ref = metadataStoreDataset_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataStoreDataset_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+   * project-123.metadata_store_123.  If specified, translation will search and
+   * read the required schema information from a metadata store in this dataset.
+   * If metadata store doesn't exist, translation will parse the metadata file
+   * and upload the schema info to a temp table in the dataset to speed up
+   * future translation jobs.
+   * </pre>
+   *
+   * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for metadataStoreDataset.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMetadataStoreDatasetBytes() {
+    java.lang.Object ref = metadataStoreDataset_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metadataStoreDataset_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -204,6 +266,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < schemaSearchPath_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, schemaSearchPath_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataStoreDataset_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, metadataStoreDataset_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -225,6 +290,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getSchemaSearchPathList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataStoreDataset_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, metadataStoreDataset_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -243,6 +311,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDefaultDatabase().equals(other.getDefaultDatabase())) return false;
     if (!getSchemaSearchPathList().equals(other.getSchemaSearchPathList())) return false;
+    if (!getMetadataStoreDataset().equals(other.getMetadataStoreDataset())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -260,6 +329,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SCHEMA_SEARCH_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getSchemaSearchPathList().hashCode();
     }
+    hash = (37 * hash) + METADATA_STORE_DATASET_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataStoreDataset().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +472,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       defaultDatabase_ = "";
       schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      metadataStoreDataset_ = "";
       return this;
     }
 
@@ -443,6 +515,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         schemaSearchPath_.makeImmutable();
         result.schemaSearchPath_ = schemaSearchPath_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadataStoreDataset_ = metadataStoreDataset_;
       }
     }
 
@@ -507,6 +582,11 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getMetadataStoreDataset().isEmpty()) {
+        metadataStoreDataset_ = other.metadataStoreDataset_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -546,6 +626,12 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
                 schemaSearchPath_.add(s);
                 break;
               } // case 18
+            case 26:
+              {
+                metadataStoreDataset_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -855,6 +941,137 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       ensureSchemaSearchPathIsMutable();
       schemaSearchPath_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object metadataStoreDataset_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+     * project-123.metadata_store_123.  If specified, translation will search and
+     * read the required schema information from a metadata store in this dataset.
+     * If metadata store doesn't exist, translation will parse the metadata file
+     * and upload the schema info to a temp table in the dataset to speed up
+     * future translation jobs.
+     * </pre>
+     *
+     * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The metadataStoreDataset.
+     */
+    public java.lang.String getMetadataStoreDataset() {
+      java.lang.Object ref = metadataStoreDataset_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataStoreDataset_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+     * project-123.metadata_store_123.  If specified, translation will search and
+     * read the required schema information from a metadata store in this dataset.
+     * If metadata store doesn't exist, translation will parse the metadata file
+     * and upload the schema info to a temp table in the dataset to speed up
+     * future translation jobs.
+     * </pre>
+     *
+     * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for metadataStoreDataset.
+     */
+    public com.google.protobuf.ByteString getMetadataStoreDatasetBytes() {
+      java.lang.Object ref = metadataStoreDataset_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadataStoreDataset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+     * project-123.metadata_store_123.  If specified, translation will search and
+     * read the required schema information from a metadata store in this dataset.
+     * If metadata store doesn't exist, translation will parse the metadata file
+     * and upload the schema info to a temp table in the dataset to speed up
+     * future translation jobs.
+     * </pre>
+     *
+     * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The metadataStoreDataset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataStoreDataset(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      metadataStoreDataset_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+     * project-123.metadata_store_123.  If specified, translation will search and
+     * read the required schema information from a metadata store in this dataset.
+     * If metadata store doesn't exist, translation will parse the metadata file
+     * and upload the schema info to a temp table in the dataset to speed up
+     * future translation jobs.
+     * </pre>
+     *
+     * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataStoreDataset() {
+      metadataStoreDataset_ = getDefaultInstance().getMetadataStoreDataset();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expects a valid BigQuery dataset ID that exists, e.g.,
+     * project-123.metadata_store_123.  If specified, translation will search and
+     * read the required schema information from a metadata store in this dataset.
+     * If metadata store doesn't exist, translation will parse the metadata file
+     * and upload the schema info to a temp table in the dataset to speed up
+     * future translation jobs.
+     * </pre>
+     *
+     * <code>string metadata_store_dataset = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for metadataStoreDataset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataStoreDatasetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      metadataStoreDataset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

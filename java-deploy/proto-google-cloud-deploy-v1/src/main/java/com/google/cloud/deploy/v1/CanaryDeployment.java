@@ -75,6 +75,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
    * Required. The percentage based deployments that will occur as a part of a
    * `Rollout`. List is expected in ascending order and each integer n is
    * 0 &lt;= n &lt; 100.
+   * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+   * n is 0 &lt;= n &lt;= 100.
    * </pre>
    *
    * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,6 +94,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
    * Required. The percentage based deployments that will occur as a part of a
    * `Rollout`. List is expected in ascending order and each integer n is
    * 0 &lt;= n &lt; 100.
+   * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+   * n is 0 &lt;= n &lt;= 100.
    * </pre>
    *
    * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -108,6 +112,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
    * Required. The percentage based deployments that will occur as a part of a
    * `Rollout`. List is expected in ascending order and each integer n is
    * 0 &lt;= n &lt; 100.
+   * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+   * n is 0 &lt;= n &lt;= 100.
    * </pre>
    *
    * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,6 +753,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -764,6 +772,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -780,6 +790,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -797,6 +809,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -820,6 +834,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -842,6 +858,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -863,6 +881,8 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      * Required. The percentage based deployments that will occur as a part of a
      * `Rollout`. List is expected in ascending order and each integer n is
      * 0 &lt;= n &lt; 100.
+     * If the GatewayServiceMesh is configured for Kubernetes, then the range for
+     * n is 0 &lt;= n &lt;= 100.
      * </pre>
      *
      * <code>repeated int32 percentages = 1 [(.google.api.field_behavior) = REQUIRED];</code>

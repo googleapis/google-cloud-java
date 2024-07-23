@@ -28,8 +28,8 @@ public interface CreateAutomationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Automation` should be
-   * created. Format should be
+   * Required. The parent collection in which the `Automation` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -44,8 +44,8 @@ public interface CreateAutomationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Automation` should be
-   * created. Format should be
+   * Required. The parent collection in which the `Automation` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *

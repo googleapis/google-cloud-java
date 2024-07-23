@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -43,6 +44,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -52,6 +54,8 @@ import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
@@ -59,6 +63,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
@@ -332,6 +337,27 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ThreadReadState.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetSpaceEventRequest, SpaceEvent>
+      getSpaceEventMethodDescriptor =
+          MethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsMethodDescriptor =
+          MethodDescriptor.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListSpaceEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSpaceEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSpaceEventsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -370,6 +396,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       updateSpaceReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
+  private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -656,6 +687,27 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
+        GrpcCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+            .setMethodDescriptor(getSpaceEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
+        listSpaceEventsTransportSettings =
+            GrpcCallSettings.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+                .setMethodDescriptor(listSpaceEventsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -757,6 +809,15 @@ public class GrpcChatServiceStub extends ChatServiceStub {
             getThreadReadStateTransportSettings,
             settings.getThreadReadStateSettings(),
             clientContext);
+    this.getSpaceEventCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceEventTransportSettings, settings.getSpaceEventSettings(), clientContext);
+    this.listSpaceEventsCallable =
+        callableFactory.createUnaryCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.listSpaceEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -918,6 +979,22 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    return getSpaceEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    return listSpaceEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    return listSpaceEventsPagedCallable;
   }
 
   @Override

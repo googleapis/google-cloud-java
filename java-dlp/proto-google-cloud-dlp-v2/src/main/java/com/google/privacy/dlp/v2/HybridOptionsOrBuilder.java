@@ -145,6 +145,7 @@ public interface HybridOptionsOrBuilder
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -167,6 +168,7 @@ public interface HybridOptionsOrBuilder
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -192,6 +194,7 @@ public interface HybridOptionsOrBuilder
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -214,6 +217,7 @@ public interface HybridOptionsOrBuilder
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -240,6 +244,7 @@ public interface HybridOptionsOrBuilder
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>

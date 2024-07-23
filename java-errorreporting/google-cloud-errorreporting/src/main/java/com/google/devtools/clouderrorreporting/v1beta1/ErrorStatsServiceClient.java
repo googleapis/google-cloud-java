@@ -257,14 +257,23 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
    *     `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and
    *     `{projectNumber}` can be found in the [Google Cloud
-   *     Console](https://support.google.com/cloud/answer/6158840).
-   *     <p>Examples: `projects/my-project-123`, `projects/5551234`.
+   *     console](https://support.google.com/cloud/answer/6158840). It may also include a location,
+   *     such as `projects/{projectID}/locations/{location}` where `{location}` is a cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/5551234`,
+   *     `projects/my-project-123/locations/us-central1`, `projects/5551234/locations/us-central1`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified. Use `-` as a wildcard to request group stats from all regions.
    * @param timeRange Optional. List data for the given time range. If not set, a default time range
-   *     is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will specify
-   *     the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a
-   *     non-zero count in the given time range are returned, unless the request contains an
-   *     explicit &lt;code&gt;group_id&lt;/code&gt; list. If a &lt;code&gt;group_id&lt;/code&gt;
-   *     list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are
+   *     is used. The field [time_range_begin]
+   *     [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.time_range_begin] in
+   *     the response will specify the beginning of this time range. Only [ErrorGroupStats]
+   *     [google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats] with a non-zero count in the
+   *     given time range are returned, unless the request contains an explicit [group_id]
+   *     [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.group_id] list. If a
+   *     [group_id] [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.group_id]
+   *     list is given, also [ErrorGroupStats]
+   *     [google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats] with zero occurrences are
    *     returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -303,14 +312,23 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
    *     `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and
    *     `{projectNumber}` can be found in the [Google Cloud
-   *     Console](https://support.google.com/cloud/answer/6158840).
-   *     <p>Examples: `projects/my-project-123`, `projects/5551234`.
+   *     console](https://support.google.com/cloud/answer/6158840). It may also include a location,
+   *     such as `projects/{projectID}/locations/{location}` where `{location}` is a cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/5551234`,
+   *     `projects/my-project-123/locations/us-central1`, `projects/5551234/locations/us-central1`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified. Use `-` as a wildcard to request group stats from all regions.
    * @param timeRange Optional. List data for the given time range. If not set, a default time range
-   *     is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will specify
-   *     the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a
-   *     non-zero count in the given time range are returned, unless the request contains an
-   *     explicit &lt;code&gt;group_id&lt;/code&gt; list. If a &lt;code&gt;group_id&lt;/code&gt;
-   *     list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are
+   *     is used. The field [time_range_begin]
+   *     [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.time_range_begin] in
+   *     the response will specify the beginning of this time range. Only [ErrorGroupStats]
+   *     [google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats] with a non-zero count in the
+   *     given time range are returned, unless the request contains an explicit [group_id]
+   *     [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.group_id] list. If a
+   *     [group_id] [google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.group_id]
+   *     list is given, also [ErrorGroupStats]
+   *     [google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats] with zero occurrences are
    *     returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -473,10 +491,18 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840).
-   *     <p>Example: `projects/my-project-123`.
-   * @param groupId Required. The group for which events shall be returned.
+   *     `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}`
+   *     is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840)
+   *     and `{location}` is a Cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified.
+   * @param groupId Required. The group for which events shall be returned. The `group_id` is a
+   *     unique identifier for a particular error group. The identifier is derived from key parts of
+   *     the error-log content and is treated as Service Data. For information about how Service
+   *     Data is handled, see [Google Cloud Privacy
+   *     Notice](https://cloud.google.com/terms/cloud-privacy-notice).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
@@ -511,10 +537,18 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840).
-   *     <p>Example: `projects/my-project-123`.
-   * @param groupId Required. The group for which events shall be returned.
+   *     `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}`
+   *     is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840)
+   *     and `{location}` is a Cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified.
+   * @param groupId Required. The group for which events shall be returned. The `group_id` is a
+   *     unique identifier for a particular error group. The identifier is derived from key parts of
+   *     the error-log content and is treated as Service Data. For information about how Service
+   *     Data is handled, see [Google Cloud Privacy
+   *     Notice](https://cloud.google.com/terms/cloud-privacy-notice).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(String projectName, String groupId) {
@@ -653,9 +687,13 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840).
-   *     <p>Example: `projects/my-project-123`.
+   *     `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}`
+   *     is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840)
+   *     and `{location}` is a Cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
@@ -685,9 +723,13 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840).
-   *     <p>Example: `projects/my-project-123`.
+   *     `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}`
+   *     is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840)
+   *     and `{location}` is a Cloud region.
+   *     <p>Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`.
+   *     <p>For a list of supported locations, see [Supported
+   *     Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default
+   *     when unspecified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(String projectName) {

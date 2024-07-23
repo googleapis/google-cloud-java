@@ -1228,7 +1228,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2655
+   *     google/container/v1beta1/cluster_service.proto;l=2673
    * @return Whether the privateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1250,7 +1250,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2655
+   *     google/container/v1beta1/cluster_service.proto;l=2673
    * @return The privateClusterConfig.
    */
   @java.lang.Override
@@ -2485,7 +2485,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2743
+   *     google/container/v1beta1/cluster_service.proto;l=2761
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
@@ -2506,7 +2506,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2743
+   *     google/container/v1beta1/cluster_service.proto;l=2761
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
@@ -10066,7 +10066,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2655
+     *     google/container/v1beta1/cluster_service.proto;l=2673
      * @return Whether the privateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -10087,7 +10087,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2655
+     *     google/container/v1beta1/cluster_service.proto;l=2673
      * @return The privateClusterConfig.
      */
     @java.lang.Deprecated
@@ -14459,7 +14459,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2743
+     *     google/container/v1beta1/cluster_service.proto;l=2761
      * @return Whether the desiredProtectConfig field is set.
      */
     @java.lang.Deprecated
@@ -14479,7 +14479,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2743
+     *     google/container/v1beta1/cluster_service.proto;l=2761
      * @return The desiredProtectConfig.
      */
     @java.lang.Deprecated

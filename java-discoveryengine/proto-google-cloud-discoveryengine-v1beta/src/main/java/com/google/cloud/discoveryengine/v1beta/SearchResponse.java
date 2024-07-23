@@ -146,6 +146,50 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    boolean hasChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    com.google.cloud.discoveryengine.v1beta.Chunk getChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     */
+    com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Google provided available scores.
      * </pre>
      *
@@ -370,6 +414,65 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : document_;
     }
 
+    public static final int CHUNK_FIELD_NUMBER = 18;
+    private com.google.cloud.discoveryengine.v1beta.Chunk chunk_;
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Chunk getChunk() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+
     public static final int MODEL_SCORES_FIELD_NUMBER = 4;
 
     private static final class ModelScoresDefaultEntryHolder {
@@ -513,6 +616,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getChunk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -540,6 +646,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -561,6 +670,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         if (!getDocument().equals(other.getDocument())) return false;
       }
+      if (hasChunk() != other.hasChunk()) return false;
+      if (hasChunk()) {
+        if (!getChunk().equals(other.getChunk())) return false;
+      }
       if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -578,6 +691,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getDocument().hashCode();
+      }
+      if (hasChunk()) {
+        hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+        hash = (53 * hash) + getChunk().hashCode();
       }
       if (!internalGetModelScores().getMap().isEmpty()) {
         hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
@@ -751,6 +868,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getDocumentFieldBuilder();
+          getChunkFieldBuilder();
         }
       }
 
@@ -763,6 +881,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (documentBuilder_ != null) {
           documentBuilder_.dispose();
           documentBuilder_ = null;
+        }
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
         }
         internalGetMutableModelScores().clear();
         return this;
@@ -813,6 +936,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.modelScores_ =
               internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
         }
@@ -878,8 +1005,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
+        if (other.hasChunk()) {
+          mergeChunk(other.getChunk());
+        }
         internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -929,9 +1059,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableModelScores()
                       .ensureBuilderMap()
                       .put(modelScores__.getKey(), modelScores__.getValue());
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 146:
+                {
+                  input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 146
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1258,6 +1394,219 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return documentBuilder_;
       }
 
+      private com.google.cloud.discoveryengine.v1beta.Chunk chunk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.Chunk,
+              com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>
+          chunkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       *
+       * @return Whether the chunk field is set.
+       */
+      public boolean hasChunk() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       *
+       * @return The chunk.
+       */
+      public com.google.cloud.discoveryengine.v1beta.Chunk getChunk() {
+        if (chunkBuilder_ == null) {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+              : chunk_;
+        } else {
+          return chunkBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(com.google.cloud.discoveryengine.v1beta.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunk_ = value;
+        } else {
+          chunkBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(
+          com.google.cloud.discoveryengine.v1beta.Chunk.Builder builderForValue) {
+        if (chunkBuilder_ == null) {
+          chunk_ = builderForValue.build();
+        } else {
+          chunkBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder mergeChunk(com.google.cloud.discoveryengine.v1beta.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && chunk_ != null
+              && chunk_ != com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()) {
+            getChunkBuilder().mergeFrom(value);
+          } else {
+            chunk_ = value;
+          }
+        } else {
+          chunkBuilder_.mergeFrom(value);
+        }
+        if (chunk_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder clearChunk() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Chunk.Builder getChunkBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getChunkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder() {
+        if (chunkBuilder_ != null) {
+          return chunkBuilder_.getMessageOrBuilder();
+        } else {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+              : chunk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.Chunk,
+              com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>
+          getChunkFieldBuilder() {
+        if (chunkBuilder_ == null) {
+          chunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.Chunk,
+                  com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+                  com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>(
+                  getChunk(), getParentForChildren(), isClean());
+          chunk_ = null;
+        }
+        return chunkBuilder_;
+      }
+
       private static final class ModelScoresConverter
           implements com.google.protobuf.MapFieldBuilder.Converter<
               java.lang.String,
@@ -1310,7 +1659,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (modelScores_ == null) {
           modelScores_ = new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return modelScores_;
       }
@@ -1405,7 +1754,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearModelScores() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableModelScores().clear();
         return this;
       }
@@ -1430,7 +1779,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
           getMutableModelScores() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return internalGetMutableModelScores().ensureMessageMap();
       }
       /**
@@ -1452,7 +1801,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException("map value");
         }
         internalGetMutableModelScores().ensureBuilderMap().put(key, value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1476,7 +1825,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
         internalGetMutableModelScores().ensureBuilderMap().putAll(values);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**

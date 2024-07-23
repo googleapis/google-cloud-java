@@ -575,6 +575,49 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetSpaceEvent</td>
+ *      <td><p> Returns an event from a Google Chat space. The [event payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the resource that changed. For example, if you request an event about a new message but the message was later updated, the server returns the updated `Message` resource in the event payload.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user). To get an event, the authenticated user must be a member of the space.
+ * <p>  For an example, see [Get details about an event from a Google Chat space](https://developers.google.com/workspace/chat/get-space-event).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSpaceEvent(GetSpaceEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSpaceEvent(SpaceEventName name)
+ *           <li><p> getSpaceEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSpaceEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSpaceEvents</td>
+ *      <td><p> Lists events from a Google Chat space. For each event, the [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the Chat resource. For example, if you list events about new space members, the server returns `Membership` resources that contain the latest membership details. If new members were removed during the requested period, the event payload contains an empty `Membership` resource.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user). To list events, the authenticated user must be a member of the space.
+ * <p>  For an example, see [List events from a Google Chat space](https://developers.google.com/workspace/chat/list-space-events).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSpaceEvents(ListSpaceEventsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSpaceEvents(SpaceName parent, String filter)
+ *           <li><p> listSpaceEvents(String parent, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSpaceEventsPagedCallable()
+ *           <li><p> listSpaceEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -4458,6 +4501,455 @@ public class ChatServiceClient implements BackgroundResource {
     return stub.getThreadReadStateCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns an event from a Google Chat space. The [event
+   * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the resource that changed. For example, if you request an
+   * event about a new message but the message was later updated, the server returns the updated
+   * `Message` resource in the event payload.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To get an event, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [Get details about an event from a Google Chat
+   * space](https://developers.google.com/workspace/chat/get-space-event).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceEventName name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]");
+   *   SpaceEvent response = chatServiceClient.getSpaceEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the space event.
+   *     <p>Format: `spaces/{space}/spaceEvents/{spaceEvent}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceEvent getSpaceEvent(SpaceEventName name) {
+    GetSpaceEventRequest request =
+        GetSpaceEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSpaceEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns an event from a Google Chat space. The [event
+   * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the resource that changed. For example, if you request an
+   * event about a new message but the message was later updated, the server returns the updated
+   * `Message` resource in the event payload.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To get an event, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [Get details about an event from a Google Chat
+   * space](https://developers.google.com/workspace/chat/get-space-event).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString();
+   *   SpaceEvent response = chatServiceClient.getSpaceEvent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the space event.
+   *     <p>Format: `spaces/{space}/spaceEvents/{spaceEvent}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceEvent getSpaceEvent(String name) {
+    GetSpaceEventRequest request = GetSpaceEventRequest.newBuilder().setName(name).build();
+    return getSpaceEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns an event from a Google Chat space. The [event
+   * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the resource that changed. For example, if you request an
+   * event about a new message but the message was later updated, the server returns the updated
+   * `Message` resource in the event payload.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To get an event, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [Get details about an event from a Google Chat
+   * space](https://developers.google.com/workspace/chat/get-space-event).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceEventRequest request =
+   *       GetSpaceEventRequest.newBuilder()
+   *           .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+   *           .build();
+   *   SpaceEvent response = chatServiceClient.getSpaceEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceEvent getSpaceEvent(GetSpaceEventRequest request) {
+    return getSpaceEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns an event from a Google Chat space. The [event
+   * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the resource that changed. For example, if you request an
+   * event about a new message but the message was later updated, the server returns the updated
+   * `Message` resource in the event payload.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To get an event, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [Get details about an event from a Google Chat
+   * space](https://developers.google.com/workspace/chat/get-space-event).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceEventRequest request =
+   *       GetSpaceEventRequest.newBuilder()
+   *           .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+   *           .build();
+   *   ApiFuture<SpaceEvent> future = chatServiceClient.getSpaceEventCallable().futureCall(request);
+   *   // Do something.
+   *   SpaceEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    return stub.getSpaceEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists events from a Google Chat space. For each event, the
+   * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the Chat resource. For example, if you list events about
+   * new space members, the server returns `Membership` resources that contain the latest membership
+   * details. If new members were removed during the requested period, the event payload contains an
+   * empty `Membership` resource.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To list events, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [List events from a Google Chat
+   * space](https://developers.google.com/workspace/chat/list-space-events).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   String filter = "filter-1274492040";
+   *   for (SpaceEvent element : chatServiceClient.listSpaceEvents(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the [Google Chat
+   *     space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces) where the
+   *     events occurred.
+   *     <p>Format: `spaces/{space}`.
+   * @param filter Required. A query filter.
+   *     <p>You must specify at least one event type (`event_type`) using the has `:` operator. To
+   *     filter by multiple event types, use the `OR` operator. Omit batch event types in your
+   *     filter. The request automatically returns any related batch events. For example, if you
+   *     filter by new reactions (`google.workspace.chat.reaction.v1.created`), the server also
+   *     returns batch new reactions events (`google.workspace.chat.reaction.v1.batchCreated`). For
+   *     a list of supported event types, see the [`SpaceEvents` reference
+   *     documentation](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.event_type).
+   *     <p>Optionally, you can also filter by start time (`start_time`) and end time (`end_time`):
+   *     <ul>
+   *       <li>`start_time`: Exclusive timestamp from which to start listing space events. You can
+   *           list events that occurred up to 28 days ago. If unspecified, lists space events from
+   *           the past 28 days.
+   *       <li>`end_time`: Inclusive timestamp until which space events are listed. If unspecified,
+   *           lists events up to the time of the request.
+   *     </ul>
+   *     <p>To specify a start or end time, use the equals `=` operator and format in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339). To filter by both `start_time` and
+   *     `end_time`, use the `AND` operator.
+   *     <p>For example, the following queries are valid:
+   *     <p>``` start_time="2023-08-23T19:20:33+00:00" AND end_time="2023-08-23T19:21:54+00:00" ```
+   *     ``` start_time="2023-08-23T19:20:33+00:00" AND
+   *     (event_types:"google.workspace.chat.space.v1.updated" OR
+   *     event_types:"google.workspace.chat.message.v1.created") ```
+   *     <p>The following queries are invalid:
+   *     <p>``` start_time="2023-08-23T19:20:33+00:00" OR end_time="2023-08-23T19:21:54+00:00" ```
+   *     ``` event_types:"google.workspace.chat.space.v1.updated" AND
+   *     event_types:"google.workspace.chat.message.v1.created" ```
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSpaceEventsPagedResponse listSpaceEvents(SpaceName parent, String filter) {
+    ListSpaceEventsRequest request =
+        ListSpaceEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listSpaceEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists events from a Google Chat space. For each event, the
+   * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the Chat resource. For example, if you list events about
+   * new space members, the server returns `Membership` resources that contain the latest membership
+   * details. If new members were removed during the requested period, the event payload contains an
+   * empty `Membership` resource.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To list events, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [List events from a Google Chat
+   * space](https://developers.google.com/workspace/chat/list-space-events).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (SpaceEvent element : chatServiceClient.listSpaceEvents(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the [Google Chat
+   *     space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces) where the
+   *     events occurred.
+   *     <p>Format: `spaces/{space}`.
+   * @param filter Required. A query filter.
+   *     <p>You must specify at least one event type (`event_type`) using the has `:` operator. To
+   *     filter by multiple event types, use the `OR` operator. Omit batch event types in your
+   *     filter. The request automatically returns any related batch events. For example, if you
+   *     filter by new reactions (`google.workspace.chat.reaction.v1.created`), the server also
+   *     returns batch new reactions events (`google.workspace.chat.reaction.v1.batchCreated`). For
+   *     a list of supported event types, see the [`SpaceEvents` reference
+   *     documentation](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.event_type).
+   *     <p>Optionally, you can also filter by start time (`start_time`) and end time (`end_time`):
+   *     <ul>
+   *       <li>`start_time`: Exclusive timestamp from which to start listing space events. You can
+   *           list events that occurred up to 28 days ago. If unspecified, lists space events from
+   *           the past 28 days.
+   *       <li>`end_time`: Inclusive timestamp until which space events are listed. If unspecified,
+   *           lists events up to the time of the request.
+   *     </ul>
+   *     <p>To specify a start or end time, use the equals `=` operator and format in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339). To filter by both `start_time` and
+   *     `end_time`, use the `AND` operator.
+   *     <p>For example, the following queries are valid:
+   *     <p>``` start_time="2023-08-23T19:20:33+00:00" AND end_time="2023-08-23T19:21:54+00:00" ```
+   *     ``` start_time="2023-08-23T19:20:33+00:00" AND
+   *     (event_types:"google.workspace.chat.space.v1.updated" OR
+   *     event_types:"google.workspace.chat.message.v1.created") ```
+   *     <p>The following queries are invalid:
+   *     <p>``` start_time="2023-08-23T19:20:33+00:00" OR end_time="2023-08-23T19:21:54+00:00" ```
+   *     ``` event_types:"google.workspace.chat.space.v1.updated" AND
+   *     event_types:"google.workspace.chat.message.v1.created" ```
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSpaceEventsPagedResponse listSpaceEvents(String parent, String filter) {
+    ListSpaceEventsRequest request =
+        ListSpaceEventsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return listSpaceEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists events from a Google Chat space. For each event, the
+   * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the Chat resource. For example, if you list events about
+   * new space members, the server returns `Membership` resources that contain the latest membership
+   * details. If new members were removed during the requested period, the event payload contains an
+   * empty `Membership` resource.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To list events, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [List events from a Google Chat
+   * space](https://developers.google.com/workspace/chat/list-space-events).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSpaceEventsRequest request =
+   *       ListSpaceEventsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (SpaceEvent element : chatServiceClient.listSpaceEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSpaceEventsPagedResponse listSpaceEvents(ListSpaceEventsRequest request) {
+    return listSpaceEventsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists events from a Google Chat space. For each event, the
+   * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the Chat resource. For example, if you list events about
+   * new space members, the server returns `Membership` resources that contain the latest membership
+   * details. If new members were removed during the requested period, the event payload contains an
+   * empty `Membership` resource.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To list events, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [List events from a Google Chat
+   * space](https://developers.google.com/workspace/chat/list-space-events).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSpaceEventsRequest request =
+   *       ListSpaceEventsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<SpaceEvent> future =
+   *       chatServiceClient.listSpaceEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SpaceEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    return stub.listSpaceEventsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists events from a Google Chat space. For each event, the
+   * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+   * contains the most recent version of the Chat resource. For example, if you list events about
+   * new space members, the server returns `Membership` resources that contain the latest membership
+   * details. If new members were removed during the requested period, the event payload contains an
+   * empty `Membership` resource.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * To list events, the authenticated user must be a member of the space.
+   *
+   * <p>For an example, see [List events from a Google Chat
+   * space](https://developers.google.com/workspace/chat/list-space-events).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSpaceEventsRequest request =
+   *       ListSpaceEventsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListSpaceEventsResponse response =
+   *         chatServiceClient.listSpaceEventsCallable().call(request);
+   *     for (SpaceEvent element : response.getSpaceEventsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsCallable() {
+    return stub.listSpaceEventsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -4786,6 +5278,83 @@ public class ChatServiceClient implements BackgroundResource {
     protected ListReactionsFixedSizeCollection createCollection(
         List<ListReactionsPage> pages, int collectionSize) {
       return new ListReactionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSpaceEventsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSpaceEventsRequest,
+          ListSpaceEventsResponse,
+          SpaceEvent,
+          ListSpaceEventsPage,
+          ListSpaceEventsFixedSizeCollection> {
+
+    public static ApiFuture<ListSpaceEventsPagedResponse> createAsync(
+        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        ApiFuture<ListSpaceEventsResponse> futureResponse) {
+      ApiFuture<ListSpaceEventsPage> futurePage =
+          ListSpaceEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSpaceEventsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSpaceEventsPagedResponse(ListSpaceEventsPage page) {
+      super(page, ListSpaceEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSpaceEventsPage
+      extends AbstractPage<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent, ListSpaceEventsPage> {
+
+    private ListSpaceEventsPage(
+        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        ListSpaceEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSpaceEventsPage createEmptyPage() {
+      return new ListSpaceEventsPage(null, null);
+    }
+
+    @Override
+    protected ListSpaceEventsPage createPage(
+        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        ListSpaceEventsResponse response) {
+      return new ListSpaceEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSpaceEventsPage> createPageAsync(
+        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        ApiFuture<ListSpaceEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSpaceEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSpaceEventsRequest,
+          ListSpaceEventsResponse,
+          SpaceEvent,
+          ListSpaceEventsPage,
+          ListSpaceEventsFixedSizeCollection> {
+
+    private ListSpaceEventsFixedSizeCollection(
+        List<ListSpaceEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSpaceEventsFixedSizeCollection createEmptyCollection() {
+      return new ListSpaceEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSpaceEventsFixedSizeCollection createCollection(
+        List<ListSpaceEventsPage> pages, int collectionSize) {
+      return new ListSpaceEventsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

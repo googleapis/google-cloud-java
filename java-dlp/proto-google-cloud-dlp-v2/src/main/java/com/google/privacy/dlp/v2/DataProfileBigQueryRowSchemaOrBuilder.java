@@ -94,5 +94,40 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    */
   com.google.privacy.dlp.v2.ColumnDataProfileOrBuilder getColumnProfileOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return Whether the fileStoreProfile field is set.
+   */
+  boolean hasFileStoreProfile();
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return The fileStoreProfile.
+   */
+  com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile();
+  /**
+   *
+   *
+   * <pre>
+   * File store data profile column.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   */
+  com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder();
+
   com.google.privacy.dlp.v2.DataProfileBigQueryRowSchema.DataProfileCase getDataProfileCase();
 }

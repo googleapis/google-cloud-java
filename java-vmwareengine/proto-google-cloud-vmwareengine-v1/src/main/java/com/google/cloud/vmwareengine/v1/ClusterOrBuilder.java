@@ -181,6 +181,47 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoscalingSettings field is set.
+   */
+  boolean hasAutoscalingSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoscalingSettings.
+   */
+  com.google.cloud.vmwareengine.v1.AutoscalingSettings getAutoscalingSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder getAutoscalingSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. System-generated unique identifier for the resource.
    * </pre>
    *

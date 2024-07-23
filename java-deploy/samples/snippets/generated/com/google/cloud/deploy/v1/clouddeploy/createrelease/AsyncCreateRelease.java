@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.Release;
 import com.google.longrunning.Operation;
+import java.util.ArrayList;
 
 public class AsyncCreateRelease {
 
@@ -46,6 +47,7 @@ public class AsyncCreateRelease {
               .setRelease(Release.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<Operation> future = cloudDeployClient.createReleaseCallable().futureCall(request);
       // Do something.

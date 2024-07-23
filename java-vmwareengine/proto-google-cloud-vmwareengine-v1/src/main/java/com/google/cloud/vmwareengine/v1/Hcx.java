@@ -106,6 +106,16 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     CREATING(2),
+    /**
+     *
+     *
+     * <pre>
+     * The appliance is being activated.
+     * </pre>
+     *
+     * <code>ACTIVATING = 3;</code>
+     */
+    ACTIVATING(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -139,6 +149,16 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The appliance is being activated.
+     * </pre>
+     *
+     * <code>ACTIVATING = 3;</code>
+     */
+    public static final int ACTIVATING_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -170,6 +190,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
           return ACTIVE;
         case 2:
           return CREATING;
+        case 3:
+          return ACTIVATING;
         default:
           return null;
       }

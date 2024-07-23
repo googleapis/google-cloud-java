@@ -604,4 +604,45 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1beta1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayOperatorConfig field is set.
+   */
+  boolean hasRayOperatorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayOperatorConfig.
+   */
+  com.google.container.v1beta1.RayOperatorConfig getRayOperatorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder();
 }

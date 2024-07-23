@@ -77,6 +77,8 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                                 fields, "projectName", request.getProjectName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta1/{projectName=projects/*/locations/*}/groupStats")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -126,6 +128,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                                 fields, "projectName", request.getProjectName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{projectName=projects/*/locations/*}/events")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -168,6 +171,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                                 fields, "projectName", request.getProjectName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{projectName=projects/*/locations/*}/events")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

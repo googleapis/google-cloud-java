@@ -21,6 +21,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
@@ -66,6 +67,10 @@ import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
 import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
+import com.google.privacy.dlp.v2.FileClusterSummary;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
+import com.google.privacy.dlp.v2.FileStoreDataProfileName;
+import com.google.privacy.dlp.v2.FileStoreInfoTypeSummary;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InfoTypeDescription;
@@ -84,6 +89,7 @@ import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
@@ -115,6 +121,7 @@ import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.TableDataProfileName;
 import com.google.privacy.dlp.v2.TransformationOverview;
 import com.google.privacy.dlp.v2.UniquenessScoreLevel;
+import com.google.privacy.dlp.v2.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -5362,6 +5369,8 @@ public class DlpServiceClientHttpJsonTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5418,6 +5427,8 @@ public class DlpServiceClientHttpJsonTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5453,6 +5464,387 @@ public class DlpServiceClientHttpJsonTest {
       String name =
           "organizations/organization-541/locations/location-541/projectDataProfiles/projectDataProfile-541";
       client.getProjectDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest2() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest3() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-9365/locations/location-9365";
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-9365/locations/location-9365";
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setFileStoreIsEmpty(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectDataProfileName name =
+        ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectDataProfileName name =
+          ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest2() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setFileStoreIsEmpty(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-7105/locations/location-7105/fileStoreDataProfiles/fileStoreDataProfile-7105";
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-7105/locations/location-7105/fileStoreDataProfiles/fileStoreDataProfile-7105";
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    FileStoreDataProfileName name =
+        FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FileStoreDataProfileName name =
+          FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+      client.deleteFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-7105/locations/location-7105/fileStoreDataProfiles/fileStoreDataProfile-7105";
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-7105/locations/location-7105/fileStoreDataProfiles/fileStoreDataProfile-7105";
+      client.deleteFileStoreDataProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

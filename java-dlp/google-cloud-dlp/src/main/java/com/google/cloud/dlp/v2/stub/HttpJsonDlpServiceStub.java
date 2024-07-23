@@ -21,6 +21,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
@@ -58,18 +59,21 @@ import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -92,6 +96,8 @@ import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -1744,6 +1750,120 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListFileStoreDataProfiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFileStoreDataProfilesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*/locations/*}/fileStoreDataProfiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFileStoreDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*}/fileStoreDataProfiles")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFileStoreDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFileStoreDataProfilesResponse>newBuilder()
+                      .setDefaultInstance(ListFileStoreDataProfilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetFileStoreDataProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetFileStoreDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/fileStoreDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/fileStoreDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FileStoreDataProfile>newBuilder()
+                      .setDefaultInstance(FileStoreDataProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteFileStoreDataProfile")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFileStoreDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/fileStoreDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/fileStoreDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileMethodDescriptor =
           ApiMethodDescriptor.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
@@ -2224,6 +2344,15 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
       listColumnDataProfilesPagedCallable;
   private final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable;
+  private final UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable;
+  private final UnaryCallable<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable;
+  private final UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable;
+  private final UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable;
   private final UnaryCallable<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileCallable;
   private final UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
@@ -2774,6 +2903,43 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+        listFileStoreDataProfilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listFileStoreDataProfilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileTransportSettings =
+            HttpJsonCallSettings.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+                .setMethodDescriptor(getFileStoreDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileTransportSettings =
+            HttpJsonCallSettings.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteFileStoreDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileTransportSettings =
             HttpJsonCallSettings.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
@@ -3122,6 +3288,26 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
             getProjectDataProfileTransportSettings,
             settings.getProjectDataProfileSettings(),
             clientContext);
+    this.listFileStoreDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.listFileStoreDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.getFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getFileStoreDataProfileTransportSettings,
+            settings.getFileStoreDataProfileSettings(),
+            clientContext);
+    this.deleteFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileStoreDataProfileTransportSettings,
+            settings.deleteFileStoreDataProfileSettings(),
+            clientContext);
     this.getTableDataProfileCallable =
         callableFactory.createUnaryCallable(
             getTableDataProfileTransportSettings,
@@ -3222,6 +3408,9 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     methodDescriptors.add(listTableDataProfilesMethodDescriptor);
     methodDescriptors.add(listColumnDataProfilesMethodDescriptor);
     methodDescriptors.add(getProjectDataProfileMethodDescriptor);
+    methodDescriptors.add(listFileStoreDataProfilesMethodDescriptor);
+    methodDescriptors.add(getFileStoreDataProfileMethodDescriptor);
+    methodDescriptors.add(deleteFileStoreDataProfileMethodDescriptor);
     methodDescriptors.add(getTableDataProfileMethodDescriptor);
     methodDescriptors.add(getColumnDataProfileMethodDescriptor);
     methodDescriptors.add(deleteTableDataProfileMethodDescriptor);
@@ -3510,6 +3699,30 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   public UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable() {
     return getProjectDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    return listFileStoreDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    return listFileStoreDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    return getFileStoreDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    return deleteFileStoreDataProfileCallable;
   }
 
   @Override

@@ -28,7 +28,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Task configuration for Batch SQL Translation.
+   * Task configuration for CW Batch/Offline SQL Translation.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Task configuration for Batch SQL Translation.
+   * Task configuration for CW Batch/Offline SQL Translation.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Task configuration for Batch SQL Translation.
+   * Task configuration for CW Batch/Offline SQL Translation.
    * </pre>
    *
    * <code>
@@ -65,6 +65,42 @@ public interface MigrationTaskOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.TranslationConfigDetailsOrBuilder
       getTranslationConfigDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Task details for unified SQL Translation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.TranslationDetails translation_details = 16;</code>
+   *
+   * @return Whether the translationDetails field is set.
+   */
+  boolean hasTranslationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task details for unified SQL Translation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.TranslationDetails translation_details = 16;</code>
+   *
+   * @return The translationDetails.
+   */
+  com.google.cloud.bigquery.migration.v2.TranslationDetails getTranslationDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Task details for unified SQL Translation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.TranslationDetails translation_details = 16;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.TranslationDetailsOrBuilder
+      getTranslationDetailsOrBuilder();
 
   /**
    *
@@ -107,7 +143,7 @@ public interface MigrationTaskOrBuilder
    * Translation_Snowflake2BQ, Translation_Netezza2BQ,
    * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
    * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ.
+   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -125,7 +161,7 @@ public interface MigrationTaskOrBuilder
    * Translation_Snowflake2BQ, Translation_Netezza2BQ,
    * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
    * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ.
+   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -273,6 +309,215 @@ public interface MigrationTaskOrBuilder
    * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details to errors and issues encountered while
+   * processing the task. Presence of error details does not mean that the task
+   * failed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.ResourceErrorDetail resource_error_details = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.bigquery.migration.v2.ResourceErrorDetail>
+      getResourceErrorDetailsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details to errors and issues encountered while
+   * processing the task. Presence of error details does not mean that the task
+   * failed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.ResourceErrorDetail resource_error_details = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2.ResourceErrorDetail getResourceErrorDetails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details to errors and issues encountered while
+   * processing the task. Presence of error details does not mean that the task
+   * failed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.ResourceErrorDetail resource_error_details = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getResourceErrorDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details to errors and issues encountered while
+   * processing the task. Presence of error details does not mean that the task
+   * failed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.ResourceErrorDetail resource_error_details = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.bigquery.migration.v2.ResourceErrorDetailOrBuilder>
+      getResourceErrorDetailsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details to errors and issues encountered while
+   * processing the task. Presence of error details does not mean that the task
+   * failed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.ResourceErrorDetail resource_error_details = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2.ResourceErrorDetailOrBuilder
+      getResourceErrorDetailsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The number or resources with errors. Note: This is not the total
+   * number of errors as each resource can have more than one error.
+   * This is used to indicate truncation by having a `resource_error_count`
+   * that is higher than the size of `resource_error_details`.
+   * </pre>
+   *
+   * <code>int32 resource_error_count = 18;</code>
+   *
+   * @return The resourceErrorCount.
+   */
+  int getResourceErrorCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics for the task.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   */
+  java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics for the task.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The metrics for the task.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   */
+  int getMetricsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics for the task.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   */
+  java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
+      getMetricsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics for the task.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2.MigrationTaskResult task_result = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the taskResult field is set.
+   */
+  boolean hasTaskResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2.MigrationTaskResult task_result = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The taskResult.
+   */
+  com.google.cloud.bigquery.migration.v2.MigrationTaskResult getTaskResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.migration.v2.MigrationTaskResult task_result = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2.MigrationTaskResultOrBuilder getTaskResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Count of all the processing errors in this task and its subtasks.
+   * </pre>
+   *
+   * <code>int32 total_processing_error_count = 21;</code>
+   *
+   * @return The totalProcessingErrorCount.
+   */
+  int getTotalProcessingErrorCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Count of all the resource errors in this task and its subtasks.
+   * </pre>
+   *
+   * <code>int32 total_resource_error_count = 22;</code>
+   *
+   * @return The totalResourceErrorCount.
+   */
+  int getTotalResourceErrorCount();
 
   com.google.cloud.bigquery.migration.v2.MigrationTask.TaskDetailsCase getTaskDetailsCase();
 }

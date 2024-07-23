@@ -28,8 +28,8 @@ public interface RollbackTargetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   * created. Format should be
+   * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+   * created. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -44,8 +44,8 @@ public interface RollbackTargetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   * created. Format should be
+   * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+   * created. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -217,4 +217,67 @@ public interface RollbackTargetRequestOrBuilder
    * @return The validateOnly.
    */
   boolean getValidateOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deploy_policy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the overrideDeployPolicy.
+   */
+  java.util.List<java.lang.String> getOverrideDeployPolicyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deploy_policy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of overrideDeployPolicy.
+   */
+  int getOverrideDeployPolicyCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deploy_policy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The overrideDeployPolicy at the given index.
+   */
+  java.lang.String getOverrideDeployPolicy(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deploy_policy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the overrideDeployPolicy at the given index.
+   */
+  com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index);
 }

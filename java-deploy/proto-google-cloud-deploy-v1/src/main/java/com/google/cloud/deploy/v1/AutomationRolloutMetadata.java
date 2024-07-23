@@ -74,7 +74,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The ID of the AutomationRun initiated by a promote release
+   * Output only. The name of the AutomationRun initiated by a promote release
    * rule.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The ID of the AutomationRun initiated by a promote release
+   * Output only. The name of the AutomationRun initiated by a promote release
    * rule.
    * </pre>
    *
@@ -128,8 +128,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-   * rule.
+   * Output only. The names of the AutomationRuns initiated by an advance
+   * rollout rule.
    * </pre>
    *
    * <code>repeated string advance_automation_runs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -144,8 +144,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-   * rule.
+   * Output only. The names of the AutomationRuns initiated by an advance
+   * rollout rule.
    * </pre>
    *
    * <code>repeated string advance_automation_runs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -160,8 +160,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-   * rule.
+   * Output only. The names of the AutomationRuns initiated by an advance
+   * rollout rule.
    * </pre>
    *
    * <code>repeated string advance_automation_runs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -177,8 +177,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-   * rule.
+   * Output only. The names of the AutomationRuns initiated by an advance
+   * rollout rule.
    * </pre>
    *
    * <code>repeated string advance_automation_runs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -200,7 +200,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+   * Output only. The names of the AutomationRuns initiated by a repair rollout
    * rule.
    * </pre>
    *
@@ -216,7 +216,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+   * Output only. The names of the AutomationRuns initiated by a repair rollout
    * rule.
    * </pre>
    *
@@ -232,7 +232,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+   * Output only. The names of the AutomationRuns initiated by a repair rollout
    * rule.
    * </pre>
    *
@@ -249,7 +249,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+   * Output only. The names of the AutomationRuns initiated by a repair rollout
    * rule.
    * </pre>
    *
@@ -689,7 +689,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The ID of the AutomationRun initiated by a promote release
+     * Output only. The name of the AutomationRun initiated by a promote release
      * rule.
      * </pre>
      *
@@ -712,7 +712,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The ID of the AutomationRun initiated by a promote release
+     * Output only. The name of the AutomationRun initiated by a promote release
      * rule.
      * </pre>
      *
@@ -735,7 +735,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The ID of the AutomationRun initiated by a promote release
+     * Output only. The name of the AutomationRun initiated by a promote release
      * rule.
      * </pre>
      *
@@ -757,7 +757,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The ID of the AutomationRun initiated by a promote release
+     * Output only. The name of the AutomationRun initiated by a promote release
      * rule.
      * </pre>
      *
@@ -775,7 +775,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The ID of the AutomationRun initiated by a promote release
+     * Output only. The name of the AutomationRun initiated by a promote release
      * rule.
      * </pre>
      *
@@ -809,8 +809,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -827,8 +827,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -844,8 +844,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -862,8 +862,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -880,8 +880,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -906,8 +906,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -931,8 +931,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -953,8 +953,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -974,8 +974,8 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by an advance rollout
-     * rule.
+     * Output only. The names of the AutomationRuns initiated by an advance
+     * rollout rule.
      * </pre>
      *
      * <code>
@@ -1010,7 +1010,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1028,7 +1028,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1045,7 +1045,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1063,7 +1063,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1081,7 +1081,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1107,7 +1107,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1132,7 +1132,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1154,7 +1154,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *
@@ -1175,7 +1175,7 @@ public final class AutomationRolloutMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The IDs of the AutomationRuns initiated by a repair rollout
+     * Output only. The names of the AutomationRuns initiated by a repair rollout
      * rule.
      * </pre>
      *

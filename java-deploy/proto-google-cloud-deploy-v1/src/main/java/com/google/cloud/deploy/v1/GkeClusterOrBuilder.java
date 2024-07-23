@@ -74,4 +74,33 @@ public interface GkeClusterOrBuilder
    * @return The internalIp.
    */
   boolean getInternalIp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, used to configure a
+   * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+   * to the Kubernetes server.
+   * </pre>
+   *
+   * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The proxyUrl.
+   */
+  java.lang.String getProxyUrl();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, used to configure a
+   * [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy)
+   * to the Kubernetes server.
+   * </pre>
+   *
+   * <code>string proxy_url = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for proxyUrl.
+   */
+  com.google.protobuf.ByteString getProxyUrlBytes();
 }

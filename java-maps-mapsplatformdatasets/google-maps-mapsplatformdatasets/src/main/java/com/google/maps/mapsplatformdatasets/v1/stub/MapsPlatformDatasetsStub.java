@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1.stub;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -23,6 +24,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.Dataset;
 import com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse;
 import com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse;
@@ -49,6 +52,16 @@ public abstract class MapsPlatformDatasetsStub implements BackgroundResource {
 
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: getDatasetCallable()");
+  }
+
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchDatasetErrorsPagedCallable()");
+  }
+
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchDatasetErrorsCallable()");
   }
 
   public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {

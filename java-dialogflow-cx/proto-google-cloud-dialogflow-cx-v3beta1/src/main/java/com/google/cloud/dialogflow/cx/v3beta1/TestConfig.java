@@ -142,9 +142,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    *
    * Only one of `flow` and `page` should be set to indicate the starting point
-   * of the test case. If both are set, `page` takes precedence over `flow`. If
-   * neither is set, the test case will start with start page on the default
-   * start flow.
+   * of the test case. If neither is set, the test case will start with start
+   * page on the default start flow.
    * </pre>
    *
    * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -172,9 +171,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    *
    * Only one of `flow` and `page` should be set to indicate the starting point
-   * of the test case. If both are set, `page` takes precedence over `flow`. If
-   * neither is set, the test case will start with start page on the default
-   * start flow.
+   * of the test case. If neither is set, the test case will start with start
+   * page on the default start flow.
    * </pre>
    *
    * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -207,9 +205,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    *
    * Only one of `flow` and `page` should be set to indicate the starting point
-   * of the test case. If both are set, `page` takes precedence over `flow`. If
-   * neither is set, the test case will start with start page on the default
-   * start flow.
+   * of the test case. If neither is set, the test case will start with start
+   * page on the default start flow.
    * </pre>
    *
    * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -237,9 +234,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    *
    * Only one of `flow` and `page` should be set to indicate the starting point
-   * of the test case. If both are set, `page` takes precedence over `flow`. If
-   * neither is set, the test case will start with start page on the default
-   * start flow.
+   * of the test case. If neither is set, the test case will start with start
+   * page on the default start flow.
    * </pre>
    *
    * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -847,9 +843,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -876,9 +871,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -905,9 +899,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -933,9 +926,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -957,9 +949,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string flow = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -988,9 +979,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1017,9 +1007,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1046,9 +1035,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1074,9 +1062,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1098,9 +1085,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
      *
      * Only one of `flow` and `page` should be set to indicate the starting point
-     * of the test case. If both are set, `page` takes precedence over `flow`. If
-     * neither is set, the test case will start with start page on the default
-     * start flow.
+     * of the test case. If neither is set, the test case will start with start
+     * page on the default start flow.
      * </pre>
      *
      * <code>string page = 3 [(.google.api.resource_reference) = { ... }</code>

@@ -65,7 +65,11 @@ import javax.annotation.Generated;
  * <li> &#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example:
  * </ul>
  * <p>  `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
- * <p>  &#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects.</td>
+ * <p>  &#42;&#42;Note:&#42;&#42; [Error Reporting] (https://cloud.google.com/error-reporting) is a service built on Cloud Logging and can analyze log entries when all of the following are true:
+ * <ul>
+ * <li>  Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+ * <li>  The log bucket satisfies one of the following:     &#42; The log bucket is stored in the same project where the logs     originated.     &#42; The logs were routed to a project, and then that project stored those     logs in a log bucket that it owns.
+ * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -206,9 +210,15 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
    *
-   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on
-   * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
-   * Google Cloud projects.
+   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting] (https://cloud.google.com/error-reporting) is a
+   * service built on Cloud Logging and can analyze log entries when all of the following are true:
+   *
+   * <ul>
+   *   <li>Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+   *   <li>The log bucket satisfies one of the following: &#42; The log bucket is stored in the same
+   *       project where the logs originated. &#42; The logs were routed to a project, and then that
+   *       project stored those logs in a log bucket that it owns.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -258,9 +268,15 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
    *
-   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on
-   * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
-   * Google Cloud projects.
+   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting] (https://cloud.google.com/error-reporting) is a
+   * service built on Cloud Logging and can analyze log entries when all of the following are true:
+   *
+   * <ul>
+   *   <li>Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+   *   <li>The log bucket satisfies one of the following: &#42; The log bucket is stored in the same
+   *       project where the logs originated. &#42; The logs were routed to a project, and then that
+   *       project stored those logs in a log bucket that it owns.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -307,9 +323,15 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
    *
-   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on
-   * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
-   * Google Cloud projects.
+   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting] (https://cloud.google.com/error-reporting) is a
+   * service built on Cloud Logging and can analyze log entries when all of the following are true:
+   *
+   * <ul>
+   *   <li>Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+   *   <li>The log bucket satisfies one of the following: &#42; The log bucket is stored in the same
+   *       project where the logs originated. &#42; The logs were routed to a project, and then that
+   *       project stored those logs in a log bucket that it owns.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -351,9 +373,15 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
    *
-   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on
-   * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
-   * Google Cloud projects.
+   * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting] (https://cloud.google.com/error-reporting) is a
+   * service built on Cloud Logging and can analyze log entries when all of the following are true:
+   *
+   * <ul>
+   *   <li>Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+   *   <li>The log bucket satisfies one of the following: &#42; The log bucket is stored in the same
+   *       project where the logs originated. &#42; The logs were routed to a project, and then that
+   *       project stored those logs in a log bucket that it owns.
+   * </ul>
    *
    * <p>Sample code:
    *

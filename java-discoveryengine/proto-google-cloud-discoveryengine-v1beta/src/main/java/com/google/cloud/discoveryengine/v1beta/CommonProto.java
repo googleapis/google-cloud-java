@@ -80,7 +80,7 @@ public final class CommonProto {
           + "H_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_STAN"
           + "DARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n\013Se"
           + "archAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIED\020\000"
-          + "\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\351\n\n\'com.google.c"
+          + "\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\267\010\n\'com.google.c"
           + "loud.discoveryengine.v1betaB\013CommonProto"
           + "P\001ZQcloud.google.com/go/discoveryengine/"
           + "apiv1beta/discoveryenginepb;discoveryeng"
@@ -107,15 +107,7 @@ public final class CommonProto {
           + "figs/{ranking_config}\352Ay\n#healthcare.goo"
           + "gleapis.com/FhirStore\022Rprojects/{project"
           + "}/locations/{location}/datasets/{dataset"
-          + "}/fhirStores/{fhir_store}\352A\256\002\n$discovery"
-          + "engine.googleapis.com/Chunk\022uprojects/{p"
-          + "roject}/locations/{location}/dataStores/"
-          + "{data_store}/branches/{branch}/documents"
-          + "/{document}/chunks/{chunk}\022\216\001projects/{p"
-          + "roject}/locations/{location}/collections"
-          + "/{collection}/dataStores/{data_store}/br"
-          + "anches/{branch}/documents/{document}/chu"
-          + "nks/{chunk}b\006proto3"
+          + "}/fhirStores/{fhir_store}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

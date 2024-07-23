@@ -609,4 +609,18 @@ public interface FlowOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder
       getMultiLanguageSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the flow is locked for changes. If the flow is locked,
+   * modifications to the flow will be rejected.
+   * </pre>
+   *
+   * <code>bool locked = 30;</code>
+   *
+   * @return The locked.
+   */
+  boolean getLocked();
 }

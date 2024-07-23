@@ -471,6 +471,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateDeployPolicy</td>
+ *      <td><p> Creates a new DeployPolicy in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDeployPolicyAsync(CreateDeployPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDeployPolicyAsync(LocationName parent, DeployPolicy deployPolicy, String deployPolicyId)
+ *           <li><p> createDeployPolicyAsync(String parent, DeployPolicy deployPolicy, String deployPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDeployPolicyOperationCallable()
+ *           <li><p> createDeployPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDeployPolicy</td>
+ *      <td><p> Updates the parameters of a single DeployPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDeployPolicyAsync(UpdateDeployPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDeployPolicyAsync(DeployPolicy deployPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDeployPolicyOperationCallable()
+ *           <li><p> updateDeployPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDeployPolicy</td>
+ *      <td><p> Deletes a single DeployPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDeployPolicyAsync(DeleteDeployPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeployPolicyAsync(DeployPolicyName name)
+ *           <li><p> deleteDeployPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeployPolicyOperationCallable()
+ *           <li><p> deleteDeployPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeployPolicies</td>
+ *      <td><p> Lists DeployPolicies in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeployPolicies(ListDeployPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeployPolicies(LocationName parent)
+ *           <li><p> listDeployPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeployPoliciesPagedCallable()
+ *           <li><p> listDeployPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDeployPolicy</td>
+ *      <td><p> Gets details of a single DeployPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeployPolicy(GetDeployPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeployPolicy(DeployPolicyName name)
+ *           <li><p> getDeployPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeployPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ApproveRollout</td>
  *      <td><p> Approves a Rollout.</td>
  *      <td>
@@ -1379,8 +1477,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `DeliveryPipeline` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1419,8 +1517,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `DeliveryPipeline` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1556,8 +1654,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param deliveryPipeline Required. The `DeliveryPipeline` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `DeliveryPipeline` resource by the update. The fields specified in the update_mask are
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `DeliveryPipeline` resource. The fields specified in the update_mask are
    *     relative to the resource, not the full request. A field will be overwritten if it's in the
    *     mask. If the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1690,7 +1788,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * @param name Required. The name of the `DeliveryPipeline` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1722,7 +1820,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * @param name Required. The name of the `DeliveryPipeline` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2030,8 +2128,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   *     created. Format should be
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` must be created.
+   *     The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param targetId Required. ID of the `Target` that is being rolled back.
    * @param rolloutId Required. ID of the rollback `Rollout` to create.
@@ -2069,8 +2167,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   *     created. Format should be
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` must be created.
+   *     The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param targetId Required. ID of the `Target` that is being rolled back.
    * @param rolloutId Required. ID of the rollback `Rollout` to create.
@@ -2111,6 +2209,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRolloutToRollBack("rolloutToRollBack-1195544784")
    *           .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   RollbackTargetResponse response = cloudDeployClient.rollbackTarget(request);
    * }
@@ -2147,6 +2246,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRolloutToRollBack("rolloutToRollBack-1195544784")
    *           .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<RollbackTargetResponse> future =
    *       cloudDeployClient.rollbackTargetCallable().futureCall(request);
@@ -2290,8 +2390,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `Target` must be created. The format
+   *     is `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2327,8 +2427,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `Target` must be created. The format
+   *     is `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2461,9 +2561,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param target Required. The `Target` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     Target resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it's in the mask. If the
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `Target` resource. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it's in the mask. If the
    *     user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2589,7 +2689,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Target` to delete. Format should be
+   * @param name Required. The name of the `Target` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2617,7 +2717,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Target` to delete. Format should be
+   * @param name Required. The name of the `Target` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3044,8 +3144,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `CustomTargetType` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `CustomTargetType` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param customTargetType Required. The `CustomTargetType` to create.
    * @param customTargetTypeId Required. ID of the `CustomTargetType`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3084,8 +3184,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `CustomTargetType` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `CustomTargetType` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param customTargetType Required. The `CustomTargetType` to create.
    * @param customTargetTypeId Required. ID of the `CustomTargetType`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3221,8 +3321,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param customTargetType Required. The `CustomTargetType` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `CustomTargetType` resource by the update. The fields specified in the update_mask are
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `CustomTargetType` resource. The fields specified in the update_mask are
    *     relative to the resource, not the full request. A field will be overwritten if it's in the
    *     mask. If the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3814,8 +3914,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Release` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Release` is created. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
@@ -3853,8 +3952,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Release` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Release` is created. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
@@ -3893,6 +3991,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRelease(Release.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   Release response = cloudDeployClient.createReleaseAsync(request).get();
    * }
@@ -3928,6 +4027,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRelease(Release.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   OperationFuture<Release, OperationMetadata> future =
    *       cloudDeployClient.createReleaseOperationCallable().futureCall(request);
@@ -3963,6 +4063,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRelease(Release.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future = cloudDeployClient.createReleaseCallable().futureCall(request);
    *   // Do something.
@@ -4094,6 +4195,757 @@ public class CloudDeployClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new DeployPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+   *   String deployPolicyId = "deployPolicyId-1490278412";
+   *   DeployPolicy response =
+   *       cloudDeployClient.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `DeployPolicy` must be created. The
+   *     format is `projects/{project_id}/locations/{location_name}`.
+   * @param deployPolicy Required. The `DeployPolicy` to create.
+   * @param deployPolicyId Required. ID of the `DeployPolicy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPolicy, OperationMetadata> createDeployPolicyAsync(
+      LocationName parent, DeployPolicy deployPolicy, String deployPolicyId) {
+    CreateDeployPolicyRequest request =
+        CreateDeployPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeployPolicy(deployPolicy)
+            .setDeployPolicyId(deployPolicyId)
+            .build();
+    return createDeployPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DeployPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+   *   String deployPolicyId = "deployPolicyId-1490278412";
+   *   DeployPolicy response =
+   *       cloudDeployClient.createDeployPolicyAsync(parent, deployPolicy, deployPolicyId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `DeployPolicy` must be created. The
+   *     format is `projects/{project_id}/locations/{location_name}`.
+   * @param deployPolicy Required. The `DeployPolicy` to create.
+   * @param deployPolicyId Required. ID of the `DeployPolicy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPolicy, OperationMetadata> createDeployPolicyAsync(
+      String parent, DeployPolicy deployPolicy, String deployPolicyId) {
+    CreateDeployPolicyRequest request =
+        CreateDeployPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setDeployPolicy(deployPolicy)
+            .setDeployPolicyId(deployPolicyId)
+            .build();
+    return createDeployPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DeployPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateDeployPolicyRequest request =
+   *       CreateDeployPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeployPolicyId("deployPolicyId-1490278412")
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   DeployPolicy response = cloudDeployClient.createDeployPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPolicy, OperationMetadata> createDeployPolicyAsync(
+      CreateDeployPolicyRequest request) {
+    return createDeployPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DeployPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateDeployPolicyRequest request =
+   *       CreateDeployPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeployPolicyId("deployPolicyId-1490278412")
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<DeployPolicy, OperationMetadata> future =
+   *       cloudDeployClient.createDeployPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable() {
+    return stub.createDeployPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DeployPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateDeployPolicyRequest request =
+   *       CreateDeployPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeployPolicyId("deployPolicyId-1490278412")
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.createDeployPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
+    return stub.createDeployPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeployPolicy deployPolicy = DeployPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeployPolicy response =
+   *       cloudDeployClient.updateDeployPolicyAsync(deployPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param deployPolicy Required. The `DeployPolicy` to update.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `DeployPolicy` resource. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it's in the mask. If
+   *     the user doesn't provide a mask then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPolicy, OperationMetadata> updateDeployPolicyAsync(
+      DeployPolicy deployPolicy, FieldMask updateMask) {
+    UpdateDeployPolicyRequest request =
+        UpdateDeployPolicyRequest.newBuilder()
+            .setDeployPolicy(deployPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeployPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateDeployPolicyRequest request =
+   *       UpdateDeployPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   DeployPolicy response = cloudDeployClient.updateDeployPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPolicy, OperationMetadata> updateDeployPolicyAsync(
+      UpdateDeployPolicyRequest request) {
+    return updateDeployPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateDeployPolicyRequest request =
+   *       UpdateDeployPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<DeployPolicy, OperationMetadata> future =
+   *       cloudDeployClient.updateDeployPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable() {
+    return stub.updateDeployPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateDeployPolicyRequest request =
+   *       UpdateDeployPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeployPolicy(DeployPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.updateDeployPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
+    return stub.updateDeployPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+   *   cloudDeployClient.deleteDeployPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `DeployPolicy` to delete. The format is
+   *     `projects/{project_id}/locations/{location_name}/deployPolicies/{deploy_policy_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDeployPolicyAsync(
+      DeployPolicyName name) {
+    DeleteDeployPolicyRequest request =
+        DeleteDeployPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDeployPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString();
+   *   cloudDeployClient.deleteDeployPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `DeployPolicy` to delete. The format is
+   *     `projects/{project_id}/locations/{location_name}/deployPolicies/{deploy_policy_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDeployPolicyAsync(String name) {
+    DeleteDeployPolicyRequest request =
+        DeleteDeployPolicyRequest.newBuilder().setName(name).build();
+    return deleteDeployPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteDeployPolicyRequest request =
+   *       DeleteDeployPolicyRequest.newBuilder()
+   *           .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   cloudDeployClient.deleteDeployPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDeployPolicyAsync(
+      DeleteDeployPolicyRequest request) {
+    return deleteDeployPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteDeployPolicyRequest request =
+   *       DeleteDeployPolicyRequest.newBuilder()
+   *           .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudDeployClient.deleteDeployPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable() {
+    return stub.deleteDeployPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteDeployPolicyRequest request =
+   *       DeleteDeployPolicyRequest.newBuilder()
+   *           .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.deleteDeployPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
+    return stub.deleteDeployPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DeployPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DeployPolicy element : cloudDeployClient.listDeployPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deploy policies. Format must
+   *     be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeployPoliciesPagedResponse listDeployPolicies(LocationName parent) {
+    ListDeployPoliciesRequest request =
+        ListDeployPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeployPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DeployPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DeployPolicy element : cloudDeployClient.listDeployPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deploy policies. Format must
+   *     be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeployPoliciesPagedResponse listDeployPolicies(String parent) {
+    ListDeployPoliciesRequest request =
+        ListDeployPoliciesRequest.newBuilder().setParent(parent).build();
+    return listDeployPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DeployPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListDeployPoliciesRequest request =
+   *       ListDeployPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DeployPolicy element : cloudDeployClient.listDeployPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeployPoliciesPagedResponse listDeployPolicies(
+      ListDeployPoliciesRequest request) {
+    return listDeployPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DeployPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListDeployPoliciesRequest request =
+   *       ListDeployPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DeployPolicy> future =
+   *       cloudDeployClient.listDeployPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DeployPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable() {
+    return stub.listDeployPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DeployPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListDeployPoliciesRequest request =
+   *       ListDeployPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDeployPoliciesResponse response =
+   *         cloudDeployClient.listDeployPoliciesCallable().call(request);
+   *     for (DeployPolicy element : response.getDeployPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable() {
+    return stub.listDeployPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeployPolicyName name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]");
+   *   DeployPolicy response = cloudDeployClient.getDeployPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `DeployPolicy`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deployPolicies/{deploy_policy_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeployPolicy getDeployPolicy(DeployPolicyName name) {
+    GetDeployPolicyRequest request =
+        GetDeployPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDeployPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name = DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString();
+   *   DeployPolicy response = cloudDeployClient.getDeployPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `DeployPolicy`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deployPolicies/{deploy_policy_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeployPolicy getDeployPolicy(String name) {
+    GetDeployPolicyRequest request = GetDeployPolicyRequest.newBuilder().setName(name).build();
+    return getDeployPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetDeployPolicyRequest request =
+   *       GetDeployPolicyRequest.newBuilder()
+   *           .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+   *           .build();
+   *   DeployPolicy response = cloudDeployClient.getDeployPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeployPolicy getDeployPolicy(GetDeployPolicyRequest request) {
+    return getDeployPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DeployPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetDeployPolicyRequest request =
+   *       GetDeployPolicyRequest.newBuilder()
+   *           .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<DeployPolicy> future =
+   *       cloudDeployClient.getDeployPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   DeployPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
+    return stub.getDeployPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Approves a Rollout.
    *
    * <p>Sample code:
@@ -4175,6 +5027,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]")
    *                   .toString())
    *           .setApproved(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApproveRolloutResponse response = cloudDeployClient.approveRollout(request);
    * }
@@ -4211,6 +5064,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]")
    *                   .toString())
    *           .setApproved(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<ApproveRolloutResponse> future =
    *       cloudDeployClient.approveRolloutCallable().futureCall(request);
@@ -4315,6 +5169,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]")
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   AdvanceRolloutResponse response = cloudDeployClient.advanceRollout(request);
    * }
@@ -4351,6 +5206,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]")
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<AdvanceRolloutResponse> future =
    *       cloudDeployClient.advanceRolloutCallable().futureCall(request);
@@ -4446,6 +5302,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[RELEASE]",
    *                       "[ROLLOUT]")
    *                   .toString())
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   CancelRolloutResponse response = cloudDeployClient.cancelRollout(request);
    * }
@@ -4481,6 +5338,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[RELEASE]",
    *                       "[ROLLOUT]")
    *                   .toString())
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<CancelRolloutResponse> future =
    *       cloudDeployClient.cancelRolloutCallable().futureCall(request);
@@ -4817,8 +5675,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Rollout` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Rollout` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
@@ -4856,8 +5714,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Rollout` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Rollout` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
@@ -4896,6 +5754,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   Rollout response = cloudDeployClient.createRolloutAsync(request).get();
@@ -4932,6 +5791,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   OperationFuture<Rollout, OperationMetadata> future =
@@ -4968,6 +5828,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   ApiFuture<Operation> future = cloudDeployClient.createRolloutCallable().futureCall(request);
@@ -5081,6 +5942,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
    *           .setJobId("jobId101296568")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   IgnoreJobResponse response = cloudDeployClient.ignoreJob(request);
    * }
@@ -5118,6 +5980,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
    *           .setJobId("jobId101296568")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<IgnoreJobResponse> future =
    *       cloudDeployClient.ignoreJobCallable().futureCall(request);
@@ -5231,6 +6094,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
    *           .setJobId("jobId101296568")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   RetryJobResponse response = cloudDeployClient.retryJob(request);
    * }
@@ -5268,6 +6132,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                   .toString())
    *           .setPhaseId("phaseId-608264202")
    *           .setJobId("jobId101296568")
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<RetryJobResponse> future = cloudDeployClient.retryJobCallable().futureCall(request);
    *   // Do something.
@@ -5706,6 +6571,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]",
    *                       "[JOB_RUN]")
    *                   .toString())
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   TerminateJobRunResponse response = cloudDeployClient.terminateJobRun(request);
    * }
@@ -5742,6 +6608,7 @@ public class CloudDeployClient implements BackgroundResource {
    *                       "[ROLLOUT]",
    *                       "[JOB_RUN]")
    *                   .toString())
+   *           .addAllOverrideDeployPolicy(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TerminateJobRunResponse> future =
    *       cloudDeployClient.terminateJobRunCallable().futureCall(request);
@@ -5885,8 +6752,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Automation` should be created.
-   *     Format should be
+   * @param parent Required. The parent collection in which the `Automation` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param automation Required. The `Automation` to create.
    * @param automationId Required. ID of the `Automation`.
@@ -5925,8 +6792,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Automation` should be created.
-   *     Format should be
+   * @param parent Required. The parent collection in which the `Automation` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param automation Required. The `Automation` to create.
    * @param automationId Required. ID of the `Automation`.
@@ -6067,8 +6934,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param automation Required. The `Automation` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `Automation` resource by the update. The fields specified in the update_mask are relative
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `Automation` resource. The fields specified in the update_mask are relative
    *     to the resource, not the full request. A field will be overwritten if it's in the mask. If
    *     the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -6200,7 +7067,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Automation` to delete. Format should be
+   * @param name Required. The name of the `Automation` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -6231,7 +7098,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Automation` to delete. Format should be
+   * @param name Required. The name of the `Automation` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -7787,6 +8654,86 @@ public class CloudDeployClient implements BackgroundResource {
     protected ListReleasesFixedSizeCollection createCollection(
         List<ListReleasesPage> pages, int collectionSize) {
       return new ListReleasesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDeployPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDeployPoliciesRequest,
+          ListDeployPoliciesResponse,
+          DeployPolicy,
+          ListDeployPoliciesPage,
+          ListDeployPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListDeployPoliciesPagedResponse> createAsync(
+        PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy> context,
+        ApiFuture<ListDeployPoliciesResponse> futureResponse) {
+      ApiFuture<ListDeployPoliciesPage> futurePage =
+          ListDeployPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDeployPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDeployPoliciesPagedResponse(ListDeployPoliciesPage page) {
+      super(page, ListDeployPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDeployPoliciesPage
+      extends AbstractPage<
+          ListDeployPoliciesRequest,
+          ListDeployPoliciesResponse,
+          DeployPolicy,
+          ListDeployPoliciesPage> {
+
+    private ListDeployPoliciesPage(
+        PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy> context,
+        ListDeployPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListDeployPoliciesPage createEmptyPage() {
+      return new ListDeployPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListDeployPoliciesPage createPage(
+        PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy> context,
+        ListDeployPoliciesResponse response) {
+      return new ListDeployPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDeployPoliciesPage> createPageAsync(
+        PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy> context,
+        ApiFuture<ListDeployPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDeployPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDeployPoliciesRequest,
+          ListDeployPoliciesResponse,
+          DeployPolicy,
+          ListDeployPoliciesPage,
+          ListDeployPoliciesFixedSizeCollection> {
+
+    private ListDeployPoliciesFixedSizeCollection(
+        List<ListDeployPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDeployPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListDeployPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDeployPoliciesFixedSizeCollection createCollection(
+        List<ListDeployPoliciesPage> pages, int collectionSize) {
+      return new ListDeployPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
 

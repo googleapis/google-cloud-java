@@ -108,6 +108,36 @@ public final class LoggingServer extends com.google.protobuf.GeneratedMessageV3
      * <code>TCP = 2;</code>
      */
     TCP(2),
+    /**
+     *
+     *
+     * <pre>
+     * TLS
+     * </pre>
+     *
+     * <code>TLS = 3;</code>
+     */
+    TLS(3),
+    /**
+     *
+     *
+     * <pre>
+     * SSL
+     * </pre>
+     *
+     * <code>SSL = 4;</code>
+     */
+    SSL(4),
+    /**
+     *
+     *
+     * <pre>
+     * RELP
+     * </pre>
+     *
+     * <code>RELP = 5;</code>
+     */
+    RELP(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -141,6 +171,36 @@ public final class LoggingServer extends com.google.protobuf.GeneratedMessageV3
      * <code>TCP = 2;</code>
      */
     public static final int TCP_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * TLS
+     * </pre>
+     *
+     * <code>TLS = 3;</code>
+     */
+    public static final int TLS_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * SSL
+     * </pre>
+     *
+     * <code>SSL = 4;</code>
+     */
+    public static final int SSL_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * RELP
+     * </pre>
+     *
+     * <code>RELP = 5;</code>
+     */
+    public static final int RELP_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -172,6 +232,12 @@ public final class LoggingServer extends com.google.protobuf.GeneratedMessageV3
           return UDP;
         case 2:
           return TCP;
+        case 3:
+          return TLS;
+        case 4:
+          return SSL;
+        case 5:
+          return RELP;
         default:
           return null;
       }

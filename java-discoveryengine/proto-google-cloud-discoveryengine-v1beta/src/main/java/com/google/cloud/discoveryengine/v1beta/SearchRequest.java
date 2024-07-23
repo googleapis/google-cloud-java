@@ -943,8 +943,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A struct to define data stores to filter on in a search call and
-   * configurations for those data stores. A maximum of 1 DataStoreSpec per
-   * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   * configurations for those data stores. Otherwise, an `INVALID_ARGUMENT`
+   * error is returned.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec}
@@ -1210,8 +1210,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A struct to define data stores to filter on in a search call and
-     * configurations for those data stores. A maximum of 1 DataStoreSpec per
-     * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     * configurations for those data stores. Otherwise, an `INVALID_ARGUMENT`
+     * error is returned.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec}
@@ -1647,6 +1647,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
+     * For aggregation in healthcare search, when the [FacetKey.key] is
+     * "healthcare_aggregation_key", the limit will be overridden to
+     * 10,000 internally, regardless of the value set here.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -4937,6 +4940,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
+     * For aggregation in healthcare search, when the [FacetKey.key] is
+     * "healthcare_aggregation_key", the limit will be overridden to
+     * 10,000 internally, regardless of the value set here.
      *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
@@ -5844,6 +5850,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -5863,6 +5872,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -5886,6 +5898,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
+       * For aggregation in healthcare search, when the [FacetKey.key] is
+       * "healthcare_aggregation_key", the limit will be overridden to
+       * 10,000 internally, regardless of the value set here.
        *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
@@ -14226,6 +14241,93 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
             .ExtractiveContentSpecOrBuilder
         getExtractiveContentSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for searchResultMode.
+     */
+    int getSearchResultModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The searchResultMode.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+        getSearchResultMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return Whether the chunkSpec field is set.
+     */
+    boolean hasChunkSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return The chunkSpec.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+        getChunkSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpecOrBuilder
+        getChunkSpecOrBuilder();
   }
   /**
    *
@@ -14246,7 +14348,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private ContentSearchSpec() {}
+    private ContentSearchSpec() {
+      searchResultMode_ = 0;
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -14270,6 +14374,173 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   .class);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode}
+     */
+    public enum SearchResultMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>SEARCH_RESULT_MODE_UNSPECIFIED = 0;</code>
+       */
+      SEARCH_RESULT_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Returns documents in the search result.
+       * </pre>
+       *
+       * <code>DOCUMENTS = 1;</code>
+       */
+      DOCUMENTS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Returns chunks in the search result. Only available if the
+       * [DataStore.DocumentProcessingConfig.chunking_config][] is specified.
+       * </pre>
+       *
+       * <code>CHUNKS = 2;</code>
+       */
+      CHUNKS(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>SEARCH_RESULT_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SEARCH_RESULT_MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Returns documents in the search result.
+       * </pre>
+       *
+       * <code>DOCUMENTS = 1;</code>
+       */
+      public static final int DOCUMENTS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Returns chunks in the search result. Only available if the
+       * [DataStore.DocumentProcessingConfig.chunking_config][] is specified.
+       * </pre>
+       *
+       * <code>CHUNKS = 2;</code>
+       */
+      public static final int CHUNKS_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SearchResultMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SearchResultMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SEARCH_RESULT_MODE_UNSPECIFIED;
+          case 1:
+            return DOCUMENTS;
+          case 2:
+            return CHUNKS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SearchResultMode>() {
+                public SearchResultMode findValueByNumber(int number) {
+                  return SearchResultMode.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SearchResultMode[] VALUES = values();
+
+      public static SearchResultMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SearchResultMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode)
+    }
+
     public interface SnippetSpecOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec)
@@ -14288,7 +14559,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=402
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -14306,7 +14577,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=410
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -14387,7 +14658,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=402
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -14410,7 +14681,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=410
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -14888,7 +15159,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=402
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -14909,7 +15180,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=402
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -14934,7 +15205,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=402
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -14958,7 +15229,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=410
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -14978,7 +15249,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=410
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -15002,7 +15273,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=406
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=410
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -15158,8 +15429,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * At most 10 results for documents mode, or 50 for chunks mode, can be
        * used to generate a summary. The chunks mode is used when
-       * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-       * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -16983,8 +17255,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * At most 10 results for documents mode, or 50 for chunks mode, can be
        * used to generate a summary. The chunks mode is used when
-       * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-       * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
        * </pre>
        *
        * <code>int32 summary_result_count = 1;</code>
@@ -17897,8 +18170,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -17919,8 +18193,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -17945,8 +18220,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * At most 10 results for documents mode, or 50 for chunks mode, can be
          * used to generate a summary. The chunks mode is used when
-         * [SearchRequest.ContentSearchSpec.search_result_mode][] is set to
-         * [CHUNKS][SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+         * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+         * is set to
+         * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
          * </pre>
          *
          * <code>int32 summary_result_count = 1;</code>
@@ -20181,6 +20457,732 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ChunkSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of previous chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no previous chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_previous_chunks = 1;</code>
+       *
+       * @return The numPreviousChunks.
+       */
+      int getNumPreviousChunks();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of next chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no next chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_next_chunks = 2;</code>
+       *
+       * @return The numNextChunks.
+       */
+      int getNumNextChunks();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec}
+     */
+    public static final class ChunkSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+        ChunkSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ChunkSpec.newBuilder() to construct.
+      private ChunkSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ChunkSpec() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ChunkSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ChunkSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                    .Builder.class);
+      }
+
+      public static final int NUM_PREVIOUS_CHUNKS_FIELD_NUMBER = 1;
+      private int numPreviousChunks_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The number of previous chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no previous chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_previous_chunks = 1;</code>
+       *
+       * @return The numPreviousChunks.
+       */
+      @java.lang.Override
+      public int getNumPreviousChunks() {
+        return numPreviousChunks_;
+      }
+
+      public static final int NUM_NEXT_CHUNKS_FIELD_NUMBER = 2;
+      private int numNextChunks_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The number of next chunks to be returned of the current chunk. The
+       * maximum allowed value is 3.
+       * If not specified, no next chunks will be returned.
+       * </pre>
+       *
+       * <code>int32 num_next_chunks = 2;</code>
+       *
+       * @return The numNextChunks.
+       */
+      @java.lang.Override
+      public int getNumNextChunks() {
+        return numNextChunks_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (numPreviousChunks_ != 0) {
+          output.writeInt32(1, numPreviousChunks_);
+        }
+        if (numNextChunks_ != 0) {
+          output.writeInt32(2, numNextChunks_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (numPreviousChunks_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, numPreviousChunks_);
+        }
+        if (numNextChunks_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, numNextChunks_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec other =
+            (com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec) obj;
+
+        if (getNumPreviousChunks() != other.getNumPreviousChunks()) return false;
+        if (getNumNextChunks() != other.getNumNextChunks()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NUM_PREVIOUS_CHUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumPreviousChunks();
+        hash = (37 * hash) + NUM_NEXT_CHUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumNextChunks();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ChunkSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          numPreviousChunks_ = 0;
+          numNextChunks_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_ChunkSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec result =
+              new com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.numPreviousChunks_ = numPreviousChunks_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.numNextChunks_ = numNextChunks_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()) return this;
+          if (other.getNumPreviousChunks() != 0) {
+            setNumPreviousChunks(other.getNumPreviousChunks());
+          }
+          if (other.getNumNextChunks() != 0) {
+            setNumNextChunks(other.getNumNextChunks());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    numPreviousChunks_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    numNextChunks_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int numPreviousChunks_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @return The numPreviousChunks.
+         */
+        @java.lang.Override
+        public int getNumPreviousChunks() {
+          return numPreviousChunks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @param value The numPreviousChunks to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumPreviousChunks(int value) {
+
+          numPreviousChunks_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of previous chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no previous chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_previous_chunks = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumPreviousChunks() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          numPreviousChunks_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int numNextChunks_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @return The numNextChunks.
+         */
+        @java.lang.Override
+        public int getNumNextChunks() {
+          return numNextChunks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @param value The numNextChunks to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumNextChunks(int value) {
+
+          numNextChunks_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of next chunks to be returned of the current chunk. The
+         * maximum allowed value is 3.
+         * If not specified, no next chunks will be returned.
+         * </pre>
+         *
+         * <code>int32 num_next_chunks = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumNextChunks() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          numNextChunks_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ChunkSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ChunkSpec>() {
+            @java.lang.Override
+            public ChunkSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ChunkSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ChunkSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int SNIPPET_SPEC_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec
@@ -20379,6 +21381,127 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           : extractiveContentSpec_;
     }
 
+    public static final int SEARCH_RESULT_MODE_FIELD_NUMBER = 4;
+    private int searchResultMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for searchResultMode.
+     */
+    @java.lang.Override
+    public int getSearchResultModeValue() {
+      return searchResultMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the search result mode. If unspecified, the
+     * search result mode defaults to `DOCUMENTS`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+     * </code>
+     *
+     * @return The searchResultMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+        getSearchResultMode() {
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+          result =
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .SearchResultMode.forNumber(searchResultMode_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int CHUNK_SPEC_FIELD_NUMBER = 5;
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+        chunkSpec_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return Whether the chunkSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunkSpec() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     *
+     * @return The chunkSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+        getChunkSpec() {
+      return chunkSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance()
+          : chunkSpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the chunk spec to be returned from the search response.
+     * Only available if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+            .ChunkSpecOrBuilder
+        getChunkSpecOrBuilder() {
+      return chunkSpec_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+              .getDefaultInstance()
+          : chunkSpec_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -20402,6 +21525,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getExtractiveContentSpec());
       }
+      if (searchResultMode_
+          != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .SearchResultMode.SEARCH_RESULT_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, searchResultMode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(5, getChunkSpec());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -20420,6 +21552,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExtractiveContentSpec());
+      }
+      if (searchResultMode_
+          != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .SearchResultMode.SEARCH_RESULT_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, searchResultMode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getChunkSpec());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -20450,6 +21591,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasExtractiveContentSpec()) {
         if (!getExtractiveContentSpec().equals(other.getExtractiveContentSpec())) return false;
       }
+      if (searchResultMode_ != other.searchResultMode_) return false;
+      if (hasChunkSpec() != other.hasChunkSpec()) return false;
+      if (hasChunkSpec()) {
+        if (!getChunkSpec().equals(other.getChunkSpec())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -20472,6 +21618,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasExtractiveContentSpec()) {
         hash = (37 * hash) + EXTRACTIVE_CONTENT_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getExtractiveContentSpec().hashCode();
+      }
+      hash = (37 * hash) + SEARCH_RESULT_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + searchResultMode_;
+      if (hasChunkSpec()) {
+        hash = (37 * hash) + CHUNK_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkSpec().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -20622,6 +21774,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           getSnippetSpecFieldBuilder();
           getSummarySpecFieldBuilder();
           getExtractiveContentSpecFieldBuilder();
+          getChunkSpecFieldBuilder();
         }
       }
 
@@ -20643,6 +21796,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (extractiveContentSpecBuilder_ != null) {
           extractiveContentSpecBuilder_.dispose();
           extractiveContentSpecBuilder_ = null;
+        }
+        searchResultMode_ = 0;
+        chunkSpec_ = null;
+        if (chunkSpecBuilder_ != null) {
+          chunkSpecBuilder_.dispose();
+          chunkSpecBuilder_ = null;
         }
         return this;
       }
@@ -20702,6 +21861,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   ? extractiveContentSpec_
                   : extractiveContentSpecBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.searchResultMode_ = searchResultMode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.chunkSpec_ = chunkSpecBuilder_ == null ? chunkSpec_ : chunkSpecBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -20767,6 +21933,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasExtractiveContentSpec()) {
           mergeExtractiveContentSpec(other.getExtractiveContentSpec());
         }
+        if (other.searchResultMode_ != 0) {
+          setSearchResultModeValue(other.getSearchResultModeValue());
+        }
+        if (other.hasChunkSpec()) {
+          mergeChunkSpec(other.getChunkSpec());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -20812,6 +21984,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  searchResultMode_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(getChunkSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -21541,6 +22725,378 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           extractiveContentSpec_ = null;
         }
         return extractiveContentSpecBuilder_;
+      }
+
+      private int searchResultMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for searchResultMode.
+       */
+      @java.lang.Override
+      public int getSearchResultModeValue() {
+        return searchResultMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for searchResultMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchResultModeValue(int value) {
+        searchResultMode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return The searchResultMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .SearchResultMode
+          getSearchResultMode() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+            result =
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .SearchResultMode.forNumber(searchResultMode_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .SearchResultMode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @param value The searchResultMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchResultMode(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        searchResultMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 4;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSearchResultMode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        searchResultMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+          chunkSpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ChunkSpecOrBuilder>
+          chunkSpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       *
+       * @return Whether the chunkSpec field is set.
+       */
+      public boolean hasChunkSpec() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       *
+       * @return The chunkSpec.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+          getChunkSpec() {
+        if (chunkSpecBuilder_ == null) {
+          return chunkSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()
+              : chunkSpec_;
+        } else {
+          return chunkSpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder setChunkSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec value) {
+        if (chunkSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunkSpec_ = value;
+        } else {
+          chunkSpecBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder setChunkSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec.Builder
+              builderForValue) {
+        if (chunkSpecBuilder_ == null) {
+          chunkSpec_ = builderForValue.build();
+        } else {
+          chunkSpecBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder mergeChunkSpec(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec value) {
+        if (chunkSpecBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && chunkSpec_ != null
+              && chunkSpec_
+                  != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ChunkSpec.getDefaultInstance()) {
+            getChunkSpecBuilder().mergeFrom(value);
+          } else {
+            chunkSpec_ = value;
+          }
+        } else {
+          chunkSpecBuilder_.mergeFrom(value);
+        }
+        if (chunkSpec_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public Builder clearChunkSpec() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        chunkSpec_ = null;
+        if (chunkSpecBuilder_ != null) {
+          chunkSpecBuilder_.dispose();
+          chunkSpecBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+              .Builder
+          getChunkSpecBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getChunkSpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .ChunkSpecOrBuilder
+          getChunkSpecOrBuilder() {
+        if (chunkSpecBuilder_ != null) {
+          return chunkSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return chunkSpec_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .getDefaultInstance()
+              : chunkSpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the chunk spec to be returned from the search response.
+       * Only available if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS]
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec chunk_spec = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .ChunkSpecOrBuilder>
+          getChunkSpecFieldBuilder() {
+        if (chunkSpecBuilder_ == null) {
+          chunkSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .ChunkSpecOrBuilder>(getChunkSpec(), getParentForChildren(), isClean());
+          chunkSpec_ = null;
+        }
+        return chunkSpecBuilder_;
       }
 
       @java.lang.Override
@@ -25115,20 +26671,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * documents. This overrides
    * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
    * The ranking expression is a single function or multiple functions that are
-   * joint by "+".
+   * joined by "+".
+   *
    *   * ranking_expression = function, { " + ", function };
+   *
    * Supported functions:
+   *
    *   * double * relevance_score
    *   * double * dotProduct(embedding_field_path)
+   *
    * Function variables:
-   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
    *   between query and document.
-   *   `embedding_field_path`: the document embedding field
+   *   * `embedding_field_path`: the document embedding field
    *   used with query embedding vector.
-   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   * `dotProduct`: embedding function between embedding_field_path and query
    *   embedding vector.
    *
    *  Example ranking expression:
+   *
    *    If document has an embedding field doc_embedding, the ranking expression
    *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
    * </pre>
@@ -25157,20 +26719,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * documents. This overrides
    * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
    * The ranking expression is a single function or multiple functions that are
-   * joint by "+".
+   * joined by "+".
+   *
    *   * ranking_expression = function, { " + ", function };
+   *
    * Supported functions:
+   *
    *   * double * relevance_score
    *   * double * dotProduct(embedding_field_path)
+   *
    * Function variables:
-   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
    *   between query and document.
-   *   `embedding_field_path`: the document embedding field
+   *   * `embedding_field_path`: the document embedding field
    *   used with query embedding vector.
-   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   * `dotProduct`: embedding function between embedding_field_path and query
    *   embedding vector.
    *
    *  Example ranking expression:
+   *
    *    If document has an embedding field doc_embedding, the ranking expression
    *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
    * </pre>
@@ -30613,20 +32181,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * documents. This overrides
      * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
      * The ranking expression is a single function or multiple functions that are
-     * joint by "+".
+     * joined by "+".
+     *
      *   * ranking_expression = function, { " + ", function };
+     *
      * Supported functions:
+     *
      *   * double * relevance_score
      *   * double * dotProduct(embedding_field_path)
+     *
      * Function variables:
-     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
      *   between query and document.
-     *   `embedding_field_path`: the document embedding field
+     *   * `embedding_field_path`: the document embedding field
      *   used with query embedding vector.
-     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   * `dotProduct`: embedding function between embedding_field_path and query
      *   embedding vector.
      *
      *  Example ranking expression:
+     *
      *    If document has an embedding field doc_embedding, the ranking expression
      *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
      * </pre>
@@ -30654,20 +32228,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * documents. This overrides
      * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
      * The ranking expression is a single function or multiple functions that are
-     * joint by "+".
+     * joined by "+".
+     *
      *   * ranking_expression = function, { " + ", function };
+     *
      * Supported functions:
+     *
      *   * double * relevance_score
      *   * double * dotProduct(embedding_field_path)
+     *
      * Function variables:
-     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
      *   between query and document.
-     *   `embedding_field_path`: the document embedding field
+     *   * `embedding_field_path`: the document embedding field
      *   used with query embedding vector.
-     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   * `dotProduct`: embedding function between embedding_field_path and query
      *   embedding vector.
      *
      *  Example ranking expression:
+     *
      *    If document has an embedding field doc_embedding, the ranking expression
      *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
      * </pre>
@@ -30695,20 +32275,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * documents. This overrides
      * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
      * The ranking expression is a single function or multiple functions that are
-     * joint by "+".
+     * joined by "+".
+     *
      *   * ranking_expression = function, { " + ", function };
+     *
      * Supported functions:
+     *
      *   * double * relevance_score
      *   * double * dotProduct(embedding_field_path)
+     *
      * Function variables:
-     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
      *   between query and document.
-     *   `embedding_field_path`: the document embedding field
+     *   * `embedding_field_path`: the document embedding field
      *   used with query embedding vector.
-     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   * `dotProduct`: embedding function between embedding_field_path and query
      *   embedding vector.
      *
      *  Example ranking expression:
+     *
      *    If document has an embedding field doc_embedding, the ranking expression
      *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
      * </pre>
@@ -30735,20 +32321,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * documents. This overrides
      * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
      * The ranking expression is a single function or multiple functions that are
-     * joint by "+".
+     * joined by "+".
+     *
      *   * ranking_expression = function, { " + ", function };
+     *
      * Supported functions:
+     *
      *   * double * relevance_score
      *   * double * dotProduct(embedding_field_path)
+     *
      * Function variables:
-     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
      *   between query and document.
-     *   `embedding_field_path`: the document embedding field
+     *   * `embedding_field_path`: the document embedding field
      *   used with query embedding vector.
-     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   * `dotProduct`: embedding function between embedding_field_path and query
      *   embedding vector.
      *
      *  Example ranking expression:
+     *
      *    If document has an embedding field doc_embedding, the ranking expression
      *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
      * </pre>
@@ -30771,20 +32363,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * documents. This overrides
      * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1beta.ServingConfig.ranking_expression].
      * The ranking expression is a single function or multiple functions that are
-     * joint by "+".
+     * joined by "+".
+     *
      *   * ranking_expression = function, { " + ", function };
+     *
      * Supported functions:
+     *
      *   * double * relevance_score
      *   * double * dotProduct(embedding_field_path)
+     *
      * Function variables:
-     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
      *   between query and document.
-     *   `embedding_field_path`: the document embedding field
+     *   * `embedding_field_path`: the document embedding field
      *   used with query embedding vector.
-     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   * `dotProduct`: embedding function between embedding_field_path and query
      *   embedding vector.
      *
      *  Example ranking expression:
+     *
      *    If document has an embedding field doc_embedding, the ranking expression
      *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
      * </pre>

@@ -29,11 +29,17 @@ public interface DeleteEventsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/{projectID}`, where `{projectID}` is the
-   * [Google Cloud Platform project
-   * ID](https://support.google.com/cloud/answer/6158840).
+   * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+   * where `{projectID}` is the [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+   * a Cloud region.
    *
-   * Example: `projects/my-project-123`.
+   * Examples: `projects/my-project-123`,
+   * `projects/my-project-123/locations/global`.
+   *
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+   * the default when unspecified.
    * </pre>
    *
    * <code>
@@ -48,11 +54,17 @@ public interface DeleteEventsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as `projects/{projectID}`, where `{projectID}` is the
-   * [Google Cloud Platform project
-   * ID](https://support.google.com/cloud/answer/6158840).
+   * as `projects/{projectID}` or `projects/{projectID}/locations/{location}`,
+   * where `{projectID}` is the [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840) and `{location}` is
+   * a Cloud region.
    *
-   * Example: `projects/my-project-123`.
+   * Examples: `projects/my-project-123`,
+   * `projects/my-project-123/locations/global`.
+   *
+   * For a list of supported locations, see [Supported
+   * Regions](https://cloud.google.com/logging/docs/region-support). `global` is
+   * the default when unspecified.
    * </pre>
    *
    * <code>

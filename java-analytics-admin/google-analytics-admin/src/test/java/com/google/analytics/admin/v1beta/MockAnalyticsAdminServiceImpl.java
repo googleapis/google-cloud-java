@@ -719,6 +719,110 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void createKeyEvent(
+      CreateKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateKeyEvent(
+      UpdateKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getKeyEvent(GetKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteKeyEvent(
+      DeleteKeyEventRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listKeyEvents(
+      ListKeyEventsRequest request, StreamObserver<ListKeyEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListKeyEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListKeyEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListKeyEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListKeyEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCustomDimension(
       CreateCustomDimensionRequest request, StreamObserver<CustomDimension> responseObserver) {
     Object response = responses.poll();

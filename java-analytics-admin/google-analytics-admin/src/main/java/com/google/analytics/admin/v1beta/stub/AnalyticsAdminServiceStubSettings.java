@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -42,6 +43,7 @@ import com.google.analytics.admin.v1beta.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.CreateDataStreamRequest;
 import com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.CreateKeyEventRequest;
 import com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.CreatePropertyRequest;
 import com.google.analytics.admin.v1beta.CustomDimension;
@@ -54,6 +56,7 @@ import com.google.analytics.admin.v1beta.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1beta.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.DeletePropertyRequest;
 import com.google.analytics.admin.v1beta.FirebaseLink;
@@ -64,9 +67,11 @@ import com.google.analytics.admin.v1beta.GetCustomMetricRequest;
 import com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataStreamRequest;
+import com.google.analytics.admin.v1beta.GetKeyEventRequest;
 import com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.GetPropertyRequest;
 import com.google.analytics.admin.v1beta.GoogleAdsLink;
+import com.google.analytics.admin.v1beta.KeyEvent;
 import com.google.analytics.admin.v1beta.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1beta.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1beta.ListAccountsRequest;
@@ -83,6 +88,8 @@ import com.google.analytics.admin.v1beta.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1beta.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1beta.ListKeyEventsRequest;
+import com.google.analytics.admin.v1beta.ListKeyEventsResponse;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1beta.ListPropertiesRequest;
@@ -102,6 +109,7 @@ import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.UpdatePropertyRequest;
 import com.google.api.core.ApiFunction;
@@ -259,6 +267,13 @@ public class AnalyticsAdminServiceStubSettings
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings;
+  private final UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+  private final UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+  private final UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+  private final UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+  private final PagedCallSettings<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings;
   private final UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionSettings;
   private final UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
@@ -625,6 +640,42 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>
+      LIST_KEY_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeyEventsRequest injectToken(ListKeyEventsRequest payload, String token) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeyEventsRequest injectPageSize(ListKeyEventsRequest payload, int pageSize) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeyEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeyEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KeyEvent> extractResources(ListKeyEventsResponse payload) {
+              return payload.getKeyEventsList() == null
+                  ? ImmutableList.<KeyEvent>of()
+                  : payload.getKeyEventsList();
+            }
+          };
+
   private static final PagedListDescriptor<
           ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
       LIST_CUSTOM_DIMENSIONS_PAGE_STR_DESC =
@@ -930,6 +981,23 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      LIST_KEY_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeyEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> callable,
+                ListKeyEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeyEventsResponse> futureResponse) {
+              PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> pageContext =
+                  PageContext.create(callable, LIST_KEY_EVENTS_PAGE_STR_DESC, request, context);
+              return ListKeyEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListCustomDimensionsRequest,
           ListCustomDimensionsResponse,
           ListCustomDimensionsPagedResponse>
@@ -1150,36 +1218,87 @@ public class AnalyticsAdminServiceStubSettings
     return searchChangeHistoryEventsSettings;
   }
 
-  /** Returns the object with the settings used for calls to createConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to createConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return createConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to updateConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventSettings() {
     return updateConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to getConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to getConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
     return getConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to deleteConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
     return deleteConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to listConversionEvents. */
+  /**
+   * Returns the object with the settings used for calls to listConversionEvents.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListConversionEventsRequest,
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings() {
     return listConversionEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createKeyEvent. */
+  public UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+    return createKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKeyEvent. */
+  public UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+    return updateKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getKeyEvent. */
+  public UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+    return getKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteKeyEvent. */
+  public UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+    return deleteKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listKeyEvents. */
+  public PagedCallSettings<ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings() {
+    return listKeyEventsSettings;
   }
 
   /** Returns the object with the settings used for calls to createCustomDimension. */
@@ -1433,6 +1552,11 @@ public class AnalyticsAdminServiceStubSettings
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
+    createKeyEventSettings = settingsBuilder.createKeyEventSettings().build();
+    updateKeyEventSettings = settingsBuilder.updateKeyEventSettings().build();
+    getKeyEventSettings = settingsBuilder.getKeyEventSettings().build();
+    deleteKeyEventSettings = settingsBuilder.deleteKeyEventSettings().build();
+    listKeyEventsSettings = settingsBuilder.listKeyEventsSettings().build();
     createCustomDimensionSettings = settingsBuilder.createCustomDimensionSettings().build();
     updateCustomDimensionSettings = settingsBuilder.updateCustomDimensionSettings().build();
     listCustomDimensionsSettings = settingsBuilder.listCustomDimensionsSettings().build();
@@ -1534,6 +1658,13 @@ public class AnalyticsAdminServiceStubSettings
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings;
+    private final UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+    private final UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+    private final UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+    private final UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+    private final PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings;
     private final UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionSettings;
     private final UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
@@ -1651,6 +1782,11 @@ public class AnalyticsAdminServiceStubSettings
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
           PagedCallSettings.newBuilder(LIST_CONVERSION_EVENTS_PAGE_STR_FACT);
+      createKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listKeyEventsSettings = PagedCallSettings.newBuilder(LIST_KEY_EVENTS_PAGE_STR_FACT);
       createCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomDimensionsSettings =
@@ -1704,6 +1840,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -1765,6 +1906,11 @@ public class AnalyticsAdminServiceStubSettings
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
+      createKeyEventSettings = settings.createKeyEventSettings.toBuilder();
+      updateKeyEventSettings = settings.updateKeyEventSettings.toBuilder();
+      getKeyEventSettings = settings.getKeyEventSettings.toBuilder();
+      deleteKeyEventSettings = settings.deleteKeyEventSettings.toBuilder();
+      listKeyEventsSettings = settings.listKeyEventsSettings.toBuilder();
       createCustomDimensionSettings = settings.createCustomDimensionSettings.toBuilder();
       updateCustomDimensionSettings = settings.updateCustomDimensionSettings.toBuilder();
       listCustomDimensionsSettings = settings.listCustomDimensionsSettings.toBuilder();
@@ -1818,6 +1964,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -2015,6 +2166,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listConversionEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listKeyEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2291,37 +2467,89 @@ public class AnalyticsAdminServiceStubSettings
       return searchChangeHistoryEventsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to createConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return createConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to updateConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventSettings() {
       return updateConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to getConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings() {
       return getConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to deleteConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
         deleteConversionEventSettings() {
       return deleteConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    /**
+     * Returns the builder for the settings used for calls to listConversionEvents.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListConversionEventsRequest,
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings() {
       return listConversionEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createKeyEvent. */
+    public UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+      return createKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKeyEvent. */
+    public UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+      return updateKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getKeyEvent. */
+    public UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+      return getKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKeyEvent. */
+    public UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+      return deleteKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listKeyEvents. */
+    public PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings() {
+      return listKeyEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCustomDimension. */

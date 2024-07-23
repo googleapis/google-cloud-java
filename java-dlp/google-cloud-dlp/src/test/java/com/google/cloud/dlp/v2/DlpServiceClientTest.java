@@ -21,6 +21,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
@@ -66,6 +67,7 @@ import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
@@ -78,12 +80,17 @@ import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
 import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
+import com.google.privacy.dlp.v2.FileClusterSummary;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
+import com.google.privacy.dlp.v2.FileStoreDataProfileName;
+import com.google.privacy.dlp.v2.FileStoreInfoTypeSummary;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -113,6 +120,8 @@ import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -157,6 +166,7 @@ import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.Value;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
@@ -4927,6 +4937,8 @@ public class DlpServiceClientTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -4978,6 +4990,8 @@ public class DlpServiceClientTest {
             .setSensitivityScore(SensitivityScore.newBuilder().build())
             .setDataRiskLevel(DataRiskLevel.newBuilder().build())
             .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setTableDataProfileCount(330585909)
+            .setFileStoreDataProfileCount(-332405595)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -5006,6 +5020,348 @@ public class DlpServiceClientTest {
     try {
       String name = "name3373707";
       client.getProjectDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest2() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFileStoreDataProfilesTest3() throws Exception {
+    FileStoreDataProfile responsesElement = FileStoreDataProfile.newBuilder().build();
+    ListFileStoreDataProfilesResponse expectedResponse =
+        ListFileStoreDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFileStoreDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFileStoreDataProfilesPagedResponse pagedListResponse =
+        client.listFileStoreDataProfiles(parent);
+
+    List<FileStoreDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFileStoreDataProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFileStoreDataProfilesRequest actualRequest =
+        ((ListFileStoreDataProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFileStoreDataProfilesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFileStoreDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setFileStoreIsEmpty(true)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ProjectDataProfileName name =
+        ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFileStoreDataProfileRequest actualRequest =
+        ((GetFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ProjectDataProfileName name =
+          ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFileStoreDataProfileTest2() throws Exception {
+    FileStoreDataProfile expectedResponse =
+        FileStoreDataProfile.newBuilder()
+            .setName(
+                FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setProjectId("projectId-894832108")
+            .setFileStoreLocation("fileStoreLocation-896168038")
+            .addAllDataStorageLocations(new ArrayList<String>())
+            .setLocationType("locationType-58277745")
+            .setFileStorePath("fileStorePath1037045386")
+            .setFullResource("fullResource-1464972355")
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .addAllFileClusterSummaries(new ArrayList<FileClusterSummary>())
+            .putAllResourceAttributes(new HashMap<String, Value>())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setFileStoreIsEmpty(true)
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FileStoreDataProfile actualResponse = client.getFileStoreDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFileStoreDataProfileRequest actualRequest =
+        ((GetFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFileStoreDataProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    FileStoreDataProfileName name =
+        FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileStoreDataProfileRequest actualRequest =
+        ((DeleteFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      FileStoreDataProfileName name =
+          FileStoreDataProfileName.ofOrganizationLocationFileStoreDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[FILE_STORE_DATA_PROFILE]");
+      client.deleteFileStoreDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFileStoreDataProfile(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFileStoreDataProfileRequest actualRequest =
+        ((DeleteFileStoreDataProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFileStoreDataProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFileStoreDataProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

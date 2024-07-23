@@ -107,6 +107,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -156,6 +158,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -361,6 +365,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -407,6 +413,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 
@@ -453,6 +461,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockFlows.addResponse(expectedResponse);
 

@@ -312,8 +312,7 @@ public interface AgentOrBuilder
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -330,8 +329,7 @@ public interface AgentOrBuilder
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -386,7 +384,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=324
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -405,6 +403,21 @@ public interface AgentOrBuilder
    * @return The enableSpellCorrection.
    */
   boolean getEnableSpellCorrection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable training multi-lingual models for this agent. These models
+   * will be trained on all the languages supported by the agent.
+   * </pre>
+   *
+   * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableMultiLanguageTraining.
+   */
+  boolean getEnableMultiLanguageTraining();
 
   /**
    *
@@ -622,4 +635,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettingsOrBuilder
       getAnswerFeedbackSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the personalizationSettings field is set.
+   */
+  boolean hasPersonalizationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The personalizationSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings getPersonalizationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettingsOrBuilder
+      getPersonalizationSettingsOrBuilder();
 }

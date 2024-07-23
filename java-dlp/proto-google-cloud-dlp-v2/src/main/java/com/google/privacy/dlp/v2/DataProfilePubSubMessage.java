@@ -122,6 +122,62 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         : profile_;
   }
 
+  public static final int FILE_STORE_PROFILE_FIELD_NUMBER = 3;
+  private com.google.privacy.dlp.v2.FileStoreDataProfile fileStoreProfile_;
+  /**
+   *
+   *
+   * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return Whether the fileStoreProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasFileStoreProfile() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return The fileStoreProfile.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile() {
+    return fileStoreProfile_ == null
+        ? com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()
+        : fileStoreProfile_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder() {
+    return fileStoreProfile_ == null
+        ? com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()
+        : fileStoreProfile_;
+  }
+
   public static final int EVENT_FIELD_NUMBER = 2;
   private int event_ = 0;
   /**
@@ -181,6 +237,9 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             .getNumber()) {
       output.writeEnum(2, event_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getFileStoreProfile());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -197,6 +256,9 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         != com.google.privacy.dlp.v2.DataProfileAction.EventType.EVENT_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, event_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFileStoreProfile());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -218,6 +280,10 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     if (hasProfile()) {
       if (!getProfile().equals(other.getProfile())) return false;
     }
+    if (hasFileStoreProfile() != other.hasFileStoreProfile()) return false;
+    if (hasFileStoreProfile()) {
+      if (!getFileStoreProfile().equals(other.getFileStoreProfile())) return false;
+    }
     if (event_ != other.event_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -233,6 +299,10 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     if (hasProfile()) {
       hash = (37 * hash) + PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getProfile().hashCode();
+    }
+    if (hasFileStoreProfile()) {
+      hash = (37 * hash) + FILE_STORE_PROFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getFileStoreProfile().hashCode();
     }
     hash = (37 * hash) + EVENT_FIELD_NUMBER;
     hash = (53 * hash) + event_;
@@ -379,6 +449,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getProfileFieldBuilder();
+        getFileStoreProfileFieldBuilder();
       }
     }
 
@@ -390,6 +461,11 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       if (profileBuilder_ != null) {
         profileBuilder_.dispose();
         profileBuilder_ = null;
+      }
+      fileStoreProfile_ = null;
+      if (fileStoreProfileBuilder_ != null) {
+        fileStoreProfileBuilder_.dispose();
+        fileStoreProfileBuilder_ = null;
       }
       event_ = 0;
       return this;
@@ -434,6 +510,11 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileStoreProfile_ =
+            fileStoreProfileBuilder_ == null ? fileStoreProfile_ : fileStoreProfileBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.event_ = event_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -488,6 +569,9 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       if (other.hasProfile()) {
         mergeProfile(other.getProfile());
       }
+      if (other.hasFileStoreProfile()) {
+        mergeFileStoreProfile(other.getFileStoreProfile());
+      }
       if (other.event_ != 0) {
         setEventValue(other.getEventValue());
       }
@@ -526,9 +610,16 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
             case 16:
               {
                 event_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getFileStoreProfileFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -751,6 +842,211 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       return profileBuilder_;
     }
 
+    private com.google.privacy.dlp.v2.FileStoreDataProfile fileStoreProfile_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.FileStoreDataProfile,
+            com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+            com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
+        fileStoreProfileBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     *
+     * @return Whether the fileStoreProfile field is set.
+     */
+    public boolean hasFileStoreProfile() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     *
+     * @return The fileStoreProfile.
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile() {
+      if (fileStoreProfileBuilder_ == null) {
+        return fileStoreProfile_ == null
+            ? com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()
+            : fileStoreProfile_;
+      } else {
+        return fileStoreProfileBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder setFileStoreProfile(com.google.privacy.dlp.v2.FileStoreDataProfile value) {
+      if (fileStoreProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fileStoreProfile_ = value;
+      } else {
+        fileStoreProfileBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder setFileStoreProfile(
+        com.google.privacy.dlp.v2.FileStoreDataProfile.Builder builderForValue) {
+      if (fileStoreProfileBuilder_ == null) {
+        fileStoreProfile_ = builderForValue.build();
+      } else {
+        fileStoreProfileBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder mergeFileStoreProfile(com.google.privacy.dlp.v2.FileStoreDataProfile value) {
+      if (fileStoreProfileBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && fileStoreProfile_ != null
+            && fileStoreProfile_
+                != com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()) {
+          getFileStoreProfileBuilder().mergeFrom(value);
+        } else {
+          fileStoreProfile_ = value;
+        }
+      } else {
+        fileStoreProfileBuilder_.mergeFrom(value);
+      }
+      if (fileStoreProfile_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public Builder clearFileStoreProfile() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fileStoreProfile_ = null;
+      if (fileStoreProfileBuilder_ != null) {
+        fileStoreProfileBuilder_.dispose();
+        fileStoreProfileBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfile.Builder getFileStoreProfileBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getFileStoreProfileFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder() {
+      if (fileStoreProfileBuilder_ != null) {
+        return fileStoreProfileBuilder_.getMessageOrBuilder();
+      } else {
+        return fileStoreProfile_ == null
+            ? com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance()
+            : fileStoreProfile_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+     * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+     * `file_store_path` will be populated.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.FileStoreDataProfile,
+            com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+            com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>
+        getFileStoreProfileFieldBuilder() {
+      if (fileStoreProfileBuilder_ == null) {
+        fileStoreProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.FileStoreDataProfile,
+                com.google.privacy.dlp.v2.FileStoreDataProfile.Builder,
+                com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder>(
+                getFileStoreProfile(), getParentForChildren(), isClean());
+        fileStoreProfile_ = null;
+      }
+      return fileStoreProfileBuilder_;
+    }
+
     private int event_ = 0;
     /**
      *
@@ -781,7 +1077,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
      */
     public Builder setEventValue(int value) {
       event_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -820,7 +1116,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       event_ = value.getNumber();
       onChanged();
       return this;
@@ -837,7 +1133,7 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEvent() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       event_ = 0;
       onChanged();
       return this;

@@ -40,6 +40,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
 
   private CancelRolloutRequest() {
     name_ = "";
+    overrideDeployPolicy_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -120,6 +121,82 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int OVERRIDE_DEPLOY_POLICY_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the overrideDeployPolicy.
+   */
+  public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
+    return overrideDeployPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of overrideDeployPolicy.
+   */
+  public int getOverrideDeployPolicyCount() {
+    return overrideDeployPolicy_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The overrideDeployPolicy at the given index.
+   */
+  public java.lang.String getOverrideDeployPolicy(int index) {
+    return overrideDeployPolicy_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploy policies to override. Format is
+   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the overrideDeployPolicy at the given index.
+   */
+  public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
+    return overrideDeployPolicy_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -137,6 +214,10 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    for (int i = 0; i < overrideDeployPolicy_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 2, overrideDeployPolicy_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +229,14 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < overrideDeployPolicy_.size(); i++) {
+        dataSize += computeStringSizeNoTag(overrideDeployPolicy_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getOverrideDeployPolicyList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +255,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
         (com.google.cloud.deploy.v1.CancelRolloutRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getOverrideDeployPolicyList().equals(other.getOverrideDeployPolicyList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +269,10 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (getOverrideDeployPolicyCount() > 0) {
+      hash = (37 * hash) + OVERRIDE_DEPLOY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getOverrideDeployPolicyList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,6 +413,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      overrideDeployPolicy_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -357,6 +452,10 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        overrideDeployPolicy_.makeImmutable();
+        result.overrideDeployPolicy_ = overrideDeployPolicy_;
       }
     }
 
@@ -411,6 +510,16 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.overrideDeployPolicy_.isEmpty()) {
+        if (overrideDeployPolicy_.isEmpty()) {
+          overrideDeployPolicy_ = other.overrideDeployPolicy_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureOverrideDeployPolicyIsMutable();
+          overrideDeployPolicy_.addAll(other.overrideDeployPolicy_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -443,6 +552,13 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOverrideDeployPolicyIsMutable();
+                overrideDeployPolicy_.add(s);
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -579,6 +695,207 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureOverrideDeployPolicyIsMutable() {
+      if (!overrideDeployPolicy_.isModifiable()) {
+        overrideDeployPolicy_ = new com.google.protobuf.LazyStringArrayList(overrideDeployPolicy_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the overrideDeployPolicy.
+     */
+    public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
+      overrideDeployPolicy_.makeImmutable();
+      return overrideDeployPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of overrideDeployPolicy.
+     */
+    public int getOverrideDeployPolicyCount() {
+      return overrideDeployPolicy_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The overrideDeployPolicy at the given index.
+     */
+    public java.lang.String getOverrideDeployPolicy(int index) {
+      return overrideDeployPolicy_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the overrideDeployPolicy at the given index.
+     */
+    public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
+      return overrideDeployPolicy_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The overrideDeployPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOverrideDeployPolicy(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOverrideDeployPolicyIsMutable();
+      overrideDeployPolicy_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The overrideDeployPolicy to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOverrideDeployPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOverrideDeployPolicyIsMutable();
+      overrideDeployPolicy_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The overrideDeployPolicy to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllOverrideDeployPolicy(java.lang.Iterable<java.lang.String> values) {
+      ensureOverrideDeployPolicyIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, overrideDeployPolicy_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOverrideDeployPolicy() {
+      overrideDeployPolicy_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploy policies to override. Format is
+     * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string override_deploy_policy = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the overrideDeployPolicy to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOverrideDeployPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureOverrideDeployPolicyIsMutable();
+      overrideDeployPolicy_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

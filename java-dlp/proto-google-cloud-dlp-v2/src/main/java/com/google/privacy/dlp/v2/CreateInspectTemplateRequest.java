@@ -80,13 +80,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
+   * + Projects scope, location specified:
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Projects scope, no location specified (defaults to global):
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
+   * + Organizations scope, location specified:
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Organizations scope, no location specified (defaults to global):
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
@@ -124,13 +124,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
+   * + Projects scope, location specified:
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Projects scope, no location specified (defaults to global):
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
+   * + Organizations scope, location specified:
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   * + Organizations scope, no location specified (defaults to global):
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    *
    * The following example `parent` string specifies a parent project with the
@@ -769,13 +769,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
+     * + Projects scope, location specified:
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Projects scope, no location specified (defaults to global):
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-     * + Organizations scope, location specified:&lt;br/&gt;
+     * + Organizations scope, location specified:
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Organizations scope, no location specified (defaults to global):
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
      *
      * The following example `parent` string specifies a parent project with the
@@ -812,13 +812,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
+     * + Projects scope, location specified:
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Projects scope, no location specified (defaults to global):
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-     * + Organizations scope, location specified:&lt;br/&gt;
+     * + Organizations scope, location specified:
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Organizations scope, no location specified (defaults to global):
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
      *
      * The following example `parent` string specifies a parent project with the
@@ -855,13 +855,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
+     * + Projects scope, location specified:
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Projects scope, no location specified (defaults to global):
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-     * + Organizations scope, location specified:&lt;br/&gt;
+     * + Organizations scope, location specified:
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Organizations scope, no location specified (defaults to global):
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
      *
      * The following example `parent` string specifies a parent project with the
@@ -897,13 +897,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
+     * + Projects scope, location specified:
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Projects scope, no location specified (defaults to global):
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-     * + Organizations scope, location specified:&lt;br/&gt;
+     * + Organizations scope, location specified:
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Organizations scope, no location specified (defaults to global):
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
      *
      * The following example `parent` string specifies a parent project with the
@@ -935,13 +935,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
+     * + Projects scope, location specified:
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Projects scope, no location specified (defaults to global):
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-     * + Organizations scope, location specified:&lt;br/&gt;
+     * + Organizations scope, location specified:
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+     * + Organizations scope, no location specified (defaults to global):
      *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
      *
      * The following example `parent` string specifies a parent project with the

@@ -318,6 +318,50 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
+   * Output only. Contains information about what policies prevented the
+   * `AutomationRun` to proceed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the policyViolation field is set.
+   */
+  boolean hasPolicyViolation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about what policies prevented the
+   * `AutomationRun` to proceed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The policyViolation.
+   */
+  com.google.cloud.deploy.v1.PolicyViolation getPolicyViolation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about what policies prevented the
+   * `AutomationRun` to proceed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PolicyViolationOrBuilder getPolicyViolationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
    * after 14 days from its creation date.
    * </pre>

@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -91,6 +92,13 @@ public class MapsPlatformDatasetsSettings extends ClientSettings<MapsPlatformDat
   /** Returns the object with the settings used for calls to getDataset. */
   public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
     return ((MapsPlatformDatasetsStubSettings) getStubSettings()).getDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchDatasetErrors. */
+  public PagedCallSettings<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsSettings() {
+    return ((MapsPlatformDatasetsStubSettings) getStubSettings()).fetchDatasetErrorsSettings();
   }
 
   /** Returns the object with the settings used for calls to listDatasets. */
@@ -231,6 +239,13 @@ public class MapsPlatformDatasetsSettings extends ClientSettings<MapsPlatformDat
     /** Returns the builder for the settings used for calls to getDataset. */
     public UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings() {
       return getStubSettingsBuilder().getDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchDatasetErrors. */
+    public PagedCallSettings.Builder<
+            FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+        fetchDatasetErrorsSettings() {
+      return getStubSettingsBuilder().fetchDatasetErrorsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDatasets. */

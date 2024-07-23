@@ -23,6 +23,12 @@ package com.google.devtools.clouderrorreporting.v1beta1;
  *
  *
  * <pre>
+ * A time range for which error group data shall be displayed.
+ * Query time ranges end at 'now'.
+ * When longer time ranges are selected, the resolution of the data decreases.
+ * The description of each time range below indicates the suggested minimum
+ * timed count duration for that range.
+ *
  * Requests might be rejected or the resulting timed count durations might be
  * adjusted for lower durations.
  * </pre>
@@ -504,6 +510,12 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * A time range for which error group data shall be displayed.
+   * Query time ranges end at 'now'.
+   * When longer time ranges are selected, the resolution of the data decreases.
+   * The description of each time range below indicates the suggested minimum
+   * timed count duration for that range.
+   *
    * Requests might be rejected or the resulting timed count durations might be
    * adjusted for lower durations.
    * </pre>

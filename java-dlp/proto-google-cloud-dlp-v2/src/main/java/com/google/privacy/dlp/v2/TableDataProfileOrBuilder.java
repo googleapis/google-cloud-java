@@ -88,7 +88,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The resource name to the project data profile for this table.
+   * The resource name of the project data profile for this table.
    * </pre>
    *
    * <code>string project_data_profile = 2;</code>
@@ -100,7 +100,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The resource name to the project data profile for this table.
+   * The resource name of the project data profile for this table.
    * </pre>
    *
    * <code>string project_data_profile = 2;</code>
