@@ -32,6 +32,10 @@ public final class CustomTuningModelProto {
       internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -45,34 +49,38 @@ public final class CustomTuningModelProto {
           + "stom_tuning_model.proto\022#google.cloud.di"
           + "scoveryengine.v1beta\032\037google/api/field_b"
           + "ehavior.proto\032\031google/api/resource.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\203\006\n\021Cu"
+          + "\032\037google/protobuf/timestamp.proto\"\241\007\n\021Cu"
           + "stomTuningModel\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0d"
           + "iscoveryengine.googleapis.com/CustomTuni"
           + "ngModel\022\024\n\014display_name\030\002 \001(\t\022\025\n\rmodel_v"
           + "ersion\030\003 \001(\003\022V\n\013model_state\030\004 \001(\0162A.goog"
           + "le.cloud.discoveryengine.v1beta.CustomTu"
-          + "ningModel.ModelState\022/\n\013create_time\030\005 \001("
-          + "\0132\032.google.protobuf.Timestamp\0227\n\023trainin"
-          + "g_start_time\030\006 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\"\217\001\n\nModelState\022\033\n\027MODEL_STATE_UNS"
-          + "PECIFIED\020\000\022\023\n\017TRAINING_PAUSED\020\001\022\014\n\010TRAIN"
-          + "ING\020\002\022\025\n\021TRAINING_COMPLETE\020\003\022\025\n\021READY_FO"
-          + "R_SERVING\020\004\022\023\n\017TRAINING_FAILED\020\005:\244\002\352A\240\002\n"
-          + "0discoveryengine.googleapis.com/CustomTu"
-          + "ningModel\022hprojects/{project}/locations/"
-          + "{location}/dataStores/{data_store}/custo"
-          + "mTuningModels/{custom_tuning_model}\022\201\001pr"
-          + "ojects/{project}/locations/{location}/co"
-          + "llections/{collection}/dataStores/{data_"
-          + "store}/customTuningModels/{custom_tuning"
-          + "_model}B\235\002\n\'com.google.cloud.discoveryen"
-          + "gine.v1betaB\026CustomTuningModelProtoP\001ZQc"
-          + "loud.google.com/go/discoveryengine/apiv1"
-          + "beta/discoveryenginepb;discoveryenginepb"
-          + "\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Discov"
-          + "eryEngine.V1Beta\312\002#Google\\Cloud\\Discover"
-          + "yEngine\\V1beta\352\002&Google::Cloud::Discover"
-          + "yEngine::V1betab\006proto3"
+          + "ningModel.ModelState\0223\n\013create_time\030\005 \001("
+          + "\0132\032.google.protobuf.TimestampB\002\030\001\0227\n\023tra"
+          + "ining_start_time\030\006 \001(\0132\032.google.protobuf"
+          + ".Timestamp\022T\n\007metrics\030\007 \003(\0132C.google.clo"
+          + "ud.discoveryengine.v1beta.CustomTuningMo"
+          + "del.MetricsEntry\032.\n\014MetricsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\"\243\001\n\nModelState\022"
+          + "\033\n\027MODEL_STATE_UNSPECIFIED\020\000\022\023\n\017TRAINING"
+          + "_PAUSED\020\001\022\014\n\010TRAINING\020\002\022\025\n\021TRAINING_COMP"
+          + "LETE\020\003\022\025\n\021READY_FOR_SERVING\020\004\022\023\n\017TRAININ"
+          + "G_FAILED\020\005\022\022\n\016NO_IMPROVEMENT\020\006:\244\002\352A\240\002\n0d"
+          + "iscoveryengine.googleapis.com/CustomTuni"
+          + "ngModel\022hprojects/{project}/locations/{l"
+          + "ocation}/dataStores/{data_store}/customT"
+          + "uningModels/{custom_tuning_model}\022\201\001proj"
+          + "ects/{project}/locations/{location}/coll"
+          + "ections/{collection}/dataStores/{data_st"
+          + "ore}/customTuningModels/{custom_tuning_m"
+          + "odel}B\235\002\n\'com.google.cloud.discoveryengi"
+          + "ne.v1betaB\026CustomTuningModelProtoP\001ZQclo"
+          + "ud.google.com/go/discoveryengine/apiv1be"
+          + "ta/discoveryenginepb;discoveryenginepb\242\002"
+          + "\017DISCOVERYENGINE\252\002#Google.Cloud.Discover"
+          + "yEngine.V1Beta\312\002#Google\\Cloud\\DiscoveryE"
+          + "ngine\\V1beta\352\002&Google::Cloud::DiscoveryE"
+          + "ngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -94,6 +102,17 @@ public final class CustomTuningModelProto {
               "ModelState",
               "CreateTime",
               "TrainingStartTime",
+              "Metrics",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

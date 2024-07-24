@@ -55,6 +55,18 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         .internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetMetrics();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -135,6 +147,16 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING_FAILED = 5;</code>
      */
     TRAINING_FAILED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The model training finished successfully but metrics did not improve.
+     * </pre>
+     *
+     * <code>NO_IMPROVEMENT = 6;</code>
+     */
+    NO_IMPROVEMENT(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -198,6 +220,16 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * <code>TRAINING_FAILED = 5;</code>
      */
     public static final int TRAINING_FAILED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The model training finished successfully but metrics did not improve.
+     * </pre>
+     *
+     * <code>NO_IMPROVEMENT = 6;</code>
+     */
+    public static final int NO_IMPROVEMENT_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -235,6 +267,8 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
           return READY_FOR_SERVING;
         case 5:
           return TRAINING_FAILED;
+        case 6:
+          return NO_IMPROVEMENT;
         default:
           return null;
       }
@@ -469,11 +503,14 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.CustomTuningModel.create_time is deprecated.
+   *     See google/cloud/discoveryengine/v1beta/custom_tuning_model.proto;l=85
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -484,11 +521,14 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.CustomTuningModel.create_time is deprecated.
+   *     See google/cloud/discoveryengine/v1beta/custom_tuning_model.proto;l=85
    * @return The createTime.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -499,9 +539,10 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -556,6 +597,105 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         : trainingStartTime_;
   }
 
+  public static final int METRICS_FIELD_NUMBER = 7;
+
+  private static final class MetricsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Double>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.CustomTuningModelProto
+                .internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_MetricsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.DOUBLE,
+            0D);
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Double> metrics_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Double> internalGetMetrics() {
+    if (metrics_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetricsDefaultEntryHolder.defaultEntry);
+    }
+    return metrics_;
+  }
+
+  public int getMetricsCount() {
+    return internalGetMetrics().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  @java.lang.Override
+  public boolean containsMetrics(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMetrics().getMap().containsKey(key);
+  }
+  /** Use {@link #getMetricsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
+    return getMetricsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
+    return internalGetMetrics().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  @java.lang.Override
+  public double getMetricsOrDefault(java.lang.String key, double defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  @java.lang.Override
+  public double getMetricsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -591,6 +731,8 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getTrainingStartTime());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetrics(), MetricsDefaultEntryHolder.defaultEntry, 7);
     getUnknownFields().writeTo(output);
   }
 
@@ -621,6 +763,16 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTrainingStartTime());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry :
+        internalGetMetrics().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> metrics__ =
+          MetricsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, metrics__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -649,6 +801,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     if (hasTrainingStartTime()) {
       if (!getTrainingStartTime().equals(other.getTrainingStartTime())) return false;
     }
+    if (!internalGetMetrics().equals(other.internalGetMetrics())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -675,6 +828,10 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     if (hasTrainingStartTime()) {
       hash = (37 * hash) + TRAINING_START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getTrainingStartTime().hashCode();
+    }
+    if (!internalGetMetrics().getMap().isEmpty()) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetrics().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -795,6 +952,28 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
           .internal_static_google_cloud_discoveryengine_v1beta_CustomTuningModel_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMetrics();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableMetrics();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -840,6 +1019,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         trainingStartTimeBuilder_.dispose();
         trainingStartTimeBuilder_ = null;
       }
+      internalGetMutableMetrics().clear();
       return this;
     }
 
@@ -899,6 +1079,10 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
                 ? trainingStartTime_
                 : trainingStartTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.metrics_ = internalGetMetrics();
+        result.metrics_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -971,6 +1155,8 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       if (other.hasTrainingStartTime()) {
         mergeTrainingStartTime(other.getTrainingStartTime());
       }
+      internalGetMutableMetrics().mergeFrom(other.internalGetMetrics());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1034,6 +1220,18 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> metrics__ =
+                    input.readMessage(
+                        MetricsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableMetrics()
+                    .getMutableMap()
+                    .put(metrics__.getKey(), metrics__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1460,10 +1658,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.CustomTuningModel.create_time is deprecated.
+     *     See google/cloud/discoveryengine/v1beta/custom_tuning_model.proto;l=85
      * @return Whether the createTime field is set.
      */
+    @java.lang.Deprecated
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1474,10 +1675,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.CustomTuningModel.create_time is deprecated.
+     *     See google/cloud/discoveryengine/v1beta/custom_tuning_model.proto;l=85
      * @return The createTime.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
         return createTime_ == null
@@ -1494,8 +1698,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
         if (value == null) {
@@ -1516,8 +1721,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
@@ -1535,8 +1741,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)
@@ -1562,8 +1769,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000010);
       createTime_ = null;
@@ -1581,8 +1789,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000010;
       onChanged();
@@ -1595,8 +1804,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
@@ -1613,7 +1823,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Timestamp the Model was created at.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1815,6 +2025,164 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         trainingStartTime_ = null;
       }
       return trainingStartTimeBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double> metrics_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double> internalGetMetrics() {
+      if (metrics_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(MetricsDefaultEntryHolder.defaultEntry);
+      }
+      return metrics_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableMetrics() {
+      if (metrics_ == null) {
+        metrics_ = com.google.protobuf.MapField.newMapField(MetricsDefaultEntryHolder.defaultEntry);
+      }
+      if (!metrics_.isMutable()) {
+        metrics_ = metrics_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return metrics_;
+    }
+
+    public int getMetricsCount() {
+      return internalGetMetrics().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    @java.lang.Override
+    public boolean containsMetrics(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMetrics().getMap().containsKey(key);
+    }
+    /** Use {@link #getMetricsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
+      return getMetricsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
+      return internalGetMetrics().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    @java.lang.Override
+    public double getMetricsOrDefault(java.lang.String key, double defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    @java.lang.Override
+    public double getMetricsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableMetrics().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    public Builder removeMetrics(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMetrics().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getMutableMetrics() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableMetrics().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    public Builder putMetrics(java.lang.String key, double value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 7;</code>
+     */
+    public Builder putAllMetrics(java.util.Map<java.lang.String, java.lang.Double> values) {
+      internalGetMutableMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
     }
 
     @java.lang.Override

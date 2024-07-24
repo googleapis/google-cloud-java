@@ -1374,6 +1374,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     SPANNER_SOURCE(11),
     CLOUD_SQL_SOURCE(12),
     FIRESTORE_SOURCE(13),
+    ALLOY_DB_SOURCE(14),
     BIGTABLE_SOURCE(15),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -1407,6 +1408,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return CLOUD_SQL_SOURCE;
         case 13:
           return FIRESTORE_SOURCE;
+        case 14:
+          return ALLOY_DB_SOURCE;
         case 15:
           return BIGTABLE_SOURCE;
         case 0:
@@ -1795,6 +1798,58 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_;
     }
     return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+  }
+
+  public static final int ALLOY_DB_SOURCE_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+   *
+   * @return Whether the alloyDbSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlloyDbSource() {
+    return sourceCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+   *
+   * @return The alloyDbSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AlloyDbSource getAlloyDbSource() {
+    if (sourceCase_ == 14) {
+      return (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AlloyDbSourceOrBuilder
+      getAlloyDbSourceOrBuilder() {
+    if (sourceCase_ == 14) {
+      return (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
   }
 
   public static final int BIGTABLE_SOURCE_FIELD_NUMBER = 15;
@@ -2272,6 +2327,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     if (sourceCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_);
     }
+    if (sourceCase_ == 14) {
+      output.writeMessage(14, (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_);
+    }
     if (sourceCase_ == 15) {
       output.writeMessage(15, (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_);
     }
@@ -2342,6 +2400,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_);
     }
+    if (sourceCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_);
+    }
     if (sourceCase_ == 15) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2397,6 +2460,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         break;
       case 13:
         if (!getFirestoreSource().equals(other.getFirestoreSource())) return false;
+        break;
+      case 14:
+        if (!getAlloyDbSource().equals(other.getAlloyDbSource())) return false;
         break;
       case 15:
         if (!getBigtableSource().equals(other.getBigtableSource())) return false;
@@ -2459,6 +2525,10 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       case 13:
         hash = (37 * hash) + FIRESTORE_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getFirestoreSource().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + ALLOY_DB_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getAlloyDbSource().hashCode();
         break;
       case 15:
         hash = (37 * hash) + BIGTABLE_SOURCE_FIELD_NUMBER;
@@ -2638,6 +2708,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (firestoreSourceBuilder_ != null) {
         firestoreSourceBuilder_.clear();
       }
+      if (alloyDbSourceBuilder_ != null) {
+        alloyDbSourceBuilder_.clear();
+      }
       if (bigtableSourceBuilder_ != null) {
         bigtableSourceBuilder_.clear();
       }
@@ -2696,26 +2769,26 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private void buildPartial0(
         com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.errorConfig_ =
             errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.reconciliationMode_ = reconciliationMode_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.autoGenerateIds_ = autoGenerateIds_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.idField_ = idField_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2745,6 +2818,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (sourceCase_ == 13 && firestoreSourceBuilder_ != null) {
         result.source_ = firestoreSourceBuilder_.build();
+      }
+      if (sourceCase_ == 14 && alloyDbSourceBuilder_ != null) {
+        result.source_ = alloyDbSourceBuilder_.build();
       }
       if (sourceCase_ == 15 && bigtableSourceBuilder_ != null) {
         result.source_ = bigtableSourceBuilder_.build();
@@ -2800,7 +2876,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasErrorConfig()) {
@@ -2817,7 +2893,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getIdField().isEmpty()) {
         idField_ = other.idField_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -2854,6 +2930,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         case FIRESTORE_SOURCE:
           {
             mergeFirestoreSource(other.getFirestoreSource());
+            break;
+          }
+        case ALLOY_DB_SOURCE:
+          {
+            mergeAlloyDbSource(other.getAlloyDbSource());
             break;
           }
         case BIGTABLE_SOURCE:
@@ -2895,7 +2976,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 10
             case 18:
@@ -2919,31 +3000,31 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 42:
               {
                 input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 42
             case 48:
               {
                 reconciliationMode_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 58
             case 64:
               {
                 autoGenerateIds_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 64
             case 74:
               {
                 idField_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 74
             case 82:
@@ -2970,6 +3051,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                 sourceCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getAlloyDbSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 14;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(getBigtableSourceFieldBuilder().getBuilder(), extensionRegistry);
@@ -4530,6 +4617,217 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSource,
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSourceOrBuilder>
+        alloyDbSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     *
+     * @return Whether the alloyDbSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlloyDbSource() {
+      return sourceCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     *
+     * @return The alloyDbSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AlloyDbSource getAlloyDbSource() {
+      if (alloyDbSourceBuilder_ == null) {
+        if (sourceCase_ == 14) {
+          return (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 14) {
+          return alloyDbSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    public Builder setAlloyDbSource(com.google.cloud.discoveryengine.v1beta.AlloyDbSource value) {
+      if (alloyDbSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        alloyDbSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    public Builder setAlloyDbSource(
+        com.google.cloud.discoveryengine.v1beta.AlloyDbSource.Builder builderForValue) {
+      if (alloyDbSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        alloyDbSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    public Builder mergeAlloyDbSource(com.google.cloud.discoveryengine.v1beta.AlloyDbSource value) {
+      if (alloyDbSourceBuilder_ == null) {
+        if (sourceCase_ == 14
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.AlloyDbSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 14) {
+          alloyDbSourceBuilder_.mergeFrom(value);
+        } else {
+          alloyDbSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    public Builder clearAlloyDbSource() {
+      if (alloyDbSourceBuilder_ == null) {
+        if (sourceCase_ == 14) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 14) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        alloyDbSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AlloyDbSource.Builder getAlloyDbSourceBuilder() {
+      return getAlloyDbSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AlloyDbSourceOrBuilder
+        getAlloyDbSourceOrBuilder() {
+      if ((sourceCase_ == 14) && (alloyDbSourceBuilder_ != null)) {
+        return alloyDbSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 14) {
+          return (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.AlloyDbSource alloy_db_source = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSource,
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.AlloyDbSourceOrBuilder>
+        getAlloyDbSourceFieldBuilder() {
+      if (alloyDbSourceBuilder_ == null) {
+        if (!(sourceCase_ == 14)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.AlloyDbSource.getDefaultInstance();
+        }
+        alloyDbSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.AlloyDbSource,
+                com.google.cloud.discoveryengine.v1beta.AlloyDbSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.AlloyDbSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.AlloyDbSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 14;
+      onChanged();
+      return alloyDbSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1beta.BigtableSource,
             com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder,
             com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder>
@@ -4816,7 +5114,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4837,7 +5135,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4863,7 +5161,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4886,7 +5184,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the errorConfig field is set.
      */
     public boolean hasErrorConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4926,7 +5224,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         errorConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4946,7 +5244,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         errorConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4962,7 +5260,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder mergeErrorConfig(
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig value) {
       if (errorConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && errorConfig_ != null
             && errorConfig_
                 != com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()) {
@@ -4974,7 +5272,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         errorConfigBuilder_.mergeFrom(value);
       }
       if (errorConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4989,7 +5287,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.discoveryengine.v1beta.ImportErrorConfig error_config = 5;</code>
      */
     public Builder clearErrorConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       errorConfig_ = null;
       if (errorConfigBuilder_ != null) {
         errorConfigBuilder_.dispose();
@@ -5009,7 +5307,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder
         getErrorConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
@@ -5096,7 +5394,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder setReconciliationModeValue(int value) {
       reconciliationMode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5147,7 +5445,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       reconciliationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -5168,7 +5466,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearReconciliationMode() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       reconciliationMode_ = 0;
       onChanged();
       return this;
@@ -5193,7 +5491,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5235,7 +5533,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5255,7 +5553,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5271,7 +5569,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && updateMask_ != null
             && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
           getUpdateMaskBuilder().mergeFrom(value);
@@ -5282,7 +5580,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         updateMaskBuilder_.mergeFrom(value);
       }
       if (updateMask_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5298,7 +5596,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 7;</code>
      */
     public Builder clearUpdateMask() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateMask_ = null;
       if (updateMaskBuilder_ != null) {
         updateMaskBuilder_.dispose();
@@ -5318,7 +5616,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 7;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -5447,7 +5745,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setAutoGenerateIds(boolean value) {
 
       autoGenerateIds_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5487,7 +5785,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAutoGenerateIds() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       autoGenerateIds_ = false;
       onChanged();
       return this;
@@ -5654,7 +5952,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       idField_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5704,7 +6002,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearIdField() {
       idField_ = getDefaultInstance().getIdField();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5759,7 +6057,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       idField_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

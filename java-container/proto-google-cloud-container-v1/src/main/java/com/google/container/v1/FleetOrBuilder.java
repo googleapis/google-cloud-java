@@ -57,12 +57,12 @@ public interface FleetOrBuilder
    *
    *
    * <pre>
-   * [Output only] The full resource name of the registered fleet membership of
+   * Output only. The full resource name of the registered fleet membership of
    * the cluster, in the format
    * `//gkehub.googleapis.com/projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string membership = 2;</code>
+   * <code>string membership = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The membership.
    */
@@ -71,12 +71,12 @@ public interface FleetOrBuilder
    *
    *
    * <pre>
-   * [Output only] The full resource name of the registered fleet membership of
+   * Output only. The full resource name of the registered fleet membership of
    * the cluster, in the format
    * `//gkehub.googleapis.com/projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string membership = 2;</code>
+   * <code>string membership = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for membership.
    */
@@ -86,11 +86,11 @@ public interface FleetOrBuilder
    *
    *
    * <pre>
-   * [Output only] Whether the cluster has been registered through the fleet
+   * Output only. Whether the cluster has been registered through the fleet
    * API.
    * </pre>
    *
-   * <code>bool pre_registered = 3;</code>
+   * <code>bool pre_registered = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The preRegistered.
    */

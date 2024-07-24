@@ -28,7 +28,7 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag in URL format. Example:
+   * Identifier. The resource name of the tag in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    *
@@ -36,7 +36,7 @@ public interface TagOrBuilder
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,7 +45,7 @@ public interface TagOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag in URL format. Example:
+   * Identifier. The resource name of the tag in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    *
@@ -53,7 +53,7 @@ public interface TagOrBuilder
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

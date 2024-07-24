@@ -67,6 +67,8 @@ import javax.annotation.Generated;
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setRegionCode("regionCode-1991004415")
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .putAllParams(new HashMap<String, Value>())
@@ -78,6 +80,14 @@ import javax.annotation.Generated;
  *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setNaturalLanguageQueryUnderstandingSpec(
+ *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+ *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -249,6 +259,8 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
    *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -260,6 +272,14 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -307,6 +327,8 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
    *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -318,6 +340,14 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -365,6 +395,8 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
    *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -376,6 +408,14 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);

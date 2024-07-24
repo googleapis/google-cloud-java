@@ -104,6 +104,10 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields,
+                                "skipDefaultSchemaCreation",
+                                request.getSkipDefaultSchemaCreation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

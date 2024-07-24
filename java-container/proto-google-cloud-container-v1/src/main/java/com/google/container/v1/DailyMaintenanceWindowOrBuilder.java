@@ -57,13 +57,13 @@ public interface DailyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * Duration will be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
    * format "PTnHnMnS".
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The duration.
    */
@@ -72,13 +72,13 @@ public interface DailyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * Duration will be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
    * format "PTnHnMnS".
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for duration.
    */

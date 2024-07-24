@@ -28,8 +28,8 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
-   * Example:
+   * Output only. Identifier. The resource name of the tag template field in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
    *
@@ -37,7 +37,9 @@ public interface TagTemplateFieldOrBuilder
    * in this name.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -46,8 +48,8 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
-   * Example:
+   * Output only. Identifier. The resource name of the tag template field in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
    *
@@ -55,7 +57,9 @@ public interface TagTemplateFieldOrBuilder
    * in this name.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */

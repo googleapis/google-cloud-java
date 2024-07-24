@@ -28,8 +28,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format.
-   * Example:
+   * Output only. Identifier. The Data Catalog resource name of the entry in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *
@@ -38,7 +38,7 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -48,8 +48,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the entry in URL format.
-   * Example:
+   * Output only. Identifier. The Data Catalog resource name of the entry in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *
@@ -58,7 +58,7 @@ public interface EntryOrBuilder
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.

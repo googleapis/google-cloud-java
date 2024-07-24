@@ -74,8 +74,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
-   * Example:
+   * Output only. Identifier. The resource name of the tag template field in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
    *
@@ -83,7 +83,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * in this name.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -103,8 +105,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
-   * Example:
+   * Output only. Identifier. The resource name of the tag template field in URL
+   * format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
    *
@@ -112,7 +114,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * in this name.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -809,8 +813,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format.
-     * Example:
+     * Output only. Identifier. The resource name of the tag template field in URL
+     * format. Example:
      *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
      *
@@ -818,7 +822,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The name.
      */
@@ -837,8 +843,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format.
-     * Example:
+     * Output only. Identifier. The resource name of the tag template field in URL
+     * format. Example:
      *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
      *
@@ -846,7 +852,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -865,8 +873,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format.
-     * Example:
+     * Output only. Identifier. The resource name of the tag template field in URL
+     * format. Example:
      *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
      *
@@ -874,7 +882,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -892,8 +902,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format.
-     * Example:
+     * Output only. Identifier. The resource name of the tag template field in URL
+     * format. Example:
      *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
      *
@@ -901,7 +911,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -915,8 +927,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format.
-     * Example:
+     * Output only. Identifier. The resource name of the tag template field in URL
+     * format. Example:
      *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
      *
@@ -924,7 +936,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 6 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

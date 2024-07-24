@@ -1451,7 +1451,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. [Output only] The utilization of the IPv4 range for the pod.
+   * Output only. The utilization of the IPv4 range for the pod.
    * The ratio is Usage/[Total number of IPs in the secondary range],
    * Usage=numNodes*numZones*podIPsPerNode.
    * </pre>
@@ -3987,7 +3987,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * Output only. The utilization of the IPv4 range for the pod.
      * The ratio is Usage/[Total number of IPs in the secondary range],
      * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
@@ -4005,7 +4005,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * Output only. The utilization of the IPv4 range for the pod.
      * The ratio is Usage/[Total number of IPs in the secondary range],
      * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
@@ -4027,7 +4027,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the IPv4 range for the pod.
+     * Output only. The utilization of the IPv4 range for the pod.
      * The ratio is Usage/[Total number of IPs in the secondary range],
      * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>

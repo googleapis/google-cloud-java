@@ -506,6 +506,70 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). This field
+   * helps to better interpret the query. If a value isn't specified, the query
+   * language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 35;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). This field
+   * helps to better interpret the query. If a value isn't specified, the query
+   * language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 35;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Unicode country/region code (CLDR) of a location, such as "US" and
+   * "419". For more information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). If set,
+   * then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 36;</code>
+   *
+   * @return The regionCode.
+   */
+  java.lang.String getRegionCode();
+  /**
+   *
+   *
+   * <pre>
+   * The Unicode country/region code (CLDR) of a location, such as "US" and
+   * "419". For more information, see [Standard
+   * fields](https://cloud.google.com/apis/design/standard_fields). If set,
+   * then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 36;</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  com.google.protobuf.ByteString getRegionCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
    *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
@@ -1221,4 +1285,217 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28;
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28;
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec
+      getNaturalLanguageQueryUnderstandingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * If `naturalLanguageQueryUnderstandingSpec` is not specified, no additional
+   * natural language query understanding will be done.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 28;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest
+          .NaturalLanguageQueryUnderstandingSpecOrBuilder
+      getNaturalLanguageQueryUnderstandingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   *
+   * @return Whether the searchAsYouTypeSpec field is set.
+   */
+  boolean hasSearchAsYouTypeSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   *
+   * @return The searchAsYouTypeSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec
+      getSearchAsYouTypeSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Search as you type configuration. Only supported for the
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec search_as_you_type_spec = 31;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpecOrBuilder
+      getSearchAsYouTypeSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The session resource name. Optional.
+   *
+   * Session allows users to do multi-turn /search API calls or coordination
+   * between /search API calls and /answer API calls.
+   *
+   * Example #1 (multi-turn /search API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /search API with the session ID generated in the first call.
+   *      Here, the previous search query gets considered in query
+   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *      and the current query is "How about 2023?", the current query will
+   *      be interpreted as "How did Alphabet do in 2023?".
+   *
+   * Example #2 (coordination between /search API calls and /answer API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /answer API with the session ID generated in the first call.
+   *      Here, the answer generation happens in the context of the search
+   *      results from the first search call.
+   *
+   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+   * gets automatically created. Otherwise, users can use the create-session API
+   * to create a session manually.
+   *
+   * Multi-turn Search feature is currently at private GA stage. Please use
+   * v1alpha or v1beta version instead before we launch this feature to public
+   * GA. Or ask for allowlisting through Google Support team.
+   * </pre>
+   *
+   * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The session.
+   */
+  java.lang.String getSession();
+  /**
+   *
+   *
+   * <pre>
+   * The session resource name. Optional.
+   *
+   * Session allows users to do multi-turn /search API calls or coordination
+   * between /search API calls and /answer API calls.
+   *
+   * Example #1 (multi-turn /search API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /search API with the session ID generated in the first call.
+   *      Here, the previous search query gets considered in query
+   *      standing. I.e., if the first query is "How did Alphabet do in 2022?"
+   *      and the current query is "How about 2023?", the current query will
+   *      be interpreted as "How did Alphabet do in 2023?".
+   *
+   * Example #2 (coordination between /search API calls and /answer API calls):
+   *   1. Call /search API with the auto-session mode (see below).
+   *   2. Call /answer API with the session ID generated in the first call.
+   *      Here, the answer generation happens in the context of the search
+   *      results from the first search call.
+   *
+   * Auto-session mode: when `projects/.../sessions/-` is used, a new session
+   * gets automatically created. Otherwise, users can use the create-session API
+   * to create a session manually.
+   *
+   * Multi-turn Search feature is currently at private GA stage. Please use
+   * v1alpha or v1beta version instead before we launch this feature to public
+   * GA. Or ask for allowlisting through Google Support team.
+   * </pre>
+   *
+   * <code>string session = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for session.
+   */
+  com.google.protobuf.ByteString getSessionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec session_spec = 42;</code>
+   *
+   * @return Whether the sessionSpec field is set.
+   */
+  boolean hasSessionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec session_spec = 42;</code>
+   *
+   * @return The sessionSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec getSessionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Session specification.
+   *
+   * Can be used only when `session` is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec session_spec = 42;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpecOrBuilder
+      getSessionSpecOrBuilder();
 }

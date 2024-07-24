@@ -28,7 +28,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format. Example:
+   * Identifier. The resource name of the tag template in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *
@@ -36,7 +36,7 @@ public interface TagTemplateOrBuilder
    * stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,7 +45,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format. Example:
+   * Identifier. The resource name of the tag template in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *
@@ -53,7 +53,7 @@ public interface TagTemplateOrBuilder
    * stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -188,4 +188,34 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.TagTemplateField getFieldsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  int getDataplexTransferStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  com.google.cloud.datacatalog.v1beta1.TagTemplate.DataplexTransferStatus
+      getDataplexTransferStatus();
 }
