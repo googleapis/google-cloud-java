@@ -182,6 +182,11 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
       return this;
     }
 
+    Builder mergeToCell(@Nonnull String familyName, Value qualifier, Value timestamp, Value input) {
+      this.entriesBuilder().add(MergeToCell.create(familyName, qualifier, timestamp, input));
+      return this;
+    }
+
     abstract ChangeStreamMutation build();
   }
 
@@ -210,6 +215,13 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
             addToCell.getQualifier(),
             addToCell.getTimestamp(),
             addToCell.getInput());
+      } else if (entry instanceof MergeToCell) {
+        MergeToCell mergeToCell = (MergeToCell) entry;
+        rowMutation.mergeToCell(
+            mergeToCell.getFamily(),
+            mergeToCell.getQualifier(),
+            mergeToCell.getTimestamp(),
+            mergeToCell.getInput());
       } else {
         throw new IllegalArgumentException("Unexpected Entry type.");
       }
@@ -242,6 +254,13 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
             addToCell.getQualifier(),
             addToCell.getTimestamp(),
             addToCell.getInput());
+      } else if (entry instanceof MergeToCell) {
+        MergeToCell mergeToCell = (MergeToCell) entry;
+        rowMutationEntry.mergeToCell(
+            mergeToCell.getFamily(),
+            mergeToCell.getQualifier(),
+            mergeToCell.getTimestamp(),
+            mergeToCell.getInput());
       } else {
         throw new IllegalArgumentException("Unexpected Entry type.");
       }

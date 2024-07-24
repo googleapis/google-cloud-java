@@ -485,6 +485,16 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   Value.fromProto(mod.getAddToCell().getColumnQualifier()),
                   Value.fromProto(mod.getAddToCell().getTimestamp()),
                   Value.fromProto(mod.getAddToCell().getInput()));
+              continue;
+            }
+            // Case 5: MergeToCell
+            if (mod.hasMergeToCell()) {
+              builder.mergeToCell(
+                  mod.getMergeToCell().getFamilyName(),
+                  Value.fromProto(mod.getMergeToCell().getColumnQualifier()),
+                  Value.fromProto(mod.getMergeToCell().getTimestamp()),
+                  Value.fromProto(mod.getMergeToCell().getInput()));
+              continue;
             }
             throw new IllegalStateException(
                 "Received unknown mod type. You may need to upgrade your Bigtable client.");

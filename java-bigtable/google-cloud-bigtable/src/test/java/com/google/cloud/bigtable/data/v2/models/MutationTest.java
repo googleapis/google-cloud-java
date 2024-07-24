@@ -21,6 +21,7 @@ import com.google.bigtable.v2.Mutation.AddToCell;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
+import com.google.bigtable.v2.Mutation.MergeToCell;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
@@ -196,6 +197,21 @@ public class MutationTest {
   }
 
   @Test
+  public void mergeToCellTest() {
+    mutation.mergeToCell("cf1", "q", 10000, ByteString.copyFrom(Longs.toByteArray(1234L)));
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
+
+    com.google.bigtable.v2.Mutation.Builder builder = com.google.bigtable.v2.Mutation.newBuilder();
+    MergeToCell.Builder mergeToCellBuilder = builder.getMergeToCellBuilder();
+    mergeToCellBuilder.setFamilyName("cf1");
+    mergeToCellBuilder.getColumnQualifierBuilder().setRawValue(ByteString.copyFromUtf8("q"));
+    mergeToCellBuilder.getTimestampBuilder().setRawTimestampMicros(10000);
+    mergeToCellBuilder.getInputBuilder().setRawValue(ByteString.copyFrom(Longs.toByteArray(1234L)));
+
+    assertThat(actual).containsExactly(builder.build());
+  }
+
+  @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     Mutation expected = Mutation.create().setCell("cf", "q", "val");
 
@@ -281,7 +297,8 @@ public class MutationTest {
             ByteString.copyFromUtf8("fake-value"))
         .deleteCells("fake-family", ByteString.copyFromUtf8("fake-qualifier"))
         .deleteFamily("fake-family2")
-        .addToCell("agg-family", "qual1", 1000, 1234);
+        .addToCell("agg-family", "qual1", 1000, 1234)
+        .mergeToCell("agg-family", "qual2", 1000, ByteString.copyFrom(Longs.toByteArray(1234L)));
 
     List<com.google.bigtable.v2.Mutation> protoMutation = mutation.getMutations();
 

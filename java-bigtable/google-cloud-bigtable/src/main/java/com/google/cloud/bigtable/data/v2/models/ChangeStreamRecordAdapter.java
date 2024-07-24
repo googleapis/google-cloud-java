@@ -141,6 +141,12 @@ public interface ChangeStreamRecordAdapter<ChangeStreamRecordT> {
         @Nonnull Value timestamp,
         @Nonnull Value value);
 
+    void mergeToCell(
+        @Nonnull String familyName,
+        @Nonnull Value qualifier,
+        @Nonnull Value timestamp,
+        @Nonnull Value value);
+
     /**
      * Called to start a SetCell.
      *

@@ -139,6 +139,20 @@ public interface MutationApi<T extends MutationApi<T>> {
   }
 
   /**
+   * Merges a ByteString accumulator value to a cell in an aggregate column family.
+   *
+   * <p>This is a convenience override that converts Strings to ByteStrings.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
+   */
+  default T mergeToCell(
+      @Nonnull String familyName, @Nonnull String qualifier, long timestamp, ByteString value) {
+    return mergeToCell(familyName, ByteString.copyFromUtf8(qualifier), timestamp, value);
+  }
+
+  /**
    * Adds an int64 value to an aggregate cell. The column family must be an aggregate family and
    * have an "int64" input type or this mutation will be rejected.
    *
@@ -156,6 +170,22 @@ public interface MutationApi<T extends MutationApi<T>> {
   }
 
   /**
+   * Merges a ByteString accumulator value to a cell in an aggregate column family.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
+   */
+  default T mergeToCell(
+      @Nonnull String familyName, @Nonnull ByteString qualifier, long timestamp, ByteString input) {
+    return mergeToCell(
+        familyName,
+        Value.RawValue.create(qualifier),
+        Value.RawTimestamp.create(timestamp),
+        Value.RawValue.create(input));
+  }
+
+  /**
    * Adds a {@link Value} to an aggregate cell. The column family must be an aggregate family and
    * have an input type matching the type of {@link Value} or this mutation will be rejected.
    *
@@ -164,6 +194,20 @@ public interface MutationApi<T extends MutationApi<T>> {
    * granularity). For example: `1571902339435000`.
    */
   T addToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value input);
+
+  /**
+   * Merges a {@link Value} accumulator to an aggregate cell. The column family must be an aggregate
+   * family or this mutation will be rejected.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
+   */
+  T mergeToCell(
       @Nonnull String familyName,
       @Nonnull Value qualifier,
       @Nonnull Value timestamp,

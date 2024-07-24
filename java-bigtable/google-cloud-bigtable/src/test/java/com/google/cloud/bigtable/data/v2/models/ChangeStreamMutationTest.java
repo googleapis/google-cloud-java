@@ -67,6 +67,11 @@ public class ChangeStreamMutationTest {
                 Value.rawValue(ByteString.copyFromUtf8("col1")),
                 Value.rawTimestamp(1000),
                 Value.intValue(1234))
+            .mergeToCell(
+                "agg-family",
+                Value.rawValue(ByteString.copyFromUtf8("col2")),
+                Value.rawTimestamp(1000),
+                Value.rawValue(ByteString.copyFrom(Longs.toByteArray(1234L))))
             .setToken("fake-token")
             .setEstimatedLowWatermark(FAKE_LOW_WATERMARK)
             .build();
@@ -150,6 +155,11 @@ public class ChangeStreamMutationTest {
                 Value.rawValue(ByteString.copyFromUtf8("qual1")),
                 Value.rawTimestamp(1000),
                 Value.intValue(1234))
+            .mergeToCell(
+                "agg-family",
+                Value.rawValue(ByteString.copyFromUtf8("qual2")),
+                Value.rawTimestamp(1000),
+                Value.rawValue(ByteString.copyFrom(Longs.toByteArray(1234L))))
             .setToken("fake-token")
             .setEstimatedLowWatermark(FAKE_LOW_WATERMARK)
             .build();
@@ -161,7 +171,7 @@ public class ChangeStreamMutationTest {
         NameUtil.formatTableName(
             REQUEST_CONTEXT.getProjectId(), REQUEST_CONTEXT.getInstanceId(), TABLE_ID);
     assertThat(mutateRowRequest.getTableName()).isEqualTo(tableName);
-    assertThat(mutateRowRequest.getMutationsList()).hasSize(4);
+    assertThat(mutateRowRequest.getMutationsList()).hasSize(5);
     assertThat(mutateRowRequest.getMutations(0).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value"));
     assertThat(mutateRowRequest.getMutations(1).getDeleteFromFamily().getFamilyName())
@@ -177,6 +187,14 @@ public class ChangeStreamMutationTest {
                 .setColumnQualifier(Value.rawValue(ByteString.copyFromUtf8("qual1")).toProto())
                 .setTimestamp(Value.rawTimestamp(1000).toProto())
                 .setInput(Value.intValue(1234).toProto())
+                .build());
+    assertThat(mutateRowRequest.getMutations(4).getMergeToCell())
+        .isEqualTo(
+            Mutation.MergeToCell.newBuilder()
+                .setFamilyName("agg-family")
+                .setColumnQualifier(Value.rawValue(ByteString.copyFromUtf8("qual2")).toProto())
+                .setTimestamp(Value.rawTimestamp(1000).toProto())
+                .setInput(Value.rawValue(ByteString.copyFrom(Longs.toByteArray(1234L))).toProto())
                 .build());
   }
 
@@ -220,6 +238,11 @@ public class ChangeStreamMutationTest {
                 Value.rawValue(ByteString.copyFromUtf8("qual1")),
                 Value.rawTimestamp(1000),
                 Value.intValue(1234))
+            .mergeToCell(
+                "agg-family",
+                Value.rawValue(ByteString.copyFromUtf8("qual2")),
+                Value.rawTimestamp(1000),
+                Value.rawValue(ByteString.copyFrom(Longs.toByteArray(1234L))))
             .setToken("fake-token")
             .setEstimatedLowWatermark(FAKE_LOW_WATERMARK)
             .build();
@@ -228,7 +251,7 @@ public class ChangeStreamMutationTest {
     RowMutationEntry rowMutationEntry = changeStreamMutation.toRowMutationEntry();
     MutateRowsRequest.Entry mutateRowsRequestEntry = rowMutationEntry.toProto();
     assertThat(mutateRowsRequestEntry.getRowKey()).isEqualTo(ByteString.copyFromUtf8("key"));
-    assertThat(mutateRowsRequestEntry.getMutationsList()).hasSize(4);
+    assertThat(mutateRowsRequestEntry.getMutationsList()).hasSize(5);
     assertThat(mutateRowsRequestEntry.getMutations(0).getSetCell().getValue())
         .isEqualTo(ByteString.copyFromUtf8("fake-value"));
     assertThat(mutateRowsRequestEntry.getMutations(1).getDeleteFromFamily().getFamilyName())
@@ -244,6 +267,14 @@ public class ChangeStreamMutationTest {
                 .setColumnQualifier(Value.rawValue(ByteString.copyFromUtf8("qual1")).toProto())
                 .setTimestamp(Value.rawTimestamp(1000).toProto())
                 .setInput(Value.intValue(1234).toProto())
+                .build());
+    assertThat(mutateRowsRequestEntry.getMutations(4).getMergeToCell())
+        .isEqualTo(
+            Mutation.MergeToCell.newBuilder()
+                .setFamilyName("agg-family")
+                .setColumnQualifier(Value.rawValue(ByteString.copyFromUtf8("qual2")).toProto())
+                .setTimestamp(Value.rawTimestamp(1000).toProto())
+                .setInput(Value.rawValue(ByteString.copyFrom(Longs.toByteArray(1234L))).toProto())
                 .build());
   }
 

@@ -21,6 +21,7 @@ import com.google.bigtable.v2.Mutation.AddToCell;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
+import com.google.bigtable.v2.Mutation.MergeToCell;
 import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
@@ -303,6 +304,24 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     qualifier.buildTo(addToCellBuilder.getColumnQualifierBuilder());
     timestamp.buildTo(addToCellBuilder.getTimestampBuilder());
     value.buildTo(addToCellBuilder.getInputBuilder());
+
+    addMutation(builder.build());
+    return this;
+  }
+
+  @Override
+  public Mutation mergeToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value value) {
+    com.google.bigtable.v2.Mutation.Builder builder = com.google.bigtable.v2.Mutation.newBuilder();
+    MergeToCell.Builder mergeToCellBuilder = builder.getMergeToCellBuilder();
+    mergeToCellBuilder.setFamilyName(familyName);
+
+    qualifier.buildTo(mergeToCellBuilder.getColumnQualifierBuilder());
+    timestamp.buildTo(mergeToCellBuilder.getTimestampBuilder());
+    value.buildTo(mergeToCellBuilder.getInputBuilder());
 
     addMutation(builder.build());
     return this;

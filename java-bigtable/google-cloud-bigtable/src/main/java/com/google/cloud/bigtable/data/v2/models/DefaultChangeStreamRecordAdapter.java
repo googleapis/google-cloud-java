@@ -142,6 +142,15 @@ public class DefaultChangeStreamRecordAdapter
       this.changeStreamMutationBuilder.addToCell(familyName, qualifier, timestamp, input);
     }
 
+    @Override
+    public void mergeToCell(
+        @Nonnull String familyName,
+        @Nonnull Value qualifier,
+        @Nonnull Value timestamp,
+        @Nonnull Value input) {
+      this.changeStreamMutationBuilder.mergeToCell(familyName, qualifier, timestamp, input);
+    }
+
     /** {@inheritDoc} */
     @Override
     public void startCell(String family, ByteString qualifier, long timestampMicros) {

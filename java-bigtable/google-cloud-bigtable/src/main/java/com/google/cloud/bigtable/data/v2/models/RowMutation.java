@@ -237,6 +237,16 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
     return this;
   }
 
+  @Override
+  public RowMutation mergeToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value input) {
+    mutation.mergeToCell(familyName, qualifier, timestamp, input);
+    return this;
+  }
+
   @InternalApi
   public MutateRowRequest toProto(RequestContext requestContext) {
     MutateRowRequest.Builder builder = MutateRowRequest.newBuilder();
