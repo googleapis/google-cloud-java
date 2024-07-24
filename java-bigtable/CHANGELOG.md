@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.41.0](https://github.com/googleapis/java-bigtable/compare/v2.40.0...v2.41.0) (2024-07-24)
+
+
+### Features
+
+* Add MergeToCell to Mutation APIs ([#2279](https://github.com/googleapis/java-bigtable/issues/2279)) ([0ce8a2a](https://github.com/googleapis/java-bigtable/commit/0ce8a2a38703233da58208655f41f6e81e03576e))
+* Add support for MergeToCell API ([#2258](https://github.com/googleapis/java-bigtable/issues/2258)) ([191d15c](https://github.com/googleapis/java-bigtable/commit/191d15c5284dbb702e11669931272877bf05f44e))
+* Add support for new functions ([#2287](https://github.com/googleapis/java-bigtable/issues/2287)) ([dd6583a](https://github.com/googleapis/java-bigtable/commit/dd6583a22504385b7a1f7dc91b3bc3d2500ea0c5))
+* Create new environment variable to toggle directpath scoped to cloud bigtable. ([#2261](https://github.com/googleapis/java-bigtable/issues/2261)) ([9062944](https://github.com/googleapis/java-bigtable/commit/9062944610277eb7ae77f395dc79ce94239c5bee))
+* Implement ExecuteQuery API for SQL support ([#2280](https://github.com/googleapis/java-bigtable/issues/2280)) ([25218e8](https://github.com/googleapis/java-bigtable/commit/25218e8cc46f9a51d4b6515afdb8931e574b0bb1))
+
+
+### Dependencies
+
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.4.4 ([#2282](https://github.com/googleapis/java-bigtable/issues/2282)) ([d00a9e0](https://github.com/googleapis/java-bigtable/commit/d00a9e01b2b329f3bae50f48a15692d87ad0f3bf))
+
 ## [2.40.0](https://github.com/googleapis/java-bigtable/compare/v2.39.5...v2.40.0) (2024-06-28)
 
 
