@@ -27,16 +27,19 @@ import javax.annotation.Nonnull;
  * @see com.google.bigtable.admin.v2.Type
  */
 @BetaApi
-public abstract class Type {
-  private Type() {}
-
+public interface Type {
   /**
-   * This type is a marker type that allows types to be used as the input to the SUM aggregate
-   * function.
+   * These types are marker types that allow types to be used as the input to aggregate function.
    */
-  public abstract static class SumAggregateInput extends Type {}
+  public static interface SumAggregateInput extends Type {}
 
-  abstract com.google.bigtable.admin.v2.Type toProto();
+  public static interface MinAggregateInput extends Type {}
+
+  public static interface MaxAggregateInput extends Type {}
+
+  public static interface HllAggregateInput extends Type {}
+
+  com.google.bigtable.admin.v2.Type toProto();
 
   static Type fromProto(com.google.bigtable.admin.v2.Type source) {
     switch (source.getKindCase()) {
@@ -73,7 +76,7 @@ public abstract class Type {
    * Creates an Int64 type with a big-endian encoding. The bytes are then encoded in "raw" format.
    */
   public static Int64 bigEndianInt64() {
-    return Int64.create(Int64.Encoding.BigEndianBytes.create(Bytes.rawBytes()));
+    return Int64.create(Int64.Encoding.BigEndianBytes.create(Type.rawBytes()));
   }
 
   /** Creates an Int64 type with the specified encoding. */
@@ -91,9 +94,39 @@ public abstract class Type {
     return Aggregate.create(inputType, Aggregate.Aggregator.Sum.create());
   }
 
+  /** Creates an Aggregate type with a MIN aggregator and Int64 input type. */
+  public static Aggregate int64Min() {
+    return min(bigEndianInt64());
+  }
+
+  /** Creates an Aggregate type with a MIN aggregator and specified input type. */
+  public static Aggregate min(MinAggregateInput inputType) {
+    return Aggregate.create(inputType, Aggregate.Aggregator.Min.create());
+  }
+
+  /** Creates an Aggregate type with a MAX aggregator and Int64 input type. */
+  public static Aggregate int64Max() {
+    return max(bigEndianInt64());
+  }
+
+  /** Creates an Aggregate type with a MAX aggregator and specified input type. */
+  public static Aggregate max(MaxAggregateInput inputType) {
+    return Aggregate.create(inputType, Aggregate.Aggregator.Max.create());
+  }
+
+  /** Creates an Aggregate type with a HLL aggregator and Int64 input type. */
+  public static Aggregate int64Hll() {
+    return hll(bigEndianInt64());
+  }
+
+  /** Creates an Aggregate type with a HLL aggregator and specified input type. */
+  public static Aggregate hll(HllAggregateInput inputType) {
+    return Aggregate.create(inputType, Aggregate.Aggregator.Hll.create());
+  }
+
   /** Represents a string of bytes with a specific encoding. */
   @AutoValue
-  public abstract static class Bytes extends Type {
+  public abstract static class Bytes implements Type {
     public static Bytes create(Encoding encoding) {
       return new AutoValue_Type_Bytes(encoding);
     }
@@ -102,7 +135,7 @@ public abstract class Type {
     public abstract Encoding getEncoding();
 
     @Override
-    com.google.bigtable.admin.v2.Type toProto() {
+    public com.google.bigtable.admin.v2.Type toProto() {
       com.google.bigtable.admin.v2.Type.Builder builder =
           com.google.bigtable.admin.v2.Type.newBuilder();
       builder.getBytesTypeBuilder().setEncoding(getEncoding().toProto());
@@ -142,7 +175,7 @@ public abstract class Type {
                 .build();
 
         @Override
-        com.google.bigtable.admin.v2.Type.Bytes.Encoding toProto() {
+        public com.google.bigtable.admin.v2.Type.Bytes.Encoding toProto() {
           return PROTO_INSTANCE;
         }
       }
@@ -151,7 +184,8 @@ public abstract class Type {
 
   /** Represents a 64-bit integer with a specific encoding. */
   @AutoValue
-  public abstract static class Int64 extends SumAggregateInput {
+  public abstract static class Int64
+      implements SumAggregateInput, MinAggregateInput, MaxAggregateInput, HllAggregateInput {
     public static Int64 create(Encoding encoding) {
       return new AutoValue_Type_Int64(encoding);
     }
@@ -169,7 +203,7 @@ public abstract class Type {
             return BigEndianBytes.create(
                 Bytes.fromProto(source.getBigEndianBytes().getBytesType()));
           case ENCODING_NOT_SET:
-            return BigEndianBytes.create(Bytes.rawBytes());
+            return BigEndianBytes.create(Type.rawBytes());
         }
         throw new UnsupportedOperationException();
       }
@@ -185,7 +219,7 @@ public abstract class Type {
         public abstract Bytes getBytes();
 
         @Override
-        com.google.bigtable.admin.v2.Type.Int64.Encoding toProto() {
+        public com.google.bigtable.admin.v2.Type.Int64.Encoding toProto() {
           com.google.bigtable.admin.v2.Type.Int64.Encoding.Builder builder =
               com.google.bigtable.admin.v2.Type.Int64.Encoding.newBuilder();
           builder.getBigEndianBytesBuilder().setBytesType(getBytes().toProto().getBytesType());
@@ -195,7 +229,7 @@ public abstract class Type {
     }
 
     @Override
-    com.google.bigtable.admin.v2.Type toProto() {
+    public com.google.bigtable.admin.v2.Type toProto() {
       com.google.bigtable.admin.v2.Type.Builder builder =
           com.google.bigtable.admin.v2.Type.newBuilder();
       builder.getInt64TypeBuilder().setEncoding(getEncoding().toProto());
@@ -208,13 +242,13 @@ public abstract class Type {
   }
 
   @AutoValue
-  public abstract static class Raw extends Type {
+  public abstract static class Raw implements Type {
     public static Raw create() {
       return new AutoValue_Type_Raw();
     }
 
     @Override
-    com.google.bigtable.admin.v2.Type toProto() {
+    public com.google.bigtable.admin.v2.Type toProto() {
       return com.google.bigtable.admin.v2.Type.getDefaultInstance();
     }
   }
@@ -226,7 +260,7 @@ public abstract class Type {
    * the `input_type` or `state_type`, and reads will always return the `state_type` .
    */
   @AutoValue
-  public abstract static class Aggregate extends Type {
+  public abstract static class Aggregate implements Type {
     public static Aggregate create(Type inputType, Aggregator aggregator) {
       return new AutoValue_Type_Aggregate(inputType, aggregator);
     }
@@ -250,11 +284,49 @@ public abstract class Type {
         }
       }
 
+      @AutoValue
+      public abstract static class Min extends Aggregator {
+        public static Min create() {
+          return new AutoValue_Type_Aggregate_Aggregator_Min();
+        }
+
+        @Override
+        void buildTo(com.google.bigtable.admin.v2.Type.Aggregate.Builder builder) {
+          builder.setMin(com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance());
+        }
+      }
+
+      @AutoValue
+      public abstract static class Max extends Aggregator {
+        public static Max create() {
+          return new AutoValue_Type_Aggregate_Aggregator_Max();
+        }
+
+        @Override
+        void buildTo(com.google.bigtable.admin.v2.Type.Aggregate.Builder builder) {
+          builder.setMax(com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance());
+        }
+      }
+
+      @AutoValue
+      public abstract static class Hll extends Aggregator {
+        public static Hll create() {
+          return new AutoValue_Type_Aggregate_Aggregator_Hll();
+        }
+
+        @Override
+        void buildTo(com.google.bigtable.admin.v2.Type.Aggregate.Builder builder) {
+          builder.setHllppUniqueCount(
+              com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                  .getDefaultInstance());
+        }
+      }
+
       abstract void buildTo(com.google.bigtable.admin.v2.Type.Aggregate.Builder builder);
     }
 
     @Override
-    com.google.bigtable.admin.v2.Type toProto() {
+    public com.google.bigtable.admin.v2.Type toProto() {
       com.google.bigtable.admin.v2.Type.Builder typeBuilder =
           com.google.bigtable.admin.v2.Type.newBuilder();
       com.google.bigtable.admin.v2.Type.Aggregate.Builder aggregateBuilder =
@@ -270,6 +342,15 @@ public abstract class Type {
       switch (source.getAggregatorCase()) {
         case SUM:
           aggregator = Aggregator.Sum.create();
+          break;
+        case MIN:
+          aggregator = Aggregator.Min.create();
+          break;
+        case MAX:
+          aggregator = Aggregator.Max.create();
+          break;
+        case HLLPP_UNIQUE_COUNT:
+          aggregator = Aggregator.Hll.create();
           break;
         case AGGREGATOR_NOT_SET:
           throw new UnsupportedOperationException();

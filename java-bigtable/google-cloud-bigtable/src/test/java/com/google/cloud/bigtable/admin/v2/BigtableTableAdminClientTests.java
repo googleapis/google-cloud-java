@@ -256,6 +256,24 @@ public class BigtableTableAdminClientTests {
                         ColumnFamily.newBuilder()
                             .setGcRule(GcRule.getDefaultInstance())
                             .setValueType(TypeProtos.intSumType())
+                            .build())
+                    .putColumnFamilies(
+                        "cf2",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(TypeProtos.intMinType())
+                            .build())
+                    .putColumnFamilies(
+                        "cf3",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(TypeProtos.intMaxType())
+                            .build())
+                    .putColumnFamilies(
+                        "cf4",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(TypeProtos.intHllType())
                             .build()))
             .build();
 
@@ -267,7 +285,12 @@ public class BigtableTableAdminClientTests {
 
     // Execute
     Table result =
-        adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily("cf1", Type.int64Sum()));
+        adminClient.createTable(
+            CreateTableRequest.of(TABLE_ID)
+                .addFamily("cf1", Type.int64Sum())
+                .addFamily("cf2", Type.int64Min())
+                .addFamily("cf3", Type.int64Max())
+                .addFamily("cf4", Type.int64Hll()));
 
     // Verify
     assertThat(result).isEqualTo(Table.fromProto(expectedResponse));

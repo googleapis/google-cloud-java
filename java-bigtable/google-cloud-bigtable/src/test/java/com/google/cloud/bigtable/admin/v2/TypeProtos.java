@@ -48,4 +48,33 @@ public class TypeProtos {
                 .setSum(com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance()))
         .build();
   }
+
+  public static com.google.bigtable.admin.v2.Type intMinType() {
+    return com.google.bigtable.admin.v2.Type.newBuilder()
+        .setAggregateType(
+            com.google.bigtable.admin.v2.Type.Aggregate.newBuilder()
+                .setInputType(TypeProtos.int64Type())
+                .setMin(com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance()))
+        .build();
+  }
+
+  public static com.google.bigtable.admin.v2.Type intMaxType() {
+    return com.google.bigtable.admin.v2.Type.newBuilder()
+        .setAggregateType(
+            com.google.bigtable.admin.v2.Type.Aggregate.newBuilder()
+                .setInputType(TypeProtos.int64Type())
+                .setMax(com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance()))
+        .build();
+  }
+
+  public static com.google.bigtable.admin.v2.Type intHllType() {
+    return com.google.bigtable.admin.v2.Type.newBuilder()
+        .setAggregateType(
+            com.google.bigtable.admin.v2.Type.Aggregate.newBuilder()
+                .setInputType(TypeProtos.int64Type())
+                .setHllppUniqueCount(
+                    com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
+                        .getDefaultInstance()))
+        .build();
+  }
 }

@@ -55,7 +55,7 @@ public class TypeTest {
 
   @Test
   public void int64WithEncoding() {
-    Type type = Type.int64(Int64.Encoding.BigEndianBytes.create(Bytes.rawBytes()));
+    Type type = Type.int64(Int64.Encoding.BigEndianBytes.create(Type.rawBytes()));
     assertThat(type.toProto()).isEqualTo(TypeProtos.int64Type());
   }
 
@@ -75,6 +75,63 @@ public class TypeTest {
   public void intSumFromProtoToProto() {
     com.google.bigtable.admin.v2.Type proto = TypeProtos.intSumType();
     assertThat(Type.fromProto(proto)).isEqualTo(Type.int64Sum());
+    assertThat(Type.fromProto(proto).toProto()).isEqualTo(proto);
+  }
+
+  @Test
+  public void int64Min() {
+    Type type = Type.int64Min();
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intMinType());
+  }
+
+  @Test
+  public void min() {
+    Type type = Type.min(Type.bigEndianInt64());
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intMinType());
+  }
+
+  @Test
+  public void intMinFromProtoToProto() {
+    com.google.bigtable.admin.v2.Type proto = TypeProtos.intMinType();
+    assertThat(Type.fromProto(proto)).isEqualTo(Type.int64Min());
+    assertThat(Type.fromProto(proto).toProto()).isEqualTo(proto);
+  }
+
+  @Test
+  public void int64Max() {
+    Type type = Type.int64Max();
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intMaxType());
+  }
+
+  @Test
+  public void max() {
+    Type type = Type.max(Type.bigEndianInt64());
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intMaxType());
+  }
+
+  @Test
+  public void intMaxFromProtoToProto() {
+    com.google.bigtable.admin.v2.Type proto = TypeProtos.intMaxType();
+    assertThat(Type.fromProto(proto)).isEqualTo(Type.int64Max());
+    assertThat(Type.fromProto(proto).toProto()).isEqualTo(proto);
+  }
+
+  @Test
+  public void bytesHll() {
+    Type type = Type.int64Hll();
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intHllType());
+  }
+
+  @Test
+  public void hll() {
+    Type type = Type.hll(Type.bigEndianInt64());
+    assertThat(type.toProto()).isEqualTo(TypeProtos.intHllType());
+  }
+
+  @Test
+  public void bytesHllFromProtoToProto() {
+    com.google.bigtable.admin.v2.Type proto = TypeProtos.intHllType();
+    assertThat(Type.fromProto(proto)).isEqualTo(Type.int64Hll());
     assertThat(Type.fromProto(proto).toProto()).isEqualTo(proto);
   }
 }
