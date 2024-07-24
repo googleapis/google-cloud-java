@@ -561,7 +561,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /** Class for specifying table get and create options. */
   class JobOption extends Option {
 
-    private static final long serialVersionUID = -3111736712316353665L;
+    private static final long serialVersionUID = -3111736712316353664L;
 
     private JobOption(BigQueryRpc.Option option, Object value) {
       super(option, value);
@@ -577,6 +577,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
     public static JobOption fields(JobField... fields) {
       return new JobOption(
           BigQueryRpc.Option.FIELDS, Helper.selector(JobField.REQUIRED_FIELDS, fields));
+    }
+
+    /** Returns an option to specify the job's BigQuery retry configuration. */
+    public static JobOption bigQueryRetryConfig(BigQueryRetryConfig bigQueryRetryConfig) {
+      return new JobOption(BigQueryRpc.Option.BIGQUERY_RETRY_CONFIG, bigQueryRetryConfig);
+    }
+
+    /** Returns an option to specify the job's retry options. */
+    public static JobOption retryOptions(RetryOption... options) {
+      return new JobOption(BigQueryRpc.Option.RETRY_OPTIONS, options);
     }
   }
 

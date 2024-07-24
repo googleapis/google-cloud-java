@@ -57,7 +57,9 @@ public interface BigQueryRpc extends ServiceRpc {
     STATE_FILTER("stateFilter"),
     TIMEOUT("timeoutMs"),
     REQUESTED_POLICY_VERSION("requestedPolicyVersion"),
-    TABLE_METADATA_VIEW("view");
+    TABLE_METADATA_VIEW("view"),
+    RETRY_OPTIONS("retryOptions"),
+    BIGQUERY_RETRY_CONFIG("bigQueryRetryConfig");
 
     private final String value;
 

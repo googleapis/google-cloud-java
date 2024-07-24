@@ -57,6 +57,7 @@ import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.BigQueryResult;
+import com.google.cloud.bigquery.BigQueryRetryConfig;
 import com.google.cloud.bigquery.BigQuerySQLException;
 import com.google.cloud.bigquery.CloneDefinition;
 import com.google.cloud.bigquery.Clustering;
@@ -5254,6 +5255,26 @@ public class ITBigQueryTest {
     assertNull(completedJob.getStatus().getError());
     assertTrue(createdTable.delete());
     assertTrue(bigquery.delete(destinationTable));
+  }
+
+  @Test
+  public void testCreateJobAndWaitForWithRetryOptions()
+      throws InterruptedException, TimeoutException {
+    // Note: This only tests the non failure/retry case. For retry cases, see unit tests with mocked
+    // RPC calls.
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT CURRENT_TIMESTAMP() as ts")
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .build();
+
+    BigQueryRetryConfig bigQueryRetryConfig = BigQueryRetryConfig.newBuilder().build();
+    JobOption bigQueryRetryConfigOption = JobOption.bigQueryRetryConfig(bigQueryRetryConfig);
+    JobOption retryOptions = JobOption.retryOptions(RetryOption.maxAttempts(1));
+
+    Job job = bigquery.create(JobInfo.of(config), bigQueryRetryConfigOption, retryOptions);
+    job = job.waitFor(bigQueryRetryConfig);
+    assertEquals(DONE, job.getStatus().getState());
   }
 
   @Test

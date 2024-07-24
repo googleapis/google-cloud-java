@@ -39,6 +39,7 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Policy;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
@@ -415,10 +416,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     }
                   }
                 },
-                getOptions().getRetrySettings(),
+                getRetryOptions(optionsMap) != null
+                    ? RetryOption.mergeToSettings(
+                        getOptions().getRetrySettings(), getRetryOptions(optionsMap))
+                    : getOptions().getRetrySettings(),
                 BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
                 getOptions().getClock(),
-                DEFAULT_RETRY_CONFIG));
+                getBigQueryRetryConfig(optionsMap) != null
+                    ? getBigQueryRetryConfig(optionsMap)
+                    : DEFAULT_RETRY_CONFIG));
       } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
         throw BigQueryException.translateAndThrow(e);
       }
@@ -1627,5 +1633,14 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;
+  }
+
+  static BigQueryRetryConfig getBigQueryRetryConfig(Map<BigQueryRpc.Option, ?> options) {
+    return (BigQueryRetryConfig)
+        options.getOrDefault(BigQueryRpc.Option.BIGQUERY_RETRY_CONFIG, null);
+  }
+
+  static RetryOption[] getRetryOptions(Map<BigQueryRpc.Option, ?> options) {
+    return (RetryOption[]) options.getOrDefault(BigQueryRpc.Option.RETRY_OPTIONS, null);
   }
 }
