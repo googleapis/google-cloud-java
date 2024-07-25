@@ -41,8 +41,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
   private RetryPhase() {
     backoffMode_ = 0;
-    phaseId_ = "";
-    jobId_ = "";
     attempts_ = java.util.Collections.emptyList();
   }
 
@@ -124,108 +122,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.deploy.v1.BackoffMode result =
         com.google.cloud.deploy.v1.BackoffMode.forNumber(backoffMode_);
     return result == null ? com.google.cloud.deploy.v1.BackoffMode.UNRECOGNIZED : result;
-  }
-
-  public static final int PHASE_ID_FIELD_NUMBER = 3;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object phaseId_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The phase ID of the phase that includes the job being retried.
-   * </pre>
-   *
-   * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The phaseId.
-   */
-  @java.lang.Override
-  public java.lang.String getPhaseId() {
-    java.lang.Object ref = phaseId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      phaseId_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The phase ID of the phase that includes the job being retried.
-   * </pre>
-   *
-   * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for phaseId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getPhaseIdBytes() {
-    java.lang.Object ref = phaseId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      phaseId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int JOB_ID_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object jobId_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The job ID for the Job to retry.
-   * </pre>
-   *
-   * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The jobId.
-   */
-  @java.lang.Override
-  public java.lang.String getJobId() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      jobId_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The job ID for the Job to retry.
-   * </pre>
-   *
-   * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for jobId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getJobIdBytes() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      jobId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int ATTEMPTS_FIELD_NUMBER = 5;
@@ -330,12 +226,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.deploy.v1.BackoffMode.BACKOFF_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, backoffMode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phaseId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phaseId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobId_);
-    }
     for (int i = 0; i < attempts_.size(); i++) {
       output.writeMessage(5, attempts_.get(i));
     }
@@ -354,12 +244,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     if (backoffMode_
         != com.google.cloud.deploy.v1.BackoffMode.BACKOFF_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, backoffMode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phaseId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phaseId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobId_);
     }
     for (int i = 0; i < attempts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, attempts_.get(i));
@@ -381,8 +265,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
     if (getTotalAttempts() != other.getTotalAttempts()) return false;
     if (backoffMode_ != other.backoffMode_) return false;
-    if (!getPhaseId().equals(other.getPhaseId())) return false;
-    if (!getJobId().equals(other.getJobId())) return false;
     if (!getAttemptsList().equals(other.getAttemptsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -399,10 +281,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalAttempts());
     hash = (37 * hash) + BACKOFF_MODE_FIELD_NUMBER;
     hash = (53 * hash) + backoffMode_;
-    hash = (37 * hash) + PHASE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPhaseId().hashCode();
-    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getJobId().hashCode();
     if (getAttemptsCount() > 0) {
       hash = (37 * hash) + ATTEMPTS_FIELD_NUMBER;
       hash = (53 * hash) + getAttemptsList().hashCode();
@@ -548,15 +426,13 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       totalAttempts_ = 0L;
       backoffMode_ = 0;
-      phaseId_ = "";
-      jobId_ = "";
       if (attemptsBuilder_ == null) {
         attempts_ = java.util.Collections.emptyList();
       } else {
         attempts_ = null;
         attemptsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -594,9 +470,9 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.RetryPhase result) {
       if (attemptsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           attempts_ = java.util.Collections.unmodifiableList(attempts_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.attempts_ = attempts_;
       } else {
@@ -611,12 +487,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.backoffMode_ = backoffMode_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.phaseId_ = phaseId_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.jobId_ = jobId_;
       }
     }
 
@@ -671,21 +541,11 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       if (other.backoffMode_ != 0) {
         setBackoffModeValue(other.getBackoffModeValue());
       }
-      if (!other.getPhaseId().isEmpty()) {
-        phaseId_ = other.phaseId_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (!other.getJobId().isEmpty()) {
-        jobId_ = other.jobId_;
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
       if (attemptsBuilder_ == null) {
         if (!other.attempts_.isEmpty()) {
           if (attempts_.isEmpty()) {
             attempts_ = other.attempts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAttemptsIsMutable();
             attempts_.addAll(other.attempts_);
@@ -698,7 +558,7 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
             attemptsBuilder_.dispose();
             attemptsBuilder_ = null;
             attempts_ = other.attempts_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
             attemptsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttemptsFieldBuilder()
@@ -746,18 +606,6 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
-            case 26:
-              {
-                phaseId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-            case 34:
-              {
-                jobId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
             case 42:
               {
                 com.google.cloud.deploy.v1.RetryAttempt m =
@@ -948,225 +796,13 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object phaseId_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The phase ID of the phase that includes the job being retried.
-     * </pre>
-     *
-     * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The phaseId.
-     */
-    public java.lang.String getPhaseId() {
-      java.lang.Object ref = phaseId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phaseId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The phase ID of the phase that includes the job being retried.
-     * </pre>
-     *
-     * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for phaseId.
-     */
-    public com.google.protobuf.ByteString getPhaseIdBytes() {
-      java.lang.Object ref = phaseId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        phaseId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The phase ID of the phase that includes the job being retried.
-     * </pre>
-     *
-     * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The phaseId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhaseId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      phaseId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The phase ID of the phase that includes the job being retried.
-     * </pre>
-     *
-     * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPhaseId() {
-      phaseId_ = getDefaultInstance().getPhaseId();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The phase ID of the phase that includes the job being retried.
-     * </pre>
-     *
-     * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for phaseId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhaseIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      phaseId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object jobId_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The job ID for the Job to retry.
-     * </pre>
-     *
-     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The jobId.
-     */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The job ID for the Job to retry.
-     * </pre>
-     *
-     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for jobId.
-     */
-    public com.google.protobuf.ByteString getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The job ID for the Job to retry.
-     * </pre>
-     *
-     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The jobId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setJobId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      jobId_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The job ID for the Job to retry.
-     * </pre>
-     *
-     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearJobId() {
-      jobId_ = getDefaultInstance().getJobId();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The job ID for the Job to retry.
-     * </pre>
-     *
-     * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for jobId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      jobId_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.google.cloud.deploy.v1.RetryAttempt> attempts_ =
         java.util.Collections.emptyList();
 
     private void ensureAttemptsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         attempts_ = new java.util.ArrayList<com.google.cloud.deploy.v1.RetryAttempt>(attempts_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1403,7 +1039,7 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAttempts() {
       if (attemptsBuilder_ == null) {
         attempts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         attemptsBuilder_.clear();
@@ -1539,7 +1175,7 @@ public final class RetryPhase extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.RetryAttempt,
                 com.google.cloud.deploy.v1.RetryAttempt.Builder,
                 com.google.cloud.deploy.v1.RetryAttemptOrBuilder>(
-                attempts_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                attempts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         attempts_ = null;
       }
       return attemptsBuilder_;

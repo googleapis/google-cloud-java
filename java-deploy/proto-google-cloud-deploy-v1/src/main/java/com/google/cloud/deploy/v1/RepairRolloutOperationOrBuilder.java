@@ -53,19 +53,6 @@ public interface RepairRolloutOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The index of the current repair action in the repair sequence.
-   * </pre>
-   *
-   * <code>int64 current_repair_mode_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The currentRepairModeIndex.
-   */
-  long getCurrentRepairModeIndex();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. Records of the repair attempts. Each repair phase may have
    * multiple retry attempts or single rollback attempt.
    * </pre>
@@ -128,4 +115,56 @@ public interface RepairRolloutOperationOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.RepairPhaseOrBuilder getRepairPhasesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phase ID of the phase that includes the job being
+   * repaired.
+   * </pre>
+   *
+   * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The phaseId.
+   */
+  java.lang.String getPhaseId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phase ID of the phase that includes the job being
+   * repaired.
+   * </pre>
+   *
+   * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for phaseId.
+   */
+  com.google.protobuf.ByteString getPhaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The job ID for the Job to repair.
+   * </pre>
+   *
+   * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobId.
+   */
+  java.lang.String getJobId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The job ID for the Job to repair.
+   * </pre>
+   *
+   * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobId.
+   */
+  com.google.protobuf.ByteString getJobIdBytes();
 }

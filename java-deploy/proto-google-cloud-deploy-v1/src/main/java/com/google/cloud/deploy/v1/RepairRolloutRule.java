@@ -41,9 +41,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
 
   private RepairRolloutRule() {
     id_ = "";
-    sourcePhases_ = com.google.protobuf.LazyStringArrayList.emptyList();
     jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    repairModes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -121,90 +119,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int SOURCE_PHASES_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList sourcePhases_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Phases within which jobs are subject to automatic repair actions
-   * on failure. Proceeds only after phase name matched any one in the list, or
-   * for all phases if unspecified. This value must consist of lower-case
-   * letters, numbers, and hyphens, start with a letter and end with a letter or
-   * a number, and have a max length of 63 characters. In other words, it must
-   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * </pre>
-   *
-   * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return A list containing the sourcePhases.
-   */
-  public com.google.protobuf.ProtocolStringList getSourcePhasesList() {
-    return sourcePhases_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Phases within which jobs are subject to automatic repair actions
-   * on failure. Proceeds only after phase name matched any one in the list, or
-   * for all phases if unspecified. This value must consist of lower-case
-   * letters, numbers, and hyphens, start with a letter and end with a letter or
-   * a number, and have a max length of 63 characters. In other words, it must
-   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * </pre>
-   *
-   * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The count of sourcePhases.
-   */
-  public int getSourcePhasesCount() {
-    return sourcePhases_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Phases within which jobs are subject to automatic repair actions
-   * on failure. Proceeds only after phase name matched any one in the list, or
-   * for all phases if unspecified. This value must consist of lower-case
-   * letters, numbers, and hyphens, start with a letter and end with a letter or
-   * a number, and have a max length of 63 characters. In other words, it must
-   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * </pre>
-   *
-   * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @param index The index of the element to return.
-   * @return The sourcePhases at the given index.
-   */
-  public java.lang.String getSourcePhases(int index) {
-    return sourcePhases_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Phases within which jobs are subject to automatic repair actions
-   * on failure. Proceeds only after phase name matched any one in the list, or
-   * for all phases if unspecified. This value must consist of lower-case
-   * letters, numbers, and hyphens, start with a letter and end with a letter or
-   * a number, and have a max length of 63 characters. In other words, it must
-   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * </pre>
-   *
-   * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the sourcePhases at the given index.
-   */
-  public com.google.protobuf.ByteString getSourcePhasesBytes(int index) {
-    return sourcePhases_.getByteString(index);
   }
 
   public static final int JOBS_FIELD_NUMBER = 3;
@@ -295,87 +209,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     return jobs_.getByteString(index);
   }
 
-  public static final int REPAIR_MODES_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.deploy.v1.RepairMode> repairModes_;
-  /**
-   *
-   *
-   * <pre>
-   * Required. Defines the types of automatic repair actions for failed jobs.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.deploy.v1.RepairMode> getRepairModesList() {
-    return repairModes_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Defines the types of automatic repair actions for failed jobs.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.cloud.deploy.v1.RepairModeOrBuilder>
-      getRepairModesOrBuilderList() {
-    return repairModes_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Defines the types of automatic repair actions for failed jobs.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public int getRepairModesCount() {
-    return repairModes_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Defines the types of automatic repair actions for failed jobs.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.RepairMode getRepairModes(int index) {
-    return repairModes_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Defines the types of automatic repair actions for failed jobs.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.RepairModeOrBuilder getRepairModesOrBuilder(int index) {
-    return repairModes_.get(index);
-  }
-
   public static final int CONDITION_FIELD_NUMBER = 6;
   private com.google.cloud.deploy.v1.AutomationRuleCondition condition_;
   /**
@@ -449,14 +282,8 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    for (int i = 0; i < sourcePhases_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourcePhases_.getRaw(i));
-    }
     for (int i = 0; i < jobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobs_.getRaw(i));
-    }
-    for (int i = 0; i < repairModes_.size(); i++) {
-      output.writeMessage(4, repairModes_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getCondition());
@@ -475,22 +302,11 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < sourcePhases_.size(); i++) {
-        dataSize += computeStringSizeNoTag(sourcePhases_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getSourcePhasesList().size();
-    }
-    {
-      int dataSize = 0;
       for (int i = 0; i < jobs_.size(); i++) {
         dataSize += computeStringSizeNoTag(jobs_.getRaw(i));
       }
       size += dataSize;
       size += 1 * getJobsList().size();
-    }
-    for (int i = 0; i < repairModes_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, repairModes_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCondition());
@@ -512,9 +328,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.deploy.v1.RepairRolloutRule) obj;
 
     if (!getId().equals(other.getId())) return false;
-    if (!getSourcePhasesList().equals(other.getSourcePhasesList())) return false;
     if (!getJobsList().equals(other.getJobsList())) return false;
-    if (!getRepairModesList().equals(other.getRepairModesList())) return false;
     if (hasCondition() != other.hasCondition()) return false;
     if (hasCondition()) {
       if (!getCondition().equals(other.getCondition())) return false;
@@ -532,17 +346,9 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    if (getSourcePhasesCount() > 0) {
-      hash = (37 * hash) + SOURCE_PHASES_FIELD_NUMBER;
-      hash = (53 * hash) + getSourcePhasesList().hashCode();
-    }
     if (getJobsCount() > 0) {
       hash = (37 * hash) + JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getJobsList().hashCode();
-    }
-    if (getRepairModesCount() > 0) {
-      hash = (37 * hash) + REPAIR_MODES_FIELD_NUMBER;
-      hash = (53 * hash) + getRepairModesList().hashCode();
     }
     if (hasCondition()) {
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
@@ -689,7 +495,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getRepairModesFieldBuilder();
         getConditionFieldBuilder();
       }
     }
@@ -699,15 +504,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       id_ = "";
-      sourcePhases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      if (repairModesBuilder_ == null) {
-        repairModes_ = java.util.Collections.emptyList();
-      } else {
-        repairModes_ = null;
-        repairModesBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000008);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -740,24 +537,11 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.deploy.v1.RepairRolloutRule buildPartial() {
       com.google.cloud.deploy.v1.RepairRolloutRule result =
           new com.google.cloud.deploy.v1.RepairRolloutRule(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.RepairRolloutRule result) {
-      if (repairModesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          repairModes_ = java.util.Collections.unmodifiableList(repairModes_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.repairModes_ = repairModes_;
-      } else {
-        result.repairModes_ = repairModesBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.google.cloud.deploy.v1.RepairRolloutRule result) {
@@ -766,15 +550,11 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        sourcePhases_.makeImmutable();
-        result.sourcePhases_ = sourcePhases_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         jobs_.makeImmutable();
         result.jobs_ = jobs_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -831,52 +611,15 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.sourcePhases_.isEmpty()) {
-        if (sourcePhases_.isEmpty()) {
-          sourcePhases_ = other.sourcePhases_;
-          bitField0_ |= 0x00000002;
-        } else {
-          ensureSourcePhasesIsMutable();
-          sourcePhases_.addAll(other.sourcePhases_);
-        }
-        onChanged();
-      }
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
         }
         onChanged();
-      }
-      if (repairModesBuilder_ == null) {
-        if (!other.repairModes_.isEmpty()) {
-          if (repairModes_.isEmpty()) {
-            repairModes_ = other.repairModes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureRepairModesIsMutable();
-            repairModes_.addAll(other.repairModes_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.repairModes_.isEmpty()) {
-          if (repairModesBuilder_.isEmpty()) {
-            repairModesBuilder_.dispose();
-            repairModesBuilder_ = null;
-            repairModes_ = other.repairModes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            repairModesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getRepairModesFieldBuilder()
-                    : null;
-          } else {
-            repairModesBuilder_.addAllMessages(other.repairModes_);
-          }
-        }
       }
       if (other.hasCondition()) {
         mergeCondition(other.getCondition());
@@ -913,13 +656,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureSourcePhasesIsMutable();
-                sourcePhases_.add(s);
-                break;
-              } // case 18
             case 26:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -927,23 +663,10 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
                 jobs_.add(s);
                 break;
               } // case 26
-            case 34:
-              {
-                com.google.cloud.deploy.v1.RepairMode m =
-                    input.readMessage(
-                        com.google.cloud.deploy.v1.RepairMode.parser(), extensionRegistry);
-                if (repairModesBuilder_ == null) {
-                  ensureRepairModesIsMutable();
-                  repairModes_.add(m);
-                } else {
-                  repairModesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
             case 50:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             default:
@@ -1081,225 +804,6 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList sourcePhases_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    private void ensureSourcePhasesIsMutable() {
-      if (!sourcePhases_.isModifiable()) {
-        sourcePhases_ = new com.google.protobuf.LazyStringArrayList(sourcePhases_);
-      }
-      bitField0_ |= 0x00000002;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return A list containing the sourcePhases.
-     */
-    public com.google.protobuf.ProtocolStringList getSourcePhasesList() {
-      sourcePhases_.makeImmutable();
-      return sourcePhases_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The count of sourcePhases.
-     */
-    public int getSourcePhasesCount() {
-      return sourcePhases_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param index The index of the element to return.
-     * @return The sourcePhases at the given index.
-     */
-    public java.lang.String getSourcePhases(int index) {
-      return sourcePhases_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the sourcePhases at the given index.
-     */
-    public com.google.protobuf.ByteString getSourcePhasesBytes(int index) {
-      return sourcePhases_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param index The index to set the value at.
-     * @param value The sourcePhases to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourcePhases(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSourcePhasesIsMutable();
-      sourcePhases_.set(index, value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The sourcePhases to add.
-     * @return This builder for chaining.
-     */
-    public Builder addSourcePhases(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSourcePhasesIsMutable();
-      sourcePhases_.add(value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param values The sourcePhases to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllSourcePhases(java.lang.Iterable<java.lang.String> values) {
-      ensureSourcePhasesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourcePhases_);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSourcePhases() {
-      sourcePhases_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      ;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Phases within which jobs are subject to automatic repair actions
-     * on failure. Proceeds only after phase name matched any one in the list, or
-     * for all phases if unspecified. This value must consist of lower-case
-     * letters, numbers, and hyphens, start with a letter and end with a letter or
-     * a number, and have a max length of 63 characters. In other words, it must
-     * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-     * </pre>
-     *
-     * <code>repeated string source_phases = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes of the sourcePhases to add.
-     * @return This builder for chaining.
-     */
-    public Builder addSourcePhasesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureSourcePhasesIsMutable();
-      sourcePhases_.add(value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringArrayList jobs_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1307,7 +811,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       if (!jobs_.isModifiable()) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1417,7 +921,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       ensureJobsIsMutable();
       jobs_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1445,7 +949,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       }
       ensureJobsIsMutable();
       jobs_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1470,7 +974,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
     public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
       ensureJobsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1493,7 +997,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -1523,394 +1027,9 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureJobsIsMutable();
       jobs_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
-    }
-
-    private java.util.List<com.google.cloud.deploy.v1.RepairMode> repairModes_ =
-        java.util.Collections.emptyList();
-
-    private void ensureRepairModesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        repairModes_ = new java.util.ArrayList<com.google.cloud.deploy.v1.RepairMode>(repairModes_);
-        bitField0_ |= 0x00000008;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.deploy.v1.RepairMode,
-            com.google.cloud.deploy.v1.RepairMode.Builder,
-            com.google.cloud.deploy.v1.RepairModeOrBuilder>
-        repairModesBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.deploy.v1.RepairMode> getRepairModesList() {
-      if (repairModesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(repairModes_);
-      } else {
-        return repairModesBuilder_.getMessageList();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public int getRepairModesCount() {
-      if (repairModesBuilder_ == null) {
-        return repairModes_.size();
-      } else {
-        return repairModesBuilder_.getCount();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.RepairMode getRepairModes(int index) {
-      if (repairModesBuilder_ == null) {
-        return repairModes_.get(index);
-      } else {
-        return repairModesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder setRepairModes(int index, com.google.cloud.deploy.v1.RepairMode value) {
-      if (repairModesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRepairModesIsMutable();
-        repairModes_.set(index, value);
-        onChanged();
-      } else {
-        repairModesBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder setRepairModes(
-        int index, com.google.cloud.deploy.v1.RepairMode.Builder builderForValue) {
-      if (repairModesBuilder_ == null) {
-        ensureRepairModesIsMutable();
-        repairModes_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        repairModesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder addRepairModes(com.google.cloud.deploy.v1.RepairMode value) {
-      if (repairModesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRepairModesIsMutable();
-        repairModes_.add(value);
-        onChanged();
-      } else {
-        repairModesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder addRepairModes(int index, com.google.cloud.deploy.v1.RepairMode value) {
-      if (repairModesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRepairModesIsMutable();
-        repairModes_.add(index, value);
-        onChanged();
-      } else {
-        repairModesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder addRepairModes(com.google.cloud.deploy.v1.RepairMode.Builder builderForValue) {
-      if (repairModesBuilder_ == null) {
-        ensureRepairModesIsMutable();
-        repairModes_.add(builderForValue.build());
-        onChanged();
-      } else {
-        repairModesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder addRepairModes(
-        int index, com.google.cloud.deploy.v1.RepairMode.Builder builderForValue) {
-      if (repairModesBuilder_ == null) {
-        ensureRepairModesIsMutable();
-        repairModes_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        repairModesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder addAllRepairModes(
-        java.lang.Iterable<? extends com.google.cloud.deploy.v1.RepairMode> values) {
-      if (repairModesBuilder_ == null) {
-        ensureRepairModesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, repairModes_);
-        onChanged();
-      } else {
-        repairModesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder clearRepairModes() {
-      if (repairModesBuilder_ == null) {
-        repairModes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-      } else {
-        repairModesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public Builder removeRepairModes(int index) {
-      if (repairModesBuilder_ == null) {
-        ensureRepairModesIsMutable();
-        repairModes_.remove(index);
-        onChanged();
-      } else {
-        repairModesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.RepairMode.Builder getRepairModesBuilder(int index) {
-      return getRepairModesFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.RepairModeOrBuilder getRepairModesOrBuilder(int index) {
-      if (repairModesBuilder_ == null) {
-        return repairModes_.get(index);
-      } else {
-        return repairModesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public java.util.List<? extends com.google.cloud.deploy.v1.RepairModeOrBuilder>
-        getRepairModesOrBuilderList() {
-      if (repairModesBuilder_ != null) {
-        return repairModesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(repairModes_);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.RepairMode.Builder addRepairModesBuilder() {
-      return getRepairModesFieldBuilder()
-          .addBuilder(com.google.cloud.deploy.v1.RepairMode.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.RepairMode.Builder addRepairModesBuilder(int index) {
-      return getRepairModesFieldBuilder()
-          .addBuilder(index, com.google.cloud.deploy.v1.RepairMode.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Defines the types of automatic repair actions for failed jobs.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.deploy.v1.RepairMode repair_modes = 4 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.deploy.v1.RepairMode.Builder>
-        getRepairModesBuilderList() {
-      return getRepairModesFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.deploy.v1.RepairMode,
-            com.google.cloud.deploy.v1.RepairMode.Builder,
-            com.google.cloud.deploy.v1.RepairModeOrBuilder>
-        getRepairModesFieldBuilder() {
-      if (repairModesBuilder_ == null) {
-        repairModesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.deploy.v1.RepairMode,
-                com.google.cloud.deploy.v1.RepairMode.Builder,
-                com.google.cloud.deploy.v1.RepairModeOrBuilder>(
-                repairModes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
-        repairModes_ = null;
-      }
-      return repairModesBuilder_;
     }
 
     private com.google.cloud.deploy.v1.AutomationRuleCondition condition_;
@@ -1933,7 +1052,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1977,7 +1096,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       } else {
         conditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1999,7 +1118,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2016,7 +1135,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCondition(com.google.cloud.deploy.v1.AutomationRuleCondition value) {
       if (conditionBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && condition_ != null
             && condition_
                 != com.google.cloud.deploy.v1.AutomationRuleCondition.getDefaultInstance()) {
@@ -2028,7 +1147,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
         conditionBuilder_.mergeFrom(value);
       }
       if (condition_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -2045,7 +1164,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCondition() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -2066,7 +1185,7 @@ public final class RepairRolloutRule extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.deploy.v1.AutomationRuleCondition.Builder getConditionBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
