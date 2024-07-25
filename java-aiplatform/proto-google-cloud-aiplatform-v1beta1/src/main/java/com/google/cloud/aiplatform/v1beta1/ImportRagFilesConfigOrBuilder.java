@@ -110,6 +110,76 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   *
+   * @return Whether the slackSource field is set.
+   */
+  boolean hasSlackSource();
+  /**
+   *
+   *
+   * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   *
+   * @return The slackSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource();
+  /**
+   *
+   *
+   * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   *
+   * @return Whether the jiraSource field is set.
+   */
+  boolean hasJiraSource();
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   *
+   * @return The jiraSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource();
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *

@@ -73,6 +73,10 @@ public final class FeatureOnlineStoreServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_StringFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_NumericFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_NumericFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_fieldAccessorTable;
@@ -150,71 +154,82 @@ public final class FeatureOnlineStoreServiceProto {
           + "google.cloud.aiplatform.v1beta1.FetchFea"
           + "tureValuesResponse\022Q\n\024data_keys_with_err"
           + "or\030\003 \003(\01323.google.cloud.aiplatform.v1bet"
-          + "a1.FeatureViewDataKey\"\202\005\n\024NearestNeighbo"
+          + "a1.FeatureViewDataKey\"\274\010\n\024NearestNeighbo"
           + "rQuery\022\030\n\tentity_id\030\001 \001(\tB\003\340A\001H\000\022Y\n\tembe"
           + "dding\030\002 \001(\0132?.google.cloud.aiplatform.v1"
           + "beta1.NearestNeighborQuery.EmbeddingB\003\340A"
           + "\001H\000\022\033\n\016neighbor_count\030\003 \001(\005B\003\340A\001\022_\n\016stri"
           + "ng_filters\030\004 \003(\0132B.google.cloud.aiplatfo"
           + "rm.v1beta1.NearestNeighborQuery.StringFi"
-          + "lterB\003\340A\001\0222\n%per_crowding_attribute_neig"
-          + "hbor_count\030\005 \001(\005B\003\340A\001\022Y\n\nparameters\030\007 \001("
-          + "\0132@.google.cloud.aiplatform.v1beta1.Near"
-          + "estNeighborQuery.ParametersB\003\340A\001\032\037\n\tEmbe"
-          + "dding\022\022\n\005value\030\001 \003(\002B\003\340A\001\032V\n\014StringFilte"
-          + "r\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014allow_tokens\030\002 \003"
-          + "(\tB\003\340A\001\022\030\n\013deny_tokens\030\003 \003(\tB\003\340A\001\032c\n\nPar"
-          + "ameters\022,\n\037approximate_neighbor_candidat"
-          + "es\030\001 \001(\005B\003\340A\001\022\'\n\032leaf_nodes_search_fract"
-          + "ion\030\002 \001(\001B\003\340A\001B\n\n\010instance\"\317\001\n\034SearchNea"
-          + "restEntitiesRequest\022C\n\014feature_view\030\001 \001("
-          + "\tB-\340A\002\372A\'\n%aiplatform.googleapis.com/Fea"
-          + "tureView\022I\n\005query\030\002 \001(\01325.google.cloud.a"
-          + "iplatform.v1beta1.NearestNeighborQueryB\003"
-          + "\340A\002\022\037\n\022return_full_entity\030\003 \001(\010B\003\340A\001\"\353\001\n"
-          + "\020NearestNeighbors\022M\n\tneighbors\030\001 \003(\0132:.g"
-          + "oogle.cloud.aiplatform.v1beta1.NearestNe"
-          + "ighbors.Neighbor\032\207\001\n\010Neighbor\022\021\n\tentity_"
-          + "id\030\001 \001(\t\022\020\n\010distance\030\002 \001(\001\022V\n\021entity_key"
-          + "_values\030\003 \001(\0132;.google.cloud.aiplatform."
-          + "v1beta1.FetchFeatureValuesResponse\"m\n\035Se"
-          + "archNearestEntitiesResponse\022L\n\021nearest_n"
-          + "eighbors\030\001 \001(\01321.google.cloud.aiplatform"
-          + ".v1beta1.NearestNeighbors*b\n\025FeatureView"
-          + "DataFormat\022(\n$FEATURE_VIEW_DATA_FORMAT_U"
-          + "NSPECIFIED\020\000\022\r\n\tKEY_VALUE\020\001\022\020\n\014PROTO_STR"
-          + "UCT\020\0022\334\007\n\031FeatureOnlineStoreService\022\232\002\n\022"
-          + "FetchFeatureValues\022:.google.cloud.aiplat"
-          + "form.v1beta1.FetchFeatureValuesRequest\032;"
-          + ".google.cloud.aiplatform.v1beta1.FetchFe"
-          + "atureValuesResponse\"\212\001\332A\026feature_view, d"
-          + "ata_key\202\323\344\223\002k\"f/v1beta1/{feature_view=pr"
-          + "ojects/*/locations/*/featureOnlineStores"
-          + "/*/featureViews/*}:fetchFeatureValues:\001*"
-          + "\022\303\002\n\033StreamingFetchFeatureValues\022C.googl"
-          + "e.cloud.aiplatform.v1beta1.StreamingFetc"
-          + "hFeatureValuesRequest\032D.google.cloud.aip"
-          + "latform.v1beta1.StreamingFetchFeatureVal"
-          + "uesResponse\"\224\001\332A\027feature_view, data_keys"
-          + "\202\323\344\223\002t\"o/v1beta1/{feature_view=projects/"
-          + "*/locations/*/featureOnlineStores/*/feat"
-          + "ureViews/*}:streamingFetchFeatureValues:"
-          + "\001*(\0010\001\022\214\002\n\025SearchNearestEntities\022=.googl"
-          + "e.cloud.aiplatform.v1beta1.SearchNearest"
-          + "EntitiesRequest\032>.google.cloud.aiplatfor"
-          + "m.v1beta1.SearchNearestEntitiesResponse\""
-          + "t\202\323\344\223\002n\"i/v1beta1/{feature_view=projects"
-          + "/*/locations/*/featureOnlineStores/*/fea"
-          + "tureViews/*}:searchNearestEntities:\001*\032M\312"
-          + "A\031aiplatform.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\365\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\036Fe"
-          + "atureOnlineStoreServiceProtoP\001ZCcloud.go"
-          + "ogle.com/go/aiplatform/apiv1beta1/aiplat"
-          + "formpb;aiplatformpb\252\002\037Google.Cloud.AIPla"
-          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
-          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
-          + "eta1b\006proto3"
+          + "lterB\003\340A\001\022a\n\017numeric_filters\030\010 \003(\0132C.goo"
+          + "gle.cloud.aiplatform.v1beta1.NearestNeig"
+          + "hborQuery.NumericFilterB\003\340A\001\0222\n%per_crow"
+          + "ding_attribute_neighbor_count\030\005 \001(\005B\003\340A\001"
+          + "\022Y\n\nparameters\030\007 \001(\0132@.google.cloud.aipl"
+          + "atform.v1beta1.NearestNeighborQuery.Para"
+          + "metersB\003\340A\001\032\037\n\tEmbedding\022\022\n\005value\030\001 \003(\002B"
+          + "\003\340A\001\032V\n\014StringFilter\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
+          + "\031\n\014allow_tokens\030\002 \003(\tB\003\340A\001\022\030\n\013deny_token"
+          + "s\030\003 \003(\tB\003\340A\001\032\324\002\n\rNumericFilter\022\023\n\tvalue_"
+          + "int\030\002 \001(\003H\000\022\025\n\013value_float\030\003 \001(\002H\000\022\026\n\014va"
+          + "lue_double\030\004 \001(\001H\000\022\021\n\004name\030\001 \001(\tB\003\340A\002\022b\n"
+          + "\002op\030\005 \001(\0162L.google.cloud.aiplatform.v1be"
+          + "ta1.NearestNeighborQuery.NumericFilter.O"
+          + "peratorB\003\340A\001H\001\210\001\001\"x\n\010Operator\022\030\n\024OPERATO"
+          + "R_UNSPECIFIED\020\000\022\010\n\004LESS\020\001\022\016\n\nLESS_EQUAL\020"
+          + "\002\022\t\n\005EQUAL\020\003\022\021\n\rGREATER_EQUAL\020\004\022\013\n\007GREAT"
+          + "ER\020\005\022\r\n\tNOT_EQUAL\020\006B\007\n\005ValueB\005\n\003_op\032c\n\nP"
+          + "arameters\022,\n\037approximate_neighbor_candid"
+          + "ates\030\001 \001(\005B\003\340A\001\022\'\n\032leaf_nodes_search_fra"
+          + "ction\030\002 \001(\001B\003\340A\001B\n\n\010instance\"\317\001\n\034SearchN"
+          + "earestEntitiesRequest\022C\n\014feature_view\030\001 "
+          + "\001(\tB-\340A\002\372A\'\n%aiplatform.googleapis.com/F"
+          + "eatureView\022I\n\005query\030\002 \001(\01325.google.cloud"
+          + ".aiplatform.v1beta1.NearestNeighborQuery"
+          + "B\003\340A\002\022\037\n\022return_full_entity\030\003 \001(\010B\003\340A\001\"\353"
+          + "\001\n\020NearestNeighbors\022M\n\tneighbors\030\001 \003(\0132:"
+          + ".google.cloud.aiplatform.v1beta1.Nearest"
+          + "Neighbors.Neighbor\032\207\001\n\010Neighbor\022\021\n\tentit"
+          + "y_id\030\001 \001(\t\022\020\n\010distance\030\002 \001(\001\022V\n\021entity_k"
+          + "ey_values\030\003 \001(\0132;.google.cloud.aiplatfor"
+          + "m.v1beta1.FetchFeatureValuesResponse\"m\n\035"
+          + "SearchNearestEntitiesResponse\022L\n\021nearest"
+          + "_neighbors\030\001 \001(\01321.google.cloud.aiplatfo"
+          + "rm.v1beta1.NearestNeighbors*b\n\025FeatureVi"
+          + "ewDataFormat\022(\n$FEATURE_VIEW_DATA_FORMAT"
+          + "_UNSPECIFIED\020\000\022\r\n\tKEY_VALUE\020\001\022\020\n\014PROTO_S"
+          + "TRUCT\020\0022\334\007\n\031FeatureOnlineStoreService\022\232\002"
+          + "\n\022FetchFeatureValues\022:.google.cloud.aipl"
+          + "atform.v1beta1.FetchFeatureValuesRequest"
+          + "\032;.google.cloud.aiplatform.v1beta1.Fetch"
+          + "FeatureValuesResponse\"\212\001\332A\026feature_view,"
+          + " data_key\202\323\344\223\002k\"f/v1beta1/{feature_view="
+          + "projects/*/locations/*/featureOnlineStor"
+          + "es/*/featureViews/*}:fetchFeatureValues:"
+          + "\001*\022\303\002\n\033StreamingFetchFeatureValues\022C.goo"
+          + "gle.cloud.aiplatform.v1beta1.StreamingFe"
+          + "tchFeatureValuesRequest\032D.google.cloud.a"
+          + "iplatform.v1beta1.StreamingFetchFeatureV"
+          + "aluesResponse\"\224\001\332A\027feature_view, data_ke"
+          + "ys\202\323\344\223\002t\"o/v1beta1/{feature_view=project"
+          + "s/*/locations/*/featureOnlineStores/*/fe"
+          + "atureViews/*}:streamingFetchFeatureValue"
+          + "s:\001*(\0010\001\022\214\002\n\025SearchNearestEntities\022=.goo"
+          + "gle.cloud.aiplatform.v1beta1.SearchNeare"
+          + "stEntitiesRequest\032>.google.cloud.aiplatf"
+          + "orm.v1beta1.SearchNearestEntitiesRespons"
+          + "e\"t\202\323\344\223\002n\"i/v1beta1/{feature_view=projec"
+          + "ts/*/locations/*/featureOnlineStores/*/f"
+          + "eatureViews/*}:searchNearestEntities:\001*\032"
+          + "M\312A\031aiplatform.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\365"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\036"
+          + "FeatureOnlineStoreServiceProtoP\001ZCcloud."
+          + "google.com/go/aiplatform/apiv1beta1/aipl"
+          + "atformpb;aiplatformpb\252\002\037Google.Cloud.AIP"
+          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -308,6 +323,7 @@ public final class FeatureOnlineStoreServiceProto {
               "Embedding",
               "NeighborCount",
               "StringFilters",
+              "NumericFilters",
               "PerCrowdingAttributeNeighborCount",
               "Parameters",
               "Instance",
@@ -332,10 +348,20 @@ public final class FeatureOnlineStoreServiceProto {
             new java.lang.String[] {
               "Name", "AllowTokens", "DenyTokens",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_NumericFilter_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_NumericFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_NumericFilter_descriptor,
+            new java.lang.String[] {
+              "ValueInt", "ValueFloat", "ValueDouble", "Name", "Op", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborQuery_Parameters_descriptor,

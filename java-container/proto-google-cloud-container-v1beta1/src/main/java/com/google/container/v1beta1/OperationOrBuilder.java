@@ -28,10 +28,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The server-assigned ID for the operation.
+   * Output only. The server-assigned ID for the operation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -40,10 +40,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The server-assigned ID for the operation.
+   * Output only. The server-assigned ID for the operation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -53,15 +53,15 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The name of the Google Compute Engine
+   * Output only. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3015
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -70,15 +70,15 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The name of the Google Compute Engine
+   * Output only. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
    * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2 [deprecated = true];</code>
+   * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3015
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -88,10 +88,12 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The operation type.
+   * Output only. The operation type.
    * </pre>
    *
-   * <code>.google.container.v1beta1.Operation.Type operation_type = 3;</code>
+   * <code>
+   * .google.container.v1beta1.Operation.Type operation_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for operationType.
    */
@@ -100,10 +102,12 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The operation type.
+   * Output only. The operation type.
    * </pre>
    *
-   * <code>.google.container.v1beta1.Operation.Type operation_type = 3;</code>
+   * <code>
+   * .google.container.v1beta1.Operation.Type operation_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The operationType.
    */
@@ -113,10 +117,12 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The current status of the operation.
+   * Output only. The current status of the operation.
    * </pre>
    *
-   * <code>.google.container.v1beta1.Operation.Status status = 4;</code>
+   * <code>
+   * .google.container.v1beta1.Operation.Status status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -125,10 +131,12 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * The current status of the operation.
+   * Output only. The current status of the operation.
    * </pre>
    *
-   * <code>.google.container.v1beta1.Operation.Status status = 4;</code>
+   * <code>
+   * .google.container.v1beta1.Operation.Status status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The status.
    */
@@ -138,10 +146,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Detailed operation progress, if available.
+   * Output only. Detailed operation progress, if available.
    * </pre>
    *
-   * <code>string detail = 8;</code>
+   * <code>string detail = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The detail.
    */
@@ -150,10 +158,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Detailed operation progress, if available.
+   * Output only. Detailed operation progress, if available.
    * </pre>
    *
-   * <code>string detail = 8;</code>
+   * <code>string detail = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for detail.
    */
@@ -172,7 +180,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3028
+   *     google/container/v1beta1/cluster_service.proto;l=3037
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -190,7 +198,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3028
+   *     google/container/v1beta1/cluster_service.proto;l=3037
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -200,11 +208,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Server-defined URI for the operation. Example:
+   * Output only. Server-defined URI for the operation. Example:
    * `https://container.googleapis.com/v1alpha1/projects/123/locations/us-central1/operations/operation-123`.
    * </pre>
    *
-   * <code>string self_link = 6;</code>
+   * <code>string self_link = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The selfLink.
    */
@@ -213,11 +221,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Server-defined URI for the operation. Example:
+   * Output only. Server-defined URI for the operation. Example:
    * `https://container.googleapis.com/v1alpha1/projects/123/locations/us-central1/operations/operation-123`.
    * </pre>
    *
-   * <code>string self_link = 6;</code>
+   * <code>string self_link = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for selfLink.
    */
@@ -227,10 +235,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Server-defined URI for the target of the operation. The format of this is a
-   * URI to the resource being modified (such as a cluster, node pool, or node).
-   * For node pool repairs, there may be multiple nodes being repaired, but only
-   * one will be the target.
+   * Output only. Server-defined URI for the target of the operation. The format
+   * of this is a URI to the resource being modified (such as a cluster, node
+   * pool, or node). For node pool repairs, there may be multiple nodes being
+   * repaired, but only one will be the target.
    *
    * Examples:
    *
@@ -244,7 +252,7 @@ public interface OperationOrBuilder
    * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
-   * <code>string target_link = 7;</code>
+   * <code>string target_link = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The targetLink.
    */
@@ -253,10 +261,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Server-defined URI for the target of the operation. The format of this is a
-   * URI to the resource being modified (such as a cluster, node pool, or node).
-   * For node pool repairs, there may be multiple nodes being repaired, but only
-   * one will be the target.
+   * Output only. Server-defined URI for the target of the operation. The format
+   * of this is a URI to the resource being modified (such as a cluster, node
+   * pool, or node). For node pool repairs, there may be multiple nodes being
+   * repaired, but only one will be the target.
    *
    * Examples:
    *
@@ -270,7 +278,7 @@ public interface OperationOrBuilder
    * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
-   * <code>string target_link = 7;</code>
+   * <code>string target_link = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for targetLink.
    */
@@ -280,14 +288,14 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The name of the Google Compute Engine
+   * Output only. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
    * or
    * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
    * in which the cluster resides.
    * </pre>
    *
-   * <code>string location = 9;</code>
+   * <code>string location = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The location.
    */
@@ -296,14 +304,14 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The name of the Google Compute Engine
+   * Output only. The name of the Google Compute Engine
    * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
    * or
    * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
    * in which the cluster resides.
    * </pre>
    *
-   * <code>string location = 9;</code>
+   * <code>string location = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for location.
    */
@@ -313,11 +321,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The time the operation started, in
+   * Output only. The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string start_time = 10;</code>
+   * <code>string start_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The startTime.
    */
@@ -326,11 +334,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The time the operation started, in
+   * Output only. The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string start_time = 10;</code>
+   * <code>string start_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for startTime.
    */
@@ -340,11 +348,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The time the operation completed, in
+   * Output only. The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string end_time = 11;</code>
+   * <code>string end_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The endTime.
    */
@@ -353,11 +361,11 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output only] The time the operation completed, in
+   * Output only. The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string end_time = 11;</code>
+   * <code>string end_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for endTime.
    */
@@ -367,7 +375,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Progress information for an operation.
+   * Output only. Progress information for an operation.
    * </pre>
    *
    * <code>
@@ -381,7 +389,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Progress information for an operation.
+   * Output only. Progress information for an operation.
    * </pre>
    *
    * <code>
@@ -395,7 +403,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Progress information for an operation.
+   * Output only. Progress information for an operation.
    * </pre>
    *
    * <code>

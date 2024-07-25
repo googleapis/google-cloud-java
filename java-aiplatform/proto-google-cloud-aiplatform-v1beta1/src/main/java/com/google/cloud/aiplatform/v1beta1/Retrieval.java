@@ -221,16 +221,19 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Disable using the result from this tool in detecting grounding
-   * attribution. This does not affect how the result is given to the model for
-   * generation.
+   * Optional. Deprecated. This option is no longer supported.
    * </pre>
    *
-   * <code>bool disable_attribution = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool disable_attribution = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.Retrieval.disable_attribution is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=177
    * @return The disableAttribution.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getDisableAttribution() {
     return disableAttribution_;
   }
@@ -1109,16 +1112,19 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Disable using the result from this tool in detecting grounding
-     * attribution. This does not affect how the result is given to the model for
-     * generation.
+     * Optional. Deprecated. This option is no longer supported.
      * </pre>
      *
-     * <code>bool disable_attribution = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool disable_attribution = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.Retrieval.disable_attribution is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=177
      * @return The disableAttribution.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDisableAttribution() {
       return disableAttribution_;
     }
@@ -1126,16 +1132,19 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Disable using the result from this tool in detecting grounding
-     * attribution. This does not affect how the result is given to the model for
-     * generation.
+     * Optional. Deprecated. This option is no longer supported.
      * </pre>
      *
-     * <code>bool disable_attribution = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool disable_attribution = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.Retrieval.disable_attribution is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=177
      * @param value The disableAttribution to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDisableAttribution(boolean value) {
 
       disableAttribution_ = value;
@@ -1147,15 +1156,18 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Disable using the result from this tool in detecting grounding
-     * attribution. This does not affect how the result is given to the model for
-     * generation.
+     * Optional. Deprecated. This option is no longer supported.
      * </pre>
      *
-     * <code>bool disable_attribution = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool disable_attribution = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.Retrieval.disable_attribution is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=177
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDisableAttribution() {
       bitField0_ = (bitField0_ & ~0x00000004);
       disableAttribution_ = false;

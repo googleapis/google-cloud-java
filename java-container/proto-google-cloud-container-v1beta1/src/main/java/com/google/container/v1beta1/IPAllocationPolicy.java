@@ -501,7 +501,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1729
+   *     google/container/v1beta1/cluster_service.proto;l=1732
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -527,7 +527,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1729
+   *     google/container/v1beta1/cluster_service.proto;l=1732
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -558,7 +558,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1732
+   *     google/container/v1beta1/cluster_service.proto;l=1735
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -584,7 +584,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1732
+   *     google/container/v1beta1/cluster_service.proto;l=1735
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -615,7 +615,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1735
+   *     google/container/v1beta1/cluster_service.proto;l=1738
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -641,7 +641,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1735
+   *     google/container/v1beta1/cluster_service.proto;l=1738
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -1319,8 +1319,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-   * pods.
+   * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1343,8 +1342,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-   * pods.
+   * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1372,7 +1370,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+   * Output only. The services IPv6 CIDR block for the cluster.
    * </pre>
    *
    * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1395,7 +1393,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+   * Output only. The services IPv6 CIDR block for the cluster.
    * </pre>
    *
    * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1421,8 +1419,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The additional pod ranges that are added to the
-   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * Output only. The additional pod ranges that are added to the cluster.
+   * These pod ranges can be used by new node pools to allocate pod IPs
    * automatically. Once the range is removed it will not show up in
    * IPAllocationPolicy.
    * </pre>
@@ -1441,8 +1439,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The additional pod ranges that are added to the
-   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * Output only. The additional pod ranges that are added to the cluster.
+   * These pod ranges can be used by new node pools to allocate pod IPs
    * automatically. Once the range is removed it will not show up in
    * IPAllocationPolicy.
    * </pre>
@@ -1463,8 +1461,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The additional pod ranges that are added to the
-   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * Output only. The additional pod ranges that are added to the cluster.
+   * These pod ranges can be used by new node pools to allocate pod IPs
    * automatically. Once the range is removed it will not show up in
    * IPAllocationPolicy.
    * </pre>
@@ -1487,9 +1485,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. [Output only] The utilization of the cluster default IPv4
-   * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
-   * range], Usage=numNodes*numZones*podIPsPerNode.
+   * Output only. The utilization of the cluster default IPv4 range for the
+   * pod. The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
    * </pre>
    *
    * <code>
@@ -2621,7 +2619,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1729
+     *     google/container/v1beta1/cluster_service.proto;l=1732
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2646,7 +2644,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1729
+     *     google/container/v1beta1/cluster_service.proto;l=1732
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2671,7 +2669,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1729
+     *     google/container/v1beta1/cluster_service.proto;l=1732
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2695,7 +2693,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1729
+     *     google/container/v1beta1/cluster_service.proto;l=1732
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2715,7 +2713,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1729
+     *     google/container/v1beta1/cluster_service.proto;l=1732
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2742,7 +2740,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1732
+     *     google/container/v1beta1/cluster_service.proto;l=1735
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2767,7 +2765,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1732
+     *     google/container/v1beta1/cluster_service.proto;l=1735
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2792,7 +2790,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1732
+     *     google/container/v1beta1/cluster_service.proto;l=1735
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2816,7 +2814,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1732
+     *     google/container/v1beta1/cluster_service.proto;l=1735
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2836,7 +2834,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1732
+     *     google/container/v1beta1/cluster_service.proto;l=1735
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2863,7 +2861,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1735
+     *     google/container/v1beta1/cluster_service.proto;l=1738
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2888,7 +2886,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1735
+     *     google/container/v1beta1/cluster_service.proto;l=1738
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2913,7 +2911,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1735
+     *     google/container/v1beta1/cluster_service.proto;l=1738
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2937,7 +2935,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1735
+     *     google/container/v1beta1/cluster_service.proto;l=1738
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2957,7 +2955,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1735
+     *     google/container/v1beta1/cluster_service.proto;l=1738
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -4600,8 +4598,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-     * pods.
+     * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4623,8 +4620,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-     * pods.
+     * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4646,8 +4642,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-     * pods.
+     * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4668,8 +4663,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-     * pods.
+     * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4686,8 +4680,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
-     * pods.
+     * Output only. The subnet's IPv6 CIDR block used by nodes and pods.
      * </pre>
      *
      * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4711,7 +4704,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+     * Output only. The services IPv6 CIDR block for the cluster.
      * </pre>
      *
      * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4734,7 +4727,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+     * Output only. The services IPv6 CIDR block for the cluster.
      * </pre>
      *
      * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4757,7 +4750,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+     * Output only. The services IPv6 CIDR block for the cluster.
      * </pre>
      *
      * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4779,7 +4772,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+     * Output only. The services IPv6 CIDR block for the cluster.
      * </pre>
      *
      * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4797,7 +4790,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+     * Output only. The services IPv6 CIDR block for the cluster.
      * </pre>
      *
      * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4827,8 +4820,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4846,8 +4839,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4871,8 +4864,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4899,8 +4892,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4924,8 +4917,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4958,8 +4951,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -4982,8 +4975,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -5002,8 +4995,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -5026,8 +5019,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The additional pod ranges that are added to the
-     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * Output only. The additional pod ranges that are added to the cluster.
+     * These pod ranges can be used by new node pools to allocate pod IPs
      * automatically. Once the range is removed it will not show up in
      * IPAllocationPolicy.
      * </pre>
@@ -5058,9 +5051,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
-     * range], Usage=numNodes*numZones*podIPsPerNode.
+     * Output only. The utilization of the cluster default IPv4 range for the
+     * pod. The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *
      * <code>
@@ -5077,9 +5070,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
-     * range], Usage=numNodes*numZones*podIPsPerNode.
+     * Output only. The utilization of the cluster default IPv4 range for the
+     * pod. The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *
      * <code>
@@ -5100,9 +5093,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. [Output only] The utilization of the cluster default IPv4
-     * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
-     * range], Usage=numNodes*numZones*podIPsPerNode.
+     * Output only. The utilization of the cluster default IPv4 range for the
+     * pod. The ratio is Usage/[Total number of IPs in the secondary range],
+     * Usage=numNodes*numZones*podIPsPerNode.
      * </pre>
      *
      * <code>

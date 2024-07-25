@@ -174,7 +174,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
    *
-   * <code>string private_endpoint = 4;</code>
+   * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The privateEndpoint.
    */
@@ -197,7 +197,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
    *
-   * <code>string private_endpoint = 4;</code>
+   * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for privateEndpoint.
    */
@@ -225,7 +225,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
    *
-   * <code>string public_endpoint = 5;</code>
+   * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The publicEndpoint.
    */
@@ -248,7 +248,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
    *
-   * <code>string public_endpoint = 5;</code>
+   * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for publicEndpoint.
    */
@@ -276,7 +276,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The peering name in the customer VPC used by this cluster.
    * </pre>
    *
-   * <code>string peering_name = 7;</code>
+   * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peeringName.
    */
@@ -299,7 +299,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    * Output only. The peering name in the customer VPC used by this cluster.
    * </pre>
    *
-   * <code>string peering_name = 7;</code>
+   * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peeringName.
    */
@@ -1201,7 +1201,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string private_endpoint = 4;</code>
+     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The privateEndpoint.
      */
@@ -1223,7 +1223,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string private_endpoint = 4;</code>
+     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for privateEndpoint.
      */
@@ -1245,7 +1245,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string private_endpoint = 4;</code>
+     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The privateEndpoint to set.
      * @return This builder for chaining.
@@ -1266,7 +1266,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string private_endpoint = 4;</code>
+     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1283,7 +1283,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string private_endpoint = 4;</code>
+     * <code>string private_endpoint = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for privateEndpoint to set.
      * @return This builder for chaining.
@@ -1307,7 +1307,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string public_endpoint = 5;</code>
+     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The publicEndpoint.
      */
@@ -1329,7 +1329,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string public_endpoint = 5;</code>
+     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for publicEndpoint.
      */
@@ -1351,7 +1351,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string public_endpoint = 5;</code>
+     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The publicEndpoint to set.
      * @return This builder for chaining.
@@ -1372,7 +1372,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string public_endpoint = 5;</code>
+     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1389,7 +1389,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
-     * <code>string public_endpoint = 5;</code>
+     * <code>string public_endpoint = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for publicEndpoint to set.
      * @return This builder for chaining.
@@ -1413,7 +1413,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The peering name in the customer VPC used by this cluster.
      * </pre>
      *
-     * <code>string peering_name = 7;</code>
+     * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The peeringName.
      */
@@ -1435,7 +1435,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The peering name in the customer VPC used by this cluster.
      * </pre>
      *
-     * <code>string peering_name = 7;</code>
+     * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for peeringName.
      */
@@ -1457,7 +1457,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The peering name in the customer VPC used by this cluster.
      * </pre>
      *
-     * <code>string peering_name = 7;</code>
+     * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The peeringName to set.
      * @return This builder for chaining.
@@ -1478,7 +1478,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The peering name in the customer VPC used by this cluster.
      * </pre>
      *
-     * <code>string peering_name = 7;</code>
+     * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1495,7 +1495,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      * Output only. The peering name in the customer VPC used by this cluster.
      * </pre>
      *
-     * <code>string peering_name = 7;</code>
+     * <code>string peering_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for peeringName to set.
      * @return This builder for chaining.

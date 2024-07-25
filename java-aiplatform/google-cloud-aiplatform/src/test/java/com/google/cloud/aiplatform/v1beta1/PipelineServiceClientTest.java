@@ -618,6 +618,8 @@ public class PipelineServiceClientTest {
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
             .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -681,6 +683,8 @@ public class PipelineServiceClientTest {
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
             .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -744,6 +748,8 @@ public class PipelineServiceClientTest {
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
             .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -801,6 +807,8 @@ public class PipelineServiceClientTest {
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
             .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

@@ -941,7 +941,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/my-project/global/networks/my-network
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The network.
    */
@@ -967,7 +967,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/my-project/global/networks/my-network
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for network.
    */
@@ -998,7 +998,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The subnetwork.
    */
@@ -1024,7 +1024,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -2358,7 +2358,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/global/networks/my-network
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The network.
      */
@@ -2383,7 +2383,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/global/networks/my-network
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for network.
      */
@@ -2408,7 +2408,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/global/networks/my-network
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -2432,7 +2432,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/global/networks/my-network
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2452,7 +2452,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/global/networks/my-network
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -2479,7 +2479,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The subnetwork.
      */
@@ -2504,7 +2504,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -2529,7 +2529,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -2553,7 +2553,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2573,7 +2573,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

@@ -27536,7 +27536,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * At most 10 results for documents mode, or 50 for chunks mode.
      * </pre>
      *
-     * <code>int32 search_result_persistence_count = 2;</code>
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return Whether the searchResultPersistenceCount field is set.
+     */
+    boolean hasSearchResultPersistenceCount();
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
      *
      * @return The searchResultPersistenceCount.
      */
@@ -27590,6 +27608,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int QUERY_ID_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -27704,7 +27723,28 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * At most 10 results for documents mode, or 50 for chunks mode.
      * </pre>
      *
-     * <code>int32 search_result_persistence_count = 2;</code>
+     * <code>optional int32 search_result_persistence_count = 2;</code>
+     *
+     * @return Whether the searchResultPersistenceCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchResultPersistenceCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of top search results to persist. The persisted search results
+     * can be used for the subsequent /answer api call.
+     *
+     * This field is simliar to the `summary_result_count` field in
+     * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+     *
+     * At most 10 results for documents mode, or 50 for chunks mode.
+     * </pre>
+     *
+     * <code>optional int32 search_result_persistence_count = 2;</code>
      *
      * @return The searchResultPersistenceCount.
      */
@@ -27730,7 +27770,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryId_);
       }
-      if (searchResultPersistenceCount_ != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(2, searchResultPersistenceCount_);
       }
       getUnknownFields().writeTo(output);
@@ -27745,7 +27785,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryId_);
       }
-      if (searchResultPersistenceCount_ != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeInt32Size(
                 2, searchResultPersistenceCount_);
@@ -27767,8 +27807,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec) obj;
 
       if (!getQueryId().equals(other.getQueryId())) return false;
-      if (getSearchResultPersistenceCount() != other.getSearchResultPersistenceCount())
+      if (hasSearchResultPersistenceCount() != other.hasSearchResultPersistenceCount())
         return false;
+      if (hasSearchResultPersistenceCount()) {
+        if (getSearchResultPersistenceCount() != other.getSearchResultPersistenceCount())
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -27782,8 +27826,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQueryId().hashCode();
-      hash = (37 * hash) + SEARCH_RESULT_PERSISTENCE_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getSearchResultPersistenceCount();
+      if (hasSearchResultPersistenceCount()) {
+        hash = (37 * hash) + SEARCH_RESULT_PERSISTENCE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchResultPersistenceCount();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -27976,9 +28022,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.queryId_ = queryId_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.searchResultPersistenceCount_ = searchResultPersistenceCount_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -28037,7 +28086,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (other.getSearchResultPersistenceCount() != 0) {
+        if (other.hasSearchResultPersistenceCount()) {
           setSearchResultPersistenceCount(other.getSearchResultPersistenceCount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -28337,7 +28386,28 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * At most 10 results for documents mode, or 50 for chunks mode.
        * </pre>
        *
-       * <code>int32 search_result_persistence_count = 2;</code>
+       * <code>optional int32 search_result_persistence_count = 2;</code>
+       *
+       * @return Whether the searchResultPersistenceCount field is set.
+       */
+      @java.lang.Override
+      public boolean hasSearchResultPersistenceCount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of top search results to persist. The persisted search results
+       * can be used for the subsequent /answer api call.
+       *
+       * This field is simliar to the `summary_result_count` field in
+       * [SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.summary_result_count].
+       *
+       * At most 10 results for documents mode, or 50 for chunks mode.
+       * </pre>
+       *
+       * <code>optional int32 search_result_persistence_count = 2;</code>
        *
        * @return The searchResultPersistenceCount.
        */
@@ -28358,7 +28428,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * At most 10 results for documents mode, or 50 for chunks mode.
        * </pre>
        *
-       * <code>int32 search_result_persistence_count = 2;</code>
+       * <code>optional int32 search_result_persistence_count = 2;</code>
        *
        * @param value The searchResultPersistenceCount to set.
        * @return This builder for chaining.
@@ -28383,7 +28453,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * At most 10 results for documents mode, or 50 for chunks mode.
        * </pre>
        *
-       * <code>int32 search_result_persistence_count = 2;</code>
+       * <code>optional int32 search_result_persistence_count = 2;</code>
        *
        * @return This builder for chaining.
        */

@@ -28,7 +28,7 @@ public interface RangeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Name of a range.
+   * Output only. Name of a range.
    * </pre>
    *
    * <code>string range_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,7 +40,7 @@ public interface RangeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Name of a range.
+   * Output only. Name of a range.
    * </pre>
    *
    * <code>string range_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -53,7 +53,7 @@ public interface RangeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] The utilization of the range.
+   * Output only. The utilization of the range.
    * </pre>
    *
    * <code>double utilization = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

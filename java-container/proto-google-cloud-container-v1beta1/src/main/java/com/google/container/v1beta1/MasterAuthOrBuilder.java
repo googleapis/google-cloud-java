@@ -159,13 +159,27 @@ public interface MasterAuthOrBuilder
       getClientCertificateConfigOrBuilder();
 
   /**
-   * <code>string cluster_ca_certificate = 100;</code>
+   *
+   *
+   * <pre>
+   * Output only. Base64-encoded public certificate that is the root of
+   * trust for the cluster.
+   * </pre>
+   *
+   * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clusterCaCertificate.
    */
   java.lang.String getClusterCaCertificate();
   /**
-   * <code>string cluster_ca_certificate = 100;</code>
+   *
+   *
+   * <pre>
+   * Output only. Base64-encoded public certificate that is the root of
+   * trust for the cluster.
+   * </pre>
+   *
+   * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clusterCaCertificate.
    */
@@ -175,11 +189,11 @@ public interface MasterAuthOrBuilder
    *
    *
    * <pre>
-   * [Output only] Base64-encoded public certificate used by clients to
+   * Output only. Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_certificate = 101;</code>
+   * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clientCertificate.
    */
@@ -188,11 +202,11 @@ public interface MasterAuthOrBuilder
    *
    *
    * <pre>
-   * [Output only] Base64-encoded public certificate used by clients to
+   * Output only. Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_certificate = 101;</code>
+   * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clientCertificate.
    */
@@ -202,11 +216,11 @@ public interface MasterAuthOrBuilder
    *
    *
    * <pre>
-   * [Output only] Base64-encoded private key used by clients to authenticate
+   * Output only. Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_key = 102;</code>
+   * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clientKey.
    */
@@ -215,11 +229,11 @@ public interface MasterAuthOrBuilder
    *
    *
    * <pre>
-   * [Output only] Base64-encoded private key used by clients to authenticate
+   * Output only. Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_key = 102;</code>
+   * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clientKey.
    */

@@ -48,7 +48,7 @@ public final class DeploymentResourcePoolProto {
           + "oogle/cloud/aiplatform/v1beta1/encryptio"
           + "n_spec.proto\0327google/cloud/aiplatform/v1"
           + "beta1/machine_resources.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\323\003\n\026DeploymentRes"
+          + "otobuf/timestamp.proto\"\213\004\n\026DeploymentRes"
           + "ourcePool\022\021\n\004name\030\001 \001(\tB\003\340A\005\022U\n\023dedicate"
           + "d_resources\030\002 \001(\01323.google.cloud.aiplatf"
           + "orm.v1beta1.DedicatedResourcesB\003\340A\002\022H\n\017e"
@@ -56,17 +56,19 @@ public final class DeploymentResourcePoolProto {
           + "atform.v1beta1.EncryptionSpec\022\027\n\017service"
           + "_account\030\006 \001(\t\022!\n\031disable_container_logg"
           + "ing\030\007 \001(\010\0224\n\013create_time\030\004 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003:\222\001\352A\216\001\n0aiplatfo"
-          + "rm.googleapis.com/DeploymentResourcePool"
-          + "\022Zprojects/{project}/locations/{location"
-          + "}/deploymentResourcePools/{deployment_re"
-          + "source_pool}B\362\001\n#com.google.cloud.aiplat"
-          + "form.v1beta1B\033DeploymentResourcePoolProt"
-          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
-          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
-          + "Platform::V1beta1b\006proto3"
+          + "protobuf.TimestampB\003\340A\003\022\032\n\rsatisfies_pzs"
+          + "\030\010 \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\t \001(\010B\003\340A\003:"
+          + "\222\001\352A\216\001\n0aiplatform.googleapis.com/Deploy"
+          + "mentResourcePool\022Zprojects/{project}/loc"
+          + "ations/{location}/deploymentResourcePool"
+          + "s/{deployment_resource_pool}B\362\001\n#com.goo"
+          + "gle.cloud.aiplatform.v1beta1B\033Deployment"
+          + "ResourcePoolProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -90,6 +92,8 @@ public final class DeploymentResourcePoolProto {
               "ServiceAccount",
               "DisableContainerLogging",
               "CreateTime",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

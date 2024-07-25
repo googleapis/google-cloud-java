@@ -79,7 +79,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Information for additional pod range.
+   * Output only. Information for additional pod range.
    * </pre>
    *
    * <code>
@@ -91,7 +91,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Information for additional pod range.
+   * Output only. Information for additional pod range.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Information for additional pod range.
+   * Output only. Information for additional pod range.
    * </pre>
    *
    * <code>
@@ -115,7 +115,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Information for additional pod range.
+   * Output only. Information for additional pod range.
    * </pre>
    *
    * <code>
@@ -128,7 +128,7 @@ public interface AdditionalPodRangesConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Information for additional pod range.
+   * Output only. Information for additional pod range.
    * </pre>
    *
    * <code>

@@ -123,6 +123,8 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
@@ -179,6 +181,8 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
@@ -235,6 +239,8 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
@@ -288,6 +294,8 @@ public class GenAiTuningServiceClientTest {
                     .toString())
             .setTunedModel(TunedModel.newBuilder().build())
             .setTuningDataStats(TuningDataStats.newBuilder().build())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);

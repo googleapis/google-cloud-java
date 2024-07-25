@@ -478,6 +478,47 @@ public interface PersistentResourceOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  boolean hasPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for PersistentResource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder getPscInterfaceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Customer-managed encryption key spec for a PersistentResource.
    * If set, this PersistentResource and all sub-resources of this
    * PersistentResource will be secured by this key.

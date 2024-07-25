@@ -101,6 +101,41 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * Tuning Spec for Distillation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DistillationSpec distillation_spec = 17;</code>
+   *
+   * @return Whether the distillationSpec field is set.
+   */
+  boolean hasDistillationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Distillation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DistillationSpec distillation_spec = 17;</code>
+   *
+   * @return The distillationSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.DistillationSpec getDistillationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Distillation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DistillationSpec distillation_spec = 17;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DistillationSpecOrBuilder getDistillationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Identifier. Resource name of a TuningJob. Format:
    * `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
    * </pre>
@@ -645,6 +680,39 @@ public interface TuningJobOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TuningDataStatsOrBuilder getTuningDataStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the PipelineJob associated with the
+   * [TuningJob][google.cloud.aiplatform.v1.TuningJob]. Format:
+   * `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`.
+   * </pre>
+   *
+   * <code>
+   * string pipeline_job = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The pipelineJob.
+   */
+  java.lang.String getPipelineJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the PipelineJob associated with the
+   * [TuningJob][google.cloud.aiplatform.v1.TuningJob]. Format:
+   * `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`.
+   * </pre>
+   *
+   * <code>
+   * string pipeline_job = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for pipelineJob.
+   */
+  com.google.protobuf.ByteString getPipelineJobBytes();
 
   /**
    *

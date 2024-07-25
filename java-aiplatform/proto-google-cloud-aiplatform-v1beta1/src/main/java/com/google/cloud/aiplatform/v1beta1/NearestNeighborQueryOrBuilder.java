@@ -192,6 +192,72 @@ public interface NearestNeighborQueryOrBuilder
    *
    *
    * <pre>
+   * Optional. The list of numeric filters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter numeric_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter>
+      getNumericFiltersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of numeric filters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter numeric_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter getNumericFilters(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of numeric filters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter numeric_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNumericFiltersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of numeric filters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter numeric_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilterOrBuilder>
+      getNumericFiltersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of numeric filters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilter numeric_filters = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NearestNeighborQuery.NumericFilterOrBuilder
+      getNumericFiltersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Crowding is a constraint on a neighbor list produced by nearest
    * neighbor search requiring that no more than
    * sper_crowding_attribute_neighbor_count of the k neighbors returned have the

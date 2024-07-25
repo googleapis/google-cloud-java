@@ -967,7 +967,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     the user does not provide a mask then only the non-empty fields present in the request will
    *     be overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `labels`
+   *     <p>&#42; `labels` &#42; `description` &#42; `big_query` &#42; `big_query.entity_id_columns`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FeatureGroup, UpdateFeatureGroupOperationMetadata>
@@ -1870,7 +1870,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
    *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring` (Not supported for
-   *     FeatureRegistry Feature)
+   *     FeatureRegistryService Feature) &#42; `point_of_contact` (Not supported for
+   *     FeaturestoreService FeatureStore)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, UpdateFeatureOperationMetadata> updateFeatureAsync(

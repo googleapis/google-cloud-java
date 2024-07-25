@@ -36,6 +36,10 @@ public final class ServiceNetworkingProto {
       internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,13 +57,19 @@ public final class ServiceNetworkingProto {
           + "_service_connect\030\001 \001(\010B\003\340A\002\022\031\n\021project_a"
           + "llowlist\030\002 \003(\t\"S\n\025PscAutomatedEndpoints\022"
           + "\022\n\nproject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\r"
-          + "match_address\030\003 \001(\tB\355\001\n#com.google.cloud"
-          + ".aiplatform.v1beta1B\026ServiceNetworkingPr"
-          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
-          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "match_address\030\003 \001(\t\"b\n\022PscInterfaceConfi"
+          + "g\022L\n\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n(c"
+          + "ompute.googleapis.com/NetworkAttachmentB"
+          + "\346\002\n#com.google.cloud.aiplatform.v1beta1B"
+          + "\026ServiceNetworkingProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1\352"
+          + "Av\n(compute.googleapis.com/NetworkAttach"
+          + "ment\022Jprojects/{project}/regions/{region"
+          + "}/networkAttachments/{networkattachment}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -84,9 +94,19 @@ public final class ServiceNetworkingProto {
             new java.lang.String[] {
               "ProjectId", "Network", "MatchAddress",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor,
+            new java.lang.String[] {
+              "NetworkAttachment",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -55,11 +55,11 @@ public interface DailyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The duration.
    */
@@ -68,11 +68,11 @@ public interface DailyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for duration.
    */

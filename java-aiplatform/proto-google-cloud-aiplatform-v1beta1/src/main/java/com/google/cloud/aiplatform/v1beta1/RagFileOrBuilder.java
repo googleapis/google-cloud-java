@@ -160,6 +160,76 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   *
+   * @return Whether the slackSource field is set.
+   */
+  boolean hasSlackSource();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   *
+   * @return The slackSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   *
+   * @return Whether the jiraSource field is set.
+   */
+  boolean hasJiraSource();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   *
+   * @return The jiraSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource();
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the RagFile.
    * </pre>
    *

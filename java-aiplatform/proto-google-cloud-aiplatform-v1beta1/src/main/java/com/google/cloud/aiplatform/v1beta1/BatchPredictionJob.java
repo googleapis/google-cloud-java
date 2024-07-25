@@ -9305,6 +9305,42 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     return disableContainerLogging_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 36;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 37;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -9407,6 +9443,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     if (disableContainerLogging_ != false) {
       output.writeBool(34, disableContainerLogging_);
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(36, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(37, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -9522,6 +9564,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (disableContainerLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(34, disableContainerLogging_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(36, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(37, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9627,6 +9675,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       if (!getModelMonitoringStatus().equals(other.getModelMonitoringStatus())) return false;
     }
     if (getDisableContainerLogging() != other.getDisableContainerLogging()) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -9742,6 +9792,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + DISABLE_CONTAINER_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableContainerLogging());
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -10056,6 +10110,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         modelMonitoringStatusBuilder_ = null;
       }
       disableContainerLogging_ = false;
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -10245,6 +10301,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.disableContainerLogging_ = disableContainerLogging_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -10442,6 +10504,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (other.getDisableContainerLogging() != false) {
         setDisableContainerLogging(other.getDisableContainerLogging());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -10675,6 +10743,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x20000000;
                 break;
               } // case 272
+            case 288:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 288
+            case 296:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 296
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16950,6 +17030,112 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public Builder clearDisableContainerLogging() {
       bitField0_ = (bitField0_ & ~0x20000000);
       disableContainerLogging_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }
