@@ -566,7 +566,7 @@ public interface StructuredQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *
@@ -584,7 +584,7 @@ public interface StructuredQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *
@@ -602,7 +602,7 @@ public interface StructuredQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *

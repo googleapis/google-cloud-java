@@ -9656,7 +9656,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Distance Measure to use, required.
+     * Required. The distance measure to use, required.
      * </pre>
      *
      * <code>
@@ -9670,7 +9670,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Distance Measure to use, required.
+     * Required. The distance measure to use, required.
      * </pre>
      *
      * <code>
@@ -9723,7 +9723,10 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Nearest Neighbors search config.
+   * Nearest Neighbors search config. The ordering provided by FindNearest
+   * supersedes the order_by stage. If multiple documents have the same vector
+   * distance, the returned document order is not guaranteed to be stable
+   * between queries.
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.StructuredQuery.FindNearest}
@@ -9789,7 +9792,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Measures the EUCLIDEAN distance between the vectors. See
        * [Euclidean](https://en.wikipedia.org/wiki/Euclidean_distance) to learn
-       * more
+       * more. The resulting distance decreases the more similar two vectors
+       * are.
        * </pre>
        *
        * <code>EUCLIDEAN = 1;</code>
@@ -9799,13 +9803,14 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Compares vectors based on the angle between them, which allows you to
-       * measure similarity that isn't based on the vectors magnitude.
-       * We recommend using DOT_PRODUCT with unit normalized vectors instead of
-       * COSINE distance, which is mathematically equivalent with better
-       * performance. See [Cosine
+       * COSINE distance compares vectors based on the angle between them, which
+       * allows you to measure similarity that isn't based on the vectors
+       * magnitude. We recommend using DOT_PRODUCT with unit normalized vectors
+       * instead of COSINE distance, which is mathematically equivalent with
+       * better performance. See [Cosine
        * Similarity](https://en.wikipedia.org/wiki/Cosine_similarity) to learn
-       * more.
+       * more about COSINE similarity and COSINE distance. The resulting
+       * COSINE distance decreases the more similar two vectors are.
        * </pre>
        *
        * <code>COSINE = 2;</code>
@@ -9817,6 +9822,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Similar to cosine but is affected by the magnitude of the vectors. See
        * [Dot Product](https://en.wikipedia.org/wiki/Dot_product) to learn more.
+       * The resulting distance increases the more similar two vectors are.
        * </pre>
        *
        * <code>DOT_PRODUCT = 3;</code>
@@ -9841,7 +9847,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Measures the EUCLIDEAN distance between the vectors. See
        * [Euclidean](https://en.wikipedia.org/wiki/Euclidean_distance) to learn
-       * more
+       * more. The resulting distance decreases the more similar two vectors
+       * are.
        * </pre>
        *
        * <code>EUCLIDEAN = 1;</code>
@@ -9851,13 +9858,14 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Compares vectors based on the angle between them, which allows you to
-       * measure similarity that isn't based on the vectors magnitude.
-       * We recommend using DOT_PRODUCT with unit normalized vectors instead of
-       * COSINE distance, which is mathematically equivalent with better
-       * performance. See [Cosine
+       * COSINE distance compares vectors based on the angle between them, which
+       * allows you to measure similarity that isn't based on the vectors
+       * magnitude. We recommend using DOT_PRODUCT with unit normalized vectors
+       * instead of COSINE distance, which is mathematically equivalent with
+       * better performance. See [Cosine
        * Similarity](https://en.wikipedia.org/wiki/Cosine_similarity) to learn
-       * more.
+       * more about COSINE similarity and COSINE distance. The resulting
+       * COSINE distance decreases the more similar two vectors are.
        * </pre>
        *
        * <code>COSINE = 2;</code>
@@ -9869,6 +9877,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Similar to cosine but is affected by the magnitude of the vectors. See
        * [Dot Product](https://en.wikipedia.org/wiki/Dot_product) to learn more.
+       * The resulting distance increases the more similar two vectors are.
        * </pre>
        *
        * <code>DOT_PRODUCT = 3;</code>
@@ -10091,7 +10100,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Distance Measure to use, required.
+     * Required. The distance measure to use, required.
      * </pre>
      *
      * <code>
@@ -10108,7 +10117,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Distance Measure to use, required.
+     * Required. The distance measure to use, required.
      * </pre>
      *
      * <code>
@@ -10390,7 +10399,10 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Nearest Neighbors search config.
+     * Nearest Neighbors search config. The ordering provided by FindNearest
+     * supersedes the order_by stage. If multiple documents have the same vector
+     * distance, the returned document order is not guaranteed to be stable
+     * between queries.
      * </pre>
      *
      * Protobuf type {@code google.firestore.v1.StructuredQuery.FindNearest}
@@ -11082,7 +11094,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. The Distance Measure to use, required.
+       * Required. The distance measure to use, required.
        * </pre>
        *
        * <code>
@@ -11099,7 +11111,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. The Distance Measure to use, required.
+       * Required. The distance measure to use, required.
        * </pre>
        *
        * <code>
@@ -11119,7 +11131,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. The Distance Measure to use, required.
+       * Required. The distance measure to use, required.
        * </pre>
        *
        * <code>
@@ -11142,7 +11154,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. The Distance Measure to use, required.
+       * Required. The distance measure to use, required.
        * </pre>
        *
        * <code>
@@ -11166,7 +11178,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. The Distance Measure to use, required.
+       * Required. The distance measure to use, required.
        * </pre>
        *
        * <code>
@@ -12098,7 +12110,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *
@@ -12119,7 +12131,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *
@@ -12142,7 +12154,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. A potential Nearest Neighbors Search.
+   * Optional. A potential nearest neighbors search.
    *
    * Applies after all other filters and ordering.
    *
@@ -15344,7 +15356,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15364,7 +15376,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15390,7 +15402,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15418,7 +15430,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15444,7 +15456,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15478,7 +15490,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15503,7 +15515,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15523,7 +15535,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *
@@ -15547,7 +15559,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A potential Nearest Neighbors Search.
+     * Optional. A potential nearest neighbors search.
      *
      * Applies after all other filters and ordering.
      *

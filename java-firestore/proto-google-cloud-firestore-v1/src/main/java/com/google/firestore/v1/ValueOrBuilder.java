@@ -341,7 +341,7 @@ public interface ValueOrBuilder
    * <pre>
    * An array value.
    *
-   * Cannot directly contain another array value, though can contain an
+   * Cannot directly contain another array value, though can contain a
    * map which contains another array.
    * </pre>
    *
@@ -356,7 +356,7 @@ public interface ValueOrBuilder
    * <pre>
    * An array value.
    *
-   * Cannot directly contain another array value, though can contain an
+   * Cannot directly contain another array value, though can contain a
    * map which contains another array.
    * </pre>
    *
@@ -371,7 +371,7 @@ public interface ValueOrBuilder
    * <pre>
    * An array value.
    *
-   * Cannot directly contain another array value, though can contain an
+   * Cannot directly contain another array value, though can contain a
    * map which contains another array.
    * </pre>
    *
