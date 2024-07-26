@@ -357,7 +357,7 @@ Credentials in the following locations (in order):
 
 ### Authenticating with an API Key
 
-[Authenticating with API Keys](https://cloud.google.com/docs/authentication/api-keys) is supported by a handful of Google Cloud APIs, and the majority of Maps APIs.
+[Authenticating with API Keys](https://cloud.google.com/docs/authentication/api-keys) is supported by a handful of Google Cloud APIs.
 
 We are actively exploring ways to improve the API Key experience.
 Currently, to use an API Key with a Java client library, you need to set the header for the relevant service Client manually.
