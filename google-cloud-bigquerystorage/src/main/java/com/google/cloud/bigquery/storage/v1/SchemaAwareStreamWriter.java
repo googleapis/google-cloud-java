@@ -111,6 +111,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     if (builder.enableRequestProfiler) {
       requestProfilerHook.startPeriodicalReportFlushing();
     }
+    streamWriterBuilder.setEnableOpenTelemetry(builder.enableOpenTelemetry);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
@@ -477,6 +478,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     private String clientId;
 
     private boolean enableRequestProfiler = false;
+    private boolean enableOpenTelemetry = false;
 
     private static final String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -699,6 +701,12 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
      */
     public Builder setEnableLatencyProfiler(boolean enableLatencyProfiler) {
       this.enableRequestProfiler = enableLatencyProfiler;
+      return this;
+    }
+
+    /** Enable generation of metrics for OpenTelemetry. */
+    public Builder setEnableOpenTelemetry(boolean enableOpenTelemetry) {
+      this.enableOpenTelemetry = enableOpenTelemetry;
       return this;
     }
 

@@ -392,6 +392,12 @@ public class JsonStreamWriter implements AutoCloseable {
       return this;
     }
 
+    /** Enable generation of metrics for OpenTelemetry. */
+    public Builder setEnableOpenTelemetry(boolean enableOpenTelemetry) {
+      this.schemaAwareStreamWriterBuilder.setEnableOpenTelemetry(enableOpenTelemetry);
+      return this;
+    }
+
     /**
      * Sets the default missing value interpretation value if the column is not presented in the
      * missing_value_interpretations map.

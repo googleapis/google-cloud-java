@@ -259,6 +259,7 @@ class ConnectionWorker implements AutoCloseable {
 
   private static String tableMatching = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/";
   private static Pattern streamPatternTable = Pattern.compile(tableMatching);
+  private final boolean enableOpenTelemetry;
   private Meter writeMeter;
   static AttributeKey<String> telemetryKeyTableId = AttributeKey.stringKey("table_id");
   static AttributeKey<String> telemetryKeyWriterId = AttributeKey.stringKey("writer_id");
@@ -480,7 +481,8 @@ class ConnectionWorker implements AutoCloseable {
       @Nullable String compressorName,
       BigQueryWriteSettings clientSettings,
       RetrySettings retrySettings,
-      boolean enableRequestProfiler)
+      boolean enableRequestProfiler,
+      boolean enableOpenTelemetry)
       throws IOException {
     this.lock = new ReentrantLock();
     this.hasMessageInWaitingQueue = lock.newCondition();
@@ -505,6 +507,7 @@ class ConnectionWorker implements AutoCloseable {
     this.retrySettings = retrySettings;
     this.telemetryAttributes = buildOpenTelemetryAttributes();
     this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
+    this.enableOpenTelemetry = enableOpenTelemetry;
     registerOpenTelemetryMetrics();
 
     // Always recreate a client for connection worker.

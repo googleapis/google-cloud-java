@@ -565,6 +565,7 @@ public class ConnectionWorkerPoolTest {
         null,
         clientSettings,
         retrySettings,
-        /*enableRequestProfiler=*/ false);
+        /*enableRequestProfiler=*/ false,
+        /*enableOpenTelemetry*/ false);
   }
 }

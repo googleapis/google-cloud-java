@@ -345,7 +345,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
     testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
 
@@ -403,7 +404,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
     testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
     ConnectionWorker.setMaxInflightQueueWaitTime(500);
 
@@ -473,7 +475,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
     StatusRuntimeException ex =
         assertThrows(
             StatusRuntimeException.class,
@@ -506,7 +509,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
     StatusRuntimeException ex =
         assertThrows(
             StatusRuntimeException.class,
@@ -560,7 +564,8 @@ public class ConnectionWorkerTest {
         null,
         client.getSettings(),
         retrySettings,
-        /*enableRequestProfiler=*/ false);
+        /*enableRequestProfiler=*/ false,
+        /*enableOpenTelemetry=*/ false);
   }
 
   private ProtoSchema createProtoSchema(String protoName) {
@@ -657,7 +662,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
     org.threeten.bp.Duration durationSleep = org.threeten.bp.Duration.ofSeconds(2);
     testBigQueryWrite.setResponseSleep(durationSleep);
 
@@ -733,7 +739,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
 
     long appendCount = 10;
     for (int i = 0; i < appendCount * 2; i++) {
@@ -779,7 +786,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
 
     Attributes attributes = connectionWorker.getTelemetryAttributes();
     String attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
@@ -820,7 +828,8 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings,
-            /*enableRequestProfiler=*/ false);
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false);
 
     Attributes attributes = connectionWorker.getTelemetryAttributes();
     checkOpenTelemetryTraceIdAttribute(attributes, 0, expectedField1);

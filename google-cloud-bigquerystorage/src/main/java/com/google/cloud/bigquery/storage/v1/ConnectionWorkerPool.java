@@ -206,6 +206,7 @@ public class ConnectionWorkerPool {
   private static Settings settings = Settings.builder().build();
 
   private final boolean enableRequestProfiler;
+  private final boolean enableOpenTelemetry;
 
   ConnectionWorkerPool(
       long maxInflightRequests,
@@ -216,7 +217,8 @@ public class ConnectionWorkerPool {
       @Nullable String comperssorName,
       BigQueryWriteSettings clientSettings,
       RetrySettings retrySettings,
-      boolean enableRequestProfiler) {
+      boolean enableRequestProfiler,
+      boolean enableOpenTelemetry) {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.maxRetryDuration = maxRetryDuration;
@@ -227,6 +229,7 @@ public class ConnectionWorkerPool {
     this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
     this.retrySettings = retrySettings;
     this.enableRequestProfiler = enableRequestProfiler;
+    this.enableOpenTelemetry = enableOpenTelemetry;
   }
 
   /**
@@ -409,7 +412,8 @@ public class ConnectionWorkerPool {
             compressorName,
             clientSettings,
             retrySettings,
-            enableRequestProfiler);
+            enableRequestProfiler,
+            enableOpenTelemetry);
     connectionWorkerPool.add(connectionWorker);
     log.info(
         String.format(

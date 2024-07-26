@@ -254,7 +254,8 @@ public class StreamWriter implements AutoCloseable {
                   builder.compressorName,
                   clientSettings,
                   builder.retrySettings,
-                  builder.enableRequestProfiler));
+                  builder.enableRequestProfiler,
+                  builder.enableOpenTelemetry));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(
@@ -321,7 +322,8 @@ public class StreamWriter implements AutoCloseable {
                         builder.compressorName,
                         client.getSettings(),
                         builder.retrySettings,
-                        builder.enableRequestProfiler);
+                        builder.enableRequestProfiler,
+                        builder.enableOpenTelemetry);
                   }));
       validateFetchedConnectonPool(builder);
       // If the client is not from outside, then shutdown the client we created.
@@ -699,6 +701,7 @@ public class StreamWriter implements AutoCloseable {
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
 
     private boolean enableRequestProfiler = false;
+    private boolean enableOpenTelemetry = false;
 
     private RetrySettings retrySettings = null;
 
@@ -854,6 +857,12 @@ public class StreamWriter implements AutoCloseable {
      */
     public Builder setEnableLatencyProfiler(boolean enableLatencyProfiler) {
       this.enableRequestProfiler = enableLatencyProfiler;
+      return this;
+    }
+
+    /** Enable generation of metrics for OpenTelemetry. */
+    public Builder setEnableOpenTelemetry(boolean enableOpenTelemetry) {
+      this.enableOpenTelemetry = enableOpenTelemetry;
       return this;
     }
 
