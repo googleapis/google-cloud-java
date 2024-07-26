@@ -62,4 +62,19 @@ public interface ClassificationCategoryOrBuilder
    * @return The confidence.
    */
   float getConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The classifier's severity of the category. This is only present
+   * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
+   * the corresponding category has a severity score.
+   * </pre>
+   *
+   * <code>float severity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The severity.
+   */
+  float getSeverity();
 }

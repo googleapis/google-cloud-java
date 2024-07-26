@@ -83,8 +83,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the entity. For most entity types, the associated metadata is a
-   * Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`). The table
+   * The type of the entity. The table
    * below lists the associated fields for entities that have different
    * metadata.
    * </pre>
@@ -205,7 +204,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * * `locality` - city or town
      * * `street_name` - street/route name, if detected
      * * `postal_code` - postal code, if detected
-     * * `country` - country, if detected&lt;
+     * * `country` - country, if detected
      * * `broad_region` - administrative area, such as the state, if detected
      * * `narrow_region` - smaller administrative area, such as county, if
      * detected
@@ -372,7 +371,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * * `locality` - city or town
      * * `street_name` - street/route name, if detected
      * * `postal_code` - postal code, if detected
-     * * `country` - country, if detected&lt;
+     * * `country` - country, if detected
      * * `broad_region` - administrative area, such as the state, if detected
      * * `narrow_region` - smaller administrative area, such as county, if
      * detected
@@ -646,8 +645,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Metadata associated with the entity.
    *
-   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * For the metadata
    * associated with other entity types, see the Type table below.
    * </pre>
    *
@@ -672,8 +670,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Metadata associated with the entity.
    *
-   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * For the metadata
    * associated with other entity types, see the Type table below.
    * </pre>
    *
@@ -689,8 +686,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Metadata associated with the entity.
    *
-   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * For the metadata
    * associated with other entity types, see the Type table below.
    * </pre>
    *
@@ -713,8 +709,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Metadata associated with the entity.
    *
-   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * For the metadata
    * associated with other entity types, see the Type table below.
    * </pre>
    *
@@ -1630,8 +1625,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1656,8 +1650,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1673,8 +1666,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1697,8 +1689,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1727,8 +1718,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1753,8 +1743,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
@@ -1777,8 +1766,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Metadata associated with the entity.
      *
-     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * For the metadata
      * associated with other entity types, see the Type table below.
      * </pre>
      *
