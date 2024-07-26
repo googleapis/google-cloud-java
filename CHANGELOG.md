@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.8.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.7.0...v3.8.0) (2024-07-26)
+
+
+### Features
+
+* Add opentelemetry counters for sent and acked messages ([#2532](https://github.com/googleapis/java-bigquerystorage/issues/2532)) ([2fc5c55](https://github.com/googleapis/java-bigquerystorage/commit/2fc5c5544cb32343a2ecd46445f7118e7254de8d))
+
+
+### Bug Fixes
+
+* Add `RequestProfile` classes to `deep-preserve` list ([#2574](https://github.com/googleapis/java-bigquerystorage/issues/2574)) ([2141f89](https://github.com/googleapis/java-bigquerystorage/commit/2141f89538e698eff64a665e34ad32b181b7c04a))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.33.0 ([#2577](https://github.com/googleapis/java-bigquerystorage/issues/2577)) ([5c143a0](https://github.com/googleapis/java-bigquerystorage/commit/5c143a0d0e165fcacc5cf00dee5e1a391726dc5c))
+
 ## [3.7.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.6.1...v3.7.0) (2024-07-19)
 
 
