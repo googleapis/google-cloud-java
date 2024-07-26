@@ -355,6 +355,44 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
+### Authenticating with an API Key
+
+[Authenticating with API Keys](https://cloud.google.com/docs/authentication/api-keys) is supported by a handful of Google Cloud APIs.
+
+We are actively exploring ways to improve the API Key experience.
+Currently, to use an API Key with a Java client library, you need to set the header for the relevant service Client manually.
+
+For example, to set the API Key with the [Language service](https://cloud.google.com/java/docs/reference/google-cloud-language/latest/overview):
+
+```java
+public LanguageServiceClient createGrpcClientWithApiKey(String apiKey) throws Exception {
+    // Manually set the api key via the header
+    Map<String, String> header = new HashMap<String, String>() { {put("x-goog-api-key", apiKey);}};
+    FixedHeaderProvider headerProvider = FixedHeaderProvider.create(header);
+
+    // Create the client
+    TransportChannelProvider transportChannelProvider = InstantiatingGrpcChannelProvider.newBuilder().setHeaderProvider(headerProvider).build();
+    LanguageServiceSettings settings = LanguageServiceSettings.newBuilder().setTransportChannelProvider(transportChannelProvider).build();
+    LanguageServiceClient client = LanguageServiceClient.create(settings);
+    return client;
+  }
+```
+
+An example instantiation with the Language Client using rest:
+```java
+ public LanguageServiceClient createRestClientWithApiKey(String apiKey) throws Exception {
+    // Manually set the api key header
+    Map<String, String> header = new HashMap<String, String>() { {put("x-goog-api-key", apiKey);}};
+    FixedHeaderProvider headerProvider = FixedHeaderProvider.create(header);
+
+    // Create the client
+    TransportChannelProvider transportChannelProvider = InstantiatingHttpJsonChannelProvider.newBuilder().setHeaderProvider(headerProvider).build();
+    LanguageServiceSettings settings = LanguageServiceSettings.newBuilder().setTransportChannelProvider(transportChannelProvider).build();
+    LanguageServiceClient client = LanguageServiceClient.create(settings);
+    return client;
+  }
+```
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md).
