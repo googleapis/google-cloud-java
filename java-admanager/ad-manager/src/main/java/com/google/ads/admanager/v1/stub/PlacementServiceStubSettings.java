@@ -24,6 +24,7 @@ import com.google.ads.admanager.v1.ListPlacementsResponse;
 import com.google.ads.admanager.v1.Placement;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -188,6 +189,7 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "admanager.googleapis.com:443";
   }

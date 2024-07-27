@@ -22,6 +22,7 @@ import static com.google.cloud.iot.v1.DeviceManagerClient.ListDevicesPagedRespon
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -419,6 +420,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "cloudiot.googleapis.com:443";
   }

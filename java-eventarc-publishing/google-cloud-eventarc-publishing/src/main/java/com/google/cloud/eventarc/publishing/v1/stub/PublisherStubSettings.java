@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.publishing.v1.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -136,6 +137,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "eventarcpublishing.googleapis.com:443";
   }

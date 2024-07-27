@@ -47,6 +47,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     network_ = "";
     modelDeploymentMonitoringJob_ = "";
+    dedicatedEndpointDns_ = "";
   }
 
   @java.lang.Override
@@ -1114,6 +1115,123 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         : predictRequestResponseLoggingConfig_;
   }
 
+  public static final int DEDICATED_ENDPOINT_ENABLED_FIELD_NUMBER = 24;
+  private boolean dedicatedEndpointEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If true, the endpoint will be exposed through a dedicated
+   * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+   * will be isolated from other users' traffic and will have better performance
+   * and reliability.
+   * Note: Once you enabled dedicated endpoint, you won't be able to send
+   * request to the shared DNS {region}-aiplatform.googleapis.com. The
+   * limitation will be removed soon.
+   * </pre>
+   *
+   * <code>bool dedicated_endpoint_enabled = 24;</code>
+   *
+   * @return The dedicatedEndpointEnabled.
+   */
+  @java.lang.Override
+  public boolean getDedicatedEndpointEnabled() {
+    return dedicatedEndpointEnabled_;
+  }
+
+  public static final int DEDICATED_ENDPOINT_DNS_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dedicatedEndpointDns_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS of the dedicated endpoint. Will only be populated if
+   * dedicated_endpoint_enabled is true.
+   * Format:
+   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * </pre>
+   *
+   * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dedicatedEndpointDns.
+   */
+  @java.lang.Override
+  public java.lang.String getDedicatedEndpointDns() {
+    java.lang.Object ref = dedicatedEndpointDns_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dedicatedEndpointDns_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS of the dedicated endpoint. Will only be populated if
+   * dedicated_endpoint_enabled is true.
+   * Format:
+   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * </pre>
+   *
+   * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for dedicatedEndpointDns.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDedicatedEndpointDnsBytes() {
+    java.lang.Object ref = dedicatedEndpointDns_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dedicatedEndpointDns_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 27;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 28;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1170,6 +1288,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(21, getPrivateServiceConnectConfig());
+    }
+    if (dedicatedEndpointEnabled_ != false) {
+      output.writeBool(24, dedicatedEndpointEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dedicatedEndpointDns_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, dedicatedEndpointDns_);
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(27, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(28, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1246,6 +1376,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, getPrivateServiceConnectConfig());
     }
+    if (dedicatedEndpointEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, dedicatedEndpointEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dedicatedEndpointDns_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, dedicatedEndpointDns_);
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1295,6 +1437,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (!getPredictRequestResponseLoggingConfig()
           .equals(other.getPredictRequestResponseLoggingConfig())) return false;
     }
+    if (getDedicatedEndpointEnabled() != other.getDedicatedEndpointEnabled()) return false;
+    if (!getDedicatedEndpointDns().equals(other.getDedicatedEndpointDns())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1352,6 +1498,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PREDICT_REQUEST_RESPONSE_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPredictRequestResponseLoggingConfig().hashCode();
     }
+    hash = (37 * hash) + DEDICATED_ENDPOINT_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointEnabled());
+    hash = (37 * hash) + DEDICATED_ENDPOINT_DNS_FIELD_NUMBER;
+    hash = (53 * hash) + getDedicatedEndpointDns().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1573,6 +1727,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         predictRequestResponseLoggingConfigBuilder_.dispose();
         predictRequestResponseLoggingConfigBuilder_ = null;
       }
+      dedicatedEndpointEnabled_ = false;
+      dedicatedEndpointDns_ = "";
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -1678,6 +1836,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 ? predictRequestResponseLoggingConfig_
                 : predictRequestResponseLoggingConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.dedicatedEndpointEnabled_ = dedicatedEndpointEnabled_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.dedicatedEndpointDns_ = dedicatedEndpointDns_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1805,6 +1975,20 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPredictRequestResponseLoggingConfig()) {
         mergePredictRequestResponseLoggingConfig(other.getPredictRequestResponseLoggingConfig());
+      }
+      if (other.getDedicatedEndpointEnabled() != false) {
+        setDedicatedEndpointEnabled(other.getDedicatedEndpointEnabled());
+      }
+      if (!other.getDedicatedEndpointDns().isEmpty()) {
+        dedicatedEndpointDns_ = other.dedicatedEndpointDns_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1944,6 +2128,30 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 170
+            case 192:
+              {
+                dedicatedEndpointEnabled_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 192
+            case 202:
+              {
+                dedicatedEndpointDns_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 202
+            case 216:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 216
+            case 224:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 224
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4777,6 +4985,304 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         predictRequestResponseLoggingConfig_ = null;
       }
       return predictRequestResponseLoggingConfigBuilder_;
+    }
+
+    private boolean dedicatedEndpointEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, the endpoint will be exposed through a dedicated
+     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+     * will be isolated from other users' traffic and will have better performance
+     * and reliability.
+     * Note: Once you enabled dedicated endpoint, you won't be able to send
+     * request to the shared DNS {region}-aiplatform.googleapis.com. The
+     * limitation will be removed soon.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_enabled = 24;</code>
+     *
+     * @return The dedicatedEndpointEnabled.
+     */
+    @java.lang.Override
+    public boolean getDedicatedEndpointEnabled() {
+      return dedicatedEndpointEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the endpoint will be exposed through a dedicated
+     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+     * will be isolated from other users' traffic and will have better performance
+     * and reliability.
+     * Note: Once you enabled dedicated endpoint, you won't be able to send
+     * request to the shared DNS {region}-aiplatform.googleapis.com. The
+     * limitation will be removed soon.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_enabled = 24;</code>
+     *
+     * @param value The dedicatedEndpointEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDedicatedEndpointEnabled(boolean value) {
+
+      dedicatedEndpointEnabled_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the endpoint will be exposed through a dedicated
+     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+     * will be isolated from other users' traffic and will have better performance
+     * and reliability.
+     * Note: Once you enabled dedicated endpoint, you won't be able to send
+     * request to the shared DNS {region}-aiplatform.googleapis.com. The
+     * limitation will be removed soon.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_enabled = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDedicatedEndpointEnabled() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      dedicatedEndpointEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dedicatedEndpointDns_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DNS of the dedicated endpoint. Will only be populated if
+     * dedicated_endpoint_enabled is true.
+     * Format:
+     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * </pre>
+     *
+     * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dedicatedEndpointDns.
+     */
+    public java.lang.String getDedicatedEndpointDns() {
+      java.lang.Object ref = dedicatedEndpointDns_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dedicatedEndpointDns_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DNS of the dedicated endpoint. Will only be populated if
+     * dedicated_endpoint_enabled is true.
+     * Format:
+     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * </pre>
+     *
+     * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for dedicatedEndpointDns.
+     */
+    public com.google.protobuf.ByteString getDedicatedEndpointDnsBytes() {
+      java.lang.Object ref = dedicatedEndpointDns_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dedicatedEndpointDns_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DNS of the dedicated endpoint. Will only be populated if
+     * dedicated_endpoint_enabled is true.
+     * Format:
+     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * </pre>
+     *
+     * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The dedicatedEndpointDns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDedicatedEndpointDns(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dedicatedEndpointDns_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DNS of the dedicated endpoint. Will only be populated if
+     * dedicated_endpoint_enabled is true.
+     * Format:
+     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * </pre>
+     *
+     * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDedicatedEndpointDns() {
+      dedicatedEndpointDns_ = getDefaultInstance().getDedicatedEndpointDns();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DNS of the dedicated endpoint. Will only be populated if
+     * dedicated_endpoint_enabled is true.
+     * Format:
+     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * </pre>
+     *
+     * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for dedicatedEndpointDns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDedicatedEndpointDnsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dedicatedEndpointDns_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

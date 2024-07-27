@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1.ScheduleServiceClient.ListSchedules
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -335,6 +336,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }

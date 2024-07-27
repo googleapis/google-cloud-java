@@ -724,4 +724,80 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfigOrBuilder
       getPredictRequestResponseLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, the endpoint will be exposed through a dedicated
+   * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
+   * will be isolated from other users' traffic and will have better performance
+   * and reliability.
+   * Note: Once you enabled dedicated endpoint, you won't be able to send
+   * request to the shared DNS {region}-aiplatform.googleapis.com. The
+   * limitation will be removed soon.
+   * </pre>
+   *
+   * <code>bool dedicated_endpoint_enabled = 24;</code>
+   *
+   * @return The dedicatedEndpointEnabled.
+   */
+  boolean getDedicatedEndpointEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS of the dedicated endpoint. Will only be populated if
+   * dedicated_endpoint_enabled is true.
+   * Format:
+   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * </pre>
+   *
+   * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dedicatedEndpointDns.
+   */
+  java.lang.String getDedicatedEndpointDns();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DNS of the dedicated endpoint. Will only be populated if
+   * dedicated_endpoint_enabled is true.
+   * Format:
+   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * </pre>
+   *
+   * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for dedicatedEndpointDns.
+   */
+  com.google.protobuf.ByteString getDedicatedEndpointDnsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

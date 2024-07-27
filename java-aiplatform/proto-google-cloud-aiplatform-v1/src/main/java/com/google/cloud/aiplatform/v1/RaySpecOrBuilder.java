@@ -238,4 +238,45 @@ public interface RaySpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.RayMetricSpecOrBuilder getRayMetricSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayLogsSpec field is set.
+   */
+  boolean hasRayLogsSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayLogsSpec.
+   */
+  com.google.cloud.aiplatform.v1.RayLogsSpec getRayLogsSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder getRayLogsSpecOrBuilder();
 }

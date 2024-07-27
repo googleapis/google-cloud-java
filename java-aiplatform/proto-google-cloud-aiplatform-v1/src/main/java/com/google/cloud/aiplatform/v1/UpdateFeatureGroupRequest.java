@@ -142,6 +142,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *
    *   * `labels`
+   *   * `description`
+   *   * `big_query`
+   *   * `big_query.entity_id_columns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -167,6 +170,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *
    *   * `labels`
+   *   * `description`
+   *   * `big_query`
+   *   * `big_query.entity_id_columns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -192,6 +198,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *
    *   * `labels`
+   *   * `description`
+   *   * `big_query`
+   *   * `big_query.entity_id_columns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -841,6 +850,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -865,6 +877,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -895,6 +910,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -927,6 +945,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -956,6 +977,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -993,6 +1017,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1022,6 +1049,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1046,6 +1076,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1074,6 +1107,9 @@ public final class UpdateFeatureGroupRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *
      *   * `labels`
+     *   * `description`
+     *   * `big_query`
+     *   * `big_query.entity_id_columns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

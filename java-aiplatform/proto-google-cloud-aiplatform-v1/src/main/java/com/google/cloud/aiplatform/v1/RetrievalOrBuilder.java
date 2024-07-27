@@ -63,15 +63,18 @@ public interface RetrievalOrBuilder
    *
    *
    * <pre>
-   * Optional. Disable using the result from this tool in detecting grounding
-   * attribution. This does not affect how the result is given to the model for
-   * generation.
+   * Optional. Deprecated. This option is no longer supported.
    * </pre>
    *
-   * <code>bool disable_attribution = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool disable_attribution = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
+   *     google/cloud/aiplatform/v1/tool.proto;l=130
    * @return The disableAttribution.
    */
+  @java.lang.Deprecated
   boolean getDisableAttribution();
 
   com.google.cloud.aiplatform.v1.Retrieval.SourceCase getSourceCase();

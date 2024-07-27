@@ -143,10 +143,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    *
    * Updatable fields:
    *
-   *   * `big_query_source`
-   *   * `bigtable`
    *   * `labels`
-   *   * `sync_config`
+   *   * `description`
+   *   * `bigtable`
+   *   * `bigtable.auto_scaling`
+   *   * `bigtable.enable_multi_region_replica`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -171,10 +172,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    *
    * Updatable fields:
    *
-   *   * `big_query_source`
-   *   * `bigtable`
    *   * `labels`
-   *   * `sync_config`
+   *   * `description`
+   *   * `bigtable`
+   *   * `bigtable.auto_scaling`
+   *   * `bigtable.enable_multi_region_replica`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -199,10 +201,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
    *
    * Updatable fields:
    *
-   *   * `big_query_source`
-   *   * `bigtable`
    *   * `labels`
-   *   * `sync_config`
+   *   * `description`
+   *   * `bigtable`
+   *   * `bigtable.auto_scaling`
+   *   * `bigtable.enable_multi_region_replica`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -861,10 +864,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -888,10 +892,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -921,10 +926,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -956,10 +962,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -988,10 +995,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1028,10 +1036,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1060,10 +1069,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1087,10 +1097,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1118,10 +1129,11 @@ public final class UpdateFeatureOnlineStoreRequest extends com.google.protobuf.G
      *
      * Updatable fields:
      *
-     *   * `big_query_source`
-     *   * `bigtable`
      *   * `labels`
-     *   * `sync_config`
+     *   * `description`
+     *   * `bigtable`
+     *   * `bigtable.auto_scaling`
+     *   * `bigtable.enable_multi_region_replica`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

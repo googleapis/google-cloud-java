@@ -18,6 +18,7 @@ package com.google.cloud.binaryauthorization.v1beta1.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -125,6 +126,7 @@ public class SystemPolicyV1Beta1StubSettings extends StubSettings<SystemPolicyV1
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "binaryauthorization.googleapis.com:443";
   }

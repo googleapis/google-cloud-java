@@ -36,6 +36,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransfer
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1769,6 +1770,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "cloudchannel.googleapis.com:443";
   }

@@ -38,6 +38,7 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngi
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -2409,6 +2410,7 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "vmwareengine.googleapis.com:443";
   }

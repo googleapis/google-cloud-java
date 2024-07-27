@@ -93,7 +93,8 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -117,7 +118,8 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -141,7 +143,8 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

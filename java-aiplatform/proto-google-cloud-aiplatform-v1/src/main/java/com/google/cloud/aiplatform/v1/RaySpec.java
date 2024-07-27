@@ -400,6 +400,62 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         : rayMetricSpec_;
   }
 
+  public static final int RAY_LOGS_SPEC_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1.RayLogsSpec rayLogsSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayLogsSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRayLogsSpec() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayLogsSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RayLogsSpec getRayLogsSpec() {
+    return rayLogsSpec_ == null
+        ? com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()
+        : rayLogsSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OSS Ray logging configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder getRayLogsSpecOrBuilder() {
+    return rayLogsSpec_ == null
+        ? com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()
+        : rayLogsSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -427,6 +483,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(8, getRayMetricSpec());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getRayLogsSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -456,6 +515,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRayMetricSpec());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRayLogsSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -479,6 +541,10 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (hasRayMetricSpec()) {
       if (!getRayMetricSpec().equals(other.getRayMetricSpec())) return false;
     }
+    if (hasRayLogsSpec() != other.hasRayLogsSpec()) return false;
+    if (hasRayLogsSpec()) {
+      if (!getRayLogsSpec().equals(other.getRayLogsSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -501,6 +567,10 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     if (hasRayMetricSpec()) {
       hash = (37 * hash) + RAY_METRIC_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getRayMetricSpec().hashCode();
+    }
+    if (hasRayLogsSpec()) {
+      hash = (37 * hash) + RAY_LOGS_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getRayLogsSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -668,6 +738,7 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRayMetricSpecFieldBuilder();
+        getRayLogsSpecFieldBuilder();
       }
     }
 
@@ -682,6 +753,11 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       if (rayMetricSpecBuilder_ != null) {
         rayMetricSpecBuilder_.dispose();
         rayMetricSpecBuilder_ = null;
+      }
+      rayLogsSpec_ = null;
+      if (rayLogsSpecBuilder_ != null) {
+        rayLogsSpecBuilder_.dispose();
+        rayLogsSpecBuilder_ = null;
       }
       return this;
     }
@@ -734,6 +810,11 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         result.rayMetricSpec_ =
             rayMetricSpecBuilder_ == null ? rayMetricSpec_ : rayMetricSpecBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rayLogsSpec_ =
+            rayLogsSpecBuilder_ == null ? rayLogsSpec_ : rayLogsSpecBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -798,6 +879,9 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRayMetricSpec()) {
         mergeRayMetricSpec(other.getRayMetricSpec());
       }
+      if (other.hasRayLogsSpec()) {
+        mergeRayLogsSpec(other.getRayLogsSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -855,6 +939,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(getRayLogsSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1569,6 +1659,210 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         rayMetricSpec_ = null;
       }
       return rayMetricSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.RayLogsSpec rayLogsSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RayLogsSpec,
+            com.google.cloud.aiplatform.v1.RayLogsSpec.Builder,
+            com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder>
+        rayLogsSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rayLogsSpec field is set.
+     */
+    public boolean hasRayLogsSpec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rayLogsSpec.
+     */
+    public com.google.cloud.aiplatform.v1.RayLogsSpec getRayLogsSpec() {
+      if (rayLogsSpecBuilder_ == null) {
+        return rayLogsSpec_ == null
+            ? com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()
+            : rayLogsSpec_;
+      } else {
+        return rayLogsSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayLogsSpec(com.google.cloud.aiplatform.v1.RayLogsSpec value) {
+      if (rayLogsSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rayLogsSpec_ = value;
+      } else {
+        rayLogsSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRayLogsSpec(
+        com.google.cloud.aiplatform.v1.RayLogsSpec.Builder builderForValue) {
+      if (rayLogsSpecBuilder_ == null) {
+        rayLogsSpec_ = builderForValue.build();
+      } else {
+        rayLogsSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRayLogsSpec(com.google.cloud.aiplatform.v1.RayLogsSpec value) {
+      if (rayLogsSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && rayLogsSpec_ != null
+            && rayLogsSpec_ != com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()) {
+          getRayLogsSpecBuilder().mergeFrom(value);
+        } else {
+          rayLogsSpec_ = value;
+        }
+      } else {
+        rayLogsSpecBuilder_.mergeFrom(value);
+      }
+      if (rayLogsSpec_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRayLogsSpec() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      rayLogsSpec_ = null;
+      if (rayLogsSpecBuilder_ != null) {
+        rayLogsSpecBuilder_.dispose();
+        rayLogsSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RayLogsSpec.Builder getRayLogsSpecBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRayLogsSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder getRayLogsSpecOrBuilder() {
+      if (rayLogsSpecBuilder_ != null) {
+        return rayLogsSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return rayLogsSpec_ == null
+            ? com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()
+            : rayLogsSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OSS Ray logging configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RayLogsSpec ray_logs_spec = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RayLogsSpec,
+            com.google.cloud.aiplatform.v1.RayLogsSpec.Builder,
+            com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder>
+        getRayLogsSpecFieldBuilder() {
+      if (rayLogsSpecBuilder_ == null) {
+        rayLogsSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.RayLogsSpec,
+                com.google.cloud.aiplatform.v1.RayLogsSpec.Builder,
+                com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder>(
+                getRayLogsSpec(), getParentForChildren(), isClean());
+        rayLogsSpec_ = null;
+      }
+      return rayLogsSpecBuilder_;
     }
 
     @java.lang.Override

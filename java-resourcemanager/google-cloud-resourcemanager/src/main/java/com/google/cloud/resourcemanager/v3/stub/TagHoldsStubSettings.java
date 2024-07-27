@@ -21,6 +21,7 @@ import static com.google.cloud.resourcemanager.v3.TagHoldsClient.ListTagHoldsPag
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -230,6 +231,7 @@ public class TagHoldsStubSettings extends StubSettings<TagHoldsStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "cloudresourcemanager.googleapis.com:443";
   }

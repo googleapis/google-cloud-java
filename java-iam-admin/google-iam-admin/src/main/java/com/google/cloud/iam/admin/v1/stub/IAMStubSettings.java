@@ -23,6 +23,7 @@ import static com.google.cloud.iam.admin.v1.IAMClient.QueryTestablePermissionsPa
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -647,6 +648,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "iam.googleapis.com:443";
   }
