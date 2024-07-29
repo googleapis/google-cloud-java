@@ -55,7 +55,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   private static InstanceGroupManagersClient instanceGroupManagersClient;
   private static List<Instance> instances;
   private static final String DEFAULT_IMAGE =
-      "projects/debian-cloud/global/images/family/debian-10";
+      "projects/debian-cloud/global/images/family/debian-12";
   private static final AttachedDisk DISK =
       AttachedDisk.newBuilder()
           .setBoot(true)
