@@ -25,23 +25,15 @@ import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
-import com.google.common.base.Joiner;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -107,8 +99,6 @@ public class TestEnvRule implements TestRule {
         .that(System.getenv())
         .doesNotContainKey(BIGTABLE_EMULATOR_HOST_ENV_VAR);
 
-    configureLogging(description);
-
     switch (env) {
       case "emulator":
         testEnv = EmulatorEnv.createBundled();
@@ -123,33 +113,6 @@ public class TestEnvRule implements TestRule {
                 env, ENV_PROPERTY));
     }
     testEnv.start();
-  }
-
-  private void configureLogging(Description description) throws IOException {
-    if (!BIGTABLE_ENABLE_VERBOSE_GRPC_LOGS) {
-      return;
-    }
-    Preconditions.checkState(
-        !Strings.isNullOrEmpty(BIGTABLE_GRPC_LOG_DIR),
-        "The property "
-            + BIGTABLE_GRPC_LOG_DIR
-            + " must be set when verbose grpc logs are enabled");
-
-    Files.createDirectories(Paths.get(BIGTABLE_GRPC_LOG_DIR));
-
-    String basename =
-        Joiner.on("-").useForNull("").join(description.getClassName(), description.getMethodName());
-    Path logPath = Paths.get(BIGTABLE_GRPC_LOG_DIR, basename + ".log");
-
-    grpcLogHandler = new FileHandler(logPath.toString());
-    grpcLogHandler.setFormatter(new SimpleFormatter());
-    grpcLogHandler.setLevel(Level.ALL);
-
-    for (String grpcLoggerName : GRPC_LOGGER_NAMES) {
-      Logger logger = Logger.getLogger(grpcLoggerName);
-      logger.setLevel(Level.ALL);
-      logger.addHandler(grpcLogHandler);
-    }
   }
 
   private void after() {

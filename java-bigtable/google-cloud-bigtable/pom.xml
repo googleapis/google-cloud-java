@@ -25,7 +25,12 @@
     <skipTests>false</skipTests>
     <skipUnitTests>${skipTests}</skipUnitTests>
     <skipITs>${skipTests}</skipITs>
-
+    <!-- Configure test logging output. By default tests print info logs to stdout/err.
+     However for kokoro runs to enable better debugging of connection failures,
+     the `enable-verbose-grpc-logs` profile is enabled.
+     It will enable verbose logs and redirect output to a test specific file in the integration tests report directory.
+     These propeties should only be set by the `enable-verbose-grpc-logs` profile -->
+    <java-log-config>src/test/resources/logging.properties</java-log-config>
     <!-- Use client defined default endpoints -->
     <!-- Can be overriden on the commandline via `-Dbigtable.cfe-data-endpoint=bigtableadmin.googleapis.com:443` -->
     <bigtable.cfe-data-endpoint/>
@@ -335,13 +340,10 @@
 
   <profiles>
     <profile>
-      <!-- Enable per-test verbose grpc logs
-      However, parallel test execution must be disabled to allow TestEnvRule to add/remove the
-      appender -->
       <id>enable-verbose-grpc-logs</id>
       <properties>
         <bigtable.enable-grpc-logs>true</bigtable.enable-grpc-logs>
-        <!-- NOTE: bigtable.grpc-log-dir is configured separately for each execution -->
+        <java-log-config>src/test/resources/logging-verbose.properties</java-log-config>
       </properties>
       <build>
         <plugins>
@@ -351,6 +353,7 @@
             <configuration>
               <forkCount>1</forkCount>
               <parallel>none</parallel>
+              <redirectTestOutputToFile>true</redirectTestOutputToFile>
             </configuration>
           </plugin>
         </plugins>
@@ -495,7 +498,6 @@
                 </goals>
                 <configuration>
                   <skip>false</skip>
-
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
@@ -730,6 +732,9 @@
 
           <!-- print full stacktraces by default -->
           <trimStackTrace>false</trimStackTrace>
+          <systemPropertyVariables>
+            <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
+          </systemPropertyVariables>
         </configuration>
       </plugin>
 
