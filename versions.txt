@@ -800,3 +800,6 @@ grpc-google-shopping-merchant-products-v1beta:0.2.0:0.3.0-SNAPSHOT
 google-cloud-gdchardwaremanagement:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-gdchardwaremanagement-v1alpha:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-gdchardwaremanagement-v1alpha:0.1.0:0.2.0-SNAPSHOT
+google-cloud-privilegedaccessmanager:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
