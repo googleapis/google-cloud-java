@@ -23,7 +23,6 @@ import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.RollbackTargetConfig;
 import com.google.cloud.deploy.v1.RollbackTargetRequest;
 import com.google.cloud.deploy.v1.RollbackTargetResponse;
-import java.util.ArrayList;
 
 public class AsyncRollbackTarget {
 
@@ -49,7 +48,6 @@ public class AsyncRollbackTarget {
               .setRolloutToRollBack("rolloutToRollBack-1195544784")
               .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
               .setValidateOnly(true)
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<RollbackTargetResponse> future =
           cloudDeployClient.rollbackTargetCallable().futureCall(request);

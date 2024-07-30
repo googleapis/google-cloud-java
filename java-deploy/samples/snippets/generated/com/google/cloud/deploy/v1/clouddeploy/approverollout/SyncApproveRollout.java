@@ -21,7 +21,6 @@ import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RolloutName;
-import java.util.ArrayList;
 
 public class SyncApproveRollout {
 
@@ -47,7 +46,6 @@ public class SyncApproveRollout {
                           "[ROLLOUT]")
                       .toString())
               .setApproved(true)
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApproveRolloutResponse response = cloudDeployClient.approveRollout(request);
     }

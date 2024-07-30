@@ -1129,6 +1129,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> createConnection(LocationName parent, Connection connection)
+ *           <li><p> createConnection(OrganizationLocationName parent, Connection connection)
  *           <li><p> createConnection(String parent, Connection connection)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -1158,7 +1159,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListConnections</td>
- *      <td><p> Lists Connections in a parent.</td>
+ *      <td><p> Lists Connections in a parent. Use SearchConnections to see all connections within an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1167,6 +1168,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listConnections(LocationName parent)
+ *           <li><p> listConnections(OrganizationLocationName parent)
  *           <li><p> listConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -1187,6 +1189,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> searchConnections(LocationName parent)
+ *           <li><p> searchConnections(OrganizationLocationName parent)
  *           <li><p> searchConnections(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -2070,8 +2073,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   InspectTemplate response =
@@ -2157,8 +2160,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   UpdateInspectTemplateRequest request =
    *       UpdateInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -2191,8 +2194,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   UpdateInspectTemplateRequest request =
    *       UpdateInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .setInspectTemplate(InspectTemplate.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -2224,8 +2227,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   InspectTemplate response = dlpServiceClient.getInspectTemplate(name);
    * }
    * }</pre>
@@ -2293,8 +2296,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   GetInspectTemplateRequest request =
    *       GetInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   InspectTemplate response = dlpServiceClient.getInspectTemplate(request);
@@ -2325,8 +2328,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   GetInspectTemplateRequest request =
    *       GetInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<InspectTemplate> future =
@@ -2695,8 +2698,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   InspectTemplateName name =
-   *       InspectTemplateName.ofOrganizationInspectTemplateName(
-   *           "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+   *       InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
    *   dlpServiceClient.deleteInspectTemplate(name);
    * }
    * }</pre>
@@ -2764,8 +2767,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   DeleteInspectTemplateRequest request =
    *       DeleteInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   dlpServiceClient.deleteInspectTemplate(request);
@@ -2796,8 +2799,8 @@ public class DlpServiceClient implements BackgroundResource {
    *   DeleteInspectTemplateRequest request =
    *       DeleteInspectTemplateRequest.newBuilder()
    *           .setName(
-   *               InspectTemplateName.ofOrganizationInspectTemplateName(
-   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *               InspectTemplateName.ofProjectLocationInspectTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -9351,8 +9354,11 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent resource name in the format:
-   *     `projects/{project}/locations/{location}`.
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/PROJECT_ID/locations/LOCATION_ID` + Organizations scope:
+   *     `organizations/ORG_ID/locations/LOCATION_ID`
    * @param connection Required. The connection resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -9378,14 +9384,53 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   Connection connection = Connection.newBuilder().build();
    *   Connection response = dlpServiceClient.createConnection(parent, connection);
    * }
    * }</pre>
    *
-   * @param parent Required. Parent resource name in the format:
-   *     `projects/{project}/locations/{location}`.
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/PROJECT_ID/locations/LOCATION_ID` + Organizations scope:
+   *     `organizations/ORG_ID/locations/LOCATION_ID`
+   * @param connection Required. The connection resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Connection createConnection(OrganizationLocationName parent, Connection connection) {
+    CreateConnectionRequest request =
+        CreateConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConnection(connection)
+            .build();
+    return createConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Connection to an external data source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   Connection connection = Connection.newBuilder().build();
+   *   Connection response = dlpServiceClient.createConnection(parent, connection);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization):
+   *     <p>+ Projects scope: `projects/PROJECT_ID/locations/LOCATION_ID` + Organizations scope:
+   *     `organizations/ORG_ID/locations/LOCATION_ID`
    * @param connection Required. The connection resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -9410,7 +9455,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateConnectionRequest request =
    *       CreateConnectionRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setConnection(Connection.newBuilder().build())
    *           .build();
    *   Connection response = dlpServiceClient.createConnection(request);
@@ -9439,7 +9484,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   CreateConnectionRequest request =
    *       CreateConnectionRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setConnection(Connection.newBuilder().build())
    *           .build();
    *   ApiFuture<Connection> future =
@@ -9466,7 +9511,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   Connection response = dlpServiceClient.getConnection(name);
    * }
    * }</pre>
@@ -9494,7 +9540,10 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   String name =
+   *       ConnectionName.ofOrganizationLocationConnectionName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
    *   Connection response = dlpServiceClient.getConnection(name);
    * }
    * }</pre>
@@ -9523,7 +9572,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   GetConnectionRequest request =
    *       GetConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .build();
    *   Connection response = dlpServiceClient.getConnection(request);
    * }
@@ -9551,7 +9603,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   GetConnectionRequest request =
    *       GetConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Connection> future = dlpServiceClient.getConnectionCallable().futureCall(request);
    *   // Do something.
@@ -9565,7 +9620,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Connections in a parent.
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -9583,7 +9639,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent name, for example: `projects/project-id/locations/global`.
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConnectionsPagedResponse listConnections(LocationName parent) {
@@ -9596,7 +9653,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Connections in a parent.
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -9607,14 +9665,48 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (Connection element : dlpServiceClient.listConnections(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent Required. Parent name, for example: `projects/project-id/locations/global`.
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectionsPagedResponse listConnections(OrganizationLocationName parent) {
+    ListConnectionsRequest request =
+        ListConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (Connection element : dlpServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example,
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConnectionsPagedResponse listConnections(String parent) {
@@ -9624,7 +9716,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Connections in a parent.
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -9637,7 +9730,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9657,7 +9750,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Connections in a parent.
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -9670,7 +9764,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9691,7 +9785,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Connections in a parent.
+   * Lists Connections in a parent. Use SearchConnections to see all connections within an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -9704,7 +9799,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9749,8 +9844,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent name, typically an organization, without location. For example:
-   *     `organizations/12345678`.
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchConnectionsPagedResponse searchConnections(LocationName parent) {
@@ -9774,15 +9869,47 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent Required. Parent name, typically an organization, without location. For example:
-   *     `organizations/12345678`.
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchConnectionsPagedResponse searchConnections(OrganizationLocationName parent) {
+    SearchConnectionsRequest request =
+        SearchConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return searchConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Connections in a parent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project with a wildcard location,
+   *     for example, `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchConnectionsPagedResponse searchConnections(String parent) {
@@ -9806,7 +9933,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   SearchConnectionsRequest request =
    *       SearchConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9839,7 +9966,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   SearchConnectionsRequest request =
    *       SearchConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9873,7 +10000,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   SearchConnectionsRequest request =
    *       SearchConnectionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -9912,7 +10039,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   dlpServiceClient.deleteConnection(name);
    * }
    * }</pre>
@@ -9940,7 +10068,10 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   String name =
+   *       ConnectionName.ofOrganizationLocationConnectionName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
    *   dlpServiceClient.deleteConnection(name);
    * }
    * }</pre>
@@ -9969,7 +10100,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   DeleteConnectionRequest request =
    *       DeleteConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .build();
    *   dlpServiceClient.deleteConnection(request);
    * }
@@ -9997,7 +10131,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   DeleteConnectionRequest request =
    *       DeleteConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future = dlpServiceClient.deleteConnectionCallable().futureCall(request);
    *   // Do something.
@@ -10022,7 +10159,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   ConnectionName name =
+   *       ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   Connection response = dlpServiceClient.updateConnection(name);
    * }
    * }</pre>
@@ -10050,7 +10188,10 @@ public class DlpServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   String name =
+   *       ConnectionName.ofOrganizationLocationConnectionName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+   *           .toString();
    *   Connection response = dlpServiceClient.updateConnection(name);
    * }
    * }</pre>
@@ -10079,7 +10220,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   UpdateConnectionRequest request =
    *       UpdateConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .setConnection(Connection.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -10109,7 +10253,10 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   UpdateConnectionRequest request =
    *       UpdateConnectionRequest.newBuilder()
-   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setName(
+   *               ConnectionName.ofProjectLocationConnectionName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+   *                   .toString())
    *           .setConnection(Connection.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();

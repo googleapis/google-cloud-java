@@ -762,8 +762,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -774,8 +774,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
     InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -804,8 +804,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInspectTemplate(name, inspectTemplate, updateMask);
@@ -820,8 +820,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -874,8 +874,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -886,8 +886,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     InspectTemplate actualResponse = client.getInspectTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -910,8 +910,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.getInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -924,8 +924,8 @@ public class DlpServiceClientTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -1196,8 +1196,8 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     client.deleteInspectTemplate(name);
 
@@ -1220,8 +1220,8 @@ public class DlpServiceClientTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.deleteInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5816,7 +5816,10 @@ public class DlpServiceClientTest {
   public void createConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
@@ -5859,7 +5862,56 @@ public class DlpServiceClientTest {
   public void createConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    Connection connection = Connection.newBuilder().build();
+
+    Connection actualResponse = client.createConnection(parent, connection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectionRequest actualRequest = ((CreateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(connection, actualRequest.getConnection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      Connection connection = Connection.newBuilder().build();
+      client.createConnection(parent, connection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectionTest3() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
@@ -5884,7 +5936,7 @@ public class DlpServiceClientTest {
   }
 
   @Test
-  public void createConnectionExceptionTest2() throws Exception {
+  public void createConnectionExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDlpService.addException(exception);
 
@@ -5902,13 +5954,17 @@ public class DlpServiceClientTest {
   public void getConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     Connection actualResponse = client.getConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -5930,7 +5986,8 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.getConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5942,7 +5999,10 @@ public class DlpServiceClientTest {
   public void getConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
@@ -6032,6 +6092,50 @@ public class DlpServiceClientTest {
             .build();
     mockDlpService.addResponse(expectedResponse);
 
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectionsRequest actualRequest = ((ListConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    ListConnectionsResponse expectedResponse =
+        ListConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
@@ -6053,7 +6157,7 @@ public class DlpServiceClientTest {
   }
 
   @Test
-  public void listConnectionsExceptionTest2() throws Exception {
+  public void listConnectionsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDlpService.addException(exception);
 
@@ -6120,6 +6224,50 @@ public class DlpServiceClientTest {
             .build();
     mockDlpService.addResponse(expectedResponse);
 
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchConnectionsRequest actualRequest = ((SearchConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.searchConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    SearchConnectionsResponse expectedResponse =
+        SearchConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
@@ -6141,7 +6289,7 @@ public class DlpServiceClientTest {
   }
 
   @Test
-  public void searchConnectionsExceptionTest2() throws Exception {
+  public void searchConnectionsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDlpService.addException(exception);
 
@@ -6159,7 +6307,8 @@ public class DlpServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     client.deleteConnection(name);
 
@@ -6180,7 +6329,8 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.deleteConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6226,13 +6376,17 @@ public class DlpServiceClientTest {
   public void updateConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     Connection actualResponse = client.updateConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -6254,7 +6408,8 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.updateConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6266,7 +6421,10 @@ public class DlpServiceClientTest {
   public void updateConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();

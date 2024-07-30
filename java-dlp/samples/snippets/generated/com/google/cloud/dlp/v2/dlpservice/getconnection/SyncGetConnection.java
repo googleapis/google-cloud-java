@@ -37,7 +37,10 @@ public class SyncGetConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       GetConnectionRequest request =
           GetConnectionRequest.newBuilder()
-              .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+              .setName(
+                  ConnectionName.ofProjectLocationConnectionName(
+                          "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                      .toString())
               .build();
       Connection response = dlpServiceClient.getConnection(request);
     }

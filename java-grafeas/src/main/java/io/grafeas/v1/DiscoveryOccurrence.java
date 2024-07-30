@@ -2135,6 +2135,1344 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface VulnerabilityAttestationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     *
+     * @return Whether the lastAttemptTime field is set.
+     */
+    boolean hasLastAttemptTime();
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     *
+     * @return The lastAttemptTime.
+     */
+    com.google.protobuf.Timestamp getLastAttemptTime();
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLastAttemptTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The success/failure state of the latest attestation attempt.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * The success/failure state of the latest attestation attempt.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+     * </code>
+     *
+     * @return The state.
+     */
+    io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+        getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * If failure, the error reason for why the attestation generation failed.
+     * </pre>
+     *
+     * <code>string error = 3;</code>
+     *
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     *
+     *
+     * <pre>
+     * If failure, the error reason for why the attestation generation failed.
+     * </pre>
+     *
+     * <code>string error = 3;</code>
+     *
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString getErrorBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * Protobuf type {@code grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation}
+   */
+  public static final class VulnerabilityAttestation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
+      VulnerabilityAttestationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VulnerabilityAttestation.newBuilder() to construct.
+    private VulnerabilityAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VulnerabilityAttestation() {
+      state_ = 0;
+      error_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VulnerabilityAttestation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.Discovery
+          .internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grafeas.v1.Discovery
+          .internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.class,
+              io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An enum indicating the state of the attestation generation.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState}
+     */
+    public enum VulnerabilityAttestationState implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default unknown state.
+       * </pre>
+       *
+       * <code>VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED = 0;</code>
+       */
+      VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Attestation was successfully generated and stored.
+       * </pre>
+       *
+       * <code>SUCCESS = 1;</code>
+       */
+      SUCCESS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Attestation was unsuccessfully generated and stored.
+       * </pre>
+       *
+       * <code>FAILURE = 2;</code>
+       */
+      FAILURE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default unknown state.
+       * </pre>
+       *
+       * <code>VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Attestation was successfully generated and stored.
+       * </pre>
+       *
+       * <code>SUCCESS = 1;</code>
+       */
+      public static final int SUCCESS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Attestation was unsuccessfully generated and stored.
+       * </pre>
+       *
+       * <code>FAILURE = 2;</code>
+       */
+      public static final int FAILURE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static VulnerabilityAttestationState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static VulnerabilityAttestationState forNumber(int value) {
+        switch (value) {
+          case 0:
+            return VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED;
+          case 1:
+            return SUCCESS;
+          case 2:
+            return FAILURE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<VulnerabilityAttestationState>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<VulnerabilityAttestationState>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<VulnerabilityAttestationState>() {
+                public VulnerabilityAttestationState findValueByNumber(int number) {
+                  return VulnerabilityAttestationState.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final VulnerabilityAttestationState[] VALUES = values();
+
+      public static VulnerabilityAttestationState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private VulnerabilityAttestationState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState)
+    }
+
+    private int bitField0_;
+    public static final int LAST_ATTEMPT_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp lastAttemptTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     *
+     * @return Whether the lastAttemptTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastAttemptTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     *
+     * @return The lastAttemptTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLastAttemptTime() {
+      return lastAttemptTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastAttemptTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last time we attempted to generate an attestation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLastAttemptTimeOrBuilder() {
+      return lastAttemptTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastAttemptTime_;
+    }
+
+    public static final int STATE_FIELD_NUMBER = 2;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The success/failure state of the latest attestation attempt.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The success/failure state of the latest attestation attempt.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+        getState() {
+      io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+          result =
+              io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+                  .VulnerabilityAttestationState.forNumber(state_);
+      return result == null
+          ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If failure, the error reason for why the attestation generation failed.
+     * </pre>
+     *
+     * <code>string error = 3;</code>
+     *
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If failure, the error reason for why the attestation generation failed.
+     * </pre>
+     *
+     * <code>string error = 3;</code>
+     *
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getLastAttemptTime());
+      }
+      if (state_
+          != io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+              .VulnerabilityAttestationState.VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, error_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLastAttemptTime());
+      }
+      if (state_
+          != io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+              .VulnerabilityAttestationState.VULNERABILITY_ATTESTATION_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, error_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)) {
+        return super.equals(obj);
+      }
+      io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation other =
+          (io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation) obj;
+
+      if (hasLastAttemptTime() != other.hasLastAttemptTime()) return false;
+      if (hasLastAttemptTime()) {
+        if (!getLastAttemptTime().equals(other.getLastAttemptTime())) return false;
+      }
+      if (state_ != other.state_) return false;
+      if (!getError().equals(other.getError())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLastAttemptTime()) {
+        hash = (37 * hash) + LAST_ATTEMPT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastAttemptTime().hashCode();
+      }
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * Protobuf type {@code grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.class,
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder.class);
+      }
+
+      // Construct using io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getLastAttemptTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        lastAttemptTime_ = null;
+        if (lastAttemptTimeBuilder_ != null) {
+          lastAttemptTimeBuilder_.dispose();
+          lastAttemptTimeBuilder_ = null;
+        }
+        state_ = 0;
+        error_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+          getDefaultInstanceForType() {
+        return io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation build() {
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation buildPartial() {
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation result =
+            new io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lastAttemptTime_ =
+              lastAttemptTimeBuilder_ == null ? lastAttemptTime_ : lastAttemptTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.error_ = error_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation) {
+          return mergeFrom((io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation other) {
+        if (other
+            == io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance())
+          return this;
+        if (other.hasLastAttemptTime()) {
+          mergeLastAttemptTime(other.getLastAttemptTime());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getLastAttemptTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  error_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp lastAttemptTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          lastAttemptTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       *
+       * @return Whether the lastAttemptTime field is set.
+       */
+      public boolean hasLastAttemptTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       *
+       * @return The lastAttemptTime.
+       */
+      public com.google.protobuf.Timestamp getLastAttemptTime() {
+        if (lastAttemptTimeBuilder_ == null) {
+          return lastAttemptTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastAttemptTime_;
+        } else {
+          return lastAttemptTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public Builder setLastAttemptTime(com.google.protobuf.Timestamp value) {
+        if (lastAttemptTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastAttemptTime_ = value;
+        } else {
+          lastAttemptTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public Builder setLastAttemptTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (lastAttemptTimeBuilder_ == null) {
+          lastAttemptTime_ = builderForValue.build();
+        } else {
+          lastAttemptTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public Builder mergeLastAttemptTime(com.google.protobuf.Timestamp value) {
+        if (lastAttemptTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && lastAttemptTime_ != null
+              && lastAttemptTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastAttemptTimeBuilder().mergeFrom(value);
+          } else {
+            lastAttemptTime_ = value;
+          }
+        } else {
+          lastAttemptTimeBuilder_.mergeFrom(value);
+        }
+        if (lastAttemptTime_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public Builder clearLastAttemptTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lastAttemptTime_ = null;
+        if (lastAttemptTimeBuilder_ != null) {
+          lastAttemptTimeBuilder_.dispose();
+          lastAttemptTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLastAttemptTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getLastAttemptTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLastAttemptTimeOrBuilder() {
+        if (lastAttemptTimeBuilder_ != null) {
+          return lastAttemptTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return lastAttemptTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastAttemptTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The last time we attempted to generate an attestation.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp last_attempt_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLastAttemptTimeFieldBuilder() {
+        if (lastAttemptTimeBuilder_ == null) {
+          lastAttemptTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLastAttemptTime(), getParentForChildren(), isClean());
+          lastAttemptTime_ = null;
+        }
+        return lastAttemptTimeBuilder_;
+      }
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The success/failure state of the latest attestation attempt.
+       * </pre>
+       *
+       * <code>
+       * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The success/failure state of the latest attestation attempt.
+       * </pre>
+       *
+       * <code>
+       * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The success/failure state of the latest attestation attempt.
+       * </pre>
+       *
+       * <code>
+       * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+              .VulnerabilityAttestationState
+          getState() {
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+            result =
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+                    .VulnerabilityAttestationState.forNumber(state_);
+        return result == null
+            ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+                .VulnerabilityAttestationState.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The success/failure state of the latest attestation attempt.
+       * </pre>
+       *
+       * <code>
+       * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The success/failure state of the latest attestation attempt.
+       * </pre>
+       *
+       * <code>
+       * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.VulnerabilityAttestationState state = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * If failure, the error reason for why the attestation generation failed.
+       * </pre>
+       *
+       * <code>string error = 3;</code>
+       *
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If failure, the error reason for why the attestation generation failed.
+       * </pre>
+       *
+       * <code>string error = 3;</code>
+       *
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If failure, the error reason for why the attestation generation failed.
+       * </pre>
+       *
+       * <code>string error = 3;</code>
+       *
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If failure, the error reason for why the attestation generation failed.
+       * </pre>
+       *
+       * <code>string error = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If failure, the error reason for why the attestation generation failed.
+       * </pre>
+       *
+       * <code>string error = 3;</code>
+       *
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        error_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
+    }
+
+    // @@protoc_insertion_point(class_scope:grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation)
+    private static final io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation();
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VulnerabilityAttestation> PARSER =
+        new com.google.protobuf.AbstractParser<VulnerabilityAttestation>() {
+          @java.lang.Override
+          public VulnerabilityAttestation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VulnerabilityAttestation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VulnerabilityAttestation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
   private int continuousAnalysis_ = 0;
@@ -2570,6 +3908,60 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         : sbomStatus_;
   }
 
+  public static final int VULNERABILITY_ATTESTATION_FIELD_NUMBER = 10;
+  private io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerabilityAttestation_;
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   *
+   * @return Whether the vulnerabilityAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasVulnerabilityAttestation() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   *
+   * @return The vulnerabilityAttestation.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation getVulnerabilityAttestation() {
+    return vulnerabilityAttestation_ == null
+        ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance()
+        : vulnerabilityAttestation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder
+      getVulnerabilityAttestationOrBuilder() {
+    return vulnerabilityAttestation_ == null
+        ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance()
+        : vulnerabilityAttestation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2615,6 +4007,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(9, getSbomStatus());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(10, getVulnerabilityAttestation());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2655,6 +4050,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSbomStatus());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getVulnerabilityAttestation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2693,6 +4093,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasSbomStatus() != other.hasSbomStatus()) return false;
     if (hasSbomStatus()) {
       if (!getSbomStatus().equals(other.getSbomStatus())) return false;
+    }
+    if (hasVulnerabilityAttestation() != other.hasVulnerabilityAttestation()) return false;
+    if (hasVulnerabilityAttestation()) {
+      if (!getVulnerabilityAttestation().equals(other.getVulnerabilityAttestation())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2734,6 +4138,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasSbomStatus()) {
       hash = (37 * hash) + SBOM_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getSbomStatus().hashCode();
+    }
+    if (hasVulnerabilityAttestation()) {
+      hash = (37 * hash) + VULNERABILITY_ATTESTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getVulnerabilityAttestation().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2879,6 +4287,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         getLastScanTimeFieldBuilder();
         getArchiveTimeFieldBuilder();
         getSbomStatusFieldBuilder();
+        getVulnerabilityAttestationFieldBuilder();
       }
     }
 
@@ -2920,6 +4329,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (sbomStatusBuilder_ != null) {
         sbomStatusBuilder_.dispose();
         sbomStatusBuilder_ = null;
+      }
+      vulnerabilityAttestation_ = null;
+      if (vulnerabilityAttestationBuilder_ != null) {
+        vulnerabilityAttestationBuilder_.dispose();
+        vulnerabilityAttestationBuilder_ = null;
       }
       return this;
     }
@@ -3005,6 +4419,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.sbomStatus_ = sbomStatusBuilder_ == null ? sbomStatus_ : sbomStatusBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.vulnerabilityAttestation_ =
+            vulnerabilityAttestationBuilder_ == null
+                ? vulnerabilityAttestation_
+                : vulnerabilityAttestationBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3107,6 +4528,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (other.hasSbomStatus()) {
         mergeSbomStatus(other.getSbomStatus());
       }
+      if (other.hasVulnerabilityAttestation()) {
+        mergeVulnerabilityAttestation(other.getVulnerabilityAttestation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3195,6 +4619,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getVulnerabilityAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4759,6 +6190,217 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         sbomStatus_ = null;
       }
       return sbomStatusBuilder_;
+    }
+
+    private io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerabilityAttestation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation,
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder>
+        vulnerabilityAttestationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     *
+     * @return Whether the vulnerabilityAttestation field is set.
+     */
+    public boolean hasVulnerabilityAttestation() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     *
+     * @return The vulnerabilityAttestation.
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+        getVulnerabilityAttestation() {
+      if (vulnerabilityAttestationBuilder_ == null) {
+        return vulnerabilityAttestation_ == null
+            ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance()
+            : vulnerabilityAttestation_;
+      } else {
+        return vulnerabilityAttestationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public Builder setVulnerabilityAttestation(
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation value) {
+      if (vulnerabilityAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vulnerabilityAttestation_ = value;
+      } else {
+        vulnerabilityAttestationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public Builder setVulnerabilityAttestation(
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder builderForValue) {
+      if (vulnerabilityAttestationBuilder_ == null) {
+        vulnerabilityAttestation_ = builderForValue.build();
+      } else {
+        vulnerabilityAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public Builder mergeVulnerabilityAttestation(
+        io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation value) {
+      if (vulnerabilityAttestationBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && vulnerabilityAttestation_ != null
+            && vulnerabilityAttestation_
+                != io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation
+                    .getDefaultInstance()) {
+          getVulnerabilityAttestationBuilder().mergeFrom(value);
+        } else {
+          vulnerabilityAttestation_ = value;
+        }
+      } else {
+        vulnerabilityAttestationBuilder_.mergeFrom(value);
+      }
+      if (vulnerabilityAttestation_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public Builder clearVulnerabilityAttestation() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      vulnerabilityAttestation_ = null;
+      if (vulnerabilityAttestationBuilder_ != null) {
+        vulnerabilityAttestationBuilder_.dispose();
+        vulnerabilityAttestationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder
+        getVulnerabilityAttestationBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getVulnerabilityAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder
+        getVulnerabilityAttestationOrBuilder() {
+      if (vulnerabilityAttestationBuilder_ != null) {
+        return vulnerabilityAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        return vulnerabilityAttestation_ == null
+            ? io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.getDefaultInstance()
+            : vulnerabilityAttestation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of an vulnerability attestation generation.
+     * </pre>
+     *
+     * <code>
+     * .grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation,
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder>
+        getVulnerabilityAttestationFieldBuilder() {
+      if (vulnerabilityAttestationBuilder_ == null) {
+        vulnerabilityAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation,
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation.Builder,
+                io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder>(
+                getVulnerabilityAttestation(), getParentForChildren(), isClean());
+        vulnerabilityAttestation_ = null;
+      }
+      return vulnerabilityAttestationBuilder_;
     }
 
     @java.lang.Override

@@ -45,6 +45,10 @@ public final class Discovery {
       internal_static_grafeas_v1_DiscoveryOccurrence_SBOMStatus_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_DiscoveryOccurrence_SBOMStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -59,7 +63,7 @@ public final class Discovery {
           + "e/protobuf/timestamp.proto\032\027google/rpc/s"
           + "tatus.proto\032\027grafeas/v1/common.proto\"<\n\r"
           + "DiscoveryNote\022+\n\ranalysis_kind\030\001 \001(\0162\024.g"
-          + "rafeas.v1.NoteKind\"\351\007\n\023DiscoveryOccurren"
+          + "rafeas.v1.NoteKind\"\374\n\n\023DiscoveryOccurren"
           + "ce\022O\n\023continuous_analysis\030\001 \001(\01622.grafea"
           + "s.v1.DiscoveryOccurrence.ContinuousAnaly"
           + "sis\022G\n\017analysis_status\030\002 \001(\0162..grafeas.v"
@@ -72,21 +76,31 @@ public final class Discovery {
           + "e\030\005 \001(\0132\032.google.protobuf.Timestamp\0225\n\014a"
           + "rchive_time\030\006 \001(\0132\032.google.protobuf.Time"
           + "stampB\003\340A\003\022?\n\013sbom_status\030\t \001(\0132*.grafea"
-          + "s.v1.DiscoveryOccurrence.SBOMStatus\032*\n\021A"
-          + "nalysisCompleted\022\025\n\ranalysis_type\030\001 \003(\t\032"
-          + "\251\001\n\nSBOMStatus\022H\n\nsbom_state\030\001 \001(\01624.gra"
-          + "feas.v1.DiscoveryOccurrence.SBOMStatus.S"
-          + "BOMState\022\r\n\005error\030\002 \001(\t\"B\n\tSBOMState\022\032\n\026"
-          + "SBOM_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n"
-          + "\010COMPLETE\020\002\"S\n\022ContinuousAnalysis\022#\n\037CON"
-          + "TINUOUS_ANALYSIS_UNSPECIFIED\020\000\022\n\n\006ACTIVE"
-          + "\020\001\022\014\n\010INACTIVE\020\002\"\243\001\n\016AnalysisStatus\022\037\n\033A"
-          + "NALYSIS_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020"
-          + "\001\022\014\n\010SCANNING\020\002\022\024\n\020FINISHED_SUCCESS\020\003\022\014\n"
-          + "\010COMPLETE\020\003\022\023\n\017FINISHED_FAILED\020\004\022\030\n\024FINI"
-          + "SHED_UNSUPPORTED\020\005\032\002\020\001BQ\n\rio.grafeas.v1P"
-          + "\001Z8google.golang.org/genproto/googleapis"
-          + "/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
+          + "s.v1.DiscoveryOccurrence.SBOMStatus\022[\n\031v"
+          + "ulnerability_attestation\030\n \001(\01328.grafeas"
+          + ".v1.DiscoveryOccurrence.VulnerabilityAtt"
+          + "estation\032*\n\021AnalysisCompleted\022\025\n\ranalysi"
+          + "s_type\030\001 \003(\t\032\251\001\n\nSBOMStatus\022H\n\nsbom_stat"
+          + "e\030\001 \001(\01624.grafeas.v1.DiscoveryOccurrence"
+          + ".SBOMStatus.SBOMState\022\r\n\005error\030\002 \001(\t\"B\n\t"
+          + "SBOMState\022\032\n\026SBOM_STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007PENDING\020\001\022\014\n\010COMPLETE\020\002\032\263\002\n\030Vulnerabili"
+          + "tyAttestation\0225\n\021last_attempt_time\030\001 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022e\n\005state\030\002 "
+          + "\001(\0162V.grafeas.v1.DiscoveryOccurrence.Vul"
+          + "nerabilityAttestation.VulnerabilityAttes"
+          + "tationState\022\r\n\005error\030\003 \001(\t\"j\n\035Vulnerabil"
+          + "ityAttestationState\022/\n+VULNERABILITY_ATT"
+          + "ESTATION_STATE_UNSPECIFIED\020\000\022\013\n\007SUCCESS\020"
+          + "\001\022\013\n\007FAILURE\020\002\"S\n\022ContinuousAnalysis\022#\n\037"
+          + "CONTINUOUS_ANALYSIS_UNSPECIFIED\020\000\022\n\n\006ACT"
+          + "IVE\020\001\022\014\n\010INACTIVE\020\002\"\243\001\n\016AnalysisStatus\022\037"
+          + "\n\033ANALYSIS_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDI"
+          + "NG\020\001\022\014\n\010SCANNING\020\002\022\024\n\020FINISHED_SUCCESS\020\003"
+          + "\022\014\n\010COMPLETE\020\003\022\023\n\017FINISHED_FAILED\020\004\022\030\n\024F"
+          + "INISHED_UNSUPPORTED\020\005\032\002\020\001BQ\n\rio.grafeas."
+          + "v1P\001Z8google.golang.org/genproto/googlea"
+          + "pis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,6 +133,7 @@ public final class Discovery {
               "LastScanTime",
               "ArchiveTime",
               "SbomStatus",
+              "VulnerabilityAttestation",
             });
     internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor =
         internal_static_grafeas_v1_DiscoveryOccurrence_descriptor.getNestedTypes().get(0);
@@ -135,6 +150,14 @@ public final class Discovery {
             internal_static_grafeas_v1_DiscoveryOccurrence_SBOMStatus_descriptor,
             new java.lang.String[] {
               "SbomState", "Error",
+            });
+    internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor =
+        internal_static_grafeas_v1_DiscoveryOccurrence_descriptor.getNestedTypes().get(2);
+    internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_DiscoveryOccurrence_VulnerabilityAttestation_descriptor,
+            new java.lang.String[] {
+              "LastAttemptTime", "State", "Error",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

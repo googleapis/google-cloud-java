@@ -35,8 +35,8 @@ public class SyncDeleteInspectTemplateInspecttemplatename {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       dlpServiceClient.deleteInspectTemplate(name);
     }
   }

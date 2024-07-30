@@ -17,7 +17,7 @@
               "methods": ["cancelDlpJob", "cancelDlpJobCallable"]
             },
             "CreateConnection": {
-              "methods": ["createConnection", "createConnection", "createConnection", "createConnectionCallable"]
+              "methods": ["createConnection", "createConnection", "createConnection", "createConnection", "createConnectionCallable"]
             },
             "CreateDeidentifyTemplate": {
               "methods": ["createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplateCallable"]
@@ -116,7 +116,7 @@
               "methods": ["listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfilesPagedCallable", "listColumnDataProfilesCallable"]
             },
             "ListConnections": {
-              "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
             },
             "ListDeidentifyTemplates": {
               "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
@@ -155,7 +155,7 @@
               "methods": ["reidentifyContent", "reidentifyContentCallable"]
             },
             "SearchConnections": {
-              "methods": ["searchConnections", "searchConnections", "searchConnections", "searchConnectionsPagedCallable", "searchConnectionsCallable"]
+              "methods": ["searchConnections", "searchConnections", "searchConnections", "searchConnections", "searchConnectionsPagedCallable", "searchConnectionsCallable"]
             },
             "UpdateConnection": {
               "methods": ["updateConnection", "updateConnection", "updateConnection", "updateConnectionCallable"]

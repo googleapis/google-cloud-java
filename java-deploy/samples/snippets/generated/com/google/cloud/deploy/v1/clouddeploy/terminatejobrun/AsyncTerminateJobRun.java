@@ -22,7 +22,6 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.JobRunName;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
-import java.util.ArrayList;
 
 public class AsyncTerminateJobRun {
 
@@ -48,7 +47,6 @@ public class AsyncTerminateJobRun {
                           "[ROLLOUT]",
                           "[JOB_RUN]")
                       .toString())
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<TerminateJobRunResponse> future =
           cloudDeployClient.terminateJobRunCallable().futureCall(request);

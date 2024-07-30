@@ -144,4 +144,31 @@ public interface DiscoveryGenerationCadenceOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder
       getInspectTemplateModifiedCadenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The enum numeric value on the wire for refreshFrequency.
+   */
+  int getRefreshFrequencyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The refreshFrequency.
+   */
+  com.google.privacy.dlp.v2.DataProfileUpdateFrequency getRefreshFrequency();
 }

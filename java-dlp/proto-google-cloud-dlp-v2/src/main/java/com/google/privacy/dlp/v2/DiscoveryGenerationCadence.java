@@ -41,7 +41,9 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     super(builder);
   }
 
-  private DiscoveryGenerationCadence() {}
+  private DiscoveryGenerationCadence() {
+    refreshFrequency_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -232,6 +234,45 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         : inspectTemplateModifiedCadence_;
   }
 
+  public static final int REFRESH_FREQUENCY_FIELD_NUMBER = 4;
+  private int refreshFrequency_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The enum numeric value on the wire for refreshFrequency.
+   */
+  @java.lang.Override
+  public int getRefreshFrequencyValue() {
+    return refreshFrequency_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The refreshFrequency.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileUpdateFrequency getRefreshFrequency() {
+    com.google.privacy.dlp.v2.DataProfileUpdateFrequency result =
+        com.google.privacy.dlp.v2.DataProfileUpdateFrequency.forNumber(refreshFrequency_);
+    return result == null
+        ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -255,6 +296,11 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getInspectTemplateModifiedCadence());
     }
+    if (refreshFrequency_
+        != com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UPDATE_FREQUENCY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, refreshFrequency_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -276,6 +322,11 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, getInspectTemplateModifiedCadence());
+    }
+    if (refreshFrequency_
+        != com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UPDATE_FREQUENCY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, refreshFrequency_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -307,6 +358,7 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       if (!getInspectTemplateModifiedCadence().equals(other.getInspectTemplateModifiedCadence()))
         return false;
     }
+    if (refreshFrequency_ != other.refreshFrequency_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -330,6 +382,8 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       hash = (37 * hash) + INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER;
       hash = (53 * hash) + getInspectTemplateModifiedCadence().hashCode();
     }
+    hash = (37 * hash) + REFRESH_FREQUENCY_FIELD_NUMBER;
+    hash = (53 * hash) + refreshFrequency_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,6 +552,7 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         inspectTemplateModifiedCadenceBuilder_.dispose();
         inspectTemplateModifiedCadenceBuilder_ = null;
       }
+      refreshFrequency_ = 0;
       return this;
     }
 
@@ -555,6 +610,9 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
                 ? inspectTemplateModifiedCadence_
                 : inspectTemplateModifiedCadenceBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.refreshFrequency_ = refreshFrequency_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -614,6 +672,9 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
       if (other.hasInspectTemplateModifiedCadence()) {
         mergeInspectTemplateModifiedCadence(other.getInspectTemplateModifiedCadence());
       }
+      if (other.refreshFrequency_ != 0) {
+        setRefreshFrequencyValue(other.getRefreshFrequencyValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -662,6 +723,12 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                refreshFrequency_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1300,6 +1367,103 @@ public final class DiscoveryGenerationCadence extends com.google.protobuf.Genera
         inspectTemplateModifiedCadence_ = null;
       }
       return inspectTemplateModifiedCadenceBuilder_;
+    }
+
+    private int refreshFrequency_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Frequency at which profiles should be updated, regardless of whether the
+     * underlying resource has changed. Defaults to never.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+     *
+     * @return The enum numeric value on the wire for refreshFrequency.
+     */
+    @java.lang.Override
+    public int getRefreshFrequencyValue() {
+      return refreshFrequency_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Frequency at which profiles should be updated, regardless of whether the
+     * underlying resource has changed. Defaults to never.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for refreshFrequency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshFrequencyValue(int value) {
+      refreshFrequency_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Frequency at which profiles should be updated, regardless of whether the
+     * underlying resource has changed. Defaults to never.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+     *
+     * @return The refreshFrequency.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileUpdateFrequency getRefreshFrequency() {
+      com.google.privacy.dlp.v2.DataProfileUpdateFrequency result =
+          com.google.privacy.dlp.v2.DataProfileUpdateFrequency.forNumber(refreshFrequency_);
+      return result == null
+          ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Frequency at which profiles should be updated, regardless of whether the
+     * underlying resource has changed. Defaults to never.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+     *
+     * @param value The refreshFrequency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshFrequency(com.google.privacy.dlp.v2.DataProfileUpdateFrequency value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      refreshFrequency_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Frequency at which profiles should be updated, regardless of whether the
+     * underlying resource has changed. Defaults to never.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRefreshFrequency() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      refreshFrequency_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

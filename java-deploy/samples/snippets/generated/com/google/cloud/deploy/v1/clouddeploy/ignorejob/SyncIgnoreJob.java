@@ -21,7 +21,6 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.RolloutName;
-import java.util.ArrayList;
 
 public class SyncIgnoreJob {
 
@@ -48,7 +47,6 @@ public class SyncIgnoreJob {
                       .toString())
               .setPhaseId("phaseId-608264202")
               .setJobId("jobId101296568")
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       IgnoreJobResponse response = cloudDeployClient.ignoreJob(request);
     }

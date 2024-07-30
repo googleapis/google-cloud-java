@@ -38,8 +38,8 @@ public class SyncGetInspectTemplate {
       GetInspectTemplateRequest request =
           GetInspectTemplateRequest.newBuilder()
               .setName(
-                  InspectTemplateName.ofOrganizationInspectTemplateName(
-                          "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                  InspectTemplateName.ofProjectLocationInspectTemplateName(
+                          "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                       .toString())
               .build();
       InspectTemplate response = dlpServiceClient.getInspectTemplate(request);

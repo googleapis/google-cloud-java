@@ -19,7 +19,7 @@ package com.google.cloud.dlp.v2.samples;
 // [START dlp_v2_generated_DlpService_CreateConnection_StringConnection_sync]
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Connection;
-import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
 public class SyncCreateConnectionStringConnection {
 
@@ -34,7 +34,7 @@ public class SyncCreateConnectionStringConnection {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+      String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
       Connection connection = Connection.newBuilder().build();
       Connection response = dlpServiceClient.createConnection(parent, connection);
     }

@@ -319,4 +319,43 @@ public interface DiscoveryOccurrenceOrBuilder
    * <code>.grafeas.v1.DiscoveryOccurrence.SBOMStatus sbom_status = 9;</code>
    */
   io.grafeas.v1.DiscoveryOccurrence.SBOMStatusOrBuilder getSbomStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   *
+   * @return Whether the vulnerabilityAttestation field is set.
+   */
+  boolean hasVulnerabilityAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   *
+   * @return The vulnerabilityAttestation.
+   */
+  io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation getVulnerabilityAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * The status of an vulnerability attestation generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestation vulnerability_attestation = 10;
+   * </code>
+   */
+  io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder
+      getVulnerabilityAttestationOrBuilder();
 }

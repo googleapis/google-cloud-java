@@ -20,7 +20,6 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
-import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -73,7 +72,6 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -81,16 +79,13 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
-import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -106,8 +101,6 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
-import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
-import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -129,7 +122,6 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -259,19 +251,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseOperationSettings;
   private final UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
       abandonReleaseSettings;
-  private final UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings;
-  private final OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      createDeployPolicyOperationSettings;
-  private final UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings;
-  private final OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      updateDeployPolicyOperationSettings;
-  private final UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings;
-  private final OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-      deleteDeployPolicyOperationSettings;
-  private final PagedCallSettings<
-          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
-      listDeployPoliciesSettings;
-  private final UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings;
   private final UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutSettings;
   private final UnaryCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
@@ -472,46 +451,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               return payload.getReleasesList() == null
                   ? ImmutableList.<Release>of()
                   : payload.getReleasesList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>
-      LIST_DEPLOY_POLICIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDeployPoliciesRequest injectToken(
-                ListDeployPoliciesRequest payload, String token) {
-              return ListDeployPoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDeployPoliciesRequest injectPageSize(
-                ListDeployPoliciesRequest payload, int pageSize) {
-              return ListDeployPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDeployPoliciesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDeployPoliciesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DeployPolicy> extractResources(ListDeployPoliciesResponse payload) {
-              return payload.getDeployPoliciesList() == null
-                  ? ImmutableList.<DeployPolicy>of()
-                  : payload.getDeployPoliciesList();
             }
           };
 
@@ -785,27 +724,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           };
 
   private static final PagedListResponseFactory<
-          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
-      LIST_DEPLOY_POLICIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDeployPoliciesRequest,
-              ListDeployPoliciesResponse,
-              ListDeployPoliciesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDeployPoliciesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse> callable,
-                ListDeployPoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDeployPoliciesResponse> futureResponse) {
-              PageContext<ListDeployPoliciesRequest, ListDeployPoliciesResponse, DeployPolicy>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_DEPLOY_POLICIES_PAGE_STR_DESC, request, context);
-              return ListDeployPoliciesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
       LIST_ROLLOUTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1070,51 +988,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   /** Returns the object with the settings used for calls to abandonRelease. */
   public UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseSettings() {
     return abandonReleaseSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createDeployPolicy. */
-  public UnaryCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicySettings() {
-    return createDeployPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to createDeployPolicy. */
-  public OperationCallSettings<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      createDeployPolicyOperationSettings() {
-    return createDeployPolicyOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateDeployPolicy. */
-  public UnaryCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicySettings() {
-    return updateDeployPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateDeployPolicy. */
-  public OperationCallSettings<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      updateDeployPolicyOperationSettings() {
-    return updateDeployPolicyOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
-  public UnaryCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicySettings() {
-    return deleteDeployPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeployPolicy. */
-  public OperationCallSettings<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-      deleteDeployPolicyOperationSettings() {
-    return deleteDeployPolicyOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listDeployPolicies. */
-  public PagedCallSettings<
-          ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
-      listDeployPoliciesSettings() {
-    return listDeployPoliciesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getDeployPolicy. */
-  public UnaryCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicySettings() {
-    return getDeployPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to approveRollout. */
@@ -1423,17 +1296,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     createReleaseSettings = settingsBuilder.createReleaseSettings().build();
     createReleaseOperationSettings = settingsBuilder.createReleaseOperationSettings().build();
     abandonReleaseSettings = settingsBuilder.abandonReleaseSettings().build();
-    createDeployPolicySettings = settingsBuilder.createDeployPolicySettings().build();
-    createDeployPolicyOperationSettings =
-        settingsBuilder.createDeployPolicyOperationSettings().build();
-    updateDeployPolicySettings = settingsBuilder.updateDeployPolicySettings().build();
-    updateDeployPolicyOperationSettings =
-        settingsBuilder.updateDeployPolicyOperationSettings().build();
-    deleteDeployPolicySettings = settingsBuilder.deleteDeployPolicySettings().build();
-    deleteDeployPolicyOperationSettings =
-        settingsBuilder.deleteDeployPolicyOperationSettings().build();
-    listDeployPoliciesSettings = settingsBuilder.listDeployPoliciesSettings().build();
-    getDeployPolicySettings = settingsBuilder.getDeployPolicySettings().build();
     approveRolloutSettings = settingsBuilder.approveRolloutSettings().build();
     advanceRolloutSettings = settingsBuilder.advanceRolloutSettings().build();
     cancelRolloutSettings = settingsBuilder.cancelRolloutSettings().build();
@@ -1536,25 +1398,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
         createReleaseOperationSettings;
     private final UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseSettings;
-    private final UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
-        createDeployPolicySettings;
-    private final OperationCallSettings.Builder<
-            CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-        createDeployPolicyOperationSettings;
-    private final UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
-        updateDeployPolicySettings;
-    private final OperationCallSettings.Builder<
-            UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-        updateDeployPolicyOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
-        deleteDeployPolicySettings;
-    private final OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-        deleteDeployPolicyOperationSettings;
-    private final PagedCallSettings.Builder<
-            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
-        listDeployPoliciesSettings;
-    private final UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
-        getDeployPolicySettings;
     private final UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings;
     private final UnaryCallSettings.Builder<AdvanceRolloutRequest, AdvanceRolloutResponse>
@@ -1693,14 +1536,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReleaseOperationSettings = OperationCallSettings.newBuilder();
       abandonReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
-      updateDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
-      deleteDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteDeployPolicyOperationSettings = OperationCallSettings.newBuilder();
-      listDeployPoliciesSettings = PagedCallSettings.newBuilder(LIST_DEPLOY_POLICIES_PAGE_STR_FACT);
-      getDeployPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       approveRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       advanceRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1753,11 +1588,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getReleaseSettings,
               createReleaseSettings,
               abandonReleaseSettings,
-              createDeployPolicySettings,
-              updateDeployPolicySettings,
-              deleteDeployPolicySettings,
-              listDeployPoliciesSettings,
-              getDeployPolicySettings,
               approveRolloutSettings,
               advanceRolloutSettings,
               cancelRolloutSettings,
@@ -1825,17 +1655,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseSettings = settings.createReleaseSettings.toBuilder();
       createReleaseOperationSettings = settings.createReleaseOperationSettings.toBuilder();
       abandonReleaseSettings = settings.abandonReleaseSettings.toBuilder();
-      createDeployPolicySettings = settings.createDeployPolicySettings.toBuilder();
-      createDeployPolicyOperationSettings =
-          settings.createDeployPolicyOperationSettings.toBuilder();
-      updateDeployPolicySettings = settings.updateDeployPolicySettings.toBuilder();
-      updateDeployPolicyOperationSettings =
-          settings.updateDeployPolicyOperationSettings.toBuilder();
-      deleteDeployPolicySettings = settings.deleteDeployPolicySettings.toBuilder();
-      deleteDeployPolicyOperationSettings =
-          settings.deleteDeployPolicyOperationSettings.toBuilder();
-      listDeployPoliciesSettings = settings.listDeployPoliciesSettings.toBuilder();
-      getDeployPolicySettings = settings.getDeployPolicySettings.toBuilder();
       approveRolloutSettings = settings.approveRolloutSettings.toBuilder();
       advanceRolloutSettings = settings.advanceRolloutSettings.toBuilder();
       cancelRolloutSettings = settings.cancelRolloutSettings.toBuilder();
@@ -1888,11 +1707,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getReleaseSettings,
               createReleaseSettings,
               abandonReleaseSettings,
-              createDeployPolicySettings,
-              updateDeployPolicySettings,
-              deleteDeployPolicySettings,
-              listDeployPoliciesSettings,
-              getDeployPolicySettings,
               approveRolloutSettings,
               advanceRolloutSettings,
               cancelRolloutSettings,
@@ -2044,31 +1858,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .abandonReleaseSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createDeployPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateDeployPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteDeployPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listDeployPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .getDeployPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .approveRolloutSettings()
@@ -2436,78 +2225,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
                       .build()));
 
       builder
-          .createDeployPolicyOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(DeployPolicy.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .updateDeployPolicyOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(DeployPolicy.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
-          .deleteDeployPolicyOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteDeployPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
           .createRolloutOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2805,55 +2522,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     public UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseSettings() {
       return abandonReleaseSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createDeployPolicy. */
-    public UnaryCallSettings.Builder<CreateDeployPolicyRequest, Operation>
-        createDeployPolicySettings() {
-      return createDeployPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createDeployPolicy. */
-    public OperationCallSettings.Builder<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-        createDeployPolicyOperationSettings() {
-      return createDeployPolicyOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
-    public UnaryCallSettings.Builder<UpdateDeployPolicyRequest, Operation>
-        updateDeployPolicySettings() {
-      return updateDeployPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateDeployPolicy. */
-    public OperationCallSettings.Builder<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-        updateDeployPolicyOperationSettings() {
-      return updateDeployPolicyOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
-    public UnaryCallSettings.Builder<DeleteDeployPolicyRequest, Operation>
-        deleteDeployPolicySettings() {
-      return deleteDeployPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeployPolicy. */
-    public OperationCallSettings.Builder<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-        deleteDeployPolicyOperationSettings() {
-      return deleteDeployPolicyOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listDeployPolicies. */
-    public PagedCallSettings.Builder<
-            ListDeployPoliciesRequest, ListDeployPoliciesResponse, ListDeployPoliciesPagedResponse>
-        listDeployPoliciesSettings() {
-      return listDeployPoliciesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getDeployPolicy. */
-    public UnaryCallSettings.Builder<GetDeployPolicyRequest, DeployPolicy>
-        getDeployPolicySettings() {
-      return getDeployPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to approveRollout. */

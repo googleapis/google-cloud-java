@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.cloud.deploy.v1.samples;
+package com.google.cloud.dlp.v2.samples;
 
-// [START clouddeploy_v1_generated_CloudDeploy_ListDeployPolicies_Locationname_sync]
-import com.google.cloud.deploy.v1.CloudDeployClient;
-import com.google.cloud.deploy.v1.DeployPolicy;
-import com.google.cloud.deploy.v1.LocationName;
+// [START dlp_v2_generated_DlpService_SearchConnections_Organizationlocationname_sync]
+import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
-public class SyncListDeployPoliciesLocationname {
+public class SyncSearchConnectionsOrganizationlocationname {
 
   public static void main(String[] args) throws Exception {
-    syncListDeployPoliciesLocationname();
+    syncSearchConnectionsOrganizationlocationname();
   }
 
-  public static void syncListDeployPoliciesLocationname() throws Exception {
+  public static void syncSearchConnectionsOrganizationlocationname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      for (DeployPolicy element : cloudDeployClient.listDeployPolicies(parent).iterateAll()) {
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      for (Connection element : dlpServiceClient.searchConnections(parent).iterateAll()) {
         // doThingsWith(element);
       }
     }
   }
 }
-// [END clouddeploy_v1_generated_CloudDeploy_ListDeployPolicies_Locationname_sync]
+// [END dlp_v2_generated_DlpService_SearchConnections_Organizationlocationname_sync]

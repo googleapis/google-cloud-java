@@ -38,7 +38,10 @@ public class AsyncDeleteConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       DeleteConnectionRequest request =
           DeleteConnectionRequest.newBuilder()
-              .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+              .setName(
+                  ConnectionName.ofProjectLocationConnectionName(
+                          "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                      .toString())
               .build();
       ApiFuture<Empty> future = dlpServiceClient.deleteConnectionCallable().futureCall(request);
       // Do something.

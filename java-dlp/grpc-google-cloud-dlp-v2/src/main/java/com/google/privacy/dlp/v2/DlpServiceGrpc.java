@@ -3495,7 +3495,8 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists Connections in a parent.
+     * Lists Connections in a parent. Use SearchConnections to see all connections
+     * within an organization.
      * </pre>
      */
     default void listConnections(
@@ -4568,7 +4569,8 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists Connections in a parent.
+     * Lists Connections in a parent. Use SearchConnections to see all connections
+     * within an organization.
      * </pre>
      */
     public void listConnections(
@@ -5456,7 +5458,8 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists Connections in a parent.
+     * Lists Connections in a parent. Use SearchConnections to see all connections
+     * within an organization.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListConnectionsResponse listConnections(
@@ -6367,7 +6370,8 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists Connections in a parent.
+     * Lists Connections in a parent. Use SearchConnections to see all connections
+     * within an organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

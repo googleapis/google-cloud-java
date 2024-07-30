@@ -66,7 +66,7 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Cluster type. Each cluster corresponds to a set of file types.
-   * Over time new types may be added.
+   * Over time, new types may be added and files may move between clusters.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.FileClusterType.Cluster}

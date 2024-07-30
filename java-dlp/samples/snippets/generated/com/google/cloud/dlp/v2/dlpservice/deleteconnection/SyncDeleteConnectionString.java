@@ -34,7 +34,10 @@ public class SyncDeleteConnectionString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-      String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+      String name =
+          ConnectionName.ofOrganizationLocationConnectionName(
+                  "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+              .toString();
       dlpServiceClient.deleteConnection(name);
     }
   }

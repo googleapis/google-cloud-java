@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.CreateConnectionRequest;
-import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
 public class AsyncCreateConnection {
 
@@ -38,7 +38,7 @@ public class AsyncCreateConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       CreateConnectionRequest request =
           CreateConnectionRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
               .setConnection(Connection.newBuilder().build())
               .build();
       ApiFuture<Connection> future =

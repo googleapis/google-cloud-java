@@ -20,7 +20,6 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPag
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
-import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -51,7 +50,6 @@ import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
@@ -59,16 +57,13 @@ import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
-import com.google.cloud.deploy.v1.DeployPolicy;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -84,8 +79,6 @@ import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
 import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
-import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
-import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -107,7 +100,6 @@ import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
-import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -330,57 +322,6 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(AbandonReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AbandonReleaseResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateDeployPolicyRequest, Operation>
-      createDeployPolicyMethodDescriptor =
-          MethodDescriptor.<CreateDeployPolicyRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateDeployPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateDeployPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateDeployPolicyRequest, Operation>
-      updateDeployPolicyMethodDescriptor =
-          MethodDescriptor.<UpdateDeployPolicyRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateDeployPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateDeployPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteDeployPolicyRequest, Operation>
-      deleteDeployPolicyMethodDescriptor =
-          MethodDescriptor.<DeleteDeployPolicyRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteDeployPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDeployPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
-      listDeployPoliciesMethodDescriptor =
-          MethodDescriptor.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListDeployPolicies")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListDeployPoliciesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListDeployPoliciesResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetDeployPolicyRequest, DeployPolicy>
-      getDeployPolicyMethodDescriptor =
-          MethodDescriptor.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetDeployPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetDeployPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(DeployPolicy.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ApproveRolloutRequest, ApproveRolloutResponse>
@@ -690,20 +631,6 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
-  private final UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable;
-  private final OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      createDeployPolicyOperationCallable;
-  private final UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable;
-  private final OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      updateDeployPolicyOperationCallable;
-  private final UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable;
-  private final OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-      deleteDeployPolicyOperationCallable;
-  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
-      listDeployPoliciesCallable;
-  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
-      listDeployPoliciesPagedCallable;
-  private final UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
   private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
@@ -1013,58 +940,6 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       return builder.build();
                     })
                 .build();
-    GrpcCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicyTransportSettings =
-        GrpcCallSettings.<CreateDeployPolicyRequest, Operation>newBuilder()
-            .setMethodDescriptor(createDeployPolicyMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicyTransportSettings =
-        GrpcCallSettings.<UpdateDeployPolicyRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateDeployPolicyMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add(
-                      "deploy_policy.name", String.valueOf(request.getDeployPolicy().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyTransportSettings =
-        GrpcCallSettings.<DeleteDeployPolicyRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteDeployPolicyMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
-        listDeployPoliciesTransportSettings =
-            GrpcCallSettings.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
-                .setMethodDescriptor(listDeployPoliciesMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyTransportSettings =
-        GrpcCallSettings.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
-            .setMethodDescriptor(getDeployPolicyMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
     GrpcCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             GrpcCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -1479,52 +1354,6 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.abandonReleaseCallable =
         callableFactory.createUnaryCallable(
             abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
-    this.createDeployPolicyCallable =
-        callableFactory.createUnaryCallable(
-            createDeployPolicyTransportSettings,
-            settings.createDeployPolicySettings(),
-            clientContext);
-    this.createDeployPolicyOperationCallable =
-        callableFactory.createOperationCallable(
-            createDeployPolicyTransportSettings,
-            settings.createDeployPolicyOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.updateDeployPolicyCallable =
-        callableFactory.createUnaryCallable(
-            updateDeployPolicyTransportSettings,
-            settings.updateDeployPolicySettings(),
-            clientContext);
-    this.updateDeployPolicyOperationCallable =
-        callableFactory.createOperationCallable(
-            updateDeployPolicyTransportSettings,
-            settings.updateDeployPolicyOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.deleteDeployPolicyCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeployPolicyTransportSettings,
-            settings.deleteDeployPolicySettings(),
-            clientContext);
-    this.deleteDeployPolicyOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteDeployPolicyTransportSettings,
-            settings.deleteDeployPolicyOperationSettings(),
-            clientContext,
-            operationsStub);
-    this.listDeployPoliciesCallable =
-        callableFactory.createUnaryCallable(
-            listDeployPoliciesTransportSettings,
-            settings.listDeployPoliciesSettings(),
-            clientContext);
-    this.listDeployPoliciesPagedCallable =
-        callableFactory.createPagedCallable(
-            listDeployPoliciesTransportSettings,
-            settings.listDeployPoliciesSettings(),
-            clientContext);
-    this.getDeployPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getDeployPolicyTransportSettings, settings.getDeployPolicySettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -1838,56 +1667,6 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
     return abandonReleaseCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
-    return createDeployPolicyCallable;
-  }
-
-  @Override
-  public OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      createDeployPolicyOperationCallable() {
-    return createDeployPolicyOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
-    return updateDeployPolicyCallable;
-  }
-
-  @Override
-  public OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
-      updateDeployPolicyOperationCallable() {
-    return updateDeployPolicyOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
-    return deleteDeployPolicyCallable;
-  }
-
-  @Override
-  public OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
-      deleteDeployPolicyOperationCallable() {
-    return deleteDeployPolicyOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
-      listDeployPoliciesCallable() {
-    return listDeployPoliciesCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
-      listDeployPoliciesPagedCallable() {
-    return listDeployPoliciesPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
-    return getDeployPolicyCallable;
   }
 
   @Override

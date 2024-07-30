@@ -838,65 +838,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int POLICY_VIOLATION_FIELD_NUMBER = 10;
-  private com.google.cloud.deploy.v1.PolicyViolation policyViolation_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Contains information about what policies prevented the
-   * `AutomationRun` to proceed.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the policyViolation field is set.
-   */
-  @java.lang.Override
-  public boolean hasPolicyViolation() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Contains information about what policies prevented the
-   * `AutomationRun` to proceed.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The policyViolation.
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.PolicyViolation getPolicyViolation() {
-    return policyViolation_ == null
-        ? com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()
-        : policyViolation_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Contains information about what policies prevented the
-   * `AutomationRun` to proceed.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.PolicyViolationOrBuilder getPolicyViolationOrBuilder() {
-    return policyViolation_ == null
-        ? com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()
-        : policyViolation_;
-  }
-
   public static final int EXPIRE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp expireTime_;
   /**
@@ -914,7 +855,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExpireTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -1243,7 +1184,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWaitUntilTime() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1326,9 +1267,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, stateDescription_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(10, getPolicyViolation());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(11, getExpireTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleId_)) {
@@ -1343,7 +1281,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(automationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, automationId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(16, getWaitUntilTime());
     }
     if (operationCase_ == 17) {
@@ -1386,9 +1324,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, stateDescription_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getPolicyViolation());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpireTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleId_)) {
@@ -1407,7 +1342,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(automationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, automationId_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getWaitUntilTime());
     }
     if (operationCase_ == 17) {
@@ -1448,10 +1383,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     if (!getTargetId().equals(other.getTargetId())) return false;
     if (state_ != other.state_) return false;
     if (!getStateDescription().equals(other.getStateDescription())) return false;
-    if (hasPolicyViolation() != other.hasPolicyViolation()) return false;
-    if (hasPolicyViolation()) {
-      if (!getPolicyViolation().equals(other.getPolicyViolation())) return false;
-    }
     if (hasExpireTime() != other.hasExpireTime()) return false;
     if (hasExpireTime()) {
       if (!getExpireTime().equals(other.getExpireTime())) return false;
@@ -1511,10 +1442,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + STATE_DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getStateDescription().hashCode();
-    if (hasPolicyViolation()) {
-      hash = (37 * hash) + POLICY_VIOLATION_FIELD_NUMBER;
-      hash = (53 * hash) + getPolicyViolation().hashCode();
-    }
     if (hasExpireTime()) {
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
@@ -1689,7 +1616,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getAutomationSnapshotFieldBuilder();
-        getPolicyViolationFieldBuilder();
         getExpireTimeFieldBuilder();
         getWaitUntilTimeFieldBuilder();
       }
@@ -1720,11 +1646,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       targetId_ = "";
       state_ = 0;
       stateDescription_ = "";
-      policyViolation_ = null;
-      if (policyViolationBuilder_ != null) {
-        policyViolationBuilder_.dispose();
-        policyViolationBuilder_ = null;
-      }
       expireTime_ = null;
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.dispose();
@@ -1820,24 +1741,19 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         result.stateDescription_ = stateDescription_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.policyViolation_ =
-            policyViolationBuilder_ == null ? policyViolation_ : policyViolationBuilder_.build();
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.ruleId_ = ruleId_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.automationId_ = automationId_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.waitUntilTime_ =
             waitUntilTimeBuilder_ == null ? waitUntilTime_ : waitUntilTimeBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1938,20 +1854,17 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
-      if (other.hasPolicyViolation()) {
-        mergePolicyViolation(other.getPolicyViolation());
-      }
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
       }
       if (!other.getRuleId().isEmpty()) {
         ruleId_ = other.ruleId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getAutomationId().isEmpty()) {
         automationId_ = other.automationId_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasWaitUntilTime()) {
@@ -2059,22 +1972,16 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
-            case 82:
-              {
-                input.readMessage(getPolicyViolationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 82
             case 90:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 ruleId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
@@ -2094,13 +2001,13 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 automationId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getWaitUntilTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
@@ -3432,220 +3339,6 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.deploy.v1.PolicyViolation policyViolation_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.deploy.v1.PolicyViolation,
-            com.google.cloud.deploy.v1.PolicyViolation.Builder,
-            com.google.cloud.deploy.v1.PolicyViolationOrBuilder>
-        policyViolationBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return Whether the policyViolation field is set.
-     */
-    public boolean hasPolicyViolation() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The policyViolation.
-     */
-    public com.google.cloud.deploy.v1.PolicyViolation getPolicyViolation() {
-      if (policyViolationBuilder_ == null) {
-        return policyViolation_ == null
-            ? com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()
-            : policyViolation_;
-      } else {
-        return policyViolationBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setPolicyViolation(com.google.cloud.deploy.v1.PolicyViolation value) {
-      if (policyViolationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        policyViolation_ = value;
-      } else {
-        policyViolationBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setPolicyViolation(
-        com.google.cloud.deploy.v1.PolicyViolation.Builder builderForValue) {
-      if (policyViolationBuilder_ == null) {
-        policyViolation_ = builderForValue.build();
-      } else {
-        policyViolationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder mergePolicyViolation(com.google.cloud.deploy.v1.PolicyViolation value) {
-      if (policyViolationBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
-            && policyViolation_ != null
-            && policyViolation_
-                != com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()) {
-          getPolicyViolationBuilder().mergeFrom(value);
-        } else {
-          policyViolation_ = value;
-        }
-      } else {
-        policyViolationBuilder_.mergeFrom(value);
-      }
-      if (policyViolation_ != null) {
-        bitField0_ |= 0x00000200;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearPolicyViolation() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      policyViolation_ = null;
-      if (policyViolationBuilder_ != null) {
-        policyViolationBuilder_.dispose();
-        policyViolationBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.PolicyViolation.Builder getPolicyViolationBuilder() {
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return getPolicyViolationFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.PolicyViolationOrBuilder getPolicyViolationOrBuilder() {
-      if (policyViolationBuilder_ != null) {
-        return policyViolationBuilder_.getMessageOrBuilder();
-      } else {
-        return policyViolation_ == null
-            ? com.google.cloud.deploy.v1.PolicyViolation.getDefaultInstance()
-            : policyViolation_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Contains information about what policies prevented the
-     * `AutomationRun` to proceed.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.PolicyViolation policy_violation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.deploy.v1.PolicyViolation,
-            com.google.cloud.deploy.v1.PolicyViolation.Builder,
-            com.google.cloud.deploy.v1.PolicyViolationOrBuilder>
-        getPolicyViolationFieldBuilder() {
-      if (policyViolationBuilder_ == null) {
-        policyViolationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.deploy.v1.PolicyViolation,
-                com.google.cloud.deploy.v1.PolicyViolation.Builder,
-                com.google.cloud.deploy.v1.PolicyViolationOrBuilder>(
-                getPolicyViolation(), getParentForChildren(), isClean());
-        policyViolation_ = null;
-      }
-      return policyViolationBuilder_;
-    }
-
     private com.google.protobuf.Timestamp expireTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3667,7 +3360,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3713,7 +3406,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3735,7 +3428,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3753,7 +3446,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && expireTime_ != null
             && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExpireTimeBuilder().mergeFrom(value);
@@ -3764,7 +3457,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         expireTimeBuilder_.mergeFrom(value);
       }
       if (expireTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3782,7 +3475,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       expireTime_ = null;
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.dispose();
@@ -3804,7 +3497,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3920,7 +3613,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ruleId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3937,7 +3630,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRuleId() {
       ruleId_ = getDefaultInstance().getRuleId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3959,7 +3652,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ruleId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4026,7 +3719,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       automationId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4043,7 +3736,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAutomationId() {
       automationId_ = getDefaultInstance().getAutomationId();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4065,7 +3758,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       automationId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4787,7 +4480,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the waitUntilTime field is set.
      */
     public boolean hasWaitUntilTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4833,7 +4526,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         waitUntilTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4855,7 +4548,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         waitUntilTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4873,7 +4566,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWaitUntilTime(com.google.protobuf.Timestamp value) {
       if (waitUntilTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && waitUntilTime_ != null
             && waitUntilTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getWaitUntilTimeBuilder().mergeFrom(value);
@@ -4884,7 +4577,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         waitUntilTimeBuilder_.mergeFrom(value);
       }
       if (waitUntilTime_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4902,7 +4595,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearWaitUntilTime() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       waitUntilTime_ = null;
       if (waitUntilTimeBuilder_ != null) {
         waitUntilTimeBuilder_.dispose();
@@ -4924,7 +4617,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getWaitUntilTimeBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getWaitUntilTimeFieldBuilder().getBuilder();
     }

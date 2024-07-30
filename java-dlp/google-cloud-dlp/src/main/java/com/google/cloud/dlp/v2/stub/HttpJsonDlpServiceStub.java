@@ -345,7 +345,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{parent=organizations/*}/inspectTemplates",
+                          "/v2/{parent=projects/*/locations/*}/inspectTemplates",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateInspectTemplateRequest> serializer =
@@ -356,7 +356,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{parent=organizations/*/locations/*}/inspectTemplates",
                           "/v2/{parent=projects/*}/inspectTemplates",
-                          "/v2/{parent=projects/*/locations/*}/inspectTemplates")
+                          "/v2/{parent=organizations/*}/inspectTemplates")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -386,7 +386,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateInspectTemplateRequest> serializer =
@@ -397,7 +397,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -427,7 +427,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetInspectTemplateRequest> serializer =
@@ -438,7 +438,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -467,7 +467,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInspectTemplatesRequest>newBuilder()
                       .setPath(
-                          "/v2/{parent=organizations/*}/inspectTemplates",
+                          "/v2/{parent=projects/*/locations/*}/inspectTemplates",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListInspectTemplatesRequest> serializer =
@@ -478,7 +478,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{parent=organizations/*/locations/*}/inspectTemplates",
                           "/v2/{parent=projects/*}/inspectTemplates",
-                          "/v2/{parent=projects/*/locations/*}/inspectTemplates")
+                          "/v2/{parent=organizations/*}/inspectTemplates")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -509,7 +509,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInspectTemplateRequest> serializer =
@@ -520,7 +520,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2060,6 +2060,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{parent=organizations/*/locations/*}/connections")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2097,6 +2098,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2131,6 +2133,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{parent=organizations/*/locations/*}/connections")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2207,6 +2210,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2241,6 +2245,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

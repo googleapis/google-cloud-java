@@ -21,7 +21,6 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.JobRunName;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
-import java.util.ArrayList;
 
 public class SyncTerminateJobRun {
 
@@ -47,7 +46,6 @@ public class SyncTerminateJobRun {
                           "[ROLLOUT]",
                           "[JOB_RUN]")
                       .toString())
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       TerminateJobRunResponse response = cloudDeployClient.terminateJobRun(request);
     }

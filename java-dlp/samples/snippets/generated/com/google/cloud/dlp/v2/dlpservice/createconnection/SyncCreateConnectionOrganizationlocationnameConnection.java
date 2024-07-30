@@ -14,33 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.cloud.deploy.v1.samples;
+package com.google.cloud.dlp.v2.samples;
 
-// [START clouddeploy_v1_generated_CloudDeploy_GetDeployPolicy_sync]
-import com.google.cloud.deploy.v1.CloudDeployClient;
-import com.google.cloud.deploy.v1.DeployPolicy;
-import com.google.cloud.deploy.v1.DeployPolicyName;
-import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
+// [START dlp_v2_generated_DlpService_CreateConnection_OrganizationlocationnameConnection_sync]
+import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
-public class SyncGetDeployPolicy {
+public class SyncCreateConnectionOrganizationlocationnameConnection {
 
   public static void main(String[] args) throws Exception {
-    syncGetDeployPolicy();
+    syncCreateConnectionOrganizationlocationnameConnection();
   }
 
-  public static void syncGetDeployPolicy() throws Exception {
+  public static void syncCreateConnectionOrganizationlocationnameConnection() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-      GetDeployPolicyRequest request =
-          GetDeployPolicyRequest.newBuilder()
-              .setName(DeployPolicyName.of("[PROJECT]", "[LOCATION]", "[DEPLOY_POLICY]").toString())
-              .build();
-      DeployPolicy response = cloudDeployClient.getDeployPolicy(request);
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      Connection connection = Connection.newBuilder().build();
+      Connection response = dlpServiceClient.createConnection(parent, connection);
     }
   }
 }
-// [END clouddeploy_v1_generated_CloudDeploy_GetDeployPolicy_sync]
+// [END dlp_v2_generated_DlpService_CreateConnection_OrganizationlocationnameConnection_sync]

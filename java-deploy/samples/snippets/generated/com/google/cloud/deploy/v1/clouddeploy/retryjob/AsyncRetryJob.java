@@ -22,7 +22,6 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.RolloutName;
-import java.util.ArrayList;
 
 public class AsyncRetryJob {
 
@@ -49,7 +48,6 @@ public class AsyncRetryJob {
                       .toString())
               .setPhaseId("phaseId-608264202")
               .setJobId("jobId101296568")
-              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<RetryJobResponse> future = cloudDeployClient.retryJobCallable().futureCall(request);
       // Do something.

@@ -22,7 +22,7 @@ import com.google.common.base.Strings;
 import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
 import com.google.privacy.dlp.v2.ListConnectionsResponse;
-import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
 public class AsyncListConnectionsPaged {
 
@@ -39,7 +39,7 @@ public class AsyncListConnectionsPaged {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       ListConnectionsRequest request =
           ListConnectionsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

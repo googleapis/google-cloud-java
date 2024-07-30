@@ -28,8 +28,9 @@ public interface SearchConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent name, typically an organization, without location.
-   * For example: `organizations/12345678`.
+   * Required. Resource name of the organization or project with a wildcard
+   * location, for example, `organizations/433245324/locations/-` or
+   * `projects/project-id/locations/-`.
    * </pre>
    *
    * <code>
@@ -43,8 +44,9 @@ public interface SearchConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent name, typically an organization, without location.
-   * For example: `organizations/12345678`.
+   * Required. Resource name of the organization or project with a wildcard
+   * location, for example, `organizations/433245324/locations/-` or
+   * `projects/project-id/locations/-`.
    * </pre>
    *
    * <code>

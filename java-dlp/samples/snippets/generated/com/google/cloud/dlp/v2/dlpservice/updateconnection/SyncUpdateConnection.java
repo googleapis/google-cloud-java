@@ -38,7 +38,10 @@ public class SyncUpdateConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       UpdateConnectionRequest request =
           UpdateConnectionRequest.newBuilder()
-              .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+              .setName(
+                  ConnectionName.ofProjectLocationConnectionName(
+                          "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                      .toString())
               .setConnection(Connection.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

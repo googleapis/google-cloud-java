@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
-import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.OrganizationLocationName;
 
 public class AsyncListConnections {
 
@@ -38,7 +38,7 @@ public class AsyncListConnections {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       ListConnectionsRequest request =
           ListConnectionsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

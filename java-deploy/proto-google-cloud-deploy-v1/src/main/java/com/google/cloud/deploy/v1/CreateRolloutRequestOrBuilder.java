@@ -187,69 +187,6 @@ public interface CreateRolloutRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   * </pre>
-   *
-   * <code>
-   * repeated string override_deploy_policy = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return A list containing the overrideDeployPolicy.
-   */
-  java.util.List<java.lang.String> getOverrideDeployPolicyList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   * </pre>
-   *
-   * <code>
-   * repeated string override_deploy_policy = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The count of overrideDeployPolicy.
-   */
-  int getOverrideDeployPolicyCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   * </pre>
-   *
-   * <code>
-   * repeated string override_deploy_policy = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @param index The index of the element to return.
-   * @return The overrideDeployPolicy at the given index.
-   */
-  java.lang.String getOverrideDeployPolicy(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   * </pre>
-   *
-   * <code>
-   * repeated string override_deploy_policy = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the overrideDeployPolicy at the given index.
-   */
-  com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index);
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
    * will start at the first phase.
    * </pre>

@@ -151,7 +151,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The ID of the folder within an organization to scan.
+   * The ID of the folder within an organization to be scanned.
    * </pre>
    *
    * <code>int64 folder_id = 2;</code>
@@ -166,7 +166,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The ID of the folder within an organization to scan.
+   * The ID of the folder within an organization to be scanned.
    * </pre>
    *
    * <code>int64 folder_id = 2;</code>
@@ -663,7 +663,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The ID of the folder within an organization to scan.
+     * The ID of the folder within an organization to be scanned.
      * </pre>
      *
      * <code>int64 folder_id = 2;</code>
@@ -677,7 +677,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The ID of the folder within an organization to scan.
+     * The ID of the folder within an organization to be scanned.
      * </pre>
      *
      * <code>int64 folder_id = 2;</code>
@@ -694,7 +694,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The ID of the folder within an organization to scan.
+     * The ID of the folder within an organization to be scanned.
      * </pre>
      *
      * <code>int64 folder_id = 2;</code>
@@ -713,7 +713,7 @@ public final class DiscoveryStartingLocation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The ID of the folder within an organization to scan.
+     * The ID of the folder within an organization to be scanned.
      * </pre>
      *
      * <code>int64 folder_id = 2;</code>

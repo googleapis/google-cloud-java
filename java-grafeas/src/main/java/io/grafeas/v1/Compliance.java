@@ -71,14 +71,15 @@ public final class Compliance {
           + "yB\021\n\017compliance_typeB\022\n\020potential_impact"
           + "\"Q\n\021ComplianceVersion\022\017\n\007cpe_uri\030\001 \001(\t\022\032"
           + "\n\022benchmark_document\030\003 \001(\t\022\017\n\007version\030\002 "
-          + "\001(\t\"p\n\024ComplianceOccurrence\0229\n\023non_compl"
-          + "iant_files\030\002 \003(\0132\034.grafeas.v1.NonComplia"
-          + "ntFile\022\035\n\025non_compliance_reason\030\003 \001(\t\"I\n"
-          + "\020NonCompliantFile\022\014\n\004path\030\001 \001(\t\022\027\n\017displ"
-          + "ay_command\030\002 \001(\t\022\016\n\006reason\030\003 \001(\tBQ\n\rio.g"
-          + "rafeas.v1P\001Z8google.golang.org/genproto/"
-          + "googleapis/grafeas/v1;grafeas\242\002\003GRAb\006pro"
-          + "to3"
+          + "\001(\t\"\240\001\n\024ComplianceOccurrence\0229\n\023non_comp"
+          + "liant_files\030\002 \003(\0132\034.grafeas.v1.NonCompli"
+          + "antFile\022\035\n\025non_compliance_reason\030\003 \001(\t\022."
+          + "\n\007version\030\004 \001(\0132\035.grafeas.v1.ComplianceV"
+          + "ersion\"I\n\020NonCompliantFile\022\014\n\004path\030\001 \001(\t"
+          + "\022\027\n\017display_command\030\002 \001(\t\022\016\n\006reason\030\003 \001("
+          + "\tBQ\n\rio.grafeas.v1P\001Z8google.golang.org/"
+          + "genproto/googleapis/grafeas/v1;grafeas\242\002"
+          + "\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -124,7 +125,7 @@ public final class Compliance {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ComplianceOccurrence_descriptor,
             new java.lang.String[] {
-              "NonCompliantFiles", "NonComplianceReason",
+              "NonCompliantFiles", "NonComplianceReason", "Version",
             });
     internal_static_grafeas_v1_NonCompliantFile_descriptor =
         getDescriptor().getMessageTypes().get(3);

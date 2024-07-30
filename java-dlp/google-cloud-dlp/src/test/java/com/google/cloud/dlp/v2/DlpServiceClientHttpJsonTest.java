@@ -693,7 +693,7 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "organizations/organization-8287";
+    String parent = "projects/project-5833/locations/location-5833";
     InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
 
     InspectTemplate actualResponse = client.createInspectTemplate(parent, inspectTemplate);
@@ -722,7 +722,7 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "organizations/organization-8287";
+      String parent = "projects/project-5833/locations/location-5833";
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       client.createInspectTemplate(parent, inspectTemplate);
       Assert.fail("No exception raised");
@@ -736,8 +736,8 @@ public class DlpServiceClientHttpJsonTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -748,8 +748,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
     InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -781,8 +781,8 @@ public class DlpServiceClientHttpJsonTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInspectTemplate(name, inspectTemplate, updateMask);
@@ -797,8 +797,8 @@ public class DlpServiceClientHttpJsonTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -808,7 +808,8 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+    String name =
+        "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
     InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -839,7 +840,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+      String name =
+          "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInspectTemplate(name, inspectTemplate, updateMask);
@@ -854,8 +856,8 @@ public class DlpServiceClientHttpJsonTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -866,8 +868,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     InspectTemplate actualResponse = client.getInspectTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -896,8 +898,8 @@ public class DlpServiceClientHttpJsonTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.getInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -910,8 +912,8 @@ public class DlpServiceClientHttpJsonTest {
     InspectTemplate expectedResponse =
         InspectTemplate.newBuilder()
             .setName(
-                InspectTemplateName.ofOrganizationInspectTemplateName(
-                        "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                InspectTemplateName.ofProjectLocationInspectTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -921,7 +923,8 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+    String name =
+        "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
 
     InspectTemplate actualResponse = client.getInspectTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -949,7 +952,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+      String name =
+          "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
       client.getInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1167,7 +1171,7 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "organizations/organization-8287";
+    String parent = "projects/project-5833/locations/location-5833";
 
     ListInspectTemplatesPagedResponse pagedListResponse = client.listInspectTemplates(parent);
 
@@ -1199,7 +1203,7 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "organizations/organization-8287";
+      String parent = "projects/project-5833/locations/location-5833";
       client.listInspectTemplates(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1213,8 +1217,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+        InspectTemplateName.ofProjectLocationInspectTemplateName(
+            "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
 
     client.deleteInspectTemplate(name);
 
@@ -1242,8 +1246,8 @@ public class DlpServiceClientHttpJsonTest {
 
     try {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       client.deleteInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1256,7 +1260,8 @@ public class DlpServiceClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+    String name =
+        "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
 
     client.deleteInspectTemplate(name);
 
@@ -1283,7 +1288,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name = "organizations/organization-353/inspectTemplates/inspectTemplate-353";
+      String name =
+          "projects/project-5579/locations/location-5579/inspectTemplates/inspectTemplate-5579";
       client.deleteInspectTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6355,7 +6361,10 @@ public class DlpServiceClientHttpJsonTest {
   public void createConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
@@ -6403,13 +6412,16 @@ public class DlpServiceClientHttpJsonTest {
   public void createConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
     Connection connection = Connection.newBuilder().build();
 
     Connection actualResponse = client.createConnection(parent, connection);
@@ -6438,6 +6450,57 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      Connection connection = Connection.newBuilder().build();
+      client.createConnection(parent, connection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectionTest3() throws Exception {
+    Connection expectedResponse =
+        Connection.newBuilder()
+            .setName(
+                ConnectionName.ofOrganizationLocationConnectionName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
+            .setState(ConnectionState.forNumber(0))
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Connection connection = Connection.newBuilder().build();
+
+    Connection actualResponse = client.createConnection(parent, connection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createConnectionExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String parent = "projects/project-5833/locations/location-5833";
       Connection connection = Connection.newBuilder().build();
       client.createConnection(parent, connection);
@@ -6451,13 +6514,17 @@ public class DlpServiceClientHttpJsonTest {
   public void getConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     Connection actualResponse = client.getConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -6485,7 +6552,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.getConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6497,7 +6565,10 @@ public class DlpServiceClientHttpJsonTest {
   public void getConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
@@ -6599,7 +6670,7 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
 
     ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
 
@@ -6625,6 +6696,56 @@ public class DlpServiceClientHttpJsonTest {
 
   @Test
   public void listConnectionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    ListConnectionsResponse expectedResponse =
+        ListConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listConnectionsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -6699,7 +6820,7 @@ public class DlpServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
 
     SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
 
@@ -6731,6 +6852,56 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.searchConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchConnectionsTest3() throws Exception {
+    Connection responsesElement = Connection.newBuilder().build();
+    SearchConnectionsResponse expectedResponse =
+        SearchConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConnections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    SearchConnectionsPagedResponse pagedListResponse = client.searchConnections(parent);
+
+    List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConnectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchConnectionsExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String parent = "projects/project-5833/locations/location-5833";
       client.searchConnections(parent);
       Assert.fail("No exception raised");
@@ -6744,7 +6915,8 @@ public class DlpServiceClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     client.deleteConnection(name);
 
@@ -6771,7 +6943,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.deleteConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6823,13 +6996,17 @@ public class DlpServiceClientHttpJsonTest {
   public void updateConnectionTest() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+    ConnectionName name =
+        ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
 
     Connection actualResponse = client.updateConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -6857,7 +7034,8 @@ public class DlpServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+      ConnectionName name =
+          ConnectionName.ofProjectLocationConnectionName("[PROJECT]", "[LOCATION]", "[CONNECTION]");
       client.updateConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -6869,7 +7047,10 @@ public class DlpServiceClientHttpJsonTest {
   public void updateConnectionTest2() throws Exception {
     Connection expectedResponse =
         Connection.newBuilder()
-            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setName(
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                    .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
             .build();

@@ -38,8 +38,8 @@ public class SyncDeleteInspectTemplate {
       DeleteInspectTemplateRequest request =
           DeleteInspectTemplateRequest.newBuilder()
               .setName(
-                  InspectTemplateName.ofOrganizationInspectTemplateName(
-                          "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                  InspectTemplateName.ofProjectLocationInspectTemplateName(
+                          "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                       .toString())
               .build();
       dlpServiceClient.deleteInspectTemplate(request);
