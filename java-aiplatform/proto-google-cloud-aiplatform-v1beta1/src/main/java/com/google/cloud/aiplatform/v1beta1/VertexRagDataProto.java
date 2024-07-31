@@ -89,46 +89,53 @@ public final class VertexRagDataProto {
           + "rotobuf.TimestampB\003\340A\003:\200\001\352A}\n#aiplatform"
           + ".googleapis.com/RagCorpus\022?projects/{pro"
           + "ject}/locations/{location}/ragCorpora/{r"
-          + "ag_corpus}*\nragCorpora2\tragCorpus\"\242\006\n\007Ra"
+          + "ag_corpus}*\nragCorpora2\tragCorpus\"\254\007\n\007Ra"
           + "gFile\022E\n\ngcs_source\030\010 \001(\0132*.google.cloud"
           + ".aiplatform.v1beta1.GcsSourceB\003\340A\003H\000\022V\n\023"
           + "google_drive_source\030\t \001(\01322.google.cloud"
           + ".aiplatform.v1beta1.GoogleDriveSourceB\003\340"
           + "A\003H\000\022X\n\024direct_upload_source\030\n \001(\01323.goo"
           + "gle.cloud.aiplatform.v1beta1.DirectUploa"
-          + "dSourceB\003\340A\003H\000\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014dis"
-          + "play_name\030\002 \001(\tB\003\340A\002\022\030\n\013description\030\003 \001("
-          + "\tB\003\340A\001\022\027\n\nsize_bytes\030\004 \001(\003B\003\340A\003\022P\n\rrag_f"
-          + "ile_type\030\005 \001(\01624.google.cloud.aiplatform"
-          + ".v1beta1.RagFile.RagFileTypeB\003\340A\003\0224\n\013cre"
-          + "ate_time\030\006 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\"Z\n\013RagFileType\022\035\n\031"
-          + "RAG_FILE_TYPE_UNSPECIFIED\020\000\022\025\n\021RAG_FILE_"
-          + "TYPE_TXT\020\001\022\025\n\021RAG_FILE_TYPE_PDF\020\002:\217\001\352A\213\001"
-          + "\n!aiplatform.googleapis.com/RagFile\022Spro"
-          + "jects/{project}/locations/{location}/rag"
-          + "Corpora/{rag_corpus}/ragFiles/{rag_file}"
-          + "*\010ragFiles2\007ragFileB\021\n\017rag_file_source\"B"
-          + "\n\025RagFileChunkingConfig\022\022\n\nchunk_size\030\001 "
-          + "\001(\005\022\025\n\rchunk_overlap\030\002 \001(\005\"o\n\023UploadRagF"
-          + "ileConfig\022X\n\030rag_file_chunking_config\030\001 "
-          + "\001(\01326.google.cloud.aiplatform.v1beta1.Ra"
-          + "gFileChunkingConfig\"\303\002\n\024ImportRagFilesCo"
-          + "nfig\022@\n\ngcs_source\030\002 \001(\0132*.google.cloud."
-          + "aiplatform.v1beta1.GcsSourceH\000\022Q\n\023google"
-          + "_drive_source\030\003 \001(\01322.google.cloud.aipla"
-          + "tform.v1beta1.GoogleDriveSourceH\000\022X\n\030rag"
-          + "_file_chunking_config\030\004 \001(\01326.google.clo"
-          + "ud.aiplatform.v1beta1.RagFileChunkingCon"
-          + "fig\022+\n\036max_embedding_requests_per_min\030\005 "
-          + "\001(\005B\003\340A\001B\017\n\rimport_sourceB\351\001\n#com.google"
-          + ".cloud.aiplatform.v1beta1B\022VertexRagData"
-          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
-          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
-          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
-          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
-          + "::AIPlatform::V1beta1b\006proto3"
+          + "dSourceB\003\340A\003H\000\022D\n\014slack_source\030\013 \001(\0132,.g"
+          + "oogle.cloud.aiplatform.v1beta1.SlackSour"
+          + "ceH\000\022B\n\013jira_source\030\014 \001(\0132+.google.cloud"
+          + ".aiplatform.v1beta1.JiraSourceH\000\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\030"
+          + "\n\013description\030\003 \001(\tB\003\340A\001\022\027\n\nsize_bytes\030\004"
+          + " \001(\003B\003\340A\003\022P\n\rrag_file_type\030\005 \001(\01624.googl"
+          + "e.cloud.aiplatform.v1beta1.RagFile.RagFi"
+          + "leTypeB\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
+          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
+          + "Z\n\013RagFileType\022\035\n\031RAG_FILE_TYPE_UNSPECIF"
+          + "IED\020\000\022\025\n\021RAG_FILE_TYPE_TXT\020\001\022\025\n\021RAG_FILE"
+          + "_TYPE_PDF\020\002:\217\001\352A\213\001\n!aiplatform.googleapi"
+          + "s.com/RagFile\022Sprojects/{project}/locati"
+          + "ons/{location}/ragCorpora/{rag_corpus}/r"
+          + "agFiles/{rag_file}*\010ragFiles2\007ragFileB\021\n"
+          + "\017rag_file_source\"B\n\025RagFileChunkingConfi"
+          + "g\022\022\n\nchunk_size\030\001 \001(\005\022\025\n\rchunk_overlap\030\002"
+          + " \001(\005\"o\n\023UploadRagFileConfig\022X\n\030rag_file_"
+          + "chunking_config\030\001 \001(\01326.google.cloud.aip"
+          + "latform.v1beta1.RagFileChunkingConfig\"\315\003"
+          + "\n\024ImportRagFilesConfig\022@\n\ngcs_source\030\002 \001"
+          + "(\0132*.google.cloud.aiplatform.v1beta1.Gcs"
+          + "SourceH\000\022Q\n\023google_drive_source\030\003 \001(\01322."
+          + "google.cloud.aiplatform.v1beta1.GoogleDr"
+          + "iveSourceH\000\022D\n\014slack_source\030\006 \001(\0132,.goog"
+          + "le.cloud.aiplatform.v1beta1.SlackSourceH"
+          + "\000\022B\n\013jira_source\030\007 \001(\0132+.google.cloud.ai"
+          + "platform.v1beta1.JiraSourceH\000\022X\n\030rag_fil"
+          + "e_chunking_config\030\004 \001(\01326.google.cloud.a"
+          + "iplatform.v1beta1.RagFileChunkingConfig\022"
+          + "+\n\036max_embedding_requests_per_min\030\005 \001(\005B"
+          + "\003\340A\001B\017\n\rimport_sourceB\351\001\n#com.google.clo"
+          + "ud.aiplatform.v1beta1B\022VertexRagDataProt"
+          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
+          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -179,6 +186,8 @@ public final class VertexRagDataProto {
               "GcsSource",
               "GoogleDriveSource",
               "DirectUploadSource",
+              "SlackSource",
+              "JiraSource",
               "Name",
               "DisplayName",
               "Description",
@@ -212,6 +221,8 @@ public final class VertexRagDataProto {
             new java.lang.String[] {
               "GcsSource",
               "GoogleDriveSource",
+              "SlackSource",
+              "JiraSource",
               "RagFileChunkingConfig",
               "MaxEmbeddingRequestsPerMin",
               "ImportSource",

@@ -73,12 +73,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] This field is set when upgrades are about to commence
+   * Output only. This field is set when upgrades are about to commence
    * with the approximate start time for the upgrades, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string auto_upgrade_start_time = 1;</code>
+   * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The autoUpgradeStartTime.
    */
@@ -98,12 +98,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] This field is set when upgrades are about to commence
+   * Output only. This field is set when upgrades are about to commence
    * with the approximate start time for the upgrades, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
    * </pre>
    *
-   * <code>string auto_upgrade_start_time = 1;</code>
+   * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for autoUpgradeStartTime.
    */
@@ -128,11 +128,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] This field is set when upgrades are about to commence
+   * Output only. This field is set when upgrades are about to commence
    * with the description of the upgrade.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The description.
    */
@@ -152,11 +152,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] This field is set when upgrades are about to commence
+   * Output only. This field is set when upgrades are about to commence
    * with the description of the upgrade.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for description.
    */
@@ -544,12 +544,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
-     * <code>string auto_upgrade_start_time = 1;</code>
+     * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The autoUpgradeStartTime.
      */
@@ -568,12 +568,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
-     * <code>string auto_upgrade_start_time = 1;</code>
+     * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for autoUpgradeStartTime.
      */
@@ -592,12 +592,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
-     * <code>string auto_upgrade_start_time = 1;</code>
+     * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The autoUpgradeStartTime to set.
      * @return This builder for chaining.
@@ -615,12 +615,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
-     * <code>string auto_upgrade_start_time = 1;</code>
+     * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -634,12 +634,12 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
      * </pre>
      *
-     * <code>string auto_upgrade_start_time = 1;</code>
+     * <code>string auto_upgrade_start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for autoUpgradeStartTime to set.
      * @return This builder for chaining.
@@ -660,11 +660,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the description of the upgrade.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The description.
      */
@@ -683,11 +683,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the description of the upgrade.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for description.
      */
@@ -706,11 +706,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the description of the upgrade.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -728,11 +728,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the description of the upgrade.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -746,11 +746,11 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] This field is set when upgrades are about to commence
+     * Output only. This field is set when upgrades are about to commence
      * with the description of the upgrade.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.

@@ -20,6 +20,7 @@ import static com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClie
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -313,6 +314,7 @@ public class ManagedIdentitiesServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "managedidentities.googleapis.com:443";
   }

@@ -65,6 +65,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
             io.grafeas.v1.ComplianceOccurrence.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NON_COMPLIANT_FILES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -135,6 +136,52 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int VERSION_FIELD_NUMBER = 4;
+  private io.grafeas.v1.ComplianceVersion version_;
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   *
+   * @return Whether the version field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersion() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceVersion getVersion() {
+    return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder() {
+    return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -155,6 +202,9 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nonComplianceReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nonComplianceReason_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getVersion());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -170,6 +220,9 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nonComplianceReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nonComplianceReason_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getVersion());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -188,6 +241,10 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
 
     if (!getNonCompliantFilesList().equals(other.getNonCompliantFilesList())) return false;
     if (!getNonComplianceReason().equals(other.getNonComplianceReason())) return false;
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (!getVersion().equals(other.getVersion())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -205,6 +262,10 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + NON_COMPLIANCE_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getNonComplianceReason().hashCode();
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,10 +394,20 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using io.grafeas.v1.ComplianceOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getNonCompliantFilesFieldBuilder();
+        getVersionFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -351,6 +422,11 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nonComplianceReason_ = "";
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
+      }
       return this;
     }
 
@@ -401,6 +477,12 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nonComplianceReason_ = nonComplianceReason_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -480,6 +562,9 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasVersion()) {
+        mergeVersion(other.getVersion());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -524,6 +609,12 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -826,6 +917,187 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private io.grafeas.v1.ComplianceVersion version_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceVersion,
+            io.grafeas.v1.ComplianceVersion.Builder,
+            io.grafeas.v1.ComplianceVersionOrBuilder>
+        versionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     *
+     * @return Whether the version field is set.
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     *
+     * @return The version.
+     */
+    public io.grafeas.v1.ComplianceVersion getVersion() {
+      if (versionBuilder_ == null) {
+        return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
+      } else {
+        return versionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public Builder setVersion(io.grafeas.v1.ComplianceVersion value) {
+      if (versionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        version_ = value;
+      } else {
+        versionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public Builder setVersion(io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
+      if (versionBuilder_ == null) {
+        version_ = builderForValue.build();
+      } else {
+        versionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public Builder mergeVersion(io.grafeas.v1.ComplianceVersion value) {
+      if (versionBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && version_ != null
+            && version_ != io.grafeas.v1.ComplianceVersion.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
+        } else {
+          version_ = value;
+        }
+      } else {
+        versionBuilder_.mergeFrom(value);
+      }
+      if (version_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public Builder clearVersion() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public io.grafeas.v1.ComplianceVersion.Builder getVersionBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getVersionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder() {
+      if (versionBuilder_ != null) {
+        return versionBuilder_.getMessageOrBuilder();
+      } else {
+        return version_ == null ? io.grafeas.v1.ComplianceVersion.getDefaultInstance() : version_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The OS and config version the benchmark was run on.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceVersion,
+            io.grafeas.v1.ComplianceVersion.Builder,
+            io.grafeas.v1.ComplianceVersionOrBuilder>
+        getVersionFieldBuilder() {
+      if (versionBuilder_ == null) {
+        versionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.ComplianceVersion,
+                io.grafeas.v1.ComplianceVersion.Builder,
+                io.grafeas.v1.ComplianceVersionOrBuilder>(
+                getVersion(), getParentForChildren(), isClean());
+        version_ = null;
+      }
+      return versionBuilder_;
     }
 
     @java.lang.Override

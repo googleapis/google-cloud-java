@@ -78,6 +78,35 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Optional. This determines which type of scheduling strategy to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for strategy.
+   */
+  int getStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This determines which type of scheduling strategy to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The strategy.
+   */
+  com.google.cloud.aiplatform.v1beta1.Scheduling.Strategy getStrategy();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Indicates if the job should retry for internal errors after the
    * job starts running. If true, overrides
    * `Scheduling.restart_job_on_worker_restart` to false.

@@ -19,15 +19,7 @@
 // Protobuf Java Version: 3.25.3
 package com.google.cloud.aiplatform.v1;
 
-/**
- *
- *
- * <pre>
- * Next ID: 3
- * </pre>
- *
- * Protobuf type {@code google.cloud.aiplatform.v1.TrialContext}
- */
+/** Protobuf type {@code google.cloud.aiplatform.v1.TrialContext} */
 public final class TrialContext extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.TrialContext)
@@ -398,15 +390,7 @@ public final class TrialContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Next ID: 3
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.aiplatform.v1.TrialContext}
-   */
+  /** Protobuf type {@code google.cloud.aiplatform.v1.TrialContext} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.TrialContext)

@@ -521,6 +521,63 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return management_;
   }
 
+  public static final int AUTOSCALING_SETTINGS_FIELD_NUMBER = 18;
+  private com.google.cloud.vmwareengine.v1.AutoscalingSettings autoscalingSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoscalingSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscalingSettings() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoscalingSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmwareengine.v1.AutoscalingSettings getAutoscalingSettings() {
+    return autoscalingSettings_ == null
+        ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.getDefaultInstance()
+        : autoscalingSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration of the autoscaling applied to this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder
+      getAutoscalingSettingsOrBuilder() {
+    return autoscalingSettings_ == null
+        ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.getDefaultInstance()
+        : autoscalingSettings_;
+  }
+
   public static final int UID_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
@@ -718,7 +775,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStretchedClusterConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -794,8 +851,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetNodeTypeConfigs(), NodeTypeConfigsDefaultEntryHolder.defaultEntry, 16);
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(17, getStretchedClusterConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(18, getAutoscalingSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -836,9 +896,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, nodeTypeConfigs__);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17, getStretchedClusterConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18, getAutoscalingSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -866,6 +930,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (state_ != other.state_) return false;
     if (getManagement() != other.getManagement()) return false;
+    if (hasAutoscalingSettings() != other.hasAutoscalingSettings()) return false;
+    if (hasAutoscalingSettings()) {
+      if (!getAutoscalingSettings().equals(other.getAutoscalingSettings())) return false;
+    }
     if (!getUid().equals(other.getUid())) return false;
     if (!internalGetNodeTypeConfigs().equals(other.internalGetNodeTypeConfigs())) return false;
     if (hasStretchedClusterConfig() != other.hasStretchedClusterConfig()) return false;
@@ -897,6 +965,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagement());
+    if (hasAutoscalingSettings()) {
+      hash = (37 * hash) + AUTOSCALING_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscalingSettings().hashCode();
+    }
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
     if (!internalGetNodeTypeConfigs().getMap().isEmpty()) {
@@ -1071,6 +1143,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getAutoscalingSettingsFieldBuilder();
         getStretchedClusterConfigFieldBuilder();
       }
     }
@@ -1092,6 +1165,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       state_ = 0;
       management_ = false;
+      autoscalingSettings_ = null;
+      if (autoscalingSettingsBuilder_ != null) {
+        autoscalingSettingsBuilder_.dispose();
+        autoscalingSettingsBuilder_ = null;
+      }
       uid_ = "";
       internalGetMutableNodeTypeConfigs().clear();
       stretchedClusterConfig_ = null;
@@ -1154,18 +1232,25 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.management_ = management_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.uid_ = uid_;
+        result.autoscalingSettings_ =
+            autoscalingSettingsBuilder_ == null
+                ? autoscalingSettings_
+                : autoscalingSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.nodeTypeConfigs_ =
             internalGetNodeTypeConfigs().build(NodeTypeConfigsDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.stretchedClusterConfig_ =
             stretchedClusterConfigBuilder_ == null
                 ? stretchedClusterConfig_
                 : stretchedClusterConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1232,13 +1317,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.getManagement() != false) {
         setManagement(other.getManagement());
       }
+      if (other.hasAutoscalingSettings()) {
+        mergeAutoscalingSettings(other.getAutoscalingSettings());
+      }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableNodeTypeConfigs().mergeFrom(other.internalGetNodeTypeConfigs());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.hasStretchedClusterConfig()) {
         mergeStretchedClusterConfig(other.getStretchedClusterConfig());
       }
@@ -1301,7 +1389,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 114
             case 130:
@@ -1315,16 +1403,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableNodeTypeConfigs()
                     .ensureBuilderMap()
                     .put(nodeTypeConfigs__.getKey(), nodeTypeConfigs__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(
                     getStretchedClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getAutoscalingSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2035,6 +2130,215 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.vmwareengine.v1.AutoscalingSettings autoscalingSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmwareengine.v1.AutoscalingSettings,
+            com.google.cloud.vmwareengine.v1.AutoscalingSettings.Builder,
+            com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder>
+        autoscalingSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoscalingSettings field is set.
+     */
+    public boolean hasAutoscalingSettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoscalingSettings.
+     */
+    public com.google.cloud.vmwareengine.v1.AutoscalingSettings getAutoscalingSettings() {
+      if (autoscalingSettingsBuilder_ == null) {
+        return autoscalingSettings_ == null
+            ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.getDefaultInstance()
+            : autoscalingSettings_;
+      } else {
+        return autoscalingSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoscalingSettings(
+        com.google.cloud.vmwareengine.v1.AutoscalingSettings value) {
+      if (autoscalingSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoscalingSettings_ = value;
+      } else {
+        autoscalingSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoscalingSettings(
+        com.google.cloud.vmwareengine.v1.AutoscalingSettings.Builder builderForValue) {
+      if (autoscalingSettingsBuilder_ == null) {
+        autoscalingSettings_ = builderForValue.build();
+      } else {
+        autoscalingSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoscalingSettings(
+        com.google.cloud.vmwareengine.v1.AutoscalingSettings value) {
+      if (autoscalingSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && autoscalingSettings_ != null
+            && autoscalingSettings_
+                != com.google.cloud.vmwareengine.v1.AutoscalingSettings.getDefaultInstance()) {
+          getAutoscalingSettingsBuilder().mergeFrom(value);
+        } else {
+          autoscalingSettings_ = value;
+        }
+      } else {
+        autoscalingSettingsBuilder_.mergeFrom(value);
+      }
+      if (autoscalingSettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoscalingSettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      autoscalingSettings_ = null;
+      if (autoscalingSettingsBuilder_ != null) {
+        autoscalingSettingsBuilder_.dispose();
+        autoscalingSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmwareengine.v1.AutoscalingSettings.Builder
+        getAutoscalingSettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getAutoscalingSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder
+        getAutoscalingSettingsOrBuilder() {
+      if (autoscalingSettingsBuilder_ != null) {
+        return autoscalingSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return autoscalingSettings_ == null
+            ? com.google.cloud.vmwareengine.v1.AutoscalingSettings.getDefaultInstance()
+            : autoscalingSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration of the autoscaling applied to this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.AutoscalingSettings autoscaling_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmwareengine.v1.AutoscalingSettings,
+            com.google.cloud.vmwareengine.v1.AutoscalingSettings.Builder,
+            com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder>
+        getAutoscalingSettingsFieldBuilder() {
+      if (autoscalingSettingsBuilder_ == null) {
+        autoscalingSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmwareengine.v1.AutoscalingSettings,
+                com.google.cloud.vmwareengine.v1.AutoscalingSettings.Builder,
+                com.google.cloud.vmwareengine.v1.AutoscalingSettingsOrBuilder>(
+                getAutoscalingSettings(), getParentForChildren(), isClean());
+        autoscalingSettings_ = null;
+      }
+      return autoscalingSettingsBuilder_;
+    }
+
     private java.lang.Object uid_ = "";
     /**
      *
@@ -2097,7 +2401,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2114,7 +2418,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2136,7 +2440,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2194,7 +2498,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (nodeTypeConfigs_ == null) {
         nodeTypeConfigs_ = new com.google.protobuf.MapFieldBuilder<>(nodeTypeConfigsConverter);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return nodeTypeConfigs_;
     }
@@ -2297,7 +2601,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearNodeTypeConfigs() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableNodeTypeConfigs().clear();
       return this;
     }
@@ -2324,7 +2628,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
         getMutableNodeTypeConfigs() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableNodeTypeConfigs().ensureMessageMap();
     }
     /**
@@ -2348,7 +2652,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableNodeTypeConfigs().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2372,7 +2676,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableNodeTypeConfigs().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2424,7 +2728,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stretchedClusterConfig field is set.
      */
     public boolean hasStretchedClusterConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2471,7 +2775,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         stretchedClusterConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2494,7 +2798,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         stretchedClusterConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2513,7 +2817,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStretchedClusterConfig(
         com.google.cloud.vmwareengine.v1.StretchedClusterConfig value) {
       if (stretchedClusterConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && stretchedClusterConfig_ != null
             && stretchedClusterConfig_
                 != com.google.cloud.vmwareengine.v1.StretchedClusterConfig.getDefaultInstance()) {
@@ -2525,7 +2829,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         stretchedClusterConfigBuilder_.mergeFrom(value);
       }
       if (stretchedClusterConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2543,7 +2847,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStretchedClusterConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       stretchedClusterConfig_ = null;
       if (stretchedClusterConfigBuilder_ != null) {
         stretchedClusterConfigBuilder_.dispose();
@@ -2566,7 +2870,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vmwareengine.v1.StretchedClusterConfig.Builder
         getStretchedClusterConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStretchedClusterConfigFieldBuilder().getBuilder();
     }

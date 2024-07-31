@@ -75,8 +75,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Rollout` should be created.
-   * Format should be
+   * Required. The parent collection in which the `Rollout` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
@@ -102,8 +102,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Rollout` should be created.
-   * Format should be
+   * Required. The parent collection in which the `Rollout` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
@@ -857,8 +857,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The parent collection in which the `Rollout` should be created.
-     * Format should be
+     * Required. The parent collection in which the `Rollout` must be created.
+     * The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
@@ -883,8 +883,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The parent collection in which the `Rollout` should be created.
-     * Format should be
+     * Required. The parent collection in which the `Rollout` must be created.
+     * The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
@@ -909,8 +909,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The parent collection in which the `Rollout` should be created.
-     * Format should be
+     * Required. The parent collection in which the `Rollout` must be created.
+     * The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
@@ -934,8 +934,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The parent collection in which the `Rollout` should be created.
-     * Format should be
+     * Required. The parent collection in which the `Rollout` must be created.
+     * The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
@@ -955,8 +955,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The parent collection in which the `Rollout` should be created.
-     * Format should be
+     * Required. The parent collection in which the `Rollout` must be created.
+     * The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *

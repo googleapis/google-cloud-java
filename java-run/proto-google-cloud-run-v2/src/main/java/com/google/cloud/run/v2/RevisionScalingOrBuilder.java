@@ -28,10 +28,11 @@ public interface RevisionScalingOrBuilder
    *
    *
    * <pre>
-   * Minimum number of serving instances that this resource should have.
+   * Optional. Minimum number of serving instances that this resource should
+   * have.
    * </pre>
    *
-   * <code>int32 min_instance_count = 1;</code>
+   * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The minInstanceCount.
    */
@@ -41,10 +42,11 @@ public interface RevisionScalingOrBuilder
    *
    *
    * <pre>
-   * Maximum number of serving instances that this resource should have.
+   * Optional. Maximum number of serving instances that this resource should
+   * have.
    * </pre>
    *
-   * <code>int32 max_instance_count = 2;</code>
+   * <code>int32 max_instance_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxInstanceCount.
    */

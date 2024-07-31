@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -255,36 +256,87 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .searchChangeHistoryEventsSettings();
   }
 
-  /** Returns the object with the settings used for calls to createConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to createConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to updateConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to getConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to getConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to deleteConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConversionEventSettings();
   }
 
-  /** Returns the object with the settings used for calls to listConversionEvents. */
+  /**
+   * Returns the object with the settings used for calls to listConversionEvents.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListConversionEventsRequest,
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConversionEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createKeyEvent. */
+  public UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKeyEvent. */
+  public UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getKeyEvent. */
+  public UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteKeyEvent. */
+  public UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteKeyEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listKeyEvents. */
+  public PagedCallSettings<ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listKeyEventsSettings();
   }
 
   /** Returns the object with the settings used for calls to createCustomDimension. */
@@ -671,37 +723,89 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().searchChangeHistoryEventsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to createConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return getStubSettingsBuilder().createConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to updateConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventSettings() {
       return getStubSettingsBuilder().updateConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to getConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings() {
       return getStubSettingsBuilder().getConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to deleteConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
         deleteConversionEventSettings() {
       return getStubSettingsBuilder().deleteConversionEventSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    /**
+     * Returns the builder for the settings used for calls to listConversionEvents.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListConversionEventsRequest,
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings() {
       return getStubSettingsBuilder().listConversionEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createKeyEvent. */
+    public UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+      return getStubSettingsBuilder().createKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKeyEvent. */
+    public UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+      return getStubSettingsBuilder().updateKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getKeyEvent. */
+    public UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+      return getStubSettingsBuilder().getKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKeyEvent. */
+    public UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+      return getStubSettingsBuilder().deleteKeyEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listKeyEvents. */
+    public PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings() {
+      return getStubSettingsBuilder().listKeyEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCustomDimension. */

@@ -31,7 +31,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    * Required. Parent resource name.
    *
    * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * `projects/{project_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -54,7 +54,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    * Required. Parent resource name.
    *
    * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * `projects/{project_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -117,7 +117,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of config fields to order by,
+   * Comma-separated list of config fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.
@@ -140,7 +140,7 @@ public interface ListDiscoveryConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of config fields to order by,
+   * Comma-separated list of config fields to order by,
    * followed by `asc` or `desc` postfix. This list is case insensitive. The
    * default sorting order is ascending. Redundant space characters are
    * insignificant.

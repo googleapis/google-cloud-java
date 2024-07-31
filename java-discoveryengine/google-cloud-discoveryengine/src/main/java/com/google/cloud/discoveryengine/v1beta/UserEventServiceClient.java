@@ -98,6 +98,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PurgeUserEvents</td>
+ *      <td><p> Deletes permanently all user events specified by the filter provided. Depending on the number of events specified by the filter, this operation could take hours or days to complete. To test a filter, use the list command first.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeUserEventsAsync(PurgeUserEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeUserEventsOperationCallable()
+ *           <li><p> purgeUserEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ImportUserEvents</td>
  *      <td><p> Bulk import of user events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events.
  * <p>  Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.</td>
@@ -387,6 +402,114 @@ public class UserEventServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return stub.collectUserEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsAsync(PurgeUserEventsRequest request) {
+    return purgeUserEventsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata> future =
+   *       userEventServiceClient.purgeUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeUserEventsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    return stub.purgeUserEventsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.purgeUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    return stub.purgeUserEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -143,6 +143,16 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     PENDING(5),
+    /**
+     *
+     *
+     * <pre>
+     * The `AutomationRun` was aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 6;</code>
+     */
+    ABORTED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -206,6 +216,16 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     public static final int PENDING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The `AutomationRun` was aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 6;</code>
+     */
+    public static final int ABORTED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -243,6 +263,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
           return IN_PROGRESS;
         case 5:
           return PENDING;
+        case 6:
+          return ABORTED;
         default:
           return null;
       }

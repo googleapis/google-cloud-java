@@ -49,6 +49,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     username_ = "";
     password_ = "";
     backupOperators_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    administrators_ = com.google.protobuf.LazyStringArrayList.emptyList();
     securityOperators_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kdcHostname_ = "";
     kdcIp_ = "";
@@ -927,6 +928,70 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     return backupOperators_.getByteString(index);
   }
 
+  public static final int ADMINISTRATORS_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList administrators_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the administrators.
+   */
+  public com.google.protobuf.ProtocolStringList getAdministratorsList() {
+    return administrators_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of administrators.
+   */
+  public int getAdministratorsCount() {
+    return administrators_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The administrators at the given index.
+   */
+  public java.lang.String getAdministrators(int index) {
+    return administrators_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the administrators at the given index.
+   */
+  public com.google.protobuf.ByteString getAdministratorsBytes(int index) {
+    return administrators_.getByteString(index);
+  }
+
   public static final int SECURITY_OPERATORS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
@@ -1431,6 +1496,9 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDetails_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, stateDetails_);
     }
+    for (int i = 0; i < administrators_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, administrators_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1520,6 +1588,14 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDetails_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, stateDetails_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < administrators_.size(); i++) {
+        dataSize += computeStringSizeNoTag(administrators_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAdministratorsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1551,6 +1627,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     if (!getUsername().equals(other.getUsername())) return false;
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getBackupOperatorsList().equals(other.getBackupOperatorsList())) return false;
+    if (!getAdministratorsList().equals(other.getAdministratorsList())) return false;
     if (!getSecurityOperatorsList().equals(other.getSecurityOperatorsList())) return false;
     if (!getKdcHostname().equals(other.getKdcHostname())) return false;
     if (!getKdcIp().equals(other.getKdcIp())) return false;
@@ -1598,6 +1675,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     if (getBackupOperatorsCount() > 0) {
       hash = (37 * hash) + BACKUP_OPERATORS_FIELD_NUMBER;
       hash = (53 * hash) + getBackupOperatorsList().hashCode();
+    }
+    if (getAdministratorsCount() > 0) {
+      hash = (37 * hash) + ADMINISTRATORS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdministratorsList().hashCode();
     }
     if (getSecurityOperatorsCount() > 0) {
       hash = (37 * hash) + SECURITY_OPERATORS_FIELD_NUMBER;
@@ -1807,6 +1888,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       username_ = "";
       password_ = "";
       backupOperators_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      administrators_ = com.google.protobuf.LazyStringArrayList.emptyList();
       securityOperators_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kdcHostname_ = "";
       kdcIp_ = "";
@@ -1892,32 +1974,36 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         result.backupOperators_ = backupOperators_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        administrators_.makeImmutable();
+        result.administrators_ = administrators_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         securityOperators_.makeImmutable();
         result.securityOperators_ = securityOperators_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.kdcHostname_ = kdcHostname_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.kdcIp_ = kdcIp_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.nfsUsersWithLdap_ = nfsUsersWithLdap_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.ldapSigning_ = ldapSigning_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.encryptDcConnections_ = encryptDcConnections_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.stateDetails_ = stateDetails_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2027,10 +2113,20 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         }
         onChanged();
       }
+      if (!other.administrators_.isEmpty()) {
+        if (administrators_.isEmpty()) {
+          administrators_ = other.administrators_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureAdministratorsIsMutable();
+          administrators_.addAll(other.administrators_);
+        }
+        onChanged();
+      }
       if (!other.securityOperators_.isEmpty()) {
         if (securityOperators_.isEmpty()) {
           securityOperators_ = other.securityOperators_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureSecurityOperatorsIsMutable();
           securityOperators_.addAll(other.securityOperators_);
@@ -2039,12 +2135,12 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getKdcHostname().isEmpty()) {
         kdcHostname_ = other.kdcHostname_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getKdcIp().isEmpty()) {
         kdcIp_ = other.kdcIp_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.getNfsUsersWithLdap() != false) {
@@ -2052,7 +2148,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.getLdapSigning() != false) {
@@ -2062,10 +2158,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         setEncryptDcConnections(other.getEncryptDcConnections());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       if (!other.getStateDetails().isEmpty()) {
         stateDetails_ = other.stateDetails_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2177,37 +2273,37 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
             case 114:
               {
                 kdcHostname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 kdcIp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 128:
               {
                 nfsUsersWithLdap_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 128
             case 138:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 138
             case 144:
               {
                 ldapSigning_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 144
             case 152:
               {
                 encryptDcConnections_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 152
             case 162:
@@ -2219,15 +2315,22 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 162
             case 170:
               {
                 stateDetails_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 170
+            case 178:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdministratorsIsMutable();
+                administrators_.add(s);
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3661,6 +3764,180 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList administrators_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdministratorsIsMutable() {
+      if (!administrators_.isModifiable()) {
+        administrators_ = new com.google.protobuf.LazyStringArrayList(administrators_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the administrators.
+     */
+    public com.google.protobuf.ProtocolStringList getAdministratorsList() {
+      administrators_.makeImmutable();
+      return administrators_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of administrators.
+     */
+    public int getAdministratorsCount() {
+      return administrators_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The administrators at the given index.
+     */
+    public java.lang.String getAdministrators(int index) {
+      return administrators_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the administrators at the given index.
+     */
+    public com.google.protobuf.ByteString getAdministratorsBytes(int index) {
+      return administrators_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The administrators to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdministrators(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdministratorsIsMutable();
+      administrators_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The administrators to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdministrators(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdministratorsIsMutable();
+      administrators_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The administrators to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdministrators(java.lang.Iterable<java.lang.String> values) {
+      ensureAdministratorsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, administrators_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdministrators() {
+      administrators_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Users to be added to the Built-in Admininstrators group.
+     * </pre>
+     *
+     * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the administrators to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdministratorsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdministratorsIsMutable();
+      administrators_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList securityOperators_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -3668,7 +3945,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       if (!securityOperators_.isModifiable()) {
         securityOperators_ = new com.google.protobuf.LazyStringArrayList(securityOperators_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -3753,7 +4030,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       ensureSecurityOperatorsIsMutable();
       securityOperators_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3776,7 +4053,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       ensureSecurityOperatorsIsMutable();
       securityOperators_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3796,7 +4073,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public Builder addAllSecurityOperators(java.lang.Iterable<java.lang.String> values) {
       ensureSecurityOperatorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, securityOperators_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3814,7 +4091,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearSecurityOperators() {
       securityOperators_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -3839,7 +4116,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureSecurityOperatorsIsMutable();
       securityOperators_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3909,7 +4186,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       kdcHostname_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3927,7 +4204,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearKdcHostname() {
       kdcHostname_ = getDefaultInstance().getKdcHostname();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3950,7 +4227,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       kdcHostname_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4017,7 +4294,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       kdcIp_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4034,7 +4311,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearKdcIp() {
       kdcIp_ = getDefaultInstance().getKdcIp();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4056,7 +4333,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       kdcIp_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4094,7 +4371,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public Builder setNfsUsersWithLdap(boolean value) {
 
       nfsUsersWithLdap_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4111,7 +4388,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNfsUsersWithLdap() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       nfsUsersWithLdap_ = false;
       onChanged();
       return this;
@@ -4179,7 +4456,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4196,7 +4473,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4218,7 +4495,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4254,7 +4531,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public Builder setLdapSigning(boolean value) {
 
       ldapSigning_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4270,7 +4547,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLdapSigning() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ldapSigning_ = false;
       onChanged();
       return this;
@@ -4309,7 +4586,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public Builder setEncryptDcConnections(boolean value) {
 
       encryptDcConnections_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4326,7 +4603,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEncryptDcConnections() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       encryptDcConnections_ = false;
       onChanged();
       return this;
@@ -4349,7 +4626,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return labels_;
     }
@@ -4434,7 +4711,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4457,7 +4734,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4477,7 +4754,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       return this;
     }
     /**
@@ -4491,7 +4768,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       return this;
     }
 
@@ -4557,7 +4834,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       stateDetails_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -4574,7 +4851,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearStateDetails() {
       stateDetails_ = getDefaultInstance().getStateDetails();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -4596,7 +4873,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       stateDetails_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

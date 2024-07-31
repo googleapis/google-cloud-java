@@ -138,16 +138,19 @@ public final class CustomJobProto {
           + "ageSpec\022\037\n\022executor_image_uri\030\001 \001(\tB\003\340A\002"
           + "\022\031\n\014package_uris\030\002 \003(\tB\003\340A\002\022\032\n\rpython_mo"
           + "dule\030\003 \001(\tB\003\340A\002\022\014\n\004args\030\004 \003(\t\022/\n\003env\030\005 \003"
-          + "(\0132\".google.cloud.aiplatform.v1.EnvVar\"}"
-          + "\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.google.p"
-          + "rotobuf.Duration\022%\n\035restart_job_on_worke"
-          + "r_restart\030\003 \001(\010\022\034\n\017disable_retries\030\005 \001(\010"
-          + "B\003\340A\001B\314\001\n\036com.google.cloud.aiplatform.v1"
-          + "B\016CustomJobProtoP\001Z>cloud.google.com/go/"
-          + "aiplatform/apiv1/aiplatformpb;aiplatform"
-          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "(\0132\".google.cloud.aiplatform.v1.EnvVar\"\210"
+          + "\002\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.google."
+          + "protobuf.Duration\022%\n\035restart_job_on_work"
+          + "er_restart\030\003 \001(\010\022F\n\010strategy\030\004 \001(\0162/.goo"
+          + "gle.cloud.aiplatform.v1.Scheduling.Strat"
+          + "egyB\003\340A\001\022\034\n\017disable_retries\030\005 \001(\010B\003\340A\001\"A"
+          + "\n\010Strategy\022\030\n\024STRATEGY_UNSPECIFIED\020\000\022\r\n\t"
+          + "ON_DEMAND\020\001\022\014\n\010LOW_COST\020\002B\314\001\n\036com.google"
+          + ".cloud.aiplatform.v1B\016CustomJobProtoP\001Z>"
+          + "cloud.google.com/go/aiplatform/apiv1/aip"
+          + "latformpb;aiplatformpb\252\002\032Google.Cloud.AI"
+          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
+          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -256,7 +259,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries",
+              "Timeout", "RestartJobOnWorkerRestart", "Strategy", "DisableRetries",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

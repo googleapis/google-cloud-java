@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPage
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -401,6 +402,7 @@ public class NetworkFirewallPoliciesStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }

@@ -73,6 +73,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_SOURCE(2),
     GOOGLE_DRIVE_SOURCE(3),
+    SLACK_SOURCE(6),
+    JIRA_SOURCE(7),
     IMPORTSOURCE_NOT_SET(0);
     private final int value;
 
@@ -95,6 +97,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           return GCS_SOURCE;
         case 3:
           return GOOGLE_DRIVE_SOURCE;
+        case 6:
+          return SLACK_SOURCE;
+        case 7:
+          return JIRA_SOURCE;
         case 0:
           return IMPORTSOURCE_NOT_SET;
         default:
@@ -226,6 +232,108 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
   }
 
+  public static final int SLACK_SOURCE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   *
+   * @return Whether the slackSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlackSource() {
+    return importSourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   *
+   * @return The slackSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource() {
+    if (importSourceCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Slack channels with their corresponding access tokens.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder() {
+    if (importSourceCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+  }
+
+  public static final int JIRA_SOURCE_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   *
+   * @return Whether the jiraSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasJiraSource() {
+    return importSourceCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   *
+   * @return The jiraSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource() {
+    if (importSourceCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Jira queries with their corresponding authentication.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder() {
+    if (importSourceCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+  }
+
   public static final int RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
   /**
@@ -329,6 +437,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (maxEmbeddingRequestsPerMin_ != 0) {
       output.writeInt32(5, maxEmbeddingRequestsPerMin_);
     }
+    if (importSourceCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_);
+    }
+    if (importSourceCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -355,6 +469,16 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (maxEmbeddingRequestsPerMin_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(5, maxEmbeddingRequestsPerMin_);
+    }
+    if (importSourceCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_);
+    }
+    if (importSourceCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -385,6 +509,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       case 3:
         if (!getGoogleDriveSource().equals(other.getGoogleDriveSource())) return false;
         break;
+      case 6:
+        if (!getSlackSource().equals(other.getSlackSource())) return false;
+        break;
+      case 7:
+        if (!getJiraSource().equals(other.getJiraSource())) return false;
+        break;
       case 0:
       default:
     }
@@ -413,6 +543,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       case 3:
         hash = (37 * hash) + GOOGLE_DRIVE_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getGoogleDriveSource().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + SLACK_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSlackSource().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + JIRA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getJiraSource().hashCode();
         break;
       case 0:
       default:
@@ -572,6 +710,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (googleDriveSourceBuilder_ != null) {
         googleDriveSourceBuilder_.clear();
       }
+      if (slackSourceBuilder_ != null) {
+        slackSourceBuilder_.clear();
+      }
+      if (jiraSourceBuilder_ != null) {
+        jiraSourceBuilder_.clear();
+      }
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -618,14 +762,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.ragFileChunkingConfig_ =
             ragFileChunkingConfigBuilder_ == null
                 ? ragFileChunkingConfig_
                 : ragFileChunkingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -640,6 +784,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (importSourceCase_ == 3 && googleDriveSourceBuilder_ != null) {
         result.importSource_ = googleDriveSourceBuilder_.build();
+      }
+      if (importSourceCase_ == 6 && slackSourceBuilder_ != null) {
+        result.importSource_ = slackSourceBuilder_.build();
+      }
+      if (importSourceCase_ == 7 && jiraSourceBuilder_ != null) {
+        result.importSource_ = jiraSourceBuilder_.build();
       }
     }
 
@@ -706,6 +856,16 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             mergeGoogleDriveSource(other.getGoogleDriveSource());
             break;
           }
+        case SLACK_SOURCE:
+          {
+            mergeSlackSource(other.getSlackSource());
+            break;
+          }
+        case JIRA_SOURCE:
+          {
+            mergeJiraSource(other.getJiraSource());
+            break;
+          }
         case IMPORTSOURCE_NOT_SET:
           {
             break;
@@ -754,15 +914,27 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(getSlackSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourceCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getJiraSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourceCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1257,6 +1429,426 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return googleDriveSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SlackSource,
+            com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
+        slackSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     *
+     * @return Whether the slackSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSlackSource() {
+      return importSourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     *
+     * @return The slackSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource() {
+      if (slackSourceBuilder_ == null) {
+        if (importSourceCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      } else {
+        if (importSourceCase_ == 6) {
+          return slackSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    public Builder setSlackSource(com.google.cloud.aiplatform.v1beta1.SlackSource value) {
+      if (slackSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSource_ = value;
+        onChanged();
+      } else {
+        slackSourceBuilder_.setMessage(value);
+      }
+      importSourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    public Builder setSlackSource(
+        com.google.cloud.aiplatform.v1beta1.SlackSource.Builder builderForValue) {
+      if (slackSourceBuilder_ == null) {
+        importSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        slackSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    public Builder mergeSlackSource(com.google.cloud.aiplatform.v1beta1.SlackSource value) {
+      if (slackSourceBuilder_ == null) {
+        if (importSourceCase_ == 6
+            && importSource_
+                != com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance()) {
+          importSource_ =
+              com.google.cloud.aiplatform.v1beta1.SlackSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourceCase_ == 6) {
+          slackSourceBuilder_.mergeFrom(value);
+        } else {
+          slackSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourceCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    public Builder clearSlackSource() {
+      if (slackSourceBuilder_ == null) {
+        if (importSourceCase_ == 6) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourceCase_ == 6) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+        }
+        slackSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SlackSource.Builder getSlackSourceBuilder() {
+      return getSlackSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder() {
+      if ((importSourceCase_ == 6) && (slackSourceBuilder_ != null)) {
+        return slackSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourceCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slack channels with their corresponding access tokens.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SlackSource,
+            com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
+        getSlackSourceFieldBuilder() {
+      if (slackSourceBuilder_ == null) {
+        if (!(importSourceCase_ == 6)) {
+          importSource_ = com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+        }
+        slackSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.SlackSource,
+                com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.SlackSource) importSource_,
+                getParentForChildren(),
+                isClean());
+        importSource_ = null;
+      }
+      importSourceCase_ = 6;
+      onChanged();
+      return slackSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.JiraSource,
+            com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
+        jiraSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     *
+     * @return Whether the jiraSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasJiraSource() {
+      return importSourceCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     *
+     * @return The jiraSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource() {
+      if (jiraSourceBuilder_ == null) {
+        if (importSourceCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      } else {
+        if (importSourceCase_ == 7) {
+          return jiraSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    public Builder setJiraSource(com.google.cloud.aiplatform.v1beta1.JiraSource value) {
+      if (jiraSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSource_ = value;
+        onChanged();
+      } else {
+        jiraSourceBuilder_.setMessage(value);
+      }
+      importSourceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    public Builder setJiraSource(
+        com.google.cloud.aiplatform.v1beta1.JiraSource.Builder builderForValue) {
+      if (jiraSourceBuilder_ == null) {
+        importSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        jiraSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    public Builder mergeJiraSource(com.google.cloud.aiplatform.v1beta1.JiraSource value) {
+      if (jiraSourceBuilder_ == null) {
+        if (importSourceCase_ == 7
+            && importSource_
+                != com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance()) {
+          importSource_ =
+              com.google.cloud.aiplatform.v1beta1.JiraSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourceCase_ == 7) {
+          jiraSourceBuilder_.mergeFrom(value);
+        } else {
+          jiraSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    public Builder clearJiraSource() {
+      if (jiraSourceBuilder_ == null) {
+        if (importSourceCase_ == 7) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourceCase_ == 7) {
+          importSourceCase_ = 0;
+          importSource_ = null;
+        }
+        jiraSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.JiraSource.Builder getJiraSourceBuilder() {
+      return getJiraSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder() {
+      if ((importSourceCase_ == 7) && (jiraSourceBuilder_ != null)) {
+        return jiraSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourceCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Jira queries with their corresponding authentication.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.JiraSource,
+            com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
+        getJiraSourceFieldBuilder() {
+      if (jiraSourceBuilder_ == null) {
+        if (!(importSourceCase_ == 7)) {
+          importSource_ = com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+        }
+        jiraSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.JiraSource,
+                com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_,
+                getParentForChildren(),
+                isClean());
+        importSource_ = null;
+      }
+      importSourceCase_ = 7;
+      onChanged();
+      return jiraSourceBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig,
@@ -1276,7 +1868,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the ragFileChunkingConfig field is set.
      */
     public boolean hasRagFileChunkingConfig() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1319,7 +1911,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1340,7 +1932,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1357,7 +1949,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && ragFileChunkingConfig_ != null
             && ragFileChunkingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()) {
@@ -1369,7 +1961,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileChunkingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileChunkingConfig_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1385,7 +1977,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRagFileChunkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -1406,7 +1998,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder
         getRagFileChunkingConfigBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRagFileChunkingConfigFieldBuilder().getBuilder();
     }
@@ -1498,7 +2090,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1519,7 +2111,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;

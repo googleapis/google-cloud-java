@@ -72,56 +72,6 @@ public interface RetryPhaseOrBuilder
    *
    *
    * <pre>
-   * Output only. The phase ID of the phase that includes the job being retried.
-   * </pre>
-   *
-   * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The phaseId.
-   */
-  java.lang.String getPhaseId();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The phase ID of the phase that includes the job being retried.
-   * </pre>
-   *
-   * <code>string phase_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for phaseId.
-   */
-  com.google.protobuf.ByteString getPhaseIdBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The job ID for the Job to retry.
-   * </pre>
-   *
-   * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The jobId.
-   */
-  java.lang.String getJobId();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The job ID for the Job to retry.
-   * </pre>
-   *
-   * <code>string job_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for jobId.
-   */
-  com.google.protobuf.ByteString getJobIdBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. Detail of a retry action.
    * </pre>
    *

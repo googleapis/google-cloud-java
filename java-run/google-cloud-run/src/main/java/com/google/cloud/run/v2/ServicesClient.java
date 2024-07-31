@@ -37,6 +37,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -112,7 +113,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListServices</td>
- *      <td><p> Lists Services.</td>
+ *      <td><p> Lists Services. Results are sorted by creation time, descending.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -141,6 +142,7 @@ import javax.annotation.Generated;
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
  *           <li><p> updateServiceAsync(Service service)
+ *           <li><p> updateServiceAsync(Service service, FieldMask updateMask)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -626,7 +628,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Services.
+   * Lists Services. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -659,7 +661,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Services.
+   * Lists Services. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -689,7 +691,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Services.
+   * Lists Services. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -722,7 +724,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Services.
+   * Lists Services. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -755,7 +757,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Services.
+   * Lists Services. Results are sorted by creation time, descending.
    *
    * <p>Sample code:
    *
@@ -831,8 +833,39 @@ public class ServicesClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServicesClient servicesClient = ServicesClient.create()) {
+   *   Service service = Service.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Service response = servicesClient.updateServiceAsync(service, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param service Required. The Service to be updated.
+   * @param updateMask Optional. The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Service, Service> updateServiceAsync(
+      Service service, FieldMask updateMask) {
+    UpdateServiceRequest request =
+        UpdateServiceRequest.newBuilder().setService(service).setUpdateMask(updateMask).build();
+    return updateServiceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
@@ -863,6 +896,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
@@ -894,6 +928,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)

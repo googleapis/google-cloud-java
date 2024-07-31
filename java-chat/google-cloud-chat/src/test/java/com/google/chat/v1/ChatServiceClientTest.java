@@ -19,6 +19,7 @@ package com.google.chat.v1;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -1979,6 +1980,180 @@ public class ChatServiceClientTest {
     try {
       String name = "name3373707";
       client.getThreadReadState(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceEventTest() throws Exception {
+    SpaceEvent expectedResponse =
+        SpaceEvent.newBuilder()
+            .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setEventType("eventType31430900")
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceEventName name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]");
+
+    SpaceEvent actualResponse = client.getSpaceEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSpaceEventRequest actualRequest = ((GetSpaceEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSpaceEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceEventName name = SpaceEventName.of("[SPACE]", "[SPACE_EVENT]");
+      client.getSpaceEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceEventTest2() throws Exception {
+    SpaceEvent expectedResponse =
+        SpaceEvent.newBuilder()
+            .setName(SpaceEventName.of("[SPACE]", "[SPACE_EVENT]").toString())
+            .setEventTime(Timestamp.newBuilder().build())
+            .setEventType("eventType31430900")
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SpaceEvent actualResponse = client.getSpaceEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSpaceEventRequest actualRequest = ((GetSpaceEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSpaceEventExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSpaceEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSpaceEventsTest() throws Exception {
+    SpaceEvent responsesElement = SpaceEvent.newBuilder().build();
+    ListSpaceEventsResponse expectedResponse =
+        ListSpaceEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaceEvents(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+    String filter = "filter-1274492040";
+
+    ListSpaceEventsPagedResponse pagedListResponse = client.listSpaceEvents(parent, filter);
+
+    List<SpaceEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpaceEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSpaceEventsRequest actualRequest = ((ListSpaceEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSpaceEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      String filter = "filter-1274492040";
+      client.listSpaceEvents(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSpaceEventsTest2() throws Exception {
+    SpaceEvent responsesElement = SpaceEvent.newBuilder().build();
+    ListSpaceEventsResponse expectedResponse =
+        ListSpaceEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaceEvents(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    ListSpaceEventsPagedResponse pagedListResponse = client.listSpaceEvents(parent, filter);
+
+    List<SpaceEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpaceEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSpaceEventsRequest actualRequest = ((ListSpaceEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSpaceEventsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.listSpaceEvents(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

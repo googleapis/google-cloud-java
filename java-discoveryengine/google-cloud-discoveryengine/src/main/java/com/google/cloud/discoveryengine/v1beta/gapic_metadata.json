@@ -13,8 +13,14 @@
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
             },
+            "ImportCompletionSuggestions": {
+              "methods": ["importCompletionSuggestionsAsync", "importCompletionSuggestionsOperationCallable", "importCompletionSuggestionsCallable"]
+            },
             "ImportSuggestionDenyListEntries": {
               "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeCompletionSuggestions": {
+              "methods": ["purgeCompletionSuggestionsAsync", "purgeCompletionSuggestionsOperationCallable", "purgeCompletionSuggestionsCallable"]
             },
             "PurgeSuggestionDenyListEntries": {
               "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
@@ -182,6 +188,27 @@
         }
       }
     },
+    "EvaluationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EvaluationServiceClient",
+          "rpcs": {
+            "CreateEvaluation": {
+              "methods": ["createEvaluationAsync", "createEvaluationAsync", "createEvaluationAsync", "createEvaluationOperationCallable", "createEvaluationCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "ListEvaluationResults": {
+              "methods": ["listEvaluationResults", "listEvaluationResults", "listEvaluationResults", "listEvaluationResultsPagedCallable", "listEvaluationResultsCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
+            }
+          }
+        }
+      }
+    },
     "GroundedGenerationService": {
       "clients": {
         "grpc": {
@@ -225,6 +252,57 @@
           "rpcs": {
             "Recommend": {
               "methods": ["recommend", "recommendCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SampleQueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQueryServiceClient",
+          "rpcs": {
+            "CreateSampleQuery": {
+              "methods": ["createSampleQuery", "createSampleQuery", "createSampleQuery", "createSampleQueryCallable"]
+            },
+            "DeleteSampleQuery": {
+              "methods": ["deleteSampleQuery", "deleteSampleQuery", "deleteSampleQuery", "deleteSampleQueryCallable"]
+            },
+            "GetSampleQuery": {
+              "methods": ["getSampleQuery", "getSampleQuery", "getSampleQuery", "getSampleQueryCallable"]
+            },
+            "ImportSampleQueries": {
+              "methods": ["importSampleQueriesAsync", "importSampleQueriesOperationCallable", "importSampleQueriesCallable"]
+            },
+            "ListSampleQueries": {
+              "methods": ["listSampleQueries", "listSampleQueries", "listSampleQueries", "listSampleQueriesPagedCallable", "listSampleQueriesCallable"]
+            },
+            "UpdateSampleQuery": {
+              "methods": ["updateSampleQuery", "updateSampleQuery", "updateSampleQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SampleQuerySetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQuerySetServiceClient",
+          "rpcs": {
+            "CreateSampleQuerySet": {
+              "methods": ["createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySetCallable"]
+            },
+            "DeleteSampleQuerySet": {
+              "methods": ["deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySetCallable"]
+            },
+            "GetSampleQuerySet": {
+              "methods": ["getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySetCallable"]
+            },
+            "ListSampleQuerySets": {
+              "methods": ["listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySetsPagedCallable", "listSampleQuerySetsCallable"]
+            },
+            "UpdateSampleQuerySet": {
+              "methods": ["updateSampleQuerySet", "updateSampleQuerySet", "updateSampleQuerySetCallable"]
             }
           }
         }
@@ -354,6 +432,9 @@
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "PurgeUserEvents": {
+              "methods": ["purgeUserEventsAsync", "purgeUserEventsOperationCallable", "purgeUserEventsCallable"]
             },
             "WriteUserEvent": {
               "methods": ["writeUserEvent", "writeUserEventCallable"]

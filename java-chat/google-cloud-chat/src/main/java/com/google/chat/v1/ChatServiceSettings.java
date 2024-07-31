@@ -19,6 +19,7 @@ package com.google.chat.v1;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -215,6 +216,18 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).getThreadReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSpaceEvent. */
+  public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSpaceEvents. */
+  public PagedCallSettings<
+          ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+      listSpaceEventsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSpaceEventsSettings();
   }
 
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
@@ -471,6 +484,18 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings() {
       return getStubSettingsBuilder().getThreadReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceEvent. */
+    public UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
+      return getStubSettingsBuilder().getSpaceEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSpaceEvents. */
+    public PagedCallSettings.Builder<
+            ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
+        listSpaceEventsSettings() {
+      return getStubSettingsBuilder().listSpaceEventsSettings();
     }
 
     @Override

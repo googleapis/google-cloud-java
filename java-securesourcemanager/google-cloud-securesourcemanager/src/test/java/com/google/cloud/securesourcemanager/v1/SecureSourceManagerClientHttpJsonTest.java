@@ -207,6 +207,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setPrivateConfig(Instance.PrivateConfig.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .build();
@@ -256,6 +257,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setPrivateConfig(Instance.PrivateConfig.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .build();
@@ -305,6 +307,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setPrivateConfig(Instance.PrivateConfig.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .build();
@@ -363,6 +366,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setPrivateConfig(Instance.PrivateConfig.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .build();

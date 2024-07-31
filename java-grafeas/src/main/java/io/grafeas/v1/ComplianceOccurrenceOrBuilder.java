@@ -49,4 +49,39 @@ public interface ComplianceOccurrenceOrBuilder
    * @return The bytes for nonComplianceReason.
    */
   com.google.protobuf.ByteString getNonComplianceReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   *
+   * @return Whether the version field is set.
+   */
+  boolean hasVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   *
+   * @return The version.
+   */
+  io.grafeas.v1.ComplianceVersion getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The OS and config version the benchmark was run on.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceVersion version = 4;</code>
+   */
+  io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder();
 }

@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1beta.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -40,9 +41,15 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsResponse;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
@@ -118,6 +125,20 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           PurgeSuggestionDenyListEntriesResponse,
           PurgeSuggestionDenyListEntriesMetadata>
       purgeSuggestionDenyListEntriesOperationSettings;
+  private final UnaryCallSettings<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsSettings;
+  private final OperationCallSettings<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationSettings;
+  private final UnaryCallSettings<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsSettings;
+  private final OperationCallSettings<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationSettings;
 
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
@@ -154,6 +175,36 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     return purgeSuggestionDenyListEntriesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to importCompletionSuggestions. */
+  public UnaryCallSettings<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsSettings() {
+    return importCompletionSuggestionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importCompletionSuggestions. */
+  public OperationCallSettings<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationSettings() {
+    return importCompletionSuggestionsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeCompletionSuggestions. */
+  public UnaryCallSettings<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsSettings() {
+    return purgeCompletionSuggestionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeCompletionSuggestions. */
+  public OperationCallSettings<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationSettings() {
+    return purgeCompletionSuggestionsOperationSettings;
+  }
+
   public CompletionServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -182,6 +233,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -273,6 +325,14 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
         settingsBuilder.purgeSuggestionDenyListEntriesSettings().build();
     purgeSuggestionDenyListEntriesOperationSettings =
         settingsBuilder.purgeSuggestionDenyListEntriesOperationSettings().build();
+    importCompletionSuggestionsSettings =
+        settingsBuilder.importCompletionSuggestionsSettings().build();
+    importCompletionSuggestionsOperationSettings =
+        settingsBuilder.importCompletionSuggestionsOperationSettings().build();
+    purgeCompletionSuggestionsSettings =
+        settingsBuilder.purgeCompletionSuggestionsSettings().build();
+    purgeCompletionSuggestionsOperationSettings =
+        settingsBuilder.purgeCompletionSuggestionsOperationSettings().build();
   }
 
   /** Builder for CompletionServiceStubSettings. */
@@ -294,6 +354,20 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
             PurgeSuggestionDenyListEntriesResponse,
             PurgeSuggestionDenyListEntriesMetadata>
         purgeSuggestionDenyListEntriesOperationSettings;
+    private final UnaryCallSettings.Builder<ImportCompletionSuggestionsRequest, Operation>
+        importCompletionSuggestionsSettings;
+    private final OperationCallSettings.Builder<
+            ImportCompletionSuggestionsRequest,
+            ImportCompletionSuggestionsResponse,
+            ImportCompletionSuggestionsMetadata>
+        importCompletionSuggestionsOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeCompletionSuggestionsRequest, Operation>
+        purgeCompletionSuggestionsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeCompletionSuggestionsRequest,
+            PurgeCompletionSuggestionsResponse,
+            PurgeCompletionSuggestionsMetadata>
+        purgeCompletionSuggestionsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -337,12 +411,18 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       importSuggestionDenyListEntriesOperationSettings = OperationCallSettings.newBuilder();
       purgeSuggestionDenyListEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       purgeSuggestionDenyListEntriesOperationSettings = OperationCallSettings.newBuilder();
+      importCompletionSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importCompletionSuggestionsOperationSettings = OperationCallSettings.newBuilder();
+      purgeCompletionSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeCompletionSuggestionsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
               importSuggestionDenyListEntriesSettings,
-              purgeSuggestionDenyListEntriesSettings);
+              purgeSuggestionDenyListEntriesSettings,
+              importCompletionSuggestionsSettings,
+              purgeCompletionSuggestionsSettings);
       initDefaults(this);
     }
 
@@ -358,12 +438,21 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           settings.purgeSuggestionDenyListEntriesSettings.toBuilder();
       purgeSuggestionDenyListEntriesOperationSettings =
           settings.purgeSuggestionDenyListEntriesOperationSettings.toBuilder();
+      importCompletionSuggestionsSettings =
+          settings.importCompletionSuggestionsSettings.toBuilder();
+      importCompletionSuggestionsOperationSettings =
+          settings.importCompletionSuggestionsOperationSettings.toBuilder();
+      purgeCompletionSuggestionsSettings = settings.purgeCompletionSuggestionsSettings.toBuilder();
+      purgeCompletionSuggestionsOperationSettings =
+          settings.purgeCompletionSuggestionsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
               importSuggestionDenyListEntriesSettings,
-              purgeSuggestionDenyListEntriesSettings);
+              purgeSuggestionDenyListEntriesSettings,
+              importCompletionSuggestionsSettings,
+              purgeCompletionSuggestionsSettings);
     }
 
     private static Builder createDefault() {
@@ -403,6 +492,16 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
 
       builder
           .purgeSuggestionDenyListEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importCompletionSuggestionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .purgeCompletionSuggestionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -448,6 +547,60 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   PurgeSuggestionDenyListEntriesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importCompletionSuggestionsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportCompletionSuggestionsRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportCompletionSuggestionsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportCompletionSuggestionsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .purgeCompletionSuggestionsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeCompletionSuggestionsRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  PurgeCompletionSuggestionsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  PurgeCompletionSuggestionsMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -512,6 +665,36 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
             PurgeSuggestionDenyListEntriesMetadata>
         purgeSuggestionDenyListEntriesOperationSettings() {
       return purgeSuggestionDenyListEntriesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCompletionSuggestions. */
+    public UnaryCallSettings.Builder<ImportCompletionSuggestionsRequest, Operation>
+        importCompletionSuggestionsSettings() {
+      return importCompletionSuggestionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCompletionSuggestions. */
+    public OperationCallSettings.Builder<
+            ImportCompletionSuggestionsRequest,
+            ImportCompletionSuggestionsResponse,
+            ImportCompletionSuggestionsMetadata>
+        importCompletionSuggestionsOperationSettings() {
+      return importCompletionSuggestionsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeCompletionSuggestions. */
+    public UnaryCallSettings.Builder<PurgeCompletionSuggestionsRequest, Operation>
+        purgeCompletionSuggestionsSettings() {
+      return purgeCompletionSuggestionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeCompletionSuggestions. */
+    public OperationCallSettings.Builder<
+            PurgeCompletionSuggestionsRequest,
+            PurgeCompletionSuggestionsResponse,
+            PurgeCompletionSuggestionsMetadata>
+        purgeCompletionSuggestionsOperationSettings() {
+      return purgeCompletionSuggestionsOperationSettings;
     }
 
     @Override

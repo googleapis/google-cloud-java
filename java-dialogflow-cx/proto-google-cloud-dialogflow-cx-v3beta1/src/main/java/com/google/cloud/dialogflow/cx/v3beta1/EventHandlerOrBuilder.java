@@ -204,5 +204,48 @@ public interface EventHandlerOrBuilder
    */
   com.google.protobuf.ByteString getTargetFlowBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The target playbook to transition to.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>string target_playbook = 7 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the targetPlaybook field is set.
+   */
+  boolean hasTargetPlaybook();
+  /**
+   *
+   *
+   * <pre>
+   * The target playbook to transition to.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>string target_playbook = 7 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The targetPlaybook.
+   */
+  java.lang.String getTargetPlaybook();
+  /**
+   *
+   *
+   * <pre>
+   * The target playbook to transition to.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>string target_playbook = 7 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for targetPlaybook.
+   */
+  com.google.protobuf.ByteString getTargetPlaybookBytes();
+
   com.google.cloud.dialogflow.cx.v3beta1.EventHandler.TargetCase getTargetCase();
 }

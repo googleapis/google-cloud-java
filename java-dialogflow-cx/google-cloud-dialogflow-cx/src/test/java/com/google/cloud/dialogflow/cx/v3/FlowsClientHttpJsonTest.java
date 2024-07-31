@@ -100,6 +100,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -154,6 +156,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -389,6 +393,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -441,6 +447,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -494,6 +502,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -508,6 +518,8 @@ public class FlowsClientHttpJsonTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+            .setLocked(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -548,6 +560,8 @@ public class FlowsClientHttpJsonTest {
               .setNluSettings(NluSettings.newBuilder().build())
               .setAdvancedSettings(AdvancedSettings.newBuilder().build())
               .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+              .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
+              .setLocked(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFlow(flow, updateMask);

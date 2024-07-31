@@ -1934,7 +1934,7 @@ public class SpeechClient implements BackgroundResource {
    *     completely overrides and replaces the config in the recognizer for this recognition
    *     request.
    * @param files Audio files with file metadata for ASR. The maximum number of files allowed to be
-   *     specified is 5.
+   *     specified is 15.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRecognizeResponse, OperationMetadata> batchRecognizeAsync(
@@ -1996,7 +1996,7 @@ public class SpeechClient implements BackgroundResource {
    *     completely overrides and replaces the config in the recognizer for this recognition
    *     request.
    * @param files Audio files with file metadata for ASR. The maximum number of files allowed to be
-   *     specified is 5.
+   *     specified is 15.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRecognizeResponse, OperationMetadata> batchRecognizeAsync(

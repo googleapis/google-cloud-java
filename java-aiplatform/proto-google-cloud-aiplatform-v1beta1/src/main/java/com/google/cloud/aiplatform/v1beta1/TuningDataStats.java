@@ -72,6 +72,7 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SUPERVISED_TUNING_DATA_STATS(1),
+    DISTILLATION_DATA_STATS(3),
     TUNINGDATASTATS_NOT_SET(0);
     private final int value;
 
@@ -92,6 +93,8 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       switch (value) {
         case 1:
           return SUPERVISED_TUNING_DATA_STATS;
+        case 3:
+          return DISTILLATION_DATA_STATS;
         case 0:
           return TUNINGDATASTATS_NOT_SET;
         default:
@@ -167,6 +170,64 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.getDefaultInstance();
   }
 
+  public static final int DISTILLATION_DATA_STATS_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the distillationDataStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasDistillationDataStats() {
+    return tuningDataStatsCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The distillationDataStats.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DistillationDataStats getDistillationDataStats() {
+    if (tuningDataStatsCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder
+      getDistillationDataStatsOrBuilder() {
+    if (tuningDataStatsCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +246,10 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           1, (com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats) tuningDataStats_);
     }
+    if (tuningDataStatsCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -198,6 +263,11 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats) tuningDataStats_);
+    }
+    if (tuningDataStatsCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -221,6 +291,9 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
         if (!getSupervisedTuningDataStats().equals(other.getSupervisedTuningDataStats()))
           return false;
         break;
+      case 3:
+        if (!getDistillationDataStats().equals(other.getDistillationDataStats())) return false;
+        break;
       case 0:
       default:
     }
@@ -239,6 +312,10 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       case 1:
         hash = (37 * hash) + SUPERVISED_TUNING_DATA_STATS_FIELD_NUMBER;
         hash = (53 * hash) + getSupervisedTuningDataStats().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + DISTILLATION_DATA_STATS_FIELD_NUMBER;
+        hash = (53 * hash) + getDistillationDataStats().hashCode();
         break;
       case 0:
       default:
@@ -386,6 +463,9 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       if (supervisedTuningDataStatsBuilder_ != null) {
         supervisedTuningDataStatsBuilder_.clear();
       }
+      if (distillationDataStatsBuilder_ != null) {
+        distillationDataStatsBuilder_.clear();
+      }
       tuningDataStatsCase_ = 0;
       tuningDataStats_ = null;
       return this;
@@ -432,6 +512,9 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       result.tuningDataStats_ = this.tuningDataStats_;
       if (tuningDataStatsCase_ == 1 && supervisedTuningDataStatsBuilder_ != null) {
         result.tuningDataStats_ = supervisedTuningDataStatsBuilder_.build();
+      }
+      if (tuningDataStatsCase_ == 3 && distillationDataStatsBuilder_ != null) {
+        result.tuningDataStats_ = distillationDataStatsBuilder_.build();
       }
     }
 
@@ -487,6 +570,11 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
             mergeSupervisedTuningDataStats(other.getSupervisedTuningDataStats());
             break;
           }
+        case DISTILLATION_DATA_STATS:
+          {
+            mergeDistillationDataStats(other.getDistillationDataStats());
+            break;
+          }
         case TUNINGDATASTATS_NOT_SET:
           {
             break;
@@ -525,6 +613,13 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
                 tuningDataStatsCase_ = 1;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(
+                    getDistillationDataStatsFieldBuilder().getBuilder(), extensionRegistry);
+                tuningDataStatsCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -792,6 +887,239 @@ public final class TuningDataStats extends com.google.protobuf.GeneratedMessageV
       tuningDataStatsCase_ = 1;
       onChanged();
       return supervisedTuningDataStatsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStats,
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder,
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder>
+        distillationDataStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the distillationDataStats field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistillationDataStats() {
+      return tuningDataStatsCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The distillationDataStats.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DistillationDataStats getDistillationDataStats() {
+      if (distillationDataStatsBuilder_ == null) {
+        if (tuningDataStatsCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+      } else {
+        if (tuningDataStatsCase_ == 3) {
+          return distillationDataStatsBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDistillationDataStats(
+        com.google.cloud.aiplatform.v1beta1.DistillationDataStats value) {
+      if (distillationDataStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tuningDataStats_ = value;
+        onChanged();
+      } else {
+        distillationDataStatsBuilder_.setMessage(value);
+      }
+      tuningDataStatsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDistillationDataStats(
+        com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder builderForValue) {
+      if (distillationDataStatsBuilder_ == null) {
+        tuningDataStats_ = builderForValue.build();
+        onChanged();
+      } else {
+        distillationDataStatsBuilder_.setMessage(builderForValue.build());
+      }
+      tuningDataStatsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDistillationDataStats(
+        com.google.cloud.aiplatform.v1beta1.DistillationDataStats value) {
+      if (distillationDataStatsBuilder_ == null) {
+        if (tuningDataStatsCase_ == 3
+            && tuningDataStats_
+                != com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance()) {
+          tuningDataStats_ =
+              com.google.cloud.aiplatform.v1beta1.DistillationDataStats.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          tuningDataStats_ = value;
+        }
+        onChanged();
+      } else {
+        if (tuningDataStatsCase_ == 3) {
+          distillationDataStatsBuilder_.mergeFrom(value);
+        } else {
+          distillationDataStatsBuilder_.setMessage(value);
+        }
+      }
+      tuningDataStatsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDistillationDataStats() {
+      if (distillationDataStatsBuilder_ == null) {
+        if (tuningDataStatsCase_ == 3) {
+          tuningDataStatsCase_ = 0;
+          tuningDataStats_ = null;
+          onChanged();
+        }
+      } else {
+        if (tuningDataStatsCase_ == 3) {
+          tuningDataStatsCase_ = 0;
+          tuningDataStats_ = null;
+        }
+        distillationDataStatsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder
+        getDistillationDataStatsBuilder() {
+      return getDistillationDataStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder
+        getDistillationDataStatsOrBuilder() {
+      if ((tuningDataStatsCase_ == 3) && (distillationDataStatsBuilder_ != null)) {
+        return distillationDataStatsBuilder_.getMessageOrBuilder();
+      } else {
+        if (tuningDataStatsCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for distillation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStats,
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder,
+            com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder>
+        getDistillationDataStatsFieldBuilder() {
+      if (distillationDataStatsBuilder_ == null) {
+        if (!(tuningDataStatsCase_ == 3)) {
+          tuningDataStats_ =
+              com.google.cloud.aiplatform.v1beta1.DistillationDataStats.getDefaultInstance();
+        }
+        distillationDataStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DistillationDataStats,
+                com.google.cloud.aiplatform.v1beta1.DistillationDataStats.Builder,
+                com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.DistillationDataStats) tuningDataStats_,
+                getParentForChildren(),
+                isClean());
+        tuningDataStats_ = null;
+      }
+      tuningDataStatsCase_ = 3;
+      onChanged();
+      return distillationDataStatsBuilder_;
     }
 
     @java.lang.Override

@@ -39,8 +39,8 @@ public class SyncUpdateInspectTemplate {
       UpdateInspectTemplateRequest request =
           UpdateInspectTemplateRequest.newBuilder()
               .setName(
-                  InspectTemplateName.ofOrganizationInspectTemplateName(
-                          "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                  InspectTemplateName.ofProjectLocationInspectTemplateName(
+                          "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                       .toString())
               .setInspectTemplate(InspectTemplate.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())

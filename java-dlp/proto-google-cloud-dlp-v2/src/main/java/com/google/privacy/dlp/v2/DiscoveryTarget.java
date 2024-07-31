@@ -73,6 +73,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     BIG_QUERY_TARGET(1),
     CLOUD_SQL_TARGET(2),
     SECRETS_TARGET(3),
+    CLOUD_STORAGE_TARGET(4),
     TARGET_NOT_SET(0);
     private final int value;
 
@@ -97,6 +98,8 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           return CLOUD_SQL_TARGET;
         case 3:
           return SECRETS_TARGET;
+        case 4:
+          return CLOUD_STORAGE_TARGET;
         case 0:
           return TARGET_NOT_SET;
         default:
@@ -278,6 +281,61 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
   }
 
+  public static final int CLOUD_STORAGE_TARGET_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage target for Discovery. The first target to match a table
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+   *
+   * @return Whether the cloudStorageTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudStorageTarget() {
+    return targetCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage target for Discovery. The first target to match a table
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+   *
+   * @return The cloudStorageTarget.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget getCloudStorageTarget() {
+    if (targetCase_ == 4) {
+      return (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage target for Discovery. The first target to match a table
+   * will be the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder
+      getCloudStorageTargetOrBuilder() {
+    if (targetCase_ == 4) {
+      return (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -300,6 +358,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     if (targetCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 4) {
+      output.writeMessage(4, (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -324,6 +385,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -352,6 +418,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 3:
         if (!getSecretsTarget().equals(other.getSecretsTarget())) return false;
         break;
+      case 4:
+        if (!getCloudStorageTarget().equals(other.getCloudStorageTarget())) return false;
+        break;
       case 0:
       default:
     }
@@ -378,6 +447,10 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 3:
         hash = (37 * hash) + SECRETS_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getSecretsTarget().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + CLOUD_STORAGE_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudStorageTarget().hashCode();
         break;
       case 0:
       default:
@@ -530,6 +603,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       if (secretsTargetBuilder_ != null) {
         secretsTargetBuilder_.clear();
       }
+      if (cloudStorageTargetBuilder_ != null) {
+        cloudStorageTargetBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -582,6 +658,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       if (targetCase_ == 3 && secretsTargetBuilder_ != null) {
         result.target_ = secretsTargetBuilder_.build();
+      }
+      if (targetCase_ == 4 && cloudStorageTargetBuilder_ != null) {
+        result.target_ = cloudStorageTargetBuilder_.build();
       }
     }
 
@@ -646,6 +725,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             mergeSecretsTarget(other.getSecretsTarget());
             break;
           }
+        case CLOUD_STORAGE_TARGET:
+          {
+            mergeCloudStorageTarget(other.getCloudStorageTarget());
+            break;
+          }
         case TARGET_NOT_SET:
           {
             break;
@@ -695,6 +779,13 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
                 targetCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getCloudStorageTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1389,6 +1480,229 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 3;
       onChanged();
       return secretsTargetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget,
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder>
+        cloudStorageTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     *
+     * @return Whether the cloudStorageTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudStorageTarget() {
+      return targetCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     *
+     * @return The cloudStorageTarget.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget getCloudStorageTarget() {
+      if (cloudStorageTargetBuilder_ == null) {
+        if (targetCase_ == 4) {
+          return (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+      } else {
+        if (targetCase_ == 4) {
+          return cloudStorageTargetBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    public Builder setCloudStorageTarget(
+        com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget value) {
+      if (cloudStorageTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        cloudStorageTargetBuilder_.setMessage(value);
+      }
+      targetCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    public Builder setCloudStorageTarget(
+        com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder builderForValue) {
+      if (cloudStorageTargetBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudStorageTargetBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    public Builder mergeCloudStorageTarget(
+        com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget value) {
+      if (cloudStorageTargetBuilder_ == null) {
+        if (targetCase_ == 4
+            && target_
+                != com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance()) {
+          target_ =
+              com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.newBuilder(
+                      (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 4) {
+          cloudStorageTargetBuilder_.mergeFrom(value);
+        } else {
+          cloudStorageTargetBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    public Builder clearCloudStorageTarget() {
+      if (cloudStorageTargetBuilder_ == null) {
+        if (targetCase_ == 4) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 4) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        cloudStorageTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder
+        getCloudStorageTargetBuilder() {
+      return getCloudStorageTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder
+        getCloudStorageTargetOrBuilder() {
+      if ((targetCase_ == 4) && (cloudStorageTargetBuilder_ != null)) {
+        return cloudStorageTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 4) {
+          return (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage target for Discovery. The first target to match a table
+     * will be the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStorageDiscoveryTarget cloud_storage_target = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget,
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder>
+        getCloudStorageTargetFieldBuilder() {
+      if (cloudStorageTargetBuilder_ == null) {
+        if (!(targetCase_ == 4)) {
+          target_ = com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
+        }
+        cloudStorageTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget,
+                com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder,
+                com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder>(
+                (com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 4;
+      onChanged();
+      return cloudStorageTargetBuilder_;
     }
 
     @java.lang.Override

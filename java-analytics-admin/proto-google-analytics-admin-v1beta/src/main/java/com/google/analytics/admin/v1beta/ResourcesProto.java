@@ -93,6 +93,18 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1beta_ConversionEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1beta_ConversionEvent_DefaultConversionValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1beta_ConversionEvent_DefaultConversionValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1beta_KeyEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1beta_KeyEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1beta_KeyEvent_DefaultValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1beta_KeyEvent_DefaultValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_admin_v1beta_CustomDimension_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1beta_CustomDimension_fieldAccessorTable;
@@ -118,222 +130,247 @@ public final class ResourcesProto {
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\037google/protobuf/time"
           + "stamp.proto\032\036google/protobuf/wrappers.pr"
-          + "oto\"\216\002\n\007Account\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cr"
+          + "oto\"\344\002\n\007Account\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cr"
           + "eate_time\030\002 \001(\0132\032.google.protobuf.Timest"
           + "ampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google.p"
           + "rotobuf.TimestampB\003\340A\003\022\031\n\014display_name\030\004"
           + " \001(\tB\003\340A\002\022\023\n\013region_code\030\005 \001(\t\022\024\n\007delete"
-          + "d\030\006 \001(\010B\003\340A\003:>\352A;\n%analyticsadmin.google"
-          + "apis.com/Account\022\022accounts/{account}\"\266\005\n"
-          + "\010Property\022\021\n\004name\030\001 \001(\tB\003\340A\003\022G\n\rproperty"
-          + "_type\030\016 \001(\0162+.google.analytics.admin.v1b"
-          + "eta.PropertyTypeB\003\340A\005\0224\n\013create_time\030\003 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013u"
-          + "pdate_time\030\004 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\022\023\n\006parent\030\002 \001(\tB\003\340A\005\022\031\n\014displa"
-          + "y_name\030\005 \001(\tB\003\340A\002\022J\n\021industry_category\030\006"
-          + " \001(\0162/.google.analytics.admin.v1beta.Ind"
-          + "ustryCategory\022\026\n\ttime_zone\030\007 \001(\tB\003\340A\002\022\025\n"
-          + "\rcurrency_code\030\010 \001(\t\022G\n\rservice_level\030\n "
-          + "\001(\0162+.google.analytics.admin.v1beta.Serv"
-          + "iceLevelB\003\340A\003\0224\n\013delete_time\030\013 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013expire_ti"
-          + "me\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022>\n\007account\030\r \001(\tB-\340A\005\372A\'\n%analyticsadm"
-          + "in.googleapis.com/Account:B\352A?\n&analytic"
-          + "sadmin.googleapis.com/Property\022\025properti"
-          + "es/{property}\"\360\007\n\nDataStream\022R\n\017web_stre"
-          + "am_data\030\006 \001(\01327.google.analytics.admin.v"
-          + "1beta.DataStream.WebStreamDataH\000\022a\n\027andr"
-          + "oid_app_stream_data\030\007 \001(\0132>.google.analy"
-          + "tics.admin.v1beta.DataStream.AndroidAppS"
-          + "treamDataH\000\022Y\n\023ios_app_stream_data\030\010 \001(\013"
-          + "2:.google.analytics.admin.v1beta.DataStr"
-          + "eam.IosAppStreamDataH\000\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\003\022N\n\004type\030\002 \001(\01628.google.analytics.admin"
-          + ".v1beta.DataStream.DataStreamTypeB\006\340A\005\340A"
-          + "\002\022\024\n\014display_name\030\003 \001(\t\0224\n\013create_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\005 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\032_\n\rWebStreamData\022\033\n\016measurem"
-          + "ent_id\030\001 \001(\tB\003\340A\003\022\034\n\017firebase_app_id\030\002 \001"
-          + "(\tB\003\340A\003\022\023\n\013default_uri\030\003 \001(\t\032O\n\024AndroidA"
-          + "ppStreamData\022\034\n\017firebase_app_id\030\001 \001(\tB\003\340"
-          + "A\003\022\031\n\014package_name\030\002 \001(\tB\003\340A\005\032K\n\020IosAppS"
-          + "treamData\022\034\n\017firebase_app_id\030\001 \001(\tB\003\340A\003\022"
-          + "\031\n\tbundle_id\030\002 \001(\tB\006\340A\005\340A\002\"}\n\016DataStream"
-          + "Type\022 \n\034DATA_STREAM_TYPE_UNSPECIFIED\020\000\022\023"
-          + "\n\017WEB_DATA_STREAM\020\001\022\033\n\027ANDROID_APP_DATA_"
-          + "STREAM\020\002\022\027\n\023IOS_APP_DATA_STREAM\020\003:^\352A[\n("
-          + "analyticsadmin.googleapis.com/DataStream"
-          + "\022/properties/{property}/dataStreams/{dat"
-          + "a_stream}B\r\n\013stream_data\"\323\001\n\014FirebaseLin"
-          + "k\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\007project\030\002 \001(\tB\003\340"
-          + "A\005\0224\n\013create_time\030\003 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003:d\352Aa\n*analyticsadmin.go"
-          + "ogleapis.com/FirebaseLink\0223properties/{p"
-          + "roperty}/firebaseLinks/{firebase_link}\"\230"
-          + "\003\n\rGoogleAdsLink\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\030\n\013c"
-          + "ustomer_id\030\003 \001(\tB\003\340A\005\022\037\n\022can_manage_clie"
-          + "nts\030\004 \001(\010B\003\340A\003\022?\n\033ads_personalization_en"
-          + "abled\030\005 \001(\0132\032.google.protobuf.BoolValue\022"
-          + "4\n\013create_time\030\007 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0224\n\013update_time\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\022\"\n\025creator_e"
-          + "mail_address\030\t \001(\tB\003\340A\003:h\352Ae\n+analyticsa"
-          + "dmin.googleapis.com/GoogleAdsLink\0226prope"
-          + "rties/{property}/googleAdsLinks/{google_"
-          + "ads_link}\"\353\002\n\023DataSharingSettings\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022+\n#sharing_with_google_supp"
-          + "ort_enabled\030\002 \001(\010\0222\n*sharing_with_google"
-          + "_assigned_sales_enabled\030\003 \001(\010\022-\n%sharing"
-          + "_with_google_any_sales_enabled\030\004 \001(\010\022,\n$"
-          + "sharing_with_google_products_enabled\030\005 \001"
-          + "(\010\022#\n\033sharing_with_others_enabled\030\006 \001(\010:"
-          + "^\352A[\n1analyticsadmin.googleapis.com/Data"
-          + "SharingSettings\022&accounts/{account}/data"
-          + "SharingSettings\"\224\002\n\016AccountSummary\022\014\n\004na"
-          + "me\030\001 \001(\t\022;\n\007account\030\002 \001(\tB*\372A\'\n%analytic"
-          + "sadmin.googleapis.com/Account\022\024\n\014display"
-          + "_name\030\003 \001(\t\022J\n\022property_summaries\030\004 \003(\0132"
-          + "..google.analytics.admin.v1beta.Property"
-          + "Summary:U\352AR\n,analyticsadmin.googleapis."
-          + "com/AccountSummary\022\"accountSummaries/{ac"
-          + "count_summary}\"\272\001\n\017PropertySummary\022=\n\010pr"
-          + "operty\030\001 \001(\tB+\372A(\n&analyticsadmin.google"
-          + "apis.com/Property\022\024\n\014display_name\030\002 \001(\t\022"
-          + "B\n\rproperty_type\030\003 \001(\0162+.google.analytic"
-          + "s.admin.v1beta.PropertyType\022\016\n\006parent\030\004 "
-          + "\001(\t\"\216\002\n\031MeasurementProtocolSecret\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
-          + "\031\n\014secret_value\030\003 \001(\tB\003\340A\003:\247\001\352A\243\001\n7analy"
-          + "ticsadmin.googleapis.com/MeasurementProt"
-          + "ocolSecret\022hproperties/{property}/dataSt"
-          + "reams/{data_stream}/measurementProtocolS"
-          + "ecrets/{measurement_protocol_secret}\"\210\002\n"
-          + "\022ChangeHistoryEvent\022\n\n\002id\030\001 \001(\t\022/\n\013chang"
-          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022<\n\nactor_type\030\003 \001(\0162(.google.analytics."
-          + "admin.v1beta.ActorType\022\030\n\020user_actor_ema"
-          + "il\030\004 \001(\t\022\030\n\020changes_filtered\030\005 \001(\010\022C\n\007ch"
-          + "anges\030\006 \003(\01322.google.analytics.admin.v1b"
-          + "eta.ChangeHistoryChange\"\252\007\n\023ChangeHistor"
-          + "yChange\022\020\n\010resource\030\001 \001(\t\0229\n\006action\030\002 \001("
-          + "\0162).google.analytics.admin.v1beta.Action"
-          + "Type\022h\n\026resource_before_change\030\003 \001(\0132H.g"
-          + "oogle.analytics.admin.v1beta.ChangeHisto"
-          + "ryChange.ChangeHistoryResource\022g\n\025resour"
-          + "ce_after_change\030\004 \001(\0132H.google.analytics"
-          + ".admin.v1beta.ChangeHistoryChange.Change"
-          + "HistoryResource\032\362\004\n\025ChangeHistoryResourc"
-          + "e\0229\n\007account\030\001 \001(\0132&.google.analytics.ad"
-          + "min.v1beta.AccountH\000\022;\n\010property\030\002 \001(\0132\'"
-          + ".google.analytics.admin.v1beta.PropertyH"
-          + "\000\022D\n\rfirebase_link\030\006 \001(\0132+.google.analyt"
-          + "ics.admin.v1beta.FirebaseLinkH\000\022G\n\017googl"
-          + "e_ads_link\030\007 \001(\0132,.google.analytics.admi"
-          + "n.v1beta.GoogleAdsLinkH\000\022J\n\020conversion_e"
-          + "vent\030\013 \001(\0132..google.analytics.admin.v1be"
-          + "ta.ConversionEventH\000\022_\n\033measurement_prot"
-          + "ocol_secret\030\014 \001(\01328.google.analytics.adm"
-          + "in.v1beta.MeasurementProtocolSecretH\000\022W\n"
-          + "\027data_retention_settings\030\017 \001(\01324.google."
-          + "analytics.admin.v1beta.DataRetentionSett"
-          + "ingsH\000\022@\n\013data_stream\030\022 \001(\0132).google.ana"
-          + "lytics.admin.v1beta.DataStreamH\000B\n\n\010reso"
-          + "urce\"\350\003\n\017ConversionEvent\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\003\022\027\n\nevent_name\030\002 \001(\tB\003\340A\005\0224\n\013create_t"
-          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\022\026\n\tdeletable\030\004 \001(\010B\003\340A\003\022\023\n\006custom\030\005 \001"
-          + "(\010B\003\340A\003\022e\n\017counting_method\030\006 \001(\0162G.googl"
-          + "e.analytics.admin.v1beta.ConversionEvent"
-          + ".ConversionCountingMethodB\003\340A\001\"p\n\030Conver"
-          + "sionCountingMethod\022*\n&CONVERSION_COUNTIN"
-          + "G_METHOD_UNSPECIFIED\020\000\022\022\n\016ONCE_PER_EVENT"
-          + "\020\001\022\024\n\020ONCE_PER_SESSION\020\002:m\352Aj\n-analytics"
-          + "admin.googleapis.com/ConversionEvent\0229pr"
-          + "operties/{property}/conversionEvents/{co"
-          + "nversion_event}\"\273\003\n\017CustomDimension\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\003\022\036\n\016parameter_name\030\002 \001(\tB\006"
-          + "\340A\002\340A\005\022\031\n\014display_name\030\003 \001(\tB\003\340A\002\022\030\n\013des"
-          + "cription\030\004 \001(\tB\003\340A\001\022T\n\005scope\030\005 \001(\0162=.goo"
-          + "gle.analytics.admin.v1beta.CustomDimensi"
-          + "on.DimensionScopeB\006\340A\002\340A\005\022)\n\034disallow_ad"
-          + "s_personalization\030\006 \001(\010B\003\340A\001\"P\n\016Dimensio"
-          + "nScope\022\037\n\033DIMENSION_SCOPE_UNSPECIFIED\020\000\022"
-          + "\t\n\005EVENT\020\001\022\010\n\004USER\020\002\022\010\n\004ITEM\020\003:m\352Aj\n-ana"
-          + "lyticsadmin.googleapis.com/CustomDimensi"
-          + "on\0229properties/{property}/customDimensio"
-          + "ns/{custom_dimension}\"\302\006\n\014CustomMetric\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\003\022\036\n\016parameter_name\030\002 \001("
-          + "\tB\006\340A\002\340A\005\022\031\n\014display_name\030\003 \001(\tB\003\340A\002\022\030\n\013"
-          + "description\030\004 \001(\tB\003\340A\001\022Z\n\020measurement_un"
-          + "it\030\005 \001(\0162;.google.analytics.admin.v1beta"
-          + ".CustomMetric.MeasurementUnitB\003\340A\002\022N\n\005sc"
-          + "ope\030\006 \001(\01627.google.analytics.admin.v1bet"
-          + "a.CustomMetric.MetricScopeB\006\340A\002\340A\005\022e\n\026re"
-          + "stricted_metric_type\030\010 \003(\0162@.google.anal"
-          + "ytics.admin.v1beta.CustomMetric.Restrict"
-          + "edMetricTypeB\003\340A\001\"\267\001\n\017MeasurementUnit\022 \n"
-          + "\034MEASUREMENT_UNIT_UNSPECIFIED\020\000\022\014\n\010STAND"
-          + "ARD\020\001\022\014\n\010CURRENCY\020\002\022\010\n\004FEET\020\003\022\n\n\006METERS\020"
-          + "\004\022\016\n\nKILOMETERS\020\005\022\t\n\005MILES\020\006\022\020\n\014MILLISEC"
-          + "ONDS\020\007\022\013\n\007SECONDS\020\010\022\013\n\007MINUTES\020\t\022\t\n\005HOUR"
-          + "S\020\n\"6\n\013MetricScope\022\034\n\030METRIC_SCOPE_UNSPE"
-          + "CIFIED\020\000\022\t\n\005EVENT\020\001\"_\n\024RestrictedMetricT"
-          + "ype\022&\n\"RESTRICTED_METRIC_TYPE_UNSPECIFIE"
-          + "D\020\000\022\r\n\tCOST_DATA\020\001\022\020\n\014REVENUE_DATA\020\002:d\352A"
-          + "a\n*analyticsadmin.googleapis.com/CustomM"
-          + "etric\0223properties/{property}/customMetri"
-          + "cs/{custom_metric}\"\301\003\n\025DataRetentionSett"
-          + "ings\022\021\n\004name\030\001 \001(\tB\003\340A\003\022d\n\024event_data_re"
-          + "tention\030\002 \001(\0162F.google.analytics.admin.v"
-          + "1beta.DataRetentionSettings.RetentionDur"
-          + "ation\022\'\n\037reset_user_data_on_new_activity"
-          + "\030\003 \001(\010\"\236\001\n\021RetentionDuration\022\"\n\036RETENTIO"
-          + "N_DURATION_UNSPECIFIED\020\000\022\016\n\nTWO_MONTHS\020\001"
-          + "\022\023\n\017FOURTEEN_MONTHS\020\003\022\025\n\021TWENTY_SIX_MONT"
-          + "HS\020\004\022\027\n\023THIRTY_EIGHT_MONTHS\020\005\022\020\n\014FIFTY_M"
-          + "ONTHS\020\006:e\352Ab\n3analyticsadmin.googleapis."
-          + "com/DataRetentionSettings\022+properties/{p"
-          + "roperty}/dataRetentionSettings*\252\004\n\020Indus"
-          + "tryCategory\022!\n\035INDUSTRY_CATEGORY_UNSPECI"
-          + "FIED\020\000\022\016\n\nAUTOMOTIVE\020\001\022#\n\037BUSINESS_AND_I"
-          + "NDUSTRIAL_MARKETS\020\002\022\013\n\007FINANCE\020\003\022\016\n\nHEAL"
-          + "THCARE\020\004\022\016\n\nTECHNOLOGY\020\005\022\n\n\006TRAVEL\020\006\022\t\n\005"
-          + "OTHER\020\007\022\032\n\026ARTS_AND_ENTERTAINMENT\020\010\022\026\n\022B"
-          + "EAUTY_AND_FITNESS\020\t\022\030\n\024BOOKS_AND_LITERAT"
-          + "URE\020\n\022\022\n\016FOOD_AND_DRINK\020\013\022\t\n\005GAMES\020\014\022\027\n\023"
-          + "HOBBIES_AND_LEISURE\020\r\022\023\n\017HOME_AND_GARDEN"
-          + "\020\016\022\030\n\024INTERNET_AND_TELECOM\020\017\022\026\n\022LAW_AND_"
-          + "GOVERNMENT\020\020\022\010\n\004NEWS\020\021\022\026\n\022ONLINE_COMMUNI"
-          + "TIES\020\022\022\026\n\022PEOPLE_AND_SOCIETY\020\023\022\024\n\020PETS_A"
-          + "ND_ANIMALS\020\024\022\017\n\013REAL_ESTATE\020\025\022\r\n\tREFEREN"
-          + "CE\020\026\022\013\n\007SCIENCE\020\027\022\n\n\006SPORTS\020\030\022\026\n\022JOBS_AN"
-          + "D_EDUCATION\020\031\022\014\n\010SHOPPING\020\032*f\n\014ServiceLe"
-          + "vel\022\035\n\031SERVICE_LEVEL_UNSPECIFIED\020\000\022\035\n\031GO"
-          + "OGLE_ANALYTICS_STANDARD\020\001\022\030\n\024GOOGLE_ANAL"
-          + "YTICS_360\020\002*J\n\tActorType\022\032\n\026ACTOR_TYPE_U"
-          + "NSPECIFIED\020\000\022\010\n\004USER\020\001\022\n\n\006SYSTEM\020\002\022\013\n\007SU"
-          + "PPORT\020\003*P\n\nActionType\022\033\n\027ACTION_TYPE_UNS"
-          + "PECIFIED\020\000\022\013\n\007CREATED\020\001\022\013\n\007UPDATED\020\002\022\013\n\007"
-          + "DELETED\020\003*\377\002\n\031ChangeHistoryResourceType\022"
-          + ",\n(CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIF"
-          + "IED\020\000\022\013\n\007ACCOUNT\020\001\022\014\n\010PROPERTY\020\002\022\021\n\rFIRE"
-          + "BASE_LINK\020\006\022\023\n\017GOOGLE_ADS_LINK\020\007\022\033\n\027GOOG"
-          + "LE_SIGNALS_SETTINGS\020\010\022\024\n\020CONVERSION_EVEN"
-          + "T\020\t\022\037\n\033MEASUREMENT_PROTOCOL_SECRET\020\n\022\033\n\027"
-          + "DATA_RETENTION_SETTINGS\020\r\022%\n!DISPLAY_VID"
-          + "EO_360_ADVERTISER_LINK\020\016\022.\n*DISPLAY_VIDE"
-          + "O_360_ADVERTISER_LINK_PROPOSAL\020\017\022\017\n\013DATA"
-          + "_STREAM\020\022\022\030\n\024ATTRIBUTION_SETTINGS\020\024*\202\001\n\014"
-          + "PropertyType\022\035\n\031PROPERTY_TYPE_UNSPECIFIE"
-          + "D\020\000\022\032\n\026PROPERTY_TYPE_ORDINARY\020\001\022\035\n\031PROPE"
-          + "RTY_TYPE_SUBPROPERTY\020\002\022\030\n\024PROPERTY_TYPE_"
-          + "ROLLUP\020\003By\n!com.google.analytics.admin.v"
-          + "1betaB\016ResourcesProtoP\001ZBgoogle.golang.o"
-          + "rg/genproto/googleapis/analytics/admin/v"
-          + "1beta;adminb\006proto3"
+          + "d\030\006 \001(\010B\003\340A\003\022T\n\020gmp_organization\030\007 \001(\tB:"
+          + "\340A\003\372A4\n2marketingplatformadmin.googleapi"
+          + "s.com/Organization:>\352A;\n%analyticsadmin."
+          + "googleapis.com/Account\022\022accounts/{accoun"
+          + "t}\"\266\005\n\010Property\022\021\n\004name\030\001 \001(\tB\003\340A\003\022G\n\rpr"
+          + "operty_type\030\016 \001(\0162+.google.analytics.adm"
+          + "in.v1beta.PropertyTypeB\003\340A\005\0224\n\013create_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013update_time\030\004 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022\023\n\006parent\030\002 \001(\tB\003\340A\005\022\031\n\014"
+          + "display_name\030\005 \001(\tB\003\340A\002\022J\n\021industry_cate"
+          + "gory\030\006 \001(\0162/.google.analytics.admin.v1be"
+          + "ta.IndustryCategory\022\026\n\ttime_zone\030\007 \001(\tB\003"
+          + "\340A\002\022\025\n\rcurrency_code\030\010 \001(\t\022G\n\rservice_le"
+          + "vel\030\n \001(\0162+.google.analytics.admin.v1bet"
+          + "a.ServiceLevelB\003\340A\003\0224\n\013delete_time\030\013 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013exp"
+          + "ire_time\030\014 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\022>\n\007account\030\r \001(\tB-\340A\005\372A\'\n%analyt"
+          + "icsadmin.googleapis.com/Account:B\352A?\n&an"
+          + "alyticsadmin.googleapis.com/Property\022\025pr"
+          + "operties/{property}\"\360\007\n\nDataStream\022R\n\017we"
+          + "b_stream_data\030\006 \001(\01327.google.analytics.a"
+          + "dmin.v1beta.DataStream.WebStreamDataH\000\022a"
+          + "\n\027android_app_stream_data\030\007 \001(\0132>.google"
+          + ".analytics.admin.v1beta.DataStream.Andro"
+          + "idAppStreamDataH\000\022Y\n\023ios_app_stream_data"
+          + "\030\010 \001(\0132:.google.analytics.admin.v1beta.D"
+          + "ataStream.IosAppStreamDataH\000\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\003\022N\n\004type\030\002 \001(\01628.google.analytics"
+          + ".admin.v1beta.DataStream.DataStreamTypeB"
+          + "\006\340A\005\340A\002\022\024\n\014display_name\030\003 \001(\t\0224\n\013create_"
+          + "time\030\004 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\032_\n\rWebStreamData\022\033\n\016me"
+          + "asurement_id\030\001 \001(\tB\003\340A\003\022\034\n\017firebase_app_"
+          + "id\030\002 \001(\tB\003\340A\003\022\023\n\013default_uri\030\003 \001(\t\032O\n\024An"
+          + "droidAppStreamData\022\034\n\017firebase_app_id\030\001 "
+          + "\001(\tB\003\340A\003\022\031\n\014package_name\030\002 \001(\tB\003\340A\005\032K\n\020I"
+          + "osAppStreamData\022\034\n\017firebase_app_id\030\001 \001(\t"
+          + "B\003\340A\003\022\031\n\tbundle_id\030\002 \001(\tB\006\340A\005\340A\002\"}\n\016Data"
+          + "StreamType\022 \n\034DATA_STREAM_TYPE_UNSPECIFI"
+          + "ED\020\000\022\023\n\017WEB_DATA_STREAM\020\001\022\033\n\027ANDROID_APP"
+          + "_DATA_STREAM\020\002\022\027\n\023IOS_APP_DATA_STREAM\020\003:"
+          + "^\352A[\n(analyticsadmin.googleapis.com/Data"
+          + "Stream\022/properties/{property}/dataStream"
+          + "s/{data_stream}B\r\n\013stream_data\"\323\001\n\014Fireb"
+          + "aseLink\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\007project\030\002 "
+          + "\001(\tB\003\340A\005\0224\n\013create_time\030\003 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003:d\352Aa\n*analyticsad"
+          + "min.googleapis.com/FirebaseLink\0223propert"
+          + "ies/{property}/firebaseLinks/{firebase_l"
+          + "ink}\"\230\003\n\rGoogleAdsLink\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\003\022\030\n\013customer_id\030\003 \001(\tB\003\340A\005\022\037\n\022can_manag"
+          + "e_clients\030\004 \001(\010B\003\340A\003\022?\n\033ads_personalizat"
+          + "ion_enabled\030\005 \001(\0132\032.google.protobuf.Bool"
+          + "Value\0224\n\013create_time\030\007 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\010 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\022\"\n\025cre"
+          + "ator_email_address\030\t \001(\tB\003\340A\003:h\352Ae\n+anal"
+          + "yticsadmin.googleapis.com/GoogleAdsLink\022"
+          + "6properties/{property}/googleAdsLinks/{g"
+          + "oogle_ads_link}\"\353\002\n\023DataSharingSettings\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\003\022+\n#sharing_with_googl"
+          + "e_support_enabled\030\002 \001(\010\0222\n*sharing_with_"
+          + "google_assigned_sales_enabled\030\003 \001(\010\022-\n%s"
+          + "haring_with_google_any_sales_enabled\030\004 \001"
+          + "(\010\022,\n$sharing_with_google_products_enabl"
+          + "ed\030\005 \001(\010\022#\n\033sharing_with_others_enabled\030"
+          + "\006 \001(\010:^\352A[\n1analyticsadmin.googleapis.co"
+          + "m/DataSharingSettings\022&accounts/{account"
+          + "}/dataSharingSettings\"\224\002\n\016AccountSummary"
+          + "\022\014\n\004name\030\001 \001(\t\022;\n\007account\030\002 \001(\tB*\372A\'\n%an"
+          + "alyticsadmin.googleapis.com/Account\022\024\n\014d"
+          + "isplay_name\030\003 \001(\t\022J\n\022property_summaries\030"
+          + "\004 \003(\0132..google.analytics.admin.v1beta.Pr"
+          + "opertySummary:U\352AR\n,analyticsadmin.googl"
+          + "eapis.com/AccountSummary\022\"accountSummari"
+          + "es/{account_summary}\"\272\001\n\017PropertySummary"
+          + "\022=\n\010property\030\001 \001(\tB+\372A(\n&analyticsadmin."
+          + "googleapis.com/Property\022\024\n\014display_name\030"
+          + "\002 \001(\t\022B\n\rproperty_type\030\003 \001(\0162+.google.an"
+          + "alytics.admin.v1beta.PropertyType\022\016\n\006par"
+          + "ent\030\004 \001(\t\"\216\002\n\031MeasurementProtocolSecret\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\t"
+          + "B\003\340A\002\022\031\n\014secret_value\030\003 \001(\tB\003\340A\003:\247\001\352A\243\001\n"
+          + "7analyticsadmin.googleapis.com/Measureme"
+          + "ntProtocolSecret\022hproperties/{property}/"
+          + "dataStreams/{data_stream}/measurementPro"
+          + "tocolSecrets/{measurement_protocol_secre"
+          + "t}\"\210\002\n\022ChangeHistoryEvent\022\n\n\002id\030\001 \001(\t\022/\n"
+          + "\013change_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022<\n\nactor_type\030\003 \001(\0162(.google.anal"
+          + "ytics.admin.v1beta.ActorType\022\030\n\020user_act"
+          + "or_email\030\004 \001(\t\022\030\n\020changes_filtered\030\005 \001(\010"
+          + "\022C\n\007changes\030\006 \003(\01322.google.analytics.adm"
+          + "in.v1beta.ChangeHistoryChange\"\252\007\n\023Change"
+          + "HistoryChange\022\020\n\010resource\030\001 \001(\t\0229\n\006actio"
+          + "n\030\002 \001(\0162).google.analytics.admin.v1beta."
+          + "ActionType\022h\n\026resource_before_change\030\003 \001"
+          + "(\0132H.google.analytics.admin.v1beta.Chang"
+          + "eHistoryChange.ChangeHistoryResource\022g\n\025"
+          + "resource_after_change\030\004 \001(\0132H.google.ana"
+          + "lytics.admin.v1beta.ChangeHistoryChange."
+          + "ChangeHistoryResource\032\362\004\n\025ChangeHistoryR"
+          + "esource\0229\n\007account\030\001 \001(\0132&.google.analyt"
+          + "ics.admin.v1beta.AccountH\000\022;\n\010property\030\002"
+          + " \001(\0132\'.google.analytics.admin.v1beta.Pro"
+          + "pertyH\000\022D\n\rfirebase_link\030\006 \001(\0132+.google."
+          + "analytics.admin.v1beta.FirebaseLinkH\000\022G\n"
+          + "\017google_ads_link\030\007 \001(\0132,.google.analytic"
+          + "s.admin.v1beta.GoogleAdsLinkH\000\022J\n\020conver"
+          + "sion_event\030\013 \001(\0132..google.analytics.admi"
+          + "n.v1beta.ConversionEventH\000\022_\n\033measuremen"
+          + "t_protocol_secret\030\014 \001(\01328.google.analyti"
+          + "cs.admin.v1beta.MeasurementProtocolSecre"
+          + "tH\000\022W\n\027data_retention_settings\030\017 \001(\01324.g"
+          + "oogle.analytics.admin.v1beta.DataRetenti"
+          + "onSettingsH\000\022@\n\013data_stream\030\022 \001(\0132).goog"
+          + "le.analytics.admin.v1beta.DataStreamH\000B\n"
+          + "\n\010resource\"\336\005\n\017ConversionEvent\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\003\022\027\n\nevent_name\030\002 \001(\tB\003\340A\005\0224\n\013cr"
+          + "eate_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022\026\n\tdeletable\030\004 \001(\010B\003\340A\003\022\023\n\006cust"
+          + "om\030\005 \001(\010B\003\340A\003\022e\n\017counting_method\030\006 \001(\0162G"
+          + ".google.analytics.admin.v1beta.Conversio"
+          + "nEvent.ConversionCountingMethodB\003\340A\001\022q\n\030"
+          + "default_conversion_value\030\007 \001(\0132E.google."
+          + "analytics.admin.v1beta.ConversionEvent.D"
+          + "efaultConversionValueB\003\340A\001H\000\210\001\001\032d\n\026Defau"
+          + "ltConversionValue\022\022\n\005value\030\001 \001(\001H\000\210\001\001\022\032\n"
+          + "\rcurrency_code\030\002 \001(\tH\001\210\001\001B\010\n\006_valueB\020\n\016_"
+          + "currency_code\"p\n\030ConversionCountingMetho"
+          + "d\022*\n&CONVERSION_COUNTING_METHOD_UNSPECIF"
+          + "IED\020\000\022\022\n\016ONCE_PER_EVENT\020\001\022\024\n\020ONCE_PER_SE"
+          + "SSION\020\002:m\352Aj\n-analyticsadmin.googleapis."
+          + "com/ConversionEvent\0229properties/{propert"
+          + "y}/conversionEvents/{conversion_event}B\033"
+          + "\n\031_default_conversion_value\"\325\004\n\010KeyEvent"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\027\n\nevent_name\030\002 \001(\tB"
+          + "\003\340A\005\0224\n\013create_time\030\003 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\022\026\n\tdeletable\030\004 \001(\010B\003\340"
+          + "A\003\022\023\n\006custom\030\005 \001(\010B\003\340A\003\022T\n\017counting_meth"
+          + "od\030\006 \001(\01626.google.analytics.admin.v1beta"
+          + ".KeyEvent.CountingMethodB\003\340A\002\022P\n\rdefault"
+          + "_value\030\007 \001(\01324.google.analytics.admin.v1"
+          + "beta.KeyEvent.DefaultValueB\003\340A\001\032F\n\014Defau"
+          + "ltValue\022\032\n\rnumeric_value\030\001 \001(\001B\003\340A\002\022\032\n\rc"
+          + "urrency_code\030\002 \001(\tB\003\340A\002\"[\n\016CountingMetho"
+          + "d\022\037\n\033COUNTING_METHOD_UNSPECIFIED\020\000\022\022\n\016ON"
+          + "CE_PER_EVENT\020\001\022\024\n\020ONCE_PER_SESSION\020\002:m\352A"
+          + "j\n&analyticsadmin.googleapis.com/KeyEven"
+          + "t\022+properties/{property}/keyEvents/{key_"
+          + "event}*\tkeyEvents2\010keyEvent\"\273\003\n\017CustomDi"
+          + "mension\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\036\n\016parameter_"
+          + "name\030\002 \001(\tB\006\340A\002\340A\005\022\031\n\014display_name\030\003 \001(\t"
+          + "B\003\340A\002\022\030\n\013description\030\004 \001(\tB\003\340A\001\022T\n\005scope"
+          + "\030\005 \001(\0162=.google.analytics.admin.v1beta.C"
+          + "ustomDimension.DimensionScopeB\006\340A\002\340A\005\022)\n"
+          + "\034disallow_ads_personalization\030\006 \001(\010B\003\340A\001"
+          + "\"P\n\016DimensionScope\022\037\n\033DIMENSION_SCOPE_UN"
+          + "SPECIFIED\020\000\022\t\n\005EVENT\020\001\022\010\n\004USER\020\002\022\010\n\004ITEM"
+          + "\020\003:m\352Aj\n-analyticsadmin.googleapis.com/C"
+          + "ustomDimension\0229properties/{property}/cu"
+          + "stomDimensions/{custom_dimension}\"\302\006\n\014Cu"
+          + "stomMetric\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\036\n\016paramet"
+          + "er_name\030\002 \001(\tB\006\340A\002\340A\005\022\031\n\014display_name\030\003 "
+          + "\001(\tB\003\340A\002\022\030\n\013description\030\004 \001(\tB\003\340A\001\022Z\n\020me"
+          + "asurement_unit\030\005 \001(\0162;.google.analytics."
+          + "admin.v1beta.CustomMetric.MeasurementUni"
+          + "tB\003\340A\002\022N\n\005scope\030\006 \001(\01627.google.analytics"
+          + ".admin.v1beta.CustomMetric.MetricScopeB\006"
+          + "\340A\002\340A\005\022e\n\026restricted_metric_type\030\010 \003(\0162@"
+          + ".google.analytics.admin.v1beta.CustomMet"
+          + "ric.RestrictedMetricTypeB\003\340A\001\"\267\001\n\017Measur"
+          + "ementUnit\022 \n\034MEASUREMENT_UNIT_UNSPECIFIE"
+          + "D\020\000\022\014\n\010STANDARD\020\001\022\014\n\010CURRENCY\020\002\022\010\n\004FEET\020"
+          + "\003\022\n\n\006METERS\020\004\022\016\n\nKILOMETERS\020\005\022\t\n\005MILES\020\006"
+          + "\022\020\n\014MILLISECONDS\020\007\022\013\n\007SECONDS\020\010\022\013\n\007MINUT"
+          + "ES\020\t\022\t\n\005HOURS\020\n\"6\n\013MetricScope\022\034\n\030METRIC"
+          + "_SCOPE_UNSPECIFIED\020\000\022\t\n\005EVENT\020\001\"_\n\024Restr"
+          + "ictedMetricType\022&\n\"RESTRICTED_METRIC_TYP"
+          + "E_UNSPECIFIED\020\000\022\r\n\tCOST_DATA\020\001\022\020\n\014REVENU"
+          + "E_DATA\020\002:d\352Aa\n*analyticsadmin.googleapis"
+          + ".com/CustomMetric\0223properties/{property}"
+          + "/customMetrics/{custom_metric}\"\301\003\n\025DataR"
+          + "etentionSettings\022\021\n\004name\030\001 \001(\tB\003\340A\003\022d\n\024e"
+          + "vent_data_retention\030\002 \001(\0162F.google.analy"
+          + "tics.admin.v1beta.DataRetentionSettings."
+          + "RetentionDuration\022\'\n\037reset_user_data_on_"
+          + "new_activity\030\003 \001(\010\"\236\001\n\021RetentionDuration"
+          + "\022\"\n\036RETENTION_DURATION_UNSPECIFIED\020\000\022\016\n\n"
+          + "TWO_MONTHS\020\001\022\023\n\017FOURTEEN_MONTHS\020\003\022\025\n\021TWE"
+          + "NTY_SIX_MONTHS\020\004\022\027\n\023THIRTY_EIGHT_MONTHS\020"
+          + "\005\022\020\n\014FIFTY_MONTHS\020\006:e\352Ab\n3analyticsadmin"
+          + ".googleapis.com/DataRetentionSettings\022+p"
+          + "roperties/{property}/dataRetentionSettin"
+          + "gs*\252\004\n\020IndustryCategory\022!\n\035INDUSTRY_CATE"
+          + "GORY_UNSPECIFIED\020\000\022\016\n\nAUTOMOTIVE\020\001\022#\n\037BU"
+          + "SINESS_AND_INDUSTRIAL_MARKETS\020\002\022\013\n\007FINAN"
+          + "CE\020\003\022\016\n\nHEALTHCARE\020\004\022\016\n\nTECHNOLOGY\020\005\022\n\n\006"
+          + "TRAVEL\020\006\022\t\n\005OTHER\020\007\022\032\n\026ARTS_AND_ENTERTAI"
+          + "NMENT\020\010\022\026\n\022BEAUTY_AND_FITNESS\020\t\022\030\n\024BOOKS"
+          + "_AND_LITERATURE\020\n\022\022\n\016FOOD_AND_DRINK\020\013\022\t\n"
+          + "\005GAMES\020\014\022\027\n\023HOBBIES_AND_LEISURE\020\r\022\023\n\017HOM"
+          + "E_AND_GARDEN\020\016\022\030\n\024INTERNET_AND_TELECOM\020\017"
+          + "\022\026\n\022LAW_AND_GOVERNMENT\020\020\022\010\n\004NEWS\020\021\022\026\n\022ON"
+          + "LINE_COMMUNITIES\020\022\022\026\n\022PEOPLE_AND_SOCIETY"
+          + "\020\023\022\024\n\020PETS_AND_ANIMALS\020\024\022\017\n\013REAL_ESTATE\020"
+          + "\025\022\r\n\tREFERENCE\020\026\022\013\n\007SCIENCE\020\027\022\n\n\006SPORTS\020"
+          + "\030\022\026\n\022JOBS_AND_EDUCATION\020\031\022\014\n\010SHOPPING\020\032*"
+          + "f\n\014ServiceLevel\022\035\n\031SERVICE_LEVEL_UNSPECI"
+          + "FIED\020\000\022\035\n\031GOOGLE_ANALYTICS_STANDARD\020\001\022\030\n"
+          + "\024GOOGLE_ANALYTICS_360\020\002*J\n\tActorType\022\032\n\026"
+          + "ACTOR_TYPE_UNSPECIFIED\020\000\022\010\n\004USER\020\001\022\n\n\006SY"
+          + "STEM\020\002\022\013\n\007SUPPORT\020\003*P\n\nActionType\022\033\n\027ACT"
+          + "ION_TYPE_UNSPECIFIED\020\000\022\013\n\007CREATED\020\001\022\013\n\007U"
+          + "PDATED\020\002\022\013\n\007DELETED\020\003*\377\002\n\031ChangeHistoryR"
+          + "esourceType\022,\n(CHANGE_HISTORY_RESOURCE_T"
+          + "YPE_UNSPECIFIED\020\000\022\013\n\007ACCOUNT\020\001\022\014\n\010PROPER"
+          + "TY\020\002\022\021\n\rFIREBASE_LINK\020\006\022\023\n\017GOOGLE_ADS_LI"
+          + "NK\020\007\022\033\n\027GOOGLE_SIGNALS_SETTINGS\020\010\022\024\n\020CON"
+          + "VERSION_EVENT\020\t\022\037\n\033MEASUREMENT_PROTOCOL_"
+          + "SECRET\020\n\022\033\n\027DATA_RETENTION_SETTINGS\020\r\022%\n"
+          + "!DISPLAY_VIDEO_360_ADVERTISER_LINK\020\016\022.\n*"
+          + "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOS"
+          + "AL\020\017\022\017\n\013DATA_STREAM\020\022\022\030\n\024ATTRIBUTION_SET"
+          + "TINGS\020\024*\202\001\n\014PropertyType\022\035\n\031PROPERTY_TYP"
+          + "E_UNSPECIFIED\020\000\022\032\n\026PROPERTY_TYPE_ORDINAR"
+          + "Y\020\001\022\035\n\031PROPERTY_TYPE_SUBPROPERTY\020\002\022\030\n\024PR"
+          + "OPERTY_TYPE_ROLLUP\020\003B\311\001\n!com.google.anal"
+          + "ytics.admin.v1betaB\016ResourcesProtoP\001Z=cl"
+          + "oud.google.com/go/analytics/admin/apiv1b"
+          + "eta/adminpb;adminpb\352AR\n2marketingplatfor"
+          + "madmin.googleapis.com/Organization\022\034orga"
+          + "nizations/{organization}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -350,7 +387,13 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1beta_Account_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "DisplayName", "RegionCode", "Deleted",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "DisplayName",
+              "RegionCode",
+              "Deleted",
+              "GmpOrganization",
             });
     internal_static_google_analytics_admin_v1beta_Property_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -511,10 +554,48 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1beta_ConversionEvent_descriptor,
             new java.lang.String[] {
-              "Name", "EventName", "CreateTime", "Deletable", "Custom", "CountingMethod",
+              "Name",
+              "EventName",
+              "CreateTime",
+              "Deletable",
+              "Custom",
+              "CountingMethod",
+              "DefaultConversionValue",
+            });
+    internal_static_google_analytics_admin_v1beta_ConversionEvent_DefaultConversionValue_descriptor =
+        internal_static_google_analytics_admin_v1beta_ConversionEvent_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_analytics_admin_v1beta_ConversionEvent_DefaultConversionValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1beta_ConversionEvent_DefaultConversionValue_descriptor,
+            new java.lang.String[] {
+              "Value", "CurrencyCode",
+            });
+    internal_static_google_analytics_admin_v1beta_KeyEvent_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_analytics_admin_v1beta_KeyEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1beta_KeyEvent_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "EventName",
+              "CreateTime",
+              "Deletable",
+              "Custom",
+              "CountingMethod",
+              "DefaultValue",
+            });
+    internal_static_google_analytics_admin_v1beta_KeyEvent_DefaultValue_descriptor =
+        internal_static_google_analytics_admin_v1beta_KeyEvent_descriptor.getNestedTypes().get(0);
+    internal_static_google_analytics_admin_v1beta_KeyEvent_DefaultValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1beta_KeyEvent_DefaultValue_descriptor,
+            new java.lang.String[] {
+              "NumericValue", "CurrencyCode",
             });
     internal_static_google_analytics_admin_v1beta_CustomDimension_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_analytics_admin_v1beta_CustomDimension_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1beta_CustomDimension_descriptor,
@@ -527,7 +608,7 @@ public final class ResourcesProto {
               "DisallowAdsPersonalization",
             });
     internal_static_google_analytics_admin_v1beta_CustomMetric_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_analytics_admin_v1beta_CustomMetric_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1beta_CustomMetric_descriptor,
@@ -541,7 +622,7 @@ public final class ResourcesProto {
               "RestrictedMetricType",
             });
     internal_static_google_analytics_admin_v1beta_DataRetentionSettings_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_analytics_admin_v1beta_DataRetentionSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1beta_DataRetentionSettings_descriptor,
@@ -552,6 +633,7 @@ public final class ResourcesProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

@@ -59,12 +59,29 @@ public interface SupervisedTuningDataStatsOrBuilder
    * Output only. Number of billable characters in the tuning dataset.
    * </pre>
    *
-   * <code>int64 total_billable_character_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * int64 total_billable_character_count = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count
+   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
    * @return The totalBillableCharacterCount.
    */
+  @java.lang.Deprecated
   long getTotalBillableCharacterCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of billable tokens in the tuning dataset.
+   * </pre>
+   *
+   * <code>int64 total_billable_token_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalBillableTokenCount.
+   */
+  long getTotalBillableTokenCount();
 
   /**
    *

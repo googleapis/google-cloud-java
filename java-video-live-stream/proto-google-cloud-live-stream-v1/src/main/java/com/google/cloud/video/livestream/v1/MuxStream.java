@@ -75,7 +75,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream.
+   * A unique key for this multiplexed stream. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -98,7 +100,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream.
+   * A unique key for this multiplexed stream. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -847,7 +851,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream.
+     * A unique key for this multiplexed stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -869,7 +875,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream.
+     * A unique key for this multiplexed stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -891,7 +899,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream.
+     * A unique key for this multiplexed stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -912,7 +922,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream.
+     * A unique key for this multiplexed stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -929,7 +941,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream.
+     * A unique key for this multiplexed stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 1;</code>

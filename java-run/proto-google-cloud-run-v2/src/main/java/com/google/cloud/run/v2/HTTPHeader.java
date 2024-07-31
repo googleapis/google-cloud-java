@@ -123,10 +123,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The header field value
+   * Optional. The header field value
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The value.
    */
@@ -146,10 +146,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The header field value
+   * Optional. The header field value
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for value.
    */
@@ -639,10 +639,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header field value
+     * Optional. The header field value
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -661,10 +661,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header field value
+     * Optional. The header field value
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -683,10 +683,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header field value
+     * Optional. The header field value
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -704,10 +704,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header field value
+     * Optional. The header field value
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -721,10 +721,10 @@ public final class HTTPHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header field value
+     * Optional. The header field value
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

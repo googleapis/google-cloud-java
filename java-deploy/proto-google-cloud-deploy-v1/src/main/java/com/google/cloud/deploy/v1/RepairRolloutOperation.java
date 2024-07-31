@@ -41,6 +41,8 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
   private RepairRolloutOperation() {
     rollout_ = "";
     repairPhases_ = java.util.Collections.emptyList();
+    phaseId_ = "";
+    jobId_ = "";
   }
 
   @java.lang.Override
@@ -113,24 +115,6 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int CURRENT_REPAIR_MODE_INDEX_FIELD_NUMBER = 2;
-  private long currentRepairModeIndex_ = 0L;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The index of the current repair action in the repair sequence.
-   * </pre>
-   *
-   * <code>int64 current_repair_mode_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The currentRepairModeIndex.
-   */
-  @java.lang.Override
-  public long getCurrentRepairModeIndex() {
-    return currentRepairModeIndex_;
   }
 
   public static final int REPAIR_PHASES_FIELD_NUMBER = 3;
@@ -219,6 +203,110 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     return repairPhases_.get(index);
   }
 
+  public static final int PHASE_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object phaseId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phase ID of the phase that includes the job being
+   * repaired.
+   * </pre>
+   *
+   * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The phaseId.
+   */
+  @java.lang.Override
+  public java.lang.String getPhaseId() {
+    java.lang.Object ref = phaseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      phaseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phase ID of the phase that includes the job being
+   * repaired.
+   * </pre>
+   *
+   * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for phaseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPhaseIdBytes() {
+    java.lang.Object ref = phaseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      phaseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int JOB_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The job ID for the Job to repair.
+   * </pre>
+   *
+   * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The jobId.
+   */
+  @java.lang.Override
+  public java.lang.String getJobId() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The job ID for the Job to repair.
+   * </pre>
+   *
+   * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for jobId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getJobIdBytes() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      jobId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -236,11 +324,14 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rollout_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rollout_);
     }
-    if (currentRepairModeIndex_ != 0L) {
-      output.writeInt64(2, currentRepairModeIndex_);
-    }
     for (int i = 0; i < repairPhases_.size(); i++) {
       output.writeMessage(3, repairPhases_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phaseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phaseId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, jobId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -254,11 +345,14 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rollout_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rollout_);
     }
-    if (currentRepairModeIndex_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, currentRepairModeIndex_);
-    }
     for (int i = 0; i < repairPhases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, repairPhases_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phaseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, phaseId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, jobId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,8 +371,9 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         (com.google.cloud.deploy.v1.RepairRolloutOperation) obj;
 
     if (!getRollout().equals(other.getRollout())) return false;
-    if (getCurrentRepairModeIndex() != other.getCurrentRepairModeIndex()) return false;
     if (!getRepairPhasesList().equals(other.getRepairPhasesList())) return false;
+    if (!getPhaseId().equals(other.getPhaseId())) return false;
+    if (!getJobId().equals(other.getJobId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -292,12 +387,14 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ROLLOUT_FIELD_NUMBER;
     hash = (53 * hash) + getRollout().hashCode();
-    hash = (37 * hash) + CURRENT_REPAIR_MODE_INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCurrentRepairModeIndex());
     if (getRepairPhasesCount() > 0) {
       hash = (37 * hash) + REPAIR_PHASES_FIELD_NUMBER;
       hash = (53 * hash) + getRepairPhasesList().hashCode();
     }
+    hash = (37 * hash) + PHASE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPhaseId().hashCode();
+    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getJobId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -438,14 +535,15 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       rollout_ = "";
-      currentRepairModeIndex_ = 0L;
       if (repairPhasesBuilder_ == null) {
         repairPhases_ = java.util.Collections.emptyList();
       } else {
         repairPhases_ = null;
         repairPhasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
+      phaseId_ = "";
+      jobId_ = "";
       return this;
     }
 
@@ -484,9 +582,9 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     private void buildPartialRepeatedFields(
         com.google.cloud.deploy.v1.RepairRolloutOperation result) {
       if (repairPhasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           repairPhases_ = java.util.Collections.unmodifiableList(repairPhases_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.repairPhases_ = repairPhases_;
       } else {
@@ -499,8 +597,11 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.rollout_ = rollout_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.currentRepairModeIndex_ = currentRepairModeIndex_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.phaseId_ = phaseId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.jobId_ = jobId_;
       }
     }
 
@@ -555,14 +656,11 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getCurrentRepairModeIndex() != 0L) {
-        setCurrentRepairModeIndex(other.getCurrentRepairModeIndex());
-      }
       if (repairPhasesBuilder_ == null) {
         if (!other.repairPhases_.isEmpty()) {
           if (repairPhases_.isEmpty()) {
             repairPhases_ = other.repairPhases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRepairPhasesIsMutable();
             repairPhases_.addAll(other.repairPhases_);
@@ -575,7 +673,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
             repairPhasesBuilder_.dispose();
             repairPhasesBuilder_ = null;
             repairPhases_ = other.repairPhases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             repairPhasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRepairPhasesFieldBuilder()
@@ -584,6 +682,16 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
             repairPhasesBuilder_.addAllMessages(other.repairPhases_);
           }
         }
+      }
+      if (!other.getPhaseId().isEmpty()) {
+        phaseId_ = other.phaseId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getJobId().isEmpty()) {
+        jobId_ = other.jobId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -617,12 +725,6 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 16:
-              {
-                currentRepairModeIndex_ = input.readInt64();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
             case 26:
               {
                 com.google.cloud.deploy.v1.RepairPhase m =
@@ -636,6 +738,18 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                phaseId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 42:
+              {
+                jobId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -761,70 +875,14 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private long currentRepairModeIndex_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The index of the current repair action in the repair sequence.
-     * </pre>
-     *
-     * <code>int64 current_repair_mode_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The currentRepairModeIndex.
-     */
-    @java.lang.Override
-    public long getCurrentRepairModeIndex() {
-      return currentRepairModeIndex_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The index of the current repair action in the repair sequence.
-     * </pre>
-     *
-     * <code>int64 current_repair_mode_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @param value The currentRepairModeIndex to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCurrentRepairModeIndex(long value) {
-
-      currentRepairModeIndex_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The index of the current repair action in the repair sequence.
-     * </pre>
-     *
-     * <code>int64 current_repair_mode_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCurrentRepairModeIndex() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      currentRepairModeIndex_ = 0L;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.google.cloud.deploy.v1.RepairPhase> repairPhases_ =
         java.util.Collections.emptyList();
 
     private void ensureRepairPhasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         repairPhases_ =
             new java.util.ArrayList<com.google.cloud.deploy.v1.RepairPhase>(repairPhases_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1072,7 +1130,7 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
     public Builder clearRepairPhases() {
       if (repairPhasesBuilder_ == null) {
         repairPhases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         repairPhasesBuilder_.clear();
@@ -1215,10 +1273,227 @@ public final class RepairRolloutOperation extends com.google.protobuf.GeneratedM
                 com.google.cloud.deploy.v1.RepairPhase,
                 com.google.cloud.deploy.v1.RepairPhase.Builder,
                 com.google.cloud.deploy.v1.RepairPhaseOrBuilder>(
-                repairPhases_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                repairPhases_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         repairPhases_ = null;
       }
       return repairPhasesBuilder_;
+    }
+
+    private java.lang.Object phaseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phase ID of the phase that includes the job being
+     * repaired.
+     * </pre>
+     *
+     * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The phaseId.
+     */
+    public java.lang.String getPhaseId() {
+      java.lang.Object ref = phaseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phaseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phase ID of the phase that includes the job being
+     * repaired.
+     * </pre>
+     *
+     * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for phaseId.
+     */
+    public com.google.protobuf.ByteString getPhaseIdBytes() {
+      java.lang.Object ref = phaseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        phaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phase ID of the phase that includes the job being
+     * repaired.
+     * </pre>
+     *
+     * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The phaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhaseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      phaseId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phase ID of the phase that includes the job being
+     * repaired.
+     * </pre>
+     *
+     * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPhaseId() {
+      phaseId_ = getDefaultInstance().getPhaseId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phase ID of the phase that includes the job being
+     * repaired.
+     * </pre>
+     *
+     * <code>string phase_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for phaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhaseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      phaseId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object jobId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The job ID for the Job to repair.
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The job ID for the Job to repair.
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    public com.google.protobuf.ByteString getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The job ID for the Job to repair.
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The jobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      jobId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The job ID for the Job to repair.
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJobId() {
+      jobId_ = getDefaultInstance().getJobId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The job ID for the Job to repair.
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      jobId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

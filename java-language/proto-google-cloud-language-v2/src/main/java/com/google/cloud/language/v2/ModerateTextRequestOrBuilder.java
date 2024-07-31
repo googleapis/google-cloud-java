@@ -64,4 +64,33 @@ public interface ModerateTextRequestOrBuilder
    * </code>
    */
   com.google.cloud.language.v2.DocumentOrBuilder getDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model version to use for ModerateText.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modelVersion.
+   */
+  int getModelVersionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model version to use for ModerateText.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelVersion.
+   */
+  com.google.cloud.language.v2.ModerateTextRequest.ModelVersion getModelVersion();
 }

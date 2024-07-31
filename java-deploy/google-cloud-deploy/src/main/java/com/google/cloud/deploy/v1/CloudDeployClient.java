@@ -1379,8 +1379,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `DeliveryPipeline` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1419,8 +1419,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `DeliveryPipeline` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1556,8 +1556,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param deliveryPipeline Required. The `DeliveryPipeline` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `DeliveryPipeline` resource by the update. The fields specified in the update_mask are
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `DeliveryPipeline` resource. The fields specified in the update_mask are
    *     relative to the resource, not the full request. A field will be overwritten if it's in the
    *     mask. If the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1690,7 +1690,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * @param name Required. The name of the `DeliveryPipeline` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1722,7 +1722,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * @param name Required. The name of the `DeliveryPipeline` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2030,8 +2030,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   *     created. Format should be
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` must be created.
+   *     The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param targetId Required. ID of the `Target` that is being rolled back.
    * @param rolloutId Required. ID of the rollback `Rollout` to create.
@@ -2069,8 +2069,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   *     created. Format should be
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` must be created.
+   *     The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param targetId Required. ID of the `Target` that is being rolled back.
    * @param rolloutId Required. ID of the rollback `Rollout` to create.
@@ -2290,8 +2290,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `Target` must be created. The format
+   *     is `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2327,8 +2327,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `Target` must be created. The format
+   *     is `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2461,9 +2461,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param target Required. The `Target` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     Target resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it's in the mask. If the
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `Target` resource. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it's in the mask. If the
    *     user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2589,7 +2589,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Target` to delete. Format should be
+   * @param name Required. The name of the `Target` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2617,7 +2617,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Target` to delete. Format should be
+   * @param name Required. The name of the `Target` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3044,8 +3044,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `CustomTargetType` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `CustomTargetType` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param customTargetType Required. The `CustomTargetType` to create.
    * @param customTargetTypeId Required. ID of the `CustomTargetType`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3084,8 +3084,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `CustomTargetType` should be
-   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param parent Required. The parent collection in which the `CustomTargetType` must be created.
+   *     The format is `projects/{project_id}/locations/{location_name}`.
    * @param customTargetType Required. The `CustomTargetType` to create.
    * @param customTargetTypeId Required. ID of the `CustomTargetType`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3221,8 +3221,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param customTargetType Required. The `CustomTargetType` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `CustomTargetType` resource by the update. The fields specified in the update_mask are
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `CustomTargetType` resource. The fields specified in the update_mask are
    *     relative to the resource, not the full request. A field will be overwritten if it's in the
    *     mask. If the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3814,8 +3814,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Release` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Release` is created. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
@@ -3853,8 +3852,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Release` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Release` is created. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
@@ -4817,8 +4815,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Rollout` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Rollout` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
@@ -4856,8 +4854,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Rollout` should be created. Format
-   *     should be
+   * @param parent Required. The parent collection in which the `Rollout` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
@@ -5885,8 +5883,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Automation` should be created.
-   *     Format should be
+   * @param parent Required. The parent collection in which the `Automation` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param automation Required. The `Automation` to create.
    * @param automationId Required. ID of the `Automation`.
@@ -5925,8 +5923,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection in which the `Automation` should be created.
-   *     Format should be
+   * @param parent Required. The parent collection in which the `Automation` must be created. The
+   *     format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param automation Required. The `Automation` to create.
    * @param automationId Required. ID of the `Automation`.
@@ -6067,8 +6065,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param automation Required. The `Automation` to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     `Automation` resource by the update. The fields specified in the update_mask are relative
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten by the
+   *     update in the `Automation` resource. The fields specified in the update_mask are relative
    *     to the resource, not the full request. A field will be overwritten if it's in the mask. If
    *     the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -6200,7 +6198,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Automation` to delete. Format should be
+   * @param name Required. The name of the `Automation` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -6231,7 +6229,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the `Automation` to delete. Format should be
+   * @param name Required. The name of the `Automation` to delete. The format is
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -1054,7 +1054,8 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     mask. If the user does not provide a mask then only the non-empty fields present in the
    *     request will be overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `big_query_source` &#42; `bigtable` &#42; `labels` &#42; `sync_config`
+   *     <p>&#42; `labels` &#42; `description` &#42; `bigtable` &#42; `bigtable.auto_scaling` &#42;
+   *     `bigtable.enable_multi_region_replica`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FeatureOnlineStore, UpdateFeatureOnlineStoreOperationMetadata>
@@ -1894,7 +1895,10 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    *     user does not provide a mask then only the non-empty fields present in the request will be
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `labels` &#42; `serviceAgentType`
+   *     <p>&#42; `labels` &#42; `service_agent_type` &#42; `big_query_source` &#42;
+   *     `big_query_source.uri` &#42; `big_query_source.entity_id_columns` &#42;
+   *     `feature_registry_source` &#42; `feature_registry_source.feature_groups` &#42;
+   *     `sync_config` &#42; `sync_config.cron`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FeatureView, UpdateFeatureViewOperationMetadata>

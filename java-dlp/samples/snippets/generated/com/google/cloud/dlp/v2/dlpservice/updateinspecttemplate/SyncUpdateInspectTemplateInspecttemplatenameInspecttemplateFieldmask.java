@@ -37,8 +37,8 @@ public class SyncUpdateInspectTemplateInspecttemplatenameInspecttemplateFieldmas
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       InspectTemplateName name =
-          InspectTemplateName.ofOrganizationInspectTemplateName(
-              "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
+          InspectTemplateName.ofProjectLocationInspectTemplateName(
+              "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]");
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       InspectTemplate response =

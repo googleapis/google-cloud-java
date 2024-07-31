@@ -18,6 +18,7 @@ package com.google.cloud.video.livestream.v1;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -119,6 +120,8 @@ public class LivestreamServiceClientTest {
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +189,8 @@ public class LivestreamServiceClientTest {
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -341,6 +346,8 @@ public class LivestreamServiceClientTest {
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -394,6 +401,8 @@ public class LivestreamServiceClientTest {
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -531,6 +540,8 @@ public class LivestreamServiceClientTest {
             .setTimecodeConfig(TimecodeConfig.newBuilder().build())
             .addAllEncryptions(new ArrayList<Encryption>())
             .setInputConfig(InputConfig.newBuilder().build())
+            .setRetentionConfig(RetentionConfig.newBuilder().build())
+            .addAllStaticOverlays(new ArrayList<StaticOverlay>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1524,6 +1535,390 @@ public class LivestreamServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listClipsTest() throws Exception {
+    Clip responsesElement = Clip.newBuilder().build();
+    ListClipsResponse expectedResponse =
+        ListClipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllClips(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+
+    ListClipsPagedResponse pagedListResponse = client.listClips(parent);
+
+    List<Clip> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getClipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListClipsRequest actualRequest = ((ListClipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listClipsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      client.listClips(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listClipsTest2() throws Exception {
+    Clip responsesElement = Clip.newBuilder().build();
+    ListClipsResponse expectedResponse =
+        ListClipsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllClips(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListClipsPagedResponse pagedListResponse = client.listClips(parent);
+
+    List<Clip> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getClipsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListClipsRequest actualRequest = ((ListClipsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listClipsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listClips(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClipTest() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+
+    Clip actualResponse = client.getClip(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetClipRequest actualRequest = ((GetClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getClipExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+      client.getClip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClipTest2() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Clip actualResponse = client.getClip(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetClipRequest actualRequest = ((GetClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getClipExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getClip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createClipTest() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    Clip clip = Clip.newBuilder().build();
+    String clipId = "clipId-1357703029";
+
+    Clip actualResponse = client.createClipAsync(parent, clip, clipId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateClipRequest actualRequest = ((CreateClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(clip, actualRequest.getClip());
+    Assert.assertEquals(clipId, actualRequest.getClipId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createClipExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      Clip clip = Clip.newBuilder().build();
+      String clipId = "clipId-1357703029";
+      client.createClipAsync(parent, clip, clipId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createClipTest2() throws Exception {
+    Clip expectedResponse =
+        Clip.newBuilder()
+            .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOutputUri("outputUri-2119300949")
+            .setError(Status.newBuilder().build())
+            .addAllSlices(new ArrayList<Clip.Slice>())
+            .addAllClipManifests(new ArrayList<Clip.ClipManifest>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Clip clip = Clip.newBuilder().build();
+    String clipId = "clipId-1357703029";
+
+    Clip actualResponse = client.createClipAsync(parent, clip, clipId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateClipRequest actualRequest = ((CreateClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(clip, actualRequest.getClip());
+    Assert.assertEquals(clipId, actualRequest.getClipId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createClipExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Clip clip = Clip.newBuilder().build();
+      String clipId = "clipId-1357703029";
+      client.createClipAsync(parent, clip, clipId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteClipTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+
+    client.deleteClipAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteClipRequest actualRequest = ((DeleteClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteClipExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+      client.deleteClipAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteClipTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteClipTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteClipAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteClipRequest actualRequest = ((DeleteClipRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteClipExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteClipAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

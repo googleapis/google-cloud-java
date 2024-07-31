@@ -118,4 +118,67 @@ public interface ExecutionReferenceOrBuilder
    * <code>.google.protobuf.Timestamp completion_time = 3;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCompletionTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  boolean hasDeleteTime();
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   *
+   * @return The deleteTime.
+   */
+  com.google.protobuf.Timestamp getDeleteTime();
+  /**
+   *
+   *
+   * <pre>
+   * The deletion time of the execution. It is only
+   * populated as a response to a Delete request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Status for the execution completion.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for completionStatus.
+   */
+  int getCompletionStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Status for the execution completion.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.ExecutionReference.CompletionStatus completion_status = 4;</code>
+   *
+   * @return The completionStatus.
+   */
+  com.google.cloud.run.v2.ExecutionReference.CompletionStatus getCompletionStatus();
 }

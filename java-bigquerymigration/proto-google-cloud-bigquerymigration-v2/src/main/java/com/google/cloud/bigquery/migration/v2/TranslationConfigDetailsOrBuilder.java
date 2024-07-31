@@ -264,6 +264,69 @@ public interface TranslationConfigDetailsOrBuilder
    */
   com.google.protobuf.ByteString getRequestSourceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @return A list containing the targetTypes.
+   */
+  java.util.List<java.lang.String> getTargetTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @return The count of targetTypes.
+   */
+  int getTargetTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetTypes at the given index.
+   */
+  java.lang.String getTargetTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The types of output to generate, e.g. sql, metadata etc. If not specified,
+   * a default set of targets will be generated. Some additional target types
+   * may be slower to generate. See the documentation for the set of available
+   * target types.
+   * </pre>
+   *
+   * <code>repeated string target_types = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetTypes at the given index.
+   */
+  com.google.protobuf.ByteString getTargetTypesBytes(int index);
+
   com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.SourceLocationCase
       getSourceLocationCase();
 

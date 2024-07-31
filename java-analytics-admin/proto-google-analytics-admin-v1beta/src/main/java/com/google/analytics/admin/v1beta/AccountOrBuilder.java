@@ -192,4 +192,37 @@ public interface AccountOrBuilder
    * @return The deleted.
    */
   boolean getDeleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a Google Marketing Platform organization resource.
+   * Only set when this account is connected to a GMP organization.
+   * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+   * </pre>
+   *
+   * <code>
+   * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The gmpOrganization.
+   */
+  java.lang.String getGmpOrganization();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a Google Marketing Platform organization resource.
+   * Only set when this account is connected to a GMP organization.
+   * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+   * </pre>
+   *
+   * <code>
+   * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for gmpOrganization.
+   */
+  com.google.protobuf.ByteString getGmpOrganizationBytes();
 }

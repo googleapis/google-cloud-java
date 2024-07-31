@@ -42,6 +42,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     fileName_ = "";
     type_ = 0;
     muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    key_ = "";
   }
 
   @java.lang.Override
@@ -442,6 +443,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -462,6 +469,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -484,6 +497,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * errors while accessing segments which are listed in the manifest that the
    * player has, but were already deleted from the output Google Cloud Storage
    * bucket. Default value is `60s`.
+   *
+   * If both segment_keep_duration and
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * are set,
+   * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+   * is used and segment_keep_duration is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -517,6 +536,57 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getUseTimecodeAsTimeline() {
     return useTimecodeAsTimeline_;
+  }
+
+  public static final int KEY_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique key for this manifest.
+   * </pre>
+   *
+   * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The key.
+   */
+  @java.lang.Override
+  public java.lang.String getKey() {
+    java.lang.Object ref = key_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      key_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique key for this manifest.
+   * </pre>
+   *
+   * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for key.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKeyBytes() {
+    java.lang.Object ref = key_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      key_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -553,6 +623,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (useTimecodeAsTimeline_ != false) {
       output.writeBool(6, useTimecodeAsTimeline_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, key_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -587,6 +660,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (useTimecodeAsTimeline_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useTimecodeAsTimeline_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, key_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -612,6 +688,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (!getSegmentKeepDuration().equals(other.getSegmentKeepDuration())) return false;
     }
     if (getUseTimecodeAsTimeline() != other.getUseTimecodeAsTimeline()) return false;
+    if (!getKey().equals(other.getKey())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -639,6 +716,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + USE_TIMECODE_AS_TIMELINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTimecodeAsTimeline());
+    hash = (37 * hash) + KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKey().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -797,6 +876,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         segmentKeepDurationBuilder_ = null;
       }
       useTimecodeAsTimeline_ = false;
+      key_ = "";
       return this;
     }
 
@@ -856,6 +936,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.useTimecodeAsTimeline_ = useTimecodeAsTimeline_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.key_ = key_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -932,6 +1015,11 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (other.getUseTimecodeAsTimeline() != false) {
         setUseTimecodeAsTimeline(other.getUseTimecodeAsTimeline());
       }
+      if (!other.getKey().isEmpty()) {
+        key_ = other.key_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -996,6 +1084,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                key_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1544,6 +1638,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1563,6 +1663,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1588,6 +1694,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1615,6 +1727,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1639,6 +1757,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1671,6 +1795,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1695,6 +1825,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1714,6 +1850,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1737,6 +1879,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * errors while accessing segments which are listed in the manifest that the
      * player has, but were already deleted from the output Google Cloud Storage
      * bucket. Default value is `60s`.
+     *
+     * If both segment_keep_duration and
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * are set,
+     * [RetentionConfig.retention_window_duration][google.cloud.video.livestream.v1.RetentionConfig.retention_window_duration]
+     * is used and segment_keep_duration is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
@@ -1825,6 +1973,112 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUseTimecodeAsTimeline() {
       bitField0_ = (bitField0_ & ~0x00000020);
       useTimecodeAsTimeline_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object key_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique key for this manifest.
+     * </pre>
+     *
+     * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The key.
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique key for this manifest.
+     * </pre>
+     *
+     * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for key.
+     */
+    public com.google.protobuf.ByteString getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique key for this manifest.
+     * </pre>
+     *
+     * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      key_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique key for this manifest.
+     * </pre>
+     *
+     * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKey() {
+      key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique key for this manifest.
+     * </pre>
+     *
+     * <code>string key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      key_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

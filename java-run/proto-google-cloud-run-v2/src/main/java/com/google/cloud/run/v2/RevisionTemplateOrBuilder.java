@@ -28,11 +28,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * The unique name for the revision. If this field is omitted, it will be
-   * automatically generated based on the Service name.
+   * Optional. The unique name for the revision. If this field is omitted, it
+   * will be automatically generated based on the Service name.
    * </pre>
    *
-   * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The revision.
    */
@@ -41,11 +43,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * The unique name for the revision. If this field is omitted, it will be
-   * automatically generated based on the Service name.
+   * Optional. The unique name for the revision. If this field is omitted, it
+   * will be automatically generated based on the Service name.
    * </pre>
    *
-   * <code>string revision = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string revision = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for revision.
    */
@@ -55,11 +59,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -69,18 +72,17 @@ public interface RevisionTemplateOrBuilder
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -90,7 +92,7 @@ public interface RevisionTemplateOrBuilder
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -100,11 +102,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -114,18 +115,17 @@ public interface RevisionTemplateOrBuilder
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -135,7 +135,7 @@ public interface RevisionTemplateOrBuilder
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -146,11 +146,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -160,7 +159,7 @@ public interface RevisionTemplateOrBuilder
    * corresponding field in v2 RevisionTemplate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -168,9 +167,9 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -181,16 +180,17 @@ public interface RevisionTemplateOrBuilder
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -201,7 +201,8 @@ public interface RevisionTemplateOrBuilder
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -211,9 +212,9 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -224,16 +225,17 @@ public interface RevisionTemplateOrBuilder
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -244,7 +246,8 @@ public interface RevisionTemplateOrBuilder
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -255,9 +258,9 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -268,7 +271,8 @@ public interface RevisionTemplateOrBuilder
    * rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 3;</code>
+   * <code>map&lt;string, string&gt; annotations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -276,10 +280,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the scaling field is set.
    */
@@ -288,10 +294,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The scaling.
    */
@@ -300,10 +308,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Scaling settings for this Revision.
+   * Optional. Scaling settings for this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.RevisionScaling scaling = 4;</code>
+   * <code>
+   * .google.cloud.run.v2.RevisionScaling scaling = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.RevisionScalingOrBuilder getScalingOrBuilder();
 
@@ -311,11 +321,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the vpcAccess field is set.
    */
@@ -324,11 +336,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The vpcAccess.
    */
@@ -337,11 +351,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * VPC Access configuration to use for this Revision. For more information,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+   * Optional. VPC Access configuration to use for this Revision. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6;</code>
+   * <code>.google.cloud.run.v2.VpcAccess vpc_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
 
@@ -349,10 +365,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the timeout field is set.
    */
@@ -361,10 +377,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The timeout.
    */
@@ -373,10 +389,10 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Max allowed time for an instance to respond to a request.
+   * Optional. Max allowed time for an instance to respond to a request.
    * </pre>
    *
-   * <code>.google.protobuf.Duration timeout = 8;</code>
+   * <code>.google.protobuf.Duration timeout = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
 
@@ -384,13 +400,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has. If not
+   * Optional. Email address of the IAM service account associated with the
+   * revision of the service. The service account represents the identity of the
+   * running revision, and determines what permissions the revision has. If not
    * provided, the revision will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 9;</code>
+   * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccount.
    */
@@ -399,13 +415,13 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has. If not
+   * Optional. Email address of the IAM service account associated with the
+   * revision of the service. The service account represents the identity of the
+   * running revision, and determines what permissions the revision has. If not
    * provided, the revision will use the project's default service account.
    * </pre>
    *
-   * <code>string service_account = 9;</code>
+   * <code>string service_account = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccount.
    */
@@ -471,50 +487,60 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getVolumesCount();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
   /**
    *
    *
    * <pre>
-   * A list of Volumes to make available to containers.
+   * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.Volume volumes = 11;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.Volume volumes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.VolumeOrBuilder getVolumesOrBuilder(int index);
 
@@ -522,10 +548,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * The sandbox environment to host this Revision.
+   * Optional. The sandbox environment to host this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for executionEnvironment.
    */
@@ -534,10 +562,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * The sandbox environment to host this Revision.
+   * Optional. The sandbox environment to host this Revision.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.ExecutionEnvironment execution_environment = 13;</code>
+   * <code>
+   * .google.cloud.run.v2.ExecutionEnvironment execution_environment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The executionEnvironment.
    */
@@ -576,10 +606,12 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Sets the maximum number of requests that each serving instance can receive.
+   * Optional. Sets the maximum number of requests that each serving instance
+   * can receive.
    * </pre>
    *
-   * <code>int32 max_instance_request_concurrency = 15;</code>
+   * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The maxInstanceRequestConcurrency.
    */

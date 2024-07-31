@@ -28,8 +28,15 @@ public interface CreateConnectionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent resource name in the format:
-   * `projects/{project}/locations/{location}`.
+   * Required. Parent resource name.
+   *
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Organizations scope:
+   *   `organizations/{org_id}/locations/{location_id}`
    * </pre>
    *
    * <code>
@@ -43,8 +50,15 @@ public interface CreateConnectionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent resource name in the format:
-   * `projects/{project}/locations/{location}`.
+   * Required. Parent resource name.
+   *
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Organizations scope:
+   *   `organizations/{org_id}/locations/{location_id}`
    * </pre>
    *
    * <code>

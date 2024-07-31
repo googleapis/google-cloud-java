@@ -216,6 +216,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -286,6 +288,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -356,6 +360,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -416,6 +422,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -476,6 +484,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -504,6 +514,8 @@ public class NetAppClientHttpJsonTest {
             .setPsaRange("psaRange-534274785")
             .setEncryptionType(EncryptionType.forNumber(0))
             .setGlobalAccessAllowed(true)
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -553,6 +565,8 @@ public class NetAppClientHttpJsonTest {
               .setPsaRange("psaRange-534274785")
               .setEncryptionType(EncryptionType.forNumber(0))
               .setGlobalAccessAllowed(true)
+              .setReplicaZone("replicaZone-1063236476")
+              .setZone("zone3744684")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStoragePoolAsync(storagePool, updateMask).get();
@@ -787,7 +801,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -863,7 +881,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -939,7 +961,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1024,7 +1050,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1109,7 +1139,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1153,7 +1187,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1218,7 +1256,11 @@ public class NetAppClientHttpJsonTest {
               .setHasReplication(true)
               .setBackupConfig(BackupConfig.newBuilder().build())
               .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+              .setLargeCapacity(true)
+              .setMultipleEndpoints(true)
               .setTieringPolicy(TieringPolicy.newBuilder().build())
+              .setReplicaZone("replicaZone-1063236476")
+              .setZone("zone3744684")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1353,7 +1395,11 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
             .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2009,6 +2055,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2075,6 +2122,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2141,6 +2189,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2215,6 +2264,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2289,6 +2339,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2321,6 +2372,7 @@ public class NetAppClientHttpJsonTest {
             .setUsername("username-265713450")
             .setPassword("password1216985755")
             .addAllBackupOperators(new ArrayList<String>())
+            .addAllAdministrators(new ArrayList<String>())
             .addAllSecurityOperators(new ArrayList<String>())
             .setKdcHostname("kdcHostname-256273283")
             .setKdcIp("kdcIp101893361")
@@ -2375,6 +2427,7 @@ public class NetAppClientHttpJsonTest {
               .setUsername("username-265713450")
               .setPassword("password1216985755")
               .addAllBackupOperators(new ArrayList<String>())
+              .addAllAdministrators(new ArrayList<String>())
               .addAllSecurityOperators(new ArrayList<String>())
               .setKdcHostname("kdcHostname-256273283")
               .setKdcIp("kdcIp101893361")

@@ -20,6 +20,7 @@ import com.google.ads.admanager.v1.ExportSavedReportMetadata;
 import com.google.ads.admanager.v1.ExportSavedReportRequest;
 import com.google.ads.admanager.v1.ExportSavedReportResponse;
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -130,6 +131,7 @@ public class ReportServiceStubSettings extends StubSettings<ReportServiceStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "admanager.googleapis.com:443";
   }

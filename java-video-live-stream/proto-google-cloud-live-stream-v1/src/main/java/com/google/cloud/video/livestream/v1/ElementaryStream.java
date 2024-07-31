@@ -125,7 +125,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A unique key for this elementary stream.
+   * A unique key for this elementary stream. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 4;</code>
@@ -148,7 +150,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A unique key for this elementary stream.
+   * A unique key for this elementary stream. The key must be 1-63
+   * characters in length. The key must begin and end with a letter (regardless
+   * of case) or a number, but can contain dashes or underscores in between.
    * </pre>
    *
    * <code>string key = 4;</code>
@@ -804,7 +808,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A unique key for this elementary stream.
+     * A unique key for this elementary stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 4;</code>
@@ -826,7 +832,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A unique key for this elementary stream.
+     * A unique key for this elementary stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 4;</code>
@@ -848,7 +856,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A unique key for this elementary stream.
+     * A unique key for this elementary stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 4;</code>
@@ -869,7 +879,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A unique key for this elementary stream.
+     * A unique key for this elementary stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 4;</code>
@@ -886,7 +898,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A unique key for this elementary stream.
+     * A unique key for this elementary stream. The key must be 1-63
+     * characters in length. The key must begin and end with a letter (regardless
+     * of case) or a number, but can contain dashes or underscores in between.
      * </pre>
      *
      * <code>string key = 4;</code>

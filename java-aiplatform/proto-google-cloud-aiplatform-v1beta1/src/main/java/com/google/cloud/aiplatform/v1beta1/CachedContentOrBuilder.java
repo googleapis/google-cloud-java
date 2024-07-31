@@ -140,6 +140,37 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The user-generated meaningful display name of the
+   * cached content.
+   * </pre>
+   *
+   * <code>
+   * string display_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The user-generated meaningful display name of the
+   * cached content.
+   * </pre>
+   *
+   * <code>
+   * string display_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The name of the publisher model to use for cached content.
    * Format:
    * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}

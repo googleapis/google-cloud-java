@@ -85,6 +85,55 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int createExecutionCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object createExecution_;
+
+  public enum CreateExecutionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    START_EXECUTION_TOKEN(26),
+    RUN_EXECUTION_TOKEN(27),
+    CREATEEXECUTION_NOT_SET(0);
+    private final int value;
+
+    private CreateExecutionCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CreateExecutionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CreateExecutionCase forNumber(int value) {
+      switch (value) {
+        case 26:
+          return START_EXECUTION_TOKEN;
+        case 27:
+          return RUN_EXECUTION_TOKEN;
+        case 0:
+          return CREATEEXECUTION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CreateExecutionCase getCreateExecutionCase() {
+    return CreateExecutionCase.forNumber(createExecutionCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -613,7 +662,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -629,7 +679,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -645,7 +696,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1374,6 +1426,158 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int START_EXECUTION_TOKEN_FIELD_NUMBER = 26;
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return Whether the startExecutionToken field is set.
+   */
+  public boolean hasStartExecutionToken() {
+    return createExecutionCase_ == 26;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return The startExecutionToken.
+   */
+  public java.lang.String getStartExecutionToken() {
+    java.lang.Object ref = "";
+    if (createExecutionCase_ == 26) {
+      ref = createExecution_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (createExecutionCase_ == 26) {
+        createExecution_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return The bytes for startExecutionToken.
+   */
+  public com.google.protobuf.ByteString getStartExecutionTokenBytes() {
+    java.lang.Object ref = "";
+    if (createExecutionCase_ == 26) {
+      ref = createExecution_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (createExecutionCase_ == 26) {
+        createExecution_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RUN_EXECUTION_TOKEN_FIELD_NUMBER = 27;
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return Whether the runExecutionToken field is set.
+   */
+  public boolean hasRunExecutionToken() {
+    return createExecutionCase_ == 27;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return The runExecutionToken.
+   */
+  public java.lang.String getRunExecutionToken() {
+    java.lang.Object ref = "";
+    if (createExecutionCase_ == 27) {
+      ref = createExecution_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (createExecutionCase_ == 27) {
+        createExecution_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return The bytes for runExecutionToken.
+   */
+  public com.google.protobuf.ByteString getRunExecutionTokenBytes() {
+    java.lang.Object ref = "";
+    if (createExecutionCase_ == 27) {
+      ref = createExecution_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (createExecutionCase_ == 27) {
+        createExecution_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1508,6 +1712,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(25, satisfiesPzs_);
     }
+    if (createExecutionCase_ == 26) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, createExecution_);
+    }
+    if (createExecutionCase_ == 27) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, createExecution_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -1605,6 +1815,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, satisfiesPzs_);
     }
+    if (createExecutionCase_ == 26) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, createExecution_);
+    }
+    if (createExecutionCase_ == 27) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, createExecution_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -1671,6 +1887,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (getReconciling() != other.getReconciling()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getCreateExecutionCase().equals(other.getCreateExecutionCase())) return false;
+    switch (createExecutionCase_) {
+      case 26:
+        if (!getStartExecutionToken().equals(other.getStartExecutionToken())) return false;
+        break;
+      case 27:
+        if (!getRunExecutionToken().equals(other.getRunExecutionToken())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1752,6 +1979,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    switch (createExecutionCase_) {
+      case 26:
+        hash = (37 * hash) + START_EXECUTION_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getStartExecutionToken().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + RUN_EXECUTION_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getRunExecutionToken().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1994,6 +2233,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       reconciling_ = false;
       satisfiesPzs_ = false;
       etag_ = "";
+      createExecutionCase_ = 0;
+      createExecution_ = null;
       return this;
     }
 
@@ -2023,6 +2264,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -2127,10 +2369,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.run.v2.Job result) {
+      result.createExecutionCase_ = createExecutionCase_;
+      result.createExecution_ = this.createExecution_;
     }
 
     @java.lang.Override
@@ -2283,8 +2530,28 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
+      }
+      switch (other.getCreateExecutionCase()) {
+        case START_EXECUTION_TOKEN:
+          {
+            createExecutionCase_ = 26;
+            createExecution_ = other.createExecution_;
+            onChanged();
+            break;
+          }
+        case RUN_EXECUTION_TOKEN:
+          {
+            createExecutionCase_ = 27;
+            createExecution_ = other.createExecution_;
+            onChanged();
+            break;
+          }
+        case CREATEEXECUTION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2472,10 +2739,24 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00400000;
                 break;
               } // case 200
+            case 210:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                createExecutionCase_ = 26;
+                createExecution_ = s;
+                break;
+              } // case 210
+            case 218:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                createExecutionCase_ = 27;
+                createExecution_ = s;
+                break;
+              } // case 218
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 794
             default:
@@ -2492,6 +2773,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int createExecutionCase_ = 0;
+    private java.lang.Object createExecution_;
+
+    public CreateExecutionCase getCreateExecutionCase() {
+      return CreateExecutionCase.forNumber(createExecutionCase_);
+    }
+
+    public Builder clearCreateExecution() {
+      createExecutionCase_ = 0;
+      createExecution_ = null;
+      onChanged();
       return this;
     }
 
@@ -3689,7 +3984,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3705,7 +4001,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3727,7 +4024,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3751,7 +4049,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3772,7 +4071,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3801,7 +4101,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3822,7 +4123,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3838,7 +4140,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -3858,7 +4161,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -6173,6 +6477,298 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @return Whether the startExecutionToken field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartExecutionToken() {
+      return createExecutionCase_ == 26;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @return The startExecutionToken.
+     */
+    @java.lang.Override
+    public java.lang.String getStartExecutionToken() {
+      java.lang.Object ref = "";
+      if (createExecutionCase_ == 26) {
+        ref = createExecution_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (createExecutionCase_ == 26) {
+          createExecution_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @return The bytes for startExecutionToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStartExecutionTokenBytes() {
+      java.lang.Object ref = "";
+      if (createExecutionCase_ == 26) {
+        ref = createExecution_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (createExecutionCase_ == 26) {
+          createExecution_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @param value The startExecutionToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartExecutionToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      createExecutionCase_ = 26;
+      createExecution_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStartExecutionToken() {
+      if (createExecutionCase_ == 26) {
+        createExecutionCase_ = 0;
+        createExecution_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix creating a new execution. The Job will
+     * become ready when the execution is successfully started.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string start_execution_token = 26;</code>
+     *
+     * @param value The bytes for startExecutionToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartExecutionTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      createExecutionCase_ = 26;
+      createExecution_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @return Whether the runExecutionToken field is set.
+     */
+    @java.lang.Override
+    public boolean hasRunExecutionToken() {
+      return createExecutionCase_ == 27;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @return The runExecutionToken.
+     */
+    @java.lang.Override
+    public java.lang.String getRunExecutionToken() {
+      java.lang.Object ref = "";
+      if (createExecutionCase_ == 27) {
+        ref = createExecution_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (createExecutionCase_ == 27) {
+          createExecution_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @return The bytes for runExecutionToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRunExecutionTokenBytes() {
+      java.lang.Object ref = "";
+      if (createExecutionCase_ == 27) {
+        ref = createExecution_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (createExecutionCase_ == 27) {
+          createExecution_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @param value The runExecutionToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunExecutionToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      createExecutionCase_ = 27;
+      createExecution_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRunExecutionToken() {
+      if (createExecutionCase_ == 27) {
+        createExecutionCase_ = 0;
+        createExecution_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A unique string used as a suffix for creating a new execution. The Job
+     * will become ready when the execution is successfully completed.
+     * The sum of job name and token length must be fewer than 63 characters.
+     * </pre>
+     *
+     * <code>string run_execution_token = 27;</code>
+     *
+     * @param value The bytes for runExecutionToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunExecutionTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      createExecutionCase_ = 27;
+      createExecution_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -6238,7 +6834,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -6256,7 +6852,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -6279,7 +6875,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }

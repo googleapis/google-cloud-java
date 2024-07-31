@@ -38,7 +38,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Scheduling() {}
+  private Scheduling() {
+    strategy_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +61,167 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1.Scheduling.class,
             com.google.cloud.aiplatform.v1.Scheduling.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This determines which type of scheduling strategy to use. Right
+   * now users have two options such as ON_DEMAND which will use regular on
+   * demand resources to schedule the job, the other is LOW_COST which would
+   * leverage spot resources alongwith regular resources to schedule
+   * the job.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.Scheduling.Strategy}
+   */
+  public enum Strategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Strategy will default to ON_DEMAND.
+     * </pre>
+     *
+     * <code>STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Regular on-demand provisioning strategy.
+     * </pre>
+     *
+     * <code>ON_DEMAND = 1;</code>
+     */
+    ON_DEMAND(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low cost by making potential use of spot resources.
+     * </pre>
+     *
+     * <code>LOW_COST = 2;</code>
+     */
+    LOW_COST(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Strategy will default to ON_DEMAND.
+     * </pre>
+     *
+     * <code>STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Regular on-demand provisioning strategy.
+     * </pre>
+     *
+     * <code>ON_DEMAND = 1;</code>
+     */
+    public static final int ON_DEMAND_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Low cost by making potential use of spot resources.
+     * </pre>
+     *
+     * <code>LOW_COST = 2;</code>
+     */
+    public static final int LOW_COST_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Strategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Strategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STRATEGY_UNSPECIFIED;
+        case 1:
+          return ON_DEMAND;
+        case 2:
+          return LOW_COST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Strategy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Strategy> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Strategy>() {
+          public Strategy findValueByNumber(int number) {
+            return Strategy.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.Scheduling.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Strategy[] VALUES = values();
+
+    public static Strategy valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Strategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.Scheduling.Strategy)
   }
 
   private int bitField0_;
@@ -128,6 +291,47 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return restartJobOnWorkerRestart_;
   }
 
+  public static final int STRATEGY_FIELD_NUMBER = 4;
+  private int strategy_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This determines which type of scheduling strategy to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for strategy.
+   */
+  @java.lang.Override
+  public int getStrategyValue() {
+    return strategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This determines which type of scheduling strategy to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The strategy.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Scheduling.Strategy getStrategy() {
+    com.google.cloud.aiplatform.v1.Scheduling.Strategy result =
+        com.google.cloud.aiplatform.v1.Scheduling.Strategy.forNumber(strategy_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.Scheduling.Strategy.UNRECOGNIZED
+        : result;
+  }
+
   public static final int DISABLE_RETRIES_FIELD_NUMBER = 5;
   private boolean disableRetries_ = false;
   /**
@@ -168,6 +372,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (restartJobOnWorkerRestart_ != false) {
       output.writeBool(3, restartJobOnWorkerRestart_);
     }
+    if (strategy_
+        != com.google.cloud.aiplatform.v1.Scheduling.Strategy.STRATEGY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, strategy_);
+    }
     if (disableRetries_ != false) {
       output.writeBool(5, disableRetries_);
     }
@@ -185,6 +393,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     if (restartJobOnWorkerRestart_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, restartJobOnWorkerRestart_);
+    }
+    if (strategy_
+        != com.google.cloud.aiplatform.v1.Scheduling.Strategy.STRATEGY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, strategy_);
     }
     if (disableRetries_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, disableRetries_);
@@ -210,6 +422,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (getRestartJobOnWorkerRestart() != other.getRestartJobOnWorkerRestart()) return false;
+    if (strategy_ != other.strategy_) return false;
     if (getDisableRetries() != other.getDisableRetries()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -228,6 +441,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + RESTART_JOB_ON_WORKER_RESTART_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRestartJobOnWorkerRestart());
+    hash = (37 * hash) + STRATEGY_FIELD_NUMBER;
+    hash = (53 * hash) + strategy_;
     hash = (37 * hash) + DISABLE_RETRIES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableRetries());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -384,6 +599,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         timeoutBuilder_ = null;
       }
       restartJobOnWorkerRestart_ = false;
+      strategy_ = 0;
       disableRetries_ = false;
       return this;
     }
@@ -430,6 +646,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         result.restartJobOnWorkerRestart_ = restartJobOnWorkerRestart_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.strategy_ = strategy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.disableRetries_ = disableRetries_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -486,6 +705,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.getRestartJobOnWorkerRestart() != false) {
         setRestartJobOnWorkerRestart(other.getRestartJobOnWorkerRestart());
       }
+      if (other.strategy_ != 0) {
+        setStrategyValue(other.getStrategyValue());
+      }
       if (other.getDisableRetries() != false) {
         setDisableRetries(other.getDisableRetries());
       }
@@ -527,10 +749,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                strategy_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             case 40:
               {
                 disableRetries_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -792,6 +1020,108 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int strategy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This determines which type of scheduling strategy to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for strategy.
+     */
+    @java.lang.Override
+    public int getStrategyValue() {
+      return strategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This determines which type of scheduling strategy to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for strategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStrategyValue(int value) {
+      strategy_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This determines which type of scheduling strategy to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The strategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Scheduling.Strategy getStrategy() {
+      com.google.cloud.aiplatform.v1.Scheduling.Strategy result =
+          com.google.cloud.aiplatform.v1.Scheduling.Strategy.forNumber(strategy_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.Scheduling.Strategy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This determines which type of scheduling strategy to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The strategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStrategy(com.google.cloud.aiplatform.v1.Scheduling.Strategy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      strategy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This determines which type of scheduling strategy to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Scheduling.Strategy strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStrategy() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      strategy_ = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean disableRetries_;
     /**
      *
@@ -827,7 +1157,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableRetries(boolean value) {
 
       disableRetries_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -845,7 +1175,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableRetries() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       disableRetries_ = false;
       onChanged();
       return this;

@@ -28,10 +28,10 @@ public interface HTTPGetActionOrBuilder
    *
    *
    * <pre>
-   * Path to access on the HTTP server. Defaults to '/'.
+   * Optional. Path to access on the HTTP server. Defaults to '/'.
    * </pre>
    *
-   * <code>string path = 1;</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -40,10 +40,10 @@ public interface HTTPGetActionOrBuilder
    *
    *
    * <pre>
-   * Path to access on the HTTP server. Defaults to '/'.
+   * Optional. Path to access on the HTTP server. Defaults to '/'.
    * </pre>
    *
-   * <code>string path = 1;</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for path.
    */
@@ -53,40 +53,52 @@ public interface HTTPGetActionOrBuilder
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.run.v2.HTTPHeader> getHttpHeadersList();
   /**
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.HTTPHeader getHttpHeaders(int index);
   /**
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getHttpHeadersCount();
   /**
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.HTTPHeaderOrBuilder>
       getHttpHeadersOrBuilderList();
@@ -94,10 +106,13 @@ public interface HTTPGetActionOrBuilder
    *
    *
    * <pre>
-   * Custom headers to set in the request. HTTP allows repeated headers.
+   * Optional. Custom headers to set in the request. HTTP allows repeated
+   * headers.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.HTTPHeader http_headers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.HTTPHeaderOrBuilder getHttpHeadersOrBuilder(int index);
 
@@ -105,12 +120,12 @@ public interface HTTPGetActionOrBuilder
    *
    *
    * <pre>
-   * Port number to access on the container. Must be in the range 1 to 65535.
-   * If not specified, defaults to the exposed port of the container, which is
-   * the value of container.ports[0].containerPort.
+   * Optional. Port number to access on the container. Must be in the range 1 to
+   * 65535. If not specified, defaults to the exposed port of the container,
+   * which is the value of container.ports[0].containerPort.
    * </pre>
    *
-   * <code>int32 port = 5;</code>
+   * <code>int32 port = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */

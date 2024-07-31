@@ -388,6 +388,87 @@ public class MockLivestreamServiceImpl extends LivestreamServiceImplBase {
   }
 
   @Override
+  public void listClips(
+      ListClipsRequest request, StreamObserver<ListClipsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListClipsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListClipsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListClips, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListClipsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getClip(GetClipRequest request, StreamObserver<Clip> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Clip) {
+      requests.add(request);
+      responseObserver.onNext(((Clip) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetClip, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Clip.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createClip(CreateClipRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateClip, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteClip(DeleteClipRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteClip, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createAsset(CreateAssetRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {

@@ -75,6 +75,60 @@ public interface AdvancedSettingsOrBuilder
    *
    *
    * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   *
+   * @return Whether the speechSettings field is set.
+   */
+  boolean hasSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   *
+   * @return The speechSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettings getSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings.SpeechSettingsOrBuilder
+      getSpeechSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings for DTMF.
    * Exposed at the following levels:
    * - Agent level

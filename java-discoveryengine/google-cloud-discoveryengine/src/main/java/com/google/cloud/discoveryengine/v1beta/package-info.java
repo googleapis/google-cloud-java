@@ -154,6 +154,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= EvaluationServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Evaluation][google.cloud.discoveryengine.v1beta.Evaluation]s,
+ *
+ * <p>Sample for EvaluationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+ *   EvaluationName name = EvaluationName.of("[PROJECT]", "[LOCATION]", "[EVALUATION]");
+ *   Evaluation response = evaluationServiceClient.getEvaluation(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= GroundedGenerationServiceClient =======================
  *
  * <p>Service Description: Service for grounded generation.
@@ -260,6 +279,47 @@
  * }
  * }</pre>
  *
+ * <p>======================= SampleQueryServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s,
+ *
+ * <p>Sample for SampleQueryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SampleQueryServiceClient sampleQueryServiceClient = SampleQueryServiceClient.create()) {
+ *   SampleQueryName name =
+ *       SampleQueryName.of("[PROJECT]", "[LOCATION]", "[SAMPLE_QUERY_SET]", "[SAMPLE_QUERY]");
+ *   SampleQuery response = sampleQueryServiceClient.getSampleQuery(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SampleQuerySetServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]s,
+ *
+ * <p>Sample for SampleQuerySetServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SampleQuerySetServiceClient sampleQuerySetServiceClient =
+ *     SampleQuerySetServiceClient.create()) {
+ *   SampleQuerySetName name =
+ *       SampleQuerySetName.of("[PROJECT]", "[LOCATION]", "[SAMPLE_QUERY_SET]");
+ *   SampleQuerySet response = sampleQuerySetServiceClient.getSampleQuerySet(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= SchemaServiceClient =======================
  *
  * <p>Service Description: Service for managing
@@ -314,6 +374,8 @@
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .setRegionCode("regionCode-1991004415")
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .putAllParams(new HashMap<String, Value>())
@@ -325,6 +387,14 @@
  *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setNaturalLanguageQueryUnderstandingSpec(
+ *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+ *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setSession(
+ *               SessionName.ofProjectLocationDataStoreSessionName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+ *                   .toString())
+ *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

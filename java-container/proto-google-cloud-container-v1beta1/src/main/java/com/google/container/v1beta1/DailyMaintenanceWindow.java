@@ -125,11 +125,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The duration.
    */
@@ -149,11 +149,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 3;</code>
+   * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for duration.
    */
@@ -652,11 +652,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 3;</code>
+     * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The duration.
      */
@@ -675,11 +675,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 3;</code>
+     * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for duration.
      */
@@ -698,11 +698,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 3;</code>
+     * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The duration to set.
      * @return This builder for chaining.
@@ -720,11 +720,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 3;</code>
+     * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -738,11 +738,11 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 3;</code>
+     * <code>string duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for duration to set.
      * @return This builder for chaining.

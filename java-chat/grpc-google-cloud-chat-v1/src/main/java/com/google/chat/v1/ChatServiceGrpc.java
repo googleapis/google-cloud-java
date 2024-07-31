@@ -1084,6 +1084,87 @@ public final class ChatServiceGrpc {
     return getGetThreadReadStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetSpaceEventRequest, com.google.chat.v1.SpaceEvent>
+      getGetSpaceEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSpaceEvent",
+      requestType = com.google.chat.v1.GetSpaceEventRequest.class,
+      responseType = com.google.chat.v1.SpaceEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetSpaceEventRequest, com.google.chat.v1.SpaceEvent>
+      getGetSpaceEventMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.GetSpaceEventRequest, com.google.chat.v1.SpaceEvent>
+        getGetSpaceEventMethod;
+    if ((getGetSpaceEventMethod = ChatServiceGrpc.getGetSpaceEventMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getGetSpaceEventMethod = ChatServiceGrpc.getGetSpaceEventMethod) == null) {
+          ChatServiceGrpc.getGetSpaceEventMethod =
+              getGetSpaceEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.GetSpaceEventRequest, com.google.chat.v1.SpaceEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSpaceEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.GetSpaceEventRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SpaceEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("GetSpaceEvent"))
+                      .build();
+        }
+      }
+    }
+    return getGetSpaceEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSpaceEventsRequest, com.google.chat.v1.ListSpaceEventsResponse>
+      getListSpaceEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSpaceEvents",
+      requestType = com.google.chat.v1.ListSpaceEventsRequest.class,
+      responseType = com.google.chat.v1.ListSpaceEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSpaceEventsRequest, com.google.chat.v1.ListSpaceEventsResponse>
+      getListSpaceEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ListSpaceEventsRequest, com.google.chat.v1.ListSpaceEventsResponse>
+        getListSpaceEventsMethod;
+    if ((getListSpaceEventsMethod = ChatServiceGrpc.getListSpaceEventsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getListSpaceEventsMethod = ChatServiceGrpc.getListSpaceEventsMethod) == null) {
+          ChatServiceGrpc.getListSpaceEventsMethod =
+              getListSpaceEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ListSpaceEventsRequest,
+                          com.google.chat.v1.ListSpaceEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSpaceEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSpaceEventsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSpaceEventsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("ListSpaceEvents"))
+                      .build();
+        }
+      }
+    }
+    return getListSpaceEventsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ChatServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ChatServiceStub> factory =
@@ -1753,6 +1834,56 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetThreadReadStateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an event from a Google Chat space. The [event
+     * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the resource that changed. For example,
+     * if you request an event about a new message but the message was later
+     * updated, the server returns the updated `Message` resource in the event
+     * payload.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To get an event, the authenticated user must be a member of the space.
+     * For an example, see [Get details about an
+     * event from a Google Chat
+     * space](https://developers.google.com/workspace/chat/get-space-event).
+     * </pre>
+     */
+    default void getSpaceEvent(
+        com.google.chat.v1.GetSpaceEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSpaceEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists events from a Google Chat space. For each event, the
+     * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the Chat resource. For example, if you
+     * list events about new space members, the server returns `Membership`
+     * resources that contain the latest membership details. If new members were
+     * removed during the requested period, the event payload contains an empty
+     * `Membership` resource.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To list events, the authenticated user must be a member of the space.
+     * For an example, see [List events from a Google Chat
+     * space](https://developers.google.com/workspace/chat/list-space-events).
+     * </pre>
+     */
+    default void listSpaceEvents(
+        com.google.chat.v1.ListSpaceEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpaceEventsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSpaceEventsMethod(), responseObserver);
     }
   }
 
@@ -2460,6 +2591,60 @@ public final class ChatServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an event from a Google Chat space. The [event
+     * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the resource that changed. For example,
+     * if you request an event about a new message but the message was later
+     * updated, the server returns the updated `Message` resource in the event
+     * payload.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To get an event, the authenticated user must be a member of the space.
+     * For an example, see [Get details about an
+     * event from a Google Chat
+     * space](https://developers.google.com/workspace/chat/get-space-event).
+     * </pre>
+     */
+    public void getSpaceEvent(
+        com.google.chat.v1.GetSpaceEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSpaceEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists events from a Google Chat space. For each event, the
+     * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the Chat resource. For example, if you
+     * list events about new space members, the server returns `Membership`
+     * resources that contain the latest membership details. If new members were
+     * removed during the requested period, the event payload contains an empty
+     * `Membership` resource.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To list events, the authenticated user must be a member of the space.
+     * For an example, see [List events from a Google Chat
+     * space](https://developers.google.com/workspace/chat/list-space-events).
+     * </pre>
+     */
+    public void listSpaceEvents(
+        com.google.chat.v1.ListSpaceEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpaceEventsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSpaceEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3072,6 +3257,54 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.GetThreadReadStateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetThreadReadStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an event from a Google Chat space. The [event
+     * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the resource that changed. For example,
+     * if you request an event about a new message but the message was later
+     * updated, the server returns the updated `Message` resource in the event
+     * payload.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To get an event, the authenticated user must be a member of the space.
+     * For an example, see [Get details about an
+     * event from a Google Chat
+     * space](https://developers.google.com/workspace/chat/get-space-event).
+     * </pre>
+     */
+    public com.google.chat.v1.SpaceEvent getSpaceEvent(
+        com.google.chat.v1.GetSpaceEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSpaceEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists events from a Google Chat space. For each event, the
+     * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the Chat resource. For example, if you
+     * list events about new space members, the server returns `Membership`
+     * resources that contain the latest membership details. If new members were
+     * removed during the requested period, the event payload contains an empty
+     * `Membership` resource.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To list events, the authenticated user must be a member of the space.
+     * For an example, see [List events from a Google Chat
+     * space](https://developers.google.com/workspace/chat/list-space-events).
+     * </pre>
+     */
+    public com.google.chat.v1.ListSpaceEventsResponse listSpaceEvents(
+        com.google.chat.v1.ListSpaceEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSpaceEventsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3697,6 +3930,55 @@ public final class ChatServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetThreadReadStateMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an event from a Google Chat space. The [event
+     * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the resource that changed. For example,
+     * if you request an event about a new message but the message was later
+     * updated, the server returns the updated `Message` resource in the event
+     * payload.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To get an event, the authenticated user must be a member of the space.
+     * For an example, see [Get details about an
+     * event from a Google Chat
+     * space](https://developers.google.com/workspace/chat/get-space-event).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.SpaceEvent>
+        getSpaceEvent(com.google.chat.v1.GetSpaceEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSpaceEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists events from a Google Chat space. For each event, the
+     * [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
+     * contains the most recent version of the Chat resource. For example, if you
+     * list events about new space members, the server returns `Membership`
+     * resources that contain the latest membership details. If new members were
+     * removed during the requested period, the event payload contains an empty
+     * `Membership` resource.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * To list events, the authenticated user must be a member of the space.
+     * For an example, see [List events from a Google Chat
+     * space](https://developers.google.com/workspace/chat/list-space-events).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ListSpaceEventsResponse>
+        listSpaceEvents(com.google.chat.v1.ListSpaceEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSpaceEventsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_MESSAGE = 0;
@@ -3725,6 +4007,8 @@ public final class ChatServiceGrpc {
   private static final int METHODID_GET_SPACE_READ_STATE = 23;
   private static final int METHODID_UPDATE_SPACE_READ_STATE = 24;
   private static final int METHODID_GET_THREAD_READ_STATE = 25;
+  private static final int METHODID_GET_SPACE_EVENT = 26;
+  private static final int METHODID_LIST_SPACE_EVENTS = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3878,6 +4162,17 @@ public final class ChatServiceGrpc {
           serviceImpl.getThreadReadState(
               (com.google.chat.v1.GetThreadReadStateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState>) responseObserver);
+          break;
+        case METHODID_GET_SPACE_EVENT:
+          serviceImpl.getSpaceEvent(
+              (com.google.chat.v1.GetSpaceEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceEvent>) responseObserver);
+          break;
+        case METHODID_LIST_SPACE_EVENTS:
+          serviceImpl.listSpaceEvents(
+              (com.google.chat.v1.ListSpaceEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpaceEventsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4052,6 +4347,19 @@ public final class ChatServiceGrpc {
                 new MethodHandlers<
                     com.google.chat.v1.GetThreadReadStateRequest,
                     com.google.chat.v1.ThreadReadState>(service, METHODID_GET_THREAD_READ_STATE)))
+        .addMethod(
+            getGetSpaceEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.GetSpaceEventRequest, com.google.chat.v1.SpaceEvent>(
+                    service, METHODID_GET_SPACE_EVENT)))
+        .addMethod(
+            getListSpaceEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ListSpaceEventsRequest,
+                    com.google.chat.v1.ListSpaceEventsResponse>(
+                    service, METHODID_LIST_SPACE_EVENTS)))
         .build();
   }
 
@@ -4129,6 +4437,8 @@ public final class ChatServiceGrpc {
                       .addMethod(getGetSpaceReadStateMethod())
                       .addMethod(getUpdateSpaceReadStateMethod())
                       .addMethod(getGetThreadReadStateMethod())
+                      .addMethod(getGetSpaceEventMethod())
+                      .addMethod(getListSpaceEventsMethod())
                       .build();
         }
       }

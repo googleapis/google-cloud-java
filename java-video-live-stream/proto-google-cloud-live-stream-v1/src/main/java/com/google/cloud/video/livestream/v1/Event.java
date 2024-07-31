@@ -1774,7 +1774,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Slate asset to use for the duration. If its duration is less than the
-     * duration of the SlateTask, then it will be looped. The slate must be
+     * duration of the SlateTask, then the slate loops. The slate must be
      * represented in the form of:
      * `projects/{project}/locations/{location}/assets/{assetId}`.
      * </pre>
@@ -1789,7 +1789,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Slate asset to use for the duration. If its duration is less than the
-     * duration of the SlateTask, then it will be looped. The slate must be
+     * duration of the SlateTask, then the slate loops. The slate must be
      * represented in the form of:
      * `projects/{project}/locations/{location}/assets/{assetId}`.
      * </pre>
@@ -1903,7 +1903,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Slate asset to use for the duration. If its duration is less than the
-     * duration of the SlateTask, then it will be looped. The slate must be
+     * duration of the SlateTask, then the slate loops. The slate must be
      * represented in the form of:
      * `projects/{project}/locations/{location}/assets/{assetId}`.
      * </pre>
@@ -1929,7 +1929,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Slate asset to use for the duration. If its duration is less than the
-     * duration of the SlateTask, then it will be looped. The slate must be
+     * duration of the SlateTask, then the slate loops. The slate must be
      * represented in the form of:
      * `projects/{project}/locations/{location}/assets/{assetId}`.
      * </pre>
@@ -2537,7 +2537,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Slate asset to use for the duration. If its duration is less than the
-       * duration of the SlateTask, then it will be looped. The slate must be
+       * duration of the SlateTask, then the slate loops. The slate must be
        * represented in the form of:
        * `projects/{project}/locations/{location}/assets/{assetId}`.
        * </pre>
@@ -2562,7 +2562,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Slate asset to use for the duration. If its duration is less than the
-       * duration of the SlateTask, then it will be looped. The slate must be
+       * duration of the SlateTask, then the slate loops. The slate must be
        * represented in the form of:
        * `projects/{project}/locations/{location}/assets/{assetId}`.
        * </pre>
@@ -2587,7 +2587,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Slate asset to use for the duration. If its duration is less than the
-       * duration of the SlateTask, then it will be looped. The slate must be
+       * duration of the SlateTask, then the slate loops. The slate must be
        * represented in the form of:
        * `projects/{project}/locations/{location}/assets/{assetId}`.
        * </pre>
@@ -2611,7 +2611,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Slate asset to use for the duration. If its duration is less than the
-       * duration of the SlateTask, then it will be looped. The slate must be
+       * duration of the SlateTask, then the slate loops. The slate must be
        * represented in the form of:
        * `projects/{project}/locations/{location}/assets/{assetId}`.
        * </pre>
@@ -2631,7 +2631,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Slate asset to use for the duration. If its duration is less than the
-       * duration of the SlateTask, then it will be looped. The slate must be
+       * duration of the SlateTask, then the slate loops. The slate must be
        * represented in the form of:
        * `projects/{project}/locations/{location}/assets/{assetId}`.
        * </pre>
@@ -3910,8 +3910,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unmutes the stream. The task will fail if the stream is not
-   * currently muted.
+   * Unmutes the stream. The task fails if the stream is not currently muted.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.livestream.v1.Event.UnmuteTask}
@@ -4105,8 +4104,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unmutes the stream. The task will fail if the stream is not
-     * currently muted.
+     * Unmutes the stream. The task fails if the stream is not currently muted.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.livestream.v1.Event.UnmuteTask}

@@ -1565,6 +1565,234 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.CreateKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getCreateKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKeyEvent",
+      requestType = com.google.analytics.admin.v1beta.CreateKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1beta.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.CreateKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getCreateKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.CreateKeyEventRequest,
+            com.google.analytics.admin.v1beta.KeyEvent>
+        getCreateKeyEventMethod;
+    if ((getCreateKeyEventMethod = AnalyticsAdminServiceGrpc.getCreateKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateKeyEventMethod = AnalyticsAdminServiceGrpc.getCreateKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getCreateKeyEventMethod =
+              getCreateKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.CreateKeyEventRequest,
+                          com.google.analytics.admin.v1beta.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.CreateKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getCreateKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.UpdateKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getUpdateKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateKeyEvent",
+      requestType = com.google.analytics.admin.v1beta.UpdateKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1beta.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.UpdateKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getUpdateKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.UpdateKeyEventRequest,
+            com.google.analytics.admin.v1beta.KeyEvent>
+        getUpdateKeyEventMethod;
+    if ((getUpdateKeyEventMethod = AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateKeyEventMethod = AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod =
+              getUpdateKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.UpdateKeyEventRequest,
+                          com.google.analytics.admin.v1beta.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.UpdateKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.GetKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getGetKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKeyEvent",
+      requestType = com.google.analytics.admin.v1beta.GetKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1beta.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.GetKeyEventRequest,
+          com.google.analytics.admin.v1beta.KeyEvent>
+      getGetKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.GetKeyEventRequest,
+            com.google.analytics.admin.v1beta.KeyEvent>
+        getGetKeyEventMethod;
+    if ((getGetKeyEventMethod = AnalyticsAdminServiceGrpc.getGetKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetKeyEventMethod = AnalyticsAdminServiceGrpc.getGetKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getGetKeyEventMethod =
+              getGetKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.GetKeyEventRequest,
+                          com.google.analytics.admin.v1beta.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.GetKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getGetKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.DeleteKeyEventRequest, com.google.protobuf.Empty>
+      getDeleteKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteKeyEvent",
+      requestType = com.google.analytics.admin.v1beta.DeleteKeyEventRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.DeleteKeyEventRequest, com.google.protobuf.Empty>
+      getDeleteKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.DeleteKeyEventRequest, com.google.protobuf.Empty>
+        getDeleteKeyEventMethod;
+    if ((getDeleteKeyEventMethod = AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteKeyEventMethod = AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod =
+              getDeleteKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.DeleteKeyEventRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.DeleteKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.ListKeyEventsRequest,
+          com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+      getListKeyEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKeyEvents",
+      requestType = com.google.analytics.admin.v1beta.ListKeyEventsRequest.class,
+      responseType = com.google.analytics.admin.v1beta.ListKeyEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.ListKeyEventsRequest,
+          com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+      getListKeyEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.ListKeyEventsRequest,
+            com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+        getListKeyEventsMethod;
+    if ((getListKeyEventsMethod = AnalyticsAdminServiceGrpc.getListKeyEventsMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListKeyEventsMethod = AnalyticsAdminServiceGrpc.getListKeyEventsMethod) == null) {
+          AnalyticsAdminServiceGrpc.getListKeyEventsMethod =
+              getListKeyEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.ListKeyEventsRequest,
+                          com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeyEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.ListKeyEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.ListKeyEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListKeyEvents"))
+                      .build();
+        }
+      }
+    }
+    return getListKeyEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1beta.CreateCustomDimensionRequest,
           com.google.analytics.admin.v1beta.CustomDimension>
       getCreateCustomDimensionMethod;
@@ -2534,7 +2762,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -2646,7 +2874,7 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found, or is not a GA4 Property.
@@ -2910,9 +3138,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createConversionEvent(
         com.google.analytics.admin.v1beta.CreateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -2925,9 +3155,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateConversionEvent(
         com.google.analytics.admin.v1beta.UpdateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -2940,9 +3172,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getConversionEvent(
         com.google.analytics.admin.v1beta.GetConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -2955,9 +3189,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteConversionEvent(
         com.google.analytics.admin.v1beta.DeleteConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2969,16 +3205,90 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listConversionEvents(
         com.google.analytics.admin.v1beta.ListConversionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ListConversionEventsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListConversionEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    default void createKeyEvent(
+        com.google.analytics.admin.v1beta.CreateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    default void updateKeyEvent(
+        com.google.analytics.admin.v1beta.UpdateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    default void getKeyEvent(
+        com.google.analytics.admin.v1beta.GetKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    default void deleteKeyEvent(
+        com.google.analytics.admin.v1beta.DeleteKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    default void listKeyEvents(
+        com.google.analytics.admin.v1beta.ListKeyEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListKeyEventsMethod(), responseObserver);
     }
 
     /**
@@ -3240,8 +3550,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -3337,7 +3649,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -3463,7 +3775,7 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found, or is not a GA4 Property.
@@ -3761,9 +4073,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createConversionEvent(
         com.google.analytics.admin.v1beta.CreateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -3778,9 +4092,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateConversionEvent(
         com.google.analytics.admin.v1beta.UpdateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -3795,9 +4111,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getConversionEvent(
         com.google.analytics.admin.v1beta.GetConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
@@ -3812,9 +4130,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteConversionEvent(
         com.google.analytics.admin.v1beta.DeleteConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3828,16 +4148,100 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listConversionEvents(
         com.google.analytics.admin.v1beta.ListConversionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ListConversionEventsResponse>
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConversionEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public void createKeyEvent(
+        com.google.analytics.admin.v1beta.CreateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public void updateKeyEvent(
+        com.google.analytics.admin.v1beta.UpdateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public void getKeyEvent(
+        com.google.analytics.admin.v1beta.GetKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public void deleteKeyEvent(
+        com.google.analytics.admin.v1beta.DeleteKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public void listKeyEvents(
+        com.google.analytics.admin.v1beta.ListKeyEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListKeyEventsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4135,8 +4539,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -4214,7 +4620,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -4315,7 +4721,7 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found, or is not a GA4 Property.
@@ -4552,9 +4958,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1beta.ConversionEvent createConversionEvent(
         com.google.analytics.admin.v1beta.CreateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4565,9 +4973,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1beta.ConversionEvent updateConversionEvent(
         com.google.analytics.admin.v1beta.UpdateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4578,9 +4988,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1beta.ConversionEvent getConversionEvent(
         com.google.analytics.admin.v1beta.GetConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4591,9 +5003,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteConversionEvent(
         com.google.analytics.admin.v1beta.DeleteConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4604,14 +5018,82 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1beta.ListConversionEventsResponse listConversionEvents(
         com.google.analytics.admin.v1beta.ListConversionEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent createKeyEvent(
+        com.google.analytics.admin.v1beta.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent updateKeyEvent(
+        com.google.analytics.admin.v1beta.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent getKeyEvent(
+        com.google.analytics.admin.v1beta.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteKeyEvent(
+        com.google.analytics.admin.v1beta.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListKeyEventsResponse listKeyEvents(
+        com.google.analytics.admin.v1beta.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKeyEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4842,8 +5324,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -4920,7 +5404,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -5029,7 +5513,7 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found, or is not a GA4 Property.
@@ -5288,9 +5772,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1beta.ConversionEvent>
         createConversionEvent(
@@ -5303,9 +5789,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1beta.ConversionEvent>
         updateConversionEvent(
@@ -5318,9 +5806,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1beta.ConversionEvent>
         getConversionEvent(com.google.analytics.admin.v1beta.GetConversionEventRequest request) {
@@ -5332,9 +5822,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteConversionEvent(
             com.google.analytics.admin.v1beta.DeleteConversionEventRequest request) {
@@ -5346,16 +5838,88 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1beta.ListConversionEventsResponse>
         listConversionEvents(
             com.google.analytics.admin.v1beta.ListConversionEventsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConversionEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1beta.KeyEvent>
+        createKeyEvent(com.google.analytics.admin.v1beta.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1beta.KeyEvent>
+        updateKeyEvent(com.google.analytics.admin.v1beta.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1beta.KeyEvent>
+        getKeyEvent(com.google.analytics.admin.v1beta.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteKeyEvent(com.google.analytics.admin.v1beta.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1beta.ListKeyEventsResponse>
+        listKeyEvents(com.google.analytics.admin.v1beta.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListKeyEventsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -5606,8 +6170,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -5655,24 +6221,29 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_GET_CONVERSION_EVENT = 28;
   private static final int METHODID_DELETE_CONVERSION_EVENT = 29;
   private static final int METHODID_LIST_CONVERSION_EVENTS = 30;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 31;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 32;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 33;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 34;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 35;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 36;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 37;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 38;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 39;
-  private static final int METHODID_GET_CUSTOM_METRIC = 40;
-  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 41;
-  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 42;
-  private static final int METHODID_CREATE_DATA_STREAM = 43;
-  private static final int METHODID_DELETE_DATA_STREAM = 44;
-  private static final int METHODID_UPDATE_DATA_STREAM = 45;
-  private static final int METHODID_LIST_DATA_STREAMS = 46;
-  private static final int METHODID_GET_DATA_STREAM = 47;
-  private static final int METHODID_RUN_ACCESS_REPORT = 48;
+  private static final int METHODID_CREATE_KEY_EVENT = 31;
+  private static final int METHODID_UPDATE_KEY_EVENT = 32;
+  private static final int METHODID_GET_KEY_EVENT = 33;
+  private static final int METHODID_DELETE_KEY_EVENT = 34;
+  private static final int METHODID_LIST_KEY_EVENTS = 35;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 36;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 37;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 38;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 39;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 40;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 41;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 42;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 43;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 44;
+  private static final int METHODID_GET_CUSTOM_METRIC = 45;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 46;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 47;
+  private static final int METHODID_CREATE_DATA_STREAM = 48;
+  private static final int METHODID_DELETE_DATA_STREAM = 49;
+  private static final int METHODID_UPDATE_DATA_STREAM = 50;
+  private static final int METHODID_LIST_DATA_STREAMS = 51;
+  private static final int METHODID_GET_DATA_STREAM = 52;
+  private static final int METHODID_RUN_ACCESS_REPORT = 53;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5882,6 +6453,35 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1beta.ListConversionEventsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1beta.ListConversionEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_KEY_EVENT:
+          serviceImpl.createKeyEvent(
+              (com.google.analytics.admin.v1beta.CreateKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_KEY_EVENT:
+          serviceImpl.updateKeyEvent(
+              (com.google.analytics.admin.v1beta.UpdateKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_GET_KEY_EVENT:
+          serviceImpl.getKeyEvent(
+              (com.google.analytics.admin.v1beta.GetKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_KEY_EVENT:
+          serviceImpl.deleteKeyEvent(
+              (com.google.analytics.admin.v1beta.DeleteKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_KEY_EVENTS:
+          serviceImpl.listKeyEvents(
+              (com.google.analytics.admin.v1beta.ListKeyEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ListKeyEventsResponse>)
                   responseObserver);
           break;
         case METHODID_CREATE_CUSTOM_DIMENSION:
@@ -6219,6 +6819,39 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1beta.ListConversionEventsResponse>(
                     service, METHODID_LIST_CONVERSION_EVENTS)))
         .addMethod(
+            getCreateKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.CreateKeyEventRequest,
+                    com.google.analytics.admin.v1beta.KeyEvent>(
+                    service, METHODID_CREATE_KEY_EVENT)))
+        .addMethod(
+            getUpdateKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.UpdateKeyEventRequest,
+                    com.google.analytics.admin.v1beta.KeyEvent>(
+                    service, METHODID_UPDATE_KEY_EVENT)))
+        .addMethod(
+            getGetKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.GetKeyEventRequest,
+                    com.google.analytics.admin.v1beta.KeyEvent>(service, METHODID_GET_KEY_EVENT)))
+        .addMethod(
+            getDeleteKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.DeleteKeyEventRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_KEY_EVENT)))
+        .addMethod(
+            getListKeyEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.ListKeyEventsRequest,
+                    com.google.analytics.admin.v1beta.ListKeyEventsResponse>(
+                    service, METHODID_LIST_KEY_EVENTS)))
+        .addMethod(
             getCreateCustomDimensionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6423,6 +7056,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetConversionEventMethod())
                       .addMethod(getDeleteConversionEventMethod())
                       .addMethod(getListConversionEventsMethod())
+                      .addMethod(getCreateKeyEventMethod())
+                      .addMethod(getUpdateKeyEventMethod())
+                      .addMethod(getGetKeyEventMethod())
+                      .addMethod(getDeleteKeyEventMethod())
+                      .addMethod(getListKeyEventsMethod())
                       .addMethod(getCreateCustomDimensionMethod())
                       .addMethod(getUpdateCustomDimensionMethod())
                       .addMethod(getListCustomDimensionsMethod())

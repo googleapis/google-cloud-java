@@ -100,6 +100,16 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Unable to determine risk.
+     * </pre>
+     *
+     * <code>RISK_UNKNOWN = 12;</code>
+     */
+    RISK_UNKNOWN(12),
+    /**
+     *
+     *
+     * <pre>
      * Medium risk - Sensitive data may be present but additional access or fine
      * grain access restrictions appear to be present.  Consider limiting
      * access even further or transform data to mask.
@@ -145,6 +155,16 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_LOW = 10;</code>
      */
     public static final int RISK_LOW_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Unable to determine risk.
+     * </pre>
+     *
+     * <code>RISK_UNKNOWN = 12;</code>
+     */
+    public static final int RISK_UNKNOWN_VALUE = 12;
     /**
      *
      *
@@ -198,6 +218,8 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
           return RISK_SCORE_UNSPECIFIED;
         case 10:
           return RISK_LOW;
+        case 12:
+          return RISK_UNKNOWN;
         case 20:
           return RISK_MODERATE;
         case 30:

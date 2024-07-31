@@ -18,6 +18,7 @@ package com.google.cloud.video.livestream.v1;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -215,6 +216,39 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   /** Returns the object with the settings used for calls to deleteEvent. */
   public UnaryCallSettings<DeleteEventRequest, Empty> deleteEventSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).deleteEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listClips. */
+  public PagedCallSettings<ListClipsRequest, ListClipsResponse, ListClipsPagedResponse>
+      listClipsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listClipsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getClip. */
+  public UnaryCallSettings<GetClipRequest, Clip> getClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createClip. */
+  public UnaryCallSettings<CreateClipRequest, Operation> createClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createClip. */
+  public OperationCallSettings<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createClipOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteClip. */
+  public UnaryCallSettings<DeleteClipRequest, Operation> deleteClipSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteClipSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteClip. */
+  public OperationCallSettings<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteClipOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createAsset. */
@@ -521,6 +555,39 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     /** Returns the builder for the settings used for calls to deleteEvent. */
     public UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings() {
       return getStubSettingsBuilder().deleteEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listClips. */
+    public PagedCallSettings.Builder<ListClipsRequest, ListClipsResponse, ListClipsPagedResponse>
+        listClipsSettings() {
+      return getStubSettingsBuilder().listClipsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getClip. */
+    public UnaryCallSettings.Builder<GetClipRequest, Clip> getClipSettings() {
+      return getStubSettingsBuilder().getClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createClip. */
+    public UnaryCallSettings.Builder<CreateClipRequest, Operation> createClipSettings() {
+      return getStubSettingsBuilder().createClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createClip. */
+    public OperationCallSettings.Builder<CreateClipRequest, Clip, OperationMetadata>
+        createClipOperationSettings() {
+      return getStubSettingsBuilder().createClipOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteClip. */
+    public UnaryCallSettings.Builder<DeleteClipRequest, Operation> deleteClipSettings() {
+      return getStubSettingsBuilder().deleteClipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteClip. */
+    public OperationCallSettings.Builder<DeleteClipRequest, Empty, OperationMetadata>
+        deleteClipOperationSettings() {
+      return getStubSettingsBuilder().deleteClipOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */

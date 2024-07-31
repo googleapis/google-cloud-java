@@ -145,6 +145,26 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT = 6;</code>
      */
     EVENT(6),
+    /**
+     *
+     *
+     * <pre>
+     * The query was matched to a Knowledge Connector answer.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_CONNECTOR = 8;</code>
+     */
+    KNOWLEDGE_CONNECTOR(8),
+    /**
+     *
+     *
+     * <pre>
+     * The query was handled by a [`Playbook`][Playbook].
+     * </pre>
+     *
+     * <code>PLAYBOOK = 9;</code>
+     */
+    PLAYBOOK(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -218,6 +238,26 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT = 6;</code>
      */
     public static final int EVENT_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The query was matched to a Knowledge Connector answer.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_CONNECTOR = 8;</code>
+     */
+    public static final int KNOWLEDGE_CONNECTOR_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The query was handled by a [`Playbook`][Playbook].
+     * </pre>
+     *
+     * <code>PLAYBOOK = 9;</code>
+     */
+    public static final int PLAYBOOK_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -257,6 +297,10 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           return NO_INPUT;
         case 6:
           return EVENT;
+        case 8:
+          return KNOWLEDGE_CONNECTOR;
+        case 9:
+          return PLAYBOOK;
         default:
           return null;
       }

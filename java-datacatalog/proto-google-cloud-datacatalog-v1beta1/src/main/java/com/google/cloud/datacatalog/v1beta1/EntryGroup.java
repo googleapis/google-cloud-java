@@ -76,7 +76,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format. Example:
+   * Identifier. The resource name of the entry group in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    *
@@ -84,7 +84,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    * stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -104,7 +104,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format. Example:
+   * Identifier. The resource name of the entry group in URL format. Example:
    *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    *
@@ -112,7 +112,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    * stored in the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -742,7 +742,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format. Example:
+     * Identifier. The resource name of the entry group in URL format. Example:
      *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      *
@@ -750,7 +750,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * stored in the location in this name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -769,7 +769,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format. Example:
+     * Identifier. The resource name of the entry group in URL format. Example:
      *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      *
@@ -777,7 +777,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * stored in the location in this name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -796,7 +796,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format. Example:
+     * Identifier. The resource name of the entry group in URL format. Example:
      *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      *
@@ -804,7 +804,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * stored in the location in this name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -822,7 +822,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format. Example:
+     * Identifier. The resource name of the entry group in URL format. Example:
      *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      *
@@ -830,7 +830,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * stored in the location in this name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -844,7 +844,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format. Example:
+     * Identifier. The resource name of the entry group in URL format. Example:
      *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      *
@@ -852,7 +852,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * stored in the location in this name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

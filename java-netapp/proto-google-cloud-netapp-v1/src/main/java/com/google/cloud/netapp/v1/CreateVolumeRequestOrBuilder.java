@@ -57,9 +57,10 @@ public interface CreateVolumeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting volume
-   * If auto-generating Id server-side, remove this field and
-   * Id from the method_signature of Create RPC
+   * Required. Id of the requesting volume. Must be unique within the parent
+   * resource. Must contain only letters, numbers, underscore and hyphen, with
+   * the first character a letter or underscore, the last a letter or underscore
+   * or a number, and a 63 character maximum.
    * </pre>
    *
    * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,9 +72,10 @@ public interface CreateVolumeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting volume
-   * If auto-generating Id server-side, remove this field and
-   * Id from the method_signature of Create RPC
+   * Required. Id of the requesting volume. Must be unique within the parent
+   * resource. Must contain only letters, numbers, underscore and hyphen, with
+   * the first character a letter or underscore, the last a letter or underscore
+   * or a number, and a 63 character maximum.
    * </pre>
    *
    * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

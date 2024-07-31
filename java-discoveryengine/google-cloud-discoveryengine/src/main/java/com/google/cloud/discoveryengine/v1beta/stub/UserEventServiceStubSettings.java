@@ -19,6 +19,7 @@ package com.google.cloud.discoveryengine.v1beta.stub;
 import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -43,6 +44,9 @@ import com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1beta.UserEvent;
 import com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest;
 import com.google.common.collect.ImmutableList;
@@ -102,6 +106,10 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
   private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
   private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
+  private final UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings;
+  private final OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings;
   private final UnaryCallSettings<ImportUserEventsRequest, Operation> importUserEventsSettings;
   private final OperationCallSettings<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportUserEventsMetadata>
@@ -115,6 +123,18 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   /** Returns the object with the settings used for calls to collectUserEvent. */
   public UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
     return collectUserEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+    return purgeUserEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings() {
+    return purgeUserEventsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to importUserEvents. */
@@ -157,6 +177,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -241,6 +262,8 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
     writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
     collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
+    purgeUserEventsSettings = settingsBuilder.purgeUserEventsSettings().build();
+    purgeUserEventsOperationSettings = settingsBuilder.purgeUserEventsOperationSettings().build();
     importUserEventsSettings = settingsBuilder.importUserEventsSettings().build();
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
   }
@@ -252,6 +275,11 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
         writeUserEventSettings;
     private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
         collectUserEventSettings;
+    private final UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation>
+        purgeUserEventsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings;
     private final UnaryCallSettings.Builder<ImportUserEventsRequest, Operation>
         importUserEventsSettings;
     private final OperationCallSettings.Builder<
@@ -311,12 +339,17 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
       writeUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       collectUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
       importUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importUserEventsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              writeUserEventSettings, collectUserEventSettings, importUserEventsSettings);
+              writeUserEventSettings,
+              collectUserEventSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
       initDefaults(this);
     }
 
@@ -325,12 +358,17 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
       writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
       collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
+      purgeUserEventsSettings = settings.purgeUserEventsSettings.toBuilder();
+      purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
       importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
       importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              writeUserEventSettings, collectUserEventSettings, importUserEventsSettings);
+              writeUserEventSettings,
+              collectUserEventSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
     }
 
     private static Builder createDefault() {
@@ -369,9 +407,38 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .purgeUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .importUserEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .purgeUserEventsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeUserEventsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeUserEventsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .importUserEventsOperationSettings()
@@ -423,6 +490,18 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     /** Returns the builder for the settings used for calls to collectUserEvent. */
     public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
       return collectUserEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+      return purgeUserEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings() {
+      return purgeUserEventsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to importUserEvents. */

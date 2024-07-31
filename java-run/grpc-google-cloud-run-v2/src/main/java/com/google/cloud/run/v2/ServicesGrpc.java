@@ -439,7 +439,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     default void listServices(
@@ -593,7 +593,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public void listServices(
@@ -741,7 +741,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListServicesResponse listServices(
@@ -867,7 +867,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Lists Services.
+     * Lists Services. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -73,8 +73,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Answer resource object.
-   * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-   * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+   * If
+   * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+   * is greater than 1, use
+   * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
    * answer information using
    * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
    * API.
@@ -93,8 +95,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Answer resource object.
-   * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-   * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+   * If
+   * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+   * is greater than 1, use
+   * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
    * answer information using
    * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
    * API.
@@ -115,8 +119,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Answer resource object.
-   * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-   * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+   * If
+   * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+   * is greater than 1, use
+   * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
    * answer information using
    * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
    * API.
@@ -673,8 +679,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -692,8 +700,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -717,8 +727,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -744,8 +756,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -769,8 +783,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -801,8 +817,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -825,8 +843,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -844,8 +864,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.
@@ -867,8 +889,10 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Answer resource object.
-     * If [AnswerQueryRequest.StepSpec.max_step_count][] is greater than 1,
-     * use [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
+     * If
+     * [AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps][google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec.max_rephrase_steps]
+     * is greater than 1, use
+     * [Answer.name][google.cloud.discoveryengine.v1beta.Answer.name] to fetch
      * answer information using
      * [ConversationalSearchService.GetAnswer][google.cloud.discoveryengine.v1beta.ConversationalSearchService.GetAnswer]
      * API.

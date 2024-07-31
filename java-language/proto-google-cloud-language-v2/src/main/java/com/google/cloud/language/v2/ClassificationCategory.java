@@ -133,6 +133,26 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     return confidence_;
   }
 
+  public static final int SEVERITY_FIELD_NUMBER = 3;
+  private float severity_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The classifier's severity of the category. This is only present
+   * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
+   * the corresponding category has a severity score.
+   * </pre>
+   *
+   * <code>float severity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The severity.
+   */
+  @java.lang.Override
+  public float getSeverity() {
+    return severity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +173,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(2, confidence_);
     }
+    if (java.lang.Float.floatToRawIntBits(severity_) != 0) {
+      output.writeFloat(3, severity_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -167,6 +190,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     }
     if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
+    }
+    if (java.lang.Float.floatToRawIntBits(severity_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, severity_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -187,6 +213,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     if (!getName().equals(other.getName())) return false;
     if (java.lang.Float.floatToIntBits(getConfidence())
         != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getSeverity())
+        != java.lang.Float.floatToIntBits(other.getSeverity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -202,6 +230,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
+    hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSeverity());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,6 +373,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       name_ = "";
       confidence_ = 0F;
+      severity_ = 0F;
       return this;
     }
 
@@ -384,6 +415,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.severity_ = severity_;
       }
     }
 
@@ -441,6 +475,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       if (other.getConfidence() != 0F) {
         setConfidence(other.getConfidence());
       }
+      if (other.getSeverity() != 0F) {
+        setSeverity(other.getSeverity());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -479,6 +516,12 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000002;
                 break;
               } // case 21
+            case 29:
+              {
+                severity_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -656,6 +699,65 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     public Builder clearConfidence() {
       bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float severity_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The classifier's severity of the category. This is only present
+     * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
+     * the corresponding category has a severity score.
+     * </pre>
+     *
+     * <code>float severity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public float getSeverity() {
+      return severity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The classifier's severity of the category. This is only present
+     * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
+     * the corresponding category has a severity score.
+     * </pre>
+     *
+     * <code>float severity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(float value) {
+
+      severity_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The classifier's severity of the category. This is only present
+     * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
+     * the corresponding category has a severity score.
+     * </pre>
+     *
+     * <code>float severity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverity() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      severity_ = 0F;
       onChanged();
       return this;
     }

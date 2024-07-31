@@ -73,7 +73,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * Required. The name of the `DeliveryPipeline` to delete. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -99,7 +99,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the `DeliveryPipeline` to delete. Format should be
+   * Required. The name of the `DeliveryPipeline` to delete. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -772,7 +772,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the `DeliveryPipeline` to delete. Format should be
+     * Required. The name of the `DeliveryPipeline` to delete. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -797,7 +797,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the `DeliveryPipeline` to delete. Format should be
+     * Required. The name of the `DeliveryPipeline` to delete. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -822,7 +822,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the `DeliveryPipeline` to delete. Format should be
+     * Required. The name of the `DeliveryPipeline` to delete. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the `DeliveryPipeline` to delete. Format should be
+     * Required. The name of the `DeliveryPipeline` to delete. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -866,7 +866,7 @@ public final class DeleteDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the `DeliveryPipeline` to delete. Format should be
+     * Required. The name of the `DeliveryPipeline` to delete. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *

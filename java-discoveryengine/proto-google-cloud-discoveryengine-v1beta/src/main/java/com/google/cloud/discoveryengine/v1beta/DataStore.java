@@ -692,6 +692,56 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int LANGUAGE_INFO_FIELD_NUMBER = 14;
+  private com.google.cloud.discoveryengine.v1beta.LanguageInfo languageInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+   *
+   * @return Whether the languageInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasLanguageInfo() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+   *
+   * @return The languageInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.LanguageInfo getLanguageInfo() {
+    return languageInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()
+        : languageInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.LanguageInfoOrBuilder getLanguageInfoOrBuilder() {
+    return languageInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()
+        : languageInfo_;
+  }
+
   public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig
       documentProcessingConfig_;
@@ -710,7 +760,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -780,7 +830,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -889,9 +939,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
+      output.writeMessage(14, getLanguageInfo());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
@@ -940,11 +993,14 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLanguageInfo());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -972,6 +1028,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasLanguageInfo() != other.hasLanguageInfo()) return false;
+    if (hasLanguageInfo()) {
+      if (!getLanguageInfo().equals(other.getLanguageInfo())) return false;
     }
     if (hasDocumentProcessingConfig() != other.hasDocumentProcessingConfig()) return false;
     if (hasDocumentProcessingConfig()) {
@@ -1009,6 +1069,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasLanguageInfo()) {
+      hash = (37 * hash) + LANGUAGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageInfo().hashCode();
     }
     if (hasDocumentProcessingConfig()) {
       hash = (37 * hash) + DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER;
@@ -1159,6 +1223,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getLanguageInfoFieldBuilder();
         getDocumentProcessingConfigFieldBuilder();
         getStartingSchemaFieldBuilder();
       }
@@ -1179,6 +1244,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      languageInfo_ = null;
+      if (languageInfoBuilder_ != null) {
+        languageInfoBuilder_.dispose();
+        languageInfoBuilder_ = null;
       }
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
@@ -1257,16 +1327,21 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.languageInfo_ =
+            languageInfoBuilder_ == null ? languageInfo_ : languageInfoBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1350,6 +1425,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasLanguageInfo()) {
+        mergeLanguageInfo(other.getLanguageInfo());
       }
       if (other.hasDocumentProcessingConfig()) {
         mergeDocumentProcessingConfig(other.getDocumentProcessingConfig());
@@ -1438,17 +1516,23 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 114:
+              {
+                input.readMessage(getLanguageInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 114
             case 218:
               {
                 input.readMessage(
                     getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 226
             default:
@@ -2549,6 +2633,194 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.LanguageInfo languageInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.LanguageInfo,
+            com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.LanguageInfoOrBuilder>
+        languageInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     *
+     * @return Whether the languageInfo field is set.
+     */
+    public boolean hasLanguageInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     *
+     * @return The languageInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.LanguageInfo getLanguageInfo() {
+      if (languageInfoBuilder_ == null) {
+        return languageInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()
+            : languageInfo_;
+      } else {
+        return languageInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public Builder setLanguageInfo(com.google.cloud.discoveryengine.v1beta.LanguageInfo value) {
+      if (languageInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageInfo_ = value;
+      } else {
+        languageInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public Builder setLanguageInfo(
+        com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder builderForValue) {
+      if (languageInfoBuilder_ == null) {
+        languageInfo_ = builderForValue.build();
+      } else {
+        languageInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public Builder mergeLanguageInfo(com.google.cloud.discoveryengine.v1beta.LanguageInfo value) {
+      if (languageInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && languageInfo_ != null
+            && languageInfo_
+                != com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()) {
+          getLanguageInfoBuilder().mergeFrom(value);
+        } else {
+          languageInfo_ = value;
+        }
+      } else {
+        languageInfoBuilder_.mergeFrom(value);
+      }
+      if (languageInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public Builder clearLanguageInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      languageInfo_ = null;
+      if (languageInfoBuilder_ != null) {
+        languageInfoBuilder_.dispose();
+        languageInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder getLanguageInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getLanguageInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.LanguageInfoOrBuilder
+        getLanguageInfoOrBuilder() {
+      if (languageInfoBuilder_ != null) {
+        return languageInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return languageInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()
+            : languageInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language info for DataStore.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.LanguageInfo,
+            com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.LanguageInfoOrBuilder>
+        getLanguageInfoFieldBuilder() {
+      if (languageInfoBuilder_ == null) {
+        languageInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.LanguageInfo,
+                com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.LanguageInfoOrBuilder>(
+                getLanguageInfo(), getParentForChildren(), isClean());
+        languageInfo_ = null;
+      }
+      return languageInfoBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig
         documentProcessingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2570,7 +2842,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2616,7 +2888,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2638,7 +2910,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2656,7 +2928,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig
@@ -2669,7 +2941,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2686,7 +2958,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -2708,7 +2980,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -2793,7 +3065,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2861,7 +3133,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2895,7 +3167,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2924,7 +3196,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1beta.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && startingSchema_ != null
             && startingSchema_
                 != com.google.cloud.discoveryengine.v1beta.Schema.getDefaultInstance()) {
@@ -2936,7 +3208,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2965,7 +3237,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -2998,7 +3270,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }

@@ -111,14 +111,36 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    * Output only. Number of billable characters in the tuning dataset.
    * </pre>
    *
-   * <code>int64 total_billable_character_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * int64 total_billable_character_count = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count
+   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getTotalBillableCharacterCount() {
     return totalBillableCharacterCount_;
+  }
+
+  public static final int TOTAL_BILLABLE_TOKEN_COUNT_FIELD_NUMBER = 9;
+  private long totalBillableTokenCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of billable tokens in the tuning dataset.
+   * </pre>
+   *
+   * <code>int64 total_billable_token_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalBillableTokenCount.
+   */
+  @java.lang.Override
+  public long getTotalBillableTokenCount() {
+    return totalBillableTokenCount_;
   }
 
   public static final int TUNING_STEP_COUNT_FIELD_NUMBER = 4;
@@ -436,6 +458,9 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     for (int i = 0; i < userDatasetExamples_.size(); i++) {
       output.writeMessage(8, userDatasetExamples_.get(i));
     }
+    if (totalBillableTokenCount_ != 0L) {
+      output.writeInt64(9, totalBillableTokenCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -477,6 +502,9 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, userDatasetExamples_.get(i));
     }
+    if (totalBillableTokenCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, totalBillableTokenCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -496,6 +524,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     if (getTuningDatasetExampleCount() != other.getTuningDatasetExampleCount()) return false;
     if (getTotalTuningCharacterCount() != other.getTotalTuningCharacterCount()) return false;
     if (getTotalBillableCharacterCount() != other.getTotalBillableCharacterCount()) return false;
+    if (getTotalBillableTokenCount() != other.getTotalBillableTokenCount()) return false;
     if (getTuningStepCount() != other.getTuningStepCount()) return false;
     if (hasUserInputTokenDistribution() != other.hasUserInputTokenDistribution()) return false;
     if (hasUserInputTokenDistribution()) {
@@ -531,6 +560,8 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalTuningCharacterCount());
     hash = (37 * hash) + TOTAL_BILLABLE_CHARACTER_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBillableCharacterCount());
+    hash = (37 * hash) + TOTAL_BILLABLE_TOKEN_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBillableTokenCount());
     hash = (37 * hash) + TUNING_STEP_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTuningStepCount());
     if (hasUserInputTokenDistribution()) {
@@ -704,6 +735,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       tuningDatasetExampleCount_ = 0L;
       totalTuningCharacterCount_ = 0L;
       totalBillableCharacterCount_ = 0L;
+      totalBillableTokenCount_ = 0L;
       tuningStepCount_ = 0L;
       userInputTokenDistribution_ = null;
       if (userInputTokenDistributionBuilder_ != null) {
@@ -726,7 +758,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         userDatasetExamples_ = null;
         userDatasetExamplesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -765,9 +797,9 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.SupervisedTuningDataStats result) {
       if (userDatasetExamplesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           userDatasetExamples_ = java.util.Collections.unmodifiableList(userDatasetExamples_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.userDatasetExamples_ = userDatasetExamples_;
       } else {
@@ -787,24 +819,27 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         result.totalBillableCharacterCount_ = totalBillableCharacterCount_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalBillableTokenCount_ = totalBillableTokenCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.tuningStepCount_ = tuningStepCount_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.userInputTokenDistribution_ =
             userInputTokenDistributionBuilder_ == null
                 ? userInputTokenDistribution_
                 : userInputTokenDistributionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.userOutputTokenDistribution_ =
             userOutputTokenDistributionBuilder_ == null
                 ? userOutputTokenDistribution_
                 : userOutputTokenDistributionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.userMessagePerExampleDistribution_ =
             userMessagePerExampleDistributionBuilder_ == null
                 ? userMessagePerExampleDistribution_
@@ -869,6 +904,9 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       if (other.getTotalBillableCharacterCount() != 0L) {
         setTotalBillableCharacterCount(other.getTotalBillableCharacterCount());
       }
+      if (other.getTotalBillableTokenCount() != 0L) {
+        setTotalBillableTokenCount(other.getTotalBillableTokenCount());
+      }
       if (other.getTuningStepCount() != 0L) {
         setTuningStepCount(other.getTuningStepCount());
       }
@@ -885,7 +923,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         if (!other.userDatasetExamples_.isEmpty()) {
           if (userDatasetExamples_.isEmpty()) {
             userDatasetExamples_ = other.userDatasetExamples_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureUserDatasetExamplesIsMutable();
             userDatasetExamples_.addAll(other.userDatasetExamples_);
@@ -898,7 +936,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             userDatasetExamplesBuilder_.dispose();
             userDatasetExamplesBuilder_ = null;
             userDatasetExamples_ = other.userDatasetExamples_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             userDatasetExamplesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUserDatasetExamplesFieldBuilder()
@@ -955,21 +993,21 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             case 32:
               {
                 tuningStepCount_ = input.readInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getUserInputTokenDistributionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getUserOutputTokenDistributionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -977,7 +1015,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
                 input.readMessage(
                     getUserMessagePerExampleDistributionFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -993,6 +1031,12 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
                 }
                 break;
               } // case 66
+            case 72:
+              {
+                totalBillableTokenCount_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1132,12 +1176,17 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * Output only. Number of billable characters in the tuning dataset.
      * </pre>
      *
-     * <code>int64 total_billable_character_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * int64 total_billable_character_count = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count is
+     *     deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
      * @return The totalBillableCharacterCount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getTotalBillableCharacterCount() {
       return totalBillableCharacterCount_;
     }
@@ -1148,12 +1197,17 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * Output only. Number of billable characters in the tuning dataset.
      * </pre>
      *
-     * <code>int64 total_billable_character_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * int64 total_billable_character_count = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count is
+     *     deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
      * @param value The totalBillableCharacterCount to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTotalBillableCharacterCount(long value) {
 
       totalBillableCharacterCount_ = value;
@@ -1168,14 +1222,75 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * Output only. Number of billable characters in the tuning dataset.
      * </pre>
      *
-     * <code>int64 total_billable_character_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * int64 total_billable_character_count = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @deprecated
+     *     google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count is
+     *     deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearTotalBillableCharacterCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      totalBillableCharacterCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalBillableTokenCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of billable tokens in the tuning dataset.
+     * </pre>
+     *
+     * <code>int64 total_billable_token_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalBillableTokenCount.
+     */
+    @java.lang.Override
+    public long getTotalBillableTokenCount() {
+      return totalBillableTokenCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of billable tokens in the tuning dataset.
+     * </pre>
+     *
+     * <code>int64 total_billable_token_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalBillableTokenCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBillableTokenCount(long value) {
+
+      totalBillableTokenCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of billable tokens in the tuning dataset.
+     * </pre>
+     *
+     * <code>int64 total_billable_token_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearTotalBillableCharacterCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      totalBillableCharacterCount_ = 0L;
+    public Builder clearTotalBillableTokenCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      totalBillableTokenCount_ = 0L;
       onChanged();
       return this;
     }
@@ -1211,7 +1326,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public Builder setTuningStepCount(long value) {
 
       tuningStepCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1227,7 +1342,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTuningStepCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       tuningStepCount_ = 0L;
       onChanged();
       return this;
@@ -1254,7 +1369,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * @return Whether the userInputTokenDistribution field is set.
      */
     public boolean hasUserInputTokenDistribution() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1301,7 +1416,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userInputTokenDistributionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1324,7 +1439,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userInputTokenDistributionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1342,7 +1457,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public Builder mergeUserInputTokenDistribution(
         com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution value) {
       if (userInputTokenDistributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && userInputTokenDistribution_ != null
             && userInputTokenDistribution_
                 != com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution
@@ -1355,7 +1470,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         userInputTokenDistributionBuilder_.mergeFrom(value);
       }
       if (userInputTokenDistribution_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1372,7 +1487,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUserInputTokenDistribution() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       userInputTokenDistribution_ = null;
       if (userInputTokenDistributionBuilder_ != null) {
         userInputTokenDistributionBuilder_.dispose();
@@ -1394,7 +1509,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      */
     public com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution.Builder
         getUserInputTokenDistributionBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUserInputTokenDistributionFieldBuilder().getBuilder();
     }
@@ -1469,7 +1584,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * @return Whether the userOutputTokenDistribution field is set.
      */
     public boolean hasUserOutputTokenDistribution() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1516,7 +1631,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userOutputTokenDistributionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1539,7 +1654,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userOutputTokenDistributionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1557,7 +1672,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public Builder mergeUserOutputTokenDistribution(
         com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution value) {
       if (userOutputTokenDistributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && userOutputTokenDistribution_ != null
             && userOutputTokenDistribution_
                 != com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution
@@ -1570,7 +1685,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         userOutputTokenDistributionBuilder_.mergeFrom(value);
       }
       if (userOutputTokenDistribution_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1587,7 +1702,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUserOutputTokenDistribution() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       userOutputTokenDistribution_ = null;
       if (userOutputTokenDistributionBuilder_ != null) {
         userOutputTokenDistributionBuilder_.dispose();
@@ -1609,7 +1724,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      */
     public com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution.Builder
         getUserOutputTokenDistributionBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUserOutputTokenDistributionFieldBuilder().getBuilder();
     }
@@ -1684,7 +1799,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * @return Whether the userMessagePerExampleDistribution field is set.
      */
     public boolean hasUserMessagePerExampleDistribution() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1731,7 +1846,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userMessagePerExampleDistributionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1754,7 +1869,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       } else {
         userMessagePerExampleDistributionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1772,7 +1887,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public Builder mergeUserMessagePerExampleDistribution(
         com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution value) {
       if (userMessagePerExampleDistributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && userMessagePerExampleDistribution_ != null
             && userMessagePerExampleDistribution_
                 != com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution
@@ -1785,7 +1900,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         userMessagePerExampleDistributionBuilder_.mergeFrom(value);
       }
       if (userMessagePerExampleDistribution_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1802,7 +1917,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUserMessagePerExampleDistribution() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       userMessagePerExampleDistribution_ = null;
       if (userMessagePerExampleDistributionBuilder_ != null) {
         userMessagePerExampleDistributionBuilder_.dispose();
@@ -1824,7 +1939,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      */
     public com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution.Builder
         getUserMessagePerExampleDistributionBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUserMessagePerExampleDistributionFieldBuilder().getBuilder();
     }
@@ -1882,10 +1997,10 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureUserDatasetExamplesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         userDatasetExamples_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.Content>(userDatasetExamples_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2123,7 +2238,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public Builder clearUserDatasetExamples() {
       if (userDatasetExamplesBuilder_ == null) {
         userDatasetExamples_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         userDatasetExamplesBuilder_.clear();
@@ -2261,7 +2376,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
                 com.google.cloud.aiplatform.v1.Content.Builder,
                 com.google.cloud.aiplatform.v1.ContentOrBuilder>(
                 userDatasetExamples_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         userDatasetExamples_ = null;

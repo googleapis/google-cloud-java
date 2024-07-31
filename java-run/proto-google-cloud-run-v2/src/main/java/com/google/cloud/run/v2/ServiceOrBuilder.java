@@ -432,7 +432,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -445,7 +446,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -458,7 +460,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -611,12 +614,14 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Provides the ingress settings for this Service. On output, returns the
-   * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-   * revision is active.
+   * Optional. Provides the ingress settings for this Service. On output,
+   * returns the currently observed ingress settings, or
+   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+   * <code>
+   * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ingress.
    */
@@ -625,12 +630,14 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Provides the ingress settings for this Service. On output, returns the
-   * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-   * revision is active.
+   * Optional. Provides the ingress settings for this Service. On output,
+   * returns the currently observed ingress settings, or
+   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+   * <code>
+   * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ingress.
    */
@@ -640,7 +647,7 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * The launch stage as defined by [Google Cloud Platform
+   * Optional. The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
@@ -652,7 +659,8 @@ public interface ServiceOrBuilder
    * features are used, this field will be BETA on output.
    * </pre>
    *
-   * <code>.google.api.LaunchStage launch_stage = 16;</code>
+   * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for launchStage.
    */
@@ -661,7 +669,7 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * The launch stage as defined by [Google Cloud Platform
+   * Optional. The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
@@ -673,7 +681,8 @@ public interface ServiceOrBuilder
    * features are used, this field will be BETA on output.
    * </pre>
    *
-   * <code>.google.api.LaunchStage launch_stage = 16;</code>
+   * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The launchStage.
    */
@@ -683,10 +692,12 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the binaryAuthorization field is set.
    */
@@ -695,10 +706,12 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The binaryAuthorization.
    */
@@ -707,10 +720,12 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder();
 
@@ -759,48 +774,56 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.run.v2.TrafficTarget> getTrafficList();
   /**
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.TrafficTarget getTraffic(int index);
   /**
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTrafficCount();
   /**
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.TrafficTargetOrBuilder>
       getTrafficOrBuilderList();
@@ -808,12 +831,14 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.TrafficTargetOrBuilder getTrafficOrBuilder(int index);
 

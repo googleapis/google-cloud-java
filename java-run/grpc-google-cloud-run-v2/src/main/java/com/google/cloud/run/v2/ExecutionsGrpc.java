@@ -271,7 +271,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     default void listExecutions(
@@ -363,7 +364,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public void listExecutions(
@@ -445,7 +447,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListExecutionsResponse listExecutions(
@@ -516,7 +519,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

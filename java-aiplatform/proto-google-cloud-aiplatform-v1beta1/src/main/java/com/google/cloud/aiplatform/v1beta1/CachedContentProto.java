@@ -48,31 +48,32 @@ public final class CachedContentProto {
           + "d/aiplatform/v1beta1/content.proto\032*goog"
           + "le/cloud/aiplatform/v1beta1/tool.proto\032\036"
           + "google/protobuf/duration.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\323\005\n\rCachedConten"
+          + "rotobuf/timestamp.proto\"\361\005\n\rCachedConten"
           + "t\0221\n\013expire_time\030\t \001(\0132\032.google.protobuf"
           + ".TimestampH\000\022-\n\003ttl\030\n \001(\0132\031.google.proto"
           + "buf.DurationB\003\340A\004H\000\022\024\n\004name\030\001 \001(\tB\006\340A\010\340A"
-          + "\005\022\022\n\005model\030\002 \001(\tB\003\340A\005\022O\n\022system_instruct"
-          + "ion\030\003 \001(\0132(.google.cloud.aiplatform.v1be"
-          + "ta1.ContentB\t\340A\001\340A\005\340A\004\022E\n\010contents\030\004 \003(\013"
-          + "2(.google.cloud.aiplatform.v1beta1.Conte"
-          + "ntB\t\340A\001\340A\005\340A\004\022?\n\005tools\030\005 \003(\0132%.google.cl"
-          + "oud.aiplatform.v1beta1.ToolB\t\340A\001\340A\005\340A\004\022K"
-          + "\n\013tool_config\030\006 \001(\0132+.google.cloud.aipla"
-          + "tform.v1beta1.ToolConfigB\t\340A\001\340A\005\340A\004\0224\n\013c"
-          + "reate_time\030\007 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\0224\n\013update_time\030\010 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003:\225\001\352A\221\001\n\'aiplatfo"
-          + "rm.googleapis.com/CachedContent\022Gproject"
-          + "s/{project}/locations/{location}/cachedC"
-          + "ontents/{cached_content}*\016cachedContents"
-          + "2\rcachedContentB\014\n\nexpirationB\351\001\n#com.go"
-          + "ogle.cloud.aiplatform.v1beta1B\022CachedCon"
-          + "tentProtoP\001ZCcloud.google.com/go/aiplatf"
-          + "orm/apiv1beta1/aiplatformpb;aiplatformpb"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
-          + "loud::AIPlatform::V1beta1b\006proto3"
+          + "\005\022\034\n\014display_name\030\013 \001(\tB\006\340A\001\340A\005\022\022\n\005model"
+          + "\030\002 \001(\tB\003\340A\005\022O\n\022system_instruction\030\003 \001(\0132"
+          + "(.google.cloud.aiplatform.v1beta1.Conten"
+          + "tB\t\340A\001\340A\005\340A\004\022E\n\010contents\030\004 \003(\0132(.google."
+          + "cloud.aiplatform.v1beta1.ContentB\t\340A\001\340A\005"
+          + "\340A\004\022?\n\005tools\030\005 \003(\0132%.google.cloud.aiplat"
+          + "form.v1beta1.ToolB\t\340A\001\340A\005\340A\004\022K\n\013tool_con"
+          + "fig\030\006 \001(\0132+.google.cloud.aiplatform.v1be"
+          + "ta1.ToolConfigB\t\340A\001\340A\005\340A\004\0224\n\013create_time"
+          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "4\n\013update_time\030\010 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003:\225\001\352A\221\001\n\'aiplatform.googlea"
+          + "pis.com/CachedContent\022Gprojects/{project"
+          + "}/locations/{location}/cachedContents/{c"
+          + "ached_content}*\016cachedContents2\rcachedCo"
+          + "ntentB\014\n\nexpirationB\351\001\n#com.google.cloud"
+          + ".aiplatform.v1beta1B\022CachedContentProtoP"
+          + "\001ZCcloud.google.com/go/aiplatform/apiv1b"
+          + "eta1/aiplatformpb;aiplatformpb\252\002\037Google."
+          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
+          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
+          + "atform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -94,6 +95,7 @@ public final class CachedContentProto {
               "ExpireTime",
               "Ttl",
               "Name",
+              "DisplayName",
               "Model",
               "SystemInstruction",
               "Contents",

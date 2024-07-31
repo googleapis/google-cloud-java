@@ -73,6 +73,26 @@ public final class ContentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Candidate_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Segment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Segment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Web_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Web_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingSupport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable;
@@ -158,39 +178,58 @@ public final class ContentProto {
           + "\n\013start_index\030\001 \001(\005B\003\340A\003\022\026\n\tend_index\030\002 "
           + "\001(\005B\003\340A\003\022\020\n\003uri\030\003 \001(\tB\003\340A\003\022\022\n\005title\030\004 \001("
           + "\tB\003\340A\003\022\024\n\007license\030\005 \001(\tB\003\340A\003\0220\n\020publicat"
-          + "ion_date\030\006 \001(\0132\021.google.type.DateB\003\340A\003\"\203"
+          + "ion_date\030\006 \001(\0132\021.google.type.DateB\003\340A\003\"\227"
           + "\005\n\tCandidate\022\022\n\005index\030\001 \001(\005B\003\340A\003\0229\n\007cont"
           + "ent\030\002 \001(\0132#.google.cloud.aiplatform.v1.C"
-          + "ontentB\003\340A\003\022N\n\rfinish_reason\030\003 \001(\01622.goo"
-          + "gle.cloud.aiplatform.v1.Candidate.Finish"
-          + "ReasonB\003\340A\003\022E\n\016safety_ratings\030\004 \003(\0132(.go"
-          + "ogle.cloud.aiplatform.v1.SafetyRatingB\003\340"
-          + "A\003\022 \n\016finish_message\030\005 \001(\tB\003\340A\003H\000\210\001\001\022L\n\021"
-          + "citation_metadata\030\006 \001(\0132,.google.cloud.a"
-          + "iplatform.v1.CitationMetadataB\003\340A\003\022N\n\022gr"
-          + "ounding_metadata\030\007 \001(\0132-.google.cloud.ai"
-          + "platform.v1.GroundingMetadataB\003\340A\003\"\274\001\n\014F"
-          + "inishReason\022\035\n\031FINISH_REASON_UNSPECIFIED"
-          + "\020\000\022\010\n\004STOP\020\001\022\016\n\nMAX_TOKENS\020\002\022\n\n\006SAFETY\020\003"
-          + "\022\016\n\nRECITATION\020\004\022\t\n\005OTHER\020\005\022\r\n\tBLOCKLIST"
-          + "\020\006\022\026\n\022PROHIBITED_CONTENT\020\007\022\010\n\004SPII\020\010\022\033\n\027"
-          + "MALFORMED_FUNCTION_CALL\020\tB\021\n\017_finish_mes"
-          + "sage\"\237\001\n\021GroundingMetadata\022\037\n\022web_search"
-          + "_queries\030\001 \003(\tB\003\340A\001\022R\n\022search_entry_poin"
-          + "t\030\004 \001(\0132,.google.cloud.aiplatform.v1.Sea"
-          + "rchEntryPointB\003\340A\001H\000\210\001\001B\025\n\023_search_entry"
-          + "_point\"H\n\020SearchEntryPoint\022\035\n\020rendered_c"
-          + "ontent\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001(\014B\003\340A\001"
-          + "*\264\001\n\014HarmCategory\022\035\n\031HARM_CATEGORY_UNSPE"
-          + "CIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_SPEECH\020\001\022"
-          + "#\n\037HARM_CATEGORY_DANGEROUS_CONTENT\020\002\022\034\n\030"
-          + "HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HARM_CATEG"
-          + "ORY_SEXUALLY_EXPLICIT\020\004B\312\001\n\036com.google.c"
-          + "loud.aiplatform.v1B\014ContentProtoP\001Z>clou"
-          + "d.google.com/go/aiplatform/apiv1/aiplatf"
-          + "ormpb;aiplatformpb\252\002\032Google.Cloud.AIPlat"
-          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
-          + "oogle::Cloud::AIPlatform::V1b\006proto3"
+          + "ontentB\003\340A\003\022\022\n\005score\030\010 \001(\001B\003\340A\003\022N\n\rfinis"
+          + "h_reason\030\003 \001(\01622.google.cloud.aiplatform"
+          + ".v1.Candidate.FinishReasonB\003\340A\003\022E\n\016safet"
+          + "y_ratings\030\004 \003(\0132(.google.cloud.aiplatfor"
+          + "m.v1.SafetyRatingB\003\340A\003\022 \n\016finish_message"
+          + "\030\005 \001(\tB\003\340A\003H\000\210\001\001\022L\n\021citation_metadata\030\006 "
+          + "\001(\0132,.google.cloud.aiplatform.v1.Citatio"
+          + "nMetadataB\003\340A\003\022N\n\022grounding_metadata\030\007 \001"
+          + "(\0132-.google.cloud.aiplatform.v1.Groundin"
+          + "gMetadataB\003\340A\003\"\274\001\n\014FinishReason\022\035\n\031FINIS"
+          + "H_REASON_UNSPECIFIED\020\000\022\010\n\004STOP\020\001\022\016\n\nMAX_"
+          + "TOKENS\020\002\022\n\n\006SAFETY\020\003\022\016\n\nRECITATION\020\004\022\t\n\005"
+          + "OTHER\020\005\022\r\n\tBLOCKLIST\020\006\022\026\n\022PROHIBITED_CON"
+          + "TENT\020\007\022\010\n\004SPII\020\010\022\033\n\027MALFORMED_FUNCTION_C"
+          + "ALL\020\tB\021\n\017_finish_message\"g\n\007Segment\022\027\n\np"
+          + "art_index\030\001 \001(\005B\003\340A\003\022\030\n\013start_index\030\002 \001("
+          + "\005B\003\340A\003\022\026\n\tend_index\030\003 \001(\005B\003\340A\003\022\021\n\004text\030\004"
+          + " \001(\tB\003\340A\003\"\302\002\n\016GroundingChunk\022=\n\003web\030\001 \001("
+          + "\0132..google.cloud.aiplatform.v1.Grounding"
+          + "Chunk.WebH\000\022X\n\021retrieved_context\030\002 \001(\0132;"
+          + ".google.cloud.aiplatform.v1.GroundingChu"
+          + "nk.RetrievedContextH\000\032=\n\003Web\022\020\n\003uri\030\001 \001("
+          + "\tH\000\210\001\001\022\022\n\005title\030\002 \001(\tH\001\210\001\001B\006\n\004_uriB\010\n\006_t"
+          + "itle\032J\n\020RetrievedContext\022\020\n\003uri\030\001 \001(\tH\000\210"
+          + "\001\001\022\022\n\005title\030\002 \001(\tH\001\210\001\001B\006\n\004_uriB\010\n\006_title"
+          + "B\014\n\nchunk_type\"\225\001\n\020GroundingSupport\0229\n\007s"
+          + "egment\030\001 \001(\0132#.google.cloud.aiplatform.v"
+          + "1.SegmentH\000\210\001\001\022\037\n\027grounding_chunk_indice"
+          + "s\030\002 \003(\005\022\031\n\021confidence_scores\030\003 \003(\002B\n\n\010_s"
+          + "egment\"\264\002\n\021GroundingMetadata\022\037\n\022web_sear"
+          + "ch_queries\030\001 \003(\tB\003\340A\001\022R\n\022search_entry_po"
+          + "int\030\004 \001(\0132,.google.cloud.aiplatform.v1.S"
+          + "earchEntryPointB\003\340A\001H\000\210\001\001\022D\n\020grounding_c"
+          + "hunks\030\005 \003(\0132*.google.cloud.aiplatform.v1"
+          + ".GroundingChunk\022M\n\022grounding_supports\030\006 "
+          + "\003(\0132,.google.cloud.aiplatform.v1.Groundi"
+          + "ngSupportB\003\340A\001B\025\n\023_search_entry_point\"H\n"
+          + "\020SearchEntryPoint\022\035\n\020rendered_content\030\001 "
+          + "\001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001(\014B\003\340A\001*\264\001\n\014Harm"
+          + "Category\022\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000\022"
+          + "\035\n\031HARM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_C"
+          + "ATEGORY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_CATE"
+          + "GORY_HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SEXUA"
+          + "LLY_EXPLICIT\020\004B\312\001\n\036com.google.cloud.aipl"
+          + "atform.v1B\014ContentProtoP\001Z>cloud.google."
+          + "com/go/aiplatform/apiv1/aiplatformpb;aip"
+          + "latformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002"
+          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
+          + "oud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -306,22 +345,67 @@ public final class ContentProto {
             new java.lang.String[] {
               "Index",
               "Content",
+              "Score",
               "FinishReason",
               "SafetyRatings",
               "FinishMessage",
               "CitationMetadata",
               "GroundingMetadata",
             });
-    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor =
+    internal_static_google_cloud_aiplatform_v1_Segment_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1_Segment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Segment_descriptor,
+            new java.lang.String[] {
+              "PartIndex", "StartIndex", "EndIndex", "Text",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor,
+            new java.lang.String[] {
+              "Web", "RetrievedContext", "ChunkType",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Web_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Web_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingChunk_Web_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1_GroundingSupport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor,
+            new java.lang.String[] {
+              "Segment", "GroundingChunkIndices", "ConfidenceScores",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor,
             new java.lang.String[] {
-              "WebSearchQueries", "SearchEntryPoint",
+              "WebSearchQueries", "SearchEntryPoint", "GroundingChunks", "GroundingSupports",
             });
     internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor,

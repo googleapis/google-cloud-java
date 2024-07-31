@@ -118,7 +118,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1274
+   *     google/container/v1/cluster_service.proto;l=1275
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -138,7 +138,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1274
+   *     google/container/v1/cluster_service.proto;l=1275
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -503,4 +503,45 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1.StatefulHAConfigOrBuilder getStatefulHaConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rayOperatorConfig field is set.
+   */
+  boolean hasRayOperatorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rayOperatorConfig.
+   */
+  com.google.container.v1.RayOperatorConfig getRayOperatorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Ray Operator addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RayOperatorConfig ray_operator_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.RayOperatorConfigOrBuilder getRayOperatorConfigOrBuilder();
 }

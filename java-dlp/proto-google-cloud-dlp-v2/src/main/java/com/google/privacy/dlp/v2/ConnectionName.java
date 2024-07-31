@@ -17,6 +17,7 @@
 package com.google.privacy.dlp.v2;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +33,39 @@ public class ConnectionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CONNECTION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/connections/{connection}");
+  private static final PathTemplate ORGANIZATION_LOCATION_CONNECTION =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/locations/{location}/connections/{connection}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String connection;
+  private final String organization;
 
   @Deprecated
   protected ConnectionName() {
     project = null;
     location = null;
     connection = null;
+    organization = null;
   }
 
   private ConnectionName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     connection = Preconditions.checkNotNull(builder.getConnection());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_CONNECTION;
+  }
+
+  private ConnectionName(OrganizationLocationConnectionBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    connection = Preconditions.checkNotNull(builder.getConnection());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_CONNECTION;
   }
 
   public String getProject() {
@@ -62,8 +80,20 @@ public class ConnectionName implements ResourceName {
     return connection;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationConnectionBuilder() {
+    return new Builder();
+  }
+
+  public static OrganizationLocationConnectionBuilder newOrganizationLocationConnectionBuilder() {
+    return new OrganizationLocationConnectionBuilder();
   }
 
   public Builder toBuilder() {
@@ -72,6 +102,20 @@ public class ConnectionName implements ResourceName {
 
   public static ConnectionName of(String project, String location, String connection) {
     return newBuilder().setProject(project).setLocation(location).setConnection(connection).build();
+  }
+
+  public static ConnectionName ofProjectLocationConnectionName(
+      String project, String location, String connection) {
+    return newBuilder().setProject(project).setLocation(location).setConnection(connection).build();
+  }
+
+  public static ConnectionName ofOrganizationLocationConnectionName(
+      String organization, String location, String connection) {
+    return newOrganizationLocationConnectionBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setConnection(connection)
+        .build();
   }
 
   public static String format(String project, String location, String connection) {
@@ -83,14 +127,40 @@ public class ConnectionName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationConnectionName(
+      String project, String location, String connection) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setConnection(connection)
+        .build()
+        .toString();
+  }
+
+  public static String formatOrganizationLocationConnectionName(
+      String organization, String location, String connection) {
+    return newOrganizationLocationConnectionBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setConnection(connection)
+        .build()
+        .toString();
+  }
+
   public static ConnectionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_CONNECTION.validatedMatch(
-            formattedString, "ConnectionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("connection"));
+    if (PROJECT_LOCATION_CONNECTION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_CONNECTION.match(formattedString);
+      return ofProjectLocationConnectionName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("connection"));
+    } else if (ORGANIZATION_LOCATION_CONNECTION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_CONNECTION.match(formattedString);
+      return ofOrganizationLocationConnectionName(
+          matchMap.get("organization"), matchMap.get("location"), matchMap.get("connection"));
+    }
+    throw new ValidationException("ConnectionName.parse: formattedString not in valid format");
   }
 
   public static List<ConnectionName> parseList(List<String> formattedStrings) {
@@ -114,7 +184,8 @@ public class ConnectionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_CONNECTION.matches(formattedString);
+    return PROJECT_LOCATION_CONNECTION.matches(formattedString)
+        || ORGANIZATION_LOCATION_CONNECTION.matches(formattedString);
   }
 
   @Override
@@ -132,6 +203,9 @@ public class ConnectionName implements ResourceName {
           if (connection != null) {
             fieldMapBuilder.put("connection", connection);
           }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -145,8 +219,7 @@ public class ConnectionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_CONNECTION.instantiate(
-        "project", project, "location", location, "connection", connection);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -158,7 +231,8 @@ public class ConnectionName implements ResourceName {
       ConnectionName that = ((ConnectionName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.connection, that.connection);
+          && Objects.equals(this.connection, that.connection)
+          && Objects.equals(this.organization, that.organization);
     }
     return false;
   }
@@ -167,11 +241,15 @@ public class ConnectionName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(connection);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
     return h;
   }
 
@@ -211,9 +289,52 @@ public class ConnectionName implements ResourceName {
     }
 
     private Builder(ConnectionName connectionName) {
+      Preconditions.checkArgument(
+          Objects.equals(connectionName.pathTemplate, PROJECT_LOCATION_CONNECTION),
+          "toBuilder is only supported when ConnectionName has the pattern of projects/{project}/locations/{location}/connections/{connection}");
       this.project = connectionName.project;
       this.location = connectionName.location;
       this.connection = connectionName.connection;
+    }
+
+    public ConnectionName build() {
+      return new ConnectionName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/locations/{location}/connections/{connection}. */
+  public static class OrganizationLocationConnectionBuilder {
+    private String organization;
+    private String location;
+    private String connection;
+
+    protected OrganizationLocationConnectionBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getConnection() {
+      return connection;
+    }
+
+    public OrganizationLocationConnectionBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationLocationConnectionBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public OrganizationLocationConnectionBuilder setConnection(String connection) {
+      this.connection = connection;
+      return this;
     }
 
     public ConnectionName build() {

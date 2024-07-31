@@ -114,4 +114,29 @@ public interface ErrorOrBuilder
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getTimestampsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about the error.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+   *
+   * @return The enum numeric value on the wire for extraInfo.
+   */
+  int getExtraInfoValue();
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about the error.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Error.ErrorExtraInfo extra_info = 4;</code>
+   *
+   * @return The extraInfo.
+   */
+  com.google.privacy.dlp.v2.Error.ErrorExtraInfo getExtraInfo();
 }

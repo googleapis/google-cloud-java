@@ -36,7 +36,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3032
+   *     google/container/v1/cluster_service.proto;l=3057
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3032
+   *     google/container/v1/cluster_service.proto;l=3057
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3038
+   *     google/container/v1/cluster_service.proto;l=3063
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3038
+   *     google/container/v1/cluster_service.proto;l=3063
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3042
+   *     google/container/v1/cluster_service.proto;l=3067
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface SetLocationsRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3042
+   *     google/container/v1/cluster_service.proto;l=3067
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

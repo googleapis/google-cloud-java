@@ -69,6 +69,7 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                         serializer.putPathParam(fields, "groupName", request.getGroupName());
                         return fields;
                       })
+                  .setAdditionalPaths("/v1beta1/{groupName=projects/*/locations/*/groups/*}")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
@@ -105,6 +106,7 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                                 fields, "group.name", request.getGroup().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{group.name=projects/*/locations/*/groups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

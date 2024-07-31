@@ -62,7 +62,7 @@ public interface GetPublisherModelRequestOrBuilder
    *
    * <pre>
    * Optional. The IETF BCP-47 language code representing the language in which
-   * the publisher model's text information should be written in (see go/bcp47).
+   * the publisher model's text information should be written in.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -75,7 +75,7 @@ public interface GetPublisherModelRequestOrBuilder
    *
    * <pre>
    * Optional. The IETF BCP-47 language code representing the language in which
-   * the publisher model's text information should be written in (see go/bcp47).
+   * the publisher model's text information should be written in.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,4 +112,18 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The view.
    */
   com.google.cloud.aiplatform.v1beta1.PublisherModelView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boolean indicates whether the requested model is a Hugging Face
+   * model.
+   * </pre>
+   *
+   * <code>bool is_hugging_face_model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isHuggingFaceModel.
+   */
+  boolean getIsHuggingFaceModel();
 }

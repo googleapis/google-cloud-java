@@ -95,7 +95,7 @@ public final class StoragePoolProto {
           + "ogle.cloud.netapp.v1.StoragePoolB\003\340A\002\"S\n"
           + "\030DeleteStoragePoolRequest\0227\n\004name\030\001 \001(\tB"
           + ")\340A\002\372A#\n!netapp.googleapis.com/StoragePo"
-          + "ol\"\333\010\n\013StoragePool\022\021\n\004name\030\001 \001(\tB\003\340A\010\022@\n"
+          + "ol\"\211\t\n\013StoragePool\022\021\n\004name\030\001 \001(\tB\003\340A\010\022@\n"
           + "\rservice_level\030\002 \001(\0162$.google.cloud.neta"
           + "pp.v1.ServiceLevelB\003\340A\002\022\031\n\014capacity_gib\030"
           + "\003 \001(\003B\003\340A\002\022 \n\023volume_capacity_gib\030\004 \001(\003B"
@@ -114,20 +114,21 @@ public final class StoragePoolProto {
           + "\016 \001(\010B\003\340A\001\022\026\n\tpsa_range\030\017 \001(\tB\003\340A\001\022D\n\017en"
           + "cryption_type\030\020 \001(\0162&.google.cloud.netap"
           + "p.v1.EncryptionTypeB\003\340A\003\022&\n\025global_acces"
-          + "s_allowed\030\021 \001(\010B\002\030\001H\000\210\001\001\032-\n\013LabelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\005State"
-          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\t\n\005READY\020\001\022\014\n\010CR"
-          + "EATING\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDATING\020\004\022\r\n\t"
-          + "RESTORING\020\005\022\014\n\010DISABLED\020\006\022\t\n\005ERROR\020\007:\207\001\352"
-          + "A\203\001\n!netapp.googleapis.com/StoragePool\022C"
-          + "projects/{project}/locations/{location}/"
-          + "storagePools/{storage_pool}*\014storagePool"
-          + "s2\013storagePoolB\030\n\026_global_access_allowed"
-          + "B\262\001\n\032com.google.cloud.netapp.v1B\020Storage"
-          + "PoolProtoP\001Z2cloud.google.com/go/netapp/"
-          + "apiv1/netapppb;netapppb\252\002\026Google.Cloud.N"
-          + "etApp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Goog"
-          + "le::Cloud::NetApp::V1b\006proto3"
+          + "s_allowed\030\021 \001(\010B\002\030\001H\000\210\001\001\022\031\n\014replica_zone"
+          + "\030\024 \001(\tB\003\340A\001\022\021\n\004zone\030\025 \001(\tB\003\340A\001\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\t\n\005READY\020\001"
+          + "\022\014\n\010CREATING\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDATING"
+          + "\020\004\022\r\n\tRESTORING\020\005\022\014\n\010DISABLED\020\006\022\t\n\005ERROR"
+          + "\020\007:\207\001\352A\203\001\n!netapp.googleapis.com/Storage"
+          + "Pool\022Cprojects/{project}/locations/{loca"
+          + "tion}/storagePools/{storage_pool}*\014stora"
+          + "gePools2\013storagePoolB\030\n\026_global_access_a"
+          + "llowedB\262\001\n\032com.google.cloud.netapp.v1B\020S"
+          + "toragePoolProtoP\001Z2cloud.google.com/go/n"
+          + "etapp/apiv1/netapppb;netapppb\252\002\026Google.C"
+          + "loud.NetApp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352"
+          + "\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -210,6 +211,8 @@ public final class StoragePoolProto {
               "PsaRange",
               "EncryptionType",
               "GlobalAccessAllowed",
+              "ReplicaZone",
+              "Zone",
             });
     internal_static_google_cloud_netapp_v1_StoragePool_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_StoragePool_descriptor.getNestedTypes().get(0);

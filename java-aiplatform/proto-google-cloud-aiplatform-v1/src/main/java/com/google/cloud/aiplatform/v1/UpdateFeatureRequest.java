@@ -151,7 +151,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -178,7 +179,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -205,7 +207,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+   *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+   *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -873,7 +876,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -899,7 +903,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -931,7 +936,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -965,7 +971,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -996,7 +1003,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1035,7 +1043,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1066,7 +1075,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1092,7 +1102,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1122,7 +1133,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
+     *   * `disable_monitoring` (Not supported for FeatureRegistryService Feature)
+     *   * `point_of_contact` (Not supported for FeaturestoreService FeatureStore)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

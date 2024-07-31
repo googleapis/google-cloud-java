@@ -75,8 +75,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. Parent resource name.
    *
-   * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Organizations scope:
+   *   `organizations/{org_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -109,8 +114,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. Parent resource name.
    *
-   * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * The format of this value varies depending on the scope of the request
+   * (project or organization):
+   *
+   * + Projects scope:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Organizations scope:
+   *   `organizations/{org_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -669,8 +679,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. Parent resource name.
      *
-     * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * The format of this value varies depending on the scope of the request
+     * (project or organization):
+     *
+     * + Projects scope:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Organizations scope:
+     *   `organizations/{org_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -702,8 +717,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. Parent resource name.
      *
-     * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * The format of this value varies depending on the scope of the request
+     * (project or organization):
+     *
+     * + Projects scope:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Organizations scope:
+     *   `organizations/{org_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -735,8 +755,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. Parent resource name.
      *
-     * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * The format of this value varies depending on the scope of the request
+     * (project or organization):
+     *
+     * + Projects scope:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Organizations scope:
+     *   `organizations/{org_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -767,8 +792,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. Parent resource name.
      *
-     * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * The format of this value varies depending on the scope of the request
+     * (project or organization):
+     *
+     * + Projects scope:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Organizations scope:
+     *   `organizations/{org_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -795,8 +825,13 @@ public final class CreateDiscoveryConfigRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. Parent resource name.
      *
-     * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * The format of this value varies depending on the scope of the request
+     * (project or organization):
+     *
+     * + Projects scope:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Organizations scope:
+     *   `organizations/{org_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location

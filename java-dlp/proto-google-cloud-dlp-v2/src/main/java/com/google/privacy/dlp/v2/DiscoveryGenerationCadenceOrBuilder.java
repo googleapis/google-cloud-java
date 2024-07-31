@@ -95,4 +95,80 @@ public interface DiscoveryGenerationCadenceOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryTableModifiedCadenceOrBuilder
       getTableModifiedCadenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   *
+   * @return Whether the inspectTemplateModifiedCadence field is set.
+   */
+  boolean hasInspectTemplateModifiedCadence();
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   *
+   * @return The inspectTemplateModifiedCadence.
+   */
+  com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
+      getInspectTemplateModifiedCadence();
+  /**
+   *
+   *
+   * <pre>
+   * Governs when to update data profiles when the inspection rules
+   * defined by the `InspectTemplate` change.
+   * If not set, changing the template will not cause a data profile to update.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence inspect_template_modified_cadence = 3;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder
+      getInspectTemplateModifiedCadenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The enum numeric value on the wire for refreshFrequency.
+   */
+  int getRefreshFrequencyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Frequency at which profiles should be updated, regardless of whether the
+   * underlying resource has changed. Defaults to never.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileUpdateFrequency refresh_frequency = 4;</code>
+   *
+   * @return The refreshFrequency.
+   */
+  com.google.privacy.dlp.v2.DataProfileUpdateFrequency getRefreshFrequency();
 }

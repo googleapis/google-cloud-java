@@ -368,6 +368,42 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
         : profileStatus_;
   }
 
+  public static final int TABLE_DATA_PROFILE_COUNT_FIELD_NUMBER = 9;
+  private long tableDataProfileCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The number of table data profiles generated for this project.
+   * </pre>
+   *
+   * <code>int64 table_data_profile_count = 9;</code>
+   *
+   * @return The tableDataProfileCount.
+   */
+  @java.lang.Override
+  public long getTableDataProfileCount() {
+    return tableDataProfileCount_;
+  }
+
+  public static final int FILE_STORE_DATA_PROFILE_COUNT_FIELD_NUMBER = 10;
+  private long fileStoreDataProfileCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The number of file store data profiles generated for this project.
+   * </pre>
+   *
+   * <code>int64 file_store_data_profile_count = 10;</code>
+   *
+   * @return The fileStoreDataProfileCount.
+   */
+  @java.lang.Override
+  public long getFileStoreDataProfileCount() {
+    return fileStoreDataProfileCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -400,6 +436,12 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getProfileStatus());
     }
+    if (tableDataProfileCount_ != 0L) {
+      output.writeInt64(9, tableDataProfileCount_);
+    }
+    if (fileStoreDataProfileCount_ != 0L) {
+      output.writeInt64(10, fileStoreDataProfileCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -427,6 +469,13 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProfileStatus());
+    }
+    if (tableDataProfileCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, tableDataProfileCount_);
+    }
+    if (fileStoreDataProfileCount_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(10, fileStoreDataProfileCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -462,6 +511,8 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
     if (hasProfileStatus()) {
       if (!getProfileStatus().equals(other.getProfileStatus())) return false;
     }
+    if (getTableDataProfileCount() != other.getTableDataProfileCount()) return false;
+    if (getFileStoreDataProfileCount() != other.getFileStoreDataProfileCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -493,6 +544,10 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + PROFILE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getProfileStatus().hashCode();
     }
+    hash = (37 * hash) + TABLE_DATA_PROFILE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTableDataProfileCount());
+    hash = (37 * hash) + FILE_STORE_DATA_PROFILE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFileStoreDataProfileCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -667,6 +722,8 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
         profileStatusBuilder_.dispose();
         profileStatusBuilder_ = null;
       }
+      tableDataProfileCount_ = 0L;
+      fileStoreDataProfileCount_ = 0L;
       return this;
     }
 
@@ -731,6 +788,12 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
         result.profileStatus_ =
             profileStatusBuilder_ == null ? profileStatus_ : profileStatusBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tableDataProfileCount_ = tableDataProfileCount_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.fileStoreDataProfileCount_ = fileStoreDataProfileCount_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -802,6 +865,12 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
       if (other.hasProfileStatus()) {
         mergeProfileStatus(other.getProfileStatus());
       }
+      if (other.getTableDataProfileCount() != 0L) {
+        setTableDataProfileCount(other.getTableDataProfileCount());
+      }
+      if (other.getFileStoreDataProfileCount() != 0L) {
+        setFileStoreDataProfileCount(other.getFileStoreDataProfileCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -866,6 +935,18 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 72:
+              {
+                tableDataProfileCount_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
+            case 80:
+              {
+                fileStoreDataProfileCount_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1839,6 +1920,112 @@ public final class ProjectDataProfile extends com.google.protobuf.GeneratedMessa
         profileStatus_ = null;
       }
       return profileStatusBuilder_;
+    }
+
+    private long tableDataProfileCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of table data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 table_data_profile_count = 9;</code>
+     *
+     * @return The tableDataProfileCount.
+     */
+    @java.lang.Override
+    public long getTableDataProfileCount() {
+      return tableDataProfileCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of table data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 table_data_profile_count = 9;</code>
+     *
+     * @param value The tableDataProfileCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTableDataProfileCount(long value) {
+
+      tableDataProfileCount_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of table data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 table_data_profile_count = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTableDataProfileCount() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      tableDataProfileCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long fileStoreDataProfileCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of file store data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 file_store_data_profile_count = 10;</code>
+     *
+     * @return The fileStoreDataProfileCount.
+     */
+    @java.lang.Override
+    public long getFileStoreDataProfileCount() {
+      return fileStoreDataProfileCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of file store data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 file_store_data_profile_count = 10;</code>
+     *
+     * @param value The fileStoreDataProfileCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileStoreDataProfileCount(long value) {
+
+      fileStoreDataProfileCount_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of file store data profiles generated for this project.
+     * </pre>
+     *
+     * <code>int64 file_store_data_profile_count = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFileStoreDataProfileCount() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      fileStoreDataProfileCount_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -146,6 +146,50 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    boolean hasChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    com.google.cloud.discoveryengine.v1beta.Chunk getChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     */
+    com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Google provided available scores.
      * </pre>
      *
@@ -370,6 +414,65 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : document_;
     }
 
+    public static final int CHUNK_FIELD_NUMBER = 18;
+    private com.google.cloud.discoveryengine.v1beta.Chunk chunk_;
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Chunk getChunk() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+
     public static final int MODEL_SCORES_FIELD_NUMBER = 4;
 
     private static final class ModelScoresDefaultEntryHolder {
@@ -513,6 +616,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getChunk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -540,6 +646,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -561,6 +670,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         if (!getDocument().equals(other.getDocument())) return false;
       }
+      if (hasChunk() != other.hasChunk()) return false;
+      if (hasChunk()) {
+        if (!getChunk().equals(other.getChunk())) return false;
+      }
       if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -578,6 +691,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getDocument().hashCode();
+      }
+      if (hasChunk()) {
+        hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+        hash = (53 * hash) + getChunk().hashCode();
       }
       if (!internalGetModelScores().getMap().isEmpty()) {
         hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
@@ -751,6 +868,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getDocumentFieldBuilder();
+          getChunkFieldBuilder();
         }
       }
 
@@ -763,6 +881,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (documentBuilder_ != null) {
           documentBuilder_.dispose();
           documentBuilder_ = null;
+        }
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
         }
         internalGetMutableModelScores().clear();
         return this;
@@ -813,6 +936,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.modelScores_ =
               internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
         }
@@ -878,8 +1005,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
+        if (other.hasChunk()) {
+          mergeChunk(other.getChunk());
+        }
         internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -929,9 +1059,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableModelScores()
                       .ensureBuilderMap()
                       .put(modelScores__.getKey(), modelScores__.getValue());
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 146:
+                {
+                  input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 146
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1258,6 +1394,219 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return documentBuilder_;
       }
 
+      private com.google.cloud.discoveryengine.v1beta.Chunk chunk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.Chunk,
+              com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>
+          chunkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       *
+       * @return Whether the chunk field is set.
+       */
+      public boolean hasChunk() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       *
+       * @return The chunk.
+       */
+      public com.google.cloud.discoveryengine.v1beta.Chunk getChunk() {
+        if (chunkBuilder_ == null) {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+              : chunk_;
+        } else {
+          return chunkBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(com.google.cloud.discoveryengine.v1beta.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunk_ = value;
+        } else {
+          chunkBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(
+          com.google.cloud.discoveryengine.v1beta.Chunk.Builder builderForValue) {
+        if (chunkBuilder_ == null) {
+          chunk_ = builderForValue.build();
+        } else {
+          chunkBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder mergeChunk(com.google.cloud.discoveryengine.v1beta.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && chunk_ != null
+              && chunk_ != com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()) {
+            getChunkBuilder().mergeFrom(value);
+          } else {
+            chunk_ = value;
+          }
+        } else {
+          chunkBuilder_.mergeFrom(value);
+        }
+        if (chunk_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public Builder clearChunk() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Chunk.Builder getChunkBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getChunkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder getChunkOrBuilder() {
+        if (chunkBuilder_ != null) {
+          return chunkBuilder_.getMessageOrBuilder();
+        } else {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Chunk.getDefaultInstance()
+              : chunk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1beta.Chunk chunk = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.Chunk,
+              com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>
+          getChunkFieldBuilder() {
+        if (chunkBuilder_ == null) {
+          chunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.Chunk,
+                  com.google.cloud.discoveryengine.v1beta.Chunk.Builder,
+                  com.google.cloud.discoveryengine.v1beta.ChunkOrBuilder>(
+                  getChunk(), getParentForChildren(), isClean());
+          chunk_ = null;
+        }
+        return chunkBuilder_;
+      }
+
       private static final class ModelScoresConverter
           implements com.google.protobuf.MapFieldBuilder.Converter<
               java.lang.String,
@@ -1310,7 +1659,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (modelScores_ == null) {
           modelScores_ = new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return modelScores_;
       }
@@ -1405,7 +1754,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearModelScores() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableModelScores().clear();
         return this;
       }
@@ -1430,7 +1779,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
           getMutableModelScores() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return internalGetMutableModelScores().ensureMessageMap();
       }
       /**
@@ -1452,7 +1801,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException("map value");
         }
         internalGetMutableModelScores().ensureBuilderMap().put(key, value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1476,7 +1825,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
         internalGetMutableModelScores().ensureBuilderMap().putAll(values);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -6992,6 +7341,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
        */
       LLM_ADDON_NOT_ENABLED(5),
+      /**
+       *
+       *
+       * <pre>
+       * The no relevant content case.
+       *
+       * Google skips the summary if there is no relevant content in the
+       * retrieved search results.
+       * </pre>
+       *
+       * <code>NO_RELEVANT_CONTENT = 6;</code>
+       */
+      NO_RELEVANT_CONTENT(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -7072,6 +7434,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
        */
       public static final int LLM_ADDON_NOT_ENABLED_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The no relevant content case.
+       *
+       * Google skips the summary if there is no relevant content in the
+       * retrieved search results.
+       * </pre>
+       *
+       * <code>NO_RELEVANT_CONTENT = 6;</code>
+       */
+      public static final int NO_RELEVANT_CONTENT_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -7109,6 +7484,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return POTENTIAL_POLICY_VIOLATION;
           case 5:
             return LLM_ADDON_NOT_ENABLED;
+          case 6:
+            return NO_RELEVANT_CONTENT;
           default:
             return null;
         }
@@ -19063,6 +19440,12046 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface NaturalLanguageQueryUnderstandingInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query.
+     * </pre>
+     *
+     * <code>string extracted_filters = 1;</code>
+     *
+     * @return The extractedFilters.
+     */
+    java.lang.String getExtractedFilters();
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query.
+     * </pre>
+     *
+     * <code>string extracted_filters = 1;</code>
+     *
+     * @return The bytes for extractedFilters.
+     */
+    com.google.protobuf.ByteString getExtractedFiltersBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Rewritten input query minus the extracted filters.
+     * </pre>
+     *
+     * <code>string rewritten_query = 2;</code>
+     *
+     * @return The rewrittenQuery.
+     */
+    java.lang.String getRewrittenQuery();
+    /**
+     *
+     *
+     * <pre>
+     * Rewritten input query minus the extracted filters.
+     * </pre>
+     *
+     * <code>string rewritten_query = 2;</code>
+     *
+     * @return The bytes for rewrittenQuery.
+     */
+    com.google.protobuf.ByteString getRewrittenQueryBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     *
+     * @return Whether the structuredExtractedFilter field is set.
+     */
+    boolean hasStructuredExtractedFilter();
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     *
+     * @return The structuredExtractedFilter.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            .StructuredExtractedFilter
+        getStructuredExtractedFilter();
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            .StructuredExtractedFilterOrBuilder
+        getStructuredExtractedFilterOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information describing what natural language understanding was
+   * done on the input query.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo}
+   */
+  public static final class NaturalLanguageQueryUnderstandingInfo
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo)
+      NaturalLanguageQueryUnderstandingInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NaturalLanguageQueryUnderstandingInfo.newBuilder() to construct.
+    private NaturalLanguageQueryUnderstandingInfo(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NaturalLanguageQueryUnderstandingInfo() {
+      extractedFilters_ = "";
+      rewrittenQuery_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NaturalLanguageQueryUnderstandingInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.class,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.Builder.class);
+    }
+
+    public interface StructuredExtractedFilterOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       *
+       * @return Whether the expression field is set.
+       */
+      boolean hasExpression();
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       *
+       * @return The expression.
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+              .StructuredExtractedFilter.Expression
+          getExpression();
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+              .StructuredExtractedFilter.ExpressionOrBuilder
+          getExpressionOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter}
+     */
+    public static final class StructuredExtractedFilter
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+        StructuredExtractedFilterOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use StructuredExtractedFilter.newBuilder() to construct.
+      private StructuredExtractedFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private StructuredExtractedFilter() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new StructuredExtractedFilter();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder.class);
+      }
+
+      public interface StringConstraintOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the string field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        java.lang.String getFieldName();
+        /**
+         *
+         *
+         * <pre>
+         * Name of the string field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        com.google.protobuf.ByteString getFieldNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @return A list containing the values.
+         */
+        java.util.List<java.lang.String> getValuesList();
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @return The count of values.
+         */
+        int getValuesCount();
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        java.lang.String getValues(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        com.google.protobuf.ByteString getValuesBytes(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Constraint expression of a string field.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint}
+       */
+      public static final class StringConstraint extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint)
+          StringConstraintOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use StringConstraint.newBuilder() to construct.
+        private StringConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private StringConstraint() {
+          fieldName_ = "";
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new StringConstraint();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_StringConstraint_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_StringConstraint_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint.Builder.class);
+        }
+
+        public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fieldName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Name of the string field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        @java.lang.Override
+        public java.lang.String getFieldName() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldName_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the string field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFieldNameBytes() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int VALUES_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @return A list containing the values.
+         */
+        public com.google.protobuf.ProtocolStringList getValuesList() {
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public java.lang.String getValues(int index) {
+          return values_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Values of the string field. The record will only be returned if the
+         * field value matches one of the values specified here.
+         * </pre>
+         *
+         * <code>repeated string values = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        public com.google.protobuf.ByteString getValuesBytes(int index) {
+          return values_.getByteString(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+          }
+          for (int i = 0; i < values_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, values_.getRaw(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+          }
+          {
+            int dataSize = 0;
+            for (int i = 0; i < values_.size(); i++) {
+              dataSize += computeStringSizeNoTag(values_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getValuesList().size();
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .StringConstraint)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraint)
+                      obj;
+
+          if (!getFieldName().equals(other.getFieldName())) return false;
+          if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getFieldName().hashCode();
+          if (getValuesCount() > 0) {
+            hash = (37 * hash) + VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getValuesList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Constraint expression of a string field.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .StringConstraintOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_StringConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_StringConstraint_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            fieldName_ = "";
+            values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_StringConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fieldName_ = fieldName_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              values_.makeImmutable();
+              result.values_ = values_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraint)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint.getDefaultInstance()) return this;
+            if (!other.getFieldName().isEmpty()) {
+              fieldName_ = other.fieldName_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.values_.isEmpty()) {
+              if (values_.isEmpty()) {
+                values_ = other.values_;
+                bitField0_ |= 0x00000002;
+              } else {
+                ensureValuesIsMutable();
+                values_.addAll(other.values_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      fieldName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      ensureValuesIsMutable();
+                      values_.add(s);
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object fieldName_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Name of the string field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The fieldName.
+           */
+          public java.lang.String getFieldName() {
+            java.lang.Object ref = fieldName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fieldName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the string field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The bytes for fieldName.
+           */
+          public com.google.protobuf.ByteString getFieldNameBytes() {
+            java.lang.Object ref = fieldName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              fieldName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the string field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the string field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFieldName() {
+            fieldName_ = getDefaultInstance().getFieldName();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the string field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The bytes for fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private com.google.protobuf.LazyStringArrayList values_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
+
+          private void ensureValuesIsMutable() {
+            if (!values_.isModifiable()) {
+              values_ = new com.google.protobuf.LazyStringArrayList(values_);
+            }
+            bitField0_ |= 0x00000002;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @return A list containing the values.
+           */
+          public com.google.protobuf.ProtocolStringList getValuesList() {
+            values_.makeImmutable();
+            return values_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @return The count of values.
+           */
+          public int getValuesCount() {
+            return values_.size();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param index The index of the element to return.
+           * @return The values at the given index.
+           */
+          public java.lang.String getValues(int index) {
+            return values_.get(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param index The index of the value to return.
+           * @return The bytes of the values at the given index.
+           */
+          public com.google.protobuf.ByteString getValuesBytes(int index) {
+            return values_.getByteString(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The values to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValues(int index, java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureValuesIsMutable();
+            values_.set(index, value);
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param value The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValues(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureValuesIsMutable();
+            values_.add(value);
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param values The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
+            ensureValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValues() {
+            values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            ;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Values of the string field. The record will only be returned if the
+           * field value matches one of the values specified here.
+           * </pre>
+           *
+           * <code>repeated string values = 2;</code>
+           *
+           * @param value The bytes of the values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValuesBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            ensureValuesIsMutable();
+            values_.add(value);
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .StringConstraint();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<StringConstraint> PARSER =
+            new com.google.protobuf.AbstractParser<StringConstraint>() {
+              @java.lang.Override
+              public StringConstraint parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<StringConstraint> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<StringConstraint> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface NumberConstraintOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the numerical field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        java.lang.String getFieldName();
+        /**
+         *
+         *
+         * <pre>
+         * Name of the numerical field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        com.google.protobuf.ByteString getFieldNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The comparison operation performed between the field value and the
+         * value specified in the constraint.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for comparison.
+         */
+        int getComparisonValue();
+        /**
+         *
+         *
+         * <pre>
+         * The comparison operation performed between the field value and the
+         * value specified in the constraint.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+         * </code>
+         *
+         * @return The comparison.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.NumberConstraint.Comparison
+            getComparison();
+
+        /**
+         *
+         *
+         * <pre>
+         * The value specified in the numerical constraint.
+         * </pre>
+         *
+         * <code>double value = 3;</code>
+         *
+         * @return The value.
+         */
+        double getValue();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Constraint expression of a number field. Example: price &lt; 100.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint}
+       */
+      public static final class NumberConstraint extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint)
+          NumberConstraintOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use NumberConstraint.newBuilder() to construct.
+        private NumberConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private NumberConstraint() {
+          fieldName_ = "";
+          comparison_ = 0;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new NumberConstraint();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_NumberConstraint_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_NumberConstraint_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Builder.class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The comparison operation that was performed.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison}
+         */
+        public enum Comparison implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * Undefined comparison operator.
+           * </pre>
+           *
+           * <code>COMPARISON_UNSPECIFIED = 0;</code>
+           */
+          COMPARISON_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * Denotes equality `=` operator.
+           * </pre>
+           *
+           * <code>EQUALS = 1;</code>
+           */
+          EQUALS(1),
+          /**
+           *
+           *
+           * <pre>
+           * Denotes less than or equal to `&lt;=` operator.
+           * </pre>
+           *
+           * <code>LESS_THAN_EQUALS = 2;</code>
+           */
+          LESS_THAN_EQUALS(2),
+          /**
+           *
+           *
+           * <pre>
+           * Denotes less than `&lt;` operator.
+           * </pre>
+           *
+           * <code>LESS_THAN = 3;</code>
+           */
+          LESS_THAN(3),
+          /**
+           *
+           *
+           * <pre>
+           * Denotes greater than or equal to `&gt;=` operator.
+           * </pre>
+           *
+           * <code>GREATER_THAN_EQUALS = 4;</code>
+           */
+          GREATER_THAN_EQUALS(4),
+          /**
+           *
+           *
+           * <pre>
+           * Denotes greater than `&gt;` operator.
+           * </pre>
+           *
+           * <code>GREATER_THAN = 5;</code>
+           */
+          GREATER_THAN(5),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * Undefined comparison operator.
+           * </pre>
+           *
+           * <code>COMPARISON_UNSPECIFIED = 0;</code>
+           */
+          public static final int COMPARISON_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Denotes equality `=` operator.
+           * </pre>
+           *
+           * <code>EQUALS = 1;</code>
+           */
+          public static final int EQUALS_VALUE = 1;
+          /**
+           *
+           *
+           * <pre>
+           * Denotes less than or equal to `&lt;=` operator.
+           * </pre>
+           *
+           * <code>LESS_THAN_EQUALS = 2;</code>
+           */
+          public static final int LESS_THAN_EQUALS_VALUE = 2;
+          /**
+           *
+           *
+           * <pre>
+           * Denotes less than `&lt;` operator.
+           * </pre>
+           *
+           * <code>LESS_THAN = 3;</code>
+           */
+          public static final int LESS_THAN_VALUE = 3;
+          /**
+           *
+           *
+           * <pre>
+           * Denotes greater than or equal to `&gt;=` operator.
+           * </pre>
+           *
+           * <code>GREATER_THAN_EQUALS = 4;</code>
+           */
+          public static final int GREATER_THAN_EQUALS_VALUE = 4;
+          /**
+           *
+           *
+           * <pre>
+           * Denotes greater than `&gt;` operator.
+           * </pre>
+           *
+           * <code>GREATER_THAN = 5;</code>
+           */
+          public static final int GREATER_THAN_VALUE = 5;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static Comparison valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static Comparison forNumber(int value) {
+            switch (value) {
+              case 0:
+                return COMPARISON_UNSPECIFIED;
+              case 1:
+                return EQUALS;
+              case 2:
+                return LESS_THAN_EQUALS;
+              case 3:
+                return LESS_THAN;
+              case 4:
+                return GREATER_THAN_EQUALS;
+              case 5:
+                return GREATER_THAN;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<Comparison> internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<Comparison>
+              internalValueMap =
+                  new com.google.protobuf.Internal.EnumLiteMap<Comparison>() {
+                    public Comparison findValueByNumber(int number) {
+                      return Comparison.forNumber(number);
+                    }
+                  };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                .getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final Comparison[] VALUES = values();
+
+          public static Comparison valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private Comparison(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison)
+        }
+
+        public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fieldName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Name of the numerical field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        @java.lang.Override
+        public java.lang.String getFieldName() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldName_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the numerical field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFieldNameBytes() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int COMPARISON_FIELD_NUMBER = 2;
+        private int comparison_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The comparison operation performed between the field value and the
+         * value specified in the constraint.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for comparison.
+         */
+        @java.lang.Override
+        public int getComparisonValue() {
+          return comparison_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The comparison operation performed between the field value and the
+         * value specified in the constraint.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+         * </code>
+         *
+         * @return The comparison.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                .Comparison
+            getComparison() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Comparison
+              result =
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Comparison.forNumber(comparison_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Comparison.UNRECOGNIZED
+              : result;
+        }
+
+        public static final int VALUE_FIELD_NUMBER = 3;
+        private double value_ = 0D;
+        /**
+         *
+         *
+         * <pre>
+         * The value specified in the numerical constraint.
+         * </pre>
+         *
+         * <code>double value = 3;</code>
+         *
+         * @return The value.
+         */
+        @java.lang.Override
+        public double getValue() {
+          return value_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+          }
+          if (comparison_
+              != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Comparison.COMPARISON_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(2, comparison_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
+            output.writeDouble(3, value_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+          }
+          if (comparison_
+              != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Comparison.COMPARISON_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, comparison_);
+          }
+          if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, value_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .NumberConstraint)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraint)
+                      obj;
+
+          if (!getFieldName().equals(other.getFieldName())) return false;
+          if (comparison_ != other.comparison_) return false;
+          if (java.lang.Double.doubleToLongBits(getValue())
+              != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getFieldName().hashCode();
+          hash = (37 * hash) + COMPARISON_FIELD_NUMBER;
+          hash = (53 * hash) + comparison_;
+          hash = (37 * hash) + VALUE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getValue()));
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Constraint expression of a number field. Example: price &lt; 100.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .NumberConstraintOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_NumberConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_NumberConstraint_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            fieldName_ = "";
+            comparison_ = 0;
+            value_ = 0D;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_NumberConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fieldName_ = fieldName_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.comparison_ = comparison_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.value_ = value_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraint)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint.getDefaultInstance()) return this;
+            if (!other.getFieldName().isEmpty()) {
+              fieldName_ = other.fieldName_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.comparison_ != 0) {
+              setComparisonValue(other.getComparisonValue());
+            }
+            if (other.getValue() != 0D) {
+              setValue(other.getValue());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      fieldName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      comparison_ = input.readEnum();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  case 25:
+                    {
+                      value_ = input.readDouble();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 25
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object fieldName_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Name of the numerical field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The fieldName.
+           */
+          public java.lang.String getFieldName() {
+            java.lang.Object ref = fieldName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fieldName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the numerical field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The bytes for fieldName.
+           */
+          public com.google.protobuf.ByteString getFieldNameBytes() {
+            java.lang.Object ref = fieldName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              fieldName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the numerical field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the numerical field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFieldName() {
+            fieldName_ = getDefaultInstance().getFieldName();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the numerical field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The bytes for fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private int comparison_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * The comparison operation performed between the field value and the
+           * value specified in the constraint.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+           * </code>
+           *
+           * @return The enum numeric value on the wire for comparison.
+           */
+          @java.lang.Override
+          public int getComparisonValue() {
+            return comparison_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The comparison operation performed between the field value and the
+           * value specified in the constraint.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for comparison to set.
+           * @return This builder for chaining.
+           */
+          public Builder setComparisonValue(int value) {
+            comparison_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The comparison operation performed between the field value and the
+           * value specified in the constraint.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+           * </code>
+           *
+           * @return The comparison.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Comparison
+              getComparison() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint.Comparison
+                result =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint.Comparison.forNumber(comparison_);
+            return result == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint.Comparison.UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The comparison operation performed between the field value and the
+           * value specified in the constraint.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+           * </code>
+           *
+           * @param value The comparison to set.
+           * @return This builder for chaining.
+           */
+          public Builder setComparison(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Comparison
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000002;
+            comparison_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The comparison operation performed between the field value and the
+           * value specified in the constraint.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint.Comparison comparison = 2;
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearComparison() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            comparison_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private double value_;
+          /**
+           *
+           *
+           * <pre>
+           * The value specified in the numerical constraint.
+           * </pre>
+           *
+           * <code>double value = 3;</code>
+           *
+           * @return The value.
+           */
+          @java.lang.Override
+          public double getValue() {
+            return value_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The value specified in the numerical constraint.
+           * </pre>
+           *
+           * <code>double value = 3;</code>
+           *
+           * @param value The value to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValue(double value) {
+
+            value_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The value specified in the numerical constraint.
+           * </pre>
+           *
+           * <code>double value = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValue() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            value_ = 0D;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .NumberConstraint();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<NumberConstraint> PARSER =
+            new com.google.protobuf.AbstractParser<NumberConstraint>() {
+              @java.lang.Override
+              public NumberConstraint parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<NumberConstraint> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<NumberConstraint> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface GeolocationConstraintOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the geolocation field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        java.lang.String getFieldName();
+        /**
+         *
+         *
+         * <pre>
+         * The name of the geolocation field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        com.google.protobuf.ByteString getFieldNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The reference address that was inferred from the input query. The
+         * proximity of the reference address to the geolocation field will be
+         * used to filter the results.
+         * </pre>
+         *
+         * <code>string address = 2;</code>
+         *
+         * @return The address.
+         */
+        java.lang.String getAddress();
+        /**
+         *
+         *
+         * <pre>
+         * The reference address that was inferred from the input query. The
+         * proximity of the reference address to the geolocation field will be
+         * used to filter the results.
+         * </pre>
+         *
+         * <code>string address = 2;</code>
+         *
+         * @return The bytes for address.
+         */
+        com.google.protobuf.ByteString getAddressBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The radius in meters around the address. The record is returned if
+         * the location of the geolocation field is within the radius.
+         * </pre>
+         *
+         * <code>float radius_in_meters = 3;</code>
+         *
+         * @return The radiusInMeters.
+         */
+        float getRadiusInMeters();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Constraint of a geolocation field.
+       * Name of the geolocation field as defined in the schema.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint}
+       */
+      public static final class GeolocationConstraint extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint)
+          GeolocationConstraintOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use GeolocationConstraint.newBuilder() to construct.
+        private GeolocationConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private GeolocationConstraint() {
+          fieldName_ = "";
+          address_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new GeolocationConstraint();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_GeolocationConstraint_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_GeolocationConstraint_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint.Builder.class);
+        }
+
+        public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object fieldName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The name of the geolocation field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The fieldName.
+         */
+        @java.lang.Override
+        public java.lang.String getFieldName() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldName_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the geolocation field as defined in the schema.
+         * </pre>
+         *
+         * <code>string field_name = 1;</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFieldNameBytes() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int ADDRESS_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object address_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The reference address that was inferred from the input query. The
+         * proximity of the reference address to the geolocation field will be
+         * used to filter the results.
+         * </pre>
+         *
+         * <code>string address = 2;</code>
+         *
+         * @return The address.
+         */
+        @java.lang.Override
+        public java.lang.String getAddress() {
+          java.lang.Object ref = address_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            address_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The reference address that was inferred from the input query. The
+         * proximity of the reference address to the geolocation field will be
+         * used to filter the results.
+         * </pre>
+         *
+         * <code>string address = 2;</code>
+         *
+         * @return The bytes for address.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getAddressBytes() {
+          java.lang.Object ref = address_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            address_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int RADIUS_IN_METERS_FIELD_NUMBER = 3;
+        private float radiusInMeters_ = 0F;
+        /**
+         *
+         *
+         * <pre>
+         * The radius in meters around the address. The record is returned if
+         * the location of the geolocation field is within the radius.
+         * </pre>
+         *
+         * <code>float radius_in_meters = 3;</code>
+         *
+         * @return The radiusInMeters.
+         */
+        @java.lang.Override
+        public float getRadiusInMeters() {
+          return radiusInMeters_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
+          }
+          if (java.lang.Float.floatToRawIntBits(radiusInMeters_) != 0) {
+            output.writeFloat(3, radiusInMeters_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
+          }
+          if (java.lang.Float.floatToRawIntBits(radiusInMeters_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, radiusInMeters_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraint)
+                      obj;
+
+          if (!getFieldName().equals(other.getFieldName())) return false;
+          if (!getAddress().equals(other.getAddress())) return false;
+          if (java.lang.Float.floatToIntBits(getRadiusInMeters())
+              != java.lang.Float.floatToIntBits(other.getRadiusInMeters())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getFieldName().hashCode();
+          hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+          hash = (53 * hash) + getAddress().hashCode();
+          hash = (37 * hash) + RADIUS_IN_METERS_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getRadiusInMeters());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Constraint of a geolocation field.
+         * Name of the geolocation field as defined in the schema.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraintOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_GeolocationConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_GeolocationConstraint_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            fieldName_ = "";
+            address_ = "";
+            radiusInMeters_ = 0F;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_GeolocationConstraint_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.fieldName_ = fieldName_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.address_ = address_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.radiusInMeters_ = radiusInMeters_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraint)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint.getDefaultInstance()) return this;
+            if (!other.getFieldName().isEmpty()) {
+              fieldName_ = other.fieldName_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getAddress().isEmpty()) {
+              address_ = other.address_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (other.getRadiusInMeters() != 0F) {
+              setRadiusInMeters(other.getRadiusInMeters());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      fieldName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      address_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 29:
+                    {
+                      radiusInMeters_ = input.readFloat();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 29
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object fieldName_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The name of the geolocation field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The fieldName.
+           */
+          public java.lang.String getFieldName() {
+            java.lang.Object ref = fieldName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              fieldName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the geolocation field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return The bytes for fieldName.
+           */
+          public com.google.protobuf.ByteString getFieldNameBytes() {
+            java.lang.Object ref = fieldName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              fieldName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the geolocation field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the geolocation field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearFieldName() {
+            fieldName_ = getDefaultInstance().getFieldName();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the geolocation field as defined in the schema.
+           * </pre>
+           *
+           * <code>string field_name = 1;</code>
+           *
+           * @param value The bytes for fieldName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            fieldName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object address_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The reference address that was inferred from the input query. The
+           * proximity of the reference address to the geolocation field will be
+           * used to filter the results.
+           * </pre>
+           *
+           * <code>string address = 2;</code>
+           *
+           * @return The address.
+           */
+          public java.lang.String getAddress() {
+            java.lang.Object ref = address_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              address_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The reference address that was inferred from the input query. The
+           * proximity of the reference address to the geolocation field will be
+           * used to filter the results.
+           * </pre>
+           *
+           * <code>string address = 2;</code>
+           *
+           * @return The bytes for address.
+           */
+          public com.google.protobuf.ByteString getAddressBytes() {
+            java.lang.Object ref = address_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              address_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The reference address that was inferred from the input query. The
+           * proximity of the reference address to the geolocation field will be
+           * used to filter the results.
+           * </pre>
+           *
+           * <code>string address = 2;</code>
+           *
+           * @param value The address to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAddress(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            address_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The reference address that was inferred from the input query. The
+           * proximity of the reference address to the geolocation field will be
+           * used to filter the results.
+           * </pre>
+           *
+           * <code>string address = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearAddress() {
+            address_ = getDefaultInstance().getAddress();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The reference address that was inferred from the input query. The
+           * proximity of the reference address to the geolocation field will be
+           * used to filter the results.
+           * </pre>
+           *
+           * <code>string address = 2;</code>
+           *
+           * @param value The bytes for address to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAddressBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            address_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private float radiusInMeters_;
+          /**
+           *
+           *
+           * <pre>
+           * The radius in meters around the address. The record is returned if
+           * the location of the geolocation field is within the radius.
+           * </pre>
+           *
+           * <code>float radius_in_meters = 3;</code>
+           *
+           * @return The radiusInMeters.
+           */
+          @java.lang.Override
+          public float getRadiusInMeters() {
+            return radiusInMeters_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The radius in meters around the address. The record is returned if
+           * the location of the geolocation field is within the radius.
+           * </pre>
+           *
+           * <code>float radius_in_meters = 3;</code>
+           *
+           * @param value The radiusInMeters to set.
+           * @return This builder for chaining.
+           */
+          public Builder setRadiusInMeters(float value) {
+
+            radiusInMeters_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The radius in meters around the address. The record is returned if
+           * the location of the geolocation field is within the radius.
+           * </pre>
+           *
+           * <code>float radius_in_meters = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearRadiusInMeters() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            radiusInMeters_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<GeolocationConstraint> PARSER =
+            new com.google.protobuf.AbstractParser<GeolocationConstraint>() {
+              @java.lang.Override
+              public GeolocationConstraint parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<GeolocationConstraint> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<GeolocationConstraint> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface AndExpressionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            getExpressionsList();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.Expression
+            getExpressions(int index);
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        int getExpressionsCount();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .ExpressionOrBuilder>
+            getExpressionsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.ExpressionOrBuilder
+            getExpressionsOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Logical `And` operator.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression}
+       */
+      public static final class AndExpression extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+          AndExpressionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use AndExpression.newBuilder() to construct.
+        private AndExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private AndExpression() {
+          expressions_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new AndExpression();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_AndExpression_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_AndExpression_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                      .Builder.class);
+        }
+
+        public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            expressions_;
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            getExpressionsList() {
+          return expressions_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .ExpressionOrBuilder>
+            getExpressionsOrBuilderList() {
+          return expressions_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getExpressionsCount() {
+          return expressions_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            getExpressions(int index) {
+          return expressions_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ANDed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.ExpressionOrBuilder
+            getExpressionsOrBuilder(int index) {
+          return expressions_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < expressions_.size(); i++) {
+            output.writeMessage(1, expressions_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < expressions_.size(); i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(1, expressions_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpression)
+                      obj;
+
+          if (!getExpressionsList().equals(other.getExpressionsList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getExpressionsCount() > 0) {
+            hash = (37 * hash) + EXPRESSIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getExpressionsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical `And` operator.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .AndExpressionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_AndExpression_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_AndExpression_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (expressionsBuilder_ == null) {
+              expressions_ = java.util.Collections.emptyList();
+            } else {
+              expressions_ = null;
+              expressionsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_AndExpression_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  result) {
+            if (expressionsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                expressions_ = java.util.Collections.unmodifiableList(expressions_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.expressions_ = expressions_;
+            } else {
+              result.expressions_ = expressionsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .AndExpression) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpression)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                    .getDefaultInstance()) return this;
+            if (expressionsBuilder_ == null) {
+              if (!other.expressions_.isEmpty()) {
+                if (expressions_.isEmpty()) {
+                  expressions_ = other.expressions_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureExpressionsIsMutable();
+                  expressions_.addAll(other.expressions_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.expressions_.isEmpty()) {
+                if (expressionsBuilder_.isEmpty()) {
+                  expressionsBuilder_.dispose();
+                  expressionsBuilder_ = null;
+                  expressions_ = other.expressions_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  expressionsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getExpressionsFieldBuilder()
+                          : null;
+                } else {
+                  expressionsBuilder_.addAllMessages(other.expressions_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .Expression
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                      .NaturalLanguageQueryUnderstandingInfo
+                                      .StructuredExtractedFilter.Expression.parser(),
+                                  extensionRegistry);
+                      if (expressionsBuilder_ == null) {
+                        ensureExpressionsIsMutable();
+                        expressions_.add(m);
+                      } else {
+                        expressionsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+              expressions_ = java.util.Collections.emptyList();
+
+          private void ensureExpressionsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              expressions_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression>(expressions_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .ExpressionOrBuilder>
+              expressionsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+              getExpressionsList() {
+            if (expressionsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(expressions_);
+            } else {
+              return expressionsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public int getExpressionsCount() {
+            if (expressionsBuilder_ == null) {
+              return expressions_.size();
+            } else {
+              return expressionsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              getExpressions(int index) {
+            if (expressionsBuilder_ == null) {
+              return expressions_.get(index);
+            } else {
+              return expressionsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder setExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.set(index, value);
+              onChanged();
+            } else {
+              expressionsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder setExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.add(value);
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.add(index, value);
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.add(builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addAllExpressions(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .Expression>
+                  values) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, expressions_);
+              onChanged();
+            } else {
+              expressionsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder clearExpressions() {
+            if (expressionsBuilder_ == null) {
+              expressions_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              expressionsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder removeExpressions(int index) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.remove(index);
+              onChanged();
+            } else {
+              expressionsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              getExpressionsBuilder(int index) {
+            return getExpressionsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .ExpressionOrBuilder
+              getExpressionsOrBuilder(int index) {
+            if (expressionsBuilder_ == null) {
+              return expressions_.get(index);
+            } else {
+              return expressionsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .ExpressionOrBuilder>
+              getExpressionsOrBuilderList() {
+            if (expressionsBuilder_ != null) {
+              return expressionsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(expressions_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              addExpressionsBuilder() {
+            return getExpressionsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              addExpressionsBuilder(int index) {
+            return getExpressionsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ANDed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder>
+              getExpressionsBuilderList() {
+            return getExpressionsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .ExpressionOrBuilder>
+              getExpressionsFieldBuilder() {
+            if (expressionsBuilder_ == null) {
+              expressionsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .ExpressionOrBuilder>(
+                      expressions_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              expressions_ = null;
+            }
+            return expressionsBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<AndExpression> PARSER =
+            new com.google.protobuf.AbstractParser<AndExpression>() {
+              @java.lang.Override
+              public AndExpression parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<AndExpression> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AndExpression> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface OrExpressionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            getExpressionsList();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.Expression
+            getExpressions(int index);
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        int getExpressionsCount();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .ExpressionOrBuilder>
+            getExpressionsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.ExpressionOrBuilder
+            getExpressionsOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Logical `Or` operator.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression}
+       */
+      public static final class OrExpression extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+          OrExpressionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use OrExpression.newBuilder() to construct.
+        private OrExpression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private OrExpression() {
+          expressions_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new OrExpression();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_OrExpression_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_OrExpression_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                      .Builder.class);
+        }
+
+        public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            expressions_;
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+            getExpressionsList() {
+          return expressions_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .ExpressionOrBuilder>
+            getExpressionsOrBuilderList() {
+          return expressions_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getExpressionsCount() {
+          return expressions_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            getExpressions(int index) {
+          return expressions_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expressions that were ORed together.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.ExpressionOrBuilder
+            getExpressionsOrBuilder(int index) {
+          return expressions_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < expressions_.size(); i++) {
+            output.writeMessage(1, expressions_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < expressions_.size(); i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(1, expressions_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpression)
+                      obj;
+
+          if (!getExpressionsList().equals(other.getExpressionsList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getExpressionsCount() > 0) {
+            hash = (37 * hash) + EXPRESSIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getExpressionsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical `Or` operator.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .OrExpressionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_OrExpression_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_OrExpression_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (expressionsBuilder_ == null) {
+              expressions_ = java.util.Collections.emptyList();
+            } else {
+              expressions_ = null;
+              expressionsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_OrExpression_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  result) {
+            if (expressionsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                expressions_ = java.util.Collections.unmodifiableList(expressions_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.expressions_ = expressions_;
+            } else {
+              result.expressions_ = expressionsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpression)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                    .getDefaultInstance()) return this;
+            if (expressionsBuilder_ == null) {
+              if (!other.expressions_.isEmpty()) {
+                if (expressions_.isEmpty()) {
+                  expressions_ = other.expressions_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureExpressionsIsMutable();
+                  expressions_.addAll(other.expressions_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.expressions_.isEmpty()) {
+                if (expressionsBuilder_.isEmpty()) {
+                  expressionsBuilder_.dispose();
+                  expressionsBuilder_ = null;
+                  expressions_ = other.expressions_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  expressionsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getExpressionsFieldBuilder()
+                          : null;
+                } else {
+                  expressionsBuilder_.addAllMessages(other.expressions_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .Expression
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                      .NaturalLanguageQueryUnderstandingInfo
+                                      .StructuredExtractedFilter.Expression.parser(),
+                                  extensionRegistry);
+                      if (expressionsBuilder_ == null) {
+                        ensureExpressionsIsMutable();
+                        expressions_.add(m);
+                      } else {
+                        expressionsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+              expressions_ = java.util.Collections.emptyList();
+
+          private void ensureExpressionsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              expressions_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression>(expressions_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .ExpressionOrBuilder>
+              expressionsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression>
+              getExpressionsList() {
+            if (expressionsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(expressions_);
+            } else {
+              return expressionsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public int getExpressionsCount() {
+            if (expressionsBuilder_ == null) {
+              return expressions_.size();
+            } else {
+              return expressionsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              getExpressions(int index) {
+            if (expressionsBuilder_ == null) {
+              return expressions_.get(index);
+            } else {
+              return expressionsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder setExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.set(index, value);
+              onChanged();
+            } else {
+              expressionsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder setExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.add(value);
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  value) {
+            if (expressionsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureExpressionsIsMutable();
+              expressions_.add(index, value);
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.add(builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addExpressions(
+              int index,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder
+                  builderForValue) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              expressionsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder addAllExpressions(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .Expression>
+                  values) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, expressions_);
+              onChanged();
+            } else {
+              expressionsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder clearExpressions() {
+            if (expressionsBuilder_ == null) {
+              expressions_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              expressionsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public Builder removeExpressions(int index) {
+            if (expressionsBuilder_ == null) {
+              ensureExpressionsIsMutable();
+              expressions_.remove(index);
+              onChanged();
+            } else {
+              expressionsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              getExpressionsBuilder(int index) {
+            return getExpressionsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .ExpressionOrBuilder
+              getExpressionsOrBuilder(int index) {
+            if (expressionsBuilder_ == null) {
+              return expressions_.get(index);
+            } else {
+              return expressionsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .ExpressionOrBuilder>
+              getExpressionsOrBuilderList() {
+            if (expressionsBuilder_ != null) {
+              return expressionsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(expressions_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              addExpressionsBuilder() {
+            return getExpressionsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  .Builder
+              addExpressionsBuilder(int index) {
+            return getExpressionsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The expressions that were ORed together.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expressions = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder>
+              getExpressionsBuilderList() {
+            return getExpressionsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .ExpressionOrBuilder>
+              getExpressionsFieldBuilder() {
+            if (expressionsBuilder_ == null) {
+              expressionsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .ExpressionOrBuilder>(
+                      expressions_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              expressions_ = null;
+            }
+            return expressionsBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<OrExpression> PARSER =
+            new com.google.protobuf.AbstractParser<OrExpression>() {
+              @java.lang.Override
+              public OrExpression parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<OrExpression> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OrExpression> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface ExpressionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         *
+         * @return Whether the stringConstraint field is set.
+         */
+        boolean hasStringConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         *
+         * @return The stringConstraint.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.StringConstraint
+            getStringConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.StringConstraintOrBuilder
+            getStringConstraintOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         *
+         * @return Whether the numberConstraint field is set.
+         */
+        boolean hasNumberConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         *
+         * @return The numberConstraint.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.NumberConstraint
+            getNumberConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.NumberConstraintOrBuilder
+            getNumberConstraintOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         *
+         * @return Whether the geolocationConstraint field is set.
+         */
+        boolean hasGeolocationConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         *
+         * @return The geolocationConstraint.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.GeolocationConstraint
+            getGeolocationConstraint();
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.GeolocationConstraintOrBuilder
+            getGeolocationConstraintOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         *
+         * @return Whether the andExpr field is set.
+         */
+        boolean hasAndExpr();
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         *
+         * @return The andExpr.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.AndExpression
+            getAndExpr();
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.AndExpressionOrBuilder
+            getAndExprOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         *
+         * @return Whether the orExpr field is set.
+         */
+        boolean hasOrExpr();
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         *
+         * @return The orExpr.
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.OrExpression
+            getOrExpr();
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.OrExpressionOrBuilder
+            getOrExprOrBuilder();
+
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter.Expression.ExprCase
+            getExprCase();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression}
+       */
+      public static final class Expression extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)
+          ExpressionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Expression.newBuilder() to construct.
+        private Expression(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Expression() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Expression();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_Expression_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_Expression_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                      .Builder.class);
+        }
+
+        private int exprCase_ = 0;
+
+        @SuppressWarnings("serial")
+        private java.lang.Object expr_;
+
+        public enum ExprCase
+            implements
+                com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          STRING_CONSTRAINT(1),
+          NUMBER_CONSTRAINT(2),
+          GEOLOCATION_CONSTRAINT(3),
+          AND_EXPR(4),
+          OR_EXPR(5),
+          EXPR_NOT_SET(0);
+          private final int value;
+
+          private ExprCase(int value) {
+            this.value = value;
+          }
+          /**
+           * @param value The number of the enum to look for.
+           * @return The enum associated with the given number.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static ExprCase valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static ExprCase forNumber(int value) {
+            switch (value) {
+              case 1:
+                return STRING_CONSTRAINT;
+              case 2:
+                return NUMBER_CONSTRAINT;
+              case 3:
+                return GEOLOCATION_CONSTRAINT;
+              case 4:
+                return AND_EXPR;
+              case 5:
+                return OR_EXPR;
+              case 0:
+                return EXPR_NOT_SET;
+              default:
+                return null;
+            }
+          }
+
+          public int getNumber() {
+            return this.value;
+          }
+        };
+
+        public ExprCase getExprCase() {
+          return ExprCase.forNumber(exprCase_);
+        }
+
+        public static final int STRING_CONSTRAINT_FIELD_NUMBER = 1;
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         *
+         * @return Whether the stringConstraint field is set.
+         */
+        @java.lang.Override
+        public boolean hasStringConstraint() {
+          return exprCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         *
+         * @return The stringConstraint.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+            getStringConstraint() {
+          if (exprCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * String constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .StringConstraintOrBuilder
+            getStringConstraintOrBuilder() {
+          if (exprCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .StringConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              .getDefaultInstance();
+        }
+
+        public static final int NUMBER_CONSTRAINT_FIELD_NUMBER = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         *
+         * @return Whether the numberConstraint field is set.
+         */
+        @java.lang.Override
+        public boolean hasNumberConstraint() {
+          return exprCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         *
+         * @return The numberConstraint.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+            getNumberConstraint() {
+          if (exprCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Numerical constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .NumberConstraintOrBuilder
+            getNumberConstraintOrBuilder() {
+          if (exprCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .NumberConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              .getDefaultInstance();
+        }
+
+        public static final int GEOLOCATION_CONSTRAINT_FIELD_NUMBER = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         *
+         * @return Whether the geolocationConstraint field is set.
+         */
+        @java.lang.Override
+        public boolean hasGeolocationConstraint() {
+          return exprCase_ == 3;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         *
+         * @return The geolocationConstraint.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraint
+            getGeolocationConstraint() {
+          if (exprCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint
+              .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Geolocation constraint expression.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .GeolocationConstraintOrBuilder
+            getGeolocationConstraintOrBuilder() {
+          if (exprCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .GeolocationConstraint)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint
+              .getDefaultInstance();
+        }
+
+        public static final int AND_EXPR_FIELD_NUMBER = 4;
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         *
+         * @return Whether the andExpr field is set.
+         */
+        @java.lang.Override
+        public boolean hasAndExpr() {
+          return exprCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         *
+         * @return The andExpr.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+            getAndExpr() {
+          if (exprCase_ == 4) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical "And" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .AndExpressionOrBuilder
+            getAndExprOrBuilder() {
+          if (exprCase_ == 4) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              .getDefaultInstance();
+        }
+
+        public static final int OR_EXPR_FIELD_NUMBER = 5;
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         *
+         * @return Whether the orExpr field is set.
+         */
+        @java.lang.Override
+        public boolean hasOrExpr() {
+          return exprCase_ == 5;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         *
+         * @return The orExpr.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+            getOrExpr() {
+          if (exprCase_ == 5) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              .getDefaultInstance();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Logical "Or" compound operator connecting multiple expressions.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .OrExpressionOrBuilder
+            getOrExprOrBuilder() {
+          if (exprCase_ == 5) {
+            return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression)
+                expr_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              .getDefaultInstance();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (exprCase_ == 1) {
+            output.writeMessage(
+                1,
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint)
+                    expr_);
+          }
+          if (exprCase_ == 2) {
+            output.writeMessage(
+                2,
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint)
+                    expr_);
+          }
+          if (exprCase_ == 3) {
+            output.writeMessage(
+                3,
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint)
+                    expr_);
+          }
+          if (exprCase_ == 4) {
+            output.writeMessage(
+                4,
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression)
+                    expr_);
+          }
+          if (exprCase_ == 5) {
+            output.writeMessage(
+                5,
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression)
+                    expr_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (exprCase_ == 1) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    1,
+                    (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                            .StringConstraint)
+                        expr_);
+          }
+          if (exprCase_ == 2) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    2,
+                    (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                            .NumberConstraint)
+                        expr_);
+          }
+          if (exprCase_ == 3) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    3,
+                    (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                            .GeolocationConstraint)
+                        expr_);
+          }
+          if (exprCase_ == 4) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    4,
+                    (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                            .AndExpression)
+                        expr_);
+          }
+          if (exprCase_ == 5) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    5,
+                    (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                            .OrExpression)
+                        expr_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression)
+                      obj;
+
+          if (!getExprCase().equals(other.getExprCase())) return false;
+          switch (exprCase_) {
+            case 1:
+              if (!getStringConstraint().equals(other.getStringConstraint())) return false;
+              break;
+            case 2:
+              if (!getNumberConstraint().equals(other.getNumberConstraint())) return false;
+              break;
+            case 3:
+              if (!getGeolocationConstraint().equals(other.getGeolocationConstraint()))
+                return false;
+              break;
+            case 4:
+              if (!getAndExpr().equals(other.getAndExpr())) return false;
+              break;
+            case 5:
+              if (!getOrExpr().equals(other.getOrExpr())) return false;
+              break;
+            case 0:
+            default:
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          switch (exprCase_) {
+            case 1:
+              hash = (37 * hash) + STRING_CONSTRAINT_FIELD_NUMBER;
+              hash = (53 * hash) + getStringConstraint().hashCode();
+              break;
+            case 2:
+              hash = (37 * hash) + NUMBER_CONSTRAINT_FIELD_NUMBER;
+              hash = (53 * hash) + getNumberConstraint().hashCode();
+              break;
+            case 3:
+              hash = (37 * hash) + GEOLOCATION_CONSTRAINT_FIELD_NUMBER;
+              hash = (53 * hash) + getGeolocationConstraint().hashCode();
+              break;
+            case 4:
+              hash = (37 * hash) + AND_EXPR_FIELD_NUMBER;
+              hash = (53 * hash) + getAndExpr().hashCode();
+              break;
+            case 5:
+              hash = (37 * hash) + OR_EXPR_FIELD_NUMBER;
+              hash = (53 * hash) + getOrExpr().hashCode();
+              break;
+            case 0:
+            default:
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                .ExpressionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_Expression_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_Expression_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (stringConstraintBuilder_ != null) {
+              stringConstraintBuilder_.clear();
+            }
+            if (numberConstraintBuilder_ != null) {
+              numberConstraintBuilder_.clear();
+            }
+            if (geolocationConstraintBuilder_ != null) {
+              geolocationConstraintBuilder_.clear();
+            }
+            if (andExprBuilder_ != null) {
+              andExprBuilder_.clear();
+            }
+            if (orExprBuilder_ != null) {
+              orExprBuilder_.clear();
+            }
+            exprCase_ = 0;
+            expr_ = null;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_Expression_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression(
+                        this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            buildPartialOneofs(result);
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  result) {
+            result.exprCase_ = exprCase_;
+            result.expr_ = this.expr_;
+            if (exprCase_ == 1 && stringConstraintBuilder_ != null) {
+              result.expr_ = stringConstraintBuilder_.build();
+            }
+            if (exprCase_ == 2 && numberConstraintBuilder_ != null) {
+              result.expr_ = numberConstraintBuilder_.build();
+            }
+            if (exprCase_ == 3 && geolocationConstraintBuilder_ != null) {
+              result.expr_ = geolocationConstraintBuilder_.build();
+            }
+            if (exprCase_ == 4 && andExprBuilder_ != null) {
+              result.expr_ = andExprBuilder_.build();
+            }
+            if (exprCase_ == 5 && orExprBuilder_ != null) {
+              result.expr_ = orExprBuilder_.build();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .Expression)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .getDefaultInstance()) return this;
+            switch (other.getExprCase()) {
+              case STRING_CONSTRAINT:
+                {
+                  mergeStringConstraint(other.getStringConstraint());
+                  break;
+                }
+              case NUMBER_CONSTRAINT:
+                {
+                  mergeNumberConstraint(other.getNumberConstraint());
+                  break;
+                }
+              case GEOLOCATION_CONSTRAINT:
+                {
+                  mergeGeolocationConstraint(other.getGeolocationConstraint());
+                  break;
+                }
+              case AND_EXPR:
+                {
+                  mergeAndExpr(other.getAndExpr());
+                  break;
+                }
+              case OR_EXPR:
+                {
+                  mergeOrExpr(other.getOrExpr());
+                  break;
+                }
+              case EXPR_NOT_SET:
+                {
+                  break;
+                }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(
+                          getStringConstraintFieldBuilder().getBuilder(), extensionRegistry);
+                      exprCase_ = 1;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(
+                          getNumberConstraintFieldBuilder().getBuilder(), extensionRegistry);
+                      exprCase_ = 2;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      input.readMessage(
+                          getGeolocationConstraintFieldBuilder().getBuilder(), extensionRegistry);
+                      exprCase_ = 3;
+                      break;
+                    } // case 26
+                  case 34:
+                    {
+                      input.readMessage(getAndExprFieldBuilder().getBuilder(), extensionRegistry);
+                      exprCase_ = 4;
+                      break;
+                    } // case 34
+                  case 42:
+                    {
+                      input.readMessage(getOrExprFieldBuilder().getBuilder(), extensionRegistry);
+                      exprCase_ = 5;
+                      break;
+                    } // case 42
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int exprCase_ = 0;
+          private java.lang.Object expr_;
+
+          public ExprCase getExprCase() {
+            return ExprCase.forNumber(exprCase_);
+          }
+
+          public Builder clearExpr() {
+            exprCase_ = 0;
+            expr_ = null;
+            onChanged();
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraintOrBuilder>
+              stringConstraintBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           *
+           * @return Whether the stringConstraint field is set.
+           */
+          @java.lang.Override
+          public boolean hasStringConstraint() {
+            return exprCase_ == 1;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           *
+           * @return The stringConstraint.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+              getStringConstraint() {
+            if (stringConstraintBuilder_ == null) {
+              if (exprCase_ == 1) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+                  .getDefaultInstance();
+            } else {
+              if (exprCase_ == 1) {
+                return stringConstraintBuilder_.getMessage();
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          public Builder setStringConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint
+                  value) {
+            if (stringConstraintBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              expr_ = value;
+              onChanged();
+            } else {
+              stringConstraintBuilder_.setMessage(value);
+            }
+            exprCase_ = 1;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          public Builder setStringConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint.Builder
+                  builderForValue) {
+            if (stringConstraintBuilder_ == null) {
+              expr_ = builderForValue.build();
+              onChanged();
+            } else {
+              stringConstraintBuilder_.setMessage(builderForValue.build());
+            }
+            exprCase_ = 1;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          public Builder mergeStringConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint
+                  value) {
+            if (stringConstraintBuilder_ == null) {
+              if (exprCase_ == 1
+                  && expr_
+                      != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraint.getDefaultInstance()) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint.newBuilder(
+                            (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                                    .StringConstraint)
+                                expr_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                expr_ = value;
+              }
+              onChanged();
+            } else {
+              if (exprCase_ == 1) {
+                stringConstraintBuilder_.mergeFrom(value);
+              } else {
+                stringConstraintBuilder_.setMessage(value);
+              }
+            }
+            exprCase_ = 1;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          public Builder clearStringConstraint() {
+            if (stringConstraintBuilder_ == null) {
+              if (exprCase_ == 1) {
+                exprCase_ = 0;
+                expr_ = null;
+                onChanged();
+              }
+            } else {
+              if (exprCase_ == 1) {
+                exprCase_ = 0;
+                expr_ = null;
+              }
+              stringConstraintBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+                  .Builder
+              getStringConstraintBuilder() {
+            return getStringConstraintFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .StringConstraintOrBuilder
+              getStringConstraintOrBuilder() {
+            if ((exprCase_ == 1) && (stringConstraintBuilder_ != null)) {
+              return stringConstraintBuilder_.getMessageOrBuilder();
+            } else {
+              if (exprCase_ == 1) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * String constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraint string_constraint = 1;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .StringConstraintOrBuilder>
+              getStringConstraintFieldBuilder() {
+            if (stringConstraintBuilder_ == null) {
+              if (!(exprCase_ == 1)) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .StringConstraint.getDefaultInstance();
+              }
+              stringConstraintBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraint,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraint.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .StringConstraintOrBuilder>(
+                      (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .StringConstraint)
+                          expr_,
+                      getParentForChildren(),
+                      isClean());
+              expr_ = null;
+            }
+            exprCase_ = 1;
+            onChanged();
+            return stringConstraintBuilder_;
+          }
+
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraintOrBuilder>
+              numberConstraintBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           *
+           * @return Whether the numberConstraint field is set.
+           */
+          @java.lang.Override
+          public boolean hasNumberConstraint() {
+            return exprCase_ == 2;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           *
+           * @return The numberConstraint.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+              getNumberConstraint() {
+            if (numberConstraintBuilder_ == null) {
+              if (exprCase_ == 2) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .getDefaultInstance();
+            } else {
+              if (exprCase_ == 2) {
+                return numberConstraintBuilder_.getMessage();
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          public Builder setNumberConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint
+                  value) {
+            if (numberConstraintBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              expr_ = value;
+              onChanged();
+            } else {
+              numberConstraintBuilder_.setMessage(value);
+            }
+            exprCase_ = 2;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          public Builder setNumberConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Builder
+                  builderForValue) {
+            if (numberConstraintBuilder_ == null) {
+              expr_ = builderForValue.build();
+              onChanged();
+            } else {
+              numberConstraintBuilder_.setMessage(builderForValue.build());
+            }
+            exprCase_ = 2;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          public Builder mergeNumberConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint
+                  value) {
+            if (numberConstraintBuilder_ == null) {
+              if (exprCase_ == 2
+                  && expr_
+                      != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraint.getDefaultInstance()) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint.newBuilder(
+                            (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                                    .NumberConstraint)
+                                expr_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                expr_ = value;
+              }
+              onChanged();
+            } else {
+              if (exprCase_ == 2) {
+                numberConstraintBuilder_.mergeFrom(value);
+              } else {
+                numberConstraintBuilder_.setMessage(value);
+              }
+            }
+            exprCase_ = 2;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          public Builder clearNumberConstraint() {
+            if (numberConstraintBuilder_ == null) {
+              if (exprCase_ == 2) {
+                exprCase_ = 0;
+                expr_ = null;
+                onChanged();
+              }
+            } else {
+              if (exprCase_ == 2) {
+                exprCase_ = 0;
+                expr_ = null;
+              }
+              numberConstraintBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .Builder
+              getNumberConstraintBuilder() {
+            return getNumberConstraintFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .NumberConstraintOrBuilder
+              getNumberConstraintOrBuilder() {
+            if ((exprCase_ == 2) && (numberConstraintBuilder_ != null)) {
+              return numberConstraintBuilder_.getMessageOrBuilder();
+            } else {
+              if (exprCase_ == 2) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Numerical constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.NumberConstraint number_constraint = 2;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .NumberConstraintOrBuilder>
+              getNumberConstraintFieldBuilder() {
+            if (numberConstraintBuilder_ == null) {
+              if (!(exprCase_ == 2)) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .NumberConstraint.getDefaultInstance();
+              }
+              numberConstraintBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraint,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraint.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .NumberConstraintOrBuilder>(
+                      (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .NumberConstraint)
+                          expr_,
+                      getParentForChildren(),
+                      isClean());
+              expr_ = null;
+            }
+            exprCase_ = 2;
+            onChanged();
+            return numberConstraintBuilder_;
+          }
+
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraintOrBuilder>
+              geolocationConstraintBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           *
+           * @return Whether the geolocationConstraint field is set.
+           */
+          @java.lang.Override
+          public boolean hasGeolocationConstraint() {
+            return exprCase_ == 3;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           *
+           * @return The geolocationConstraint.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint
+              getGeolocationConstraint() {
+            if (geolocationConstraintBuilder_ == null) {
+              if (exprCase_ == 3) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint.getDefaultInstance();
+            } else {
+              if (exprCase_ == 3) {
+                return geolocationConstraintBuilder_.getMessage();
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint.getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          public Builder setGeolocationConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint
+                  value) {
+            if (geolocationConstraintBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              expr_ = value;
+              onChanged();
+            } else {
+              geolocationConstraintBuilder_.setMessage(value);
+            }
+            exprCase_ = 3;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          public Builder setGeolocationConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint.Builder
+                  builderForValue) {
+            if (geolocationConstraintBuilder_ == null) {
+              expr_ = builderForValue.build();
+              onChanged();
+            } else {
+              geolocationConstraintBuilder_.setMessage(builderForValue.build());
+            }
+            exprCase_ = 3;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          public Builder mergeGeolocationConstraint(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint
+                  value) {
+            if (geolocationConstraintBuilder_ == null) {
+              if (exprCase_ == 3
+                  && expr_
+                      != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraint.getDefaultInstance()) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint.newBuilder(
+                            (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                                    .GeolocationConstraint)
+                                expr_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                expr_ = value;
+              }
+              onChanged();
+            } else {
+              if (exprCase_ == 3) {
+                geolocationConstraintBuilder_.mergeFrom(value);
+              } else {
+                geolocationConstraintBuilder_.setMessage(value);
+              }
+            }
+            exprCase_ = 3;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          public Builder clearGeolocationConstraint() {
+            if (geolocationConstraintBuilder_ == null) {
+              if (exprCase_ == 3) {
+                exprCase_ = 0;
+                expr_ = null;
+                onChanged();
+              }
+            } else {
+              if (exprCase_ == 3) {
+                exprCase_ = 0;
+                expr_ = null;
+              }
+              geolocationConstraintBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint.Builder
+              getGeolocationConstraintBuilder() {
+            return getGeolocationConstraintFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraintOrBuilder
+              getGeolocationConstraintOrBuilder() {
+            if ((exprCase_ == 3) && (geolocationConstraintBuilder_ != null)) {
+              return geolocationConstraintBuilder_.getMessageOrBuilder();
+            } else {
+              if (exprCase_ == 3) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .GeolocationConstraint.getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Geolocation constraint expression.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.GeolocationConstraint geolocation_constraint = 3;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraint.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .GeolocationConstraintOrBuilder>
+              getGeolocationConstraintFieldBuilder() {
+            if (geolocationConstraintBuilder_ == null) {
+              if (!(exprCase_ == 3)) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .GeolocationConstraint.getDefaultInstance();
+              }
+              geolocationConstraintBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraint,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraint.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .GeolocationConstraintOrBuilder>(
+                      (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .GeolocationConstraint)
+                          expr_,
+                      getParentForChildren(),
+                      isClean());
+              expr_ = null;
+            }
+            exprCase_ = 3;
+            onChanged();
+            return geolocationConstraintBuilder_;
+          }
+
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .AndExpression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .AndExpressionOrBuilder>
+              andExprBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           *
+           * @return Whether the andExpr field is set.
+           */
+          @java.lang.Override
+          public boolean hasAndExpr() {
+            return exprCase_ == 4;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           *
+           * @return The andExpr.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+              getAndExpr() {
+            if (andExprBuilder_ == null) {
+              if (exprCase_ == 4) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  .getDefaultInstance();
+            } else {
+              if (exprCase_ == 4) {
+                return andExprBuilder_.getMessage();
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          public Builder setAndExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  value) {
+            if (andExprBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              expr_ = value;
+              onChanged();
+            } else {
+              andExprBuilder_.setMessage(value);
+            }
+            exprCase_ = 4;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          public Builder setAndExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                      .Builder
+                  builderForValue) {
+            if (andExprBuilder_ == null) {
+              expr_ = builderForValue.build();
+              onChanged();
+            } else {
+              andExprBuilder_.setMessage(builderForValue.build());
+            }
+            exprCase_ = 4;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          public Builder mergeAndExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  value) {
+            if (andExprBuilder_ == null) {
+              if (exprCase_ == 4
+                  && expr_
+                      != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpression.getDefaultInstance()) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression.newBuilder(
+                            (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                                    .AndExpression)
+                                expr_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                expr_ = value;
+              }
+              onChanged();
+            } else {
+              if (exprCase_ == 4) {
+                andExprBuilder_.mergeFrom(value);
+              } else {
+                andExprBuilder_.setMessage(value);
+              }
+            }
+            exprCase_ = 4;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          public Builder clearAndExpr() {
+            if (andExprBuilder_ == null) {
+              if (exprCase_ == 4) {
+                exprCase_ = 0;
+                expr_ = null;
+                onChanged();
+              }
+            } else {
+              if (exprCase_ == 4) {
+                exprCase_ = 0;
+                expr_ = null;
+              }
+              andExprBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  .Builder
+              getAndExprBuilder() {
+            return getAndExprFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .AndExpressionOrBuilder
+              getAndExprOrBuilder() {
+            if ((exprCase_ == 4) && (andExprBuilder_ != null)) {
+              return andExprBuilder_.getMessageOrBuilder();
+            } else {
+              if (exprCase_ == 4) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "And" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression and_expr = 4;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .AndExpression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.AndExpression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .AndExpressionOrBuilder>
+              getAndExprFieldBuilder() {
+            if (andExprBuilder_ == null) {
+              if (!(exprCase_ == 4)) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .AndExpression.getDefaultInstance();
+              }
+              andExprBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpression,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpression.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .AndExpressionOrBuilder>(
+                      (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .AndExpression)
+                          expr_,
+                      getParentForChildren(),
+                      isClean());
+              expr_ = null;
+            }
+            exprCase_ = 4;
+            onChanged();
+            return andExprBuilder_;
+          }
+
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .OrExpressionOrBuilder>
+              orExprBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           *
+           * @return Whether the orExpr field is set.
+           */
+          @java.lang.Override
+          public boolean hasOrExpr() {
+            return exprCase_ == 5;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           *
+           * @return The orExpr.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+              getOrExpr() {
+            if (orExprBuilder_ == null) {
+              if (exprCase_ == 5) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  .getDefaultInstance();
+            } else {
+              if (exprCase_ == 5) {
+                return orExprBuilder_.getMessage();
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          public Builder setOrExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  value) {
+            if (orExprBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              expr_ = value;
+              onChanged();
+            } else {
+              orExprBuilder_.setMessage(value);
+            }
+            exprCase_ = 5;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          public Builder setOrExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                      .Builder
+                  builderForValue) {
+            if (orExprBuilder_ == null) {
+              expr_ = builderForValue.build();
+              onChanged();
+            } else {
+              orExprBuilder_.setMessage(builderForValue.build());
+            }
+            exprCase_ = 5;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          public Builder mergeOrExpr(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  value) {
+            if (orExprBuilder_ == null) {
+              if (exprCase_ == 5
+                  && expr_
+                      != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpression.getDefaultInstance()) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression.newBuilder(
+                            (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                                    .OrExpression)
+                                expr_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                expr_ = value;
+              }
+              onChanged();
+            } else {
+              if (exprCase_ == 5) {
+                orExprBuilder_.mergeFrom(value);
+              } else {
+                orExprBuilder_.setMessage(value);
+              }
+            }
+            exprCase_ = 5;
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          public Builder clearOrExpr() {
+            if (orExprBuilder_ == null) {
+              if (exprCase_ == 5) {
+                exprCase_ = 0;
+                expr_ = null;
+                onChanged();
+              }
+            } else {
+              if (exprCase_ == 5) {
+                exprCase_ = 0;
+                expr_ = null;
+              }
+              orExprBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  .Builder
+              getOrExprBuilder() {
+            return getOrExprFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .OrExpressionOrBuilder
+              getOrExprOrBuilder() {
+            if ((exprCase_ == 5) && (orExprBuilder_ != null)) {
+              return orExprBuilder_.getMessageOrBuilder();
+            } else {
+              if (exprCase_ == 5) {
+                return (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression)
+                    expr_;
+              }
+              return com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                  .getDefaultInstance();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Logical "Or" compound operator connecting multiple expressions.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression or_expr = 5;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.OrExpression
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .OrExpressionOrBuilder>
+              getOrExprFieldBuilder() {
+            if (orExprBuilder_ == null) {
+              if (!(exprCase_ == 5)) {
+                expr_ =
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .OrExpression.getDefaultInstance();
+              }
+              orExprBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpression,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpression.Builder,
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse
+                          .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                          .OrExpressionOrBuilder>(
+                      (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                              .OrExpression)
+                          expr_,
+                      getParentForChildren(),
+                      isClean());
+              expr_ = null;
+            }
+            exprCase_ = 5;
+            onChanged();
+            return orExprBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Expression> PARSER =
+            new com.google.protobuf.AbstractParser<Expression>() {
+              @java.lang.Override
+              public Expression parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Expression> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Expression> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int EXPRESSION_FIELD_NUMBER = 1;
+      private com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+          expression_;
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       *
+       * @return Whether the expression field is set.
+       */
+      @java.lang.Override
+      public boolean hasExpression() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       *
+       * @return The expression.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+          getExpression() {
+        return expression_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                .getDefaultInstance()
+            : expression_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The expression denoting the filter that was extracted from the input
+       * query in a structured form. It can be a simple expression denoting a
+       * single string, numerical or geolocation constraint or a compound
+       * expression which is a combination of multiple expressions connected
+       * using logical (OR and AND) operators.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.ExpressionOrBuilder
+          getExpressionOrBuilder() {
+        return expression_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                .getDefaultInstance()
+            : expression_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getExpression());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getExpression());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .StructuredExtractedFilter
+            other =
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+                    obj;
+
+        if (hasExpression() != other.hasExpression()) return false;
+        if (hasExpression()) {
+          if (!getExpression().equals(other.getExpression())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasExpression()) {
+          hash = (37 * hash) + EXPRESSION_FIELD_NUMBER;
+          hash = (53 * hash) + getExpression().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getExpressionFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          expression_ = null;
+          if (expressionBuilder_ != null) {
+            expressionBuilder_.dispose();
+            expressionBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.expression_ =
+                expressionBuilder_ == null ? expression_ : expressionBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .getDefaultInstance()) return this;
+          if (other.hasExpression()) {
+            mergeExpression(other.getExpression());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getExpressionFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            expression_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .ExpressionOrBuilder>
+            expressionBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         *
+         * @return Whether the expression field is set.
+         */
+        public boolean hasExpression() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         *
+         * @return The expression.
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+            getExpression() {
+          if (expressionBuilder_ == null) {
+            return expression_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .getDefaultInstance()
+                : expression_;
+          } else {
+            return expressionBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public Builder setExpression(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                value) {
+          if (expressionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            expression_ = value;
+          } else {
+            expressionBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public Builder setExpression(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .Builder
+                builderForValue) {
+          if (expressionBuilder_ == null) {
+            expression_ = builderForValue.build();
+          } else {
+            expressionBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public Builder mergeExpression(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                value) {
+          if (expressionBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && expression_ != null
+                && expression_
+                    != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .getDefaultInstance()) {
+              getExpressionBuilder().mergeFrom(value);
+            } else {
+              expression_ = value;
+            }
+          } else {
+            expressionBuilder_.mergeFrom(value);
+          }
+          if (expression_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public Builder clearExpression() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          expression_ = null;
+          if (expressionBuilder_ != null) {
+            expressionBuilder_.dispose();
+            expressionBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression.Builder
+            getExpressionBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getExpressionFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.ExpressionOrBuilder
+            getExpressionOrBuilder() {
+          if (expressionBuilder_ != null) {
+            return expressionBuilder_.getMessageOrBuilder();
+          } else {
+            return expression_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .getDefaultInstance()
+                : expression_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The expression denoting the filter that was extracted from the input
+         * query in a structured form. It can be a simple expression denoting a
+         * single string, numerical or geolocation constraint or a compound
+         * expression which is a combination of multiple expressions connected
+         * using logical (OR and AND) operators.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression expression = 1;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                    .ExpressionOrBuilder>
+            getExpressionFieldBuilder() {
+          if (expressionBuilder_ == null) {
+            expressionBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Expression
+                        .Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse
+                        .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                        .ExpressionOrBuilder>(getExpression(), getParentForChildren(), isClean());
+            expression_ = null;
+          }
+          return expressionBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<StructuredExtractedFilter> PARSER =
+          new com.google.protobuf.AbstractParser<StructuredExtractedFilter>() {
+            @java.lang.Override
+            public StructuredExtractedFilter parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<StructuredExtractedFilter> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<StructuredExtractedFilter> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int EXTRACTED_FILTERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object extractedFilters_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query.
+     * </pre>
+     *
+     * <code>string extracted_filters = 1;</code>
+     *
+     * @return The extractedFilters.
+     */
+    @java.lang.Override
+    public java.lang.String getExtractedFilters() {
+      java.lang.Object ref = extractedFilters_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extractedFilters_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query.
+     * </pre>
+     *
+     * <code>string extracted_filters = 1;</code>
+     *
+     * @return The bytes for extractedFilters.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getExtractedFiltersBytes() {
+      java.lang.Object ref = extractedFilters_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        extractedFilters_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REWRITTEN_QUERY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rewrittenQuery_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Rewritten input query minus the extracted filters.
+     * </pre>
+     *
+     * <code>string rewritten_query = 2;</code>
+     *
+     * @return The rewrittenQuery.
+     */
+    @java.lang.Override
+    public java.lang.String getRewrittenQuery() {
+      java.lang.Object ref = rewrittenQuery_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rewrittenQuery_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rewritten input query minus the extracted filters.
+     * </pre>
+     *
+     * <code>string rewritten_query = 2;</code>
+     *
+     * @return The bytes for rewrittenQuery.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRewrittenQueryBytes() {
+      java.lang.Object ref = rewrittenQuery_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rewrittenQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STRUCTURED_EXTRACTED_FILTER_FIELD_NUMBER = 3;
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+        structuredExtractedFilter_;
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     *
+     * @return Whether the structuredExtractedFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructuredExtractedFilter() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     *
+     * @return The structuredExtractedFilter.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+        getStructuredExtractedFilter() {
+      return structuredExtractedFilter_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.getDefaultInstance()
+          : structuredExtractedFilter_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The filters that were extracted from the input query represented in a
+     * structured form.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder
+        getStructuredExtractedFilterOrBuilder() {
+      return structuredExtractedFilter_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.getDefaultInstance()
+          : structuredExtractedFilter_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extractedFilters_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, extractedFilters_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewrittenQuery_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rewrittenQuery_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getStructuredExtractedFilter());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extractedFilters_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, extractedFilters_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewrittenQuery_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rewrittenQuery_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getStructuredExtractedFilter());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+          other =
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo)
+                  obj;
+
+      if (!getExtractedFilters().equals(other.getExtractedFilters())) return false;
+      if (!getRewrittenQuery().equals(other.getRewrittenQuery())) return false;
+      if (hasStructuredExtractedFilter() != other.hasStructuredExtractedFilter()) return false;
+      if (hasStructuredExtractedFilter()) {
+        if (!getStructuredExtractedFilter().equals(other.getStructuredExtractedFilter()))
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXTRACTED_FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtractedFilters().hashCode();
+      hash = (37 * hash) + REWRITTEN_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getRewrittenQuery().hashCode();
+      if (hasStructuredExtractedFilter()) {
+        hash = (37 * hash) + STRUCTURED_EXTRACTED_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getStructuredExtractedFilter().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information describing what natural language understanding was
+     * done on the input query.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo)
+        com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStructuredExtractedFilterFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        extractedFilters_ = "";
+        rewrittenQuery_ = "";
+        structuredExtractedFilter_ = null;
+        if (structuredExtractedFilterBuilder_ != null) {
+          structuredExtractedFilterBuilder_.dispose();
+          structuredExtractedFilterBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo
+          build() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            result =
+                new com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.extractedFilters_ = extractedFilters_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rewrittenQuery_ = rewrittenQuery_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.structuredExtractedFilter_ =
+              structuredExtractedFilterBuilder_ == null
+                  ? structuredExtractedFilter_
+                  : structuredExtractedFilterBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo
+              other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()) return this;
+        if (!other.getExtractedFilters().isEmpty()) {
+          extractedFilters_ = other.extractedFilters_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getRewrittenQuery().isEmpty()) {
+          rewrittenQuery_ = other.rewrittenQuery_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasStructuredExtractedFilter()) {
+          mergeStructuredExtractedFilter(other.getStructuredExtractedFilter());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  extractedFilters_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  rewrittenQuery_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStructuredExtractedFilterFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object extractedFilters_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query.
+       * </pre>
+       *
+       * <code>string extracted_filters = 1;</code>
+       *
+       * @return The extractedFilters.
+       */
+      public java.lang.String getExtractedFilters() {
+        java.lang.Object ref = extractedFilters_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          extractedFilters_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query.
+       * </pre>
+       *
+       * <code>string extracted_filters = 1;</code>
+       *
+       * @return The bytes for extractedFilters.
+       */
+      public com.google.protobuf.ByteString getExtractedFiltersBytes() {
+        java.lang.Object ref = extractedFilters_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          extractedFilters_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query.
+       * </pre>
+       *
+       * <code>string extracted_filters = 1;</code>
+       *
+       * @param value The extractedFilters to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtractedFilters(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extractedFilters_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query.
+       * </pre>
+       *
+       * <code>string extracted_filters = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExtractedFilters() {
+        extractedFilters_ = getDefaultInstance().getExtractedFilters();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query.
+       * </pre>
+       *
+       * <code>string extracted_filters = 1;</code>
+       *
+       * @param value The bytes for extractedFilters to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtractedFiltersBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        extractedFilters_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rewrittenQuery_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Rewritten input query minus the extracted filters.
+       * </pre>
+       *
+       * <code>string rewritten_query = 2;</code>
+       *
+       * @return The rewrittenQuery.
+       */
+      public java.lang.String getRewrittenQuery() {
+        java.lang.Object ref = rewrittenQuery_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rewrittenQuery_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rewritten input query minus the extracted filters.
+       * </pre>
+       *
+       * <code>string rewritten_query = 2;</code>
+       *
+       * @return The bytes for rewrittenQuery.
+       */
+      public com.google.protobuf.ByteString getRewrittenQueryBytes() {
+        java.lang.Object ref = rewrittenQuery_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          rewrittenQuery_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rewritten input query minus the extracted filters.
+       * </pre>
+       *
+       * <code>string rewritten_query = 2;</code>
+       *
+       * @param value The rewrittenQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewrittenQuery(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rewrittenQuery_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rewritten input query minus the extracted filters.
+       * </pre>
+       *
+       * <code>string rewritten_query = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRewrittenQuery() {
+        rewrittenQuery_ = getDefaultInstance().getRewrittenQuery();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Rewritten input query minus the extracted filters.
+       * </pre>
+       *
+       * <code>string rewritten_query = 2;</code>
+       *
+       * @param value The bytes for rewrittenQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewrittenQueryBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        rewrittenQuery_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          structuredExtractedFilter_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder>
+          structuredExtractedFilterBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       *
+       * @return Whether the structuredExtractedFilter field is set.
+       */
+      public boolean hasStructuredExtractedFilter() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       *
+       * @return The structuredExtractedFilter.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+          getStructuredExtractedFilter() {
+        if (structuredExtractedFilterBuilder_ == null) {
+          return structuredExtractedFilter_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .getDefaultInstance()
+              : structuredExtractedFilter_;
+        } else {
+          return structuredExtractedFilterBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public Builder setStructuredExtractedFilter(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+              value) {
+        if (structuredExtractedFilterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          structuredExtractedFilter_ = value;
+        } else {
+          structuredExtractedFilterBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public Builder setStructuredExtractedFilter(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder
+              builderForValue) {
+        if (structuredExtractedFilterBuilder_ == null) {
+          structuredExtractedFilter_ = builderForValue.build();
+        } else {
+          structuredExtractedFilterBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public Builder mergeStructuredExtractedFilter(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+              value) {
+        if (structuredExtractedFilterBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && structuredExtractedFilter_ != null
+              && structuredExtractedFilter_
+                  != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                      .getDefaultInstance()) {
+            getStructuredExtractedFilterBuilder().mergeFrom(value);
+          } else {
+            structuredExtractedFilter_ = value;
+          }
+        } else {
+          structuredExtractedFilterBuilder_.mergeFrom(value);
+        }
+        if (structuredExtractedFilter_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public Builder clearStructuredExtractedFilter() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        structuredExtractedFilter_ = null;
+        if (structuredExtractedFilterBuilder_ != null) {
+          structuredExtractedFilterBuilder_.dispose();
+          structuredExtractedFilterBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder
+          getStructuredExtractedFilterBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStructuredExtractedFilterFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder
+          getStructuredExtractedFilterOrBuilder() {
+        if (structuredExtractedFilterBuilder_ != null) {
+          return structuredExtractedFilterBuilder_.getMessageOrBuilder();
+        } else {
+          return structuredExtractedFilter_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
+                  .getDefaultInstance()
+              : structuredExtractedFilter_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The filters that were extracted from the input query represented in a
+       * structured form.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter structured_extracted_filter = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                  .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder>
+          getStructuredExtractedFilterFieldBuilder() {
+        if (structuredExtractedFilterBuilder_ == null) {
+          structuredExtractedFilterBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse
+                      .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilterOrBuilder>(
+                  getStructuredExtractedFilter(), getParentForChildren(), isClean());
+          structuredExtractedFilter_ = null;
+        }
+        return structuredExtractedFilterBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.SearchResponse
+              .NaturalLanguageQueryUnderstandingInfo();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NaturalLanguageQueryUnderstandingInfo> PARSER =
+        new com.google.protobuf.AbstractParser<NaturalLanguageQueryUnderstandingInfo>() {
+          @java.lang.Override
+          public NaturalLanguageQueryUnderstandingInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NaturalLanguageQueryUnderstandingInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NaturalLanguageQueryUnderstandingInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SessionInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The queryId.
+     */
+    java.lang.String getQueryId();
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    com.google.protobuf.ByteString getQueryIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the session.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo}
+   */
+  public static final class SessionInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)
+      SessionInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SessionInfo.newBuilder() to construct.
+    private SessionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SessionInfo() {
+      name_ = "";
+      queryId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SessionInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SessionInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SessionInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.class,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the session.
+     * If the auto-session mode is used (when
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * ends with "-"), this field holds the newly generated session name.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The queryId.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryId() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query ID that corresponds to this search API call.
+     * One session can have multiple turns, each with a unique query ID.
+     *
+     * By specifying the session name and this query ID in the Answer API call,
+     * the answer generation happens in the context of the search results from
+     * this search call.
+     * </pre>
+     *
+     * <code>string query_id = 2;</code>
+     *
+     * @return The bytes for queryId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getQueryIdBytes() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, queryId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, queryId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo other =
+          (com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getQueryId().equals(other.getQueryId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the session.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SessionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SessionInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        queryId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SessionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo build() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo result =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.queryId_ = queryId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getQueryId().isEmpty()) {
+          queryId_ = other.queryId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  queryId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the session.
+       * If the auto-session mode is used (when
+       * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+       * ends with "-"), this field holds the newly generated session name.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object queryId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return The queryId.
+       */
+      public java.lang.String getQueryId() {
+        java.lang.Object ref = queryId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return The bytes for queryId.
+       */
+      public com.google.protobuf.ByteString getQueryIdBytes() {
+        java.lang.Object ref = queryId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          queryId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @param value The queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryId() {
+        queryId_ = getDefaultInstance().getQueryId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query ID that corresponds to this search API call.
+       * One session can have multiple turns, each with a unique query ID.
+       *
+       * By specifying the session name and this query ID in the Answer API call,
+       * the answer generation happens in the context of the search results from
+       * this search call.
+       * </pre>
+       *
+       * <code>string query_id = 2;</code>
+       *
+       * @param value The bytes for queryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        queryId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SessionInfo> PARSER =
+        new com.google.protobuf.AbstractParser<SessionInfo>() {
+          @java.lang.Override
+          public SessionInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SessionInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SessionInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int RESULTS_FIELD_NUMBER = 1;
 
@@ -19774,6 +32191,133 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         : queryExpansionInfo_;
   }
 
+  public static final int NATURAL_LANGUAGE_QUERY_UNDERSTANDING_INFO_FIELD_NUMBER = 15;
+  private com.google.cloud.discoveryengine.v1beta.SearchResponse
+          .NaturalLanguageQueryUnderstandingInfo
+      naturalLanguageQueryUnderstandingInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasNaturalLanguageQueryUnderstandingInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse
+          .NaturalLanguageQueryUnderstandingInfo
+      getNaturalLanguageQueryUnderstandingInfo() {
+    return naturalLanguageQueryUnderstandingInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()
+        : naturalLanguageQueryUnderstandingInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse
+          .NaturalLanguageQueryUnderstandingInfoOrBuilder
+      getNaturalLanguageQueryUnderstandingInfoOrBuilder() {
+    return naturalLanguageQueryUnderstandingInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()
+        : naturalLanguageQueryUnderstandingInfo_;
+  }
+
+  public static final int SESSION_INFO_FIELD_NUMBER = 19;
+  private com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo sessionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return Whether the sessionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionInfo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return The sessionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo getSessionInfo() {
+    return sessionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.getDefaultInstance()
+        : sessionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder
+      getSessionInfoOrBuilder() {
+    return sessionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.getDefaultInstance()
+        : sessionInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -19821,8 +32365,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(14, getQueryExpansionInfo());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(15, getNaturalLanguageQueryUnderstandingInfo());
+    }
     for (int i = 0; i < geoSearchDebugInfo_.size(); i++) {
       output.writeMessage(16, geoSearchDebugInfo_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(19, getSessionInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -19871,9 +32421,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getQueryExpansionInfo());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getNaturalLanguageQueryUnderstandingInfo());
+    }
     for (int i = 0; i < geoSearchDebugInfo_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(16, geoSearchDebugInfo_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getSessionInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -19911,6 +32469,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasQueryExpansionInfo() != other.hasQueryExpansionInfo()) return false;
     if (hasQueryExpansionInfo()) {
       if (!getQueryExpansionInfo().equals(other.getQueryExpansionInfo())) return false;
+    }
+    if (hasNaturalLanguageQueryUnderstandingInfo()
+        != other.hasNaturalLanguageQueryUnderstandingInfo()) return false;
+    if (hasNaturalLanguageQueryUnderstandingInfo()) {
+      if (!getNaturalLanguageQueryUnderstandingInfo()
+          .equals(other.getNaturalLanguageQueryUnderstandingInfo())) return false;
+    }
+    if (hasSessionInfo() != other.hasSessionInfo()) return false;
+    if (hasSessionInfo()) {
+      if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -19960,6 +32528,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasQueryExpansionInfo()) {
       hash = (37 * hash) + QUERY_EXPANSION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getQueryExpansionInfo().hashCode();
+    }
+    if (hasNaturalLanguageQueryUnderstandingInfo()) {
+      hash = (37 * hash) + NATURAL_LANGUAGE_QUERY_UNDERSTANDING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getNaturalLanguageQueryUnderstandingInfo().hashCode();
+    }
+    if (hasSessionInfo()) {
+      hash = (37 * hash) + SESSION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -20110,6 +32686,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getSummaryFieldBuilder();
         getGeoSearchDebugInfoFieldBuilder();
         getQueryExpansionInfoFieldBuilder();
+        getNaturalLanguageQueryUnderstandingInfoFieldBuilder();
+        getSessionInfoFieldBuilder();
       }
     }
 
@@ -20158,6 +32736,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
         queryExpansionInfoBuilder_ = null;
+      }
+      naturalLanguageQueryUnderstandingInfo_ = null;
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ != null) {
+        naturalLanguageQueryUnderstandingInfoBuilder_.dispose();
+        naturalLanguageQueryUnderstandingInfoBuilder_ = null;
+      }
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
+        sessionInfoBuilder_ = null;
       }
       return this;
     }
@@ -20264,6 +32852,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 ? queryExpansionInfo_
                 : queryExpansionInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.naturalLanguageQueryUnderstandingInfo_ =
+            naturalLanguageQueryUnderstandingInfoBuilder_ == null
+                ? naturalLanguageQueryUnderstandingInfo_
+                : naturalLanguageQueryUnderstandingInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.sessionInfo_ =
+            sessionInfoBuilder_ == null ? sessionInfo_ : sessionInfoBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -20437,6 +33037,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (other.hasQueryExpansionInfo()) {
         mergeQueryExpansionInfo(other.getQueryExpansionInfo());
       }
+      if (other.hasNaturalLanguageQueryUnderstandingInfo()) {
+        mergeNaturalLanguageQueryUnderstandingInfo(
+            other.getNaturalLanguageQueryUnderstandingInfo());
+      }
+      if (other.hasSessionInfo()) {
+        mergeSessionInfo(other.getSessionInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -20549,6 +33156,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 122
             case 130:
               {
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo m =
@@ -20564,6 +33179,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 130
+            case 154:
+              {
+                input.readMessage(getSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -23030,6 +35651,477 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         queryExpansionInfo_ = null;
       }
       return queryExpansionInfoBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        naturalLanguageQueryUnderstandingInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfoOrBuilder>
+        naturalLanguageQueryUnderstandingInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     *
+     * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
+     */
+    public boolean hasNaturalLanguageQueryUnderstandingInfo() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     *
+     * @return The naturalLanguageQueryUnderstandingInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo
+        getNaturalLanguageQueryUnderstandingInfo() {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
+        return naturalLanguageQueryUnderstandingInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()
+            : naturalLanguageQueryUnderstandingInfo_;
+      } else {
+        return naturalLanguageQueryUnderstandingInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public Builder setNaturalLanguageQueryUnderstandingInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            value) {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        naturalLanguageQueryUnderstandingInfo_ = value;
+      } else {
+        naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public Builder setNaturalLanguageQueryUnderstandingInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+                .Builder
+            builderForValue) {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
+        naturalLanguageQueryUnderstandingInfo_ = builderForValue.build();
+      } else {
+        naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public Builder mergeNaturalLanguageQueryUnderstandingInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+            value) {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && naturalLanguageQueryUnderstandingInfo_ != null
+            && naturalLanguageQueryUnderstandingInfo_
+                != com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()) {
+          getNaturalLanguageQueryUnderstandingInfoBuilder().mergeFrom(value);
+        } else {
+          naturalLanguageQueryUnderstandingInfo_ = value;
+        }
+      } else {
+        naturalLanguageQueryUnderstandingInfoBuilder_.mergeFrom(value);
+      }
+      if (naturalLanguageQueryUnderstandingInfo_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public Builder clearNaturalLanguageQueryUnderstandingInfo() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      naturalLanguageQueryUnderstandingInfo_ = null;
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ != null) {
+        naturalLanguageQueryUnderstandingInfoBuilder_.dispose();
+        naturalLanguageQueryUnderstandingInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfo.Builder
+        getNaturalLanguageQueryUnderstandingInfoBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse
+            .NaturalLanguageQueryUnderstandingInfoOrBuilder
+        getNaturalLanguageQueryUnderstandingInfoOrBuilder() {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ != null) {
+        return naturalLanguageQueryUnderstandingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return naturalLanguageQueryUnderstandingInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.getDefaultInstance()
+            : naturalLanguageQueryUnderstandingInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Natural language query understanding information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse
+                .NaturalLanguageQueryUnderstandingInfoOrBuilder>
+        getNaturalLanguageQueryUnderstandingInfoFieldBuilder() {
+      if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
+        naturalLanguageQueryUnderstandingInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse
+                    .NaturalLanguageQueryUnderstandingInfoOrBuilder>(
+                getNaturalLanguageQueryUnderstandingInfo(), getParentForChildren(), isClean());
+        naturalLanguageQueryUnderstandingInfo_ = null;
+      }
+      return naturalLanguageQueryUnderstandingInfoBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo sessionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder>
+        sessionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     *
+     * @return Whether the sessionInfo field is set.
+     */
+    public boolean hasSessionInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     *
+     * @return The sessionInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo getSessionInfo() {
+      if (sessionInfoBuilder_ == null) {
+        return sessionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+                .getDefaultInstance()
+            : sessionInfo_;
+      } else {
+        return sessionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public Builder setSessionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo value) {
+      if (sessionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionInfo_ = value;
+      } else {
+        sessionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public Builder setSessionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder
+            builderForValue) {
+      if (sessionInfoBuilder_ == null) {
+        sessionInfo_ = builderForValue.build();
+      } else {
+        sessionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public Builder mergeSessionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo value) {
+      if (sessionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && sessionInfo_ != null
+            && sessionInfo_
+                != com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+                    .getDefaultInstance()) {
+          getSessionInfoBuilder().mergeFrom(value);
+        } else {
+          sessionInfo_ = value;
+        }
+      } else {
+        sessionInfoBuilder_.mergeFrom(value);
+      }
+      if (sessionInfo_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public Builder clearSessionInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      sessionInfo_ = null;
+      if (sessionInfoBuilder_ != null) {
+        sessionInfoBuilder_.dispose();
+        sessionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder
+        getSessionInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getSessionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder
+        getSessionInfoOrBuilder() {
+      if (sessionInfoBuilder_ != null) {
+        return sessionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
+                .getDefaultInstance()
+            : sessionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session information.
+     *
+     * Only set if
+     * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+     * is provided. See its description for more details.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder>
+        getSessionInfoFieldBuilder() {
+      if (sessionInfoBuilder_ == null) {
+        sessionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder>(
+                getSessionInfo(), getParentForChildren(), isClean());
+        sessionInfo_ = null;
+      }
+      return sessionInfoBuilder_;
     }
 
     @java.lang.Override

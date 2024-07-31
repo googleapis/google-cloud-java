@@ -373,6 +373,57 @@ public interface ActiveDirectoryOrBuilder
    *
    *
    * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the administrators.
+   */
+  java.util.List<java.lang.String> getAdministratorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of administrators.
+   */
+  int getAdministratorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The administrators at the given index.
+   */
+  java.lang.String getAdministrators(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Users to be added to the Built-in Admininstrators group.
+   * </pre>
+   *
+   * <code>repeated string administrators = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the administrators at the given index.
+   */
+  com.google.protobuf.ByteString getAdministratorsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Domain users to be given the SeSecurityPrivilege.
    * </pre>
    *

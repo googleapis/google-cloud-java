@@ -1407,7 +1407,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1443,7 +1443,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
+   * @param instances Optional. The instances that are the input to token counting call. Schema is
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1475,6 +1475,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
    *           .build();
    *   CountTokensResponse response = predictionServiceClient.countTokens(request);
    * }
@@ -1509,6 +1511,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
+   *           .addAllTools(new ArrayList<Tool>())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       predictionServiceClient.countTokensCallable().futureCall(request);

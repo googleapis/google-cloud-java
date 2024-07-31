@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -40,6 +41,7 @@ import com.google.analytics.admin.v1beta.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.CreateDataStreamRequest;
 import com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.CreateKeyEventRequest;
 import com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.CreatePropertyRequest;
 import com.google.analytics.admin.v1beta.CustomDimension;
@@ -52,6 +54,7 @@ import com.google.analytics.admin.v1beta.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1beta.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.DeletePropertyRequest;
 import com.google.analytics.admin.v1beta.FirebaseLink;
@@ -62,9 +65,11 @@ import com.google.analytics.admin.v1beta.GetCustomMetricRequest;
 import com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataStreamRequest;
+import com.google.analytics.admin.v1beta.GetKeyEventRequest;
 import com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.GetPropertyRequest;
 import com.google.analytics.admin.v1beta.GoogleAdsLink;
+import com.google.analytics.admin.v1beta.KeyEvent;
 import com.google.analytics.admin.v1beta.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1beta.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1beta.ListAccountsRequest;
@@ -81,6 +86,8 @@ import com.google.analytics.admin.v1beta.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1beta.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1beta.ListKeyEventsRequest;
+import com.google.analytics.admin.v1beta.ListKeyEventsResponse;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1beta.ListPropertiesRequest;
@@ -100,6 +107,7 @@ import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.UpdatePropertyRequest;
 import com.google.api.core.BetaApi;
@@ -278,32 +286,63 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: searchChangeHistoryEventsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: createConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: updateConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: getConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listConversionEventsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
       listConversionEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: listConversionEventsCallable()");
+  }
+
+  public UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: createKeyEventCallable()");
+  }
+
+  public UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKeyEventCallable()");
+  }
+
+  public UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getKeyEventCallable()");
+  }
+
+  public UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteKeyEventCallable()");
+  }
+
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listKeyEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listKeyEventsCallable()");
   }
 
   public UnaryCallable<CreateCustomDimensionRequest, CustomDimension>

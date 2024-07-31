@@ -229,6 +229,68 @@ public class UserEventServiceClientTest {
   }
 
   @Test
+  public void purgeUserEventsTest() throws Exception {
+    PurgeUserEventsResponse expectedResponse =
+        PurgeUserEventsResponse.newBuilder().setPurgeCount(575305851).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockUserEventService.addResponse(resultOperation);
+
+    PurgeUserEventsRequest request =
+        PurgeUserEventsRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeUserEventsResponse actualResponse = client.purgeUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserEventService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeUserEventsRequest actualRequest = ((PurgeUserEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeUserEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserEventService.addException(exception);
+
+    try {
+      PurgeUserEventsRequest request =
+          PurgeUserEventsRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void importUserEventsTest() throws Exception {
     ImportUserEventsResponse expectedResponse =
         ImportUserEventsResponse.newBuilder()

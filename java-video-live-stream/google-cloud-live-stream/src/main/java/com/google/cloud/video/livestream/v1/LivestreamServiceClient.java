@@ -390,6 +390,85 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListClips</td>
+ *      <td><p> Returns a list of all clips in the specified channel.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listClips(ListClipsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listClips(ChannelName parent)
+ *           <li><p> listClips(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listClipsPagedCallable()
+ *           <li><p> listClipsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetClip</td>
+ *      <td><p> Returns the specified clip.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getClip(GetClipRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getClip(ClipName name)
+ *           <li><p> getClip(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getClipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateClip</td>
+ *      <td><p> Creates a clip with the provided clip ID in the specified channel.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createClipAsync(CreateClipRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createClipAsync(ChannelName parent, Clip clip, String clipId)
+ *           <li><p> createClipAsync(String parent, Clip clip, String clipId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createClipOperationCallable()
+ *           <li><p> createClipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteClip</td>
+ *      <td><p> Deletes the specified clip job resource. This method only deletes the clip job and does not delete the VOD clip stored in the GCS.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteClipAsync(DeleteClipRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteClipAsync(ClipName name)
+ *           <li><p> deleteClipAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteClipOperationCallable()
+ *           <li><p> deleteClipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateAsset</td>
  *      <td><p> Creates a Asset with the provided unique ID in the specified region.</td>
  *      <td>
@@ -2961,6 +3040,597 @@ public class LivestreamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns a list of all clips in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   for (Clip element : livestreamServiceClient.listClips(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListClipsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListClipsPagedResponse listClips(ChannelName parent) {
+    ListClipsRequest request =
+        ListClipsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listClips(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all clips in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   for (Clip element : livestreamServiceClient.listClips(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListClipsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListClipsPagedResponse listClips(String parent) {
+    ListClipsRequest request = ListClipsRequest.newBuilder().setParent(parent).build();
+    return listClips(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all clips in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListClipsRequest request =
+   *       ListClipsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Clip element : livestreamServiceClient.listClips(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListClipsPagedResponse listClips(ListClipsRequest request) {
+    return listClipsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all clips in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListClipsRequest request =
+   *       ListClipsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Clip> future = livestreamServiceClient.listClipsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Clip element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable() {
+    return stub.listClipsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all clips in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ListClipsRequest request =
+   *       ListClipsRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListClipsResponse response = livestreamServiceClient.listClipsCallable().call(request);
+   *     for (Clip element : response.getClipsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable() {
+    return stub.listClipsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified clip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+   *   Clip response = livestreamServiceClient.getClip(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channel}/clips/{clip}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Clip getClip(ClipName name) {
+    GetClipRequest request =
+        GetClipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getClip(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified clip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString();
+   *   Clip response = livestreamServiceClient.getClip(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channel}/clips/{clip}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Clip getClip(String name) {
+    GetClipRequest request = GetClipRequest.newBuilder().setName(name).build();
+    return getClip(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified clip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetClipRequest request =
+   *       GetClipRequest.newBuilder()
+   *           .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+   *           .build();
+   *   Clip response = livestreamServiceClient.getClip(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Clip getClip(GetClipRequest request) {
+    return getClipCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified clip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   GetClipRequest request =
+   *       GetClipRequest.newBuilder()
+   *           .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+   *           .build();
+   *   ApiFuture<Clip> future = livestreamServiceClient.getClipCallable().futureCall(request);
+   *   // Do something.
+   *   Clip response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetClipRequest, Clip> getClipCallable() {
+    return stub.getClipCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a clip with the provided clip ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+   *   Clip clip = Clip.newBuilder().build();
+   *   String clipId = "clipId-1357703029";
+   *   Clip response = livestreamServiceClient.createClipAsync(parent, clip, clipId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channel}`.
+   * @param clip Required. The resource being created
+   * @param clipId Required. Id of the requesting object in the following form:
+   *     <p>1. 1 character minimum, 63 characters maximum 2. Only contains letters, digits,
+   *     underscores, and hyphens
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Clip, OperationMetadata> createClipAsync(
+      ChannelName parent, Clip clip, String clipId) {
+    CreateClipRequest request =
+        CreateClipRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setClip(clip)
+            .setClipId(clipId)
+            .build();
+    return createClipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a clip with the provided clip ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
+   *   Clip clip = Clip.newBuilder().build();
+   *   String clipId = "clipId-1357703029";
+   *   Clip response = livestreamServiceClient.createClipAsync(parent, clip, clipId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in the following form:
+   *     `projects/{project}/locations/{location}/channels/{channel}`.
+   * @param clip Required. The resource being created
+   * @param clipId Required. Id of the requesting object in the following form:
+   *     <p>1. 1 character minimum, 63 characters maximum 2. Only contains letters, digits,
+   *     underscores, and hyphens
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Clip, OperationMetadata> createClipAsync(
+      String parent, Clip clip, String clipId) {
+    CreateClipRequest request =
+        CreateClipRequest.newBuilder().setParent(parent).setClip(clip).setClipId(clipId).build();
+    return createClipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a clip with the provided clip ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateClipRequest request =
+   *       CreateClipRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setClipId("clipId-1357703029")
+   *           .setClip(Clip.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Clip response = livestreamServiceClient.createClipAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Clip, OperationMetadata> createClipAsync(CreateClipRequest request) {
+    return createClipOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a clip with the provided clip ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateClipRequest request =
+   *       CreateClipRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setClipId("clipId-1357703029")
+   *           .setClip(Clip.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Clip, OperationMetadata> future =
+   *       livestreamServiceClient.createClipOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Clip response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable() {
+    return stub.createClipOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a clip with the provided clip ID in the specified channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   CreateClipRequest request =
+   *       CreateClipRequest.newBuilder()
+   *           .setParent(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setClipId("clipId-1357703029")
+   *           .setClip(Clip.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.createClipCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateClipRequest, Operation> createClipCallable() {
+    return stub.createClipCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified clip job resource. This method only deletes the clip job and does not
+   * delete the VOD clip stored in the GCS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   ClipName name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]");
+   *   livestreamServiceClient.deleteClipAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the clip resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteClipAsync(ClipName name) {
+    DeleteClipRequest request =
+        DeleteClipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteClipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified clip job resource. This method only deletes the clip job and does not
+   * delete the VOD clip stored in the GCS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   String name = ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString();
+   *   livestreamServiceClient.deleteClipAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the clip resource, in the form of:
+   *     `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteClipAsync(String name) {
+    DeleteClipRequest request = DeleteClipRequest.newBuilder().setName(name).build();
+    return deleteClipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified clip job resource. This method only deletes the clip job and does not
+   * delete the VOD clip stored in the GCS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteClipRequest request =
+   *       DeleteClipRequest.newBuilder()
+   *           .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   livestreamServiceClient.deleteClipAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteClipAsync(
+      DeleteClipRequest request) {
+    return deleteClipOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified clip job resource. This method only deletes the clip job and does not
+   * delete the VOD clip stored in the GCS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteClipRequest request =
+   *       DeleteClipRequest.newBuilder()
+   *           .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       livestreamServiceClient.deleteClipOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable() {
+    return stub.deleteClipOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified clip job resource. This method only deletes the clip job and does not
+   * delete the VOD clip stored in the GCS.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
+   *   DeleteClipRequest request =
+   *       DeleteClipRequest.newBuilder()
+   *           .setName(ClipName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[CLIP]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       livestreamServiceClient.deleteClipCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable() {
+    return stub.deleteClipCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a Asset with the provided unique ID in the specified region.
    *
    * <p>Sample code:
@@ -4193,6 +4863,71 @@ public class LivestreamServiceClient implements BackgroundResource {
     protected ListEventsFixedSizeCollection createCollection(
         List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListClipsPagedResponse
+      extends AbstractPagedListResponse<
+          ListClipsRequest, ListClipsResponse, Clip, ListClipsPage, ListClipsFixedSizeCollection> {
+
+    public static ApiFuture<ListClipsPagedResponse> createAsync(
+        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        ApiFuture<ListClipsResponse> futureResponse) {
+      ApiFuture<ListClipsPage> futurePage =
+          ListClipsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListClipsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListClipsPagedResponse(ListClipsPage page) {
+      super(page, ListClipsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListClipsPage
+      extends AbstractPage<ListClipsRequest, ListClipsResponse, Clip, ListClipsPage> {
+
+    private ListClipsPage(
+        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        ListClipsResponse response) {
+      super(context, response);
+    }
+
+    private static ListClipsPage createEmptyPage() {
+      return new ListClipsPage(null, null);
+    }
+
+    @Override
+    protected ListClipsPage createPage(
+        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        ListClipsResponse response) {
+      return new ListClipsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListClipsPage> createPageAsync(
+        PageContext<ListClipsRequest, ListClipsResponse, Clip> context,
+        ApiFuture<ListClipsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListClipsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListClipsRequest, ListClipsResponse, Clip, ListClipsPage, ListClipsFixedSizeCollection> {
+
+    private ListClipsFixedSizeCollection(List<ListClipsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListClipsFixedSizeCollection createEmptyCollection() {
+      return new ListClipsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListClipsFixedSizeCollection createCollection(
+        List<ListClipsPage> pages, int collectionSize) {
+      return new ListClipsFixedSizeCollection(pages, collectionSize);
     }
   }
 

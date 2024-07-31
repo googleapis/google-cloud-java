@@ -203,12 +203,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Comma separated list of fields to order by, followed by `asc` or `desc`
+   * Comma-separated list of fields to order by, followed by `asc` or `desc`
    * postfix. This list is case insensitive. The default sorting order is
    * ascending. Redundant space characters are insignificant. Only one order
    * field at a time is allowed.
    *
    * Examples:
+   *
    * * `project_id asc`
    * * `table_id`
    * * `sensitivity_level desc`
@@ -244,12 +245,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Comma separated list of fields to order by, followed by `asc` or `desc`
+   * Comma-separated list of fields to order by, followed by `asc` or `desc`
    * postfix. This list is case insensitive. The default sorting order is
    * ascending. Redundant space characters are insignificant. Only one order
    * field at a time is allowed.
    *
    * Examples:
+   *
    * * `project_id asc`
    * * `table_id`
    * * `sensitivity_level desc`
@@ -1121,12 +1123,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Comma separated list of fields to order by, followed by `asc` or `desc`
+     * Comma-separated list of fields to order by, followed by `asc` or `desc`
      * postfix. This list is case insensitive. The default sorting order is
      * ascending. Redundant space characters are insignificant. Only one order
      * field at a time is allowed.
      *
      * Examples:
+     *
      * * `project_id asc`
      * * `table_id`
      * * `sensitivity_level desc`
@@ -1161,12 +1164,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Comma separated list of fields to order by, followed by `asc` or `desc`
+     * Comma-separated list of fields to order by, followed by `asc` or `desc`
      * postfix. This list is case insensitive. The default sorting order is
      * ascending. Redundant space characters are insignificant. Only one order
      * field at a time is allowed.
      *
      * Examples:
+     *
      * * `project_id asc`
      * * `table_id`
      * * `sensitivity_level desc`
@@ -1201,12 +1205,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Comma separated list of fields to order by, followed by `asc` or `desc`
+     * Comma-separated list of fields to order by, followed by `asc` or `desc`
      * postfix. This list is case insensitive. The default sorting order is
      * ascending. Redundant space characters are insignificant. Only one order
      * field at a time is allowed.
      *
      * Examples:
+     *
      * * `project_id asc`
      * * `table_id`
      * * `sensitivity_level desc`
@@ -1240,12 +1245,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Comma separated list of fields to order by, followed by `asc` or `desc`
+     * Comma-separated list of fields to order by, followed by `asc` or `desc`
      * postfix. This list is case insensitive. The default sorting order is
      * ascending. Redundant space characters are insignificant. Only one order
      * field at a time is allowed.
      *
      * Examples:
+     *
      * * `project_id asc`
      * * `table_id`
      * * `sensitivity_level desc`
@@ -1275,12 +1281,13 @@ public final class ListColumnDataProfilesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Comma separated list of fields to order by, followed by `asc` or `desc`
+     * Comma-separated list of fields to order by, followed by `asc` or `desc`
      * postfix. This list is case insensitive. The default sorting order is
      * ascending. Redundant space characters are insignificant. Only one order
      * field at a time is allowed.
      *
      * Examples:
+     *
      * * `project_id asc`
      * * `table_id`
      * * `sensitivity_level desc`

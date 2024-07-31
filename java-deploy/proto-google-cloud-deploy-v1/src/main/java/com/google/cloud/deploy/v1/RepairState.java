@@ -93,12 +93,12 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The `repair` action was skipped.
+   * The `repair` action was aborted.
    * </pre>
    *
-   * <code>REPAIR_STATE_SKIPPED = 6;</code>
+   * <code>REPAIR_STATE_ABORTED = 7;</code>
    */
-  REPAIR_STATE_SKIPPED(6),
+  REPAIR_STATE_ABORTED(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -166,12 +166,12 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The `repair` action was skipped.
+   * The `repair` action was aborted.
    * </pre>
    *
-   * <code>REPAIR_STATE_SKIPPED = 6;</code>
+   * <code>REPAIR_STATE_ABORTED = 7;</code>
    */
-  public static final int REPAIR_STATE_SKIPPED_VALUE = 6;
+  public static final int REPAIR_STATE_ABORTED_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -209,8 +209,8 @@ public enum RepairState implements com.google.protobuf.ProtocolMessageEnum {
         return REPAIR_STATE_IN_PROGRESS;
       case 5:
         return REPAIR_STATE_PENDING;
-      case 6:
-        return REPAIR_STATE_SKIPPED;
+      case 7:
+        return REPAIR_STATE_ABORTED;
       default:
         return null;
     }

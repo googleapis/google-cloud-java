@@ -87,6 +87,18 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
     return ((UserEventServiceStubSettings) getStubSettings()).collectUserEventSettings();
   }
 
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).purgeUserEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings() {
+    return ((UserEventServiceStubSettings) getStubSettings()).purgeUserEventsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to importUserEvents. */
   public UnaryCallSettings<ImportUserEventsRequest, Operation> importUserEventsSettings() {
     return ((UserEventServiceStubSettings) getStubSettings()).importUserEventsSettings();
@@ -219,6 +231,18 @@ public class UserEventServiceSettings extends ClientSettings<UserEventServiceSet
     /** Returns the builder for the settings used for calls to collectUserEvent. */
     public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
       return getStubSettingsBuilder().collectUserEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+      return getStubSettingsBuilder().purgeUserEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeUserEvents. */
+    public OperationCallSettings.Builder<
+            PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+        purgeUserEventsOperationSettings() {
+      return getStubSettingsBuilder().purgeUserEventsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importUserEvents. */

@@ -39,8 +39,8 @@ public class AsyncDeleteInspectTemplate {
       DeleteInspectTemplateRequest request =
           DeleteInspectTemplateRequest.newBuilder()
               .setName(
-                  InspectTemplateName.ofOrganizationInspectTemplateName(
-                          "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                  InspectTemplateName.ofProjectLocationInspectTemplateName(
+                          "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                       .toString())
               .build();
       ApiFuture<Empty> future =

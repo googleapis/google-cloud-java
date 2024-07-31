@@ -6777,6 +6777,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$ServiceDirectoryConfig",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$ServiceDirectoryConfig$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.dialogflow.cx.v3beta1.Tool$TLSConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

@@ -1479,10 +1479,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   * + Projects scope, location specified:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Projects scope, no location specified (defaults to global):
+   *   `projects/{project_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -1517,10 +1517,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * processing
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
-   * + Projects scope, location specified:&lt;br/&gt;
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   * + Projects scope, location specified:
+   *   `projects/{project_id}/locations/{location_id}`
+   * + Projects scope, no location specified (defaults to global):
+   *   `projects/{project_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -2353,10 +2353,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * + Projects scope, location specified:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Projects scope, no location specified (defaults to global):
+     *   `projects/{project_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -2390,10 +2390,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * + Projects scope, location specified:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Projects scope, no location specified (defaults to global):
+     *   `projects/{project_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -2427,10 +2427,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * + Projects scope, location specified:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Projects scope, no location specified (defaults to global):
+     *   `projects/{project_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -2463,10 +2463,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * + Projects scope, location specified:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Projects scope, no location specified (defaults to global):
+     *   `projects/{project_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -2495,10 +2495,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      * processing
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
-     * + Projects scope, location specified:&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * + Projects scope, location specified:
+     *   `projects/{project_id}/locations/{location_id}`
+     * + Projects scope, no location specified (defaults to global):
+     *   `projects/{project_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location

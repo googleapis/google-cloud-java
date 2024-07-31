@@ -39,8 +39,8 @@ public class AsyncGetInspectTemplate {
       GetInspectTemplateRequest request =
           GetInspectTemplateRequest.newBuilder()
               .setName(
-                  InspectTemplateName.ofOrganizationInspectTemplateName(
-                          "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+                  InspectTemplateName.ofProjectLocationInspectTemplateName(
+                          "[PROJECT]", "[LOCATION]", "[INSPECT_TEMPLATE]")
                       .toString())
               .build();
       ApiFuture<InspectTemplate> future =

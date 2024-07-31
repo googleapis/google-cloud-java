@@ -2195,6 +2195,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2268,6 +2270,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2341,6 +2345,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2413,6 +2419,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 

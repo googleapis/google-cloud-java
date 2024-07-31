@@ -276,7 +276,14 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterCaCertificate_ = "";
   /**
-   * <code>string cluster_ca_certificate = 100;</code>
+   *
+   *
+   * <pre>
+   * Output only. Base64-encoded public certificate that is the root of
+   * trust for the cluster.
+   * </pre>
+   *
+   * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clusterCaCertificate.
    */
@@ -293,7 +300,14 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string cluster_ca_certificate = 100;</code>
+   *
+   *
+   * <pre>
+   * Output only. Base64-encoded public certificate that is the root of
+   * trust for the cluster.
+   * </pre>
+   *
+   * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clusterCaCertificate.
    */
@@ -318,11 +332,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Base64-encoded public certificate used by clients to
+   * Output only. Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_certificate = 101;</code>
+   * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clientCertificate.
    */
@@ -342,11 +356,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Base64-encoded public certificate used by clients to
+   * Output only. Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_certificate = 101;</code>
+   * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clientCertificate.
    */
@@ -371,11 +385,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Base64-encoded private key used by clients to authenticate
+   * Output only. Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_key = 102;</code>
+   * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The clientKey.
    */
@@ -395,11 +409,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Base64-encoded private key used by clients to authenticate
+   * Output only. Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
    * </pre>
    *
-   * <code>string client_key = 102;</code>
+   * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for clientKey.
    */
@@ -1430,7 +1444,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object clusterCaCertificate_ = "";
     /**
-     * <code>string cluster_ca_certificate = 100;</code>
+     *
+     *
+     * <pre>
+     * Output only. Base64-encoded public certificate that is the root of
+     * trust for the cluster.
+     * </pre>
+     *
+     * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The clusterCaCertificate.
      */
@@ -1446,7 +1468,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string cluster_ca_certificate = 100;</code>
+     *
+     *
+     * <pre>
+     * Output only. Base64-encoded public certificate that is the root of
+     * trust for the cluster.
+     * </pre>
+     *
+     * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for clusterCaCertificate.
      */
@@ -1462,7 +1492,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string cluster_ca_certificate = 100;</code>
+     *
+     *
+     * <pre>
+     * Output only. Base64-encoded public certificate that is the root of
+     * trust for the cluster.
+     * </pre>
+     *
+     * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The clusterCaCertificate to set.
      * @return This builder for chaining.
@@ -1477,7 +1515,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string cluster_ca_certificate = 100;</code>
+     *
+     *
+     * <pre>
+     * Output only. Base64-encoded public certificate that is the root of
+     * trust for the cluster.
+     * </pre>
+     *
+     * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1488,7 +1534,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string cluster_ca_certificate = 100;</code>
+     *
+     *
+     * <pre>
+     * Output only. Base64-encoded public certificate that is the root of
+     * trust for the cluster.
+     * </pre>
+     *
+     * <code>string cluster_ca_certificate = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for clusterCaCertificate to set.
      * @return This builder for chaining.
@@ -1509,11 +1563,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded public certificate used by clients to
+     * Output only. Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_certificate = 101;</code>
+     * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The clientCertificate.
      */
@@ -1532,11 +1586,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded public certificate used by clients to
+     * Output only. Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_certificate = 101;</code>
+     * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for clientCertificate.
      */
@@ -1555,11 +1609,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded public certificate used by clients to
+     * Output only. Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_certificate = 101;</code>
+     * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The clientCertificate to set.
      * @return This builder for chaining.
@@ -1577,11 +1631,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded public certificate used by clients to
+     * Output only. Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_certificate = 101;</code>
+     * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1595,11 +1649,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded public certificate used by clients to
+     * Output only. Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_certificate = 101;</code>
+     * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for clientCertificate to set.
      * @return This builder for chaining.
@@ -1620,11 +1674,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded private key used by clients to authenticate
+     * Output only. Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_key = 102;</code>
+     * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The clientKey.
      */
@@ -1643,11 +1697,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded private key used by clients to authenticate
+     * Output only. Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_key = 102;</code>
+     * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for clientKey.
      */
@@ -1666,11 +1720,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded private key used by clients to authenticate
+     * Output only. Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_key = 102;</code>
+     * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The clientKey to set.
      * @return This builder for chaining.
@@ -1688,11 +1742,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded private key used by clients to authenticate
+     * Output only. Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_key = 102;</code>
+     * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1706,11 +1760,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Base64-encoded private key used by clients to authenticate
+     * Output only. Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
      * </pre>
      *
-     * <code>string client_key = 102;</code>
+     * <code>string client_key = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for clientKey to set.
      * @return This builder for chaining.

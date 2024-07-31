@@ -122,6 +122,28 @@ public class MockMapsPlatformDatasetsImpl extends MapsPlatformDatasetsImplBase {
   }
 
   @Override
+  public void fetchDatasetErrors(
+      FetchDatasetErrorsRequest request,
+      StreamObserver<FetchDatasetErrorsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchDatasetErrorsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchDatasetErrorsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchDatasetErrors, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchDatasetErrorsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listDatasets(
       ListDatasetsRequest request, StreamObserver<ListDatasetsResponse> responseObserver) {
     Object response = responses.poll();

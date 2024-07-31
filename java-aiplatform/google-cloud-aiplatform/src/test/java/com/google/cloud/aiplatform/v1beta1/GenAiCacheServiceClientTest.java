@@ -108,6 +108,7 @@ public class GenAiCacheServiceClientTest {
     CachedContent expectedResponse =
         CachedContent.newBuilder()
             .setName(CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
+            .setDisplayName("displayName1714148973")
             .setModel("model104069929")
             .setSystemInstruction(Content.newBuilder().build())
             .addAllContents(new ArrayList<Content>())
@@ -156,6 +157,7 @@ public class GenAiCacheServiceClientTest {
     CachedContent expectedResponse =
         CachedContent.newBuilder()
             .setName(CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
+            .setDisplayName("displayName1714148973")
             .setModel("model104069929")
             .setSystemInstruction(Content.newBuilder().build())
             .addAllContents(new ArrayList<Content>())
@@ -204,6 +206,7 @@ public class GenAiCacheServiceClientTest {
     CachedContent expectedResponse =
         CachedContent.newBuilder()
             .setName(CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
+            .setDisplayName("displayName1714148973")
             .setModel("model104069929")
             .setSystemInstruction(Content.newBuilder().build())
             .addAllContents(new ArrayList<Content>())
@@ -249,6 +252,7 @@ public class GenAiCacheServiceClientTest {
     CachedContent expectedResponse =
         CachedContent.newBuilder()
             .setName(CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
+            .setDisplayName("displayName1714148973")
             .setModel("model104069929")
             .setSystemInstruction(Content.newBuilder().build())
             .addAllContents(new ArrayList<Content>())
@@ -294,6 +298,7 @@ public class GenAiCacheServiceClientTest {
     CachedContent expectedResponse =
         CachedContent.newBuilder()
             .setName(CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
+            .setDisplayName("displayName1714148973")
             .setModel("model104069929")
             .setSystemInstruction(Content.newBuilder().build())
             .addAllContents(new ArrayList<Content>())

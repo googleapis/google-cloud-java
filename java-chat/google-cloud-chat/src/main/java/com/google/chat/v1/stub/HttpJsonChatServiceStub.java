@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -48,6 +49,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceEventRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -57,6 +59,8 @@ import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSpaceEventsRequest;
+import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
@@ -64,6 +68,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
@@ -1035,6 +1040,77 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetSpaceEventRequest, SpaceEvent>
+      getSpaceEventMethodDescriptor =
+          ApiMethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceEvent")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSpaceEventRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=spaces/*/spaceEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceEvent>newBuilder()
+                      .setDefaultInstance(SpaceEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsMethodDescriptor =
+          ApiMethodDescriptor.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSpaceEvents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSpaceEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/spaceEvents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSpaceEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSpaceEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSpaceEventsResponse>newBuilder()
+                      .setDefaultInstance(ListSpaceEventsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -1073,6 +1149,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       updateSpaceReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
+  private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
+      listSpaceEventsCallable;
+  private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1388,6 +1469,29 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
+        HttpJsonCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
+            .setMethodDescriptor(getSpaceEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListSpaceEventsRequest, ListSpaceEventsResponse>
+        listSpaceEventsTransportSettings =
+            HttpJsonCallSettings.<ListSpaceEventsRequest, ListSpaceEventsResponse>newBuilder()
+                .setMethodDescriptor(listSpaceEventsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -1489,6 +1593,15 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             getThreadReadStateTransportSettings,
             settings.getThreadReadStateSettings(),
             clientContext);
+    this.getSpaceEventCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceEventTransportSettings, settings.getSpaceEventSettings(), clientContext);
+    this.listSpaceEventsCallable =
+        callableFactory.createUnaryCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.listSpaceEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1523,6 +1636,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getSpaceReadStateMethodDescriptor);
     methodDescriptors.add(updateSpaceReadStateMethodDescriptor);
     methodDescriptors.add(getThreadReadStateMethodDescriptor);
+    methodDescriptors.add(getSpaceEventMethodDescriptor);
+    methodDescriptors.add(listSpaceEventsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1678,6 +1793,22 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {
+    return getSpaceEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
+    return listSpaceEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
+      listSpaceEventsPagedCallable() {
+    return listSpaceEventsPagedCallable;
   }
 
   @Override

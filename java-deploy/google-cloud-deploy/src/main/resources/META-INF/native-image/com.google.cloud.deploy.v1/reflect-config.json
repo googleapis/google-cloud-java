@@ -1242,6 +1242,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.deploy.v1.CustomTargetTypeNotificationEvent",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.deploy.v1.CustomTargetTypeNotificationEvent$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.deploy.v1.DefaultPool",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1459,6 +1477,24 @@
   },
   {
     "name": "com.google.cloud.deploy.v1.DeployParameters$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.deploy.v1.DeployPolicyNotificationEvent",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.deploy.v1.DeployPolicyNotificationEvent$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2610,24 +2646,6 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.deploy.v1.RepairMode",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.deploy.v1.RepairMode$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
     "name": "com.google.cloud.deploy.v1.RepairPhase",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -2683,24 +2701,6 @@
   },
   {
     "name": "com.google.cloud.deploy.v1.RepairState",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.deploy.v1.Retry",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.deploy.v1.Retry$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2773,24 +2773,6 @@
   },
   {
     "name": "com.google.cloud.deploy.v1.RetryPhase$Builder",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.deploy.v1.Rollback",
-    "queryAllDeclaredConstructors": true,
-    "queryAllPublicConstructors": true,
-    "queryAllDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true,
-    "allPublicClasses": true
-  },
-  {
-    "name": "com.google.cloud.deploy.v1.Rollback$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

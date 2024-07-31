@@ -24,6 +24,7 @@ import static com.google.cloud.vision.v1p3beta1.ProductSearchClient.ListReferenc
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -546,6 +547,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "vision.googleapis.com:443";
   }

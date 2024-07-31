@@ -66,5 +66,47 @@ public interface TuningDataStatsOrBuilder
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStatsOrBuilder
       getSupervisedTuningDataStatsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the distillationDataStats field is set.
+   */
+  boolean hasDistillationDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The distillationDataStats.
+   */
+  com.google.cloud.aiplatform.v1beta1.DistillationDataStats getDistillationDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for distillation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DistillationDataStats distillation_data_stats = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DistillationDataStatsOrBuilder
+      getDistillationDataStatsOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.TuningDataStats.TuningDataStatsCase getTuningDataStatsCase();
 }

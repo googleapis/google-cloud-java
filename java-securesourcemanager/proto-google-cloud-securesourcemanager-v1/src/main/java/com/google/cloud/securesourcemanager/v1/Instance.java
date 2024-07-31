@@ -138,6 +138,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 4;</code>
      */
     PAUSED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Instance is unknown, we are not sure if it's functioning.
+     * </pre>
+     *
+     * <code>UNKNOWN = 6;</code>
+     */
+    UNKNOWN(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -191,6 +201,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 4;</code>
      */
     public static final int PAUSED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Instance is unknown, we are not sure if it's functioning.
+     * </pre>
+     *
+     * <code>UNKNOWN = 6;</code>
+     */
+    public static final int UNKNOWN_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -226,6 +246,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return PAUSED;
+        case 6:
+          return UNKNOWN;
         default:
           return null;
       }
@@ -1715,6 +1737,1266 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PrivateConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. Indicate if it's private instance.
+     * </pre>
+     *
+     * <code>
+     * bool is_private = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The isPrivate.
+     */
+    boolean getIsPrivate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. CA pool resource, resource must in the format of
+     * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+     * </pre>
+     *
+     * <code>
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The caPool.
+     */
+    java.lang.String getCaPool();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. CA pool resource, resource must in the format of
+     * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+     * </pre>
+     *
+     * <code>
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for caPool.
+     */
+    com.google.protobuf.ByteString getCaPoolBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for HTTP, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The httpServiceAttachment.
+     */
+    java.lang.String getHttpServiceAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for HTTP, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for httpServiceAttachment.
+     */
+    com.google.protobuf.ByteString getHttpServiceAttachmentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for SSH, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sshServiceAttachment.
+     */
+    java.lang.String getSshServiceAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for SSH, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sshServiceAttachment.
+     */
+    com.google.protobuf.ByteString getSshServiceAttachmentBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PrivateConfig includes settings for private instance.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.securesourcemanager.v1.Instance.PrivateConfig}
+   */
+  public static final class PrivateConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
+      PrivateConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PrivateConfig.newBuilder() to construct.
+    private PrivateConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PrivateConfig() {
+      caPool_ = "";
+      httpServiceAttachment_ = "";
+      sshServiceAttachment_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PrivateConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.class,
+              com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder.class);
+    }
+
+    public static final int IS_PRIVATE_FIELD_NUMBER = 1;
+    private boolean isPrivate_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. Indicate if it's private instance.
+     * </pre>
+     *
+     * <code>
+     * bool is_private = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The isPrivate.
+     */
+    @java.lang.Override
+    public boolean getIsPrivate() {
+      return isPrivate_;
+    }
+
+    public static final int CA_POOL_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object caPool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. CA pool resource, resource must in the format of
+     * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+     * </pre>
+     *
+     * <code>
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The caPool.
+     */
+    @java.lang.Override
+    public java.lang.String getCaPool() {
+      java.lang.Object ref = caPool_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        caPool_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. CA pool resource, resource must in the format of
+     * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+     * </pre>
+     *
+     * <code>
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for caPool.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCaPoolBytes() {
+      java.lang.Object ref = caPool_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        caPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HTTP_SERVICE_ATTACHMENT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object httpServiceAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for HTTP, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The httpServiceAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getHttpServiceAttachment() {
+      java.lang.Object ref = httpServiceAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        httpServiceAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for HTTP, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for httpServiceAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHttpServiceAttachmentBytes() {
+      java.lang.Object ref = httpServiceAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        httpServiceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SSH_SERVICE_ATTACHMENT_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sshServiceAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for SSH, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sshServiceAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getSshServiceAttachment() {
+      java.lang.Object ref = sshServiceAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sshServiceAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service Attachment for SSH, resource is in the format of
+     * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+     * </pre>
+     *
+     * <code>
+     * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sshServiceAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSshServiceAttachmentBytes() {
+      java.lang.Object ref = sshServiceAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sshServiceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (isPrivate_ != false) {
+        output.writeBool(1, isPrivate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caPool_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, caPool_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpServiceAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, httpServiceAttachment_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sshServiceAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sshServiceAttachment_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isPrivate_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, isPrivate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caPool_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, caPool_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(httpServiceAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, httpServiceAttachment_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sshServiceAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sshServiceAttachment_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig other =
+          (com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig) obj;
+
+      if (getIsPrivate() != other.getIsPrivate()) return false;
+      if (!getCaPool().equals(other.getCaPool())) return false;
+      if (!getHttpServiceAttachment().equals(other.getHttpServiceAttachment())) return false;
+      if (!getSshServiceAttachment().equals(other.getSshServiceAttachment())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_PRIVATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPrivate());
+      hash = (37 * hash) + CA_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getCaPool().hashCode();
+      hash = (37 * hash) + HTTP_SERVICE_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpServiceAttachment().hashCode();
+      hash = (37 * hash) + SSH_SERVICE_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getSshServiceAttachment().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PrivateConfig includes settings for private instance.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securesourcemanager.v1.Instance.PrivateConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.class,
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        isPrivate_ = false;
+        caPool_ = "";
+        httpServiceAttachment_ = "";
+        sshServiceAttachment_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig build() {
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig buildPartial() {
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig result =
+            new com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isPrivate_ = isPrivate_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.caPool_ = caPool_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.httpServiceAttachment_ = httpServiceAttachment_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sshServiceAttachment_ = sshServiceAttachment_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig) {
+          return mergeFrom((com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig other) {
+        if (other
+            == com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance())
+          return this;
+        if (other.getIsPrivate() != false) {
+          setIsPrivate(other.getIsPrivate());
+        }
+        if (!other.getCaPool().isEmpty()) {
+          caPool_ = other.caPool_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getHttpServiceAttachment().isEmpty()) {
+          httpServiceAttachment_ = other.httpServiceAttachment_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getSshServiceAttachment().isEmpty()) {
+          sshServiceAttachment_ = other.sshServiceAttachment_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  isPrivate_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  caPool_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  httpServiceAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  sshServiceAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean isPrivate_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Indicate if it's private instance.
+       * </pre>
+       *
+       * <code>
+       * bool is_private = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The isPrivate.
+       */
+      @java.lang.Override
+      public boolean getIsPrivate() {
+        return isPrivate_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Indicate if it's private instance.
+       * </pre>
+       *
+       * <code>
+       * bool is_private = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The isPrivate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPrivate(boolean value) {
+
+        isPrivate_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Indicate if it's private instance.
+       * </pre>
+       *
+       * <code>
+       * bool is_private = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPrivate() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isPrivate_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object caPool_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. CA pool resource, resource must in the format of
+       * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+       * </pre>
+       *
+       * <code>
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The caPool.
+       */
+      public java.lang.String getCaPool() {
+        java.lang.Object ref = caPool_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          caPool_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. CA pool resource, resource must in the format of
+       * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+       * </pre>
+       *
+       * <code>
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for caPool.
+       */
+      public com.google.protobuf.ByteString getCaPoolBytes() {
+        java.lang.Object ref = caPool_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          caPool_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. CA pool resource, resource must in the format of
+       * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+       * </pre>
+       *
+       * <code>
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The caPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCaPool(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        caPool_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. CA pool resource, resource must in the format of
+       * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+       * </pre>
+       *
+       * <code>
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCaPool() {
+        caPool_ = getDefaultInstance().getCaPool();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. CA pool resource, resource must in the format of
+       * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
+       * </pre>
+       *
+       * <code>
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for caPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCaPoolBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        caPool_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object httpServiceAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for HTTP, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The httpServiceAttachment.
+       */
+      public java.lang.String getHttpServiceAttachment() {
+        java.lang.Object ref = httpServiceAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          httpServiceAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for HTTP, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for httpServiceAttachment.
+       */
+      public com.google.protobuf.ByteString getHttpServiceAttachmentBytes() {
+        java.lang.Object ref = httpServiceAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          httpServiceAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for HTTP, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The httpServiceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHttpServiceAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        httpServiceAttachment_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for HTTP, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHttpServiceAttachment() {
+        httpServiceAttachment_ = getDefaultInstance().getHttpServiceAttachment();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for HTTP, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string http_service_attachment = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for httpServiceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHttpServiceAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        httpServiceAttachment_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sshServiceAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for SSH, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The sshServiceAttachment.
+       */
+      public java.lang.String getSshServiceAttachment() {
+        java.lang.Object ref = sshServiceAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sshServiceAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for SSH, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for sshServiceAttachment.
+       */
+      public com.google.protobuf.ByteString getSshServiceAttachmentBytes() {
+        java.lang.Object ref = sshServiceAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sshServiceAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for SSH, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The sshServiceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSshServiceAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sshServiceAttachment_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for SSH, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSshServiceAttachment() {
+        sshServiceAttachment_ = getDefaultInstance().getSshServiceAttachment();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service Attachment for SSH, resource is in the format of
+       * `projects/{project}/regions/{region}/serviceAttachments/{service_attachment}`.
+       * </pre>
+       *
+       * <code>
+       * string ssh_service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for sshServiceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSshServiceAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sshServiceAttachment_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securesourcemanager.v1.Instance.PrivateConfig)
+    private static final com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig();
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrivateConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PrivateConfig>() {
+          @java.lang.Override
+          public PrivateConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PrivateConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrivateConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -1989,6 +3271,63 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int PRIVATE_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig privateConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the privateConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The privateConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig getPrivateConfig() {
+    return privateConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance()
+        : privateConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Private settings for private instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder
+      getPrivateConfigOrBuilder() {
+    return privateConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance()
+        : privateConfig_;
+  }
+
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
   /**
@@ -2147,7 +3486,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasHostConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -2216,7 +3555,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securesourcemanager.v1.Instance.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, state_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(9, getHostConfig());
     }
     if (stateNote_
@@ -2226,6 +3565,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, kmsKey_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(13, getPrivateConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2259,7 +3601,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securesourcemanager.v1.Instance.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, state_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getHostConfig());
     }
     if (stateNote_
@@ -2269,6 +3611,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, kmsKey_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getPrivateConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2296,6 +3641,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasPrivateConfig() != other.hasPrivateConfig()) return false;
+    if (hasPrivateConfig()) {
+      if (!getPrivateConfig().equals(other.getPrivateConfig())) return false;
+    }
     if (state_ != other.state_) return false;
     if (stateNote_ != other.stateNote_) return false;
     if (!getKmsKey().equals(other.getKmsKey())) return false;
@@ -2327,6 +3676,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasPrivateConfig()) {
+      hash = (37 * hash) + PRIVATE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateConfig().hashCode();
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
@@ -2502,6 +3855,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getPrivateConfigFieldBuilder();
         getHostConfigFieldBuilder();
       }
     }
@@ -2522,6 +3876,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      privateConfig_ = null;
+      if (privateConfigBuilder_ != null) {
+        privateConfigBuilder_.dispose();
+        privateConfigBuilder_ = null;
+      }
       state_ = 0;
       stateNote_ = 0;
       kmsKey_ = "";
@@ -2583,17 +3942,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
+        result.privateConfig_ =
+            privateConfigBuilder_ == null ? privateConfig_ : privateConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.stateNote_ = stateNote_;
+        result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.kmsKey_ = kmsKey_;
+        result.stateNote_ = stateNote_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.hostConfig_ = hostConfigBuilder_ == null ? hostConfig_ : hostConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2657,6 +4021,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000008;
+      if (other.hasPrivateConfig()) {
+        mergePrivateConfig(other.getPrivateConfig());
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -2665,7 +4032,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasHostConfig()) {
@@ -2730,27 +4097,33 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 74:
               {
                 input.readMessage(getHostConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 stateNote_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 80
             case 90:
               {
                 kmsKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(getPrivateConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3500,6 +4873,216 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig privateConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig,
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder,
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder>
+        privateConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateConfig field is set.
+     */
+    public boolean hasPrivateConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateConfig.
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig getPrivateConfig() {
+      if (privateConfigBuilder_ == null) {
+        return privateConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance()
+            : privateConfig_;
+      } else {
+        return privateConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPrivateConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig value) {
+      if (privateConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateConfig_ = value;
+      } else {
+        privateConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPrivateConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder builderForValue) {
+      if (privateConfigBuilder_ == null) {
+        privateConfig_ = builderForValue.build();
+      } else {
+        privateConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePrivateConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig value) {
+      if (privateConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && privateConfig_ != null
+            && privateConfig_
+                != com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+                    .getDefaultInstance()) {
+          getPrivateConfigBuilder().mergeFrom(value);
+        } else {
+          privateConfig_ = value;
+        }
+      } else {
+        privateConfigBuilder_.mergeFrom(value);
+      }
+      if (privateConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPrivateConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      privateConfig_ = null;
+      if (privateConfigBuilder_ != null) {
+        privateConfigBuilder_.dispose();
+        privateConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder
+        getPrivateConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getPrivateConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder
+        getPrivateConfigOrBuilder() {
+      if (privateConfigBuilder_ != null) {
+        return privateConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return privateConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.getDefaultInstance()
+            : privateConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private settings for private instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.PrivateConfig private_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig,
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder,
+            com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder>
+        getPrivateConfigFieldBuilder() {
+      if (privateConfigBuilder_ == null) {
+        privateConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig,
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig.Builder,
+                com.google.cloud.securesourcemanager.v1.Instance.PrivateConfigOrBuilder>(
+                getPrivateConfig(), getParentForChildren(), isClean());
+        privateConfig_ = null;
+      }
+      return privateConfigBuilder_;
+    }
+
     private int state_ = 0;
     /**
      *
@@ -3534,7 +5117,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3577,7 +5160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3596,7 +5179,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -3638,7 +5221,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateNoteValue(int value) {
       stateNote_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3683,7 +5266,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       stateNote_ = value.getNumber();
       onChanged();
       return this;
@@ -3703,7 +5286,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateNote() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       stateNote_ = 0;
       onChanged();
       return this;
@@ -3780,7 +5363,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKey_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3800,7 +5383,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKey() {
       kmsKey_ = getDefaultInstance().getKmsKey();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3825,7 +5408,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKey_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3850,7 +5433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the hostConfig field is set.
      */
     public boolean hasHostConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3895,7 +5478,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         hostConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3917,7 +5500,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         hostConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3935,7 +5518,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeHostConfig(
         com.google.cloud.securesourcemanager.v1.Instance.HostConfig value) {
       if (hostConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && hostConfig_ != null
             && hostConfig_
                 != com.google.cloud.securesourcemanager.v1.Instance.HostConfig
@@ -3948,7 +5531,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         hostConfigBuilder_.mergeFrom(value);
       }
       if (hostConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3965,7 +5548,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHostConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       hostConfig_ = null;
       if (hostConfigBuilder_ != null) {
         hostConfigBuilder_.dispose();
@@ -3987,7 +5570,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.securesourcemanager.v1.Instance.HostConfig.Builder
         getHostConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getHostConfigFieldBuilder().getBuilder();
     }

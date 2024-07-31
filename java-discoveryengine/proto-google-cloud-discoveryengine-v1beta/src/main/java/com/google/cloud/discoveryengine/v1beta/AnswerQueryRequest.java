@@ -57,6 +57,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 13:
+        return internalGetUserLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -4957,6 +4969,42 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * See [parse and chunk
+       * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for searchResultMode.
+       */
+      int getSearchResultModeValue();
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * See [parse and chunk
+       * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+       * </code>
+       *
+       * @return The searchResultMode.
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+          getSearchResultMode();
+
+      /**
+       *
+       *
+       * <pre>
        * Specs defining dataStores to filter on in a search call and
        * configurations for those dataStores. This is only considered for
        * engines with multiple dataStores use case. For single dataStore within
@@ -5058,6 +5106,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private SearchParams() {
         filter_ = "";
         orderBy_ = "";
+        searchResultMode_ = 0;
         dataStoreSpecs_ = java.util.Collections.emptyList();
       }
 
@@ -5309,6 +5358,58 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
       }
 
+      public static final int SEARCH_RESULT_MODE_FIELD_NUMBER = 5;
+      private int searchResultMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * See [parse and chunk
+       * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for searchResultMode.
+       */
+      @java.lang.Override
+      public int getSearchResultModeValue() {
+        return searchResultMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the search result mode. If unspecified, the
+       * search result mode defaults to `DOCUMENTS`.
+       * See [parse and chunk
+       * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+       * </code>
+       *
+       * @return The searchResultMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+              .SearchResultMode
+          getSearchResultMode() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+            result =
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                    .SearchResultMode.forNumber(searchResultMode_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .SearchResultMode.UNRECOGNIZED
+            : result;
+      }
+
       public static final int DATA_STORE_SPECS_FIELD_NUMBER = 7;
 
       @SuppressWarnings("serial")
@@ -5437,6 +5538,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
         }
+        if (searchResultMode_
+            != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .SearchResultMode.SEARCH_RESULT_MODE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(5, searchResultMode_);
+        }
         for (int i = 0; i < dataStoreSpecs_.size(); i++) {
           output.writeMessage(7, dataStoreSpecs_.get(i));
         }
@@ -5460,6 +5567,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
+        }
+        if (searchResultMode_
+            != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .SearchResultMode.SEARCH_RESULT_MODE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, searchResultMode_);
         }
         for (int i = 0; i < dataStoreSpecs_.size(); i++) {
           size +=
@@ -5491,6 +5604,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           if (!getBoostSpec().equals(other.getBoostSpec())) return false;
         }
         if (!getOrderBy().equals(other.getOrderBy())) return false;
+        if (searchResultMode_ != other.searchResultMode_) return false;
         if (!getDataStoreSpecsList().equals(other.getDataStoreSpecsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
@@ -5513,6 +5627,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
         hash = (53 * hash) + getOrderBy().hashCode();
+        hash = (37 * hash) + SEARCH_RESULT_MODE_FIELD_NUMBER;
+        hash = (53 * hash) + searchResultMode_;
         if (getDataStoreSpecsCount() > 0) {
           hash = (37 * hash) + DATA_STORE_SPECS_FIELD_NUMBER;
           hash = (53 * hash) + getDataStoreSpecsList().hashCode();
@@ -5703,13 +5819,14 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             boostSpecBuilder_ = null;
           }
           orderBy_ = "";
+          searchResultMode_ = 0;
           if (dataStoreSpecsBuilder_ == null) {
             dataStoreSpecs_ = java.util.Collections.emptyList();
           } else {
             dataStoreSpecs_ = null;
             dataStoreSpecsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -5756,9 +5873,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParams
                 result) {
           if (dataStoreSpecsBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)) {
+            if (((bitField0_ & 0x00000020) != 0)) {
               dataStoreSpecs_ = java.util.Collections.unmodifiableList(dataStoreSpecs_);
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             }
             result.dataStoreSpecs_ = dataStoreSpecs_;
           } else {
@@ -5783,6 +5900,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.orderBy_ = orderBy_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.searchResultMode_ = searchResultMode_;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -5858,11 +5978,14 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             bitField0_ |= 0x00000008;
             onChanged();
           }
+          if (other.searchResultMode_ != 0) {
+            setSearchResultModeValue(other.getSearchResultModeValue());
+          }
           if (dataStoreSpecsBuilder_ == null) {
             if (!other.dataStoreSpecs_.isEmpty()) {
               if (dataStoreSpecs_.isEmpty()) {
                 dataStoreSpecs_ = other.dataStoreSpecs_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000020);
               } else {
                 ensureDataStoreSpecsIsMutable();
                 dataStoreSpecs_.addAll(other.dataStoreSpecs_);
@@ -5875,7 +5998,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 dataStoreSpecsBuilder_.dispose();
                 dataStoreSpecsBuilder_ = null;
                 dataStoreSpecs_ = other.dataStoreSpecs_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000020);
                 dataStoreSpecsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getDataStoreSpecsFieldBuilder()
@@ -5935,6 +6058,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
+                case 40:
+                  {
+                    searchResultMode_ = input.readEnum();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 40
                 case 58:
                   {
                     com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec m =
@@ -6565,16 +6694,140 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return this;
         }
 
+        private int searchResultMode_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the search result mode. If unspecified, the
+         * search result mode defaults to `DOCUMENTS`.
+         * See [parse and chunk
+         * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for searchResultMode.
+         */
+        @java.lang.Override
+        public int getSearchResultModeValue() {
+          return searchResultMode_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the search result mode. If unspecified, the
+         * search result mode defaults to `DOCUMENTS`.
+         * See [parse and chunk
+         * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for searchResultMode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchResultModeValue(int value) {
+          searchResultMode_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the search result mode. If unspecified, the
+         * search result mode defaults to `DOCUMENTS`.
+         * See [parse and chunk
+         * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+         * </code>
+         *
+         * @return The searchResultMode.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                .SearchResultMode
+            getSearchResultMode() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+              result =
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                      .SearchResultMode.forNumber(searchResultMode_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
+                  .SearchResultMode.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the search result mode. If unspecified, the
+         * search result mode defaults to `DOCUMENTS`.
+         * See [parse and chunk
+         * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+         * </code>
+         *
+         * @param value The searchResultMode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchResultMode(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000010;
+          searchResultMode_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the search result mode. If unspecified, the
+         * search result mode defaults to `DOCUMENTS`.
+         * See [parse and chunk
+         * documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode search_result_mode = 5;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSearchResultMode() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          searchResultMode_ = 0;
+          onChanged();
+          return this;
+        }
+
         private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
             dataStoreSpecs_ = java.util.Collections.emptyList();
 
         private void ensureDataStoreSpecsIsMutable() {
-          if (!((bitField0_ & 0x00000010) != 0)) {
+          if (!((bitField0_ & 0x00000020) != 0)) {
             dataStoreSpecs_ =
                 new java.util.ArrayList<
                     com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>(
                     dataStoreSpecs_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
           }
         }
 
@@ -6857,7 +7110,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         public Builder clearDataStoreSpecs() {
           if (dataStoreSpecsBuilder_ == null) {
             dataStoreSpecs_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
           } else {
             dataStoreSpecsBuilder_.clear();
@@ -7027,7 +7280,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder,
                     com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>(
                     dataStoreSpecs_,
-                    ((bitField0_ & 0x00000010) != 0),
+                    ((bitField0_ & 0x00000020) != 0),
                     getParentForChildren(),
                     isClean());
             dataStoreSpecs_ = null;
@@ -21692,6 +21945,172 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int USER_LABELS_FIELD_NUMBER = 13;
+
+  private static final class UserLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return userLabels_;
+  }
+
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 13;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 13;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 13;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   *
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   *
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 13;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -21736,6 +22155,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, userPseudoId_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 13);
     getUnknownFields().writeTo(output);
   }
 
@@ -21777,6 +22198,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, userPseudoId_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, userLabels__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -21822,6 +22253,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
     if (getAsynchronousMode() != other.getAsynchronousMode()) return false;
     if (!getUserPseudoId().equals(other.getUserPseudoId())) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -21865,6 +22297,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAsynchronousMode());
     hash = (37 * hash) + USER_PSEUDO_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserPseudoId().hashCode();
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -21986,6 +22422,28 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetMutableUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -22055,6 +22513,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       asynchronousMode_ = false;
       userPseudoId_ = "";
+      internalGetMutableUserLabels().clear();
       return this;
     }
 
@@ -22136,6 +22595,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.userPseudoId_ = userPseudoId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -22222,6 +22685,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000400;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -22311,6 +22776,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000200;
                 break;
               } // case 98
+            case 106:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                    input.readMessage(
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabels()
+                    .getMutableMap()
+                    .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -24093,6 +24570,284 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       userPseudoId_ = value;
       bitField0_ |= 0x00000200;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return userLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabels() {
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return userLabels_;
+    }
+
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalGetMutableUserLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000400;
+      return internalGetMutableUserLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     *
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     *
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 13;</code>
+     */
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 

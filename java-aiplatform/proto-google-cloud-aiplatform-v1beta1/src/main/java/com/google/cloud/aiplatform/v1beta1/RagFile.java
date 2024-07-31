@@ -236,6 +236,8 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     GCS_SOURCE(8),
     GOOGLE_DRIVE_SOURCE(9),
     DIRECT_UPLOAD_SOURCE(10),
+    SLACK_SOURCE(11),
+    JIRA_SOURCE(12),
     RAGFILESOURCE_NOT_SET(0);
     private final int value;
 
@@ -260,6 +262,10 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_DRIVE_SOURCE;
         case 10:
           return DIRECT_UPLOAD_SOURCE;
+        case 11:
+          return SLACK_SOURCE;
+        case 12:
+          return JIRA_SOURCE;
         case 0:
           return RAGFILESOURCE_NOT_SET;
         default:
@@ -456,6 +462,108 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.aiplatform.v1beta1.DirectUploadSource) ragFileSource_;
     }
     return com.google.cloud.aiplatform.v1beta1.DirectUploadSource.getDefaultInstance();
+  }
+
+  public static final int SLACK_SOURCE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   *
+   * @return Whether the slackSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlackSource() {
+    return ragFileSourceCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   *
+   * @return The slackSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource() {
+    if (ragFileSourceCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Slack channel.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder() {
+    if (ragFileSourceCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+  }
+
+  public static final int JIRA_SOURCE_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   *
+   * @return Whether the jiraSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasJiraSource() {
+    return ragFileSourceCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   *
+   * @return The jiraSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource() {
+    if (ragFileSourceCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The RagFile is imported from a Jira query.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder() {
+    if (ragFileSourceCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -820,6 +928,12 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           10, (com.google.cloud.aiplatform.v1beta1.DirectUploadSource) ragFileSource_);
     }
+    if (ragFileSourceCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_);
+    }
+    if (ragFileSourceCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -867,6 +981,16 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.aiplatform.v1beta1.DirectUploadSource) ragFileSource_);
     }
+    if (ragFileSourceCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_);
+    }
+    if (ragFileSourceCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -906,6 +1030,12 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getDirectUploadSource().equals(other.getDirectUploadSource())) return false;
+        break;
+      case 11:
+        if (!getSlackSource().equals(other.getSlackSource())) return false;
+        break;
+      case 12:
+        if (!getJiraSource().equals(other.getJiraSource())) return false;
         break;
       case 0:
       default:
@@ -951,6 +1081,14 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + DIRECT_UPLOAD_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getDirectUploadSource().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + SLACK_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSlackSource().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + JIRA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getJiraSource().hashCode();
         break;
       case 0:
       default:
@@ -1113,6 +1251,12 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (directUploadSourceBuilder_ != null) {
         directUploadSourceBuilder_.clear();
       }
+      if (slackSourceBuilder_ != null) {
+        slackSourceBuilder_.clear();
+      }
+      if (jiraSourceBuilder_ != null) {
+        jiraSourceBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -1167,27 +1311,27 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RagFile result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.sizeBytes_ = sizeBytes_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ragFileType_ = ragFileType_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
@@ -1205,6 +1349,12 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       if (ragFileSourceCase_ == 10 && directUploadSourceBuilder_ != null) {
         result.ragFileSource_ = directUploadSourceBuilder_.build();
+      }
+      if (ragFileSourceCase_ == 11 && slackSourceBuilder_ != null) {
+        result.ragFileSource_ = slackSourceBuilder_.build();
+      }
+      if (ragFileSourceCase_ == 12 && jiraSourceBuilder_ != null) {
+        result.ragFileSource_ = jiraSourceBuilder_.build();
       }
     }
 
@@ -1255,17 +1405,17 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.RagFile.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getSizeBytes() != 0L) {
@@ -1294,6 +1444,16 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         case DIRECT_UPLOAD_SOURCE:
           {
             mergeDirectUploadSource(other.getDirectUploadSource());
+            break;
+          }
+        case SLACK_SOURCE:
+          {
+            mergeSlackSource(other.getSlackSource());
+            break;
+          }
+        case JIRA_SOURCE:
+          {
+            mergeJiraSource(other.getJiraSource());
             break;
           }
         case RAGFILESOURCE_NOT_SET:
@@ -1330,43 +1490,43 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 32:
               {
                 sizeBytes_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 32
             case 40:
               {
                 ragFileType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 58
             case 66:
@@ -1389,6 +1549,18 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
                 ragFileSourceCase_ = 10;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getSlackSourceFieldBuilder().getBuilder(), extensionRegistry);
+                ragFileSourceCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getJiraSourceFieldBuilder().getBuilder(), extensionRegistry);
+                ragFileSourceCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2143,6 +2315,426 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       return directUploadSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SlackSource,
+            com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
+        slackSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     *
+     * @return Whether the slackSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSlackSource() {
+      return ragFileSourceCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     *
+     * @return The slackSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SlackSource getSlackSource() {
+      if (slackSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      } else {
+        if (ragFileSourceCase_ == 11) {
+          return slackSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    public Builder setSlackSource(com.google.cloud.aiplatform.v1beta1.SlackSource value) {
+      if (slackSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileSource_ = value;
+        onChanged();
+      } else {
+        slackSourceBuilder_.setMessage(value);
+      }
+      ragFileSourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    public Builder setSlackSource(
+        com.google.cloud.aiplatform.v1beta1.SlackSource.Builder builderForValue) {
+      if (slackSourceBuilder_ == null) {
+        ragFileSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        slackSourceBuilder_.setMessage(builderForValue.build());
+      }
+      ragFileSourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    public Builder mergeSlackSource(com.google.cloud.aiplatform.v1beta1.SlackSource value) {
+      if (slackSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 11
+            && ragFileSource_
+                != com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance()) {
+          ragFileSource_ =
+              com.google.cloud.aiplatform.v1beta1.SlackSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ragFileSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (ragFileSourceCase_ == 11) {
+          slackSourceBuilder_.mergeFrom(value);
+        } else {
+          slackSourceBuilder_.setMessage(value);
+        }
+      }
+      ragFileSourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    public Builder clearSlackSource() {
+      if (slackSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 11) {
+          ragFileSourceCase_ = 0;
+          ragFileSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (ragFileSourceCase_ == 11) {
+          ragFileSourceCase_ = 0;
+          ragFileSource_ = null;
+        }
+        slackSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SlackSource.Builder getSlackSourceBuilder() {
+      return getSlackSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder getSlackSourceOrBuilder() {
+      if ((ragFileSourceCase_ == 11) && (slackSourceBuilder_ != null)) {
+        return slackSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (ragFileSourceCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Slack channel.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.SlackSource slack_source = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SlackSource,
+            com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
+        getSlackSourceFieldBuilder() {
+      if (slackSourceBuilder_ == null) {
+        if (!(ragFileSourceCase_ == 11)) {
+          ragFileSource_ = com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
+        }
+        slackSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.SlackSource,
+                com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.SlackSource) ragFileSource_,
+                getParentForChildren(),
+                isClean());
+        ragFileSource_ = null;
+      }
+      ragFileSourceCase_ = 11;
+      onChanged();
+      return slackSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.JiraSource,
+            com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
+        jiraSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     *
+     * @return Whether the jiraSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasJiraSource() {
+      return ragFileSourceCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     *
+     * @return The jiraSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.JiraSource getJiraSource() {
+      if (jiraSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      } else {
+        if (ragFileSourceCase_ == 12) {
+          return jiraSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    public Builder setJiraSource(com.google.cloud.aiplatform.v1beta1.JiraSource value) {
+      if (jiraSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileSource_ = value;
+        onChanged();
+      } else {
+        jiraSourceBuilder_.setMessage(value);
+      }
+      ragFileSourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    public Builder setJiraSource(
+        com.google.cloud.aiplatform.v1beta1.JiraSource.Builder builderForValue) {
+      if (jiraSourceBuilder_ == null) {
+        ragFileSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        jiraSourceBuilder_.setMessage(builderForValue.build());
+      }
+      ragFileSourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    public Builder mergeJiraSource(com.google.cloud.aiplatform.v1beta1.JiraSource value) {
+      if (jiraSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 12
+            && ragFileSource_
+                != com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance()) {
+          ragFileSource_ =
+              com.google.cloud.aiplatform.v1beta1.JiraSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ragFileSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (ragFileSourceCase_ == 12) {
+          jiraSourceBuilder_.mergeFrom(value);
+        } else {
+          jiraSourceBuilder_.setMessage(value);
+        }
+      }
+      ragFileSourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    public Builder clearJiraSource() {
+      if (jiraSourceBuilder_ == null) {
+        if (ragFileSourceCase_ == 12) {
+          ragFileSourceCase_ = 0;
+          ragFileSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (ragFileSourceCase_ == 12) {
+          ragFileSourceCase_ = 0;
+          ragFileSource_ = null;
+        }
+        jiraSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.JiraSource.Builder getJiraSourceBuilder() {
+      return getJiraSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder getJiraSourceOrBuilder() {
+      if ((ragFileSourceCase_ == 12) && (jiraSourceBuilder_ != null)) {
+        return jiraSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (ragFileSourceCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The RagFile is imported from a Jira query.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.JiraSource jira_source = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.JiraSource,
+            com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
+        getJiraSourceFieldBuilder() {
+      if (jiraSourceBuilder_ == null) {
+        if (!(ragFileSourceCase_ == 12)) {
+          ragFileSource_ = com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
+        }
+        jiraSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.JiraSource,
+                com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.JiraSource) ragFileSource_,
+                getParentForChildren(),
+                isClean());
+        ragFileSource_ = null;
+      }
+      ragFileSourceCase_ = 12;
+      onChanged();
+      return jiraSourceBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -2205,7 +2797,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2222,7 +2814,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2244,7 +2836,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2317,7 +2909,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2336,7 +2928,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2360,7 +2952,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2427,7 +3019,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2444,7 +3036,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2466,7 +3058,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2502,7 +3094,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeBytes(long value) {
 
       sizeBytes_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2518,7 +3110,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeBytes() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       sizeBytes_ = 0L;
       onChanged();
       return this;
@@ -2558,7 +3150,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setRagFileTypeValue(int value) {
       ragFileType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2601,7 +3193,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       ragFileType_ = value.getNumber();
       onChanged();
       return this;
@@ -2620,7 +3212,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRagFileType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ragFileType_ = 0;
       onChanged();
       return this;
@@ -2646,7 +3238,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2690,7 +3282,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2711,7 +3303,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2728,7 +3320,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2739,7 +3331,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -2756,7 +3348,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2777,7 +3369,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2849,7 +3441,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2893,7 +3485,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2914,7 +3506,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2931,7 +3523,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2942,7 +3534,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2959,7 +3551,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2980,7 +3572,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

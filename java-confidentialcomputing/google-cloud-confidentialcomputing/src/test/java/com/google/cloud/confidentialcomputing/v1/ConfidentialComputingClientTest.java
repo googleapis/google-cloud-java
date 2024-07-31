@@ -205,6 +205,8 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     VerifyAttestationRequest actualRequest = ((VerifyAttestationRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getTdCcel(), actualRequest.getTdCcel());
+    Assert.assertEquals(request.getSevSnpAttestation(), actualRequest.getSevSnpAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getGcpCredentials(), actualRequest.getGcpCredentials());
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());

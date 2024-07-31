@@ -496,4 +496,96 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder
       getQueryExpansionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+      getNaturalLanguageQueryUnderstandingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse
+          .NaturalLanguageQueryUnderstandingInfoOrBuilder
+      getNaturalLanguageQueryUnderstandingInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return Whether the sessionInfo field is set.
+   */
+  boolean hasSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   *
+   * @return The sessionInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo getSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1beta.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo session_info = 19;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfoOrBuilder
+      getSessionInfoOrBuilder();
 }

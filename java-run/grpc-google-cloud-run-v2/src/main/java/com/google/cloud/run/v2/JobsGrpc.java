@@ -471,7 +471,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs.
+     * Lists Jobs. Results are sorted by creation time, descending.
      * </pre>
      */
     default void listJobs(
@@ -630,7 +630,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs.
+     * Lists Jobs. Results are sorted by creation time, descending.
      * </pre>
      */
     public void listJobs(
@@ -782,7 +782,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs.
+     * Lists Jobs. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListJobsResponse listJobs(
@@ -917,7 +917,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs.
+     * Lists Jobs. Results are sorted by creation time, descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

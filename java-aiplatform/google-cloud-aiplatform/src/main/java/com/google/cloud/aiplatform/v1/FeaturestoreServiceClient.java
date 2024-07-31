@@ -3366,7 +3366,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
    *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring` (Not supported for
-   *     FeatureRegistry Feature)
+   *     FeatureRegistryService Feature) &#42; `point_of_contact` (Not supported for
+   *     FeaturestoreService FeatureStore)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature updateFeature(Feature feature, FieldMask updateMask) {

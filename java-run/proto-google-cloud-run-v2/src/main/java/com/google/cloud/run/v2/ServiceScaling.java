@@ -68,12 +68,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * total min instances for the service. This number of instances is
+   * Optional. total min instances for the service. This number of instances is
    * divided among all revisions with specified traffic based on the percent
    * of traffic they are receiving. (BETA)
    * </pre>
    *
-   * <code>int32 min_instance_count = 1;</code>
+   * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The minInstanceCount.
    */
@@ -426,12 +426,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * total min instances for the service. This number of instances is
+     * Optional. total min instances for the service. This number of instances is
      * divided among all revisions with specified traffic based on the percent
      * of traffic they are receiving. (BETA)
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The minInstanceCount.
      */
@@ -443,12 +443,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * total min instances for the service. This number of instances is
+     * Optional. total min instances for the service. This number of instances is
      * divided among all revisions with specified traffic based on the percent
      * of traffic they are receiving. (BETA)
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The minInstanceCount to set.
      * @return This builder for chaining.
@@ -464,12 +464,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * total min instances for the service. This number of instances is
+     * Optional. total min instances for the service. This number of instances is
      * divided among all revisions with specified traffic based on the percent
      * of traffic they are receiving. (BETA)
      * </pre>
      *
-     * <code>int32 min_instance_count = 1;</code>
+     * <code>int32 min_instance_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

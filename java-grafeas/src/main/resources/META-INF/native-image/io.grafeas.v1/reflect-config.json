@@ -2106,6 +2106,33 @@
     "allPublicClasses": true
   },
   {
+    "name": "io.grafeas.v1.DiscoveryOccurrence$VulnerabilityAttestation",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "io.grafeas.v1.DiscoveryOccurrence$VulnerabilityAttestation$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "io.grafeas.v1.DiscoveryOccurrence$VulnerabilityAttestation$VulnerabilityAttestationState",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "io.grafeas.v1.Distribution",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

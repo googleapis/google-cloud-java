@@ -27,6 +27,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1036,6 +1037,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "certificatemanager.googleapis.com:443";
   }

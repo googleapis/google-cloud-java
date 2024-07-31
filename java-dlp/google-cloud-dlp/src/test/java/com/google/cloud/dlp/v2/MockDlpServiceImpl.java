@@ -35,6 +35,7 @@ import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
@@ -42,12 +43,14 @@ import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpServiceGrpc.DlpServiceImplBase;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -70,6 +73,8 @@ import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -1003,6 +1008,71 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
                   "Unrecognized response type %s for method GetProjectDataProfile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProjectDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFileStoreDataProfiles(
+      ListFileStoreDataProfilesRequest request,
+      StreamObserver<ListFileStoreDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFileStoreDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFileStoreDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFileStoreDataProfiles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFileStoreDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFileStoreDataProfile(
+      GetFileStoreDataProfileRequest request,
+      StreamObserver<FileStoreDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FileStoreDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((FileStoreDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFileStoreDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FileStoreDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFileStoreDataProfile(
+      DeleteFileStoreDataProfileRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFileStoreDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

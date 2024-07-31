@@ -73,7 +73,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Format: properties/{property_id}
-   * Example: properties/1234
+   *
+   * Example: `properties/1234`
    * </pre>
    *
    * <code>
@@ -99,7 +100,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Format: properties/{property_id}
-   * Example: properties/1234
+   *
+   * Example: `properties/1234`
    * </pre>
    *
    * <code>
@@ -570,7 +572,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}
-     * Example: properties/1234
+     *
+     * Example: `properties/1234`
      * </pre>
      *
      * <code>
@@ -595,7 +598,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}
-     * Example: properties/1234
+     *
+     * Example: `properties/1234`
      * </pre>
      *
      * <code>
@@ -620,7 +624,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}
-     * Example: properties/1234
+     *
+     * Example: `properties/1234`
      * </pre>
      *
      * <code>
@@ -644,7 +649,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}
-     * Example: properties/1234
+     *
+     * Example: `properties/1234`
      * </pre>
      *
      * <code>
@@ -664,7 +670,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}
-     * Example: properties/1234
+     *
+     * Example: `properties/1234`
      * </pre>
      *
      * <code>

@@ -29,7 +29,9 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    * <pre>
    * Required. The account resource for which to return change history
-   * resources.
+   * resources. Format: accounts/{account}
+   *
+   * Example: `accounts/100`
    * </pre>
    *
    * <code>
@@ -44,7 +46,9 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    * <pre>
    * Required. The account resource for which to return change history
-   * resources.
+   * resources. Format: accounts/{account}
+   *
+   * Example: `accounts/100`
    * </pre>
    *
    * <code>
@@ -61,6 +65,9 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * <pre>
    * Optional. Resource name for a child property. If set, only return changes
    * made to this property or its child resources.
+   * Format: properties/{propertyId}
+   *
+   * Example: `properties/100`
    * </pre>
    *
    * <code>
@@ -76,6 +83,9 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * <pre>
    * Optional. Resource name for a child property. If set, only return changes
    * made to this property or its child resources.
+   * Format: properties/{propertyId}
+   *
+   * Example: `properties/100`
    * </pre>
    *
    * <code>

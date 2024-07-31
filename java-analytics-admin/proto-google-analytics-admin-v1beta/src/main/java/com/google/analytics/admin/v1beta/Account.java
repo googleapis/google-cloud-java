@@ -42,6 +42,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     regionCode_ = "";
+    gmpOrganization_ = "";
   }
 
   @java.lang.Override
@@ -340,6 +341,65 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     return deleted_;
   }
 
+  public static final int GMP_ORGANIZATION_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gmpOrganization_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a Google Marketing Platform organization resource.
+   * Only set when this account is connected to a GMP organization.
+   * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+   * </pre>
+   *
+   * <code>
+   * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The gmpOrganization.
+   */
+  @java.lang.Override
+  public java.lang.String getGmpOrganization() {
+    java.lang.Object ref = gmpOrganization_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gmpOrganization_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URI for a Google Marketing Platform organization resource.
+   * Only set when this account is connected to a GMP organization.
+   * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+   * </pre>
+   *
+   * <code>
+   * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for gmpOrganization.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGmpOrganizationBytes() {
+    java.lang.Object ref = gmpOrganization_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gmpOrganization_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -372,6 +432,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     if (deleted_ != false) {
       output.writeBool(6, deleted_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gmpOrganization_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gmpOrganization_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -398,6 +461,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
     if (deleted_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, deleted_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gmpOrganization_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gmpOrganization_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -427,6 +493,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (getDeleted() != other.getDeleted()) return false;
+    if (!getGmpOrganization().equals(other.getGmpOrganization())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -454,6 +521,8 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeleted());
+    hash = (37 * hash) + GMP_ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getGmpOrganization().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -617,6 +686,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       regionCode_ = "";
       deleted_ = false;
+      gmpOrganization_ = "";
       return this;
     }
 
@@ -673,6 +743,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.deleted_ = deleted_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.gmpOrganization_ = gmpOrganization_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -746,6 +819,11 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       if (other.getDeleted() != false) {
         setDeleted(other.getDeleted());
       }
+      if (!other.getGmpOrganization().isEmpty()) {
+        gmpOrganization_ = other.gmpOrganization_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -808,6 +886,12 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                gmpOrganization_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1613,6 +1697,132 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDeleted() {
       bitField0_ = (bitField0_ & ~0x00000020);
       deleted_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gmpOrganization_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI for a Google Marketing Platform organization resource.
+     * Only set when this account is connected to a GMP organization.
+     * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+     * </pre>
+     *
+     * <code>
+     * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The gmpOrganization.
+     */
+    public java.lang.String getGmpOrganization() {
+      java.lang.Object ref = gmpOrganization_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gmpOrganization_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI for a Google Marketing Platform organization resource.
+     * Only set when this account is connected to a GMP organization.
+     * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+     * </pre>
+     *
+     * <code>
+     * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for gmpOrganization.
+     */
+    public com.google.protobuf.ByteString getGmpOrganizationBytes() {
+      java.lang.Object ref = gmpOrganization_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gmpOrganization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI for a Google Marketing Platform organization resource.
+     * Only set when this account is connected to a GMP organization.
+     * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+     * </pre>
+     *
+     * <code>
+     * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The gmpOrganization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGmpOrganization(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gmpOrganization_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI for a Google Marketing Platform organization resource.
+     * Only set when this account is connected to a GMP organization.
+     * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+     * </pre>
+     *
+     * <code>
+     * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGmpOrganization() {
+      gmpOrganization_ = getDefaultInstance().getGmpOrganization();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI for a Google Marketing Platform organization resource.
+     * Only set when this account is connected to a GMP organization.
+     * Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+     * </pre>
+     *
+     * <code>
+     * string gmp_organization = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for gmpOrganization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGmpOrganizationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gmpOrganization_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

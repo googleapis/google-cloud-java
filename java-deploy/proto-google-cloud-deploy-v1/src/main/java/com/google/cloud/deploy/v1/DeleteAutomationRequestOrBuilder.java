@@ -28,7 +28,7 @@ public interface DeleteAutomationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the `Automation` to delete. Format should be
+   * Required. The name of the `Automation` to delete. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface DeleteAutomationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the `Automation` to delete. Format should be
+   * Required. The name of the `Automation` to delete. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
    * </pre>
    *

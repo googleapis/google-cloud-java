@@ -41,6 +41,19 @@ public interface SupervisedTuningDatasetDistributionOrBuilder
    *
    *
    * <pre>
+   * Output only. Sum of a given population of values that are billable.
+   * </pre>
+   *
+   * <code>int64 billable_sum = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The billableSum.
+   */
+  long getBillableSum();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The minimum of the population values.
    * </pre>
    *

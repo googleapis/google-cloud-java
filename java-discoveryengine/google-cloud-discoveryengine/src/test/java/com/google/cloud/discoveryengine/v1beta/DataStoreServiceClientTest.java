@@ -102,6 +102,7 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -164,6 +165,7 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -226,6 +228,7 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -276,6 +279,7 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
@@ -498,6 +502,7 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();

@@ -74,7 +74,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the subnetwork where the additional pod network belongs
+   * Name of the subnetwork where the additional pod network belongs.
    * </pre>
    *
    * <code>string subnetwork = 1;</code>
@@ -97,7 +97,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the subnetwork where the additional pod network belongs
+   * Name of the subnetwork where the additional pod network belongs.
    * </pre>
    *
    * <code>string subnetwork = 1;</code>
@@ -126,7 +126,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    * <pre>
    * The name of the secondary range on the subnet which provides IP address for
-   * this pod range
+   * this pod range.
    * </pre>
    *
    * <code>string secondary_pod_range = 2;</code>
@@ -150,7 +150,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    * <pre>
    * The name of the secondary range on the subnet which provides IP address for
-   * this pod range
+   * this pod range.
    * </pre>
    *
    * <code>string secondary_pod_range = 2;</code>
@@ -176,7 +176,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The maximum number of pods per node which use this pod network
+   * The maximum number of pods per node which use this pod network.
    * </pre>
    *
    * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -191,7 +191,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The maximum number of pods per node which use this pod network
+   * The maximum number of pods per node which use this pod network.
    * </pre>
    *
    * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -208,7 +208,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The maximum number of pods per node which use this pod network
+   * The maximum number of pods per node which use this pod network.
    * </pre>
    *
    * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -637,7 +637,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the subnetwork where the additional pod network belongs
+     * Name of the subnetwork where the additional pod network belongs.
      * </pre>
      *
      * <code>string subnetwork = 1;</code>
@@ -659,7 +659,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the subnetwork where the additional pod network belongs
+     * Name of the subnetwork where the additional pod network belongs.
      * </pre>
      *
      * <code>string subnetwork = 1;</code>
@@ -681,7 +681,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the subnetwork where the additional pod network belongs
+     * Name of the subnetwork where the additional pod network belongs.
      * </pre>
      *
      * <code>string subnetwork = 1;</code>
@@ -702,7 +702,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the subnetwork where the additional pod network belongs
+     * Name of the subnetwork where the additional pod network belongs.
      * </pre>
      *
      * <code>string subnetwork = 1;</code>
@@ -719,7 +719,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the subnetwork where the additional pod network belongs
+     * Name of the subnetwork where the additional pod network belongs.
      * </pre>
      *
      * <code>string subnetwork = 1;</code>
@@ -744,7 +744,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * The name of the secondary range on the subnet which provides IP address for
-     * this pod range
+     * this pod range.
      * </pre>
      *
      * <code>string secondary_pod_range = 2;</code>
@@ -767,7 +767,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * The name of the secondary range on the subnet which provides IP address for
-     * this pod range
+     * this pod range.
      * </pre>
      *
      * <code>string secondary_pod_range = 2;</code>
@@ -790,7 +790,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * The name of the secondary range on the subnet which provides IP address for
-     * this pod range
+     * this pod range.
      * </pre>
      *
      * <code>string secondary_pod_range = 2;</code>
@@ -812,7 +812,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * The name of the secondary range on the subnet which provides IP address for
-     * this pod range
+     * this pod range.
      * </pre>
      *
      * <code>string secondary_pod_range = 2;</code>
@@ -830,7 +830,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * The name of the secondary range on the subnet which provides IP address for
-     * this pod range
+     * this pod range.
      * </pre>
      *
      * <code>string secondary_pod_range = 2;</code>
@@ -859,7 +859,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -873,7 +873,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -893,7 +893,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -915,7 +915,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -935,7 +935,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -963,7 +963,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -982,7 +982,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -996,7 +996,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>
@@ -1014,7 +1014,7 @@ public final class AdditionalPodNetworkConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of pods per node which use this pod network
+     * The maximum number of pods per node which use this pod network.
      * </pre>
      *
      * <code>optional .google.container.v1beta1.MaxPodsConstraint max_pods_per_node = 3;</code>

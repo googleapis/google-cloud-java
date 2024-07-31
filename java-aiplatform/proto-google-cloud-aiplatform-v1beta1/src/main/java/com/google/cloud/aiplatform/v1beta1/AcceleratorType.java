@@ -46,8 +46,9 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * Nvidia Tesla K80 GPU.
    * </pre>
    *
-   * <code>NVIDIA_TESLA_K80 = 1;</code>
+   * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   NVIDIA_TESLA_K80(1),
   /**
    *
@@ -189,9 +190,9 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * Nvidia Tesla K80 GPU.
    * </pre>
    *
-   * <code>NVIDIA_TESLA_K80 = 1;</code>
+   * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
    */
-  public static final int NVIDIA_TESLA_K80_VALUE = 1;
+  @java.lang.Deprecated public static final int NVIDIA_TESLA_K80_VALUE = 1;
   /**
    *
    *

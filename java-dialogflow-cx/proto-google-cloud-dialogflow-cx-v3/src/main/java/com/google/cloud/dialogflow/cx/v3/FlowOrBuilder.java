@@ -562,4 +562,60 @@ public interface FlowOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder
       getKnowledgeConnectorSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiLanguageSettings field is set.
+   */
+  boolean hasMultiLanguageSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiLanguageSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings getMultiLanguageSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettingsOrBuilder
+      getMultiLanguageSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the flow is locked for changes. If the flow is locked,
+   * modifications to the flow will be rejected.
+   * </pre>
+   *
+   * <code>bool locked = 30;</code>
+   *
+   * @return The locked.
+   */
+  boolean getLocked();
 }

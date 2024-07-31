@@ -270,6 +270,31 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     return createAdvancedSiteSearch_;
   }
 
+  public static final int SKIP_DEFAULT_SCHEMA_CREATION_FIELD_NUMBER = 7;
+  private boolean skipDefaultSchemaCreation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * A boolean flag indicating whether to skip the default schema creation for
+   * the data store. Only enable this flag if you are certain that the default
+   * schema is incompatible with your use case.
+   *
+   * If set to true, you must manually create a schema for the data store before
+   * any documents can be ingested.
+   *
+   * This flag cannot be specified if `data_store.starting_schema` is specified.
+   * </pre>
+   *
+   * <code>bool skip_default_schema_creation = 7;</code>
+   *
+   * @return The skipDefaultSchemaCreation.
+   */
+  @java.lang.Override
+  public boolean getSkipDefaultSchemaCreation() {
+    return skipDefaultSchemaCreation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -296,6 +321,9 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     if (createAdvancedSiteSearch_ != false) {
       output.writeBool(4, createAdvancedSiteSearch_);
     }
+    if (skipDefaultSchemaCreation_ != false) {
+      output.writeBool(7, skipDefaultSchemaCreation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -316,6 +344,9 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
     if (createAdvancedSiteSearch_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, createAdvancedSiteSearch_);
+    }
+    if (skipDefaultSchemaCreation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, skipDefaultSchemaCreation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -340,6 +371,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     }
     if (!getDataStoreId().equals(other.getDataStoreId())) return false;
     if (getCreateAdvancedSiteSearch() != other.getCreateAdvancedSiteSearch()) return false;
+    if (getSkipDefaultSchemaCreation() != other.getSkipDefaultSchemaCreation()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -361,6 +393,8 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getDataStoreId().hashCode();
     hash = (37 * hash) + CREATE_ADVANCED_SITE_SEARCH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCreateAdvancedSiteSearch());
+    hash = (37 * hash) + SKIP_DEFAULT_SCHEMA_CREATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipDefaultSchemaCreation());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -520,6 +554,7 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       dataStoreId_ = "";
       createAdvancedSiteSearch_ = false;
+      skipDefaultSchemaCreation_ = false;
       return this;
     }
 
@@ -571,6 +606,9 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createAdvancedSiteSearch_ = createAdvancedSiteSearch_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.skipDefaultSchemaCreation_ = skipDefaultSchemaCreation_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -638,6 +676,9 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
       if (other.getCreateAdvancedSiteSearch() != false) {
         setCreateAdvancedSiteSearch(other.getCreateAdvancedSiteSearch());
       }
+      if (other.getSkipDefaultSchemaCreation() != false) {
+        setSkipDefaultSchemaCreation(other.getSkipDefaultSchemaCreation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -688,6 +729,12 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 56:
+              {
+                skipDefaultSchemaCreation_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1244,6 +1291,80 @@ public final class CreateDataStoreRequest extends com.google.protobuf.GeneratedM
     public Builder clearCreateAdvancedSiteSearch() {
       bitField0_ = (bitField0_ & ~0x00000008);
       createAdvancedSiteSearch_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipDefaultSchemaCreation_;
+    /**
+     *
+     *
+     * <pre>
+     * A boolean flag indicating whether to skip the default schema creation for
+     * the data store. Only enable this flag if you are certain that the default
+     * schema is incompatible with your use case.
+     *
+     * If set to true, you must manually create a schema for the data store before
+     * any documents can be ingested.
+     *
+     * This flag cannot be specified if `data_store.starting_schema` is specified.
+     * </pre>
+     *
+     * <code>bool skip_default_schema_creation = 7;</code>
+     *
+     * @return The skipDefaultSchemaCreation.
+     */
+    @java.lang.Override
+    public boolean getSkipDefaultSchemaCreation() {
+      return skipDefaultSchemaCreation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A boolean flag indicating whether to skip the default schema creation for
+     * the data store. Only enable this flag if you are certain that the default
+     * schema is incompatible with your use case.
+     *
+     * If set to true, you must manually create a schema for the data store before
+     * any documents can be ingested.
+     *
+     * This flag cannot be specified if `data_store.starting_schema` is specified.
+     * </pre>
+     *
+     * <code>bool skip_default_schema_creation = 7;</code>
+     *
+     * @param value The skipDefaultSchemaCreation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipDefaultSchemaCreation(boolean value) {
+
+      skipDefaultSchemaCreation_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A boolean flag indicating whether to skip the default schema creation for
+     * the data store. Only enable this flag if you are certain that the default
+     * schema is incompatible with your use case.
+     *
+     * If set to true, you must manually create a schema for the data store before
+     * any documents can be ingested.
+     *
+     * This flag cannot be specified if `data_store.starting_schema` is specified.
+     * </pre>
+     *
+     * <code>bool skip_default_schema_creation = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipDefaultSchemaCreation() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      skipDefaultSchemaCreation_ = false;
       onChanged();
       return this;
     }

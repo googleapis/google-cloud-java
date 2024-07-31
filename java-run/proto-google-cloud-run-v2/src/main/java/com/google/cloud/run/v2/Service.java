@@ -680,7 +680,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -696,7 +697,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -712,7 +714,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -985,12 +988,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides the ingress settings for this Service. On output, returns the
-   * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-   * revision is active.
+   * Optional. Provides the ingress settings for this Service. On output,
+   * returns the currently observed ingress settings, or
+   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+   * <code>
+   * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ingress.
    */
@@ -1002,12 +1007,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides the ingress settings for this Service. On output, returns the
-   * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-   * revision is active.
+   * Optional. Provides the ingress settings for this Service. On output,
+   * returns the currently observed ingress settings, or
+   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+   * <code>
+   * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ingress.
    */
@@ -1024,7 +1031,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The launch stage as defined by [Google Cloud Platform
+   * Optional. The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
@@ -1036,7 +1043,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * features are used, this field will be BETA on output.
    * </pre>
    *
-   * <code>.google.api.LaunchStage launch_stage = 16;</code>
+   * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for launchStage.
    */
@@ -1048,7 +1056,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The launch stage as defined by [Google Cloud Platform
+   * Optional. The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
@@ -1060,7 +1068,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * features are used, this field will be BETA on output.
    * </pre>
    *
-   * <code>.google.api.LaunchStage launch_stage = 16;</code>
+   * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The launchStage.
    */
@@ -1076,10 +1085,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the binaryAuthorization field is set.
    */
@@ -1091,10 +1102,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The binaryAuthorization.
    */
@@ -1108,10 +1121,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for the Binary Authorization feature.
+   * Optional. Settings for the Binary Authorization feature.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+   * <code>
+   * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder() {
@@ -1184,12 +1199,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.run.v2.TrafficTarget> getTrafficList() {
@@ -1199,12 +1216,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.run.v2.TrafficTargetOrBuilder>
@@ -1215,12 +1234,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getTrafficCount() {
@@ -1230,12 +1251,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.TrafficTarget getTraffic(int index) {
@@ -1245,12 +1268,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to distribute traffic over a collection of Revisions
-   * belonging to the Service. If traffic is empty or not provided, defaults to
-   * 100% traffic to the latest `Ready` Revision.
+   * Optional. Specifies how to distribute traffic over a collection of
+   * Revisions belonging to the Service. If traffic is empty or not provided,
+   * defaults to 100% traffic to the latest `Ready` Revision.
    * </pre>
    *
-   * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+   * <code>
+   * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.run.v2.TrafficTargetOrBuilder getTrafficOrBuilder(int index) {
@@ -4641,7 +4666,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4657,7 +4683,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4679,7 +4706,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4703,7 +4731,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4724,7 +4753,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4753,7 +4783,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4774,7 +4805,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4790,7 +4822,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -4810,7 +4843,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deletion time.
+     * Output only. The deletion time. It is only populated as a response to a
+     * Delete request.
      * </pre>
      *
      * <code>
@@ -5475,12 +5509,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides the ingress settings for this Service. On output, returns the
-     * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-     * revision is active.
+     * Optional. Provides the ingress settings for this Service. On output,
+     * returns the currently observed ingress settings, or
+     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+     * <code>
+     * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for ingress.
      */
@@ -5492,12 +5528,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides the ingress settings for this Service. On output, returns the
-     * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-     * revision is active.
+     * Optional. Provides the ingress settings for this Service. On output,
+     * returns the currently observed ingress settings, or
+     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+     * <code>
+     * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for ingress to set.
      * @return This builder for chaining.
@@ -5512,12 +5550,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides the ingress settings for this Service. On output, returns the
-     * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-     * revision is active.
+     * Optional. Provides the ingress settings for this Service. On output,
+     * returns the currently observed ingress settings, or
+     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+     * <code>
+     * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The ingress.
      */
@@ -5531,12 +5571,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides the ingress settings for this Service. On output, returns the
-     * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-     * revision is active.
+     * Optional. Provides the ingress settings for this Service. On output,
+     * returns the currently observed ingress settings, or
+     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+     * <code>
+     * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The ingress to set.
      * @return This builder for chaining.
@@ -5554,12 +5596,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides the ingress settings for this Service. On output, returns the
-     * currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no
-     * revision is active.
+     * Optional. Provides the ingress settings for this Service. On output,
+     * returns the currently observed ingress settings, or
+     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.IngressTraffic ingress = 15;</code>
+     * <code>
+     * .google.cloud.run.v2.IngressTraffic ingress = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5575,7 +5619,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The launch stage as defined by [Google Cloud Platform
+     * Optional. The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
@@ -5587,7 +5631,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * features are used, this field will be BETA on output.
      * </pre>
      *
-     * <code>.google.api.LaunchStage launch_stage = 16;</code>
+     * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for launchStage.
      */
@@ -5599,7 +5644,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The launch stage as defined by [Google Cloud Platform
+     * Optional. The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
@@ -5611,7 +5656,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * features are used, this field will be BETA on output.
      * </pre>
      *
-     * <code>.google.api.LaunchStage launch_stage = 16;</code>
+     * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for launchStage to set.
      * @return This builder for chaining.
@@ -5626,7 +5672,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The launch stage as defined by [Google Cloud Platform
+     * Optional. The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
@@ -5638,7 +5684,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * features are used, this field will be BETA on output.
      * </pre>
      *
-     * <code>.google.api.LaunchStage launch_stage = 16;</code>
+     * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The launchStage.
      */
@@ -5651,7 +5698,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The launch stage as defined by [Google Cloud Platform
+     * Optional. The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
@@ -5663,7 +5710,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * features are used, this field will be BETA on output.
      * </pre>
      *
-     * <code>.google.api.LaunchStage launch_stage = 16;</code>
+     * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The launchStage to set.
      * @return This builder for chaining.
@@ -5681,7 +5729,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The launch stage as defined by [Google Cloud Platform
+     * Optional. The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
@@ -5693,7 +5741,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * features are used, this field will be BETA on output.
      * </pre>
      *
-     * <code>.google.api.LaunchStage launch_stage = 16;</code>
+     * <code>.google.api.LaunchStage launch_stage = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5714,10 +5763,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the binaryAuthorization field is set.
      */
@@ -5728,10 +5779,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The binaryAuthorization.
      */
@@ -5748,10 +5801,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBinaryAuthorization(com.google.cloud.run.v2.BinaryAuthorization value) {
       if (binaryAuthorizationBuilder_ == null) {
@@ -5770,10 +5825,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBinaryAuthorization(
         com.google.cloud.run.v2.BinaryAuthorization.Builder builderForValue) {
@@ -5790,10 +5847,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeBinaryAuthorization(com.google.cloud.run.v2.BinaryAuthorization value) {
       if (binaryAuthorizationBuilder_ == null) {
@@ -5818,10 +5877,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBinaryAuthorization() {
       bitField0_ = (bitField0_ & ~0x00010000);
@@ -5837,10 +5898,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.BinaryAuthorization.Builder getBinaryAuthorizationBuilder() {
       bitField0_ |= 0x00010000;
@@ -5851,10 +5914,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder() {
       if (binaryAuthorizationBuilder_ != null) {
@@ -5869,10 +5934,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the Binary Authorization feature.
+     * Optional. Settings for the Binary Authorization feature.
      * </pre>
      *
-     * <code>.google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;</code>
+     * <code>
+     * .google.cloud.run.v2.BinaryAuthorization binary_authorization = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.run.v2.BinaryAuthorization,
@@ -6114,12 +6181,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.TrafficTarget> getTrafficList() {
       if (trafficBuilder_ == null) {
@@ -6132,12 +6201,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getTrafficCount() {
       if (trafficBuilder_ == null) {
@@ -6150,12 +6221,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.TrafficTarget getTraffic(int index) {
       if (trafficBuilder_ == null) {
@@ -6168,12 +6241,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTraffic(int index, com.google.cloud.run.v2.TrafficTarget value) {
       if (trafficBuilder_ == null) {
@@ -6192,12 +6267,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTraffic(
         int index, com.google.cloud.run.v2.TrafficTarget.Builder builderForValue) {
@@ -6214,12 +6291,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTraffic(com.google.cloud.run.v2.TrafficTarget value) {
       if (trafficBuilder_ == null) {
@@ -6238,12 +6317,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTraffic(int index, com.google.cloud.run.v2.TrafficTarget value) {
       if (trafficBuilder_ == null) {
@@ -6262,12 +6343,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTraffic(com.google.cloud.run.v2.TrafficTarget.Builder builderForValue) {
       if (trafficBuilder_ == null) {
@@ -6283,12 +6366,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTraffic(
         int index, com.google.cloud.run.v2.TrafficTarget.Builder builderForValue) {
@@ -6305,12 +6390,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllTraffic(
         java.lang.Iterable<? extends com.google.cloud.run.v2.TrafficTarget> values) {
@@ -6327,12 +6414,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTraffic() {
       if (trafficBuilder_ == null) {
@@ -6348,12 +6437,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeTraffic(int index) {
       if (trafficBuilder_ == null) {
@@ -6369,12 +6460,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.TrafficTarget.Builder getTrafficBuilder(int index) {
       return getTrafficFieldBuilder().getBuilder(index);
@@ -6383,12 +6476,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.TrafficTargetOrBuilder getTrafficOrBuilder(int index) {
       if (trafficBuilder_ == null) {
@@ -6401,12 +6496,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.run.v2.TrafficTargetOrBuilder>
         getTrafficOrBuilderList() {
@@ -6420,12 +6517,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.TrafficTarget.Builder addTrafficBuilder() {
       return getTrafficFieldBuilder()
@@ -6435,12 +6534,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.run.v2.TrafficTarget.Builder addTrafficBuilder(int index) {
       return getTrafficFieldBuilder()
@@ -6450,12 +6551,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to distribute traffic over a collection of Revisions
-     * belonging to the Service. If traffic is empty or not provided, defaults to
-     * 100% traffic to the latest `Ready` Revision.
+     * Optional. Specifies how to distribute traffic over a collection of
+     * Revisions belonging to the Service. If traffic is empty or not provided,
+     * defaults to 100% traffic to the latest `Ready` Revision.
      * </pre>
      *
-     * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
+     * <code>
+     * repeated .google.cloud.run.v2.TrafficTarget traffic = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.run.v2.TrafficTarget.Builder> getTrafficBuilderList() {
       return getTrafficFieldBuilder().getBuilderList();

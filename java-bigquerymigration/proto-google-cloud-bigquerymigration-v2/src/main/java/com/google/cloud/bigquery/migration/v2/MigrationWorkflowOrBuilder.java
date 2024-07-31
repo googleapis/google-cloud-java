@@ -28,14 +28,14 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The unique identifier for the migration workflow.
-   * The ID is server-generated.
+   * Output only. Immutable. Identifier. The unique identifier for the migration
+   * workflow. The ID is server-generated.
    *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
    * </code>
    *
    * @return The name.
@@ -45,14 +45,14 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The unique identifier for the migration workflow.
-   * The ID is server-generated.
+   * Output only. Immutable. Identifier. The unique identifier for the migration
+   * workflow. The ID is server-generated.
    *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
    * </code>
    *
    * @return The bytes for name.

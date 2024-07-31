@@ -96,7 +96,7 @@ public interface ListProjectDataProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of fields to order by, followed by `asc` or `desc`
+   * Comma-separated list of fields to order by, followed by `asc` or `desc`
    * postfix. This list is case insensitive. The default sorting order is
    * ascending. Redundant space characters are insignificant. Only one order
    * field at a time is allowed.
@@ -123,7 +123,7 @@ public interface ListProjectDataProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Comma separated list of fields to order by, followed by `asc` or `desc`
+   * Comma-separated list of fields to order by, followed by `asc` or `desc`
    * postfix. This list is case insensitive. The default sorting order is
    * ascending. Redundant space characters are insignificant. Only one order
    * field at a time is allowed.

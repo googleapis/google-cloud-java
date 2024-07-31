@@ -47,28 +47,29 @@ public final class ModelGardenServiceProto {
           + "e/api/client.proto\032\037google/api/field_beh"
           + "avior.proto\032\031google/api/resource.proto\0320"
           + "google/cloud/aiplatform/v1/publisher_mod"
-          + "el.proto\"\271\001\n\030GetPublisherModelRequest\022>\n"
+          + "el.proto\"\335\001\n\030GetPublisherModelRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.googleap"
           + "is.com/PublisherModel\022\032\n\rlanguage_code\030\002"
           + " \001(\tB\003\340A\001\022A\n\004view\030\003 \001(\0162..google.cloud.a"
-          + "iplatform.v1.PublisherModelViewB\003\340A\001*\241\001\n"
-          + "\022PublisherModelView\022$\n PUBLISHER_MODEL_V"
-          + "IEW_UNSPECIFIED\020\000\022\036\n\032PUBLISHER_MODEL_VIE"
-          + "W_BASIC\020\001\022\035\n\031PUBLISHER_MODEL_VIEW_FULL\020\002"
-          + "\022&\n\"PUBLISHER_MODEL_VERSION_VIEW_BASIC\020\003"
-          + "2\214\002\n\022ModelGardenService\022\246\001\n\021GetPublisher"
-          + "Model\0224.google.cloud.aiplatform.v1.GetPu"
-          + "blisherModelRequest\032*.google.cloud.aipla"
-          + "tform.v1.PublisherModel\"/\332A\004name\202\323\344\223\002\"\022 "
-          + "/v1/{name=publishers/*/models/*}\032M\312A\031aip"
-          + "latform.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\325\001\n\036com."
-          + "google.cloud.aiplatform.v1B\027ModelGardenS"
-          + "erviceProtoP\001Z>cloud.google.com/go/aipla"
-          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
-          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
-          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
-          + "orm::V1b\006proto3"
+          + "iplatform.v1.PublisherModelViewB\003\340A\001\022\"\n\025"
+          + "is_hugging_face_model\030\005 \001(\010B\003\340A\001*\241\001\n\022Pub"
+          + "lisherModelView\022$\n PUBLISHER_MODEL_VIEW_"
+          + "UNSPECIFIED\020\000\022\036\n\032PUBLISHER_MODEL_VIEW_BA"
+          + "SIC\020\001\022\035\n\031PUBLISHER_MODEL_VIEW_FULL\020\002\022&\n\""
+          + "PUBLISHER_MODEL_VERSION_VIEW_BASIC\020\0032\214\002\n"
+          + "\022ModelGardenService\022\246\001\n\021GetPublisherMode"
+          + "l\0224.google.cloud.aiplatform.v1.GetPublis"
+          + "herModelRequest\032*.google.cloud.aiplatfor"
+          + "m.v1.PublisherModel\"/\332A\004name\202\323\344\223\002\"\022 /v1/"
+          + "{name=publishers/*/models/*}\032M\312A\031aiplatf"
+          + "orm.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\325\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\027ModelGardenServi"
+          + "ceProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +87,7 @@ public final class ModelGardenServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GetPublisherModelRequest_descriptor,
             new java.lang.String[] {
-              "Name", "LanguageCode", "View",
+              "Name", "LanguageCode", "View", "IsHuggingFaceModel",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

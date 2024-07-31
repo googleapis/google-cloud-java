@@ -17,6 +17,7 @@
 package com.google.cloud.apigeeconnect.v1.stub;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -113,6 +114,7 @@ public class TetherStubSettings extends StubSettings<TetherStubSettings> {
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "apigeeconnect.googleapis.com:443";
   }

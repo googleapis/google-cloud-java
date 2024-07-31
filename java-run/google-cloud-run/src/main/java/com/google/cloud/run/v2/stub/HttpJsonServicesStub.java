@@ -208,6 +208,7 @@ public class HttpJsonServicesStub extends ServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");

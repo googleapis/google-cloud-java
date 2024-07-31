@@ -4016,12 +4016,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the instance in which the repository is hosted,
+   * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+   * For data plane CreateRepository requests, this field is output only.
+   * For control plane CreateRepository requests, this field is used as input.
    * </pre>
    *
-   * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The instance.
    */
@@ -4041,12 +4043,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the instance in which the repository is hosted,
+   * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+   * For data plane CreateRepository requests, this field is output only.
+   * For control plane CreateRepository requests, this field is used as input.
    * </pre>
    *
-   * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for instance.
    */
@@ -5193,12 +5197,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the instance in which the repository is hosted,
+     * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+     * For data plane CreateRepository requests, this field is output only.
+     * For control plane CreateRepository requests, this field is used as input.
      * </pre>
      *
-     * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The instance.
      */
@@ -5217,12 +5223,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the instance in which the repository is hosted,
+     * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+     * For data plane CreateRepository requests, this field is output only.
+     * For control plane CreateRepository requests, this field is used as input.
      * </pre>
      *
-     * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for instance.
      */
@@ -5241,12 +5249,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the instance in which the repository is hosted,
+     * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+     * For data plane CreateRepository requests, this field is output only.
+     * For control plane CreateRepository requests, this field is used as input.
      * </pre>
      *
-     * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The instance to set.
      * @return This builder for chaining.
@@ -5264,12 +5274,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the instance in which the repository is hosted,
+     * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+     * For data plane CreateRepository requests, this field is output only.
+     * For control plane CreateRepository requests, this field is used as input.
      * </pre>
      *
-     * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5283,12 +5295,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the instance in which the repository is hosted,
+     * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+     * For data plane CreateRepository requests, this field is output only.
+     * For control plane CreateRepository requests, this field is used as input.
      * </pre>
      *
-     * <code>string instance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string instance = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for instance to set.
      * @return This builder for chaining.

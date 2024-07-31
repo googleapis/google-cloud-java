@@ -1024,8 +1024,14 @@
             "AssignNotebookRuntime": {
               "methods": ["assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeOperationCallable", "assignNotebookRuntimeCallable"]
             },
+            "CreateNotebookExecutionJob": {
+              "methods": ["createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobOperationCallable", "createNotebookExecutionJobCallable"]
+            },
             "CreateNotebookRuntimeTemplate": {
               "methods": ["createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateOperationCallable", "createNotebookRuntimeTemplateCallable"]
+            },
+            "DeleteNotebookExecutionJob": {
+              "methods": ["deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobOperationCallable", "deleteNotebookExecutionJobCallable"]
             },
             "DeleteNotebookRuntime": {
               "methods": ["deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeOperationCallable", "deleteNotebookRuntimeCallable"]
@@ -1039,6 +1045,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetNotebookExecutionJob": {
+              "methods": ["getNotebookExecutionJob", "getNotebookExecutionJob", "getNotebookExecutionJob", "getNotebookExecutionJobCallable"]
+            },
             "GetNotebookRuntime": {
               "methods": ["getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntimeCallable"]
             },
@@ -1047,6 +1056,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListNotebookExecutionJobs": {
+              "methods": ["listNotebookExecutionJobs", "listNotebookExecutionJobs", "listNotebookExecutionJobs", "listNotebookExecutionJobsPagedCallable", "listNotebookExecutionJobsCallable"]
             },
             "ListNotebookRuntimeTemplates": {
               "methods": ["listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplatesPagedCallable", "listNotebookRuntimeTemplatesCallable"]

@@ -1355,6 +1355,16 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>RESOURCE_NAME = 2;</code>
        */
       RESOURCE_NAME(2),
+      /**
+       *
+       *
+       * <pre>
+       * The full file store data profile.
+       * </pre>
+       *
+       * <code>FILE_STORE_PROFILE = 3;</code>
+       */
+      FILE_STORE_PROFILE(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -1388,6 +1398,16 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>RESOURCE_NAME = 2;</code>
        */
       public static final int RESOURCE_NAME_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The full file store data profile.
+       * </pre>
+       *
+       * <code>FILE_STORE_PROFILE = 3;</code>
+       */
+      public static final int FILE_STORE_PROFILE_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -1419,6 +1439,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return TABLE_PROFILE;
           case 2:
             return RESOURCE_NAME;
+          case 3:
+            return FILE_STORE_PROFILE;
           default:
             return null;
         }

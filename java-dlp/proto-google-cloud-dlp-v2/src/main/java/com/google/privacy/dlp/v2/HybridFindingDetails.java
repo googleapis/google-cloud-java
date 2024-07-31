@@ -271,6 +271,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -308,6 +309,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -336,6 +338,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -371,6 +374,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * No more than 10 labels can be associated with a given finding.
    *
    * Examples:
+   *
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
    * </pre>
@@ -1458,6 +1462,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1495,6 +1500,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1523,6 +1529,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1558,6 +1565,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1599,6 +1607,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1636,6 +1645,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>
@@ -1671,6 +1681,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * No more than 10 labels can be associated with a given finding.
      *
      * Examples:
+     *
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
      * </pre>

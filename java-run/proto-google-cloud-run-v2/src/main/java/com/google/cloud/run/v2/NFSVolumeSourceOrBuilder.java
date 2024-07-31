@@ -78,7 +78,7 @@ public interface NFSVolumeSourceOrBuilder
    *
    *
    * <pre>
-   * If true, mount the NFS volume as read only
+   * If true, the volume will be mounted as read only for all mounts.
    * </pre>
    *
    * <code>bool read_only = 3;</code>

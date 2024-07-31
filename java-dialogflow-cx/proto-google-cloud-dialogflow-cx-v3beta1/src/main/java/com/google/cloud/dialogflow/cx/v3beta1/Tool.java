@@ -351,6 +351,48 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.cx.v3beta1.Tool.TLSConfigOrBuilder getTlsConfigOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceDirectoryConfig field is set.
+     */
+    boolean hasServiceDirectoryConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceDirectoryConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig getServiceDirectoryConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder
+        getServiceDirectoryConfigOrBuilder();
+
     com.google.cloud.dialogflow.cx.v3beta1.Tool.OpenApiTool.SchemaCase getSchemaCase();
   }
   /**
@@ -626,6 +668,65 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           : tlsConfig_;
     }
 
+    public static final int SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER = 4;
+    private com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        serviceDirectoryConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceDirectoryConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceDirectoryConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceDirectoryConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        getServiceDirectoryConfig() {
+      return serviceDirectoryConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.getDefaultInstance()
+          : serviceDirectoryConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder
+        getServiceDirectoryConfigOrBuilder() {
+      return serviceDirectoryConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.getDefaultInstance()
+          : serviceDirectoryConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -649,6 +750,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getTlsConfig());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getServiceDirectoryConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -666,6 +770,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTlsConfig());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, getServiceDirectoryConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -690,6 +799,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (hasTlsConfig() != other.hasTlsConfig()) return false;
       if (hasTlsConfig()) {
         if (!getTlsConfig().equals(other.getTlsConfig())) return false;
+      }
+      if (hasServiceDirectoryConfig() != other.hasServiceDirectoryConfig()) return false;
+      if (hasServiceDirectoryConfig()) {
+        if (!getServiceDirectoryConfig().equals(other.getServiceDirectoryConfig())) return false;
       }
       if (!getSchemaCase().equals(other.getSchemaCase())) return false;
       switch (schemaCase_) {
@@ -717,6 +830,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (hasTlsConfig()) {
         hash = (37 * hash) + TLS_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getTlsConfig().hashCode();
+      }
+      if (hasServiceDirectoryConfig()) {
+        hash = (37 * hash) + SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceDirectoryConfig().hashCode();
       }
       switch (schemaCase_) {
         case 1:
@@ -872,6 +989,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getAuthenticationFieldBuilder();
           getTlsConfigFieldBuilder();
+          getServiceDirectoryConfigFieldBuilder();
         }
       }
 
@@ -888,6 +1006,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (tlsConfigBuilder_ != null) {
           tlsConfigBuilder_.dispose();
           tlsConfigBuilder_ = null;
+        }
+        serviceDirectoryConfig_ = null;
+        if (serviceDirectoryConfigBuilder_ != null) {
+          serviceDirectoryConfigBuilder_.dispose();
+          serviceDirectoryConfigBuilder_ = null;
         }
         schemaCase_ = 0;
         schema_ = null;
@@ -937,6 +1060,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.tlsConfig_ = tlsConfigBuilder_ == null ? tlsConfig_ : tlsConfigBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.serviceDirectoryConfig_ =
+              serviceDirectoryConfigBuilder_ == null
+                  ? serviceDirectoryConfig_
+                  : serviceDirectoryConfigBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1001,6 +1131,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (other.hasTlsConfig()) {
           mergeTlsConfig(other.getTlsConfig());
         }
+        if (other.hasServiceDirectoryConfig()) {
+          mergeServiceDirectoryConfig(other.getServiceDirectoryConfig());
+        }
         switch (other.getSchemaCase()) {
           case TEXT_SCHEMA:
             {
@@ -1060,6 +1193,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getServiceDirectoryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1641,6 +1781,221 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           tlsConfig_ = null;
         }
         return tlsConfigBuilder_;
+      }
+
+      private com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+          serviceDirectoryConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder>
+          serviceDirectoryConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the serviceDirectoryConfig field is set.
+       */
+      public boolean hasServiceDirectoryConfig() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceDirectoryConfig.
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+          getServiceDirectoryConfig() {
+        if (serviceDirectoryConfigBuilder_ == null) {
+          return serviceDirectoryConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+                  .getDefaultInstance()
+              : serviceDirectoryConfig_;
+        } else {
+          return serviceDirectoryConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setServiceDirectoryConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig value) {
+        if (serviceDirectoryConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceDirectoryConfig_ = value;
+        } else {
+          serviceDirectoryConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setServiceDirectoryConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder
+              builderForValue) {
+        if (serviceDirectoryConfigBuilder_ == null) {
+          serviceDirectoryConfig_ = builderForValue.build();
+        } else {
+          serviceDirectoryConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeServiceDirectoryConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig value) {
+        if (serviceDirectoryConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && serviceDirectoryConfig_ != null
+              && serviceDirectoryConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+                      .getDefaultInstance()) {
+            getServiceDirectoryConfigBuilder().mergeFrom(value);
+          } else {
+            serviceDirectoryConfig_ = value;
+          }
+        } else {
+          serviceDirectoryConfigBuilder_.mergeFrom(value);
+        }
+        if (serviceDirectoryConfig_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearServiceDirectoryConfig() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        serviceDirectoryConfig_ = null;
+        if (serviceDirectoryConfigBuilder_ != null) {
+          serviceDirectoryConfigBuilder_.dispose();
+          serviceDirectoryConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder
+          getServiceDirectoryConfigBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getServiceDirectoryConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder
+          getServiceDirectoryConfigOrBuilder() {
+        if (serviceDirectoryConfigBuilder_ != null) {
+          return serviceDirectoryConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return serviceDirectoryConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+                  .getDefaultInstance()
+              : serviceDirectoryConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Service Directory configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder>
+          getServiceDirectoryConfigFieldBuilder() {
+        if (serviceDirectoryConfigBuilder_ == null) {
+          serviceDirectoryConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder>(
+                  getServiceDirectoryConfig(), getParentForChildren(), isClean());
+          serviceDirectoryConfig_ = null;
+        }
+        return serviceDirectoryConfigBuilder_;
       }
 
       @java.lang.Override
@@ -12217,6 +12572,722 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.Tool.TLSConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ServiceDirectoryConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+     * `LocationID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The service.
+     */
+    java.lang.String getService();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+     * `LocationID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for service.
+     */
+    com.google.protobuf.ByteString getServiceBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for tools using Service Directory.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig}
+   */
+  public static final class ServiceDirectoryConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)
+      ServiceDirectoryConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ServiceDirectoryConfig.newBuilder() to construct.
+    private ServiceDirectoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ServiceDirectoryConfig() {
+      service_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ServiceDirectoryConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ServiceDirectoryConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ServiceDirectoryConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder.class);
+    }
+
+    public static final int SERVICE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object service_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+     * `LocationID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The service.
+     */
+    @java.lang.Override
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        service_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+     * `LocationID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for service.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceBytes() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        service_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig) obj;
+
+      if (!getService().equals(other.getService())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for tools using Service Directory.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ServiceDirectoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ServiceDirectoryConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        service_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ServiceDirectoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.service_ = service_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+                .getDefaultInstance()) return this;
+        if (!other.getService().isEmpty()) {
+          service_ = other.service_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  service_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object service_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+       * `LocationID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The service.
+       */
+      public java.lang.String getService() {
+        java.lang.Object ref = service_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          service_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+       * `LocationID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for service.
+       */
+      public com.google.protobuf.ByteString getServiceBytes() {
+        java.lang.Object ref = service_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          service_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+       * `LocationID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setService(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        service_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+       * `LocationID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearService() {
+        service_ = getDefaultInstance().getService();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/namespaces/&lt;NamespaceID&gt;/services/&lt;ServiceID&gt;`.
+       * `LocationID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        service_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ServiceDirectoryConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ServiceDirectoryConfig>() {
+          @java.lang.Override
+          public ServiceDirectoryConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ServiceDirectoryConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ServiceDirectoryConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ServiceDirectoryConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }

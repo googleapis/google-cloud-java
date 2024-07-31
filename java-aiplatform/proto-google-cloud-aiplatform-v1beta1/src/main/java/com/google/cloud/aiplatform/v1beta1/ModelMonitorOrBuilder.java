@@ -467,5 +467,31 @@ public interface ModelMonitorOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
   com.google.cloud.aiplatform.v1beta1.ModelMonitor.DefaultObjectiveCase getDefaultObjectiveCase();
 }

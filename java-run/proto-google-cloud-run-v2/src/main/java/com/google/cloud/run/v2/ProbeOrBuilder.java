@@ -28,13 +28,12 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * Number of seconds after the container has started before the probe is
-   * initiated.
-   * Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe
-   * is 3600. Maximum value for startup probe is 240.
+   * Optional. Number of seconds after the container has started before the
+   * probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum
+   * value for liveness probe is 3600. Maximum value for startup probe is 240.
    * </pre>
    *
-   * <code>int32 initial_delay_seconds = 1;</code>
+   * <code>int32 initial_delay_seconds = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The initialDelaySeconds.
    */
@@ -44,12 +43,12 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * Number of seconds after which the probe times out.
+   * Optional. Number of seconds after which the probe times out.
    * Defaults to 1 second. Minimum value is 1. Maximum value is 3600.
    * Must be smaller than period_seconds.
    * </pre>
    *
-   * <code>int32 timeout_seconds = 2;</code>
+   * <code>int32 timeout_seconds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The timeoutSeconds.
    */
@@ -59,13 +58,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * How often (in seconds) to perform the probe.
+   * Optional. How often (in seconds) to perform the probe.
    * Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe
    * is 3600. Maximum value for startup probe is 240.
    * Must be greater or equal than timeout_seconds.
    * </pre>
    *
-   * <code>int32 period_seconds = 3;</code>
+   * <code>int32 period_seconds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The periodSeconds.
    */
@@ -75,11 +74,11 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * Minimum consecutive failures for the probe to be considered failed after
-   * having succeeded. Defaults to 3. Minimum value is 1.
+   * Optional. Minimum consecutive failures for the probe to be considered
+   * failed after having succeeded. Defaults to 3. Minimum value is 1.
    * </pre>
    *
-   * <code>int32 failure_threshold = 4;</code>
+   * <code>int32 failure_threshold = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The failureThreshold.
    */
@@ -89,11 +88,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * HTTPGet specifies the http request to perform.
+   * Optional. HTTPGet specifies the http request to perform.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
+   * <code>
+   * .google.cloud.run.v2.HTTPGetAction http_get = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the httpGet field is set.
    */
@@ -102,11 +103,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * HTTPGet specifies the http request to perform.
+   * Optional. HTTPGet specifies the http request to perform.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
+   * <code>
+   * .google.cloud.run.v2.HTTPGetAction http_get = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The httpGet.
    */
@@ -115,11 +118,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * HTTPGet specifies the http request to perform.
+   * Optional. HTTPGet specifies the http request to perform.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
+   * <code>
+   * .google.cloud.run.v2.HTTPGetAction http_get = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.HTTPGetActionOrBuilder getHttpGetOrBuilder();
 
@@ -127,11 +132,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * TCPSocket specifies an action involving a TCP port.
+   * Optional. TCPSocket specifies an action involving a TCP port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.TCPSocketAction tcp_socket = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the tcpSocket field is set.
    */
@@ -140,11 +147,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * TCPSocket specifies an action involving a TCP port.
+   * Optional. TCPSocket specifies an action involving a TCP port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.TCPSocketAction tcp_socket = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The tcpSocket.
    */
@@ -153,11 +162,13 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * TCPSocket specifies an action involving a TCP port.
+   * Optional. TCPSocket specifies an action involving a TCP port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
+   * <code>
+   * .google.cloud.run.v2.TCPSocketAction tcp_socket = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.TCPSocketActionOrBuilder getTcpSocketOrBuilder();
 
@@ -165,11 +176,12 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * GRPC specifies an action involving a gRPC port.
+   * Optional. GRPC specifies an action involving a gRPC port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the grpc field is set.
    */
@@ -178,11 +190,12 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * GRPC specifies an action involving a gRPC port.
+   * Optional. GRPC specifies an action involving a gRPC port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The grpc.
    */
@@ -191,11 +204,12 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
-   * GRPC specifies an action involving a gRPC port.
+   * Optional. GRPC specifies an action involving a gRPC port.
    * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
-   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.run.v2.GRPCActionOrBuilder getGrpcOrBuilder();
 

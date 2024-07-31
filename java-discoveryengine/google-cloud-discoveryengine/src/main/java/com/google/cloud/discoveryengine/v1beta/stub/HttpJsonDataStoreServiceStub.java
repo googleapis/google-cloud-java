@@ -104,6 +104,10 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields,
+                                "skipDefaultSchemaCreation",
+                                request.getSkipDefaultSchemaCreation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -414,7 +418,17 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

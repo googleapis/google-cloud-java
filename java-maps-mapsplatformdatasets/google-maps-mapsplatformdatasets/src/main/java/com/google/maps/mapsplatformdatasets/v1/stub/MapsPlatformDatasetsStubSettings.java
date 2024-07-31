@@ -16,11 +16,13 @@
 
 package com.google.maps.mapsplatformdatasets.v1.stub;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -50,11 +52,14 @@ import com.google.common.collect.Lists;
 import com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.Dataset;
 import com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse;
 import com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse;
 import com.google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest;
 import com.google.protobuf.Empty;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -111,9 +116,51 @@ public class MapsPlatformDatasetsStubSettings
       updateDatasetMetadataSettings;
   private final UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings;
   private final PagedCallSettings<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsSettings;
+  private final PagedCallSettings<
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       listDatasetsSettings;
   private final UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings;
+
+  private static final PagedListDescriptor<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>
+      FETCH_DATASET_ERRORS_PAGE_STR_DESC =
+          new PagedListDescriptor<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchDatasetErrorsRequest injectToken(
+                FetchDatasetErrorsRequest payload, String token) {
+              return FetchDatasetErrorsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchDatasetErrorsRequest injectPageSize(
+                FetchDatasetErrorsRequest payload, int pageSize) {
+              return FetchDatasetErrorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchDatasetErrorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchDatasetErrorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Status> extractResources(FetchDatasetErrorsResponse payload) {
+              return payload.getErrorsList() == null
+                  ? ImmutableList.<Status>of()
+                  : payload.getErrorsList();
+            }
+          };
 
   private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
       LIST_DATASETS_PAGE_STR_DESC =
@@ -152,6 +199,27 @@ public class MapsPlatformDatasetsStubSettings
           };
 
   private static final PagedListResponseFactory<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+      FETCH_DATASET_ERRORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchDatasetErrorsRequest,
+              FetchDatasetErrorsResponse,
+              FetchDatasetErrorsPagedResponse>() {
+            @Override
+            public ApiFuture<FetchDatasetErrorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse> callable,
+                FetchDatasetErrorsRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
+              PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_DATASET_ERRORS_PAGE_STR_DESC, request, context);
+              return FetchDatasetErrorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       LIST_DATASETS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -181,6 +249,13 @@ public class MapsPlatformDatasetsStubSettings
   /** Returns the object with the settings used for calls to getDataset. */
   public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
     return getDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchDatasetErrors. */
+  public PagedCallSettings<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsSettings() {
+    return fetchDatasetErrorsSettings;
   }
 
   /** Returns the object with the settings used for calls to listDatasets. */
@@ -222,6 +297,7 @@ public class MapsPlatformDatasetsStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "mapsplatformdatasets.googleapis.com:443";
   }
@@ -307,6 +383,7 @@ public class MapsPlatformDatasetsStubSettings
     createDatasetSettings = settingsBuilder.createDatasetSettings().build();
     updateDatasetMetadataSettings = settingsBuilder.updateDatasetMetadataSettings().build();
     getDatasetSettings = settingsBuilder.getDatasetSettings().build();
+    fetchDatasetErrorsSettings = settingsBuilder.fetchDatasetErrorsSettings().build();
     listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
     deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
   }
@@ -319,6 +396,9 @@ public class MapsPlatformDatasetsStubSettings
     private final UnaryCallSettings.Builder<UpdateDatasetMetadataRequest, Dataset>
         updateDatasetMetadataSettings;
     private final UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings;
+    private final PagedCallSettings.Builder<
+            FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+        fetchDatasetErrorsSettings;
     private final PagedCallSettings.Builder<
             ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
         listDatasetsSettings;
@@ -374,6 +454,7 @@ public class MapsPlatformDatasetsStubSettings
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDatasetMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchDatasetErrorsSettings = PagedCallSettings.newBuilder(FETCH_DATASET_ERRORS_PAGE_STR_FACT);
       listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
       deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -382,6 +463,7 @@ public class MapsPlatformDatasetsStubSettings
               createDatasetSettings,
               updateDatasetMetadataSettings,
               getDatasetSettings,
+              fetchDatasetErrorsSettings,
               listDatasetsSettings,
               deleteDatasetSettings);
       initDefaults(this);
@@ -393,6 +475,7 @@ public class MapsPlatformDatasetsStubSettings
       createDatasetSettings = settings.createDatasetSettings.toBuilder();
       updateDatasetMetadataSettings = settings.updateDatasetMetadataSettings.toBuilder();
       getDatasetSettings = settings.getDatasetSettings.toBuilder();
+      fetchDatasetErrorsSettings = settings.fetchDatasetErrorsSettings.toBuilder();
       listDatasetsSettings = settings.listDatasetsSettings.toBuilder();
       deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
 
@@ -401,6 +484,7 @@ public class MapsPlatformDatasetsStubSettings
               createDatasetSettings,
               updateDatasetMetadataSettings,
               getDatasetSettings,
+              fetchDatasetErrorsSettings,
               listDatasetsSettings,
               deleteDatasetSettings);
     }
@@ -446,6 +530,11 @@ public class MapsPlatformDatasetsStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .fetchDatasetErrorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .listDatasetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -487,6 +576,13 @@ public class MapsPlatformDatasetsStubSettings
     /** Returns the builder for the settings used for calls to getDataset. */
     public UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings() {
       return getDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchDatasetErrors. */
+    public PagedCallSettings.Builder<
+            FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, FetchDatasetErrorsPagedResponse>
+        fetchDatasetErrorsSettings() {
+      return fetchDatasetErrorsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listDatasets. */

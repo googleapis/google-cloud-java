@@ -23,8 +23,8 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * `PromoteRelease` rule will automatically promote a release from the current
- * target to a specified target.
+ * The `PromoteRelease` rule will automatically promote a release from the
+ * current target to a specified target.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.PromoteReleaseRule}
@@ -554,8 +554,8 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * `PromoteRelease` rule will automatically promote a release from the current
-   * target to a specified target.
+   * The `PromoteRelease` rule will automatically promote a release from the
+   * current target to a specified target.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.PromoteReleaseRule}

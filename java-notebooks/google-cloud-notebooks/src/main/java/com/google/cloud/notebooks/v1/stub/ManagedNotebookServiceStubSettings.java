@@ -21,6 +21,7 @@ import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListRun
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -455,6 +456,7 @@ public class ManagedNotebookServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "notebooks.googleapis.com:443";
   }

@@ -132,10 +132,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified backupVault.
-   * This value must start with a lowercase letter followed by up to 62
-   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-   * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-   * error.
+   * Must contain only letters, numbers, underscore and hyphen, with the first
+   * character a letter or underscore, the last a letter or underscore or a
+   * number, and a 63 character maximum.
    * </pre>
    *
    * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -160,10 +159,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified backupVault.
-   * This value must start with a lowercase letter followed by up to 62
-   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-   * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-   * error.
+   * Must contain only letters, numbers, underscore and hyphen, with the first
+   * character a letter or underscore, the last a letter or underscore or a
+   * number, and a 63 character maximum.
    * </pre>
    *
    * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,10 +766,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * This value must start with a lowercase letter followed by up to 62
-     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-     * error.
+     * Must contain only letters, numbers, underscore and hyphen, with the first
+     * character a letter or underscore, the last a letter or underscore or a
+     * number, and a 63 character maximum.
      * </pre>
      *
      * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -795,10 +792,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * This value must start with a lowercase letter followed by up to 62
-     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-     * error.
+     * Must contain only letters, numbers, underscore and hyphen, with the first
+     * character a letter or underscore, the last a letter or underscore or a
+     * number, and a 63 character maximum.
      * </pre>
      *
      * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -822,10 +818,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * This value must start with a lowercase letter followed by up to 62
-     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-     * error.
+     * Must contain only letters, numbers, underscore and hyphen, with the first
+     * character a letter or underscore, the last a letter or underscore or a
+     * number, and a 63 character maximum.
      * </pre>
      *
      * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -848,10 +843,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * This value must start with a lowercase letter followed by up to 62
-     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-     * error.
+     * Must contain only letters, numbers, underscore and hyphen, with the first
+     * character a letter or underscore, the last a letter or underscore or a
+     * number, and a 63 character maximum.
      * </pre>
      *
      * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -870,10 +864,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * This value must start with a lowercase letter followed by up to 62
-     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * Values that do not match this pattern will trigger an INVALID_ARGUMENT
-     * error.
+     * Must contain only letters, numbers, underscore and hyphen, with the first
+     * character a letter or underscore, the last a letter or underscore or a
+     * number, and a 63 character maximum.
      * </pre>
      *
      * <code>string backup_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

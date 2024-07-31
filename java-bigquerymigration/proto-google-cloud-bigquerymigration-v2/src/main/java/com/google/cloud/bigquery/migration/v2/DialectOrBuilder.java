@@ -515,5 +515,110 @@ public interface DialectOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder getMysqlDialectOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * DB2 dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.DB2Dialect db2_dialect = 15;</code>
+   *
+   * @return Whether the db2Dialect field is set.
+   */
+  boolean hasDb2Dialect();
+  /**
+   *
+   *
+   * <pre>
+   * DB2 dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.DB2Dialect db2_dialect = 15;</code>
+   *
+   * @return The db2Dialect.
+   */
+  com.google.cloud.bigquery.migration.v2.DB2Dialect getDb2Dialect();
+  /**
+   *
+   *
+   * <pre>
+   * DB2 dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.DB2Dialect db2_dialect = 15;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.DB2DialectOrBuilder getDb2DialectOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * SQLite dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLiteDialect sqlite_dialect = 16;</code>
+   *
+   * @return Whether the sqliteDialect field is set.
+   */
+  boolean hasSqliteDialect();
+  /**
+   *
+   *
+   * <pre>
+   * SQLite dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLiteDialect sqlite_dialect = 16;</code>
+   *
+   * @return The sqliteDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.SQLiteDialect getSqliteDialect();
+  /**
+   *
+   *
+   * <pre>
+   * SQLite dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLiteDialect sqlite_dialect = 16;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.SQLiteDialectOrBuilder getSqliteDialectOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Greenplum dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.GreenplumDialect greenplum_dialect = 17;</code>
+   *
+   * @return Whether the greenplumDialect field is set.
+   */
+  boolean hasGreenplumDialect();
+  /**
+   *
+   *
+   * <pre>
+   * Greenplum dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.GreenplumDialect greenplum_dialect = 17;</code>
+   *
+   * @return The greenplumDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.GreenplumDialect getGreenplumDialect();
+  /**
+   *
+   *
+   * <pre>
+   * Greenplum dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.GreenplumDialect greenplum_dialect = 17;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.GreenplumDialectOrBuilder getGreenplumDialectOrBuilder();
+
   com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
 }

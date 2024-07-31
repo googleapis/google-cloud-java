@@ -134,7 +134,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The IETF BCP-47 language code representing the language in which
-   * the publisher model's text information should be written in (see go/bcp47).
+   * the publisher model's text information should be written in.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -158,7 +158,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The IETF BCP-47 language code representing the language in which
-   * the publisher model's text information should be written in (see go/bcp47).
+   * the publisher model's text information should be written in.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -219,6 +219,25 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         : result;
   }
 
+  public static final int IS_HUGGING_FACE_MODEL_FIELD_NUMBER = 5;
+  private boolean isHuggingFaceModel_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boolean indicates whether the requested model is a Hugging Face
+   * model.
+   * </pre>
+   *
+   * <code>bool is_hugging_face_model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isHuggingFaceModel.
+   */
+  @java.lang.Override
+  public boolean getIsHuggingFaceModel() {
+    return isHuggingFaceModel_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -244,6 +263,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
             .getNumber()) {
       output.writeEnum(3, view_);
     }
+    if (isHuggingFaceModel_ != false) {
+      output.writeBool(5, isHuggingFaceModel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -264,6 +286,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, view_);
     }
+    if (isHuggingFaceModel_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isHuggingFaceModel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -283,6 +308,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (!getName().equals(other.getName())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (view_ != other.view_) return false;
+    if (getIsHuggingFaceModel() != other.getIsHuggingFaceModel()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -300,6 +326,8 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + IS_HUGGING_FACE_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsHuggingFaceModel());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +472,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       name_ = "";
       languageCode_ = "";
       view_ = 0;
+      isHuggingFaceModel_ = false;
       return this;
     }
 
@@ -490,6 +519,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.view_ = view_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.isHuggingFaceModel_ = isHuggingFaceModel_;
       }
     }
 
@@ -553,6 +585,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
       }
+      if (other.getIsHuggingFaceModel() != false) {
+        setIsHuggingFaceModel(other.getIsHuggingFaceModel());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -597,6 +632,12 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 40:
+              {
+                isHuggingFaceModel_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -748,7 +789,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The IETF BCP-47 language code representing the language in which
-     * the publisher model's text information should be written in (see go/bcp47).
+     * the publisher model's text information should be written in.
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -771,7 +812,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The IETF BCP-47 language code representing the language in which
-     * the publisher model's text information should be written in (see go/bcp47).
+     * the publisher model's text information should be written in.
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -794,7 +835,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The IETF BCP-47 language code representing the language in which
-     * the publisher model's text information should be written in (see go/bcp47).
+     * the publisher model's text information should be written in.
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -816,7 +857,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The IETF BCP-47 language code representing the language in which
-     * the publisher model's text information should be written in (see go/bcp47).
+     * the publisher model's text information should be written in.
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -834,7 +875,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The IETF BCP-47 language code representing the language in which
-     * the publisher model's text information should be written in (see go/bcp47).
+     * the publisher model's text information should be written in.
      * </pre>
      *
      * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -951,6 +992,62 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     public Builder clearView() {
       bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isHuggingFaceModel_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boolean indicates whether the requested model is a Hugging Face
+     * model.
+     * </pre>
+     *
+     * <code>bool is_hugging_face_model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isHuggingFaceModel.
+     */
+    @java.lang.Override
+    public boolean getIsHuggingFaceModel() {
+      return isHuggingFaceModel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boolean indicates whether the requested model is a Hugging Face
+     * model.
+     * </pre>
+     *
+     * <code>bool is_hugging_face_model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The isHuggingFaceModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsHuggingFaceModel(boolean value) {
+
+      isHuggingFaceModel_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boolean indicates whether the requested model is a Hugging Face
+     * model.
+     * </pre>
+     *
+     * <code>bool is_hugging_face_model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsHuggingFaceModel() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      isHuggingFaceModel_ = false;
       onChanged();
       return this;
     }

@@ -28,8 +28,9 @@ public interface ListConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent name, for example:
-   * `projects/project-id/locations/global`.
+   * Required. Resource name of the organization or project, for
+   * example, `organizations/433245324/locations/europe` or
+   * `projects/project-id/locations/asia`.
    * </pre>
    *
    * <code>
@@ -43,8 +44,9 @@ public interface ListConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent name, for example:
-   * `projects/project-id/locations/global`.
+   * Required. Resource name of the organization or project, for
+   * example, `organizations/433245324/locations/europe` or
+   * `projects/project-id/locations/asia`.
    * </pre>
    *
    * <code>

@@ -356,6 +356,16 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>DELL_POWERSCALE = 6;</code>
      */
     DELL_POWERSCALE(6),
+    /**
+     *
+     *
+     * <pre>
+     * Peering connection used for connecting to Google Cloud NetApp Volumes.
+     * </pre>
+     *
+     * <code>GOOGLE_CLOUD_NETAPP_VOLUMES = 7;</code>
+     */
+    GOOGLE_CLOUD_NETAPP_VOLUMES(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -434,6 +444,16 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>DELL_POWERSCALE = 6;</code>
      */
     public static final int DELL_POWERSCALE_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Peering connection used for connecting to Google Cloud NetApp Volumes.
+     * </pre>
+     *
+     * <code>GOOGLE_CLOUD_NETAPP_VOLUMES = 7;</code>
+     */
+    public static final int GOOGLE_CLOUD_NETAPP_VOLUMES_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -473,6 +493,8 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
           return THIRD_PARTY_SERVICE;
         case 6:
           return DELL_POWERSCALE;
+        case 7:
+          return GOOGLE_CLOUD_NETAPP_VOLUMES;
         default:
           return null;
       }

@@ -73,6 +73,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     USE_DEFAULT(1),
+    POLICY(3),
     BINAUTHZMETHOD_NOT_SET(0);
     private final int value;
 
@@ -93,6 +94,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 1:
           return USE_DEFAULT;
+        case 3:
+          return POLICY;
         case 0:
           return BINAUTHZMETHOD_NOT_SET;
         default:
@@ -114,11 +117,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If True, indicates to use the default project's binary authorization
-   * policy. If False, binary authorization will be disabled.
+   * Optional. If True, indicates to use the default project's binary
+   * authorization policy. If False, binary authorization will be disabled.
    * </pre>
    *
-   * <code>bool use_default = 1;</code>
+   * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the useDefault field is set.
    */
@@ -130,11 +133,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If True, indicates to use the default project's binary authorization
-   * policy. If False, binary authorization will be disabled.
+   * Optional. If True, indicates to use the default project's binary
+   * authorization policy. If False, binary authorization will be disabled.
    * </pre>
    *
-   * <code>bool use_default = 1;</code>
+   * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useDefault.
    */
@@ -146,6 +149,79 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     return false;
   }
 
+  public static final int POLICY_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the policy field is set.
+   */
+  public boolean hasPolicy() {
+    return binauthzMethodCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The policy.
+   */
+  public java.lang.String getPolicy() {
+    java.lang.Object ref = "";
+    if (binauthzMethodCase_ == 3) {
+      ref = binauthzMethod_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (binauthzMethodCase_ == 3) {
+        binauthzMethod_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The path to a binary authorization policy.
+   * Format: projects/{project}/platforms/cloudRun/{policy-name}
+   * </pre>
+   *
+   * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for policy.
+   */
+  public com.google.protobuf.ByteString getPolicyBytes() {
+    java.lang.Object ref = "";
+    if (binauthzMethodCase_ == 3) {
+      ref = binauthzMethod_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (binauthzMethodCase_ == 3) {
+        binauthzMethod_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int BREAKGLASS_JUSTIFICATION_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -154,13 +230,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If present, indicates to use Breakglass using this justification.
+   * Optional. If present, indicates to use Breakglass using this justification.
    * If use_default is False, then it must be empty.
    * For more information on breakglass, see
    * https://cloud.google.com/binary-authorization/docs/using-breakglass
    * </pre>
    *
-   * <code>string breakglass_justification = 2;</code>
+   * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The breakglassJustification.
    */
@@ -180,13 +256,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If present, indicates to use Breakglass using this justification.
+   * Optional. If present, indicates to use Breakglass using this justification.
    * If use_default is False, then it must be empty.
    * For more information on breakglass, see
    * https://cloud.google.com/binary-authorization/docs/using-breakglass
    * </pre>
    *
-   * <code>string breakglass_justification = 2;</code>
+   * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for breakglassJustification.
    */
@@ -223,6 +299,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(breakglassJustification_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, breakglassJustification_);
     }
+    if (binauthzMethodCase_ == 3) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, binauthzMethod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -239,6 +318,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(breakglassJustification_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, breakglassJustification_);
+    }
+    if (binauthzMethodCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, binauthzMethod_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -262,6 +344,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       case 1:
         if (getUseDefault() != other.getUseDefault()) return false;
         break;
+      case 3:
+        if (!getPolicy().equals(other.getPolicy())) return false;
+        break;
       case 0:
       default:
     }
@@ -282,6 +367,10 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       case 1:
         hash = (37 * hash) + USE_DEFAULT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseDefault());
+        break;
+      case 3:
+        hash = (37 * hash) + POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getPolicy().hashCode();
         break;
       case 0:
       default:
@@ -465,7 +554,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.cloud.run.v2.BinaryAuthorization result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.breakglassJustification_ = breakglassJustification_;
       }
     }
@@ -522,13 +611,20 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.run.v2.BinaryAuthorization.getDefaultInstance()) return this;
       if (!other.getBreakglassJustification().isEmpty()) {
         breakglassJustification_ = other.breakglassJustification_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getBinauthzMethodCase()) {
         case USE_DEFAULT:
           {
             setUseDefault(other.getUseDefault());
+            break;
+          }
+        case POLICY:
+          {
+            binauthzMethodCase_ = 3;
+            binauthzMethod_ = other.binauthzMethod_;
+            onChanged();
             break;
           }
         case BINAUTHZMETHOD_NOT_SET:
@@ -571,9 +667,16 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 breakglassJustification_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                binauthzMethodCase_ = 3;
+                binauthzMethod_ = s;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -611,11 +714,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If True, indicates to use the default project's binary authorization
-     * policy. If False, binary authorization will be disabled.
+     * Optional. If True, indicates to use the default project's binary
+     * authorization policy. If False, binary authorization will be disabled.
      * </pre>
      *
-     * <code>bool use_default = 1;</code>
+     * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the useDefault field is set.
      */
@@ -626,11 +729,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If True, indicates to use the default project's binary authorization
-     * policy. If False, binary authorization will be disabled.
+     * Optional. If True, indicates to use the default project's binary
+     * authorization policy. If False, binary authorization will be disabled.
      * </pre>
      *
-     * <code>bool use_default = 1;</code>
+     * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useDefault.
      */
@@ -644,11 +747,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If True, indicates to use the default project's binary authorization
-     * policy. If False, binary authorization will be disabled.
+     * Optional. If True, indicates to use the default project's binary
+     * authorization policy. If False, binary authorization will be disabled.
      * </pre>
      *
-     * <code>bool use_default = 1;</code>
+     * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useDefault to set.
      * @return This builder for chaining.
@@ -664,11 +767,11 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If True, indicates to use the default project's binary authorization
-     * policy. If False, binary authorization will be disabled.
+     * Optional. If True, indicates to use the default project's binary
+     * authorization policy. If False, binary authorization will be disabled.
      * </pre>
      *
-     * <code>bool use_default = 1;</code>
+     * <code>bool use_default = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -681,18 +784,158 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the policy field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolicy() {
+      return binauthzMethodCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The policy.
+     */
+    @java.lang.Override
+    public java.lang.String getPolicy() {
+      java.lang.Object ref = "";
+      if (binauthzMethodCase_ == 3) {
+        ref = binauthzMethod_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (binauthzMethodCase_ == 3) {
+          binauthzMethod_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for policy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPolicyBytes() {
+      java.lang.Object ref = "";
+      if (binauthzMethodCase_ == 3) {
+        ref = binauthzMethod_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (binauthzMethodCase_ == 3) {
+          binauthzMethod_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The policy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      binauthzMethodCase_ = 3;
+      binauthzMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicy() {
+      if (binauthzMethodCase_ == 3) {
+        binauthzMethodCase_ = 0;
+        binauthzMethod_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The path to a binary authorization policy.
+     * Format: projects/{project}/platforms/cloudRun/{policy-name}
+     * </pre>
+     *
+     * <code>string policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for policy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      binauthzMethodCase_ = 3;
+      binauthzMethod_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object breakglassJustification_ = "";
     /**
      *
      *
      * <pre>
-     * If present, indicates to use Breakglass using this justification.
+     * Optional. If present, indicates to use Breakglass using this justification.
      * If use_default is False, then it must be empty.
      * For more information on breakglass, see
      * https://cloud.google.com/binary-authorization/docs/using-breakglass
      * </pre>
      *
-     * <code>string breakglass_justification = 2;</code>
+     * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The breakglassJustification.
      */
@@ -711,13 +954,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If present, indicates to use Breakglass using this justification.
+     * Optional. If present, indicates to use Breakglass using this justification.
      * If use_default is False, then it must be empty.
      * For more information on breakglass, see
      * https://cloud.google.com/binary-authorization/docs/using-breakglass
      * </pre>
      *
-     * <code>string breakglass_justification = 2;</code>
+     * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for breakglassJustification.
      */
@@ -736,13 +979,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If present, indicates to use Breakglass using this justification.
+     * Optional. If present, indicates to use Breakglass using this justification.
      * If use_default is False, then it must be empty.
      * For more information on breakglass, see
      * https://cloud.google.com/binary-authorization/docs/using-breakglass
      * </pre>
      *
-     * <code>string breakglass_justification = 2;</code>
+     * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The breakglassJustification to set.
      * @return This builder for chaining.
@@ -752,7 +995,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       breakglassJustification_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -760,19 +1003,19 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If present, indicates to use Breakglass using this justification.
+     * Optional. If present, indicates to use Breakglass using this justification.
      * If use_default is False, then it must be empty.
      * For more information on breakglass, see
      * https://cloud.google.com/binary-authorization/docs/using-breakglass
      * </pre>
      *
-     * <code>string breakglass_justification = 2;</code>
+     * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBreakglassJustification() {
       breakglassJustification_ = getDefaultInstance().getBreakglassJustification();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -780,13 +1023,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If present, indicates to use Breakglass using this justification.
+     * Optional. If present, indicates to use Breakglass using this justification.
      * If use_default is False, then it must be empty.
      * For more information on breakglass, see
      * https://cloud.google.com/binary-authorization/docs/using-breakglass
      * </pre>
      *
-     * <code>string breakglass_justification = 2;</code>
+     * <code>string breakglass_justification = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for breakglassJustification to set.
      * @return This builder for chaining.
@@ -797,7 +1040,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       breakglassJustification_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

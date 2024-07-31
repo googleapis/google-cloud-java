@@ -62,7 +62,7 @@ public final class AdvancedSettingsProto {
           + "gflow.cx.v3beta1\032\037google/api/field_behav"
           + "ior.proto\032,google/cloud/dialogflow/cx/v3"
           + "beta1/gcs.proto\032\036google/protobuf/duratio"
-          + "n.proto\"\314\007\n\020AdvancedSettings\022X\n\034audio_ex"
+          + "n.proto\"\365\007\n\020AdvancedSettings\022X\n\034audio_ex"
           + "port_gcs_destination\030\002 \001(\01322.google.clou"
           + "d.dialogflow.cx.v3beta1.GcsDestination\022\\"
           + "\n\017speech_settings\030\003 \001(\0132C.google.cloud.d"
@@ -84,14 +84,16 @@ public final class AdvancedSettingsProto {
           + "(\t\022>\n\033interdigit_timeout_duration\030\006 \001(\0132"
           + "\031.google.protobuf.Duration\022?\n\034endpointin"
           + "g_timeout_duration\030\007 \001(\0132\031.google.protob"
-          + "uf.Duration\032Y\n\017LoggingSettings\022\"\n\032enable"
-          + "_stackdriver_logging\030\002 \001(\010\022\"\n\032enable_int"
-          + "eraction_logging\030\003 \001(\010B\317\001\n&com.google.cl"
-          + "oud.dialogflow.cx.v3beta1B\025AdvancedSetti"
-          + "ngsProtoP\001Z6cloud.google.com/go/dialogfl"
-          + "ow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Goo"
-          + "gle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Google"
-          + "::Cloud::Dialogflow::CX::V3beta1b\006proto3"
+          + "uf.Duration\032\201\001\n\017LoggingSettings\022\"\n\032enabl"
+          + "e_stackdriver_logging\030\002 \001(\010\022\"\n\032enable_in"
+          + "teraction_logging\030\003 \001(\010\022&\n\036enable_consen"
+          + "t_based_redaction\030\004 \001(\010B\317\001\n&com.google.c"
+          + "loud.dialogflow.cx.v3beta1B\025AdvancedSett"
+          + "ingsProtoP\001Z6cloud.google.com/go/dialogf"
+          + "low/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Go"
+          + "ogle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Googl"
+          + "e::Cloud::Dialogflow::CX::V3beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,7 +153,7 @@ public final class AdvancedSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_descriptor,
             new java.lang.String[] {
-              "EnableStackdriverLogging", "EnableInteractionLogging",
+              "EnableStackdriverLogging", "EnableInteractionLogging", "EnableConsentBasedRedaction",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.GcsProto.getDescriptor();

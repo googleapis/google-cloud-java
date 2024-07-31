@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1;
 
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookExecutionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimeTemplatesPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimesPagedResponse;
 
@@ -211,6 +212,50 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       startNotebookRuntimeOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
         .startNotebookRuntimeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).createNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public OperationCallSettings<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .createNotebookExecutionJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNotebookExecutionJob. */
+  public UnaryCallSettings<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNotebookExecutionJobs. */
+  public PagedCallSettings<
+          ListNotebookExecutionJobsRequest,
+          ListNotebookExecutionJobsResponse,
+          ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).listNotebookExecutionJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotebookExecutionJob. */
+  public UnaryCallSettings<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).deleteNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotebookExecutionJob. */
+  public OperationCallSettings<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .deleteNotebookExecutionJobOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -454,6 +499,49 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return getStubSettingsBuilder().startNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<CreateNotebookExecutionJobRequest, Operation>
+        createNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            CreateNotebookExecutionJobRequest,
+            NotebookExecutionJob,
+            CreateNotebookExecutionJobOperationMetadata>
+        createNotebookExecutionJobOperationSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+        getNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().getNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNotebookExecutionJobs. */
+    public PagedCallSettings.Builder<
+            ListNotebookExecutionJobsRequest,
+            ListNotebookExecutionJobsResponse,
+            ListNotebookExecutionJobsPagedResponse>
+        listNotebookExecutionJobsSettings() {
+      return getStubSettingsBuilder().listNotebookExecutionJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<DeleteNotebookExecutionJobRequest, Operation>
+        deleteNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().deleteNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+        deleteNotebookExecutionJobOperationSettings() {
+      return getStubSettingsBuilder().deleteNotebookExecutionJobOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

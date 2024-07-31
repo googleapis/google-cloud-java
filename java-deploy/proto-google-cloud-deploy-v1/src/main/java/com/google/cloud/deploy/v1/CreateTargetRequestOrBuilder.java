@@ -28,8 +28,8 @@ public interface CreateTargetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Target` should be created.
-   * Format should be
+   * Required. The parent collection in which the `Target` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
@@ -44,8 +44,8 @@ public interface CreateTargetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `Target` should be created.
-   * Format should be
+   * Required. The parent collection in which the `Target` must be created.
+   * The format is
    * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *

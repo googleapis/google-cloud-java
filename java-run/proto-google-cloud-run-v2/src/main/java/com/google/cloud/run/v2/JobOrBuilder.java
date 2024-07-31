@@ -404,7 +404,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -417,7 +418,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -430,7 +432,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The deletion time.
+   * Output only. The deletion time. It is only populated as a response to a
+   * Delete request.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -936,6 +939,92 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return Whether the startExecutionToken field is set.
+   */
+  boolean hasStartExecutionToken();
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return The startExecutionToken.
+   */
+  java.lang.String getStartExecutionToken();
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix creating a new execution. The Job will
+   * become ready when the execution is successfully started.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string start_execution_token = 26;</code>
+   *
+   * @return The bytes for startExecutionToken.
+   */
+  com.google.protobuf.ByteString getStartExecutionTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return Whether the runExecutionToken field is set.
+   */
+  boolean hasRunExecutionToken();
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return The runExecutionToken.
+   */
+  java.lang.String getRunExecutionToken();
+  /**
+   *
+   *
+   * <pre>
+   * A unique string used as a suffix for creating a new execution. The Job
+   * will become ready when the execution is successfully completed.
+   * The sum of job name and token length must be fewer than 63 characters.
+   * </pre>
+   *
+   * <code>string run_execution_token = 27;</code>
+   *
+   * @return The bytes for runExecutionToken.
+   */
+  com.google.protobuf.ByteString getRunExecutionTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
@@ -958,4 +1047,6 @@ public interface JobOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  com.google.cloud.run.v2.Job.CreateExecutionCase getCreateExecutionCase();
 }

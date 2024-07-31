@@ -37,7 +37,10 @@ public class SyncDeleteConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       DeleteConnectionRequest request =
           DeleteConnectionRequest.newBuilder()
-              .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+              .setName(
+                  ConnectionName.ofProjectLocationConnectionName(
+                          "[PROJECT]", "[LOCATION]", "[CONNECTION]")
+                      .toString())
               .build();
       dlpServiceClient.deleteConnection(request);
     }

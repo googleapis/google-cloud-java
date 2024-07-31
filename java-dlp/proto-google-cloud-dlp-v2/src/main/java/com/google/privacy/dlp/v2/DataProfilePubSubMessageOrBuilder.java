@@ -69,6 +69,47 @@ public interface DataProfilePubSubMessageOrBuilder
    *
    *
    * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return Whether the fileStoreProfile field is set.
+   */
+  boolean hasFileStoreProfile();
+  /**
+   *
+   *
+   * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   *
+   * @return The fileStoreProfile.
+   */
+  com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile();
+  /**
+   *
+   *
+   * <pre>
+   * If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated.
+   * Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and
+   * `file_store_path` will be populated.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.FileStoreDataProfile file_store_profile = 3;</code>
+   */
+  com.google.privacy.dlp.v2.FileStoreDataProfileOrBuilder getFileStoreProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The event that caused the Pub/Sub message to be sent.
    * </pre>
    *

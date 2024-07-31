@@ -598,4 +598,46 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getSpaceEvent(
+      GetSpaceEventRequest request, StreamObserver<SpaceEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SpaceEvent) {
+      requests.add(request);
+      responseObserver.onNext(((SpaceEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSpaceEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SpaceEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSpaceEvents(
+      ListSpaceEventsRequest request, StreamObserver<ListSpaceEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSpaceEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSpaceEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSpaceEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSpaceEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

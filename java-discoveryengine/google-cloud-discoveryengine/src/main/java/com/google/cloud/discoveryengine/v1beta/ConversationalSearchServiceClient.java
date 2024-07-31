@@ -1361,6 +1361,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *               AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
    *           .setAsynchronousMode(true)
    *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
    * }
@@ -1406,6 +1407,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *               AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
    *           .setAsynchronousMode(true)
    *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<AnswerQueryResponse> future =
    *       conversationalSearchServiceClient.answerQueryCallable().futureCall(request);

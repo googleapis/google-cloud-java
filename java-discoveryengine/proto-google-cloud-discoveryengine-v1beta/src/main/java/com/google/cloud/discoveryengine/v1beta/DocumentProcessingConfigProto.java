@@ -33,6 +33,14 @@ public final class DocumentProcessingConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_fieldAccessorTable;
@@ -44,6 +52,10 @@ public final class DocumentProcessingConfigProto {
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_OcrParsingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_OcrParsingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfigOverridesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -61,42 +73,55 @@ public final class DocumentProcessingConfigProto {
           + "cument_processing_config.proto\022#google.c"
           + "loud.discoveryengine.v1beta\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\"\305\010\n\030DocumentProcessingConfig\022\014\n\004"
-          + "name\030\001 \001(\t\022k\n\026default_parsing_config\030\004 \001"
-          + "(\0132K.google.cloud.discoveryengine.v1beta"
-          + ".DocumentProcessingConfig.ParsingConfig\022"
-          + "{\n\030parsing_config_overrides\030\005 \003(\0132Y.goog"
-          + "le.cloud.discoveryengine.v1beta.Document"
-          + "ProcessingConfig.ParsingConfigOverridesE"
-          + "ntry\032\226\003\n\rParsingConfig\022\202\001\n\026digital_parsi"
-          + "ng_config\030\001 \001(\0132`.google.cloud.discovery"
-          + "engine.v1beta.DocumentProcessingConfig.P"
-          + "arsingConfig.DigitalParsingConfigH\000\022z\n\022o"
-          + "cr_parsing_config\030\002 \001(\0132\\.google.cloud.d"
-          + "iscoveryengine.v1beta.DocumentProcessing"
-          + "Config.ParsingConfig.OcrParsingConfigH\000\032"
-          + "\026\n\024DigitalParsingConfig\032S\n\020OcrParsingCon"
-          + "fig\022&\n\032enhanced_document_elements\030\001 \003(\tB"
-          + "\002\030\001\022\027\n\017use_native_text\030\002 \001(\010B\027\n\025type_ded"
-          + "icated_config\032\212\001\n\033ParsingConfigOverrides"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022Z\n\005value\030\002 \001(\0132K.goog"
-          + "le.cloud.discoveryengine.v1beta.Document"
-          + "ProcessingConfig.ParsingConfig:\0028\001:\212\002\352A\206"
-          + "\002\n7discoveryengine.googleapis.com/Docume"
-          + "ntProcessingConfig\022Xprojects/{project}/l"
-          + "ocations/{location}/dataStores/{data_sto"
-          + "re}/documentProcessingConfig\022qprojects/{"
-          + "project}/locations/{location}/collection"
-          + "s/{collection}/dataStores/{data_store}/d"
-          + "ocumentProcessingConfigB\244\002\n\'com.google.c"
-          + "loud.discoveryengine.v1betaB\035DocumentPro"
-          + "cessingConfigProtoP\001ZQcloud.google.com/g"
-          + "o/discoveryengine/apiv1beta/discoveryeng"
-          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
-          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
-          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
-          + "Google::Cloud::DiscoveryEngine::V1betab\006"
-          + "proto3"
+          + "e.proto\"\314\014\n\030DocumentProcessingConfig\022\014\n\004"
+          + "name\030\001 \001(\t\022e\n\017chunking_config\030\003 \001(\0132L.go"
+          + "ogle.cloud.discoveryengine.v1beta.Docume"
+          + "ntProcessingConfig.ChunkingConfig\022k\n\026def"
+          + "ault_parsing_config\030\004 \001(\0132K.google.cloud"
+          + ".discoveryengine.v1beta.DocumentProcessi"
+          + "ngConfig.ParsingConfig\022{\n\030parsing_config"
+          + "_overrides\030\005 \003(\0132Y.google.cloud.discover"
+          + "yengine.v1beta.DocumentProcessingConfig."
+          + "ParsingConfigOverridesEntry\032\203\002\n\016Chunking"
+          + "Config\022\216\001\n\034layout_based_chunking_config\030"
+          + "\001 \001(\0132f.google.cloud.discoveryengine.v1b"
+          + "eta.DocumentProcessingConfig.ChunkingCon"
+          + "fig.LayoutBasedChunkingConfigH\000\032R\n\031Layou"
+          + "tBasedChunkingConfig\022\022\n\nchunk_size\030\001 \001(\005"
+          + "\022!\n\031include_ancestor_headings\030\002 \001(\010B\014\n\nc"
+          + "hunk_mode\032\260\004\n\rParsingConfig\022\202\001\n\026digital_"
+          + "parsing_config\030\001 \001(\0132`.google.cloud.disc"
+          + "overyengine.v1beta.DocumentProcessingCon"
+          + "fig.ParsingConfig.DigitalParsingConfigH\000"
+          + "\022z\n\022ocr_parsing_config\030\002 \001(\0132\\.google.cl"
+          + "oud.discoveryengine.v1beta.DocumentProce"
+          + "ssingConfig.ParsingConfig.OcrParsingConf"
+          + "igH\000\022\200\001\n\025layout_parsing_config\030\003 \001(\0132_.g"
+          + "oogle.cloud.discoveryengine.v1beta.Docum"
+          + "entProcessingConfig.ParsingConfig.Layout"
+          + "ParsingConfigH\000\032\026\n\024DigitalParsingConfig\032"
+          + "S\n\020OcrParsingConfig\022&\n\032enhanced_document"
+          + "_elements\030\001 \003(\tB\002\030\001\022\027\n\017use_native_text\030\002"
+          + " \001(\010\032\025\n\023LayoutParsingConfigB\027\n\025type_dedi"
+          + "cated_config\032\212\001\n\033ParsingConfigOverridesE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022Z\n\005value\030\002 \001(\0132K.googl"
+          + "e.cloud.discoveryengine.v1beta.DocumentP"
+          + "rocessingConfig.ParsingConfig:\0028\001:\212\002\352A\206\002"
+          + "\n7discoveryengine.googleapis.com/Documen"
+          + "tProcessingConfig\022Xprojects/{project}/lo"
+          + "cations/{location}/dataStores/{data_stor"
+          + "e}/documentProcessingConfig\022qprojects/{p"
+          + "roject}/locations/{location}/collections"
+          + "/{collection}/dataStores/{data_store}/do"
+          + "cumentProcessingConfigB\244\002\n\'com.google.cl"
+          + "oud.discoveryengine.v1betaB\035DocumentProc"
+          + "essingConfigProtoP\001ZQcloud.google.com/go"
+          + "/discoveryengine/apiv1beta/discoveryengi"
+          + "nepb;discoveryenginepb\242\002\017DISCOVERYENGINE"
+          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
+          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
+          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,17 +136,40 @@ public final class DocumentProcessingConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_descriptor,
             new java.lang.String[] {
-              "Name", "DefaultParsingConfig", "ParsingConfigOverrides",
+              "Name", "ChunkingConfig", "DefaultParsingConfig", "ParsingConfigOverrides",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_descriptor,
+            new java.lang.String[] {
+              "LayoutBasedChunkingConfig", "ChunkMode",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfig_descriptor,
+            new java.lang.String[] {
+              "ChunkSize", "IncludeAncestorHeadings",
             });
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_descriptor,
             new java.lang.String[] {
-              "DigitalParsingConfig", "OcrParsingConfig", "TypeDedicatedConfig",
+              "DigitalParsingConfig",
+              "OcrParsingConfig",
+              "LayoutParsingConfig",
+              "TypeDedicatedConfig",
             });
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_DigitalParsingConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_descriptor
@@ -141,10 +189,18 @@ public final class DocumentProcessingConfigProto {
             new java.lang.String[] {
               "EnhancedDocumentElements", "UseNativeText",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfigOverridesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(2);
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfigOverridesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfigOverridesEntry_descriptor,

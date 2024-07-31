@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceClient
 import com.google.cloud.discoveryengine.v1beta.Query;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigName;
 import com.google.cloud.discoveryengine.v1beta.SessionName;
+import java.util.HashMap;
 
 public class SyncAnswerQuery {
 
@@ -57,6 +58,7 @@ public class SyncAnswerQuery {
                   AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
     }

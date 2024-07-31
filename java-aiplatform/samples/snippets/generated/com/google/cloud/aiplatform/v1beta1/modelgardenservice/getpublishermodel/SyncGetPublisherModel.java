@@ -41,6 +41,7 @@ public class SyncGetPublisherModel {
               .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
               .setLanguageCode("languageCode-2092349083")
               .setView(PublisherModelView.forNumber(0))
+              .setIsHuggingFaceModel(true)
               .build();
       PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
     }

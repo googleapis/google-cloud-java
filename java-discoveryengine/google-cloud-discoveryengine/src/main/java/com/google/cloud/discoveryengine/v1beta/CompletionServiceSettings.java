@@ -115,6 +115,39 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
         .purgeSuggestionDenyListEntriesOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to importCompletionSuggestions. */
+  public UnaryCallSettings<ImportCompletionSuggestionsRequest, Operation>
+      importCompletionSuggestionsSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .importCompletionSuggestionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importCompletionSuggestions. */
+  public OperationCallSettings<
+          ImportCompletionSuggestionsRequest,
+          ImportCompletionSuggestionsResponse,
+          ImportCompletionSuggestionsMetadata>
+      importCompletionSuggestionsOperationSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .importCompletionSuggestionsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeCompletionSuggestions. */
+  public UnaryCallSettings<PurgeCompletionSuggestionsRequest, Operation>
+      purgeCompletionSuggestionsSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).purgeCompletionSuggestionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeCompletionSuggestions. */
+  public OperationCallSettings<
+          PurgeCompletionSuggestionsRequest,
+          PurgeCompletionSuggestionsResponse,
+          PurgeCompletionSuggestionsMetadata>
+      purgeCompletionSuggestionsOperationSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings())
+        .purgeCompletionSuggestionsOperationSettings();
+  }
+
   public static final CompletionServiceSettings create(CompletionServiceStubSettings stub)
       throws IOException {
     return new CompletionServiceSettings.Builder(stub.toBuilder()).build();
@@ -261,6 +294,36 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
             PurgeSuggestionDenyListEntriesMetadata>
         purgeSuggestionDenyListEntriesOperationSettings() {
       return getStubSettingsBuilder().purgeSuggestionDenyListEntriesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCompletionSuggestions. */
+    public UnaryCallSettings.Builder<ImportCompletionSuggestionsRequest, Operation>
+        importCompletionSuggestionsSettings() {
+      return getStubSettingsBuilder().importCompletionSuggestionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCompletionSuggestions. */
+    public OperationCallSettings.Builder<
+            ImportCompletionSuggestionsRequest,
+            ImportCompletionSuggestionsResponse,
+            ImportCompletionSuggestionsMetadata>
+        importCompletionSuggestionsOperationSettings() {
+      return getStubSettingsBuilder().importCompletionSuggestionsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeCompletionSuggestions. */
+    public UnaryCallSettings.Builder<PurgeCompletionSuggestionsRequest, Operation>
+        purgeCompletionSuggestionsSettings() {
+      return getStubSettingsBuilder().purgeCompletionSuggestionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeCompletionSuggestions. */
+    public OperationCallSettings.Builder<
+            PurgeCompletionSuggestionsRequest,
+            PurgeCompletionSuggestionsResponse,
+            PurgeCompletionSuggestionsMetadata>
+        purgeCompletionSuggestionsOperationSettings() {
+      return getStubSettingsBuilder().purgeCompletionSuggestionsOperationSettings();
     }
 
     @Override

@@ -25,6 +25,9 @@ import com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1beta.UserEvent;
 import com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest;
 import com.google.longrunning.Operation;
@@ -55,6 +58,15 @@ public abstract class UserEventServiceStub implements BackgroundResource {
 
   public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     throw new UnsupportedOperationException("Not implemented: collectUserEventCallable()");
+  }
+
+  public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeUserEventsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeUserEventsCallable()");
   }
 
   public OperationCallable<

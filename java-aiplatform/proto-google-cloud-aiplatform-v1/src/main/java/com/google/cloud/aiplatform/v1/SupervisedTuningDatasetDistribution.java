@@ -882,6 +882,24 @@ public final class SupervisedTuningDatasetDistribution
     return sum_;
   }
 
+  public static final int BILLABLE_SUM_FIELD_NUMBER = 9;
+  private long billableSum_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Sum of a given population of values that are billable.
+   * </pre>
+   *
+   * <code>int64 billable_sum = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The billableSum.
+   */
+  @java.lang.Override
+  public long getBillableSum() {
+    return billableSum_;
+  }
+
   public static final int MIN_FIELD_NUMBER = 2;
   private double min_ = 0D;
   /**
@@ -1118,6 +1136,9 @@ public final class SupervisedTuningDatasetDistribution
     for (int i = 0; i < buckets_.size(); i++) {
       output.writeMessage(8, buckets_.get(i));
     }
+    if (billableSum_ != 0L) {
+      output.writeInt64(9, billableSum_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1151,6 +1172,9 @@ public final class SupervisedTuningDatasetDistribution
     for (int i = 0; i < buckets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, buckets_.get(i));
     }
+    if (billableSum_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, billableSum_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1168,6 +1192,7 @@ public final class SupervisedTuningDatasetDistribution
         (com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution) obj;
 
     if (getSum() != other.getSum()) return false;
+    if (getBillableSum() != other.getBillableSum()) return false;
     if (java.lang.Double.doubleToLongBits(getMin())
         != java.lang.Double.doubleToLongBits(other.getMin())) return false;
     if (java.lang.Double.doubleToLongBits(getMax())
@@ -1194,6 +1219,8 @@ public final class SupervisedTuningDatasetDistribution
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SUM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSum());
+    hash = (37 * hash) + BILLABLE_SUM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBillableSum());
     hash = (37 * hash) + MIN_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -1365,6 +1392,7 @@ public final class SupervisedTuningDatasetDistribution
       super.clear();
       bitField0_ = 0;
       sum_ = 0L;
+      billableSum_ = 0L;
       min_ = 0D;
       max_ = 0D;
       mean_ = 0D;
@@ -1377,7 +1405,7 @@ public final class SupervisedTuningDatasetDistribution
         buckets_ = null;
         bucketsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1418,9 +1446,9 @@ public final class SupervisedTuningDatasetDistribution
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution result) {
       if (bucketsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           buckets_ = java.util.Collections.unmodifiableList(buckets_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.buckets_ = buckets_;
       } else {
@@ -1435,21 +1463,24 @@ public final class SupervisedTuningDatasetDistribution
         result.sum_ = sum_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.min_ = min_;
+        result.billableSum_ = billableSum_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.max_ = max_;
+        result.min_ = min_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.mean_ = mean_;
+        result.max_ = max_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.median_ = median_;
+        result.mean_ = mean_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.p5_ = p5_;
+        result.median_ = median_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.p5_ = p5_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.p95_ = p95_;
       }
     }
@@ -1506,6 +1537,9 @@ public final class SupervisedTuningDatasetDistribution
       if (other.getSum() != 0L) {
         setSum(other.getSum());
       }
+      if (other.getBillableSum() != 0L) {
+        setBillableSum(other.getBillableSum());
+      }
       if (other.getMin() != 0D) {
         setMin(other.getMin());
       }
@@ -1528,7 +1562,7 @@ public final class SupervisedTuningDatasetDistribution
         if (!other.buckets_.isEmpty()) {
           if (buckets_.isEmpty()) {
             buckets_ = other.buckets_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureBucketsIsMutable();
             buckets_.addAll(other.buckets_);
@@ -1541,7 +1575,7 @@ public final class SupervisedTuningDatasetDistribution
             bucketsBuilder_.dispose();
             bucketsBuilder_ = null;
             buckets_ = other.buckets_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             bucketsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBucketsFieldBuilder()
@@ -1586,37 +1620,37 @@ public final class SupervisedTuningDatasetDistribution
             case 17:
               {
                 min_ = input.readDouble();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 17
             case 25:
               {
                 max_ = input.readDouble();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 25
             case 33:
               {
                 mean_ = input.readDouble();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 33
             case 41:
               {
                 median_ = input.readDouble();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 41
             case 49:
               {
                 p5_ = input.readDouble();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 49
             case 57:
               {
                 p95_ = input.readDouble();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 57
             case 66:
@@ -1634,6 +1668,12 @@ public final class SupervisedTuningDatasetDistribution
                 }
                 break;
               } // case 66
+            case 72:
+              {
+                billableSum_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1706,6 +1746,59 @@ public final class SupervisedTuningDatasetDistribution
       return this;
     }
 
+    private long billableSum_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sum of a given population of values that are billable.
+     * </pre>
+     *
+     * <code>int64 billable_sum = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The billableSum.
+     */
+    @java.lang.Override
+    public long getBillableSum() {
+      return billableSum_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sum of a given population of values that are billable.
+     * </pre>
+     *
+     * <code>int64 billable_sum = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The billableSum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillableSum(long value) {
+
+      billableSum_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sum of a given population of values that are billable.
+     * </pre>
+     *
+     * <code>int64 billable_sum = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBillableSum() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      billableSum_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private double min_;
     /**
      *
@@ -1737,7 +1830,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setMin(double value) {
 
       min_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1753,7 +1846,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearMin() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       min_ = 0D;
       onChanged();
       return this;
@@ -1790,7 +1883,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setMax(double value) {
 
       max_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1806,7 +1899,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearMax() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       max_ = 0D;
       onChanged();
       return this;
@@ -1843,7 +1936,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setMean(double value) {
 
       mean_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1859,7 +1952,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearMean() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       mean_ = 0D;
       onChanged();
       return this;
@@ -1896,7 +1989,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setMedian(double value) {
 
       median_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1912,7 +2005,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearMedian() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       median_ = 0D;
       onChanged();
       return this;
@@ -1949,7 +2042,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setP5(double value) {
 
       p5_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1965,7 +2058,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearP5() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       p5_ = 0D;
       onChanged();
       return this;
@@ -2002,7 +2095,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder setP95(double value) {
 
       p95_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2018,7 +2111,7 @@ public final class SupervisedTuningDatasetDistribution
      * @return This builder for chaining.
      */
     public Builder clearP95() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       p95_ = 0D;
       onChanged();
       return this;
@@ -2029,12 +2122,12 @@ public final class SupervisedTuningDatasetDistribution
         buckets_ = java.util.Collections.emptyList();
 
     private void ensureBucketsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         buckets_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution.DatasetBucket>(
                 buckets_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2291,7 +2384,7 @@ public final class SupervisedTuningDatasetDistribution
     public Builder clearBuckets() {
       if (bucketsBuilder_ == null) {
         buckets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         bucketsBuilder_.clear();
@@ -2445,7 +2538,7 @@ public final class SupervisedTuningDatasetDistribution
                     .Builder,
                 com.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistribution
                     .DatasetBucketOrBuilder>(
-                buckets_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                buckets_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         buckets_ = null;
       }
       return bucketsBuilder_;

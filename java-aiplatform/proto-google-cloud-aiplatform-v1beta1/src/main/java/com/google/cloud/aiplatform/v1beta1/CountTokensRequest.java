@@ -44,6 +44,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     model_ = "";
     instances_ = java.util.Collections.emptyList();
     contents_ = java.util.Collections.emptyList();
+    tools_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -67,6 +68,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.CountTokensRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENDPOINT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -134,12 +136,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
+   * Optional. The name of the publisher model requested to serve the
    * prediction. Format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
    * </pre>
    *
-   * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The model.
    */
@@ -159,12 +161,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
+   * Optional. The name of the publisher model requested to serve the
    * prediction. Format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
    * </pre>
    *
-   * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for model.
    */
@@ -189,11 +191,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The instances that are the input to token counting call.
+   * Optional. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -204,11 +206,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The instances that are the input to token counting call.
+   * Optional. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -219,11 +221,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The instances that are the input to token counting call.
+   * Optional. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -234,11 +236,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The instances that are the input to token counting call.
+   * Optional. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -249,11 +251,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The instances that are the input to token counting call.
+   * Optional. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
    *
-   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -269,11 +271,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Input content.
+   * Optional. Input content.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -284,11 +286,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Input content.
+   * Optional. Input content.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -300,11 +302,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Input content.
+   * Optional. Input content.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -315,11 +317,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Input content.
+   * Optional. Input content.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -330,16 +332,184 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Input content.
+   * Optional. Input content.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getContentsOrBuilder(int index) {
     return contents_.get(index);
+  }
+
+  public static final int SYSTEM_INSTRUCTION_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.Content systemInstruction_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystemInstruction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The systemInstruction.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction() {
+    return systemInstruction_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()
+        : systemInstruction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getSystemInstructionOrBuilder() {
+    return systemInstruction_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()
+        : systemInstruction_;
+  }
+
+  public static final int TOOLS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> tools_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of `Tools` the model may use to generate the next
+   * response.
+   *
+   * A `Tool` is a piece of code that enables the system to interact with
+   * external systems to perform an action, or set of actions, outside of
+   * knowledge and scope of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> getToolsList() {
+    return tools_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of `Tools` the model may use to generate the next
+   * response.
+   *
+   * A `Tool` is a piece of code that enables the system to interact with
+   * external systems to perform an action, or set of actions, outside of
+   * knowledge and scope of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
+      getToolsOrBuilderList() {
+    return tools_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of `Tools` the model may use to generate the next
+   * response.
+   *
+   * A `Tool` is a piece of code that enables the system to interact with
+   * external systems to perform an action, or set of actions, outside of
+   * knowledge and scope of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getToolsCount() {
+    return tools_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of `Tools` the model may use to generate the next
+   * response.
+   *
+   * A `Tool` is a piece of code that enables the system to interact with
+   * external systems to perform an action, or set of actions, outside of
+   * knowledge and scope of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Tool getTools(int index) {
+    return tools_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of `Tools` the model may use to generate the next
+   * response.
+   *
+   * A `Tool` is a piece of code that enables the system to interact with
+   * external systems to perform an action, or set of actions, outside of
+   * knowledge and scope of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ToolOrBuilder getToolsOrBuilder(int index) {
+    return tools_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -368,6 +538,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < contents_.size(); i++) {
       output.writeMessage(4, contents_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getSystemInstruction());
+    }
+    for (int i = 0; i < tools_.size(); i++) {
+      output.writeMessage(6, tools_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -389,6 +565,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < contents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, contents_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSystemInstruction());
+    }
+    for (int i = 0; i < tools_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, tools_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -409,6 +591,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     if (!getModel().equals(other.getModel())) return false;
     if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!getContentsList().equals(other.getContentsList())) return false;
+    if (hasSystemInstruction() != other.hasSystemInstruction()) return false;
+    if (hasSystemInstruction()) {
+      if (!getSystemInstruction().equals(other.getSystemInstruction())) return false;
+    }
+    if (!getToolsList().equals(other.getToolsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -431,6 +618,14 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     if (getContentsCount() > 0) {
       hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
       hash = (53 * hash) + getContentsList().hashCode();
+    }
+    if (hasSystemInstruction()) {
+      hash = (37 * hash) + SYSTEM_INSTRUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemInstruction().hashCode();
+    }
+    if (getToolsCount() > 0) {
+      hash = (37 * hash) + TOOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getToolsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -563,10 +758,22 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.CountTokensRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getInstancesFieldBuilder();
+        getContentsFieldBuilder();
+        getSystemInstructionFieldBuilder();
+        getToolsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -589,6 +796,18 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         contentsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      systemInstruction_ = null;
+      if (systemInstructionBuilder_ != null) {
+        systemInstructionBuilder_.dispose();
+        systemInstructionBuilder_ = null;
+      }
+      if (toolsBuilder_ == null) {
+        tools_ = java.util.Collections.emptyList();
+      } else {
+        tools_ = null;
+        toolsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -644,6 +863,15 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       } else {
         result.contents_ = contentsBuilder_.build();
       }
+      if (toolsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          tools_ = java.util.Collections.unmodifiableList(tools_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.tools_ = tools_;
+      } else {
+        result.tools_ = toolsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CountTokensRequest result) {
@@ -654,6 +882,15 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.model_ = model_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.systemInstruction_ =
+            systemInstructionBuilder_ == null
+                ? systemInstruction_
+                : systemInstructionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -766,6 +1003,36 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasSystemInstruction()) {
+        mergeSystemInstruction(other.getSystemInstruction());
+      }
+      if (toolsBuilder_ == null) {
+        if (!other.tools_.isEmpty()) {
+          if (tools_.isEmpty()) {
+            tools_ = other.tools_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureToolsIsMutable();
+            tools_.addAll(other.tools_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tools_.isEmpty()) {
+          if (toolsBuilder_.isEmpty()) {
+            toolsBuilder_.dispose();
+            toolsBuilder_ = null;
+            tools_ = other.tools_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            toolsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getToolsFieldBuilder()
+                    : null;
+          } else {
+            toolsBuilder_.addAllMessages(other.tools_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -829,6 +1096,26 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getSystemInstructionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.cloud.aiplatform.v1beta1.Tool m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.Tool.parser(), extensionRegistry);
+                if (toolsBuilder_ == null) {
+                  ensureToolsIsMutable();
+                  tools_.add(m);
+                } else {
+                  toolsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -979,12 +1266,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
+     * Optional. The name of the publisher model requested to serve the
      * prediction. Format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
      * </pre>
      *
-     * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The model.
      */
@@ -1003,12 +1290,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
+     * Optional. The name of the publisher model requested to serve the
      * prediction. Format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
      * </pre>
      *
-     * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for model.
      */
@@ -1027,12 +1314,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
+     * Optional. The name of the publisher model requested to serve the
      * prediction. Format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
      * </pre>
      *
-     * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The model to set.
      * @return This builder for chaining.
@@ -1050,12 +1337,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
+     * Optional. The name of the publisher model requested to serve the
      * prediction. Format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
      * </pre>
      *
-     * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1069,12 +1356,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the publisher model requested to serve the
+     * Optional. The name of the publisher model requested to serve the
      * prediction. Format:
      * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
      * </pre>
      *
-     * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for model to set.
      * @return This builder for chaining.
@@ -1110,12 +1397,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.protobuf.Value> getInstancesList() {
@@ -1129,12 +1416,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getInstancesCount() {
@@ -1148,12 +1435,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.Value getInstances(int index) {
@@ -1167,12 +1454,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setInstances(int index, com.google.protobuf.Value value) {
@@ -1192,12 +1479,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setInstances(int index, com.google.protobuf.Value.Builder builderForValue) {
@@ -1214,12 +1501,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addInstances(com.google.protobuf.Value value) {
@@ -1239,12 +1526,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addInstances(int index, com.google.protobuf.Value value) {
@@ -1264,12 +1551,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addInstances(com.google.protobuf.Value.Builder builderForValue) {
@@ -1286,12 +1573,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addInstances(int index, com.google.protobuf.Value.Builder builderForValue) {
@@ -1308,12 +1595,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllInstances(java.lang.Iterable<? extends com.google.protobuf.Value> values) {
@@ -1330,12 +1617,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearInstances() {
@@ -1352,12 +1639,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeInstances(int index) {
@@ -1374,12 +1661,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.Value.Builder getInstancesBuilder(int index) {
@@ -1389,12 +1676,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.ValueOrBuilder getInstancesOrBuilder(int index) {
@@ -1408,12 +1695,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.protobuf.ValueOrBuilder>
@@ -1428,12 +1715,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.Value.Builder addInstancesBuilder() {
@@ -1443,12 +1730,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.Value.Builder addInstancesBuilder(int index) {
@@ -1459,12 +1746,12 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The instances that are the input to token counting call.
+     * Optional. The instances that are the input to token counting call.
      * Schema is identical to the prediction schema of the underlying model.
      * </pre>
      *
      * <code>
-     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.protobuf.Value instances = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.protobuf.Value.Builder> getInstancesBuilderList() {
@@ -1508,11 +1795,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
@@ -1526,11 +1813,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getContentsCount() {
@@ -1544,11 +1831,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
@@ -1562,11 +1849,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setContents(int index, com.google.cloud.aiplatform.v1beta1.Content value) {
@@ -1586,11 +1873,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setContents(
@@ -1608,11 +1895,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addContents(com.google.cloud.aiplatform.v1beta1.Content value) {
@@ -1632,11 +1919,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addContents(int index, com.google.cloud.aiplatform.v1beta1.Content value) {
@@ -1656,11 +1943,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addContents(
@@ -1678,11 +1965,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addContents(
@@ -1700,11 +1987,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllContents(
@@ -1722,11 +2009,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearContents() {
@@ -1743,11 +2030,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeContents(int index) {
@@ -1764,11 +2051,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
@@ -1778,11 +2065,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getContentsOrBuilder(int index) {
@@ -1796,11 +2083,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
@@ -1815,11 +2102,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Content.Builder addContentsBuilder() {
@@ -1830,11 +2117,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Content.Builder addContentsBuilder(int index) {
@@ -1845,11 +2132,11 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Input content.
+     * Optional. Input content.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1beta1.Content.Builder>
@@ -1872,6 +2159,703 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         contents_ = null;
       }
       return contentsBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Content systemInstruction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Content,
+            com.google.cloud.aiplatform.v1beta1.Content.Builder,
+            com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
+        systemInstructionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the systemInstruction field is set.
+     */
+    public boolean hasSystemInstruction() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The systemInstruction.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction() {
+      if (systemInstructionBuilder_ == null) {
+        return systemInstruction_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()
+            : systemInstruction_;
+      } else {
+        return systemInstructionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSystemInstruction(com.google.cloud.aiplatform.v1beta1.Content value) {
+      if (systemInstructionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        systemInstruction_ = value;
+      } else {
+        systemInstructionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSystemInstruction(
+        com.google.cloud.aiplatform.v1beta1.Content.Builder builderForValue) {
+      if (systemInstructionBuilder_ == null) {
+        systemInstruction_ = builderForValue.build();
+      } else {
+        systemInstructionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSystemInstruction(com.google.cloud.aiplatform.v1beta1.Content value) {
+      if (systemInstructionBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && systemInstruction_ != null
+            && systemInstruction_
+                != com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()) {
+          getSystemInstructionBuilder().mergeFrom(value);
+        } else {
+          systemInstruction_ = value;
+        }
+      } else {
+        systemInstructionBuilder_.mergeFrom(value);
+      }
+      if (systemInstruction_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSystemInstruction() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      systemInstruction_ = null;
+      if (systemInstructionBuilder_ != null) {
+        systemInstructionBuilder_.dispose();
+        systemInstructionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Content.Builder getSystemInstructionBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getSystemInstructionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getSystemInstructionOrBuilder() {
+      if (systemInstructionBuilder_ != null) {
+        return systemInstructionBuilder_.getMessageOrBuilder();
+      } else {
+        return systemInstruction_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()
+            : systemInstruction_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user provided system instructions for the model.
+     * Note: only text should be used in parts and content in each part will be in
+     * a separate paragraph.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Content,
+            com.google.cloud.aiplatform.v1beta1.Content.Builder,
+            com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
+        getSystemInstructionFieldBuilder() {
+      if (systemInstructionBuilder_ == null) {
+        systemInstructionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Content,
+                com.google.cloud.aiplatform.v1beta1.Content.Builder,
+                com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>(
+                getSystemInstruction(), getParentForChildren(), isClean());
+        systemInstruction_ = null;
+      }
+      return systemInstructionBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> tools_ =
+        java.util.Collections.emptyList();
+
+    private void ensureToolsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        tools_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Tool>(tools_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Tool,
+            com.google.cloud.aiplatform.v1beta1.Tool.Builder,
+            com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
+        toolsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> getToolsList() {
+      if (toolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tools_);
+      } else {
+        return toolsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getToolsCount() {
+      if (toolsBuilder_ == null) {
+        return tools_.size();
+      } else {
+        return toolsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Tool getTools(int index) {
+      if (toolsBuilder_ == null) {
+        return tools_.get(index);
+      } else {
+        return toolsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTools(int index, com.google.cloud.aiplatform.v1beta1.Tool value) {
+      if (toolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsIsMutable();
+        tools_.set(index, value);
+        onChanged();
+      } else {
+        toolsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTools(
+        int index, com.google.cloud.aiplatform.v1beta1.Tool.Builder builderForValue) {
+      if (toolsBuilder_ == null) {
+        ensureToolsIsMutable();
+        tools_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTools(com.google.cloud.aiplatform.v1beta1.Tool value) {
+      if (toolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsIsMutable();
+        tools_.add(value);
+        onChanged();
+      } else {
+        toolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTools(int index, com.google.cloud.aiplatform.v1beta1.Tool value) {
+      if (toolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolsIsMutable();
+        tools_.add(index, value);
+        onChanged();
+      } else {
+        toolsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTools(com.google.cloud.aiplatform.v1beta1.Tool.Builder builderForValue) {
+      if (toolsBuilder_ == null) {
+        ensureToolsIsMutable();
+        tools_.add(builderForValue.build());
+        onChanged();
+      } else {
+        toolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTools(
+        int index, com.google.cloud.aiplatform.v1beta1.Tool.Builder builderForValue) {
+      if (toolsBuilder_ == null) {
+        ensureToolsIsMutable();
+        tools_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllTools(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Tool> values) {
+      if (toolsBuilder_ == null) {
+        ensureToolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tools_);
+        onChanged();
+      } else {
+        toolsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTools() {
+      if (toolsBuilder_ == null) {
+        tools_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        toolsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTools(int index) {
+      if (toolsBuilder_ == null) {
+        ensureToolsIsMutable();
+        tools_.remove(index);
+        onChanged();
+      } else {
+        toolsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Tool.Builder getToolsBuilder(int index) {
+      return getToolsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ToolOrBuilder getToolsOrBuilder(int index) {
+      if (toolsBuilder_ == null) {
+        return tools_.get(index);
+      } else {
+        return toolsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
+        getToolsOrBuilderList() {
+      if (toolsBuilder_ != null) {
+        return toolsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tools_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Tool.Builder addToolsBuilder() {
+      return getToolsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.Tool.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Tool.Builder addToolsBuilder(int index) {
+      return getToolsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Tool.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of `Tools` the model may use to generate the next
+     * response.
+     *
+     * A `Tool` is a piece of code that enables the system to interact with
+     * external systems to perform an action, or set of actions, outside of
+     * knowledge and scope of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Tool tools = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Tool.Builder> getToolsBuilderList() {
+      return getToolsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Tool,
+            com.google.cloud.aiplatform.v1beta1.Tool.Builder,
+            com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
+        getToolsFieldBuilder() {
+      if (toolsBuilder_ == null) {
+        toolsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Tool,
+                com.google.cloud.aiplatform.v1beta1.Tool.Builder,
+                com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>(
+                tools_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        tools_ = null;
+      }
+      return toolsBuilder_;
     }
 
     @java.lang.Override

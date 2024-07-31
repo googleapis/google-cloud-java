@@ -21,6 +21,7 @@ import static com.google.cloud.iap.v1.IdentityAwareProxyOAuthServiceClient.ListI
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -286,6 +287,7 @@ public class IdentityAwareProxyOAuthServiceStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "iap.googleapis.com:443";
   }

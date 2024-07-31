@@ -1920,6 +1920,25 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         : multiLanguageSettings_;
   }
 
+  public static final int LOCKED_FIELD_NUMBER = 30;
+  private boolean locked_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the flow is locked for changes. If the flow is locked,
+   * modifications to the flow will be rejected.
+   * </pre>
+   *
+   * <code>bool locked = 30;</code>
+   *
+   * @return The locked.
+   */
+  @java.lang.Override
+  public boolean getLocked() {
+    return locked_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1964,6 +1983,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(28, getMultiLanguageSettings());
+    }
+    if (locked_ != false) {
+      output.writeBool(30, locked_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2012,6 +2034,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(28, getMultiLanguageSettings());
     }
+    if (locked_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, locked_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2051,6 +2076,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasMultiLanguageSettings()) {
       if (!getMultiLanguageSettings().equals(other.getMultiLanguageSettings())) return false;
     }
+    if (getLocked() != other.getLocked()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2096,6 +2122,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MULTI_LANGUAGE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getMultiLanguageSettings().hashCode();
     }
+    hash = (37 * hash) + LOCKED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2300,6 +2328,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         multiLanguageSettingsBuilder_.dispose();
         multiLanguageSettingsBuilder_ = null;
       }
+      locked_ = false;
       return this;
     }
 
@@ -2395,6 +2424,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 ? multiLanguageSettings_
                 : multiLanguageSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.locked_ = locked_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2535,6 +2567,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMultiLanguageSettings()) {
         mergeMultiLanguageSettings(other.getMultiLanguageSettings());
       }
+      if (other.getLocked() != false) {
+        setLocked(other.getLocked());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2641,6 +2676,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 226
+            case 240:
+              {
+                locked_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5334,6 +5375,62 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         multiLanguageSettings_ = null;
       }
       return multiLanguageSettingsBuilder_;
+    }
+
+    private boolean locked_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the flow is locked for changes. If the flow is locked,
+     * modifications to the flow will be rejected.
+     * </pre>
+     *
+     * <code>bool locked = 30;</code>
+     *
+     * @return The locked.
+     */
+    @java.lang.Override
+    public boolean getLocked() {
+      return locked_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the flow is locked for changes. If the flow is locked,
+     * modifications to the flow will be rejected.
+     * </pre>
+     *
+     * <code>bool locked = 30;</code>
+     *
+     * @param value The locked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocked(boolean value) {
+
+      locked_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the flow is locked for changes. If the flow is locked,
+     * modifications to the flow will be rejected.
+     * </pre>
+     *
+     * <code>bool locked = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocked() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      locked_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

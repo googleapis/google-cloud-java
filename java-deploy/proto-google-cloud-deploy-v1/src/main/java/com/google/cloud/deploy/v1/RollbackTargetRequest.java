@@ -76,8 +76,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   * created. Format should be
+   * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+   * created. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -103,8 +103,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-   * created. Format should be
+   * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+   * created. The format is
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -921,8 +921,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-     * created. Format should be
+     * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+     * created. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -947,8 +947,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-     * created. Format should be
+     * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+     * created. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -973,8 +973,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-     * created. Format should be
+     * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+     * created. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -998,8 +998,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-     * created. Format should be
+     * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+     * created. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -1019,8 +1019,8 @@ public final class RollbackTargetRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
-     * created. Format should be
+     * Required. The `DeliveryPipeline` for which the rollback `Rollout` must be
+     * created. The format is
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *

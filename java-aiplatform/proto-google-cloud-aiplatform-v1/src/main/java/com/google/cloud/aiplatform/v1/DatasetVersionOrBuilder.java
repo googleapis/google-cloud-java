@@ -28,10 +28,12 @@ public interface DatasetVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the DatasetVersion.
+   * Output only. Identifier. The resource name of the DatasetVersion.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -40,10 +42,12 @@ public interface DatasetVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the DatasetVersion.
+   * Output only. Identifier. The resource name of the DatasetVersion.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */

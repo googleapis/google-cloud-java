@@ -239,6 +239,33 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.protobuf.DurationOrBuilder getStableCutbackDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment and
+     * Service resources. This label must already be present in both resources.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The podSelectorLabel.
+     */
+    java.lang.String getPodSelectorLabel();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment and
+     * Service resources. This label must already be present in both resources.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for podSelectorLabel.
+     */
+    com.google.protobuf.ByteString getPodSelectorLabelBytes();
   }
   /**
    *
@@ -263,6 +290,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       httpRoute_ = "";
       service_ = "";
       deployment_ = "";
+      podSelectorLabel_ = "";
     }
 
     @java.lang.Override
@@ -569,6 +597,59 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           : stableCutbackDuration_;
     }
 
+    public static final int POD_SELECTOR_LABEL_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object podSelectorLabel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment and
+     * Service resources. This label must already be present in both resources.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The podSelectorLabel.
+     */
+    @java.lang.Override
+    public java.lang.String getPodSelectorLabel() {
+      java.lang.Object ref = podSelectorLabel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        podSelectorLabel_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment and
+     * Service resources. This label must already be present in both resources.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for podSelectorLabel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPodSelectorLabelBytes() {
+      java.lang.Object ref = podSelectorLabel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        podSelectorLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -598,6 +679,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(5, getStableCutbackDuration());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, podSelectorLabel_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -623,6 +707,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStableCutbackDuration());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, podSelectorLabel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -651,6 +738,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (hasStableCutbackDuration()) {
         if (!getStableCutbackDuration().equals(other.getStableCutbackDuration())) return false;
       }
+      if (!getPodSelectorLabel().equals(other.getPodSelectorLabel())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -676,6 +764,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + STABLE_CUTBACK_DURATION_FIELD_NUMBER;
         hash = (53 * hash) + getStableCutbackDuration().hashCode();
       }
+      hash = (37 * hash) + POD_SELECTOR_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getPodSelectorLabel().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -841,6 +931,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           stableCutbackDurationBuilder_.dispose();
           stableCutbackDurationBuilder_ = null;
         }
+        podSelectorLabel_ = "";
         return this;
       }
 
@@ -902,6 +993,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   ? stableCutbackDuration_
                   : stableCutbackDurationBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.podSelectorLabel_ = podSelectorLabel_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -977,6 +1071,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         if (other.hasStableCutbackDuration()) {
           mergeStableCutbackDuration(other.getStableCutbackDuration());
         }
+        if (!other.getPodSelectorLabel().isEmpty()) {
+          podSelectorLabel_ = other.podSelectorLabel_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1035,6 +1134,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  podSelectorLabel_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1829,6 +1934,117 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return stableCutbackDurationBuilder_;
       }
 
+      private java.lang.Object podSelectorLabel_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment and
+       * Service resources. This label must already be present in both resources.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The podSelectorLabel.
+       */
+      public java.lang.String getPodSelectorLabel() {
+        java.lang.Object ref = podSelectorLabel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          podSelectorLabel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment and
+       * Service resources. This label must already be present in both resources.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for podSelectorLabel.
+       */
+      public com.google.protobuf.ByteString getPodSelectorLabelBytes() {
+        java.lang.Object ref = podSelectorLabel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          podSelectorLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment and
+       * Service resources. This label must already be present in both resources.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The podSelectorLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodSelectorLabel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        podSelectorLabel_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment and
+       * Service resources. This label must already be present in both resources.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPodSelectorLabel() {
+        podSelectorLabel_ = getDefaultInstance().getPodSelectorLabel();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment and
+       * Service resources. This label must already be present in both resources.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for podSelectorLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodSelectorLabelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        podSelectorLabel_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1968,6 +2184,33 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The disablePodOverprovisioning.
      */
     boolean getDisablePodOverprovisioning();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment
+     * resource. This label must already be present in the Deployment.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The podSelectorLabel.
+     */
+    java.lang.String getPodSelectorLabel();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment
+     * resource. This label must already be present in the Deployment.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for podSelectorLabel.
+     */
+    com.google.protobuf.ByteString getPodSelectorLabelBytes();
   }
   /**
    *
@@ -1991,6 +2234,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     private ServiceNetworking() {
       service_ = "";
       deployment_ = "";
+      podSelectorLabel_ = "";
     }
 
     @java.lang.Override
@@ -2139,6 +2383,59 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       return disablePodOverprovisioning_;
     }
 
+    public static final int POD_SELECTOR_LABEL_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object podSelectorLabel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment
+     * resource. This label must already be present in the Deployment.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The podSelectorLabel.
+     */
+    @java.lang.Override
+    public java.lang.String getPodSelectorLabel() {
+      java.lang.Object ref = podSelectorLabel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        podSelectorLabel_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The label to use when selecting Pods for the Deployment
+     * resource. This label must already be present in the Deployment.
+     * </pre>
+     *
+     * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for podSelectorLabel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPodSelectorLabelBytes() {
+      java.lang.Object ref = podSelectorLabel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        podSelectorLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2162,6 +2459,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (disablePodOverprovisioning_ != false) {
         output.writeBool(3, disablePodOverprovisioning_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, podSelectorLabel_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2180,6 +2480,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (disablePodOverprovisioning_ != false) {
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(3, disablePodOverprovisioning_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, podSelectorLabel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2200,6 +2503,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!getService().equals(other.getService())) return false;
       if (!getDeployment().equals(other.getDeployment())) return false;
       if (getDisablePodOverprovisioning() != other.getDisablePodOverprovisioning()) return false;
+      if (!getPodSelectorLabel().equals(other.getPodSelectorLabel())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2218,6 +2522,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisablePodOverprovisioning());
+      hash = (37 * hash) + POD_SELECTOR_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getPodSelectorLabel().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2363,6 +2669,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         service_ = "";
         deployment_ = "";
         disablePodOverprovisioning_ = false;
+        podSelectorLabel_ = "";
         return this;
       }
 
@@ -2409,6 +2716,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.disablePodOverprovisioning_ = disablePodOverprovisioning_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.podSelectorLabel_ = podSelectorLabel_;
         }
       }
 
@@ -2475,6 +2785,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         if (other.getDisablePodOverprovisioning() != false) {
           setDisablePodOverprovisioning(other.getDisablePodOverprovisioning());
         }
+        if (!other.getPodSelectorLabel().isEmpty()) {
+          podSelectorLabel_ = other.podSelectorLabel_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2519,6 +2834,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 34:
+                {
+                  podSelectorLabel_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2816,6 +3137,117 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public Builder clearDisablePodOverprovisioning() {
         bitField0_ = (bitField0_ & ~0x00000004);
         disablePodOverprovisioning_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object podSelectorLabel_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment
+       * resource. This label must already be present in the Deployment.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The podSelectorLabel.
+       */
+      public java.lang.String getPodSelectorLabel() {
+        java.lang.Object ref = podSelectorLabel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          podSelectorLabel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment
+       * resource. This label must already be present in the Deployment.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for podSelectorLabel.
+       */
+      public com.google.protobuf.ByteString getPodSelectorLabelBytes() {
+        java.lang.Object ref = podSelectorLabel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          podSelectorLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment
+       * resource. This label must already be present in the Deployment.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The podSelectorLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodSelectorLabel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        podSelectorLabel_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment
+       * resource. This label must already be present in the Deployment.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPodSelectorLabel() {
+        podSelectorLabel_ = getDefaultInstance().getPodSelectorLabel();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The label to use when selecting Pods for the Deployment
+       * resource. This label must already be present in the Deployment.
+       * </pre>
+       *
+       * <code>string pod_selector_label = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for podSelectorLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodSelectorLabelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        podSelectorLabel_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

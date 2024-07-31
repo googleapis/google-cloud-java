@@ -53,7 +53,7 @@ public interface DiscoveryStartingLocationOrBuilder
    *
    *
    * <pre>
-   * The ID of the Folder within an organization to scan.
+   * The ID of the folder within an organization to be scanned.
    * </pre>
    *
    * <code>int64 folder_id = 2;</code>
@@ -65,7 +65,7 @@ public interface DiscoveryStartingLocationOrBuilder
    *
    *
    * <pre>
-   * The ID of the Folder within an organization to scan.
+   * The ID of the folder within an organization to be scanned.
    * </pre>
    *
    * <code>int64 folder_id = 2;</code>

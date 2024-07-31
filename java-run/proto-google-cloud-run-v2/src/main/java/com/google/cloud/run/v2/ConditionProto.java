@@ -42,54 +42,57 @@ public final class ConditionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/run/v2/condition.proto\022\023g"
-          + "oogle.cloud.run.v2\032\037google/protobuf/time"
-          + "stamp.proto\"\235\014\n\tCondition\022\014\n\004type\030\001 \001(\t\022"
-          + "3\n\005state\030\002 \001(\0162$.google.cloud.run.v2.Con"
-          + "dition.State\022\017\n\007message\030\003 \001(\t\0228\n\024last_tr"
-          + "ansition_time\030\004 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\0229\n\010severity\030\005 \001(\0162\'.google.cloud"
-          + ".run.v2.Condition.Severity\022=\n\006reason\030\006 \001"
-          + "(\0162+.google.cloud.run.v2.Condition.Commo"
-          + "nReasonH\000\022H\n\017revision_reason\030\t \001(\0162-.goo"
-          + "gle.cloud.run.v2.Condition.RevisionReaso"
-          + "nH\000\022J\n\020execution_reason\030\013 \001(\0162..google.c"
-          + "loud.run.v2.Condition.ExecutionReasonH\000\""
-          + "\177\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\025\n\021CONDI"
-          + "TION_PENDING\020\001\022\031\n\025CONDITION_RECONCILING\020"
-          + "\002\022\024\n\020CONDITION_FAILED\020\003\022\027\n\023CONDITION_SUC"
-          + "CEEDED\020\004\"F\n\010Severity\022\030\n\024SEVERITY_UNSPECI"
-          + "FIED\020\000\022\t\n\005ERROR\020\001\022\013\n\007WARNING\020\002\022\010\n\004INFO\020\003"
-          + "\"\262\003\n\014CommonReason\022\033\n\027COMMON_REASON_UNDEF"
-          + "INED\020\000\022\013\n\007UNKNOWN\020\001\022\023\n\017REVISION_FAILED\020\003"
-          + "\022\036\n\032PROGRESS_DEADLINE_EXCEEDED\020\004\022\025\n\021CONT"
-          + "AINER_MISSING\020\006\022\037\n\033CONTAINER_PERMISSION_"
-          + "DENIED\020\007\022 \n\034CONTAINER_IMAGE_UNAUTHORIZED"
-          + "\020\010\022.\n*CONTAINER_IMAGE_AUTHORIZATION_CHEC"
-          + "K_FAILED\020\t\022$\n ENCRYPTION_KEY_PERMISSION_"
-          + "DENIED\020\n\022\037\n\033ENCRYPTION_KEY_CHECK_FAILED\020"
-          + "\013\022\037\n\033SECRETS_ACCESS_CHECK_FAILED\020\014\022\031\n\025WA"
-          + "ITING_FOR_OPERATION\020\r\022\023\n\017IMMEDIATE_RETRY"
-          + "\020\016\022\023\n\017POSTPONED_RETRY\020\017\022\014\n\010INTERNAL\020\020\"\312\002"
-          + "\n\016RevisionReason\022\035\n\031REVISION_REASON_UNDE"
-          + "FINED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RESERVE\020\002\022\013\n\007RET"
-          + "IRED\020\003\022\014\n\010RETIRING\020\004\022\016\n\nRECREATING\020\005\022 \n\034"
-          + "HEALTH_CHECK_CONTAINER_ERROR\020\006\022$\n CUSTOM"
-          + "IZED_PATH_RESPONSE_PENDING\020\007\022!\n\035MIN_INST"
-          + "ANCES_NOT_PROVISIONED\020\010\022!\n\035ACTIVE_REVISI"
-          + "ON_LIMIT_REACHED\020\t\022\021\n\rNO_DEPLOYMENT\020\n\022\030\n"
-          + "\024HEALTH_CHECK_SKIPPED\020\013\022\031\n\025MIN_INSTANCES"
-          + "_WARMING\020\014\"\233\001\n\017ExecutionReason\022\036\n\032EXECUT"
-          + "ION_REASON_UNDEFINED\020\000\022$\n JOB_STATUS_SER"
-          + "VICE_POLLING_ERROR\020\001\022\026\n\022NON_ZERO_EXIT_CO"
-          + "DE\020\002\022\r\n\tCANCELLED\020\003\022\016\n\nCANCELLING\020\004\022\013\n\007D"
-          + "ELETED\020\005B\t\n\007reasonsBV\n\027com.google.cloud."
-          + "run.v2B\016ConditionProtoP\001Z)cloud.google.c"
-          + "om/go/run/apiv2/runpb;runpbb\006proto3"
+          + "oogle.cloud.run.v2\032\037google/api/field_beh"
+          + "avior.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\254\014\n\tCondition\022\014\n\004type\030\001 \001(\t\0223\n\005stat"
+          + "e\030\002 \001(\0162$.google.cloud.run.v2.Condition."
+          + "State\022\017\n\007message\030\003 \001(\t\0228\n\024last_transitio"
+          + "n_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "\0229\n\010severity\030\005 \001(\0162\'.google.cloud.run.v2"
+          + ".Condition.Severity\022B\n\006reason\030\006 \001(\0162+.go"
+          + "ogle.cloud.run.v2.Condition.CommonReason"
+          + "B\003\340A\003H\000\022M\n\017revision_reason\030\t \001(\0162-.googl"
+          + "e.cloud.run.v2.Condition.RevisionReasonB"
+          + "\003\340A\003H\000\022O\n\020execution_reason\030\013 \001(\0162..googl"
+          + "e.cloud.run.v2.Condition.ExecutionReason"
+          + "B\003\340A\003H\000\"\177\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
+          + "\025\n\021CONDITION_PENDING\020\001\022\031\n\025CONDITION_RECO"
+          + "NCILING\020\002\022\024\n\020CONDITION_FAILED\020\003\022\027\n\023CONDI"
+          + "TION_SUCCEEDED\020\004\"F\n\010Severity\022\030\n\024SEVERITY"
+          + "_UNSPECIFIED\020\000\022\t\n\005ERROR\020\001\022\013\n\007WARNING\020\002\022\010"
+          + "\n\004INFO\020\003\"\262\003\n\014CommonReason\022\033\n\027COMMON_REAS"
+          + "ON_UNDEFINED\020\000\022\013\n\007UNKNOWN\020\001\022\023\n\017REVISION_"
+          + "FAILED\020\003\022\036\n\032PROGRESS_DEADLINE_EXCEEDED\020\004"
+          + "\022\025\n\021CONTAINER_MISSING\020\006\022\037\n\033CONTAINER_PER"
+          + "MISSION_DENIED\020\007\022 \n\034CONTAINER_IMAGE_UNAU"
+          + "THORIZED\020\010\022.\n*CONTAINER_IMAGE_AUTHORIZAT"
+          + "ION_CHECK_FAILED\020\t\022$\n ENCRYPTION_KEY_PER"
+          + "MISSION_DENIED\020\n\022\037\n\033ENCRYPTION_KEY_CHECK"
+          + "_FAILED\020\013\022\037\n\033SECRETS_ACCESS_CHECK_FAILED"
+          + "\020\014\022\031\n\025WAITING_FOR_OPERATION\020\r\022\023\n\017IMMEDIA"
+          + "TE_RETRY\020\016\022\023\n\017POSTPONED_RETRY\020\017\022\014\n\010INTER"
+          + "NAL\020\020\"\312\002\n\016RevisionReason\022\035\n\031REVISION_REA"
+          + "SON_UNDEFINED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RESERVE\020"
+          + "\002\022\013\n\007RETIRED\020\003\022\014\n\010RETIRING\020\004\022\016\n\nRECREATI"
+          + "NG\020\005\022 \n\034HEALTH_CHECK_CONTAINER_ERROR\020\006\022$"
+          + "\n CUSTOMIZED_PATH_RESPONSE_PENDING\020\007\022!\n\035"
+          + "MIN_INSTANCES_NOT_PROVISIONED\020\010\022!\n\035ACTIV"
+          + "E_REVISION_LIMIT_REACHED\020\t\022\021\n\rNO_DEPLOYM"
+          + "ENT\020\n\022\030\n\024HEALTH_CHECK_SKIPPED\020\013\022\031\n\025MIN_I"
+          + "NSTANCES_WARMING\020\014\"\233\001\n\017ExecutionReason\022\036"
+          + "\n\032EXECUTION_REASON_UNDEFINED\020\000\022$\n JOB_ST"
+          + "ATUS_SERVICE_POLLING_ERROR\020\001\022\026\n\022NON_ZERO"
+          + "_EXIT_CODE\020\002\022\r\n\tCANCELLED\020\003\022\016\n\nCANCELLIN"
+          + "G\020\004\022\013\n\007DELETED\020\005B\t\n\007reasonsBV\n\027com.googl"
+          + "e.cloud.run.v2B\016ConditionProtoP\001Z)cloud."
+          + "google.com/go/run/apiv2/runpb;runpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_Condition_descriptor =
@@ -108,6 +111,12 @@ public final class ConditionProto {
               "ExecutionReason",
               "Reasons",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

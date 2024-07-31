@@ -28,12 +28,12 @@ public interface TCPSocketActionOrBuilder
    *
    *
    * <pre>
-   * Port number to access on the container. Must be in the range 1 to 65535.
-   * If not specified, defaults to the exposed port of the container, which is
-   * the value of container.ports[0].containerPort.
+   * Optional. Port number to access on the container. Must be in the range 1 to
+   * 65535. If not specified, defaults to the exposed port of the container,
+   * which is the value of container.ports[0].containerPort.
    * </pre>
    *
-   * <code>int32 port = 1;</code>
+   * <code>int32 port = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */

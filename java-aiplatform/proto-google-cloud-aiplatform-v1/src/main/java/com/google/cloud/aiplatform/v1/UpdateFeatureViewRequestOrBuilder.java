@@ -86,7 +86,14 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
-   *   * `serviceAgentType`
+   *   * `service_agent_type`
+   *   * `big_query_source`
+   *   * `big_query_source.uri`
+   *   * `big_query_source.entity_id_columns`
+   *   * `feature_registry_source`
+   *   * `feature_registry_source.feature_groups`
+   *   * `sync_config`
+   *   * `sync_config.cron`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -109,7 +116,14 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
-   *   * `serviceAgentType`
+   *   * `service_agent_type`
+   *   * `big_query_source`
+   *   * `big_query_source.uri`
+   *   * `big_query_source.entity_id_columns`
+   *   * `feature_registry_source`
+   *   * `feature_registry_source.feature_groups`
+   *   * `sync_config`
+   *   * `sync_config.cron`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -132,7 +146,14 @@ public interface UpdateFeatureViewRequestOrBuilder
    * Updatable fields:
    *
    *   * `labels`
-   *   * `serviceAgentType`
+   *   * `service_agent_type`
+   *   * `big_query_source`
+   *   * `big_query_source.uri`
+   *   * `big_query_source.entity_id_columns`
+   *   * `feature_registry_source`
+   *   * `feature_registry_source.feature_groups`
+   *   * `sync_config`
+   *   * `sync_config.cron`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

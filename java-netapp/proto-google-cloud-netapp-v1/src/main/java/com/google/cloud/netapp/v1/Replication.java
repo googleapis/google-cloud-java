@@ -709,7 +709,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Replication is in progress.
+     * Incremental replication is in progress.
      * </pre>
      *
      * <code>TRANSFERRING = 4;</code>
@@ -763,7 +763,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Replication is in progress.
+     * Incremental replication is in progress.
      * </pre>
      *
      * <code>TRANSFERRING = 4;</code>

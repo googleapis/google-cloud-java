@@ -29,6 +29,7 @@ import com.google.maps.mapsplatformdatasets.v1.stub.MapsPlatformDatasetsStub;
 import com.google.maps.mapsplatformdatasets.v1.stub.MapsPlatformDatasetsStubSettings;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -119,6 +120,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchDatasetErrors</td>
+ *      <td><p> Gets all the errors of a dataset.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrors(FetchDatasetErrorsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrors(DatasetName dataset)
+ *           <li><p> fetchDatasetErrors(String dataset)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrorsPagedCallable()
+ *           <li><p> fetchDatasetErrorsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -611,6 +632,179 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The name of the dataset to list all the errors for. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(DatasetName dataset) {
+    FetchDatasetErrorsRequest request =
+        FetchDatasetErrorsRequest.newBuilder()
+            .setDataset(dataset == null ? null : dataset.toString())
+            .build();
+    return fetchDatasetErrors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   String dataset = DatasetName.of("[PROJECT]", "[DATASET]").toString();
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The name of the dataset to list all the errors for. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(String dataset) {
+    FetchDatasetErrorsRequest request =
+        FetchDatasetErrorsRequest.newBuilder().setDataset(dataset).build();
+    return fetchDatasetErrors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(
+      FetchDatasetErrorsRequest request) {
+    return fetchDatasetErrorsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Status> future =
+   *       mapsPlatformDatasetsClient.fetchDatasetErrorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Status element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    return stub.fetchDatasetErrorsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchDatasetErrorsResponse response =
+   *         mapsPlatformDatasetsClient.fetchDatasetErrorsCallable().call(request);
+   *     for (Status element : response.getErrorsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    return stub.fetchDatasetErrorsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
@@ -925,6 +1119,83 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class FetchDatasetErrorsPagedResponse
+      extends AbstractPagedListResponse<
+          FetchDatasetErrorsRequest,
+          FetchDatasetErrorsResponse,
+          Status,
+          FetchDatasetErrorsPage,
+          FetchDatasetErrorsFixedSizeCollection> {
+
+    public static ApiFuture<FetchDatasetErrorsPagedResponse> createAsync(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
+      ApiFuture<FetchDatasetErrorsPage> futurePage =
+          FetchDatasetErrorsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchDatasetErrorsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchDatasetErrorsPagedResponse(FetchDatasetErrorsPage page) {
+      super(page, FetchDatasetErrorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchDatasetErrorsPage
+      extends AbstractPage<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status, FetchDatasetErrorsPage> {
+
+    private FetchDatasetErrorsPage(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        FetchDatasetErrorsResponse response) {
+      super(context, response);
+    }
+
+    private static FetchDatasetErrorsPage createEmptyPage() {
+      return new FetchDatasetErrorsPage(null, null);
+    }
+
+    @Override
+    protected FetchDatasetErrorsPage createPage(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        FetchDatasetErrorsResponse response) {
+      return new FetchDatasetErrorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchDatasetErrorsPage> createPageAsync(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchDatasetErrorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchDatasetErrorsRequest,
+          FetchDatasetErrorsResponse,
+          Status,
+          FetchDatasetErrorsPage,
+          FetchDatasetErrorsFixedSizeCollection> {
+
+    private FetchDatasetErrorsFixedSizeCollection(
+        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchDatasetErrorsFixedSizeCollection createEmptyCollection() {
+      return new FetchDatasetErrorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchDatasetErrorsFixedSizeCollection createCollection(
+        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+      return new FetchDatasetErrorsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListDatasetsPagedResponse

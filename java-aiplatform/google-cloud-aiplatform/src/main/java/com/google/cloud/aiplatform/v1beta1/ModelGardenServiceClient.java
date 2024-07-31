@@ -352,6 +352,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
+   *           .setIsHuggingFaceModel(true)
    *           .build();
    *   PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
    * }
@@ -382,6 +383,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
+   *           .setIsHuggingFaceModel(true)
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.getPublisherModelCallable().futureCall(request);

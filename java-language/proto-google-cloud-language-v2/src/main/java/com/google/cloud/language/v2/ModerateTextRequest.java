@@ -38,7 +38,9 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private ModerateTextRequest() {}
+  private ModerateTextRequest() {
+    modelVersion_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +61,171 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.language.v2.ModerateTextRequest.class,
             com.google.cloud.language.v2.ModerateTextRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The model version to use for ModerateText.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.language.v2.ModerateTextRequest.ModelVersion}
+   */
+  public enum ModelVersion implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default model version.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_UNSPECIFIED = 0;</code>
+     */
+    MODEL_VERSION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the v1 model, this model is used by default when not provided.
+     * The v1 model only returns probability (confidence) score for each
+     * category.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_1 = 1;</code>
+     */
+    MODEL_VERSION_1(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the v2 model.
+     * The v2 model only returns probability (confidence) score for each
+     * category, and returns severity score for a subset of the categories.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_2 = 2;</code>
+     */
+    MODEL_VERSION_2(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default model version.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_VERSION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use the v1 model, this model is used by default when not provided.
+     * The v1 model only returns probability (confidence) score for each
+     * category.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_1 = 1;</code>
+     */
+    public static final int MODEL_VERSION_1_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use the v2 model.
+     * The v2 model only returns probability (confidence) score for each
+     * category, and returns severity score for a subset of the categories.
+     * </pre>
+     *
+     * <code>MODEL_VERSION_2 = 2;</code>
+     */
+    public static final int MODEL_VERSION_2_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModelVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ModelVersion forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_VERSION_UNSPECIFIED;
+        case 1:
+          return MODEL_VERSION_1;
+        case 2:
+          return MODEL_VERSION_2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ModelVersion> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ModelVersion> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ModelVersion>() {
+          public ModelVersion findValueByNumber(int number) {
+            return ModelVersion.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.language.v2.ModerateTextRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ModelVersion[] VALUES = values();
+
+    public static ModelVersion valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ModelVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.language.v2.ModerateTextRequest.ModelVersion)
   }
 
   private int bitField0_;
@@ -118,6 +285,47 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         : document_;
   }
 
+  public static final int MODEL_VERSION_FIELD_NUMBER = 2;
+  private int modelVersion_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model version to use for ModerateText.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modelVersion.
+   */
+  @java.lang.Override
+  public int getModelVersionValue() {
+    return modelVersion_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model version to use for ModerateText.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.language.v2.ModerateTextRequest.ModelVersion getModelVersion() {
+    com.google.cloud.language.v2.ModerateTextRequest.ModelVersion result =
+        com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.forNumber(modelVersion_);
+    return result == null
+        ? com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +343,11 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDocument());
     }
+    if (modelVersion_
+        != com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.MODEL_VERSION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, modelVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +359,11 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDocument());
+    }
+    if (modelVersion_
+        != com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.MODEL_VERSION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, modelVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -167,6 +385,7 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
     if (hasDocument()) {
       if (!getDocument().equals(other.getDocument())) return false;
     }
+    if (modelVersion_ != other.modelVersion_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +401,8 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDocument().hashCode();
     }
+    hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + modelVersion_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +556,7 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         documentBuilder_.dispose();
         documentBuilder_ = null;
       }
+      modelVersion_ = 0;
       return this;
     }
 
@@ -375,6 +597,9 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modelVersion_ = modelVersion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -428,6 +653,9 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
       }
+      if (other.modelVersion_ != 0) {
+        setModelVersionValue(other.getModelVersionValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +688,12 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                modelVersion_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -680,6 +914,109 @@ public final class ModerateTextRequest extends com.google.protobuf.GeneratedMess
         document_ = null;
       }
       return documentBuilder_;
+    }
+
+    private int modelVersion_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model version to use for ModerateText.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for modelVersion.
+     */
+    @java.lang.Override
+    public int getModelVersionValue() {
+      return modelVersion_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model version to use for ModerateText.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionValue(int value) {
+      modelVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model version to use for ModerateText.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modelVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.language.v2.ModerateTextRequest.ModelVersion getModelVersion() {
+      com.google.cloud.language.v2.ModerateTextRequest.ModelVersion result =
+          com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.forNumber(modelVersion_);
+      return result == null
+          ? com.google.cloud.language.v2.ModerateTextRequest.ModelVersion.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model version to use for ModerateText.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersion(
+        com.google.cloud.language.v2.ModerateTextRequest.ModelVersion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      modelVersion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model version to use for ModerateText.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v2.ModerateTextRequest.ModelVersion model_version = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersion() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      modelVersion_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

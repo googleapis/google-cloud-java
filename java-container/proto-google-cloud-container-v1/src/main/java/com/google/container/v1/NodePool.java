@@ -6457,10 +6457,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Server-defined URL for the resource.
+   * Output only. Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 100;</code>
+   * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The selfLink.
    */
@@ -6480,10 +6480,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Server-defined URL for the resource.
+   * Output only. Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 100;</code>
+   * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for selfLink.
    */
@@ -6564,14 +6564,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The resource URLs of the [managed instance
+   * Output only. The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * During the node pool blue-green upgrade operation, the URLs contain both
    * blue and green resources.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 102;</code>
+   * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return A list containing the instanceGroupUrls.
    */
@@ -6582,14 +6583,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The resource URLs of the [managed instance
+   * Output only. The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * During the node pool blue-green upgrade operation, the URLs contain both
    * blue and green resources.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 102;</code>
+   * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The count of instanceGroupUrls.
    */
@@ -6600,14 +6602,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The resource URLs of the [managed instance
+   * Output only. The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * During the node pool blue-green upgrade operation, the URLs contain both
    * blue and green resources.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 102;</code>
+   * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
@@ -6619,14 +6622,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The resource URLs of the [managed instance
+   * Output only. The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
    * During the node pool blue-green upgrade operation, the URLs contain both
    * blue and green resources.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 102;</code>
+   * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
@@ -6641,10 +6645,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the nodes in this pool instance.
+   * Output only. The status of the nodes in this pool instance.
    * </pre>
    *
-   * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   * <code>
+   * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -6656,10 +6662,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the nodes in this pool instance.
+   * Output only. The status of the nodes in this pool instance.
    * </pre>
    *
-   * <code>.google.container.v1.NodePool.Status status = 103;</code>
+   * <code>
+   * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The status.
    */
@@ -6678,15 +6686,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Deprecated. Use conditions instead.
+   * Output only. Deprecated. Use conditions instead.
    * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104 [deprecated = true];</code>
+   * <code>
+   * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3712
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -6706,15 +6716,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Deprecated. Use conditions instead.
+   * Output only. Deprecated. Use conditions instead.
    * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104 [deprecated = true];</code>
+   * <code>
+   * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3712
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -6964,10 +6976,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The pod CIDR block size per node in this node pool.
+   * Output only. The pod CIDR block size per node in this node pool.
    * </pre>
    *
-   * <code>int32 pod_ipv4_cidr_size = 7;</code>
+   * <code>int32 pod_ipv4_cidr_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The podIpv4CidrSize.
    */
@@ -7082,8 +7094,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during
-   * a node pool update.
+   * Output only. Update info contains relevant information during a node
+   * pool update.
    * </pre>
    *
    * <code>
@@ -7100,8 +7112,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during
-   * a node pool update.
+   * Output only. Update info contains relevant information during a node
+   * pool update.
    * </pre>
    *
    * <code>
@@ -7120,8 +7132,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during
-   * a node pool update.
+   * Output only. Update info contains relevant information during a node
+   * pool update.
    * </pre>
    *
    * <code>
@@ -9108,10 +9120,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Server-defined URL for the resource.
+     * Output only. Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 100;</code>
+     * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The selfLink.
      */
@@ -9130,10 +9142,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Server-defined URL for the resource.
+     * Output only. Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 100;</code>
+     * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for selfLink.
      */
@@ -9152,10 +9164,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Server-defined URL for the resource.
+     * Output only. Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 100;</code>
+     * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -9173,10 +9185,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Server-defined URL for the resource.
+     * Output only. Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 100;</code>
+     * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -9190,10 +9202,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Server-defined URL for the resource.
+     * Output only. Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 100;</code>
+     * <code>string self_link = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -9338,14 +9350,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return A list containing the instanceGroupUrls.
      */
@@ -9357,14 +9370,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The count of instanceGroupUrls.
      */
@@ -9375,14 +9389,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The instanceGroupUrls at the given index.
@@ -9394,14 +9409,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the instanceGroupUrls at the given index.
@@ -9413,14 +9429,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The instanceGroupUrls to set.
@@ -9440,14 +9457,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The instanceGroupUrls to add.
      * @return This builder for chaining.
@@ -9466,14 +9484,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param values The instanceGroupUrls to add.
      * @return This builder for chaining.
@@ -9489,14 +9508,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9511,14 +9531,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The resource URLs of the [managed instance
+     * Output only. The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
      * During the node pool blue-green upgrade operation, the URLs contain both
      * blue and green resources.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 102;</code>
+     * <code>repeated string instance_group_urls = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes of the instanceGroupUrls to add.
      * @return This builder for chaining.
@@ -9540,10 +9561,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the nodes in this pool instance.
+     * Output only. The status of the nodes in this pool instance.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     * <code>
+     * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for status.
      */
@@ -9555,10 +9578,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the nodes in this pool instance.
+     * Output only. The status of the nodes in this pool instance.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     * <code>
+     * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -9573,10 +9598,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the nodes in this pool instance.
+     * Output only. The status of the nodes in this pool instance.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     * <code>
+     * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The status.
      */
@@ -9590,10 +9617,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the nodes in this pool instance.
+     * Output only. The status of the nodes in this pool instance.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     * <code>
+     * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
@@ -9611,10 +9640,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the nodes in this pool instance.
+     * Output only. The status of the nodes in this pool instance.
      * </pre>
      *
-     * <code>.google.container.v1.NodePool.Status status = 103;</code>
+     * <code>
+     * .google.container.v1.NodePool.Status status = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9630,15 +9661,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Deprecated. Use conditions instead.
+     * Output only. Deprecated. Use conditions instead.
      * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104 [deprecated = true];</code>
+     * <code>
+     * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3686
+     *     google/container/v1/cluster_service.proto;l=3712
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -9657,15 +9690,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Deprecated. Use conditions instead.
+     * Output only. Deprecated. Use conditions instead.
      * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104 [deprecated = true];</code>
+     * <code>
+     * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3686
+     *     google/container/v1/cluster_service.proto;l=3712
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -9684,15 +9719,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Deprecated. Use conditions instead.
+     * Output only. Deprecated. Use conditions instead.
      * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104 [deprecated = true];</code>
+     * <code>
+     * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3686
+     *     google/container/v1/cluster_service.proto;l=3712
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -9710,15 +9747,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Deprecated. Use conditions instead.
+     * Output only. Deprecated. Use conditions instead.
      * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104 [deprecated = true];</code>
+     * <code>
+     * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3686
+     *     google/container/v1/cluster_service.proto;l=3712
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9732,15 +9771,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Deprecated. Use conditions instead.
+     * Output only. Deprecated. Use conditions instead.
      * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104 [deprecated = true];</code>
+     * <code>
+     * string status_message = 104 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3686
+     *     google/container/v1/cluster_service.proto;l=3712
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10686,10 +10727,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The pod CIDR block size per node in this node pool.
+     * Output only. The pod CIDR block size per node in this node pool.
      * </pre>
      *
-     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     * <code>int32 pod_ipv4_cidr_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The podIpv4CidrSize.
      */
@@ -10701,10 +10742,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The pod CIDR block size per node in this node pool.
+     * Output only. The pod CIDR block size per node in this node pool.
      * </pre>
      *
-     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     * <code>int32 pod_ipv4_cidr_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The podIpv4CidrSize to set.
      * @return This builder for chaining.
@@ -10720,10 +10761,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The pod CIDR block size per node in this node pool.
+     * Output only. The pod CIDR block size per node in this node pool.
      * </pre>
      *
-     * <code>int32 pod_ipv4_cidr_size = 7;</code>
+     * <code>int32 pod_ipv4_cidr_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -11118,8 +11159,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11135,8 +11176,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11158,8 +11199,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11183,8 +11224,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11206,8 +11247,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11236,8 +11277,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11258,8 +11299,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11275,8 +11316,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>
@@ -11296,8 +11337,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during
-     * a node pool update.
+     * Output only. Update info contains relevant information during a node
+     * pool update.
      * </pre>
      *
      * <code>

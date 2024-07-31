@@ -21,6 +21,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
@@ -54,18 +55,21 @@ import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
 import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
@@ -88,6 +92,8 @@ import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
@@ -551,6 +557,40 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectDataProfile.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesMethodDescriptor =
+          MethodDescriptor
+              .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListFileStoreDataProfiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFileStoreDataProfilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFileStoreDataProfilesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileMethodDescriptor =
+          MethodDescriptor.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetFileStoreDataProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFileStoreDataProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FileStoreDataProfile.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileMethodDescriptor =
+          MethodDescriptor.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteFileStoreDataProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFileStoreDataProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileMethodDescriptor =
           MethodDescriptor.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
@@ -745,6 +785,15 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       listColumnDataProfilesPagedCallable;
   private final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable;
+  private final UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable;
+  private final UnaryCallable<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable;
+  private final UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable;
+  private final UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable;
   private final UnaryCallable<GetTableDataProfileRequest, TableDataProfile>
       getTableDataProfileCallable;
   private final UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
@@ -1247,6 +1296,40 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+        listFileStoreDataProfilesTransportSettings =
+            GrpcCallSettings
+                .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listFileStoreDataProfilesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileTransportSettings =
+            GrpcCallSettings.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+                .setMethodDescriptor(getFileStoreDataProfileMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileTransportSettings =
+            GrpcCallSettings.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteFileStoreDataProfileMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetTableDataProfileRequest, TableDataProfile>
         getTableDataProfileTransportSettings =
             GrpcCallSettings.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
@@ -1583,6 +1666,26 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             getProjectDataProfileTransportSettings,
             settings.getProjectDataProfileSettings(),
             clientContext);
+    this.listFileStoreDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.listFileStoreDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.getFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getFileStoreDataProfileTransportSettings,
+            settings.getFileStoreDataProfileSettings(),
+            clientContext);
+    this.deleteFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileStoreDataProfileTransportSettings,
+            settings.deleteFileStoreDataProfileSettings(),
+            clientContext);
     this.getTableDataProfileCallable =
         callableFactory.createUnaryCallable(
             getTableDataProfileTransportSettings,
@@ -1917,6 +2020,30 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   public UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
       getProjectDataProfileCallable() {
     return getProjectDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    return listFileStoreDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    return listFileStoreDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    return getFileStoreDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    return deleteFileStoreDataProfileCallable;
   }
 
   @Override

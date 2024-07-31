@@ -51,6 +51,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     kmsConfig_ = "";
     psaRange_ = "";
     encryptionType_ = 0;
+    replicaZone_ = "";
+    zone_ = "";
   }
 
   @java.lang.Override
@@ -1082,7 +1084,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=230
+   *     google/cloud/netapp/v1/storage_pool.proto;l=231
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Override
@@ -1101,13 +1103,115 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=230
+   *     google/cloud/netapp/v1/storage_pool.proto;l=231
    * @return The globalAccessAllowed.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean getGlobalAccessAllowed() {
     return globalAccessAllowed_;
+  }
+
+  public static final int REPLICA_ZONE_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object replicaZone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the replica zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The replicaZone.
+   */
+  @java.lang.Override
+  public java.lang.String getReplicaZone() {
+    java.lang.Object ref = replicaZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      replicaZone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the replica zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for replicaZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReplicaZoneBytes() {
+    java.lang.Object ref = replicaZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      replicaZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ZONE_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the active zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The zone.
+   */
+  @java.lang.Override
+  public java.lang.String getZone() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      zone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the active zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for zone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getZoneBytes() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      zone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1175,6 +1279,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(17, globalAccessAllowed_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, replicaZone_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, zone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1245,6 +1355,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, globalAccessAllowed_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, replicaZone_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, zone_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1283,6 +1399,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hasGlobalAccessAllowed()) {
       if (getGlobalAccessAllowed() != other.getGlobalAccessAllowed()) return false;
     }
+    if (!getReplicaZone().equals(other.getReplicaZone())) return false;
+    if (!getZone().equals(other.getZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1334,6 +1452,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GLOBAL_ACCESS_ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGlobalAccessAllowed());
     }
+    hash = (37 * hash) + REPLICA_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getReplicaZone().hashCode();
+    hash = (37 * hash) + ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1527,6 +1649,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       psaRange_ = "";
       encryptionType_ = 0;
       globalAccessAllowed_ = false;
+      replicaZone_ = "";
+      zone_ = "";
       return this;
     }
 
@@ -1617,6 +1741,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.globalAccessAllowed_ = globalAccessAllowed_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.replicaZone_ = replicaZone_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1729,6 +1859,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGlobalAccessAllowed()) {
         setGlobalAccessAllowed(other.getGlobalAccessAllowed());
+      }
+      if (!other.getReplicaZone().isEmpty()) {
+        replicaZone_ = other.replicaZone_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      if (!other.getZone().isEmpty()) {
+        zone_ = other.zone_;
+        bitField0_ |= 0x00040000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1864,6 +2004,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
+            case 162:
+              {
+                replicaZone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 162
+            case 170:
+              {
+                zone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3560,7 +3712,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=230
+     *     google/cloud/netapp/v1/storage_pool.proto;l=231
      * @return Whether the globalAccessAllowed field is set.
      */
     @java.lang.Override
@@ -3579,7 +3731,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=230
+     *     google/cloud/netapp/v1/storage_pool.proto;l=231
      * @return The globalAccessAllowed.
      */
     @java.lang.Override
@@ -3598,7 +3750,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=230
+     *     google/cloud/netapp/v1/storage_pool.proto;l=231
      * @param value The globalAccessAllowed to set.
      * @return This builder for chaining.
      */
@@ -3621,13 +3773,225 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-     *     google/cloud/netapp/v1/storage_pool.proto;l=230
+     *     google/cloud/netapp/v1/storage_pool.proto;l=231
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearGlobalAccessAllowed() {
       bitField0_ = (bitField0_ & ~0x00010000);
       globalAccessAllowed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object replicaZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the replica zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The replicaZone.
+     */
+    public java.lang.String getReplicaZone() {
+      java.lang.Object ref = replicaZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        replicaZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the replica zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for replicaZone.
+     */
+    public com.google.protobuf.ByteString getReplicaZoneBytes() {
+      java.lang.Object ref = replicaZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        replicaZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the replica zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The replicaZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      replicaZone_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the replica zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaZone() {
+      replicaZone_ = getDefaultInstance().getReplicaZone();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the replica zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for replicaZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      replicaZone_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the active zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The zone.
+     */
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the active zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for zone.
+     */
+    public com.google.protobuf.ByteString getZoneBytes() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        zone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the active zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      zone_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the active zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearZone() {
+      zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the active zone for regional storagePool.
+     * </pre>
+     *
+     * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      zone_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

@@ -3051,7 +3051,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If true, StackDriver logging is currently enabled.
+     * Enables Google Cloud Logging.
      * </pre>
      *
      * <code>bool enable_stackdriver_logging = 2;</code>
@@ -3064,7 +3064,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If true, DF Interaction logging is currently enabled.
+     * Enables DF Interaction logging.
      * </pre>
      *
      * <code>bool enable_interaction_logging = 3;</code>
@@ -3072,6 +3072,21 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return The enableInteractionLogging.
      */
     boolean getEnableInteractionLogging();
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables consent-based end-user input redaction, if true, a pre-defined
+     * session parameter `$session.params.conversation-redaction` will be
+     * used to determine if the utterance should be redacted.
+     * </pre>
+     *
+     * <code>bool enable_consent_based_redaction = 4;</code>
+     *
+     * @return The enableConsentBasedRedaction.
+     */
+    boolean getEnableConsentBasedRedaction();
   }
   /**
    *
@@ -3122,7 +3137,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If true, StackDriver logging is currently enabled.
+     * Enables Google Cloud Logging.
      * </pre>
      *
      * <code>bool enable_stackdriver_logging = 2;</code>
@@ -3140,7 +3155,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If true, DF Interaction logging is currently enabled.
+     * Enables DF Interaction logging.
      * </pre>
      *
      * <code>bool enable_interaction_logging = 3;</code>
@@ -3150,6 +3165,26 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean getEnableInteractionLogging() {
       return enableInteractionLogging_;
+    }
+
+    public static final int ENABLE_CONSENT_BASED_REDACTION_FIELD_NUMBER = 4;
+    private boolean enableConsentBasedRedaction_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Enables consent-based end-user input redaction, if true, a pre-defined
+     * session parameter `$session.params.conversation-redaction` will be
+     * used to determine if the utterance should be redacted.
+     * </pre>
+     *
+     * <code>bool enable_consent_based_redaction = 4;</code>
+     *
+     * @return The enableConsentBasedRedaction.
+     */
+    @java.lang.Override
+    public boolean getEnableConsentBasedRedaction() {
+      return enableConsentBasedRedaction_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3172,6 +3207,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (enableInteractionLogging_ != false) {
         output.writeBool(3, enableInteractionLogging_);
       }
+      if (enableConsentBasedRedaction_ != false) {
+        output.writeBool(4, enableConsentBasedRedaction_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3186,6 +3224,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       }
       if (enableInteractionLogging_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableInteractionLogging_);
+      }
+      if (enableConsentBasedRedaction_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableConsentBasedRedaction_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3206,6 +3248,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
 
       if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
       if (getEnableInteractionLogging() != other.getEnableInteractionLogging()) return false;
+      if (getEnableConsentBasedRedaction() != other.getEnableConsentBasedRedaction()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3221,6 +3264,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStackdriverLogging());
       hash = (37 * hash) + ENABLE_INTERACTION_LOGGING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableInteractionLogging());
+      hash = (37 * hash) + ENABLE_CONSENT_BASED_REDACTION_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConsentBasedRedaction());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3368,6 +3414,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         enableStackdriverLogging_ = false;
         enableInteractionLogging_ = false;
+        enableConsentBasedRedaction_ = false;
         return this;
       }
 
@@ -3414,6 +3461,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.enableInteractionLogging_ = enableInteractionLogging_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableConsentBasedRedaction_ = enableConsentBasedRedaction_;
         }
       }
 
@@ -3475,6 +3525,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         if (other.getEnableInteractionLogging() != false) {
           setEnableInteractionLogging(other.getEnableInteractionLogging());
         }
+        if (other.getEnableConsentBasedRedaction() != false) {
+          setEnableConsentBasedRedaction(other.getEnableConsentBasedRedaction());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3513,6 +3566,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 24
+              case 32:
+                {
+                  enableConsentBasedRedaction_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3537,7 +3596,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, StackDriver logging is currently enabled.
+       * Enables Google Cloud Logging.
        * </pre>
        *
        * <code>bool enable_stackdriver_logging = 2;</code>
@@ -3552,7 +3611,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, StackDriver logging is currently enabled.
+       * Enables Google Cloud Logging.
        * </pre>
        *
        * <code>bool enable_stackdriver_logging = 2;</code>
@@ -3571,7 +3630,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, StackDriver logging is currently enabled.
+       * Enables Google Cloud Logging.
        * </pre>
        *
        * <code>bool enable_stackdriver_logging = 2;</code>
@@ -3590,7 +3649,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, DF Interaction logging is currently enabled.
+       * Enables DF Interaction logging.
        * </pre>
        *
        * <code>bool enable_interaction_logging = 3;</code>
@@ -3605,7 +3664,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, DF Interaction logging is currently enabled.
+       * Enables DF Interaction logging.
        * </pre>
        *
        * <code>bool enable_interaction_logging = 3;</code>
@@ -3624,7 +3683,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If true, DF Interaction logging is currently enabled.
+       * Enables DF Interaction logging.
        * </pre>
        *
        * <code>bool enable_interaction_logging = 3;</code>
@@ -3634,6 +3693,65 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       public Builder clearEnableInteractionLogging() {
         bitField0_ = (bitField0_ & ~0x00000002);
         enableInteractionLogging_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableConsentBasedRedaction_;
+      /**
+       *
+       *
+       * <pre>
+       * Enables consent-based end-user input redaction, if true, a pre-defined
+       * session parameter `$session.params.conversation-redaction` will be
+       * used to determine if the utterance should be redacted.
+       * </pre>
+       *
+       * <code>bool enable_consent_based_redaction = 4;</code>
+       *
+       * @return The enableConsentBasedRedaction.
+       */
+      @java.lang.Override
+      public boolean getEnableConsentBasedRedaction() {
+        return enableConsentBasedRedaction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enables consent-based end-user input redaction, if true, a pre-defined
+       * session parameter `$session.params.conversation-redaction` will be
+       * used to determine if the utterance should be redacted.
+       * </pre>
+       *
+       * <code>bool enable_consent_based_redaction = 4;</code>
+       *
+       * @param value The enableConsentBasedRedaction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableConsentBasedRedaction(boolean value) {
+
+        enableConsentBasedRedaction_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enables consent-based end-user input redaction, if true, a pre-defined
+       * session parameter `$session.params.conversation-redaction` will be
+       * used to determine if the utterance should be redacted.
+       * </pre>
+       *
+       * <code>bool enable_consent_based_redaction = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableConsentBasedRedaction() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableConsentBasedRedaction_ = false;
         onChanged();
         return this;
       }

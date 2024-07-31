@@ -124,6 +124,8 @@ public class ModelMonitoringServiceClientTest {
             .setModelMonitoringSchema(ModelMonitoringSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -182,6 +184,8 @@ public class ModelMonitoringServiceClientTest {
             .setModelMonitoringSchema(ModelMonitoringSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -240,6 +244,8 @@ public class ModelMonitoringServiceClientTest {
             .setModelMonitoringSchema(ModelMonitoringSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -298,6 +304,8 @@ public class ModelMonitoringServiceClientTest {
             .setModelMonitoringSchema(ModelMonitoringSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelMonitoringService.addResponse(expectedResponse);
 
@@ -345,6 +353,8 @@ public class ModelMonitoringServiceClientTest {
             .setModelMonitoringSchema(ModelMonitoringSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockModelMonitoringService.addResponse(expectedResponse);
 

@@ -52,6 +52,9 @@
             "GetSpace": {
               "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
             },
+            "GetSpaceEvent": {
+              "methods": ["getSpaceEvent", "getSpaceEvent", "getSpaceEvent", "getSpaceEventCallable"]
+            },
             "GetSpaceReadState": {
               "methods": ["getSpaceReadState", "getSpaceReadState", "getSpaceReadState", "getSpaceReadStateCallable"]
             },
@@ -66,6 +69,9 @@
             },
             "ListReactions": {
               "methods": ["listReactions", "listReactions", "listReactions", "listReactionsPagedCallable", "listReactionsCallable"]
+            },
+            "ListSpaceEvents": {
+              "methods": ["listSpaceEvents", "listSpaceEvents", "listSpaceEvents", "listSpaceEventsPagedCallable", "listSpaceEventsCallable"]
             },
             "ListSpaces": {
               "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]

@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1.stub;
 
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookExecutionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimeTemplatesPagedResponse;
 import static com.google.cloud.aiplatform.v1.NotebookServiceClient.ListNotebookRuntimesPagedResponse;
 
@@ -25,17 +26,24 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.AssignNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.AssignNotebookRuntimeRequest;
+import com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobOperationMetadata;
+import com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1.CreateNotebookRuntimeTemplateOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1.DeleteNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.GetNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1.GetNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.GetNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsRequest;
+import com.google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse;
 import com.google.cloud.aiplatform.v1.ListNotebookRuntimeTemplatesRequest;
 import com.google.cloud.aiplatform.v1.ListNotebookRuntimeTemplatesResponse;
 import com.google.cloud.aiplatform.v1.ListNotebookRuntimesRequest;
 import com.google.cloud.aiplatform.v1.ListNotebookRuntimesResponse;
+import com.google.cloud.aiplatform.v1.NotebookExecutionJob;
 import com.google.cloud.aiplatform.v1.NotebookRuntime;
 import com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeOperationMetadata;
@@ -183,6 +191,49 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeCallable() {
     throw new UnsupportedOperationException("Not implemented: startNotebookRuntimeCallable()");
+  }
+
+  public OperationCallable<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createNotebookExecutionJobOperationCallable()");
+  }
+
+  public UnaryCallable<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createNotebookExecutionJobCallable()");
+  }
+
+  public UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNotebookExecutionJobCallable()");
+  }
+
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listNotebookExecutionJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNotebookExecutionJobsCallable()");
+  }
+
+  public OperationCallable<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNotebookExecutionJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNotebookExecutionJobCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

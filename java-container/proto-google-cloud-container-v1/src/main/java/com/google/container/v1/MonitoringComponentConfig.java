@@ -203,6 +203,16 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>KUBELET = 14;</code>
      */
     KUBELET(14),
+    /**
+     *
+     *
+     * <pre>
+     * NVIDIA Data Center GPU Manager (DCGM)
+     * </pre>
+     *
+     * <code>DCGM = 15;</code>
+     */
+    DCGM(15),
     UNRECOGNIZED(-1),
     ;
 
@@ -336,6 +346,16 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>KUBELET = 14;</code>
      */
     public static final int KUBELET_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * NVIDIA Data Center GPU Manager (DCGM)
+     * </pre>
+     *
+     * <code>DCGM = 15;</code>
+     */
+    public static final int DCGM_VALUE = 15;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -387,6 +407,8 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
           return CADVISOR;
         case 14:
           return KUBELET;
+        case 15:
+          return DCGM;
         default:
           return null;
       }

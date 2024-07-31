@@ -28,7 +28,10 @@ public interface EncryptionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier for this set of encryption options.
+   * Required. Identifier for this set of encryption options. The ID must be
+   * 1-63 characters in length. The ID must begin and end with a letter
+   * (regardless of case) or a number, but can contain dashes or underscores in
+   * between.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +43,10 @@ public interface EncryptionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier for this set of encryption options.
+   * Required. Identifier for this set of encryption options. The ID must be
+   * 1-63 characters in length. The ID must begin and end with a letter
+   * (regardless of case) or a number, but can contain dashes or underscores in
+   * between.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
