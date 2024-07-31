@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-accounts</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant API</name>
   <description>Merchant API Programmatically manage your Merchant Center accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-accounts-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-accounts:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-accounts</site.installationModule>

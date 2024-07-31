@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-lfp</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant LFP API</name>
   <description>Merchant LFP API Programmatically manage your Merchant Center accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-lfp-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-lfp</site.installationModule>

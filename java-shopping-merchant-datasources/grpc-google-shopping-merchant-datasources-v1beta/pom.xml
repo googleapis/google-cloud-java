@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping.api.grpc</groupId>
   <artifactId>grpc-google-shopping-merchant-datasources-v1beta</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-datasources-v1beta:current} -->
+  <version>0.3.0</version><!-- {x-version-update:grpc-google-shopping-merchant-datasources-v1beta:current} -->
   <name>grpc-google-shopping-merchant-datasources-v1beta</name>
   <description>GRPC library for google-shopping-merchant-datasources</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-datasources-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-shopping-merchant-datasources:current} -->
   </parent>
   <dependencies>
     <dependency>

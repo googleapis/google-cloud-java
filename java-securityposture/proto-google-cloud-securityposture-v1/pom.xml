@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-securityposture-v1</artifactId>
-  <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securityposture-v1:current} -->
+  <version>0.12.0</version><!-- {x-version-update:proto-google-cloud-securityposture-v1:current} -->
   <name>proto-google-cloud-securityposture-v1</name>
   <description>Proto library for google-cloud-securityposture</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securityposture-parent</artifactId>
-    <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securityposture:current} -->
+    <version>0.12.0</version><!-- {x-version-update:google-cloud-securityposture:current} -->
   </parent>
   <dependencies>
     <dependency>
