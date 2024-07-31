@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-backupdr-v1</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-backupdr-v1:current} -->
+  <version>0.6.0</version><!-- {x-version-update:grpc-google-cloud-backupdr-v1:current} -->
   <name>grpc-google-cloud-backupdr-v1</name>
   <description>GRPC library for google-cloud-backupdr</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-backupdr-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-backupdr:current} -->
   </parent>
   <dependencies>
     <dependency>
