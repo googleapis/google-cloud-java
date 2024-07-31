@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.50.0 (2024-07-31)
+
+### Features
+
+* added cloud provider field to list findings response ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* added cloud provider field to list findings response ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+
+
+
 ## 0.49.0 (2024-06-27)
 
 ### Features

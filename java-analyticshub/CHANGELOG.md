@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.44.0 (2024-07-31)
+
+### Features
+
+* support public directory self service for Listings/Exchanges ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+
+
+
 ## 0.43.0 (2024-06-27)
 
 * No change

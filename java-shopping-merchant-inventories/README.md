@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-inventories</artifactId>
-  <version>0.22.0</version>
+  <version>0.23.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.shopping:google-shopping-merchant-inventories:0.22.0'
+implementation 'com.google.shopping:google-shopping-merchant-inventories:0.23.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.shopping" % "google-shopping-merchant-inventories" % "0.22.0"
+libraryDependencies += "com.google.shopping" % "google-shopping-merchant-inventories" % "0.23.0"
 ```
 <!-- {x-version-update-end} -->
 

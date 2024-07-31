@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-iap-v1</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iap-v1:current} -->
+  <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-iap-v1:current} -->
   <name>grpc-google-cloud-iap-v1</name>
   <description>GRPC library for google-cloud-iap</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iap-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-iap:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-apphub-v1</artifactId>
-  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-apphub-v1:current} -->
+  <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-apphub-v1:current} -->
   <name>grpc-google-cloud-apphub-v1</name>
   <description>GRPC library for google-cloud-apphub</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apphub-parent</artifactId>
-    <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
+    <version>0.11.0</version><!-- {x-version-update:google-cloud-apphub:current} -->
   </parent>
   <dependencies>
     <dependency>

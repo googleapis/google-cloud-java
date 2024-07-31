@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalineage</artifactId>
-  <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalineage:current} -->
+  <version>0.39.0</version><!-- {x-version-update:google-cloud-datalineage:current} -->
   <packaging>jar</packaging>
   <name>Google Data Lineage</name>
   <description>Data Lineage Lineage is used to track data flows between assets over time.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datalineage-parent</artifactId>
-    <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalineage:current} -->
+    <version>0.39.0</version><!-- {x-version-update:google-cloud-datalineage:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datalineage</site.installationModule>

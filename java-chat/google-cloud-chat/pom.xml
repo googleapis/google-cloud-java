@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-chat</artifactId>
-  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-chat:current} -->
+  <version>0.11.0</version><!-- {x-version-update:google-cloud-chat:current} -->
   <packaging>jar</packaging>
   <name>Google Google Chat API</name>
   <description>Google Chat API The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-chat-parent</artifactId>
-    <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-chat:current} -->
+    <version>0.11.0</version><!-- {x-version-update:google-cloud-chat:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-chat</site.installationModule>

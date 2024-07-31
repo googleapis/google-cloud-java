@@ -4,7 +4,7 @@
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-solar-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-maps-solar:current} -->
   <name>Google Solar API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-solar</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+        <version>0.6.0</version><!-- {x-version-update:google-maps-solar:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-solar-v1</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-solar-v1:current} -->
+        <version>0.6.0</version><!-- {x-version-update:grpc-google-maps-solar-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>proto-google-maps-solar-v1</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-solar-v1:current} -->
+        <version>0.6.0</version><!-- {x-version-update:proto-google-maps-solar-v1:current} -->
       </dependency>
 
     </dependencies>

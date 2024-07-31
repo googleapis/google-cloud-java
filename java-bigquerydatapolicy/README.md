@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.43.0</version>
+  <version>0.44.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerydatapolicy:0.43.0'
+implementation 'com.google.cloud:google-cloud-bigquerydatapolicy:0.44.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatapolicy" % "0.43.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatapolicy" % "0.44.0"
 ```
 <!-- {x-version-update-end} -->
 

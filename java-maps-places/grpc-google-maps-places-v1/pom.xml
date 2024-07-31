@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>grpc-google-maps-places-v1</artifactId>
-  <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-places-v1:current} -->
+  <version>0.18.0</version><!-- {x-version-update:grpc-google-maps-places-v1:current} -->
   <name>grpc-google-maps-places-v1</name>
   <description>GRPC library for google-maps-places</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-places-parent</artifactId>
-    <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-maps-places:current} -->
+    <version>0.18.0</version><!-- {x-version-update:google-maps-places:current} -->
   </parent>
   <dependencies>
     <dependency>

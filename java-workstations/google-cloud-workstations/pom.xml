@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workstations</artifactId>
-  <version>0.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workstations:current} -->
+  <version>0.35.0</version><!-- {x-version-update:google-cloud-workstations:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Workstations</name>
   <description>Cloud Workstations Fully managed development environments built to meet the needs of security-sensitive enterprises. It enhances the security of development environments while accelerating developer onboarding and productivity.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-workstations-parent</artifactId>
-    <version>0.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workstations:current} -->
+    <version>0.35.0</version><!-- {x-version-update:google-cloud-workstations:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-workstations</site.installationModule>

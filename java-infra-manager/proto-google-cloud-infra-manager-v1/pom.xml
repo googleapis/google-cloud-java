@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-infra-manager-v1</artifactId>
-  <version>0.24.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-infra-manager-v1:current} -->
+  <version>0.24.0</version><!-- {x-version-update:proto-google-cloud-infra-manager-v1:current} -->
   <name>proto-google-cloud-infra-manager-v1</name>
   <description>Proto library for google-cloud-infra-manager</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-infra-manager-parent</artifactId>
-    <version>0.24.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
+    <version>0.24.0</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
   </parent>
   <dependencies>
     <dependency>

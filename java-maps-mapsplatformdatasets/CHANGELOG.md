@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.36.0 (2024-07-31)
+
+### Features
+
+* added a new API FetchDatasetErrors ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+
+
+
 ## 0.35.0 (2024-06-27)
 
 * No change

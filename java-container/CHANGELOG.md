@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.50.0 (2024-07-31)
+
+### Features
+
+* A new field `ray_operator_config` is added to message `.google.container.v1beta1.AddonsConfig` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* add DCGM enum in monitoring config ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* support for Ray Clusters ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* Deprecate "EXPERIMENTAL" option for Gateway API (this value has never been supported) ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* Deprecate "EXPERIMENTAL" option for Gateway API (this value has never been supported) ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* minor updates to reference documentation ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+
+
+
 ## 2.49.0 (2024-06-27)
 
 ### Features

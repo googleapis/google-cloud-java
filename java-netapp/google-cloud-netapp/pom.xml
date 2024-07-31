@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-netapp</artifactId>
-  <version>0.26.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
+  <version>0.26.0</version><!-- {x-version-update:google-cloud-netapp:current} -->
   <packaging>jar</packaging>
   <name>Google NetApp API</name>
   <description>NetApp API Google Cloud NetApp Volumes is a fully-managed, cloud-based data storage service that provides advanced data management capabilities and highly scalable performance with global availability.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-netapp-parent</artifactId>
-    <version>0.26.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-netapp:current} -->
+    <version>0.26.0</version><!-- {x-version-update:google-cloud-netapp:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-netapp</site.installationModule>

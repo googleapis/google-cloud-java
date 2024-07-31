@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-quota</artifactId>
-  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
+  <version>0.10.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant Quota API</name>
   <description>Merchant Quota API Programmatically manage your Merchant Center accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-quota-parent</artifactId>
-    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
+    <version>0.10.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-quota</site.installationModule>

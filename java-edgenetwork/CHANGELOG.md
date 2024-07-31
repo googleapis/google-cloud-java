@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0 (2024-07-31)
+
+### Features
+
+* A new field `bonding_type` is added to message `.google.cloud.edgenetwork.v1.Subnet` ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+
+
+
 ## 0.14.0 (2024-06-27)
 
 * No change

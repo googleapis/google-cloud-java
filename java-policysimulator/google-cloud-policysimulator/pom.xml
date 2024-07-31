@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-policysimulator</artifactId>
-  <version>0.26.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
+  <version>0.26.0</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
   <packaging>jar</packaging>
   <name>Google Policy Simulator API</name>
   <description>Policy Simulator API Policy Simulator is a collection of endpoints for creating, running, and viewing a Replay.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-policysimulator-parent</artifactId>
-    <version>0.26.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
+    <version>0.26.0</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-policysimulator</site.installationModule>

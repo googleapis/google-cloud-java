@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managedkafka</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
   <packaging>jar</packaging>
   <name>Google Apache Kafka for BigQuery API</name>
   <description>Apache Kafka for BigQuery API Manage Apache Kafka clusters and resources.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-managedkafka-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-managedkafka</site.installationModule>
