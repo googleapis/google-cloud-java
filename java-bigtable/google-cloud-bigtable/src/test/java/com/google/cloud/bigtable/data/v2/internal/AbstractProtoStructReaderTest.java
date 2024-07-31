@@ -221,6 +221,22 @@ public class AbstractProtoStructReaderTest {
           IllegalStateException.class,
           () -> structWithList.getList(0, SqlType.arrayOf(SqlType.bytes())));
     }
+
+    // Test this independently since it won't throw an exception until accessing an element if
+    // float is converted to double incorrectly
+    @Test
+    public void arrayField_accessingFloat() {
+      TestProtoStruct structWithList =
+          TestProtoStruct.create(
+              ProtoResultSetMetadata.fromProto(
+                  metadata(columnMetadata("testField", arrayType(float32Type()))).getMetadata()),
+              Collections.singletonList(arrayValue(floatValue(1.1f), floatValue(1.2f))));
+
+      List<Float> floatList =
+          structWithList.getList("testField", SqlType.arrayOf(SqlType.float32()));
+      assertThat(floatList.get(0)).isEqualTo(1.1f);
+      assertThat(floatList.get(1)).isEqualTo(1.2f);
+    }
   }
 
   @RunWith(Parameterized.class)
@@ -377,6 +393,32 @@ public class AbstractProtoStructReaderTest {
               (BiFunction<TestProtoStruct, Integer, List<String>>)
                   (row, index) -> row.getList(index, SqlType.arrayOf(SqlType.string())),
               Arrays.asList("foo", null, "baz")
+            },
+            // Float List
+            {
+              Collections.singletonList(columnMetadata("testField", arrayType(float32Type()))),
+              Collections.singletonList(
+                  arrayValue(floatValue(1.1f), floatValue(1.2f), floatValue(1.3f))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, List<Float>>)
+                  (row, field) -> row.getList(field, SqlType.arrayOf(SqlType.float32())),
+              (BiFunction<TestProtoStruct, Integer, List<Float>>)
+                  (row, index) -> row.getList(index, SqlType.arrayOf(SqlType.float32())),
+              Arrays.asList(1.1f, 1.2f, 1.3f)
+            },
+            // Double List
+            {
+              Collections.singletonList(columnMetadata("testField", arrayType(float64Type()))),
+              Collections.singletonList(
+                  arrayValue(floatValue(1.11d), floatValue(1.22d), floatValue(1.33d))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, List<Double>>)
+                  (row, field) -> row.getList(field, SqlType.arrayOf(SqlType.float64())),
+              (BiFunction<TestProtoStruct, Integer, List<Double>>)
+                  (row, index) -> row.getList(index, SqlType.arrayOf(SqlType.float64())),
+              Arrays.asList(1.11d, 1.22d, 1.33d)
             },
             // Simple Map
             {

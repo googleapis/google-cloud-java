@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models.sql;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.ArrayValue;
 import com.google.bigtable.v2.ExecuteQueryRequest;
 import com.google.bigtable.v2.Type;
 import com.google.bigtable.v2.Value;
@@ -27,6 +28,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -65,6 +67,10 @@ public class Statement {
       Type.newBuilder().setBytesType(Type.Bytes.getDefaultInstance()).build();
   private static final Type INT64_TYPE =
       Type.newBuilder().setInt64Type(Type.Int64.getDefaultInstance()).build();
+  private static final Type FLOAT32_TYPE =
+      Type.newBuilder().setFloat32Type(Type.Float32.getDefaultInstance()).build();
+  private static final Type FLOAT64_TYPE =
+      Type.newBuilder().setFloat64Type(Type.Float64.getDefaultInstance()).build();
   private static final Type BOOL_TYPE =
       Type.newBuilder().setBoolType(Type.Bool.getDefaultInstance()).build();
   private static final Type TIMESTAMP_TYPE =
@@ -132,6 +138,24 @@ public class Statement {
     }
 
     /**
+     * Sets a query parameter with the name {@code paramName} and the FLOAT32 typed value {@code
+     * value}
+     */
+    public Builder setFloatParam(String paramName, @Nullable Float value) {
+      params.put(paramName, float32ParamOf(value));
+      return this;
+    }
+
+    /**
+     * Sets a query parameter with the name {@code paramName} and the FLOAT64 typed value {@code
+     * value}
+     */
+    public Builder setDoubleParam(String paramName, @Nullable Double value) {
+      params.put(paramName, float64ParamOf(value));
+      return this;
+    }
+
+    /**
      * Sets a query parameter with the name {@code paramName} and the BOOL typed value {@code value}
      */
     public Builder setBooleanParam(String paramName, @Nullable Boolean value) {
@@ -153,6 +177,17 @@ public class Statement {
      */
     public Builder setDateParam(String paramName, @Nullable Date value) {
       params.put(paramName, dateParamOf(value));
+      return this;
+    }
+
+    /**
+     * Sets a query parameter with the name {@code paramName} and the ARRAY typed value {@code
+     * value}. The array element type is specified by {@code arrayType} and the List elements must
+     * be of the corresponding Java type. Null array elements are valid.
+     */
+    public <T> Builder setListParam(
+        String paramName, @Nullable List<T> value, SqlType.Array<T> arrayType) {
+      params.put(paramName, arrayParamOf(value, arrayType));
       return this;
     }
 
@@ -180,6 +215,22 @@ public class Statement {
       return builder.build();
     }
 
+    private static Value float32ParamOf(@Nullable Float value) {
+      Value.Builder builder = nullValueWithType(FLOAT32_TYPE);
+      if (value != null) {
+        builder.setFloatValue(value);
+      }
+      return builder.build();
+    }
+
+    private static Value float64ParamOf(@Nullable Double value) {
+      Value.Builder builder = nullValueWithType(FLOAT64_TYPE);
+      if (value != null) {
+        builder.setFloatValue(value);
+      }
+      return builder.build();
+    }
+
     private static Value booleanParamOf(@Nullable Boolean value) {
       Value.Builder builder = nullValueWithType(BOOL_TYPE);
       if (value != null) {
@@ -191,11 +242,7 @@ public class Statement {
     private static Value timestampParamOf(@Nullable Instant value) {
       Value.Builder builder = nullValueWithType(TIMESTAMP_TYPE);
       if (value != null) {
-        builder.setTimestampValue(
-            Timestamp.newBuilder()
-                .setSeconds(value.getEpochSecond())
-                .setNanos(value.getNano())
-                .build());
+        builder.setTimestampValue(toTimestamp(value));
       }
       return builder.build();
     }
@@ -203,14 +250,110 @@ public class Statement {
     private static Value dateParamOf(@Nullable Date value) {
       Value.Builder builder = nullValueWithType(DATE_TYPE);
       if (value != null) {
-        builder.setDateValue(
-            com.google.type.Date.newBuilder()
-                .setYear(value.getYear())
-                .setMonth(value.getMonth())
-                .setDay(value.getDayOfMonth())
-                .build());
+        builder.setDateValue(toProtoDate(value));
       }
       return builder.build();
+    }
+
+    private static <T> Value arrayParamOf(@Nullable List<T> value, SqlType.Array<T> arrayType) {
+      Type type =
+          Type.newBuilder()
+              .setArrayType(
+                  Type.Array.newBuilder().setElementType(getElementType(arrayType)).build())
+              .build();
+      Value.Builder builder = nullValueWithType(type);
+      if (value != null) {
+        builder.setArrayValue(arrayValueOf(value, arrayType));
+      }
+      return builder.build();
+    }
+
+    private static Type getElementType(SqlType.Array<?> arrayType) {
+      switch (arrayType.getElementType().getCode()) {
+        case BYTES:
+          return BYTES_TYPE;
+        case STRING:
+          return STRING_TYPE;
+        case INT64:
+          return INT64_TYPE;
+        case FLOAT32:
+          return FLOAT32_TYPE;
+        case FLOAT64:
+          return FLOAT64_TYPE;
+        case BOOL:
+          return BOOL_TYPE;
+        case TIMESTAMP:
+          return TIMESTAMP_TYPE;
+        case DATE:
+          return DATE_TYPE;
+        default:
+          throw new IllegalArgumentException(
+              "Unsupported query parameter Array element type: " + arrayType.getElementType());
+      }
+    }
+
+    private static ArrayValue arrayValueOf(List<?> value, SqlType.Array<?> arrayType) {
+      ArrayValue.Builder valueBuilder = ArrayValue.newBuilder();
+      for (Object element : value) {
+        if (element == null) {
+          valueBuilder.addValues(Value.getDefaultInstance());
+          continue;
+        }
+        switch (arrayType.getElementType().getCode()) {
+          case BYTES:
+            ByteString bytesElem = (ByteString) element;
+            valueBuilder.addValues(Value.newBuilder().setBytesValue(bytesElem).build());
+            break;
+          case STRING:
+            String stringElem = (String) element;
+            valueBuilder.addValues(Value.newBuilder().setStringValue(stringElem).build());
+            break;
+          case INT64:
+            Long longElem = (Long) element;
+            valueBuilder.addValues(Value.newBuilder().setIntValue(longElem).build());
+            break;
+          case FLOAT32:
+            Float floatElem = (Float) element;
+            valueBuilder.addValues(Value.newBuilder().setFloatValue(floatElem).build());
+            break;
+          case FLOAT64:
+            Double doubleElem = (Double) element;
+            valueBuilder.addValues(Value.newBuilder().setFloatValue(doubleElem).build());
+            break;
+          case BOOL:
+            Boolean boolElem = (Boolean) element;
+            valueBuilder.addValues(Value.newBuilder().setBoolValue(boolElem).build());
+            break;
+          case TIMESTAMP:
+            Instant timestampElem = (Instant) element;
+            valueBuilder.addValues(
+                Value.newBuilder().setTimestampValue(toTimestamp(timestampElem)).build());
+            break;
+          case DATE:
+            Date dateElem = (Date) element;
+            valueBuilder.addValues(Value.newBuilder().setDateValue(toProtoDate(dateElem)).build());
+            break;
+          default:
+            throw new IllegalArgumentException(
+                "Unsupported query parameter Array element type: " + arrayType.getElementType());
+        }
+      }
+      return valueBuilder.build();
+    }
+
+    private static Timestamp toTimestamp(Instant instant) {
+      return Timestamp.newBuilder()
+          .setSeconds(instant.getEpochSecond())
+          .setNanos(instant.getNano())
+          .build();
+    }
+
+    private static com.google.type.Date toProtoDate(Date date) {
+      return com.google.type.Date.newBuilder()
+          .setYear(date.getYear())
+          .setMonth(date.getMonth())
+          .setDay(date.getDayOfMonth())
+          .build();
     }
 
     private static Value.Builder nullValueWithType(Type type) {

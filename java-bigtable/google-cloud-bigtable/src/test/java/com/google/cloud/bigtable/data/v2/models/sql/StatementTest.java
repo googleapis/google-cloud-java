@@ -15,21 +15,34 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.arrayType;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.arrayValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.boolType;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.boolValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.bytesType;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.bytesValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateValue;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float32Type;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float64Type;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.floatValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.int64Type;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.int64Value;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.nullValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.timestampType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.timestampValue;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.ExecuteQueryRequest;
 import com.google.bigtable.v2.Value;
 import com.google.cloud.Date;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import java.util.Arrays;
+import java.util.Collections;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -284,6 +297,409 @@ public class StatementTest {
                 .setInstanceName(EXPECTED_INSTANCE_NAME)
                 .setAppProfileId(EXPECTED_APP_PROFILE)
                 .build());
+  }
+
+  @Test
+  public void statementWithBytesListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam",
+                Arrays.asList(ByteString.copyFromUtf8("foo"), ByteString.copyFromUtf8("bar")),
+                SqlType.arrayOf(SqlType.bytes()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(ByteString.copyFromUtf8("foo"), null, ByteString.copyFromUtf8("bar")),
+                SqlType.arrayOf(SqlType.bytes()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.bytes()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.bytes()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(bytesType()))
+                        .setArrayValue(
+                            arrayValue(bytesValue("foo"), bytesValue("bar")).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(bytesType()))
+                        .setArrayValue(
+                            arrayValue(bytesValue("foo"), nullValue(), bytesValue("bar"))
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(bytesType()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(bytesType())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithStringListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam", Arrays.asList("foo", "bar"), SqlType.arrayOf(SqlType.string()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList("foo", "bar", null),
+                SqlType.arrayOf(SqlType.string()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.string()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.string()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(stringType()))
+                        .setArrayValue(
+                            arrayValue(stringValue("foo"), stringValue("bar")).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(stringType()))
+                        .setArrayValue(
+                            arrayValue(stringValue("foo"), stringValue("bar"), nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(stringType()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(stringType())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithInt64ListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam("listParam", Arrays.asList(1L, 2L), SqlType.arrayOf(SqlType.int64()))
+            .setListParam(
+                "listWithNullElem", Arrays.asList(null, 3L, 4L), SqlType.arrayOf(SqlType.int64()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.int64()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.int64()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(int64Type()))
+                        .setArrayValue(arrayValue(int64Value(1), int64Value(2)).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(int64Type()))
+                        .setArrayValue(
+                            arrayValue(nullValue(), int64Value(3), int64Value(4)).getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(int64Type()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(int64Type())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithFloat32ListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam", Arrays.asList(1.1f, 1.2f), SqlType.arrayOf(SqlType.float32()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(1.3f, 1.4f, null),
+                SqlType.arrayOf(SqlType.float32()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.float32()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.float32()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(float32Type()))
+                        .setArrayValue(
+                            arrayValue(floatValue(1.1f), floatValue(1.2f)).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(float32Type()))
+                        .setArrayValue(
+                            arrayValue(floatValue(1.3f), floatValue(1.4f), nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(float32Type()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(float32Type())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithFloat64ListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam", Arrays.asList(1.1d, 1.2d), SqlType.arrayOf(SqlType.float64()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(1.3d, 1.4d, null),
+                SqlType.arrayOf(SqlType.float64()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.float64()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.float64()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(float64Type()))
+                        .setArrayValue(arrayValue(floatValue(1.1), floatValue(1.2)).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(float64Type()))
+                        .setArrayValue(
+                            arrayValue(floatValue(1.3), floatValue(1.4), nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(float64Type()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(float64Type())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithBooleanListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam("listParam", Arrays.asList(true, false), SqlType.arrayOf(SqlType.bool()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(true, false, null),
+                SqlType.arrayOf(SqlType.bool()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.bool()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.bool()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(boolType()))
+                        .setArrayValue(
+                            arrayValue(boolValue(true), boolValue(false)).getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(boolType()))
+                        .setArrayValue(
+                            arrayValue(boolValue(true), boolValue(false), nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(boolType()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(boolType())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithTimestampListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam",
+                Arrays.asList(Instant.ofEpochSecond(3000, 100), Instant.ofEpochSecond(4000, 100)),
+                SqlType.arrayOf(SqlType.timestamp()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(
+                    Instant.ofEpochSecond(1000, 100), Instant.ofEpochSecond(2000, 100), null),
+                SqlType.arrayOf(SqlType.timestamp()))
+            .setListParam(
+                "emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.timestamp()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.timestamp()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(timestampType()))
+                        .setArrayValue(
+                            arrayValue(timestampValue(3000, 100), timestampValue(4000, 100))
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(timestampType()))
+                        .setArrayValue(
+                            arrayValue(
+                                    timestampValue(1000, 100),
+                                    timestampValue(2000, 100),
+                                    nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(timestampType()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams(
+                    "nullList", Value.newBuilder().setType(arrayType(timestampType())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void statementWithDateListParam() {
+    Statement s =
+        Statement.newBuilder(
+                "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+            .setListParam(
+                "listParam",
+                Arrays.asList(Date.fromYearMonthDay(2024, 6, 1), Date.fromYearMonthDay(2024, 7, 1)),
+                SqlType.arrayOf(SqlType.date()))
+            .setListParam(
+                "listWithNullElem",
+                Arrays.asList(
+                    Date.fromYearMonthDay(2024, 8, 1), Date.fromYearMonthDay(2024, 8, 2), null),
+                SqlType.arrayOf(SqlType.date()))
+            .setListParam("emptyList", Collections.emptyList(), SqlType.arrayOf(SqlType.date()))
+            .setListParam("nullList", null, SqlType.arrayOf(SqlType.date()))
+            .build();
+
+    assertThat(s.toProto(REQUEST_CONTEXT))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setQuery(
+                    "SELECT cf, @listParam, @listWithNullElem, @emptyList, @nullList FROM table")
+                .putParams(
+                    "listParam",
+                    Value.newBuilder()
+                        .setType(arrayType(dateType()))
+                        .setArrayValue(
+                            arrayValue(dateValue(2024, 6, 1), dateValue(2024, 7, 1))
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "listWithNullElem",
+                    Value.newBuilder()
+                        .setType(arrayType(dateType()))
+                        .setArrayValue(
+                            arrayValue(dateValue(2024, 8, 1), dateValue(2024, 8, 2), nullValue())
+                                .getArrayValue())
+                        .build())
+                .putParams(
+                    "emptyList",
+                    Value.newBuilder()
+                        .setType(arrayType(dateType()))
+                        .setArrayValue(arrayValue().getArrayValue())
+                        .build())
+                .putParams("nullList", Value.newBuilder().setType(arrayType(dateType())).build())
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .build());
+  }
+
+  @Test
+  public void setListParamRejectsUnsupportedElementTypes() {
+    Statement.Builder statement = Statement.newBuilder("SELECT @param");
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> statement.setListParam("param", null, SqlType.arrayOf(SqlType.struct())));
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            statement.setListParam(
+                "param", null, SqlType.arrayOf(SqlType.arrayOf(SqlType.string()))));
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            statement.setListParam(
+                "param", null, SqlType.arrayOf(SqlType.mapOf(SqlType.bytes(), SqlType.bytes()))));
   }
 
   @Test

@@ -268,8 +268,10 @@ public abstract class AbstractProtoStructReader implements StructReader {
       case INT64:
         return value.getIntValue();
       case FLOAT64:
-      case FLOAT32:
         return value.getFloatValue();
+      case FLOAT32:
+        // cast to float so we produce List<Float>, etc
+        return (float) value.getFloatValue();
       case BOOL:
         return value.getBoolValue();
       case TIMESTAMP:
