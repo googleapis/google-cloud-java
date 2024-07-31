@@ -46,20 +46,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommendations-ai</artifactId>
-  <version>0.53.0</version>
+  <version>0.54.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-recommendations-ai:0.53.0'
+implementation 'com.google.cloud:google-cloud-recommendations-ai:0.54.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recommendations-ai" % "0.53.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-recommendations-ai" % "0.54.0"
 ```
 <!-- {x-version-update-end} -->
 

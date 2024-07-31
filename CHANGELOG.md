@@ -1,5 +1,87 @@
 # Changelog
 
+## [1.41.0](https://github.com/googleapis/google-cloud-java/compare/v1.40.0...v1.41.0) (2024-07-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* [deploy] remove an API that was mistakenly made public
+* [discoveryengine] update sample query, sample query set patterns
+
+### Features
+
+* [aiplatform] A new field `score` is added to message `.google.cloud.aiplatform.v1.Candidate` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [aiplatform] A new message `ApiAuth` is added ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [aiplatform] add model and contents fields to ComputeTokensRequest v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [aiplatform] add model and contents fields to ComputeTokensRequest v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [aiplatform] add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [aiplatform] add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [analytics-admin] add `GetKeyEvent`, `CreateKeyEvent`, `ListKeyEvents`, `UpdateKeyEvent`, `DeleteKeyEvent` methods to the Admin API v1beta ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [analyticshub] support public directory self service for Listings/Exchanges ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [bigquerymigration] Update MS API stubs with Unified API ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [chat] Add doc for Discoverable Space support for GA launch ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [chat] add GetSpaceEvent and ListSpaceEvents APIs ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [confidentialcomputing] Add a new field `tee_attestation` to `VerifyAttestationRequest` message proto for SEV SNP and TDX attestations ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [container] A new field `ray_operator_config` is added to message `.google.container.v1beta1.AddonsConfig` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [container] add DCGM enum in monitoring config ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [container] support for Ray Clusters ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [datacatalog] add DataplexTransferStatus enum and field to TagTemplate ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dataplex] expose data scan execution create time to customers ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [deploy] add support for different Pod selector labels when doing canaries ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [deploy] added support for deploy policies ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [deploy] added support for new custom target type and deploy policy platform logs ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dialogflow-cx] added support for consent based redaction ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dialogflow-cx] exposed DataStoreConnectionSignals ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] add Chunk resource in the search response ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] add Chunk resource in the search response ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [discoveryengine] add sample query set APIs ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] add sample query set APIs ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] Update CompletionService ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] Update SearchService ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dlp] add Cloud Storage discovery support ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dlp] org-level connection bindings ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [edgenetwork] A new field `bonding_type` is added to message `.google.cloud.edgenetwork.v1.Subnet` ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+* [grafeas] A new field `version` is added to message `.grafeas.v1.ComplianceOccurrence` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [language] add model_version in ModerateTextRequest and expose severity score in ClassificationCategory ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [maps-mapsplatformdatasets] added a new API FetchDatasetErrors ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [orchestration-airflow] add `airflow_database_retention_days` and `airflow_metadata_retention_config` to message `DataRetentionConfig` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [parallelstore] add iam.googleapis.com/ServiceAccount resource definition ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [privilegedaccessmanager] new module for privilegedaccessmanager ([#11041](https://github.com/googleapis/google-cloud-java/issues/11041)) ([74e6a63](https://github.com/googleapis/google-cloud-java/commit/74e6a63b329337e45ff0193614b0056147e76247))
+* [run]support update_mask in Cloud Run UpdateService ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [securesourcemanager] add field `private_config` to message `.google.cloud.securesourcemanager.v1.Instance` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [securitycenter] added cloud provider field to list findings response ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [securitycenter] added cloud provider field to list findings response ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+* [speech] add locations metadata proto file ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [video-live-stream] added RetentionConfig for enabling retention of output media segments ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [vmwareengine] Adding autoscaling settings ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+
+
+### Bug Fixes
+
+* [container] Deprecate "EXPERIMENTAL" option for Gateway API (this value has never been supported) ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [container] Deprecate "EXPERIMENTAL" option for Gateway API (this value has never been supported) ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* [deploy] remove an API that was mistakenly made public ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [discoveryengine] update sample query, sample query set patterns ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20240531-2.0.0 ([#10948](https://github.com/googleapis/google-cloud-java/issues/10948)) ([2b14251](https://github.com/googleapis/google-cloud-java/commit/2b14251bfeb9251a304f07bf698d2926f197b5ab))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20240719-2.0.0 ([#11030](https://github.com/googleapis/google-cloud-java/issues/11030)) ([2209dd3](https://github.com/googleapis/google-cloud-java/commit/2209dd32780fe7d0d564da94306801d56a8e3604))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240621-2.0.0 ([#10884](https://github.com/googleapis/google-cloud-java/issues/10884)) ([0ae9818](https://github.com/googleapis/google-cloud-java/commit/0ae98182b41d370b8ad3eaffd583b164e0a8ab0a))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240706-2.0.0 ([#11003](https://github.com/googleapis/google-cloud-java/issues/11003)) ([2353bc6](https://github.com/googleapis/google-cloud-java/commit/2353bc675d7443edff8f065e2ecfaf842a8b289a))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.131.0 ([#10798](https://github.com/googleapis/google-cloud-java/issues/10798)) ([5d55d0c](https://github.com/googleapis/google-cloud-java/commit/5d55d0cdae0f81e54fcb5a24be1eceb9f0781383))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.40.1 ([#10996](https://github.com/googleapis/google-cloud-java/issues/10996)) ([1d97e4d](https://github.com/googleapis/google-cloud-java/commit/1d97e4db6d5106aad8fed2386151c457e0258de3))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.43.0 ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+
+
+### Documentation
+
+* [chat] Update doc for `SetUpSpace` in service `ChatService` to support group members ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+* [container] minor updates to reference documentation ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [dlp] replace HTML tags with CommonMark notation ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [errorreporting] Updates documentation with regional resource names for multiple requests ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [life-sciences] modify example accelerator type ([f1438e5](https://github.com/googleapis/google-cloud-java/commit/f1438e5d2077b245f2167e57fc5af104ad34283b))
+* [managedkafka] update values allowed in kms_key ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* [netapp] A comment for field `active_directory_id` in message `.google.cloud.netapp.v1.CreateActiveDirectoryRequest` is changed ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* add sample code for authenticating with api keys ([#11023](https://github.com/googleapis/google-cloud-java/issues/11023)) ([b12223f](https://github.com/googleapis/google-cloud-java/commit/b12223fec698024a686080aca426a9118e1bd57d))
+
 ## [1.40.0](https://github.com/googleapis/google-cloud-java/compare/v1.39.0...v1.40.0) (2024-06-27)
 
 
