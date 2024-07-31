@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-api-gateway</artifactId>
-  <version>2.46.0</version>
+  <version>2.47.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-api-gateway:2.46.0'
+implementation 'com.google.cloud:google-cloud-api-gateway:2.47.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-api-gateway" % "2.46.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-api-gateway" % "2.47.0"
 ```
 <!-- {x-version-update-end} -->
 
