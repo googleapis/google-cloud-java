@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api-ads.api.grpc</groupId>
   <artifactId>proto-ad-manager-v1</artifactId>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
+  <version>0.6.0</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
   <name>proto-ad-manager-v1</name>
   <description>Proto library for ad-manager</description>
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>ad-manager-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
+    <version>0.6.0</version><!-- {x-version-update:ad-manager:current} -->
   </parent>
   <dependencies>
     <dependency>
