@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-places</artifactId>
-  <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-maps-places:current} -->
+  <version>0.18.0</version><!-- {x-version-update:google-maps-places:current} -->
   <packaging>jar</packaging>
   <name>Google Places API (New)</name>
   <description>Places API (New) The Places API allows developers to access a variety of search and
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-places-parent</artifactId>
-    <version>0.18.0-SNAPSHOT</version><!-- {x-version-update:google-maps-places:current} -->
+    <version>0.18.0</version><!-- {x-version-update:google-maps-places:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-places</site.installationModule>

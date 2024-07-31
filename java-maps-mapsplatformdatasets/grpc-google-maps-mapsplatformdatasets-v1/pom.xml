@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>grpc-google-maps-mapsplatformdatasets-v1</artifactId>
-  <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1:current} -->
+  <version>0.36.0</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1:current} -->
   <name>grpc-google-maps-mapsplatformdatasets-v1</name>
   <description>GRPC library for google-maps-mapsplatformdatasets</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-mapsplatformdatasets-parent</artifactId>
-    <version>0.36.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
+    <version>0.36.0</version><!-- {x-version-update:google-maps-mapsplatformdatasets:current} -->
   </parent>
   <dependencies>
     <dependency>
