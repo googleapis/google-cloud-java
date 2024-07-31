@@ -100,6 +100,20 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - javadoc
+  - pattern: 3.5.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - javadoc
 permissionRules:
   - team: yoshi-admins
     permission: admin
