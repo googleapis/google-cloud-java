@@ -62,6 +62,23 @@ branchProtectionRules:
       - 'Kokoro - Test: GraalVM Native Image A'
       - 'Kokoro - Test: GraalVM Native Image B'
       - header-check
+  - pattern: 1.37.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
 permissionRules:
   - team: yoshi-admins
     permission: admin
