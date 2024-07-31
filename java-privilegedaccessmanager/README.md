@@ -88,7 +88,7 @@ to add `google-cloud-privilegedaccessmanager` as a dependency in your code.
 ## About Privileged Access Manager API
 
 
-[Privileged Access Manager API][product-docs] Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse orabuse. PAM allows you to shift from always-on standing privileges towards on-demand access with just-in-time, time-bound, and approval-based access elevations. PAM allows IAM administrators to create entitlements that can grant just-in-time, temporary access to any resource scope. Requesters can explore eligible entitlements and request the access needed for their task. Approvers are notified when approvals await their decision. Streamlined workflows facilitated by using PAM can support various use cases, including emergency access for incident responders, time-boxed access for developers for critical deployment or maintenance, temporary access for operators for data ingestion and audits, JIT access to service accounts for automated tasks, and more.
+[Privileged Access Manager API][product-docs] Privileged Access Manager API Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse or abuse.
 
 See the [Privileged Access Manager API client library docs][javadocs] to learn how to
 use this Privileged Access Manager API Client Library.
