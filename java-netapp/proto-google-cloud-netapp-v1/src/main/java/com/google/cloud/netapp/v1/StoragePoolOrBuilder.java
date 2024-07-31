@@ -463,7 +463,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=230
+   *     google/cloud/netapp/v1/storage_pool.proto;l=231
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Deprecated
@@ -479,9 +479,59 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=230
+   *     google/cloud/netapp/v1/storage_pool.proto;l=231
    * @return The globalAccessAllowed.
    */
   @java.lang.Deprecated
   boolean getGlobalAccessAllowed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the replica zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The replicaZone.
+   */
+  java.lang.String getReplicaZone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the replica zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string replica_zone = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for replicaZone.
+   */
+  com.google.protobuf.ByteString getReplicaZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the active zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The zone.
+   */
+  java.lang.String getZone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the active zone for regional storagePool.
+   * </pre>
+   *
+   * <code>string zone = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for zone.
+   */
+  com.google.protobuf.ByteString getZoneBytes();
 }

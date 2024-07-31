@@ -5817,8 +5817,8 @@ public class DlpServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(
-                ConnectionName.ofOrganizationLocationConnectionName(
-                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
                     .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
@@ -5863,8 +5863,8 @@ public class DlpServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(
-                ConnectionName.ofOrganizationLocationConnectionName(
-                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
                     .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())
@@ -5909,8 +5909,8 @@ public class DlpServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(
-                ConnectionName.ofOrganizationLocationConnectionName(
-                        "[ORGANIZATION]", "[LOCATION]", "[CONNECTION]")
+                ConnectionName.ofProjectLocationConnectionName(
+                        "[PROJECT]", "[LOCATION]", "[CONNECTION]")
                     .toString())
             .setState(ConnectionState.forNumber(0))
             .addAllErrors(new ArrayList<Error>())

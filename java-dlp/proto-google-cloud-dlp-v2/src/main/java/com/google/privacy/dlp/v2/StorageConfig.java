@@ -149,7 +149,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -164,13 +164,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -195,7 +193,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -210,13 +208,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -241,7 +237,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -256,13 +252,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -458,7 +452,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -473,13 +467,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -507,7 +499,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -522,13 +514,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -558,7 +548,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
      *
-     * &lt;b&gt;For BigQuery&lt;/b&gt;
+     * **For BigQuery**
      *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
@@ -573,13 +563,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
      *
-     * &lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * - `_PARTITIONTIME`
+     * - `_PARTITIONDATE`
+     * - `_PARTITION_LOAD_TIME`
      *
-     * &lt;b&gt;For Datastore&lt;/b&gt;
+     * **For Datastore**
      *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
@@ -1493,7 +1481,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1508,13 +1496,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1541,7 +1527,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1556,13 +1542,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1595,7 +1579,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1610,13 +1594,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1651,7 +1633,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1666,13 +1648,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1704,7 +1684,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1719,13 +1699,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1765,7 +1743,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1780,13 +1758,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1818,7 +1794,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1833,13 +1809,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1866,7 +1840,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1881,13 +1855,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
@@ -1918,7 +1890,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
        *
-       * &lt;b&gt;For BigQuery&lt;/b&gt;
+       * **For BigQuery**
        *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
@@ -1933,13 +1905,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
        *
-       * &lt;ul&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
-       * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
-       * &lt;/ul&gt;
+       * - `_PARTITIONTIME`
+       * - `_PARTITIONDATE`
+       * - `_PARTITION_LOAD_TIME`
        *
-       * &lt;b&gt;For Datastore&lt;/b&gt;
+       * **For Datastore**
        *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp

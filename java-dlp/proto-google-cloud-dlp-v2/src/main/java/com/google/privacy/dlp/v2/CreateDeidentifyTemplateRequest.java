@@ -82,13 +82,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *   `projects/{project_id}/locations/{location_id}`
    * + Projects scope, no location specified (defaults to global):
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *   `projects/{project_id}`
    * + Organizations scope, location specified:
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *   `organizations/{org_id}/locations/{location_id}`
    * + Organizations scope, no location specified (defaults to global):
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *   `organizations/{org_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -126,13 +126,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *   `projects/{project_id}/locations/{location_id}`
    * + Projects scope, no location specified (defaults to global):
-   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *   `projects/{project_id}`
    * + Organizations scope, location specified:
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *   `organizations/{org_id}/locations/{location_id}`
    * + Organizations scope, no location specified (defaults to global):
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *   `organizations/{org_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -774,13 +774,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `projects/{project_id}/locations/{location_id}`
      * + Projects scope, no location specified (defaults to global):
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *   `projects/{project_id}`
      * + Organizations scope, location specified:
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `organizations/{org_id}/locations/{location_id}`
      * + Organizations scope, no location specified (defaults to global):
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+     *   `organizations/{org_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -817,13 +817,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `projects/{project_id}/locations/{location_id}`
      * + Projects scope, no location specified (defaults to global):
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *   `projects/{project_id}`
      * + Organizations scope, location specified:
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `organizations/{org_id}/locations/{location_id}`
      * + Organizations scope, no location specified (defaults to global):
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+     *   `organizations/{org_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -860,13 +860,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `projects/{project_id}/locations/{location_id}`
      * + Projects scope, no location specified (defaults to global):
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *   `projects/{project_id}`
      * + Organizations scope, location specified:
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `organizations/{org_id}/locations/{location_id}`
      * + Organizations scope, no location specified (defaults to global):
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+     *   `organizations/{org_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -902,13 +902,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `projects/{project_id}/locations/{location_id}`
      * + Projects scope, no location specified (defaults to global):
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *   `projects/{project_id}`
      * + Organizations scope, location specified:
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `organizations/{org_id}/locations/{location_id}`
      * + Organizations scope, no location specified (defaults to global):
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+     *   `organizations/{org_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -940,13 +940,13 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `projects/{project_id}/locations/{location_id}`
      * + Projects scope, no location specified (defaults to global):
-     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *   `projects/{project_id}`
      * + Organizations scope, location specified:
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     *   `organizations/{org_id}/locations/{location_id}`
      * + Organizations scope, no location specified (defaults to global):
-     *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+     *   `organizations/{org_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location

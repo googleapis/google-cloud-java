@@ -20,7 +20,7 @@ package com.google.cloud.dlp.v2.samples;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
-import com.google.privacy.dlp.v2.OrganizationLocationName;
+import com.google.privacy.dlp.v2.LocationName;
 
 public class SyncListConnections {
 
@@ -37,7 +37,7 @@ public class SyncListConnections {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       ListConnectionsRequest request =
           ListConnectionsRequest.newBuilder()
-              .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

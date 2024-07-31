@@ -1391,8 +1391,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -1429,8 +1431,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -2205,8 +2209,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -2242,8 +2248,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -3005,9 +3013,10 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3044,9 +3053,10 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3727,7 +3737,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -3764,7 +3777,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -4340,8 +4356,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -4377,8 +4395,10 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -5310,9 +5330,10 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -5350,9 +5371,10 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -6033,10 +6055,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. The max supported length is 63 characters. This value must start
-   *     with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and
-   *     cannot end with a hyphen. Values that do not match this pattern will trigger an
-   *     INVALID_ARGUMENT error.
+   *     the specified location. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6075,10 +6096,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. The max supported length is 63 characters. This value must start
-   *     with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and
-   *     cannot end with a hyphen. Values that do not match this pattern will trigger an
-   *     INVALID_ARGUMENT error.
+   *     the specified location. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6758,9 +6778,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. This value must start with a lowercase letter followed by up to 62
-   *     lowercase letters, numbers, or hyphens, and cannot end with a hyphen. Values that do not
-   *     match this pattern will trigger an INVALID_ARGUMENT error.
+   *     specified backupVault. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -6800,9 +6820,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. This value must start with a lowercase letter followed by up to 62
-   *     lowercase letters, numbers, or hyphens, and cannot end with a hyphen. Values that do not
-   *     match this pattern will trigger an INVALID_ARGUMENT error.
+   *     specified backupVault. Must contain only letters, numbers, underscore and hyphen, with the
+   *     first character a letter or underscore, the last a letter or underscore or a number, and a
+   *     63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -7493,8 +7513,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. This value must start with a lowercase letter followed by up
-   *     to 62 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+   *     within the specified location. Must contain only letters, numbers, underscore and hyphen,
+   *     with the first character a letter or underscore, the last a letter or underscore or a
+   *     number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
@@ -7533,8 +7554,9 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. This value must start with a lowercase letter followed by up
-   *     to 62 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+   *     within the specified location. Must contain only letters, numbers, underscore and hyphen,
+   *     with the first character a letter or underscore, the last a letter or underscore or a
+   *     number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(

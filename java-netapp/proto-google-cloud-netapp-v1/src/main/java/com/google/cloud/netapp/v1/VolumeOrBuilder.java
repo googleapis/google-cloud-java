@@ -1048,6 +1048,35 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
+   * Optional. Flag indicating if the volume will be a large capacity volume or
+   * a regular volume.
+   * </pre>
+   *
+   * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The largeCapacity.
+   */
+  boolean getLargeCapacity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating if the volume will have an IP address per node
+   * for volumes supporting multiple IP endpoints. Only the volume with
+   * large_capacity will be allowed to have multiple endpoints.
+   * </pre>
+   *
+   * <code>bool multiple_endpoints = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The multipleEndpoints.
+   */
+  boolean getMultipleEndpoints();
+
+  /**
+   *
+   *
+   * <pre>
    * Tiering policy for the volume.
    * </pre>
    *
@@ -1078,4 +1107,54 @@ public interface VolumeOrBuilder
    * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
    */
   com.google.cloud.netapp.v1.TieringPolicyOrBuilder getTieringPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the replica zone for regional volume.
+   * </pre>
+   *
+   * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The replicaZone.
+   */
+  java.lang.String getReplicaZone();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the replica zone for regional volume.
+   * </pre>
+   *
+   * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for replicaZone.
+   */
+  com.google.protobuf.ByteString getReplicaZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the active zone for regional volume.
+   * </pre>
+   *
+   * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The zone.
+   */
+  java.lang.String getZone();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the active zone for regional volume.
+   * </pre>
+   *
+   * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for zone.
+   */
+  com.google.protobuf.ByteString getZoneBytes();
 }

@@ -78,9 +78,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
    * (project or organization):
    *
    * + Projects scope:
-   *   `projects/PROJECT_ID/locations/LOCATION_ID`
+   *   `projects/{project_id}/locations/{location_id}`
    * + Organizations scope:
-   *   `organizations/ORG_ID/locations/LOCATION_ID`
+   *   `organizations/{org_id}/locations/{location_id}`
    * </pre>
    *
    * <code>
@@ -111,9 +111,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
    * (project or organization):
    *
    * + Projects scope:
-   *   `projects/PROJECT_ID/locations/LOCATION_ID`
+   *   `projects/{project_id}/locations/{location_id}`
    * + Organizations scope:
-   *   `organizations/ORG_ID/locations/LOCATION_ID`
+   *   `organizations/{org_id}/locations/{location_id}`
    * </pre>
    *
    * <code>
@@ -587,9 +587,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
      * (project or organization):
      *
      * + Projects scope:
-     *   `projects/PROJECT_ID/locations/LOCATION_ID`
+     *   `projects/{project_id}/locations/{location_id}`
      * + Organizations scope:
-     *   `organizations/ORG_ID/locations/LOCATION_ID`
+     *   `organizations/{org_id}/locations/{location_id}`
      * </pre>
      *
      * <code>
@@ -619,9 +619,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
      * (project or organization):
      *
      * + Projects scope:
-     *   `projects/PROJECT_ID/locations/LOCATION_ID`
+     *   `projects/{project_id}/locations/{location_id}`
      * + Organizations scope:
-     *   `organizations/ORG_ID/locations/LOCATION_ID`
+     *   `organizations/{org_id}/locations/{location_id}`
      * </pre>
      *
      * <code>
@@ -651,9 +651,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
      * (project or organization):
      *
      * + Projects scope:
-     *   `projects/PROJECT_ID/locations/LOCATION_ID`
+     *   `projects/{project_id}/locations/{location_id}`
      * + Organizations scope:
-     *   `organizations/ORG_ID/locations/LOCATION_ID`
+     *   `organizations/{org_id}/locations/{location_id}`
      * </pre>
      *
      * <code>
@@ -682,9 +682,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
      * (project or organization):
      *
      * + Projects scope:
-     *   `projects/PROJECT_ID/locations/LOCATION_ID`
+     *   `projects/{project_id}/locations/{location_id}`
      * + Organizations scope:
-     *   `organizations/ORG_ID/locations/LOCATION_ID`
+     *   `organizations/{org_id}/locations/{location_id}`
      * </pre>
      *
      * <code>
@@ -709,9 +709,9 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
      * (project or organization):
      *
      * + Projects scope:
-     *   `projects/PROJECT_ID/locations/LOCATION_ID`
+     *   `projects/{project_id}/locations/{location_id}`
      * + Organizations scope:
-     *   `organizations/ORG_ID/locations/LOCATION_ID`
+     *   `organizations/{org_id}/locations/{location_id}`
      * </pre>
      *
      * <code>

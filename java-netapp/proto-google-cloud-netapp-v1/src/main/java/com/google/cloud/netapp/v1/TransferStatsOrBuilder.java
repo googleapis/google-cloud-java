@@ -28,7 +28,7 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * bytes trasferred so far in current transfer.
+   * Cumulative bytes trasferred so far for the replication relatinonship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -40,7 +40,7 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * bytes trasferred so far in current transfer.
+   * Cumulative bytes trasferred so far for the replication relatinonship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -53,7 +53,8 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -65,7 +66,8 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -77,7 +79,8 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>

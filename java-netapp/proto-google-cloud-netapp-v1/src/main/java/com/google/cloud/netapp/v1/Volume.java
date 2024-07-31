@@ -57,6 +57,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     kmsConfig_ = "";
     encryptionType_ = 0;
     restrictedActions_ = java.util.Collections.emptyList();
+    replicaZone_ = "";
+    zone_ = "";
   }
 
   @java.lang.Override
@@ -1955,6 +1957,45 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   private int restrictedActionsMemoizedSerializedSize;
 
+  public static final int LARGE_CAPACITY_FIELD_NUMBER = 32;
+  private boolean largeCapacity_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating if the volume will be a large capacity volume or
+   * a regular volume.
+   * </pre>
+   *
+   * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The largeCapacity.
+   */
+  @java.lang.Override
+  public boolean getLargeCapacity() {
+    return largeCapacity_;
+  }
+
+  public static final int MULTIPLE_ENDPOINTS_FIELD_NUMBER = 33;
+  private boolean multipleEndpoints_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating if the volume will have an IP address per node
+   * for volumes supporting multiple IP endpoints. Only the volume with
+   * large_capacity will be allowed to have multiple endpoints.
+   * </pre>
+   *
+   * <code>bool multiple_endpoints = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The multipleEndpoints.
+   */
+  @java.lang.Override
+  public boolean getMultipleEndpoints() {
+    return multipleEndpoints_;
+  }
+
   public static final int TIERING_POLICY_FIELD_NUMBER = 34;
   private com.google.cloud.netapp.v1.TieringPolicy tieringPolicy_;
   /**
@@ -2003,6 +2044,108 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return tieringPolicy_ == null
         ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
         : tieringPolicy_;
+  }
+
+  public static final int REPLICA_ZONE_FIELD_NUMBER = 36;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object replicaZone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the replica zone for regional volume.
+   * </pre>
+   *
+   * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The replicaZone.
+   */
+  @java.lang.Override
+  public java.lang.String getReplicaZone() {
+    java.lang.Object ref = replicaZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      replicaZone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the replica zone for regional volume.
+   * </pre>
+   *
+   * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for replicaZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReplicaZoneBytes() {
+    java.lang.Object ref = replicaZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      replicaZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ZONE_FIELD_NUMBER = 37;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the active zone for regional volume.
+   * </pre>
+   *
+   * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The zone.
+   */
+  @java.lang.Override
+  public java.lang.String getZone() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      zone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the active zone for regional volume.
+   * </pre>
+   *
+   * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for zone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getZoneBytes() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      zone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2127,8 +2270,20 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < restrictedActions_.size(); i++) {
       output.writeEnumNoTag(restrictedActions_.get(i));
     }
+    if (largeCapacity_ != false) {
+      output.writeBool(32, largeCapacity_);
+    }
+    if (multipleEndpoints_ != false) {
+      output.writeBool(33, multipleEndpoints_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(34, getTieringPolicy());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, replicaZone_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, zone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2270,8 +2425,20 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       restrictedActionsMemoizedSerializedSize = dataSize;
     }
+    if (largeCapacity_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, largeCapacity_);
+    }
+    if (multipleEndpoints_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, multipleEndpoints_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getTieringPolicy());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replicaZone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, replicaZone_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, zone_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2335,10 +2502,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (!getBackupConfig().equals(other.getBackupConfig())) return false;
     }
     if (!restrictedActions_.equals(other.restrictedActions_)) return false;
+    if (getLargeCapacity() != other.getLargeCapacity()) return false;
+    if (getMultipleEndpoints() != other.getMultipleEndpoints()) return false;
     if (hasTieringPolicy() != other.hasTieringPolicy()) return false;
     if (hasTieringPolicy()) {
       if (!getTieringPolicy().equals(other.getTieringPolicy())) return false;
     }
+    if (!getReplicaZone().equals(other.getReplicaZone())) return false;
+    if (!getZone().equals(other.getZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2435,10 +2606,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESTRICTED_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + restrictedActions_.hashCode();
     }
+    hash = (37 * hash) + LARGE_CAPACITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLargeCapacity());
+    hash = (37 * hash) + MULTIPLE_ENDPOINTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultipleEndpoints());
     if (hasTieringPolicy()) {
       hash = (37 * hash) + TIERING_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getTieringPolicy().hashCode();
     }
+    hash = (37 * hash) + REPLICA_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getReplicaZone().hashCode();
+    hash = (37 * hash) + ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2614,6 +2793,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       state_ = 0;
       stateDetails_ = "";
@@ -2674,11 +2854,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       restrictedActions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x40000000);
+      largeCapacity_ = false;
+      multipleEndpoints_ = false;
       tieringPolicy_ = null;
       if (tieringPolicyBuilder_ != null) {
         tieringPolicyBuilder_.dispose();
         tieringPolicyBuilder_ = null;
       }
+      replicaZone_ = "";
+      zone_ = "";
       return this;
     }
 
@@ -2708,6 +2892,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -2837,9 +3024,27 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.largeCapacity_ = largeCapacity_;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.netapp.v1.Volume result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.multipleEndpoints_ = multipleEndpoints_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.tieringPolicy_ =
             tieringPolicyBuilder_ == null ? tieringPolicy_ : tieringPolicyBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.replicaZone_ = replicaZone_;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3046,8 +3251,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.getLargeCapacity() != false) {
+        setLargeCapacity(other.getLargeCapacity());
+      }
+      if (other.getMultipleEndpoints() != false) {
+        setMultipleEndpoints(other.getMultipleEndpoints());
+      }
       if (other.hasTieringPolicy()) {
         mergeTieringPolicy(other.getTieringPolicy());
+      }
+      if (!other.getReplicaZone().isEmpty()) {
+        replicaZone_ = other.replicaZone_;
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getZone().isEmpty()) {
+        zone_ = other.zone_;
+        bitField1_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3314,12 +3535,36 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 250
+            case 256:
+              {
+                largeCapacity_ = input.readBool();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 256
+            case 264:
+              {
+                multipleEndpoints_ = input.readBool();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 264
             case 274:
               {
                 input.readMessage(getTieringPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 274
+            case 290:
+              {
+                replicaZone_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 290
+            case 298:
+              {
+                zone_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3338,6 +3583,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -7531,6 +7777,121 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean largeCapacity_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will be a large capacity volume or
+     * a regular volume.
+     * </pre>
+     *
+     * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The largeCapacity.
+     */
+    @java.lang.Override
+    public boolean getLargeCapacity() {
+      return largeCapacity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will be a large capacity volume or
+     * a regular volume.
+     * </pre>
+     *
+     * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The largeCapacity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLargeCapacity(boolean value) {
+
+      largeCapacity_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will be a large capacity volume or
+     * a regular volume.
+     * </pre>
+     *
+     * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLargeCapacity() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      largeCapacity_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean multipleEndpoints_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will have an IP address per node
+     * for volumes supporting multiple IP endpoints. Only the volume with
+     * large_capacity will be allowed to have multiple endpoints.
+     * </pre>
+     *
+     * <code>bool multiple_endpoints = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The multipleEndpoints.
+     */
+    @java.lang.Override
+    public boolean getMultipleEndpoints() {
+      return multipleEndpoints_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will have an IP address per node
+     * for volumes supporting multiple IP endpoints. Only the volume with
+     * large_capacity will be allowed to have multiple endpoints.
+     * </pre>
+     *
+     * <code>bool multiple_endpoints = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The multipleEndpoints to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultipleEndpoints(boolean value) {
+
+      multipleEndpoints_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating if the volume will have an IP address per node
+     * for volumes supporting multiple IP endpoints. Only the volume with
+     * large_capacity will be allowed to have multiple endpoints.
+     * </pre>
+     *
+     * <code>bool multiple_endpoints = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultipleEndpoints() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      multipleEndpoints_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.netapp.v1.TieringPolicy tieringPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.netapp.v1.TieringPolicy,
@@ -7549,7 +7910,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tieringPolicy field is set.
      */
     public boolean hasTieringPolicy() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -7589,7 +7950,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         tieringPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7609,7 +7970,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         tieringPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7624,7 +7985,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTieringPolicy(com.google.cloud.netapp.v1.TieringPolicy value) {
       if (tieringPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && tieringPolicy_ != null
             && tieringPolicy_ != com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()) {
           getTieringPolicyBuilder().mergeFrom(value);
@@ -7635,7 +7996,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         tieringPolicyBuilder_.mergeFrom(value);
       }
       if (tieringPolicy_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -7650,7 +8011,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
      */
     public Builder clearTieringPolicy() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       tieringPolicy_ = null;
       if (tieringPolicyBuilder_ != null) {
         tieringPolicyBuilder_.dispose();
@@ -7669,7 +8030,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
      */
     public com.google.cloud.netapp.v1.TieringPolicy.Builder getTieringPolicyBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return getTieringPolicyFieldBuilder().getBuilder();
     }
@@ -7715,6 +8076,218 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         tieringPolicy_ = null;
       }
       return tieringPolicyBuilder_;
+    }
+
+    private java.lang.Object replicaZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the replica zone for regional volume.
+     * </pre>
+     *
+     * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The replicaZone.
+     */
+    public java.lang.String getReplicaZone() {
+      java.lang.Object ref = replicaZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        replicaZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the replica zone for regional volume.
+     * </pre>
+     *
+     * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for replicaZone.
+     */
+    public com.google.protobuf.ByteString getReplicaZoneBytes() {
+      java.lang.Object ref = replicaZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        replicaZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the replica zone for regional volume.
+     * </pre>
+     *
+     * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The replicaZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      replicaZone_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the replica zone for regional volume.
+     * </pre>
+     *
+     * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaZone() {
+      replicaZone_ = getDefaultInstance().getReplicaZone();
+      bitField1_ = (bitField1_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the replica zone for regional volume.
+     * </pre>
+     *
+     * <code>string replica_zone = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for replicaZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      replicaZone_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the active zone for regional volume.
+     * </pre>
+     *
+     * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The zone.
+     */
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the active zone for regional volume.
+     * </pre>
+     *
+     * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for zone.
+     */
+    public com.google.protobuf.ByteString getZoneBytes() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        zone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the active zone for regional volume.
+     * </pre>
+     *
+     * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      zone_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the active zone for regional volume.
+     * </pre>
+     *
+     * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearZone() {
+      zone_ = getDefaultInstance().getZone();
+      bitField1_ = (bitField1_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the active zone for regional volume.
+     * </pre>
+     *
+     * <code>string zone = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      zone_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

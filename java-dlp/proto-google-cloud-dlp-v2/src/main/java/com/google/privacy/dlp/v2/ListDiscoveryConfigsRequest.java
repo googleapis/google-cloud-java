@@ -76,7 +76,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
    * Required. Parent resource name.
    *
    * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * `projects/{project_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -110,7 +110,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
    * Required. Parent resource name.
    *
    * The format of this value is as follows:
-   * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * `projects/{project_id}/locations/{location_id}`
    *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
@@ -705,7 +705,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
      * Required. Parent resource name.
      *
      * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * `projects/{project_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -738,7 +738,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
      * Required. Parent resource name.
      *
      * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * `projects/{project_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -771,7 +771,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
      * Required. Parent resource name.
      *
      * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * `projects/{project_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -803,7 +803,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
      * Required. Parent resource name.
      *
      * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * `projects/{project_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
@@ -831,7 +831,7 @@ public final class ListDiscoveryConfigsRequest extends com.google.protobuf.Gener
      * Required. Parent resource name.
      *
      * The format of this value is as follows:
-     * `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * `projects/{project_id}/locations/{location_id}`
      *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location

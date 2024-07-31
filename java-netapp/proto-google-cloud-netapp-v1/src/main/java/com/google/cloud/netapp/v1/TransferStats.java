@@ -70,7 +70,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * bytes trasferred so far in current transfer.
+   * Cumulative bytes trasferred so far for the replication relatinonship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -85,7 +85,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * bytes trasferred so far in current transfer.
+   * Cumulative bytes trasferred so far for the replication relatinonship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -103,7 +103,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -118,7 +119,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -135,7 +137,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total time taken during transfer.
+   * Cumulative time taken across all transfers for the replication
+   * relationship.
    * </pre>
    *
    * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1038,7 +1041,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * bytes trasferred so far in current transfer.
+     * Cumulative bytes trasferred so far for the replication relatinonship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1053,7 +1056,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * bytes trasferred so far in current transfer.
+     * Cumulative bytes trasferred so far for the replication relatinonship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1068,7 +1071,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * bytes trasferred so far in current transfer.
+     * Cumulative bytes trasferred so far for the replication relatinonship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1087,7 +1090,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * bytes trasferred so far in current transfer.
+     * Cumulative bytes trasferred so far for the replication relatinonship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1111,7 +1114,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1125,7 +1129,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1145,7 +1150,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1167,7 +1173,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1186,7 +1193,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1213,7 +1221,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1232,7 +1241,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1246,7 +1256,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>
@@ -1264,7 +1275,8 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total time taken during transfer.
+     * Cumulative time taken across all transfers for the replication
+     * relationship.
      * </pre>
      *
      * <code>optional .google.protobuf.Duration total_transfer_duration = 2;</code>

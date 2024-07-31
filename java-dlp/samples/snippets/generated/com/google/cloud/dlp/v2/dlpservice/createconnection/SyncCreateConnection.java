@@ -20,7 +20,7 @@ package com.google.cloud.dlp.v2.samples;
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.CreateConnectionRequest;
-import com.google.privacy.dlp.v2.OrganizationLocationName;
+import com.google.privacy.dlp.v2.LocationName;
 
 public class SyncCreateConnection {
 
@@ -37,7 +37,7 @@ public class SyncCreateConnection {
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
       CreateConnectionRequest request =
           CreateConnectionRequest.newBuilder()
-              .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConnection(Connection.newBuilder().build())
               .build();
       Connection response = dlpServiceClient.createConnection(request);

@@ -32,7 +32,7 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * The format of this value is as follows:
    *
-   *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     `locations/{location_id}`
    * </pre>
    *
    * <code>string parent = 4;</code>
@@ -48,7 +48,7 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * The format of this value is as follows:
    *
-   *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     `locations/{location_id}`
    * </pre>
    *
    * <code>string parent = 4;</code>
