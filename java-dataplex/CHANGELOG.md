@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.45.0 (2024-07-31)
+
+### Features
+
+* expose data scan execution create time to customers ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+
+
+
 ## 1.44.0 (2024-06-27)
 
 ### Features

@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.51.0 (2024-07-31)
+
+### Features
+
+* add Cloud Storage discovery support ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* org-level connection bindings ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* replace HTML tags with CommonMark notation ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+
+
+
 ## 3.50.0 (2024-06-27)
 
 * No change

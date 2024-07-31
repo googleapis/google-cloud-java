@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.48.0 (2024-07-31)
+
+### Features
+
+* A new field `score` is added to message `.google.cloud.aiplatform.v1.Candidate` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* A new message `ApiAuth` is added ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* add model and contents fields to ComputeTokensRequest v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add model and contents fields to ComputeTokensRequest v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+
+
+
 ## 3.47.0 (2024-06-27)
 
 ### Features
