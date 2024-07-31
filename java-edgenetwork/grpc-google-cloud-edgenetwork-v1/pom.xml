@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-edgenetwork-v1</artifactId>
-  <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-edgenetwork-v1:current} -->
+  <version>0.15.0</version><!-- {x-version-update:grpc-google-cloud-edgenetwork-v1:current} -->
   <name>grpc-google-cloud-edgenetwork-v1</name>
   <description>GRPC library for google-cloud-edgenetwork</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-edgenetwork-parent</artifactId>
-    <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
+    <version>0.15.0</version><!-- {x-version-update:google-cloud-edgenetwork:current} -->
   </parent>
   <dependencies>
     <dependency>
