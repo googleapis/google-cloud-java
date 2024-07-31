@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iap-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-iap:current} -->
   <name>Google Cloud Identity-Aware Proxy API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.41.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iap</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+        <version>0.3.0</version><!-- {x-version-update:google-cloud-iap:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-iap-v1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iap-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-iap-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iap-v1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iap-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-iap-v1:current} -->
       </dependency>
 
     </dependencies>
