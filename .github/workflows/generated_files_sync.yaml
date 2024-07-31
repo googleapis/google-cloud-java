@@ -131,7 +131,7 @@ jobs:
             |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
         echo "Included modules: ${IncludedNonCloudModules}"
         mvn -B -V -ntp install --also-make --projects "${IncludedNonCloudModules}" \
-            -DskipTests
+            -DskipTests -Dclirr.skip
 
     - name: Ensure Maps libraries have com.google.maps group IDs
       run: |
