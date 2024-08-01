@@ -278,6 +278,32 @@ public interface DatasetOrBuilder
    */
   com.google.cloud.documentai.v1beta3.Dataset.State getState();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
   com.google.cloud.documentai.v1beta3.Dataset.StorageSourceCase getStorageSourceCase();
 
   com.google.cloud.documentai.v1beta3.Dataset.IndexingSourceCase getIndexingSourceCase();

@@ -539,4 +539,70 @@ public interface InstanceOrBuilder
    * @return The bytes for effectiveReservedIpRange.
    */
   com.google.protobuf.ByteString getEffectiveReservedIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for files.
+   * MIN better suited for small size files.
+   * MAX higher throughput performance for larger files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fileStripeLevel.
+   */
+  int getFileStripeLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for files.
+   * MIN better suited for small size files.
+   * MAX higher throughput performance for larger files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fileStripeLevel.
+   */
+  com.google.cloud.parallelstore.v1beta.FileStripeLevel getFileStripeLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for directories.
+   * MIN when directory has a small number of files.
+   * MAX when directory has a large number of files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for directoryStripeLevel.
+   */
+  int getDirectoryStripeLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for directories.
+   * MIN when directory has a small number of files.
+   * MAX when directory has a large number of files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The directoryStripeLevel.
+   */
+  com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel getDirectoryStripeLevel();
 }

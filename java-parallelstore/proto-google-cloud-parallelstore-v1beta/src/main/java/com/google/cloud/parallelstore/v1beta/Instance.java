@@ -47,6 +47,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     reservedIpRange_ = "";
     effectiveReservedIpRange_ = "";
+    fileStripeLevel_ = 0;
+    directoryStripeLevel_ = 0;
   }
 
   @java.lang.Override
@@ -1032,6 +1034,96 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FILE_STRIPE_LEVEL_FIELD_NUMBER = 15;
+  private int fileStripeLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for files.
+   * MIN better suited for small size files.
+   * MAX higher throughput performance for larger files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fileStripeLevel.
+   */
+  @java.lang.Override
+  public int getFileStripeLevelValue() {
+    return fileStripeLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for files.
+   * MIN better suited for small size files.
+   * MAX higher throughput performance for larger files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fileStripeLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.FileStripeLevel getFileStripeLevel() {
+    com.google.cloud.parallelstore.v1beta.FileStripeLevel result =
+        com.google.cloud.parallelstore.v1beta.FileStripeLevel.forNumber(fileStripeLevel_);
+    return result == null
+        ? com.google.cloud.parallelstore.v1beta.FileStripeLevel.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DIRECTORY_STRIPE_LEVEL_FIELD_NUMBER = 16;
+  private int directoryStripeLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for directories.
+   * MIN when directory has a small number of files.
+   * MAX when directory has a large number of files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for directoryStripeLevel.
+   */
+  @java.lang.Override
+  public int getDirectoryStripeLevelValue() {
+    return directoryStripeLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stripe level for directories.
+   * MIN when directory has a small number of files.
+   * MAX when directory has a large number of files.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The directoryStripeLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel getDirectoryStripeLevel() {
+    com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel result =
+        com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel.forNumber(directoryStripeLevel_);
+    return result == null
+        ? com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1081,6 +1173,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectiveReservedIpRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, effectiveReservedIpRange_);
+    }
+    if (fileStripeLevel_
+        != com.google.cloud.parallelstore.v1beta.FileStripeLevel.FILE_STRIPE_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(15, fileStripeLevel_);
+    }
+    if (directoryStripeLevel_
+        != com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel
+            .DIRECTORY_STRIPE_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(16, directoryStripeLevel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1141,6 +1244,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(14, effectiveReservedIpRange_);
     }
+    if (fileStripeLevel_
+        != com.google.cloud.parallelstore.v1beta.FileStripeLevel.FILE_STRIPE_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, fileStripeLevel_);
+    }
+    if (directoryStripeLevel_
+        != com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel
+            .DIRECTORY_STRIPE_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, directoryStripeLevel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1175,6 +1289,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
     if (!getEffectiveReservedIpRange().equals(other.getEffectiveReservedIpRange())) return false;
+    if (fileStripeLevel_ != other.fileStripeLevel_) return false;
+    if (directoryStripeLevel_ != other.directoryStripeLevel_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1218,6 +1334,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReservedIpRange().hashCode();
     hash = (37 * hash) + EFFECTIVE_RESERVED_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getEffectiveReservedIpRange().hashCode();
+    hash = (37 * hash) + FILE_STRIPE_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + fileStripeLevel_;
+    hash = (37 * hash) + DIRECTORY_STRIPE_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + directoryStripeLevel_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1409,6 +1529,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       network_ = "";
       reservedIpRange_ = "";
       effectiveReservedIpRange_ = "";
+      fileStripeLevel_ = 0;
+      directoryStripeLevel_ = 0;
       return this;
     }
 
@@ -1485,6 +1607,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.effectiveReservedIpRange_ = effectiveReservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.fileStripeLevel_ = fileStripeLevel_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.directoryStripeLevel_ = directoryStripeLevel_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1587,6 +1715,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         effectiveReservedIpRange_ = other.effectiveReservedIpRange_;
         bitField0_ |= 0x00000800;
         onChanged();
+      }
+      if (other.fileStripeLevel_ != 0) {
+        setFileStripeLevelValue(other.getFileStripeLevelValue());
+      }
+      if (other.directoryStripeLevel_ != 0) {
+        setDirectoryStripeLevelValue(other.getDirectoryStripeLevelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1693,6 +1827,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 120:
+              {
+                fileStripeLevel_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 120
+            case 128:
+              {
+                directoryStripeLevel_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3480,6 +3626,232 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       effectiveReservedIpRange_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private int fileStripeLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for files.
+     * MIN better suited for small size files.
+     * MAX higher throughput performance for larger files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fileStripeLevel.
+     */
+    @java.lang.Override
+    public int getFileStripeLevelValue() {
+      return fileStripeLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for files.
+     * MIN better suited for small size files.
+     * MAX higher throughput performance for larger files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for fileStripeLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileStripeLevelValue(int value) {
+      fileStripeLevel_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for files.
+     * MIN better suited for small size files.
+     * MAX higher throughput performance for larger files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fileStripeLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.FileStripeLevel getFileStripeLevel() {
+      com.google.cloud.parallelstore.v1beta.FileStripeLevel result =
+          com.google.cloud.parallelstore.v1beta.FileStripeLevel.forNumber(fileStripeLevel_);
+      return result == null
+          ? com.google.cloud.parallelstore.v1beta.FileStripeLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for files.
+     * MIN better suited for small size files.
+     * MAX higher throughput performance for larger files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The fileStripeLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileStripeLevel(com.google.cloud.parallelstore.v1beta.FileStripeLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      fileStripeLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for files.
+     * MIN better suited for small size files.
+     * MAX higher throughput performance for larger files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFileStripeLevel() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      fileStripeLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int directoryStripeLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for directories.
+     * MIN when directory has a small number of files.
+     * MAX when directory has a large number of files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for directoryStripeLevel.
+     */
+    @java.lang.Override
+    public int getDirectoryStripeLevelValue() {
+      return directoryStripeLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for directories.
+     * MIN when directory has a small number of files.
+     * MAX when directory has a large number of files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for directoryStripeLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectoryStripeLevelValue(int value) {
+      directoryStripeLevel_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for directories.
+     * MIN when directory has a small number of files.
+     * MAX when directory has a large number of files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The directoryStripeLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel getDirectoryStripeLevel() {
+      com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel result =
+          com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel.forNumber(
+              directoryStripeLevel_);
+      return result == null
+          ? com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for directories.
+     * MIN when directory has a small number of files.
+     * MAX when directory has a large number of files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The directoryStripeLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectoryStripeLevel(
+        com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      directoryStripeLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Stripe level for directories.
+     * MIN when directory has a small number of files.
+     * MAX when directory has a large number of files.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDirectoryStripeLevel() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      directoryStripeLevel_ = 0;
       onChanged();
       return this;
     }

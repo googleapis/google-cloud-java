@@ -334,7 +334,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateProcessor</td>
- *      <td><p> Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided. The processor will be at `ENABLED` state by default after its creation.</td>
+ *      <td><p> Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided. The processor will be at `ENABLED` state by default after its creation. Note that this method requires the `documentai.processors.create` permission on the project, which is highly privileged. A user or service account with this permission can create new processors that can interact with any gcs bucket in your project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -771,6 +771,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -805,6 +806,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -2703,7 +2705,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2742,7 +2747,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2778,7 +2786,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -2809,7 +2820,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
-   * provided. The processor will be at `ENABLED` state by default after its creation.
+   * provided. The processor will be at `ENABLED` state by default after its creation. Note that
+   * this method requires the `documentai.processors.create` permission on the project, which is
+   * highly privileged. A user or service account with this permission can create new processors
+   * that can interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *

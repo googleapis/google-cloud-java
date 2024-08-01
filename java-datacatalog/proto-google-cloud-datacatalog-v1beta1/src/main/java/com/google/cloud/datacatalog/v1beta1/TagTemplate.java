@@ -111,10 +111,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * TagTemplate and its tags are auto-copied to Dataplex service.
      * Visible in both services. Editable in DataCatalog, read-only in Dataplex.
+     * Deprecated: Individual TagTemplate migration is deprecated in favor of
+     * organization or project wide TagTemplate migration opt-in.
      * </pre>
      *
-     * <code>MIGRATED = 1;</code>
+     * <code>MIGRATED = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     MIGRATED(1),
     UNRECOGNIZED(-1),
     ;
@@ -136,11 +139,13 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * TagTemplate and its tags are auto-copied to Dataplex service.
      * Visible in both services. Editable in DataCatalog, read-only in Dataplex.
+     * Deprecated: Individual TagTemplate migration is deprecated in favor of
+     * organization or project wide TagTemplate migration opt-in.
      * </pre>
      *
-     * <code>MIGRATED = 1;</code>
+     * <code>MIGRATED = 1 [deprecated = true];</code>
      */
-    public static final int MIGRATED_VALUE = 1;
+    @java.lang.Deprecated public static final int MIGRATED_VALUE = 1;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {

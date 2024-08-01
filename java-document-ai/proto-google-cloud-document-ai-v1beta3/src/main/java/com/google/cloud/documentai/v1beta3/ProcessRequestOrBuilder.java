@@ -189,7 +189,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -207,7 +207,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
    * @return The document.
    */
   @java.lang.Deprecated
@@ -402,6 +402,19 @@ public interface ProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to remove images from the document.
+   * </pre>
+   *
+   * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imagelessMode.
+   */
+  boolean getImagelessMode();
 
   com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
 }
