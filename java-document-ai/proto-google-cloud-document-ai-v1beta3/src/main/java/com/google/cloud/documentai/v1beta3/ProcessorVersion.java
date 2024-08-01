@@ -1503,6 +1503,3189 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface GenAiModelInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     *
+     * @return Whether the foundationGenAiModelInfo field is set.
+     */
+    boolean hasFoundationGenAiModelInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     *
+     * @return The foundationGenAiModelInfo.
+     */
+    com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo
+        getFoundationGenAiModelInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .FoundationGenAiModelInfoOrBuilder
+        getFoundationGenAiModelInfoOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     *
+     * @return Whether the customGenAiModelInfo field is set.
+     */
+    boolean hasCustomGenAiModelInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     *
+     * @return The customGenAiModelInfo.
+     */
+    com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+        getCustomGenAiModelInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .CustomGenAiModelInfoOrBuilder
+        getCustomGenAiModelInfoOrBuilder();
+
+    com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.ModelInfoCase
+        getModelInfoCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about Generative AI model-based processor versions.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo}
+   */
+  public static final class GenAiModelInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)
+      GenAiModelInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GenAiModelInfo.newBuilder() to construct.
+    private GenAiModelInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GenAiModelInfo() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GenAiModelInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+          .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+          .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.class,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder.class);
+    }
+
+    public interface FoundationGenAiModelInfoOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether finetuning is allowed for this base processor version.
+       * </pre>
+       *
+       * <code>bool finetuning_allowed = 1;</code>
+       *
+       * @return The finetuningAllowed.
+       */
+      boolean getFinetuningAllowed();
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum number of labeled documents in the training dataset
+       * required for finetuning.
+       * </pre>
+       *
+       * <code>int32 min_train_labeled_documents = 2;</code>
+       *
+       * @return The minTrainLabeledDocuments.
+       */
+      int getMinTrainLabeledDocuments();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo}
+     */
+    public static final class FoundationGenAiModelInfo
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo)
+        FoundationGenAiModelInfoOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use FoundationGenAiModelInfo.newBuilder() to construct.
+      private FoundationGenAiModelInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FoundationGenAiModelInfo() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new FoundationGenAiModelInfo();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo.class,
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo.Builder.class);
+      }
+
+      public static final int FINETUNING_ALLOWED_FIELD_NUMBER = 1;
+      private boolean finetuningAllowed_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Whether finetuning is allowed for this base processor version.
+       * </pre>
+       *
+       * <code>bool finetuning_allowed = 1;</code>
+       *
+       * @return The finetuningAllowed.
+       */
+      @java.lang.Override
+      public boolean getFinetuningAllowed() {
+        return finetuningAllowed_;
+      }
+
+      public static final int MIN_TRAIN_LABELED_DOCUMENTS_FIELD_NUMBER = 2;
+      private int minTrainLabeledDocuments_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The minimum number of labeled documents in the training dataset
+       * required for finetuning.
+       * </pre>
+       *
+       * <code>int32 min_train_labeled_documents = 2;</code>
+       *
+       * @return The minTrainLabeledDocuments.
+       */
+      @java.lang.Override
+      public int getMinTrainLabeledDocuments() {
+        return minTrainLabeledDocuments_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (finetuningAllowed_ != false) {
+          output.writeBool(1, finetuningAllowed_);
+        }
+        if (minTrainLabeledDocuments_ != 0) {
+          output.writeInt32(2, minTrainLabeledDocuments_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (finetuningAllowed_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, finetuningAllowed_);
+        }
+        if (minTrainLabeledDocuments_ != 0) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(2, minTrainLabeledDocuments_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo
+            other =
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .FoundationGenAiModelInfo)
+                    obj;
+
+        if (getFinetuningAllowed() != other.getFinetuningAllowed()) return false;
+        if (getMinTrainLabeledDocuments() != other.getMinTrainLabeledDocuments()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FINETUNING_ALLOWED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFinetuningAllowed());
+        hash = (37 * hash) + MIN_TRAIN_LABELED_DOCUMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getMinTrainLabeledDocuments();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo)
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo.class,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          finetuningAllowed_ = false;
+          minTrainLabeledDocuments_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo
+            build() {
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo
+            buildPartial() {
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo
+              result =
+                  new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.finetuningAllowed_ = finetuningAllowed_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.minTrainLabeledDocuments_ = minTrainLabeledDocuments_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .FoundationGenAiModelInfo)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo
+                other) {
+          if (other
+              == com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo.getDefaultInstance()) return this;
+          if (other.getFinetuningAllowed() != false) {
+            setFinetuningAllowed(other.getFinetuningAllowed());
+          }
+          if (other.getMinTrainLabeledDocuments() != 0) {
+            setMinTrainLabeledDocuments(other.getMinTrainLabeledDocuments());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    finetuningAllowed_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    minTrainLabeledDocuments_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean finetuningAllowed_;
+        /**
+         *
+         *
+         * <pre>
+         * Whether finetuning is allowed for this base processor version.
+         * </pre>
+         *
+         * <code>bool finetuning_allowed = 1;</code>
+         *
+         * @return The finetuningAllowed.
+         */
+        @java.lang.Override
+        public boolean getFinetuningAllowed() {
+          return finetuningAllowed_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Whether finetuning is allowed for this base processor version.
+         * </pre>
+         *
+         * <code>bool finetuning_allowed = 1;</code>
+         *
+         * @param value The finetuningAllowed to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFinetuningAllowed(boolean value) {
+
+          finetuningAllowed_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Whether finetuning is allowed for this base processor version.
+         * </pre>
+         *
+         * <code>bool finetuning_allowed = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFinetuningAllowed() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          finetuningAllowed_ = false;
+          onChanged();
+          return this;
+        }
+
+        private int minTrainLabeledDocuments_;
+        /**
+         *
+         *
+         * <pre>
+         * The minimum number of labeled documents in the training dataset
+         * required for finetuning.
+         * </pre>
+         *
+         * <code>int32 min_train_labeled_documents = 2;</code>
+         *
+         * @return The minTrainLabeledDocuments.
+         */
+        @java.lang.Override
+        public int getMinTrainLabeledDocuments() {
+          return minTrainLabeledDocuments_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The minimum number of labeled documents in the training dataset
+         * required for finetuning.
+         * </pre>
+         *
+         * <code>int32 min_train_labeled_documents = 2;</code>
+         *
+         * @param value The minTrainLabeledDocuments to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMinTrainLabeledDocuments(int value) {
+
+          minTrainLabeledDocuments_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The minimum number of labeled documents in the training dataset
+         * required for finetuning.
+         * </pre>
+         *
+         * <code>int32 min_train_labeled_documents = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMinTrainLabeledDocuments() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          minTrainLabeledDocuments_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo)
+      private static final com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo();
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FoundationGenAiModelInfo> PARSER =
+          new com.google.protobuf.AbstractParser<FoundationGenAiModelInfo>() {
+            @java.lang.Override
+            public FoundationGenAiModelInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FoundationGenAiModelInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FoundationGenAiModelInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface CustomGenAiModelInfoOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of custom model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for customModelType.
+       */
+      int getCustomModelTypeValue();
+      /**
+       *
+       *
+       * <pre>
+       * The type of custom model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+       * </code>
+       *
+       * @return The customModelType.
+       */
+      com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              .CustomModelType
+          getCustomModelType();
+
+      /**
+       *
+       *
+       * <pre>
+       * The base processor version ID for the custom model.
+       * </pre>
+       *
+       * <code>string base_processor_version_id = 2;</code>
+       *
+       * @return The baseProcessorVersionId.
+       */
+      java.lang.String getBaseProcessorVersionId();
+      /**
+       *
+       *
+       * <pre>
+       * The base processor version ID for the custom model.
+       * </pre>
+       *
+       * <code>string base_processor_version_id = 2;</code>
+       *
+       * @return The bytes for baseProcessorVersionId.
+       */
+      com.google.protobuf.ByteString getBaseProcessorVersionIdBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user. These
+     * are created with `Create New Version` in either the `Call foundation
+     * model` or `Fine tuning` tabs.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo}
+     */
+    public static final class CustomGenAiModelInfo extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo)
+        CustomGenAiModelInfoOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomGenAiModelInfo.newBuilder() to construct.
+      private CustomGenAiModelInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomGenAiModelInfo() {
+        customModelType_ = 0;
+        baseProcessorVersionId_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomGenAiModelInfo();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo.class,
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of custom model created by the user.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType}
+       */
+      public enum CustomModelType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The model type is unspecified.
+         * </pre>
+         *
+         * <code>CUSTOM_MODEL_TYPE_UNSPECIFIED = 0;</code>
+         */
+        CUSTOM_MODEL_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The model is a versioned foundation model.
+         * </pre>
+         *
+         * <code>VERSIONED_FOUNDATION = 1;</code>
+         */
+        VERSIONED_FOUNDATION(1),
+        /**
+         *
+         *
+         * <pre>
+         * The model is a finetuned foundation model.
+         * </pre>
+         *
+         * <code>FINE_TUNED = 2;</code>
+         */
+        FINE_TUNED(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * The model type is unspecified.
+         * </pre>
+         *
+         * <code>CUSTOM_MODEL_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int CUSTOM_MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The model is a versioned foundation model.
+         * </pre>
+         *
+         * <code>VERSIONED_FOUNDATION = 1;</code>
+         */
+        public static final int VERSIONED_FOUNDATION_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * The model is a finetuned foundation model.
+         * </pre>
+         *
+         * <code>FINE_TUNED = 2;</code>
+         */
+        public static final int FINE_TUNED_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static CustomModelType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static CustomModelType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return CUSTOM_MODEL_TYPE_UNSPECIFIED;
+            case 1:
+              return VERSIONED_FOUNDATION;
+            case 2:
+              return FINE_TUNED;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<CustomModelType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<CustomModelType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<CustomModelType>() {
+                  public CustomModelType findValueByNumber(int number) {
+                    return CustomModelType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final CustomModelType[] VALUES = values();
+
+        public static CustomModelType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private CustomModelType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType)
+      }
+
+      public static final int CUSTOM_MODEL_TYPE_FIELD_NUMBER = 1;
+      private int customModelType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The type of custom model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for customModelType.
+       */
+      @java.lang.Override
+      public int getCustomModelTypeValue() {
+        return customModelType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of custom model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+       * </code>
+       *
+       * @return The customModelType.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.CustomModelType
+          getCustomModelType() {
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                .CustomModelType
+            result =
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo.CustomModelType.forNumber(customModelType_);
+        return result == null
+            ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo.CustomModelType.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int BASE_PROCESSOR_VERSION_ID_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object baseProcessorVersionId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The base processor version ID for the custom model.
+       * </pre>
+       *
+       * <code>string base_processor_version_id = 2;</code>
+       *
+       * @return The baseProcessorVersionId.
+       */
+      @java.lang.Override
+      public java.lang.String getBaseProcessorVersionId() {
+        java.lang.Object ref = baseProcessorVersionId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          baseProcessorVersionId_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The base processor version ID for the custom model.
+       * </pre>
+       *
+       * <code>string base_processor_version_id = 2;</code>
+       *
+       * @return The bytes for baseProcessorVersionId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBaseProcessorVersionIdBytes() {
+        java.lang.Object ref = baseProcessorVersionId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          baseProcessorVersionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (customModelType_
+            != com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo.CustomModelType.CUSTOM_MODEL_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, customModelType_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseProcessorVersionId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baseProcessorVersionId_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (customModelType_
+            != com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo.CustomModelType.CUSTOM_MODEL_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, customModelType_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseProcessorVersionId_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baseProcessorVersionId_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+            other =
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .CustomGenAiModelInfo)
+                    obj;
+
+        if (customModelType_ != other.customModelType_) return false;
+        if (!getBaseProcessorVersionId().equals(other.getBaseProcessorVersionId())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CUSTOM_MODEL_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + customModelType_;
+        hash = (37 * hash) + BASE_PROCESSOR_VERSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseProcessorVersionId().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user. These
+       * are created with `Create New Version` in either the `Call foundation
+       * model` or `Fine tuning` tabs.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo)
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo.class,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          customModelType_ = 0;
+          baseProcessorVersionId_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+              .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo
+            build() {
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo
+            buildPartial() {
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              result =
+                  new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.customModelType_ = customModelType_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.baseProcessorVersionId_ = baseProcessorVersionId_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .CustomGenAiModelInfo)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                other) {
+          if (other
+              == com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo.getDefaultInstance()) return this;
+          if (other.customModelType_ != 0) {
+            setCustomModelTypeValue(other.getCustomModelTypeValue());
+          }
+          if (!other.getBaseProcessorVersionId().isEmpty()) {
+            baseProcessorVersionId_ = other.baseProcessorVersionId_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    customModelType_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    baseProcessorVersionId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int customModelType_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The type of custom model created by the user.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for customModelType.
+         */
+        @java.lang.Override
+        public int getCustomModelTypeValue() {
+          return customModelType_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of custom model created by the user.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for customModelType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCustomModelTypeValue(int value) {
+          customModelType_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of custom model created by the user.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+         * </code>
+         *
+         * @return The customModelType.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo.CustomModelType
+            getCustomModelType() {
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                  .CustomModelType
+              result =
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo.CustomModelType.forNumber(customModelType_);
+          return result == null
+              ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo.CustomModelType.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of custom model created by the user.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+         * </code>
+         *
+         * @param value The customModelType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCustomModelType(
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                    .CustomModelType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          customModelType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of custom model created by the user.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo.CustomModelType custom_model_type = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCustomModelType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          customModelType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object baseProcessorVersionId_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The base processor version ID for the custom model.
+         * </pre>
+         *
+         * <code>string base_processor_version_id = 2;</code>
+         *
+         * @return The baseProcessorVersionId.
+         */
+        public java.lang.String getBaseProcessorVersionId() {
+          java.lang.Object ref = baseProcessorVersionId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            baseProcessorVersionId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The base processor version ID for the custom model.
+         * </pre>
+         *
+         * <code>string base_processor_version_id = 2;</code>
+         *
+         * @return The bytes for baseProcessorVersionId.
+         */
+        public com.google.protobuf.ByteString getBaseProcessorVersionIdBytes() {
+          java.lang.Object ref = baseProcessorVersionId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            baseProcessorVersionId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The base processor version ID for the custom model.
+         * </pre>
+         *
+         * <code>string base_processor_version_id = 2;</code>
+         *
+         * @param value The baseProcessorVersionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBaseProcessorVersionId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseProcessorVersionId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The base processor version ID for the custom model.
+         * </pre>
+         *
+         * <code>string base_processor_version_id = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBaseProcessorVersionId() {
+          baseProcessorVersionId_ = getDefaultInstance().getBaseProcessorVersionId();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The base processor version ID for the custom model.
+         * </pre>
+         *
+         * <code>string base_processor_version_id = 2;</code>
+         *
+         * @param value The bytes for baseProcessorVersionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBaseProcessorVersionIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          baseProcessorVersionId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo)
+      private static final com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo();
+      }
+
+      public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomGenAiModelInfo> PARSER =
+          new com.google.protobuf.AbstractParser<CustomGenAiModelInfo>() {
+            @java.lang.Override
+            public CustomGenAiModelInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomGenAiModelInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomGenAiModelInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int modelInfoCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object modelInfo_;
+
+    public enum ModelInfoCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      FOUNDATION_GEN_AI_MODEL_INFO(1),
+      CUSTOM_GEN_AI_MODEL_INFO(2),
+      MODELINFO_NOT_SET(0);
+      private final int value;
+
+      private ModelInfoCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModelInfoCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ModelInfoCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return FOUNDATION_GEN_AI_MODEL_INFO;
+          case 2:
+            return CUSTOM_GEN_AI_MODEL_INFO;
+          case 0:
+            return MODELINFO_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ModelInfoCase getModelInfoCase() {
+      return ModelInfoCase.forNumber(modelInfoCase_);
+    }
+
+    public static final int FOUNDATION_GEN_AI_MODEL_INFO_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     *
+     * @return Whether the foundationGenAiModelInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasFoundationGenAiModelInfo() {
+      return modelInfoCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     *
+     * @return The foundationGenAiModelInfo.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .FoundationGenAiModelInfo
+        getFoundationGenAiModelInfo() {
+      if (modelInfoCase_ == 1) {
+        return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo)
+            modelInfo_;
+      }
+      return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+          .FoundationGenAiModelInfo.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a pretrained Google-managed foundation model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .FoundationGenAiModelInfoOrBuilder
+        getFoundationGenAiModelInfoOrBuilder() {
+      if (modelInfoCase_ == 1) {
+        return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .FoundationGenAiModelInfo)
+            modelInfo_;
+      }
+      return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+          .FoundationGenAiModelInfo.getDefaultInstance();
+    }
+
+    public static final int CUSTOM_GEN_AI_MODEL_INFO_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     *
+     * @return Whether the customGenAiModelInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomGenAiModelInfo() {
+      return modelInfoCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     *
+     * @return The customGenAiModelInfo.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+        getCustomGenAiModelInfo() {
+      if (modelInfoCase_ == 2) {
+        return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo)
+            modelInfo_;
+      }
+      return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+          .CustomGenAiModelInfo.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information for a custom Generative AI model created by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .CustomGenAiModelInfoOrBuilder
+        getCustomGenAiModelInfoOrBuilder() {
+      if (modelInfoCase_ == 2) {
+        return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .CustomGenAiModelInfo)
+            modelInfo_;
+      }
+      return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+          .CustomGenAiModelInfo.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (modelInfoCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo)
+                modelInfo_);
+      }
+      if (modelInfoCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo)
+                modelInfo_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modelInfoCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .FoundationGenAiModelInfo)
+                    modelInfo_);
+      }
+      if (modelInfoCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                        .CustomGenAiModelInfo)
+                    modelInfo_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo other =
+          (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo) obj;
+
+      if (!getModelInfoCase().equals(other.getModelInfoCase())) return false;
+      switch (modelInfoCase_) {
+        case 1:
+          if (!getFoundationGenAiModelInfo().equals(other.getFoundationGenAiModelInfo()))
+            return false;
+          break;
+        case 2:
+          if (!getCustomGenAiModelInfo().equals(other.getCustomGenAiModelInfo())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (modelInfoCase_) {
+        case 1:
+          hash = (37 * hash) + FOUNDATION_GEN_AI_MODEL_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getFoundationGenAiModelInfo().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + CUSTOM_GEN_AI_MODEL_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomGenAiModelInfo().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about Generative AI model-based processor versions.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.class,
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (foundationGenAiModelInfoBuilder_ != null) {
+          foundationGenAiModelInfoBuilder_.clear();
+        }
+        if (customGenAiModelInfoBuilder_ != null) {
+          customGenAiModelInfoBuilder_.clear();
+        }
+        modelInfoCase_ = 0;
+        modelInfo_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
+            .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_GenAiModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo build() {
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo buildPartial() {
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo result =
+            new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo result) {
+        result.modelInfoCase_ = modelInfoCase_;
+        result.modelInfo_ = this.modelInfo_;
+        if (modelInfoCase_ == 1 && foundationGenAiModelInfoBuilder_ != null) {
+          result.modelInfo_ = foundationGenAiModelInfoBuilder_.build();
+        }
+        if (modelInfoCase_ == 2 && customGenAiModelInfoBuilder_ != null) {
+          result.modelInfo_ = customGenAiModelInfoBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo) {
+          return mergeFrom(
+              (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo other) {
+        if (other
+            == com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .getDefaultInstance()) return this;
+        switch (other.getModelInfoCase()) {
+          case FOUNDATION_GEN_AI_MODEL_INFO:
+            {
+              mergeFoundationGenAiModelInfo(other.getFoundationGenAiModelInfo());
+              break;
+            }
+          case CUSTOM_GEN_AI_MODEL_INFO:
+            {
+              mergeCustomGenAiModelInfo(other.getCustomGenAiModelInfo());
+              break;
+            }
+          case MODELINFO_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getFoundationGenAiModelInfoFieldBuilder().getBuilder(), extensionRegistry);
+                  modelInfoCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getCustomGenAiModelInfoFieldBuilder().getBuilder(), extensionRegistry);
+                  modelInfoCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int modelInfoCase_ = 0;
+      private java.lang.Object modelInfo_;
+
+      public ModelInfoCase getModelInfoCase() {
+        return ModelInfoCase.forNumber(modelInfoCase_);
+      }
+
+      public Builder clearModelInfo() {
+        modelInfoCase_ = 0;
+        modelInfo_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo.Builder,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfoOrBuilder>
+          foundationGenAiModelInfoBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       *
+       * @return Whether the foundationGenAiModelInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasFoundationGenAiModelInfo() {
+        return modelInfoCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       *
+       * @return The foundationGenAiModelInfo.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo
+          getFoundationGenAiModelInfo() {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 1) {
+            return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo)
+                modelInfo_;
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo.getDefaultInstance();
+        } else {
+          if (modelInfoCase_ == 1) {
+            return foundationGenAiModelInfoBuilder_.getMessage();
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      public Builder setFoundationGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo
+              value) {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          modelInfo_ = value;
+          onChanged();
+        } else {
+          foundationGenAiModelInfoBuilder_.setMessage(value);
+        }
+        modelInfoCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      public Builder setFoundationGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo.Builder
+              builderForValue) {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          modelInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          foundationGenAiModelInfoBuilder_.setMessage(builderForValue.build());
+        }
+        modelInfoCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      public Builder mergeFoundationGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo
+              value) {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 1
+              && modelInfo_
+                  != com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo.getDefaultInstance()) {
+            modelInfo_ =
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo.newBuilder(
+                        (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                                .FoundationGenAiModelInfo)
+                            modelInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            modelInfo_ = value;
+          }
+          onChanged();
+        } else {
+          if (modelInfoCase_ == 1) {
+            foundationGenAiModelInfoBuilder_.mergeFrom(value);
+          } else {
+            foundationGenAiModelInfoBuilder_.setMessage(value);
+          }
+        }
+        modelInfoCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      public Builder clearFoundationGenAiModelInfo() {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 1) {
+            modelInfoCase_ = 0;
+            modelInfo_ = null;
+            onChanged();
+          }
+        } else {
+          if (modelInfoCase_ == 1) {
+            modelInfoCase_ = 0;
+            modelInfo_ = null;
+          }
+          foundationGenAiModelInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo.Builder
+          getFoundationGenAiModelInfoBuilder() {
+        return getFoundationGenAiModelInfoFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfoOrBuilder
+          getFoundationGenAiModelInfoOrBuilder() {
+        if ((modelInfoCase_ == 1) && (foundationGenAiModelInfoBuilder_ != null)) {
+          return foundationGenAiModelInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (modelInfoCase_ == 1) {
+            return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo)
+                modelInfo_;
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .FoundationGenAiModelInfo.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a pretrained Google-managed foundation model.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfo foundation_gen_ai_model_info = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfo.Builder,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .FoundationGenAiModelInfoOrBuilder>
+          getFoundationGenAiModelInfoFieldBuilder() {
+        if (foundationGenAiModelInfoBuilder_ == null) {
+          if (!(modelInfoCase_ == 1)) {
+            modelInfo_ =
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .FoundationGenAiModelInfo.getDefaultInstance();
+          }
+          foundationGenAiModelInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfo.Builder,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .FoundationGenAiModelInfoOrBuilder>(
+                  (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                          .FoundationGenAiModelInfo)
+                      modelInfo_,
+                  getParentForChildren(),
+                  isClean());
+          modelInfo_ = null;
+        }
+        modelInfoCase_ = 1;
+        onChanged();
+        return foundationGenAiModelInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo.Builder,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfoOrBuilder>
+          customGenAiModelInfoBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       *
+       * @return Whether the customGenAiModelInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomGenAiModelInfo() {
+        return modelInfoCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       *
+       * @return The customGenAiModelInfo.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo
+          getCustomGenAiModelInfo() {
+        if (customGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 2) {
+            return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo)
+                modelInfo_;
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.getDefaultInstance();
+        } else {
+          if (modelInfoCase_ == 2) {
+            return customGenAiModelInfoBuilder_.getMessage();
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      public Builder setCustomGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              value) {
+        if (customGenAiModelInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          modelInfo_ = value;
+          onChanged();
+        } else {
+          customGenAiModelInfoBuilder_.setMessage(value);
+        }
+        modelInfoCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      public Builder setCustomGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+                  .Builder
+              builderForValue) {
+        if (customGenAiModelInfoBuilder_ == null) {
+          modelInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          customGenAiModelInfoBuilder_.setMessage(builderForValue.build());
+        }
+        modelInfoCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      public Builder mergeCustomGenAiModelInfo(
+          com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo
+              value) {
+        if (customGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 2
+              && modelInfo_
+                  != com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo.getDefaultInstance()) {
+            modelInfo_ =
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo.newBuilder(
+                        (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                                .CustomGenAiModelInfo)
+                            modelInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            modelInfo_ = value;
+          }
+          onChanged();
+        } else {
+          if (modelInfoCase_ == 2) {
+            customGenAiModelInfoBuilder_.mergeFrom(value);
+          } else {
+            customGenAiModelInfoBuilder_.setMessage(value);
+          }
+        }
+        modelInfoCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      public Builder clearCustomGenAiModelInfo() {
+        if (customGenAiModelInfoBuilder_ == null) {
+          if (modelInfoCase_ == 2) {
+            modelInfoCase_ = 0;
+            modelInfo_ = null;
+            onChanged();
+          }
+        } else {
+          if (modelInfoCase_ == 2) {
+            modelInfoCase_ = 0;
+            modelInfo_ = null;
+          }
+          customGenAiModelInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.Builder
+          getCustomGenAiModelInfoBuilder() {
+        return getCustomGenAiModelInfoFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfoOrBuilder
+          getCustomGenAiModelInfoOrBuilder() {
+        if ((modelInfoCase_ == 2) && (customGenAiModelInfoBuilder_ != null)) {
+          return customGenAiModelInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (modelInfoCase_ == 2) {
+            return (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo)
+                modelInfo_;
+          }
+          return com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+              .CustomGenAiModelInfo.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information for a custom Generative AI model created by the user.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfo custom_gen_ai_model_info = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfo.Builder,
+              com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                  .CustomGenAiModelInfoOrBuilder>
+          getCustomGenAiModelInfoFieldBuilder() {
+        if (customGenAiModelInfoBuilder_ == null) {
+          if (!(modelInfoCase_ == 2)) {
+            modelInfo_ =
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .CustomGenAiModelInfo.getDefaultInstance();
+          }
+          customGenAiModelInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfo.Builder,
+                  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                      .CustomGenAiModelInfoOrBuilder>(
+                  (com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                          .CustomGenAiModelInfo)
+                      modelInfo_,
+                  getParentForChildren(),
+                  isClean());
+          modelInfo_ = null;
+        }
+        modelInfoCase_ = 2;
+        onChanged();
+        return customGenAiModelInfoBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo)
+    private static final com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo();
+    }
+
+    public static com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GenAiModelInfo> PARSER =
+        new com.google.protobuf.AbstractParser<GenAiModelInfo>() {
+          @java.lang.Override
+          public GenAiModelInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GenAiModelInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GenAiModelInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -2013,6 +5196,102 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 16;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 17;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
+  public static final int GEN_AI_MODEL_INFO_FIELD_NUMBER = 18;
+  private com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo genAiModelInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the genAiModelInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenAiModelInfo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The genAiModelInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo getGenAiModelInfo() {
+    return genAiModelInfo_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.getDefaultInstance()
+        : genAiModelInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder
+      getGenAiModelInfoOrBuilder() {
+    return genAiModelInfo_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.getDefaultInstance()
+        : genAiModelInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2064,6 +5343,15 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(15, modelType_);
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(16, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(17, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(18, getGenAiModelInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2110,6 +5398,15 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, modelType_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getGenAiModelInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2149,6 +5446,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (!getDeprecationInfo().equals(other.getDeprecationInfo())) return false;
     }
     if (modelType_ != other.modelType_) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (hasGenAiModelInfo() != other.hasGenAiModelInfo()) return false;
+    if (hasGenAiModelInfo()) {
+      if (!getGenAiModelInfo().equals(other.getGenAiModelInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2190,6 +5493,14 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + modelType_;
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    if (hasGenAiModelInfo()) {
+      hash = (37 * hash) + GEN_AI_MODEL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getGenAiModelInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2337,6 +5648,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         getCreateTimeFieldBuilder();
         getLatestEvaluationFieldBuilder();
         getDeprecationInfoFieldBuilder();
+        getGenAiModelInfoFieldBuilder();
       }
     }
 
@@ -2371,6 +5683,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         deprecationInfoBuilder_ = null;
       }
       modelType_ = 0;
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
+      genAiModelInfo_ = null;
+      if (genAiModelInfoBuilder_ != null) {
+        genAiModelInfoBuilder_.dispose();
+        genAiModelInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -2447,6 +5766,17 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.genAiModelInfo_ =
+            genAiModelInfoBuilder_ == null ? genAiModelInfo_ : genAiModelInfoBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2537,6 +5867,15 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (other.modelType_ != 0) {
         setModelTypeValue(other.getModelTypeValue());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.hasGenAiModelInfo()) {
+        mergeGenAiModelInfo(other.getGenAiModelInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2631,6 +5970,24 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 120
+            case 128:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 128
+            case 136:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(getGenAiModelInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4118,6 +7475,334 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       modelType_ = 0;
       onChanged();
       return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo genAiModelInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo,
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder>
+        genAiModelInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the genAiModelInfo field is set.
+     */
+    public boolean hasGenAiModelInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The genAiModelInfo.
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo getGenAiModelInfo() {
+      if (genAiModelInfoBuilder_ == null) {
+        return genAiModelInfo_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .getDefaultInstance()
+            : genAiModelInfo_;
+      } else {
+        return genAiModelInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGenAiModelInfo(
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo value) {
+      if (genAiModelInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        genAiModelInfo_ = value;
+      } else {
+        genAiModelInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGenAiModelInfo(
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder
+            builderForValue) {
+      if (genAiModelInfoBuilder_ == null) {
+        genAiModelInfo_ = builderForValue.build();
+      } else {
+        genAiModelInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGenAiModelInfo(
+        com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo value) {
+      if (genAiModelInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && genAiModelInfo_ != null
+            && genAiModelInfo_
+                != com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                    .getDefaultInstance()) {
+          getGenAiModelInfoBuilder().mergeFrom(value);
+        } else {
+          genAiModelInfo_ = value;
+        }
+      } else {
+        genAiModelInfoBuilder_.mergeFrom(value);
+      }
+      if (genAiModelInfo_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGenAiModelInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      genAiModelInfo_ = null;
+      if (genAiModelInfoBuilder_ != null) {
+        genAiModelInfoBuilder_.dispose();
+        genAiModelInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder
+        getGenAiModelInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getGenAiModelInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder
+        getGenAiModelInfoOrBuilder() {
+      if (genAiModelInfoBuilder_ != null) {
+        return genAiModelInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return genAiModelInfo_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo
+                .getDefaultInstance()
+            : genAiModelInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about Generative AI model-based processor
+     * versions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo,
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder>
+        getGenAiModelInfoFieldBuilder() {
+      if (genAiModelInfoBuilder_ == null) {
+        genAiModelInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo,
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.Builder,
+                com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder>(
+                getGenAiModelInfo(), getParentForChildren(), isClean());
+        genAiModelInfo_ = null;
+      }
+      return genAiModelInfoBuilder_;
     }
 
     @java.lang.Override

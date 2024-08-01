@@ -74,7 +74,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateDataset</td>
- *      <td><p> Updates metadata associated with a dataset.</td>
+ *      <td><p> Updates metadata associated with a dataset. Note that this method requires the `documentai.googleapis.com/datasets.update` permission on the project, which is highly privileged. A user or service account with this permission can create new processors that can interact with any gcs bucket in your project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -371,7 +371,10 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates metadata associated with a dataset.
+   * Updates metadata associated with a dataset. Note that this method requires the
+   * `documentai.googleapis.com/datasets.update` permission on the project, which is highly
+   * privileged. A user or service account with this permission can create new processors that can
+   * interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -402,7 +405,10 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates metadata associated with a dataset.
+   * Updates metadata associated with a dataset. Note that this method requires the
+   * `documentai.googleapis.com/datasets.update` permission on the project, which is highly
+   * privileged. A user or service account with this permission can create new processors that can
+   * interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -432,7 +438,10 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates metadata associated with a dataset.
+   * Updates metadata associated with a dataset. Note that this method requires the
+   * `documentai.googleapis.com/datasets.update` permission on the project, which is highly
+   * privileged. A user or service account with this permission can create new processors that can
+   * interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *
@@ -462,7 +471,10 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates metadata associated with a dataset.
+   * Updates metadata associated with a dataset. Note that this method requires the
+   * `documentai.googleapis.com/datasets.update` permission on the project, which is highly
+   * privileged. A user or service account with this permission can create new processors that can
+   * interact with any gcs bucket in your project.
    *
    * <p>Sample code:
    *

@@ -203,6 +203,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -257,6 +259,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -311,6 +315,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -374,6 +380,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -437,6 +445,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -459,6 +469,8 @@ public class ParallelstoreClientHttpJsonTest {
             .setNetwork("network1843485230")
             .setReservedIpRange("reservedIpRange575015950")
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+            .setFileStripeLevel(FileStripeLevel.forNumber(0))
+            .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -501,6 +513,8 @@ public class ParallelstoreClientHttpJsonTest {
               .setNetwork("network1843485230")
               .setReservedIpRange("reservedIpRange575015950")
               .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
+              .setFileStripeLevel(FileStripeLevel.forNumber(0))
+              .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();

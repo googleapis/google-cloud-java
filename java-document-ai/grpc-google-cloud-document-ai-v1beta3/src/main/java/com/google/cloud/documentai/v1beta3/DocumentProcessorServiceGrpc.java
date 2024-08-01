@@ -1444,6 +1444,10 @@ public final class DocumentProcessorServiceGrpc {
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
      * The processor will be at `ENABLED` state by default after its creation.
+     * Note that this method requires the `documentai.processors.create`
+     * permission on the project, which is highly privileged. A user or service
+     * account with this permission can create new processors that can interact
+     * with any gcs bucket in your project.
      * </pre>
      */
     default void createProcessor(
@@ -1861,6 +1865,10 @@ public final class DocumentProcessorServiceGrpc {
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
      * The processor will be at `ENABLED` state by default after its creation.
+     * Note that this method requires the `documentai.processors.create`
+     * permission on the project, which is highly privileged. A user or service
+     * account with this permission can create new processors that can interact
+     * with any gcs bucket in your project.
      * </pre>
      */
     public void createProcessor(
@@ -2232,6 +2240,10 @@ public final class DocumentProcessorServiceGrpc {
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
      * The processor will be at `ENABLED` state by default after its creation.
+     * Note that this method requires the `documentai.processors.create`
+     * permission on the project, which is highly privileged. A user or service
+     * account with this permission can create new processors that can interact
+     * with any gcs bucket in your project.
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.Processor createProcessor(
@@ -2586,6 +2598,10 @@ public final class DocumentProcessorServiceGrpc {
      * Creates a processor from the
      * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
      * The processor will be at `ENABLED` state by default after its creation.
+     * Note that this method requires the `documentai.processors.create`
+     * permission on the project, which is highly privileged. A user or service
+     * account with this permission can create new processors that can interact
+     * with any gcs bucket in your project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

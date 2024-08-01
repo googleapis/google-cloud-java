@@ -371,7 +371,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -392,7 +392,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
    * @return The document.
    */
   @java.lang.Override
@@ -668,6 +668,24 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int IMAGELESS_MODE_FIELD_NUMBER = 11;
+  private boolean imagelessMode_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to remove images from the document.
+   * </pre>
+   *
+   * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imagelessMode.
+   */
+  @java.lang.Override
+  public boolean getImagelessMode() {
+    return imagelessMode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -708,6 +726,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
+    if (imagelessMode_ != false) {
+      output.writeBool(11, imagelessMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -757,6 +778,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
     }
+    if (imagelessMode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, imagelessMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -788,6 +812,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getProcessOptions().equals(other.getProcessOptions())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getImagelessMode() != other.getImagelessMode()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 4:
@@ -833,6 +858,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + IMAGELESS_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImagelessMode());
     switch (sourceCase_) {
       case 4:
         hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
@@ -1050,6 +1077,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         processOptionsBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      imagelessMode_ = false;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1112,6 +1140,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.imagelessMode_ = imagelessMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1195,6 +1226,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000100;
+      if (other.getImagelessMode() != false) {
+        setImagelessMode(other.getImagelessMode());
+      }
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT:
           {
@@ -1302,6 +1336,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 88:
+              {
+                imagelessMode_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2142,7 +2182,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -2162,7 +2202,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=447
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
      * @return The document.
      */
     @java.lang.Deprecated
@@ -2995,6 +3035,59 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000100;
+      return this;
+    }
+
+    private boolean imagelessMode_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to remove images from the document.
+     * </pre>
+     *
+     * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The imagelessMode.
+     */
+    @java.lang.Override
+    public boolean getImagelessMode() {
+      return imagelessMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to remove images from the document.
+     * </pre>
+     *
+     * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The imagelessMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImagelessMode(boolean value) {
+
+      imagelessMode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to remove images from the document.
+     * </pre>
+     *
+     * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImagelessMode() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      imagelessMode_ = false;
+      onChanged();
       return this;
     }
 

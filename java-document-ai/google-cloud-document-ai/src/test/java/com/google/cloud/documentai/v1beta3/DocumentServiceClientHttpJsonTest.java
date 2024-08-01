@@ -90,6 +90,8 @@ public class DocumentServiceClientHttpJsonTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -102,6 +104,8 @@ public class DocumentServiceClientHttpJsonTest {
     Dataset dataset =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -134,6 +138,8 @@ public class DocumentServiceClientHttpJsonTest {
       Dataset dataset =
           Dataset.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDatasetAsync(dataset, updateMask).get();

@@ -48,6 +48,7 @@ public class SyncProcessDocument {
               .setFieldMask(FieldMask.newBuilder().build())
               .setProcessOptions(ProcessOptions.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setImagelessMode(true)
               .build();
       ProcessResponse response = documentProcessorServiceClient.processDocument(request);
     }

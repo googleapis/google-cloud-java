@@ -342,4 +342,75 @@ public interface ProcessorVersionOrBuilder
    * @return The modelType.
    */
   com.google.cloud.documentai.v1beta3.ProcessorVersion.ModelType getModelType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the genAiModelInfo field is set.
+   */
+  boolean hasGenAiModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The genAiModelInfo.
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo getGenAiModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder
+      getGenAiModelInfoOrBuilder();
 }

@@ -422,6 +422,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     default void updateDataset(
@@ -559,6 +564,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public void updateDataset(
@@ -695,6 +705,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public com.google.longrunning.Operation updateDataset(
@@ -806,6 +821,11 @@ public final class DocumentServiceGrpc {
      *
      * <pre>
      * Updates metadata associated with a dataset.
+     * Note that this method requires the
+     * `documentai.googleapis.com/datasets.update` permission on the project,
+     * which is highly privileged. A user or service account with this permission
+     * can create new processors that can interact with any gcs bucket in your
+     * project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

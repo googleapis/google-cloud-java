@@ -97,6 +97,8 @@ public class DocumentServiceClientTest {
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
