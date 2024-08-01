@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.132.0](https://github.com/googleapis/java-pubsub/compare/v1.131.0...v1.132.0) (2024-08-01)
+
+
+### Features
+
+* Enable hermetic library generation ([#2048](https://github.com/googleapis/java-pubsub/issues/2048)) ([283a5e8](https://github.com/googleapis/java-pubsub/commit/283a5e89837071678f8dd94b8b8adfad91a6766c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.41.0 ([#2093](https://github.com/googleapis/java-pubsub/issues/2093)) ([217b8a3](https://github.com/googleapis/java-pubsub/commit/217b8a3f5419f80402d349b8873d7302eeb35e3f))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.42.0 ([#2124](https://github.com/googleapis/java-pubsub/issues/2124)) ([24ebe24](https://github.com/googleapis/java-pubsub/commit/24ebe2402fe6278348d87b5a4259c365a819877f))
+* Update dependency com.google.cloud:google-cloud-core to v2.41.0 ([#2120](https://github.com/googleapis/java-pubsub/issues/2120)) ([1f6428a](https://github.com/googleapis/java-pubsub/commit/1f6428a8b79369a239664b9ea7cd38e024db9724))
+* Update dependency com.google.cloud:google-cloud-storage to v2.40.1 ([#2095](https://github.com/googleapis/java-pubsub/issues/2095)) ([0d64d6c](https://github.com/googleapis/java-pubsub/commit/0d64d6cf7799a176297ceaa1475b7cb29a64bebc))
+* Update dependency com.google.cloud:google-cloud-storage to v2.41.0 ([#2129](https://github.com/googleapis/java-pubsub/issues/2129)) ([2348d20](https://github.com/googleapis/java-pubsub/commit/2348d2022bc400b7f187d3db7f43aff94d8884a8))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.33.0 ([#2121](https://github.com/googleapis/java-pubsub/issues/2121)) ([7fbea6d](https://github.com/googleapis/java-pubsub/commit/7fbea6d0c922dd3485f19eafccc42869efd0e5ed))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.27.2 ([#2091](https://github.com/googleapis/java-pubsub/issues/2091)) ([9859f11](https://github.com/googleapis/java-pubsub/commit/9859f1181a12bc683eaf4a6345bf2528a5463c59))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.3 ([#2096](https://github.com/googleapis/java-pubsub/issues/2096)) ([42f12ed](https://github.com/googleapis/java-pubsub/commit/42f12ed3270e66beae316deb729b445c94dcb1a8))
+
+
+### Documentation
+
+* **samples:** Optimistic subscribe sample ([#2063](https://github.com/googleapis/java-pubsub/issues/2063)) ([53a4844](https://github.com/googleapis/java-pubsub/commit/53a4844f09eace777142b8cdcd06bc07cef0b432))
+
 ## [1.131.0](https://github.com/googleapis/java-pubsub/compare/v1.130.1...v1.131.0) (2024-06-25)
 
 
