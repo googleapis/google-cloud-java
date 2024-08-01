@@ -17,6 +17,7 @@ package com.google.cloud.bigquery.storage.v1beta2.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -93,6 +94,7 @@ public class EnhancedBigQueryReadStubSettings
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return BigQueryReadStubSettings.getDefaultEndpoint();
   }
