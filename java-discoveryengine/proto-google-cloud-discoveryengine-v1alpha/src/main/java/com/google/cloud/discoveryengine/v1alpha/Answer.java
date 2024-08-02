@@ -314,6 +314,33 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>POTENTIAL_POLICY_VIOLATION = 4;</code>
      */
     POTENTIAL_POLICY_VIOLATION(4),
+    /**
+     *
+     *
+     * <pre>
+     * The no relevant content case.
+     *
+     * Google skips the answer if there is no relevant content in the
+     * retrieved search results.
+     * </pre>
+     *
+     * <code>NO_RELEVANT_CONTENT = 5;</code>
+     */
+    NO_RELEVANT_CONTENT(5),
+    /**
+     *
+     *
+     * <pre>
+     * The jail-breaking query ignored case.
+     *
+     * For example, "Reply in the tone of a competing company's CEO".
+     * Google skips the answer if the query is classified as a jail-breaking
+     * query.
+     * </pre>
+     *
+     * <code>JAIL_BREAKING_QUERY_IGNORED = 6;</code>
+     */
+    JAIL_BREAKING_QUERY_IGNORED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -372,6 +399,33 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>POTENTIAL_POLICY_VIOLATION = 4;</code>
      */
     public static final int POTENTIAL_POLICY_VIOLATION_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The no relevant content case.
+     *
+     * Google skips the answer if there is no relevant content in the
+     * retrieved search results.
+     * </pre>
+     *
+     * <code>NO_RELEVANT_CONTENT = 5;</code>
+     */
+    public static final int NO_RELEVANT_CONTENT_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The jail-breaking query ignored case.
+     *
+     * For example, "Reply in the tone of a competing company's CEO".
+     * Google skips the answer if the query is classified as a jail-breaking
+     * query.
+     * </pre>
+     *
+     * <code>JAIL_BREAKING_QUERY_IGNORED = 6;</code>
+     */
+    public static final int JAIL_BREAKING_QUERY_IGNORED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -407,6 +461,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return OUT_OF_DOMAIN_QUERY_IGNORED;
         case 4:
           return POTENTIAL_POLICY_VIOLATION;
+        case 5:
+          return NO_RELEVANT_CONTENT;
+        case 6:
+          return JAIL_BREAKING_QUERY_IGNORED;
         default:
           return null;
       }
@@ -2448,6 +2506,49 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1alpha.Answer.Reference.ChunkInfoOrBuilder
         getChunkInfoOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     *
+     * @return Whether the structuredDocumentInfo field is set.
+     */
+    boolean hasStructuredDocumentInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     *
+     * @return The structuredDocumentInfo.
+     */
+    com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+        getStructuredDocumentInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfoOrBuilder
+        getStructuredDocumentInfoOrBuilder();
+
     com.google.cloud.discoveryengine.v1alpha.Answer.Reference.ContentCase getContentCase();
   }
   /**
@@ -2787,6 +2888,39 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes for pageIdentifier.
          */
         com.google.protobuf.ByteString getPageIdentifierBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 3;</code>
+         *
+         * @return Whether the relevanceScore field is set.
+         */
+        boolean hasRelevanceScore();
+        /**
+         *
+         *
+         * <pre>
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 3;</code>
+         *
+         * @return The relevanceScore.
+         */
+        float getRelevanceScore();
       }
       /**
        *
@@ -2836,6 +2970,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                       .ChunkContent.Builder.class);
         }
 
+        private int bitField0_;
         public static final int CONTENT_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -2938,6 +3073,47 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           }
         }
 
+        public static final int RELEVANCE_SCORE_FIELD_NUMBER = 3;
+        private float relevanceScore_ = 0F;
+        /**
+         *
+         *
+         * <pre>
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 3;</code>
+         *
+         * @return Whether the relevanceScore field is set.
+         */
+        @java.lang.Override
+        public boolean hasRelevanceScore() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 3;</code>
+         *
+         * @return The relevanceScore.
+         */
+        @java.lang.Override
+        public float getRelevanceScore() {
+          return relevanceScore_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -2959,6 +3135,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageIdentifier_);
           }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeFloat(3, relevanceScore_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -2973,6 +3152,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           }
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageIdentifier_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, relevanceScore_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -2999,6 +3181,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
           if (!getContent().equals(other.getContent())) return false;
           if (!getPageIdentifier().equals(other.getPageIdentifier())) return false;
+          if (hasRelevanceScore() != other.hasRelevanceScore()) return false;
+          if (hasRelevanceScore()) {
+            if (java.lang.Float.floatToIntBits(getRelevanceScore())
+                != java.lang.Float.floatToIntBits(other.getRelevanceScore())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -3014,6 +3201,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           hash = (53 * hash) + getContent().hashCode();
           hash = (37 * hash) + PAGE_IDENTIFIER_FIELD_NUMBER;
           hash = (53 * hash) + getPageIdentifier().hashCode();
+          if (hasRelevanceScore()) {
+            hash = (37 * hash) + RELEVANCE_SCORE_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(getRelevanceScore());
+          }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -3187,6 +3378,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = 0;
             content_ = "";
             pageIdentifier_ = "";
+            relevanceScore_ = 0F;
             return this;
           }
 
@@ -3244,6 +3436,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.pageIdentifier_ = pageIdentifier_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.relevanceScore_ = relevanceScore_;
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -3314,6 +3512,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000002;
               onChanged();
             }
+            if (other.hasRelevanceScore()) {
+              setRelevanceScore(other.getRelevanceScore());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -3352,6 +3553,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                       bitField0_ |= 0x00000002;
                       break;
                     } // case 18
+                  case 29:
+                    {
+                      relevanceScore_ = input.readFloat();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 29
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3579,6 +3786,90 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             pageIdentifier_ = value;
             bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private float relevanceScore_;
+          /**
+           *
+           *
+           * <pre>
+           * The relevance of the chunk for a given query. Values range from 0.0
+           * (completely irrelevant) to 1.0 (completely relevant).
+           * This value is for informational purpose only. It may change for
+           * the same query and chunk at any time due to a model retraining or
+           * change in implementation.
+           * </pre>
+           *
+           * <code>optional float relevance_score = 3;</code>
+           *
+           * @return Whether the relevanceScore field is set.
+           */
+          @java.lang.Override
+          public boolean hasRelevanceScore() {
+            return ((bitField0_ & 0x00000004) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The relevance of the chunk for a given query. Values range from 0.0
+           * (completely irrelevant) to 1.0 (completely relevant).
+           * This value is for informational purpose only. It may change for
+           * the same query and chunk at any time due to a model retraining or
+           * change in implementation.
+           * </pre>
+           *
+           * <code>optional float relevance_score = 3;</code>
+           *
+           * @return The relevanceScore.
+           */
+          @java.lang.Override
+          public float getRelevanceScore() {
+            return relevanceScore_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The relevance of the chunk for a given query. Values range from 0.0
+           * (completely irrelevant) to 1.0 (completely relevant).
+           * This value is for informational purpose only. It may change for
+           * the same query and chunk at any time due to a model retraining or
+           * change in implementation.
+           * </pre>
+           *
+           * <code>optional float relevance_score = 3;</code>
+           *
+           * @param value The relevanceScore to set.
+           * @return This builder for chaining.
+           */
+          public Builder setRelevanceScore(float value) {
+
+            relevanceScore_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The relevance of the chunk for a given query. Values range from 0.0
+           * (completely irrelevant) to 1.0 (completely relevant).
+           * This value is for informational purpose only. It may change for
+           * the same query and chunk at any time due to a model retraining or
+           * change in implementation.
+           * </pre>
+           *
+           * <code>optional float relevance_score = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearRelevanceScore() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            relevanceScore_ = 0F;
             onChanged();
             return this;
           }
@@ -5606,7 +5897,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Relevance score.
+       * The relevance of the chunk for a given query. Values range from 0.0
+       * (completely irrelevant) to 1.0 (completely relevant).
+       * This value is for informational purpose only. It may change for
+       * the same query and chunk at any time due to a model retraining or
+       * change in implementation.
        * </pre>
        *
        * <code>optional float relevance_score = 3;</code>
@@ -5618,7 +5913,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Relevance score.
+       * The relevance of the chunk for a given query. Values range from 0.0
+       * (completely irrelevant) to 1.0 (completely relevant).
+       * This value is for informational purpose only. It may change for
+       * the same query and chunk at any time due to a model retraining or
+       * change in implementation.
        * </pre>
        *
        * <code>optional float relevance_score = 3;</code>
@@ -7484,7 +7783,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Relevance score.
+       * The relevance of the chunk for a given query. Values range from 0.0
+       * (completely irrelevant) to 1.0 (completely relevant).
+       * This value is for informational purpose only. It may change for
+       * the same query and chunk at any time due to a model retraining or
+       * change in implementation.
        * </pre>
        *
        * <code>optional float relevance_score = 3;</code>
@@ -7499,7 +7802,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Relevance score.
+       * The relevance of the chunk for a given query. Values range from 0.0
+       * (completely irrelevant) to 1.0 (completely relevant).
+       * This value is for informational purpose only. It may change for
+       * the same query and chunk at any time due to a model retraining or
+       * change in implementation.
        * </pre>
        *
        * <code>optional float relevance_score = 3;</code>
@@ -8250,7 +8557,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Relevance score.
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
          * </pre>
          *
          * <code>optional float relevance_score = 3;</code>
@@ -8265,7 +8576,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Relevance score.
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
          * </pre>
          *
          * <code>optional float relevance_score = 3;</code>
@@ -8280,7 +8595,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Relevance score.
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
          * </pre>
          *
          * <code>optional float relevance_score = 3;</code>
@@ -8299,7 +8618,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Relevance score.
+         * The relevance of the chunk for a given query. Values range from 0.0
+         * (completely irrelevant) to 1.0 (completely relevant).
+         * This value is for informational purpose only. It may change for
+         * the same query and chunk at any time due to a model retraining or
+         * change in implementation.
          * </pre>
          *
          * <code>optional float relevance_score = 3;</code>
@@ -8610,6 +8933,998 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface StructuredDocumentInfoOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Document resource name.
+       * </pre>
+       *
+       * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The document.
+       */
+      java.lang.String getDocument();
+      /**
+       *
+       *
+       * <pre>
+       * Document resource name.
+       * </pre>
+       *
+       * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for document.
+       */
+      com.google.protobuf.ByteString getDocumentBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       *
+       * @return Whether the structData field is set.
+       */
+      boolean hasStructData();
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       *
+       * @return The structData.
+       */
+      com.google.protobuf.Struct getStructData();
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       */
+      com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Structured search information.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo}
+     */
+    public static final class StructuredDocumentInfo extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+        StructuredDocumentInfoOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use StructuredDocumentInfo.newBuilder() to construct.
+      private StructuredDocumentInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private StructuredDocumentInfo() {
+        document_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new StructuredDocumentInfo();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1alpha.AnswerProto
+            .internal_static_google_cloud_discoveryengine_v1alpha_Answer_Reference_StructuredDocumentInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1alpha.AnswerProto
+            .internal_static_google_cloud_discoveryengine_v1alpha_Answer_Reference_StructuredDocumentInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                    .class,
+                com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                    .Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int DOCUMENT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object document_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Document resource name.
+       * </pre>
+       *
+       * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The document.
+       */
+      @java.lang.Override
+      public java.lang.String getDocument() {
+        java.lang.Object ref = document_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          document_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Document resource name.
+       * </pre>
+       *
+       * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for document.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDocumentBytes() {
+        java.lang.Object ref = document_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          document_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int STRUCT_DATA_FIELD_NUMBER = 2;
+      private com.google.protobuf.Struct structData_;
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       *
+       * @return Whether the structData field is set.
+       */
+      @java.lang.Override
+      public boolean hasStructData() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       *
+       * @return The structData.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Struct getStructData() {
+        return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured search data.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+        return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(document_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, document_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getStructData());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(document_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, document_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStructData());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo other =
+            (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo) obj;
+
+        if (!getDocument().equals(other.getDocument())) return false;
+        if (hasStructData() != other.hasStructData()) return false;
+        if (hasStructData()) {
+          if (!getStructData().equals(other.getStructData())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getDocument().hashCode();
+        if (hasStructData()) {
+          hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getStructData().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured search information.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+              .StructuredDocumentInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1alpha.AnswerProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_Answer_Reference_StructuredDocumentInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1alpha.AnswerProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_Answer_Reference_StructuredDocumentInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                      .class,
+                  com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getStructDataFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          document_ = "";
+          structData_ = null;
+          if (structDataBuilder_ != null) {
+            structDataBuilder_.dispose();
+            structDataBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1alpha.AnswerProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_Answer_Reference_StructuredDocumentInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+            build() {
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo result =
+              new com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.document_ = document_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.structData_ =
+                structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                  .getDefaultInstance()) return this;
+          if (!other.getDocument().isEmpty()) {
+            document_ = other.document_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasStructData()) {
+            mergeStructData(other.getStructData());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    document_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object document_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Document resource name.
+         * </pre>
+         *
+         * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The document.
+         */
+        public java.lang.String getDocument() {
+          java.lang.Object ref = document_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            document_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Document resource name.
+         * </pre>
+         *
+         * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The bytes for document.
+         */
+        public com.google.protobuf.ByteString getDocumentBytes() {
+          java.lang.Object ref = document_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            document_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Document resource name.
+         * </pre>
+         *
+         * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The document to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDocument(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          document_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Document resource name.
+         * </pre>
+         *
+         * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDocument() {
+          document_ = getDefaultInstance().getDocument();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Document resource name.
+         * </pre>
+         *
+         * <code>string document = 1 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes for document to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDocumentBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          document_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Struct structData_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            structDataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         *
+         * @return Whether the structData field is set.
+         */
+        public boolean hasStructData() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         *
+         * @return The structData.
+         */
+        public com.google.protobuf.Struct getStructData() {
+          if (structDataBuilder_ == null) {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          } else {
+            return structDataBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public Builder setStructData(com.google.protobuf.Struct value) {
+          if (structDataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            structData_ = value;
+          } else {
+            structDataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public Builder setStructData(com.google.protobuf.Struct.Builder builderForValue) {
+          if (structDataBuilder_ == null) {
+            structData_ = builderForValue.build();
+          } else {
+            structDataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public Builder mergeStructData(com.google.protobuf.Struct value) {
+          if (structDataBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && structData_ != null
+                && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+              getStructDataBuilder().mergeFrom(value);
+            } else {
+              structData_ = value;
+            }
+          } else {
+            structDataBuilder_.mergeFrom(value);
+          }
+          if (structData_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public Builder clearStructData() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          structData_ = null;
+          if (structDataBuilder_ != null) {
+            structDataBuilder_.dispose();
+            structDataBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public com.google.protobuf.Struct.Builder getStructDataBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getStructDataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+          if (structDataBuilder_ != null) {
+            return structDataBuilder_.getMessageOrBuilder();
+          } else {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Structured search data.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            getStructDataFieldBuilder() {
+          if (structDataBuilder_ == null) {
+            structDataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Struct,
+                    com.google.protobuf.Struct.Builder,
+                    com.google.protobuf.StructOrBuilder>(
+                    getStructData(), getParentForChildren(), isClean());
+            structData_ = null;
+          }
+          return structDataBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+      private static final com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+              .StructuredDocumentInfo
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo();
+      }
+
+      public static com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<StructuredDocumentInfo> PARSER =
+          new com.google.protobuf.AbstractParser<StructuredDocumentInfo>() {
+            @java.lang.Override
+            public StructuredDocumentInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<StructuredDocumentInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<StructuredDocumentInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int contentCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -8621,6 +9936,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       UNSTRUCTURED_DOCUMENT_INFO(1),
       CHUNK_INFO(2),
+      STRUCTURED_DOCUMENT_INFO(3),
       CONTENT_NOT_SET(0);
       private final int value;
 
@@ -8643,6 +9959,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             return UNSTRUCTURED_DOCUMENT_INFO;
           case 2:
             return CHUNK_INFO;
+          case 3:
+            return STRUCTURED_DOCUMENT_INFO;
           case 0:
             return CONTENT_NOT_SET;
           default:
@@ -8777,6 +10095,69 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int STRUCTURED_DOCUMENT_INFO_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     *
+     * @return Whether the structuredDocumentInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructuredDocumentInfo() {
+      return contentCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     *
+     * @return The structuredDocumentInfo.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+        getStructuredDocumentInfo() {
+      if (contentCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+            content_;
+      }
+      return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Structured document information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfoOrBuilder
+        getStructuredDocumentInfoOrBuilder() {
+      if (contentCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+            content_;
+      }
+      return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8801,6 +10182,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             2, (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.ChunkInfo) content_);
       }
+      if (contentCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+                content_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8821,6 +10208,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.ChunkInfo) content_);
+      }
+      if (contentCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+                    content_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8847,6 +10241,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         case 2:
           if (!getChunkInfo().equals(other.getChunkInfo())) return false;
           break;
+        case 3:
+          if (!getStructuredDocumentInfo().equals(other.getStructuredDocumentInfo())) return false;
+          break;
         case 0:
         default:
       }
@@ -8869,6 +10266,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + CHUNK_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getChunkInfo().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + STRUCTURED_DOCUMENT_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getStructuredDocumentInfo().hashCode();
           break;
         case 0:
         default:
@@ -9021,6 +10422,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (chunkInfoBuilder_ != null) {
           chunkInfoBuilder_.clear();
         }
+        if (structuredDocumentInfoBuilder_ != null) {
+          structuredDocumentInfoBuilder_.clear();
+        }
         contentCase_ = 0;
         content_ = null;
         return this;
@@ -9071,6 +10475,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         }
         if (contentCase_ == 2 && chunkInfoBuilder_ != null) {
           result.content_ = chunkInfoBuilder_.build();
+        }
+        if (contentCase_ == 3 && structuredDocumentInfoBuilder_ != null) {
+          result.content_ = structuredDocumentInfoBuilder_.build();
         }
       }
 
@@ -9133,6 +10540,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               mergeChunkInfo(other.getChunkInfo());
               break;
             }
+          case STRUCTURED_DOCUMENT_INFO:
+            {
+              mergeStructuredDocumentInfo(other.getStructuredDocumentInfo());
+              break;
+            }
           case CONTENT_NOT_SET:
             {
               break;
@@ -9177,6 +10589,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                   contentCase_ = 2;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStructuredDocumentInfoFieldBuilder().getBuilder(), extensionRegistry);
+                  contentCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9699,6 +11118,262 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         contentCase_ = 2;
         onChanged();
         return chunkInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo,
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                  .Builder,
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                  .StructuredDocumentInfoOrBuilder>
+          structuredDocumentInfoBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       *
+       * @return Whether the structuredDocumentInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasStructuredDocumentInfo() {
+        return contentCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       *
+       * @return The structuredDocumentInfo.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+          getStructuredDocumentInfo() {
+        if (structuredDocumentInfoBuilder_ == null) {
+          if (contentCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                    .StructuredDocumentInfo)
+                content_;
+          }
+          return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              .getDefaultInstance();
+        } else {
+          if (contentCase_ == 3) {
+            return structuredDocumentInfoBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      public Builder setStructuredDocumentInfo(
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo value) {
+        if (structuredDocumentInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          onChanged();
+        } else {
+          structuredDocumentInfoBuilder_.setMessage(value);
+        }
+        contentCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      public Builder setStructuredDocumentInfo(
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo.Builder
+              builderForValue) {
+        if (structuredDocumentInfoBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          structuredDocumentInfoBuilder_.setMessage(builderForValue.build());
+        }
+        contentCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      public Builder mergeStructuredDocumentInfo(
+          com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo value) {
+        if (structuredDocumentInfoBuilder_ == null) {
+          if (contentCase_ == 3
+              && content_
+                  != com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                      .StructuredDocumentInfo.getDefaultInstance()) {
+            content_ =
+                com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                    .newBuilder(
+                        (com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                                .StructuredDocumentInfo)
+                            content_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          if (contentCase_ == 3) {
+            structuredDocumentInfoBuilder_.mergeFrom(value);
+          } else {
+            structuredDocumentInfoBuilder_.setMessage(value);
+          }
+        }
+        contentCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      public Builder clearStructuredDocumentInfo() {
+        if (structuredDocumentInfoBuilder_ == null) {
+          if (contentCase_ == 3) {
+            contentCase_ = 0;
+            content_ = null;
+            onChanged();
+          }
+        } else {
+          if (contentCase_ == 3) {
+            contentCase_ = 0;
+            content_ = null;
+          }
+          structuredDocumentInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              .Builder
+          getStructuredDocumentInfoBuilder() {
+        return getStructuredDocumentInfoFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+              .StructuredDocumentInfoOrBuilder
+          getStructuredDocumentInfoOrBuilder() {
+        if ((contentCase_ == 3) && (structuredDocumentInfoBuilder_ != null)) {
+          return structuredDocumentInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (contentCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                    .StructuredDocumentInfo)
+                content_;
+          }
+          return com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Structured document information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo structured_document_info = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo,
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                  .Builder,
+              com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                  .StructuredDocumentInfoOrBuilder>
+          getStructuredDocumentInfoFieldBuilder() {
+        if (structuredDocumentInfoBuilder_ == null) {
+          if (!(contentCase_ == 3)) {
+            content_ =
+                com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                    .getDefaultInstance();
+          }
+          structuredDocumentInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo,
+                  com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1alpha.Answer.Reference
+                      .StructuredDocumentInfoOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1alpha.Answer.Reference.StructuredDocumentInfo)
+                      content_,
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        contentCase_ = 3;
+        onChanged();
+        return structuredDocumentInfoBuilder_;
       }
 
       @java.lang.Override
@@ -11289,6 +12964,56 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.discoveryengine.v1alpha.Answer.Step.Action.Observation.SearchResult
                   .ChunkInfoOrBuilder
               getChunkInfoOrBuilder(int index);
+
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           *
+           * @return Whether the structData field is set.
+           */
+          boolean hasStructData();
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           *
+           * @return The structData.
+           */
+          com.google.protobuf.Struct getStructData();
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           */
+          com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
         }
         /**
          * Protobuf type {@code
@@ -12316,7 +14041,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              *
              *
              * <pre>
-             * Relevance score.
+             * The relevance of the chunk for a given query. Values range from
+             * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+             * This value is for informational purpose only. It may change for
+             * the same query and chunk at any time due to a model retraining or
+             * change in implementation.
              * </pre>
              *
              * <code>optional float relevance_score = 3;</code>
@@ -12328,7 +14057,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              *
              *
              * <pre>
-             * Relevance score.
+             * The relevance of the chunk for a given query. Values range from
+             * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+             * This value is for informational purpose only. It may change for
+             * the same query and chunk at any time due to a model retraining or
+             * change in implementation.
              * </pre>
              *
              * <code>optional float relevance_score = 3;</code>
@@ -12494,7 +14227,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              *
              *
              * <pre>
-             * Relevance score.
+             * The relevance of the chunk for a given query. Values range from
+             * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+             * This value is for informational purpose only. It may change for
+             * the same query and chunk at any time due to a model retraining or
+             * change in implementation.
              * </pre>
              *
              * <code>optional float relevance_score = 3;</code>
@@ -12509,7 +14246,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              *
              *
              * <pre>
-             * Relevance score.
+             * The relevance of the chunk for a given query. Values range from
+             * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+             * This value is for informational purpose only. It may change for
+             * the same query and chunk at any time due to a model retraining or
+             * change in implementation.
              * </pre>
              *
              * <code>optional float relevance_score = 3;</code>
@@ -13202,7 +14943,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                *
                *
                * <pre>
-               * Relevance score.
+               * The relevance of the chunk for a given query. Values range from
+               * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+               * This value is for informational purpose only. It may change for
+               * the same query and chunk at any time due to a model retraining or
+               * change in implementation.
                * </pre>
                *
                * <code>optional float relevance_score = 3;</code>
@@ -13217,7 +14962,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                *
                *
                * <pre>
-               * Relevance score.
+               * The relevance of the chunk for a given query. Values range from
+               * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+               * This value is for informational purpose only. It may change for
+               * the same query and chunk at any time due to a model retraining or
+               * change in implementation.
                * </pre>
                *
                * <code>optional float relevance_score = 3;</code>
@@ -13232,7 +14981,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                *
                *
                * <pre>
-               * Relevance score.
+               * The relevance of the chunk for a given query. Values range from
+               * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+               * This value is for informational purpose only. It may change for
+               * the same query and chunk at any time due to a model retraining or
+               * change in implementation.
                * </pre>
                *
                * <code>optional float relevance_score = 3;</code>
@@ -13251,7 +15004,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                *
                *
                * <pre>
-               * Relevance score.
+               * The relevance of the chunk for a given query. Values range from
+               * 0.0 (completely irrelevant) to 1.0 (completely relevant).
+               * This value is for informational purpose only. It may change for
+               * the same query and chunk at any time due to a model retraining or
+               * change in implementation.
                * </pre>
                *
                * <code>optional float relevance_score = 3;</code>
@@ -13337,6 +15094,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             }
           }
 
+          private int bitField0_;
           public static final int DOCUMENT_FIELD_NUMBER = 1;
 
           @SuppressWarnings("serial")
@@ -13688,6 +15446,71 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             return chunkInfo_.get(index);
           }
 
+          public static final int STRUCT_DATA_FIELD_NUMBER = 6;
+          private com.google.protobuf.Struct structData_;
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           *
+           * @return Whether the structData field is set.
+           */
+          @java.lang.Override
+          public boolean hasStructData() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           *
+           * @return The structData.
+           */
+          @java.lang.Override
+          public com.google.protobuf.Struct getStructData() {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Data representation.
+           * The structured JSON data for the document.
+           * It's populated from the struct data from the Document
+           * , or the Chunk in
+           * search result
+           * .
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 6;</code>
+           */
+          @java.lang.Override
+          public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          }
+
           private byte memoizedIsInitialized = -1;
 
           @java.lang.Override
@@ -13718,6 +15541,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             for (int i = 0; i < chunkInfo_.size(); i++) {
               output.writeMessage(5, chunkInfo_.get(i));
             }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              output.writeMessage(6, getStructData());
+            }
             getUnknownFields().writeTo(output);
           }
 
@@ -13743,6 +15569,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             for (int i = 0; i < chunkInfo_.size(); i++) {
               size +=
                   com.google.protobuf.CodedOutputStream.computeMessageSize(5, chunkInfo_.get(i));
+            }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStructData());
             }
             size += getUnknownFields().getSerializedSize();
             memoizedSize = size;
@@ -13771,6 +15600,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             if (!getTitle().equals(other.getTitle())) return false;
             if (!getSnippetInfoList().equals(other.getSnippetInfoList())) return false;
             if (!getChunkInfoList().equals(other.getChunkInfoList())) return false;
+            if (hasStructData() != other.hasStructData()) return false;
+            if (hasStructData()) {
+              if (!getStructData().equals(other.getStructData())) return false;
+            }
             if (!getUnknownFields().equals(other.getUnknownFields())) return false;
             return true;
           }
@@ -13795,6 +15628,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             if (getChunkInfoCount() > 0) {
               hash = (37 * hash) + CHUNK_INFO_FIELD_NUMBER;
               hash = (53 * hash) + getChunkInfoList().hashCode();
+            }
+            if (hasStructData()) {
+              hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
+              hash = (53 * hash) + getStructData().hashCode();
             }
             hash = (29 * hash) + getUnknownFields().hashCode();
             memoizedHashCode = hash;
@@ -13950,10 +15787,21 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
             // Construct using
             // com.google.cloud.discoveryengine.v1alpha.Answer.Step.Action.Observation.SearchResult.newBuilder()
-            private Builder() {}
+            private Builder() {
+              maybeForceBuilderInitialization();
+            }
 
             private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
               super(parent);
+              maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+              if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                getSnippetInfoFieldBuilder();
+                getChunkInfoFieldBuilder();
+                getStructDataFieldBuilder();
+              }
             }
 
             @java.lang.Override
@@ -13977,6 +15825,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 chunkInfoBuilder_.clear();
               }
               bitField0_ = (bitField0_ & ~0x00000010);
+              structData_ = null;
+              if (structDataBuilder_ != null) {
+                structDataBuilder_.dispose();
+                structDataBuilder_ = null;
+              }
               return this;
             }
 
@@ -14058,6 +15911,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               if (((from_bitField0_ & 0x00000004) != 0)) {
                 result.title_ = title_;
               }
+              int to_bitField0_ = 0;
+              if (((from_bitField0_ & 0x00000020) != 0)) {
+                result.structData_ =
+                    structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
+                to_bitField0_ |= 0x00000001;
+              }
+              result.bitField0_ |= to_bitField0_;
             }
 
             @java.lang.Override
@@ -14186,6 +16046,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                   }
                 }
               }
+              if (other.hasStructData()) {
+                mergeStructData(other.getStructData());
+              }
               this.mergeUnknownFields(other.getUnknownFields());
               onChanged();
               return this;
@@ -14264,6 +16127,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                         }
                         break;
                       } // case 42
+                    case 50:
+                      {
+                        input.readMessage(
+                            getStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                        bitField0_ |= 0x00000020;
+                        break;
+                      } // case 50
                     default:
                       {
                         if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15533,6 +17403,236 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 chunkInfo_ = null;
               }
               return chunkInfoBuilder_;
+            }
+
+            private com.google.protobuf.Struct structData_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Struct,
+                    com.google.protobuf.Struct.Builder,
+                    com.google.protobuf.StructOrBuilder>
+                structDataBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             *
+             * @return Whether the structData field is set.
+             */
+            public boolean hasStructData() {
+              return ((bitField0_ & 0x00000020) != 0);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             *
+             * @return The structData.
+             */
+            public com.google.protobuf.Struct getStructData() {
+              if (structDataBuilder_ == null) {
+                return structData_ == null
+                    ? com.google.protobuf.Struct.getDefaultInstance()
+                    : structData_;
+              } else {
+                return structDataBuilder_.getMessage();
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public Builder setStructData(com.google.protobuf.Struct value) {
+              if (structDataBuilder_ == null) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                structData_ = value;
+              } else {
+                structDataBuilder_.setMessage(value);
+              }
+              bitField0_ |= 0x00000020;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public Builder setStructData(com.google.protobuf.Struct.Builder builderForValue) {
+              if (structDataBuilder_ == null) {
+                structData_ = builderForValue.build();
+              } else {
+                structDataBuilder_.setMessage(builderForValue.build());
+              }
+              bitField0_ |= 0x00000020;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public Builder mergeStructData(com.google.protobuf.Struct value) {
+              if (structDataBuilder_ == null) {
+                if (((bitField0_ & 0x00000020) != 0)
+                    && structData_ != null
+                    && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+                  getStructDataBuilder().mergeFrom(value);
+                } else {
+                  structData_ = value;
+                }
+              } else {
+                structDataBuilder_.mergeFrom(value);
+              }
+              if (structData_ != null) {
+                bitField0_ |= 0x00000020;
+                onChanged();
+              }
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public Builder clearStructData() {
+              bitField0_ = (bitField0_ & ~0x00000020);
+              structData_ = null;
+              if (structDataBuilder_ != null) {
+                structDataBuilder_.dispose();
+                structDataBuilder_ = null;
+              }
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public com.google.protobuf.Struct.Builder getStructDataBuilder() {
+              bitField0_ |= 0x00000020;
+              onChanged();
+              return getStructDataFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+              if (structDataBuilder_ != null) {
+                return structDataBuilder_.getMessageOrBuilder();
+              } else {
+                return structData_ == null
+                    ? com.google.protobuf.Struct.getDefaultInstance()
+                    : structData_;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Data representation.
+             * The structured JSON data for the document.
+             * It's populated from the struct data from the Document
+             * , or the Chunk in
+             * search result
+             * .
+             * </pre>
+             *
+             * <code>.google.protobuf.Struct struct_data = 6;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Struct,
+                    com.google.protobuf.Struct.Builder,
+                    com.google.protobuf.StructOrBuilder>
+                getStructDataFieldBuilder() {
+              if (structDataBuilder_ == null) {
+                structDataBuilder_ =
+                    new com.google.protobuf.SingleFieldBuilderV3<
+                        com.google.protobuf.Struct,
+                        com.google.protobuf.Struct.Builder,
+                        com.google.protobuf.StructOrBuilder>(
+                        getStructData(), getParentForChildren(), isClean());
+                structData_ = null;
+              }
+              return structDataBuilder_;
             }
 
             @java.lang.Override
@@ -19475,6 +21575,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
          */
         NON_ANSWER_SEEKING_QUERY(2),
+        /**
+         *
+         *
+         * <pre>
+         * Jail-breaking query classification type.
+         * </pre>
+         *
+         * <code>JAIL_BREAKING_QUERY = 3;</code>
+         */
+        JAIL_BREAKING_QUERY(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -19508,6 +21618,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
          */
         public static final int NON_ANSWER_SEEKING_QUERY_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Jail-breaking query classification type.
+         * </pre>
+         *
+         * <code>JAIL_BREAKING_QUERY = 3;</code>
+         */
+        public static final int JAIL_BREAKING_QUERY_VALUE = 3;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -19539,6 +21659,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               return ADVERSARIAL_QUERY;
             case 2:
               return NON_ANSWER_SEEKING_QUERY;
+            case 3:
+              return JAIL_BREAKING_QUERY;
             default:
               return null;
           }

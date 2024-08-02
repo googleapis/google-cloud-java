@@ -29,9 +29,9 @@ public interface ListBigQueryExportsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns the collection of BigQuery exports. Its
-   * format is "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]", or
-   * "projects/[project_id]/locations/[location_id]".
+   * format is `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`, or
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>
@@ -46,9 +46,9 @@ public interface ListBigQueryExportsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns the collection of BigQuery exports. Its
-   * format is "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]", or
-   * "projects/[project_id]/locations/[location_id]".
+   * format is `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`, or
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>

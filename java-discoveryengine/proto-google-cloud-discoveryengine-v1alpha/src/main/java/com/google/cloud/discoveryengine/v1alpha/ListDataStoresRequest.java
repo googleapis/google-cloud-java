@@ -234,7 +234,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Filter by solution type.
+   * Filter by solution type .
    * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *
@@ -258,7 +258,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Filter by solution type.
+   * Filter by solution type .
    * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *
@@ -1067,7 +1067,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type.
+     * Filter by solution type .
      * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
@@ -1090,7 +1090,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type.
+     * Filter by solution type .
      * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
@@ -1113,7 +1113,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type.
+     * Filter by solution type .
      * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
@@ -1135,7 +1135,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type.
+     * Filter by solution type .
      * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
@@ -1153,7 +1153,7 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type.
+     * Filter by solution type .
      * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *

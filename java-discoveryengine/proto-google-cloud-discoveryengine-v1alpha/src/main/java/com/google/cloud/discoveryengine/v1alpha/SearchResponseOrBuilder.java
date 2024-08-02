@@ -498,4 +498,169 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.SearchResponse.QueryExpansionInfoOrBuilder
       getQueryExpansionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingInfo.
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse.NaturalLanguageQueryUnderstandingInfo
+      getNaturalLanguageQueryUnderstandingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Natural language query understanding information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse
+          .NaturalLanguageQueryUnderstandingInfoOrBuilder
+      getNaturalLanguageQueryUnderstandingInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1alpha.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.SearchResponse.SessionInfo session_info = 19;
+   * </code>
+   *
+   * @return Whether the sessionInfo field is set.
+   */
+  boolean hasSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1alpha.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.SearchResponse.SessionInfo session_info = 19;
+   * </code>
+   *
+   * @return The sessionInfo.
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse.SessionInfo getSessionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Session information.
+   *
+   * Only set if
+   * [SearchRequest.session][google.cloud.discoveryengine.v1alpha.SearchRequest.session]
+   * is provided. See its description for more details.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.SearchResponse.SessionInfo session_info = 19;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse.SessionInfoOrBuilder
+      getSessionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult>
+      getOneBoxResultsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult getOneBoxResults(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  int getOneBoxResultsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResultOrBuilder>
+      getOneBoxResultsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of One Box results. There can be multiple One Box results of
+   * different types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResult one_box_results = 20;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchResponse.OneBoxResultOrBuilder
+      getOneBoxResultsOrBuilder(int index);
 }

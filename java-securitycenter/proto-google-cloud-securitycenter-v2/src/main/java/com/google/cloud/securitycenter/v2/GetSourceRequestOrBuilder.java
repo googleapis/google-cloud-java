@@ -29,7 +29,7 @@ public interface GetSourceRequestOrBuilder
    *
    * <pre>
    * Required. Relative resource name of the source. Its format is
-   * "organizations/[organization_id]/source/[source_id]".
+   * `organizations/[organization_id]/source/[source_id]`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetSourceRequestOrBuilder
    *
    * <pre>
    * Required. Relative resource name of the source. Its format is
-   * "organizations/[organization_id]/source/[source_id]".
+   * `organizations/[organization_id]/source/[source_id]`.
    * </pre>
    *
    * <code>

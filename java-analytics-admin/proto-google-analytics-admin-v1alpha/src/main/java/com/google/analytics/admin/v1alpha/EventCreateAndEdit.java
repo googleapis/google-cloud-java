@@ -37,6 +37,10 @@ public final class EventCreateAndEdit {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_EventCreateRule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_EventEditRule_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_EventEditRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_admin_v1alpha_MatchingCondition_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_MatchingCondition_fieldAccessorTable;
@@ -64,24 +68,35 @@ public final class EventCreateAndEdit {
           + "eterMutation:\211\001\352A\205\001\n-analyticsadmin.goog"
           + "leapis.com/EventCreateRule\022Tproperties/{"
           + "property}/dataStreams/{data_stream}/even"
-          + "tCreateRules/{event_create_rule}\"\255\004\n\021Mat"
-          + "chingCondition\022\022\n\005field\030\001 \001(\tB\003\340A\002\022^\n\017co"
-          + "mparison_type\030\002 \001(\0162@.google.analytics.a"
-          + "dmin.v1alpha.MatchingCondition.Compariso"
-          + "nTypeB\003\340A\002\022\022\n\005value\030\003 \001(\tB\003\340A\002\022\017\n\007negate"
-          + "d\030\004 \001(\010\"\376\002\n\016ComparisonType\022\037\n\033COMPARISON"
-          + "_TYPE_UNSPECIFIED\020\000\022\n\n\006EQUALS\020\001\022\033\n\027EQUAL"
-          + "S_CASE_INSENSITIVE\020\002\022\014\n\010CONTAINS\020\003\022\035\n\031CO"
-          + "NTAINS_CASE_INSENSITIVE\020\004\022\017\n\013STARTS_WITH"
-          + "\020\005\022 \n\034STARTS_WITH_CASE_INSENSITIVE\020\006\022\r\n\t"
-          + "ENDS_WITH\020\007\022\036\n\032ENDS_WITH_CASE_INSENSITIV"
-          + "E\020\010\022\020\n\014GREATER_THAN\020\t\022\031\n\025GREATER_THAN_OR"
-          + "_EQUAL\020\n\022\r\n\tLESS_THAN\020\013\022\026\n\022LESS_THAN_OR_"
-          + "EQUAL\020\014\022\026\n\022REGULAR_EXPRESSION\020\r\022\'\n#REGUL"
-          + "AR_EXPRESSION_CASE_INSENSITIVE\020\016Bf\n\"com."
-          + "google.analytics.admin.v1alphaP\001Z>cloud."
-          + "google.com/go/analytics/admin/apiv1alpha"
-          + "/adminpb;adminpbb\006proto3"
+          + "tCreateRules/{event_create_rule}\"\250\003\n\rEve"
+          + "ntEditRule\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014display"
+          + "_name\030\002 \001(\tB\003\340A\002\022P\n\020event_conditions\030\003 \003"
+          + "(\01321.google.analytics.admin.v1alpha.Matc"
+          + "hingConditionB\003\340A\002\022S\n\023parameter_mutation"
+          + "s\030\004 \003(\01321.google.analytics.admin.v1alpha"
+          + ".ParameterMutationB\003\340A\002\022\035\n\020processing_or"
+          + "der\030\005 \001(\003B\003\340A\003:\242\001\352A\236\001\n+analyticsadmin.go"
+          + "ogleapis.com/EventEditRule\022Pproperties/{"
+          + "property}/dataStreams/{data_stream}/even"
+          + "tEditRules/{event_edit_rule}*\016eventEditR"
+          + "ules2\reventEditRule\"\255\004\n\021MatchingConditio"
+          + "n\022\022\n\005field\030\001 \001(\tB\003\340A\002\022^\n\017comparison_type"
+          + "\030\002 \001(\0162@.google.analytics.admin.v1alpha."
+          + "MatchingCondition.ComparisonTypeB\003\340A\002\022\022\n"
+          + "\005value\030\003 \001(\tB\003\340A\002\022\017\n\007negated\030\004 \001(\010\"\376\002\n\016C"
+          + "omparisonType\022\037\n\033COMPARISON_TYPE_UNSPECI"
+          + "FIED\020\000\022\n\n\006EQUALS\020\001\022\033\n\027EQUALS_CASE_INSENS"
+          + "ITIVE\020\002\022\014\n\010CONTAINS\020\003\022\035\n\031CONTAINS_CASE_I"
+          + "NSENSITIVE\020\004\022\017\n\013STARTS_WITH\020\005\022 \n\034STARTS_"
+          + "WITH_CASE_INSENSITIVE\020\006\022\r\n\tENDS_WITH\020\007\022\036"
+          + "\n\032ENDS_WITH_CASE_INSENSITIVE\020\010\022\020\n\014GREATE"
+          + "R_THAN\020\t\022\031\n\025GREATER_THAN_OR_EQUAL\020\n\022\r\n\tL"
+          + "ESS_THAN\020\013\022\026\n\022LESS_THAN_OR_EQUAL\020\014\022\026\n\022RE"
+          + "GULAR_EXPRESSION\020\r\022\'\n#REGULAR_EXPRESSION"
+          + "_CASE_INSENSITIVE\020\016Bf\n\"com.google.analyt"
+          + "ics.admin.v1alphaP\001Z>cloud.google.com/go"
+          + "/analytics/admin/apiv1alpha/adminpb;admi"
+          + "npbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,8 +125,16 @@ public final class EventCreateAndEdit {
               "SourceCopyParameters",
               "ParameterMutations",
             });
-    internal_static_google_analytics_admin_v1alpha_MatchingCondition_descriptor =
+    internal_static_google_analytics_admin_v1alpha_EventEditRule_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_analytics_admin_v1alpha_EventEditRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_EventEditRule_descriptor,
+            new java.lang.String[] {
+              "Name", "DisplayName", "EventConditions", "ParameterMutations", "ProcessingOrder",
+            });
+    internal_static_google_analytics_admin_v1alpha_MatchingCondition_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_analytics_admin_v1alpha_MatchingCondition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_admin_v1alpha_MatchingCondition_descriptor,

@@ -179,4 +179,22 @@ public interface ChannelGroupOrBuilder
    * @return The systemDefined.
    */
   boolean getSystemDefined();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, this channel group will be used as the default channel
+   * group for reports. Only one channel group can be set as `primary` at any
+   * time. If the `primary` field gets set on a channel group, it will get unset
+   * on the previous primary channel group.
+   *
+   * The Google Analytics predefined channel group is the primary by default.
+   * </pre>
+   *
+   * <code>bool primary = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The primary.
+   */
+  boolean getPrimary();
 }

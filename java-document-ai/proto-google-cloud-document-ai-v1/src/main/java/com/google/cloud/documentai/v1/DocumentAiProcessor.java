@@ -37,6 +37,18 @@ public final class DocumentAiProcessor {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_ProcessorVersion_DeprecationInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_fieldAccessorTable;
@@ -59,7 +71,7 @@ public final class DocumentAiProcessor {
           + "source.proto\0320google/cloud/documentai/v1"
           + "/document_schema.proto\032+google/cloud/doc"
           + "umentai/v1/evaluation.proto\032\037google/prot"
-          + "obuf/timestamp.proto\"\243\t\n\020ProcessorVersio"
+          + "obuf/timestamp.proto\"\213\017\n\020ProcessorVersio"
           + "n\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\014display_name\030\002 \001"
           + "(\t\022C\n\017document_schema\030\014 \001(\0132*.google.clo"
           + "ud.documentai.v1.DocumentSchema\022F\n\005state"
@@ -75,47 +87,65 @@ public final class DocumentAiProcessor {
           + "\nmodel_type\030\017 \001(\01626.google.cloud.documen"
           + "tai.v1.ProcessorVersion.ModelTypeB\003\340A\003\022\032"
           + "\n\rsatisfies_pzs\030\020 \001(\010B\003\340A\003\022\032\n\rsatisfies_"
-          + "pzi\030\021 \001(\010B\003\340A\003\032\237\001\n\017DeprecationInfo\0224\n\020de"
-          + "precation_time\030\001 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022V\n\035replacement_processor_versio"
-          + "n\030\002 \001(\tB/\372A,\n*documentai.googleapis.com/"
-          + "ProcessorVersion\"\223\001\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\014\n\010DEPLOYED\020\001\022\r\n\tDEPLOYING\020\002\022\016"
-          + "\n\nUNDEPLOYED\020\003\022\017\n\013UNDEPLOYING\020\004\022\014\n\010CREAT"
-          + "ING\020\005\022\014\n\010DELETING\020\006\022\n\n\006FAILED\020\007\022\r\n\tIMPOR"
-          + "TING\020\010\"Y\n\tModelType\022\032\n\026MODEL_TYPE_UNSPEC"
-          + "IFIED\020\000\022\031\n\025MODEL_TYPE_GENERATIVE\020\001\022\025\n\021MO"
-          + "DEL_TYPE_CUSTOM\020\002:\226\001\352A\222\001\n*documentai.goo"
-          + "gleapis.com/ProcessorVersion\022dprojects/{"
-          + "project}/locations/{location}/processors"
-          + "/{processor}/processorVersions/{processo"
-          + "r_version}\"r\n\025ProcessorVersionAlias\022\r\n\005a"
-          + "lias\030\001 \001(\t\022J\n\021processor_version\030\002 \001(\tB/\372"
-          + "A,\n*documentai.googleapis.com/ProcessorV"
-          + "ersion\"\300\005\n\tProcessor\022\024\n\004name\030\001 \001(\tB\006\340A\005\340"
-          + "A\003\022\014\n\004type\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\022?"
-          + "\n\005state\030\004 \001(\0162+.google.cloud.documentai."
-          + "v1.Processor.StateB\003\340A\003\022R\n\031default_proce"
-          + "ssor_version\030\t \001(\tB/\372A,\n*documentai.goog"
-          + "leapis.com/ProcessorVersion\022Y\n\031processor"
-          + "_version_aliases\030\n \003(\01321.google.cloud.do"
-          + "cumentai.v1.ProcessorVersionAliasB\003\340A\003\022 "
-          + "\n\020process_endpoint\030\006 \001(\tB\006\340A\003\340A\005\022/\n\013crea"
-          + "te_time\030\007 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022\024\n\014kms_key_name\030\010 \001(\t\022\032\n\rsatisfies_pzs"
-          + "\030\014 \001(\010B\003\340A\003\022\032\n\rsatisfies_pzi\030\r \001(\010B\003\340A\003\""
-          + "~\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007ENABL"
-          + "ED\020\001\022\014\n\010DISABLED\020\002\022\014\n\010ENABLING\020\003\022\r\n\tDISA"
-          + "BLING\020\004\022\014\n\010CREATING\020\005\022\n\n\006FAILED\020\006\022\014\n\010DEL"
-          + "ETING\020\007:h\352Ae\n#documentai.googleapis.com/"
-          + "Processor\022>projects/{project}/locations/"
-          + "{location}/processors/{processor}B\321\001\n\036co"
-          + "m.google.cloud.documentai.v1B\023DocumentAi"
-          + "ProcessorP\001Z>cloud.google.com/go/documen"
-          + "tai/apiv1/documentaipb;documentaipb\252\002\032Go"
-          + "ogle.Cloud.DocumentAI.V1\312\002\032Google\\Cloud\\"
-          + "DocumentAI\\V1\352\002\035Google::Cloud::DocumentA"
-          + "I::V1b\006proto3"
+          + "pzi\030\021 \001(\010B\003\340A\003\022[\n\021gen_ai_model_info\030\022 \001("
+          + "\0132;.google.cloud.documentai.v1.Processor"
+          + "Version.GenAiModelInfoB\003\340A\003\032\237\001\n\017Deprecat"
+          + "ionInfo\0224\n\020deprecation_time\030\001 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022V\n\035replacement_pro"
+          + "cessor_version\030\002 \001(\tB/\372A,\n*documentai.go"
+          + "ogleapis.com/ProcessorVersion\032\210\005\n\016GenAiM"
+          + "odelInfo\022|\n\034foundation_gen_ai_model_info"
+          + "\030\001 \001(\0132T.google.cloud.documentai.v1.Proc"
+          + "essorVersion.GenAiModelInfo.FoundationGe"
+          + "nAiModelInfoH\000\022t\n\030custom_gen_ai_model_in"
+          + "fo\030\002 \001(\0132P.google.cloud.documentai.v1.Pr"
+          + "ocessorVersion.GenAiModelInfo.CustomGenA"
+          + "iModelInfoH\000\032[\n\030FoundationGenAiModelInfo"
+          + "\022\032\n\022finetuning_allowed\030\001 \001(\010\022#\n\033min_trai"
+          + "n_labeled_documents\030\002 \001(\005\032\226\002\n\024CustomGenA"
+          + "iModelInfo\022{\n\021custom_model_type\030\001 \001(\0162`."
+          + "google.cloud.documentai.v1.ProcessorVers"
+          + "ion.GenAiModelInfo.CustomGenAiModelInfo."
+          + "CustomModelType\022!\n\031base_processor_versio"
+          + "n_id\030\002 \001(\t\"^\n\017CustomModelType\022!\n\035CUSTOM_"
+          + "MODEL_TYPE_UNSPECIFIED\020\000\022\030\n\024VERSIONED_FO"
+          + "UNDATION\020\001\022\016\n\nFINE_TUNED\020\002B\014\n\nmodel_info"
+          + "\"\223\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010DEP"
+          + "LOYED\020\001\022\r\n\tDEPLOYING\020\002\022\016\n\nUNDEPLOYED\020\003\022\017"
+          + "\n\013UNDEPLOYING\020\004\022\014\n\010CREATING\020\005\022\014\n\010DELETIN"
+          + "G\020\006\022\n\n\006FAILED\020\007\022\r\n\tIMPORTING\020\010\"Y\n\tModelT"
+          + "ype\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n\025MODEL"
+          + "_TYPE_GENERATIVE\020\001\022\025\n\021MODEL_TYPE_CUSTOM\020"
+          + "\002:\226\001\352A\222\001\n*documentai.googleapis.com/Proc"
+          + "essorVersion\022dprojects/{project}/locatio"
+          + "ns/{location}/processors/{processor}/pro"
+          + "cessorVersions/{processor_version}\"r\n\025Pr"
+          + "ocessorVersionAlias\022\r\n\005alias\030\001 \001(\t\022J\n\021pr"
+          + "ocessor_version\030\002 \001(\tB/\372A,\n*documentai.g"
+          + "oogleapis.com/ProcessorVersion\"\300\005\n\tProce"
+          + "ssor\022\024\n\004name\030\001 \001(\tB\006\340A\005\340A\003\022\014\n\004type\030\002 \001(\t"
+          + "\022\024\n\014display_name\030\003 \001(\t\022?\n\005state\030\004 \001(\0162+."
+          + "google.cloud.documentai.v1.Processor.Sta"
+          + "teB\003\340A\003\022R\n\031default_processor_version\030\t \001"
+          + "(\tB/\372A,\n*documentai.googleapis.com/Proce"
+          + "ssorVersion\022Y\n\031processor_version_aliases"
+          + "\030\n \003(\01321.google.cloud.documentai.v1.Proc"
+          + "essorVersionAliasB\003\340A\003\022 \n\020process_endpoi"
+          + "nt\030\006 \001(\tB\006\340A\003\340A\005\022/\n\013create_time\030\007 \001(\0132\032."
+          + "google.protobuf.Timestamp\022\024\n\014kms_key_nam"
+          + "e\030\010 \001(\t\022\032\n\rsatisfies_pzs\030\014 \001(\010B\003\340A\003\022\032\n\rs"
+          + "atisfies_pzi\030\r \001(\010B\003\340A\003\"~\n\005State\022\025\n\021STAT"
+          + "E_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED"
+          + "\020\002\022\014\n\010ENABLING\020\003\022\r\n\tDISABLING\020\004\022\014\n\010CREAT"
+          + "ING\020\005\022\n\n\006FAILED\020\006\022\014\n\010DELETING\020\007:h\352Ae\n#do"
+          + "cumentai.googleapis.com/Processor\022>proje"
+          + "cts/{project}/locations/{location}/proce"
+          + "ssors/{processor}B\321\001\n\036com.google.cloud.d"
+          + "ocumentai.v1B\023DocumentAiProcessorP\001Z>clo"
+          + "ud.google.com/go/documentai/apiv1/docume"
+          + "ntaipb;documentaipb\252\002\032Google.Cloud.Docum"
+          + "entAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035"
+          + "Google::Cloud::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -146,6 +176,7 @@ public final class DocumentAiProcessor {
               "ModelType",
               "SatisfiesPzs",
               "SatisfiesPzi",
+              "GenAiModelInfo",
             });
     internal_static_google_cloud_documentai_v1_ProcessorVersion_DeprecationInfo_descriptor =
         internal_static_google_cloud_documentai_v1_ProcessorVersion_descriptor
@@ -156,6 +187,36 @@ public final class DocumentAiProcessor {
             internal_static_google_cloud_documentai_v1_ProcessorVersion_DeprecationInfo_descriptor,
             new java.lang.String[] {
               "DeprecationTime", "ReplacementProcessorVersion",
+            });
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_descriptor =
+        internal_static_google_cloud_documentai_v1_ProcessorVersion_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_descriptor,
+            new java.lang.String[] {
+              "FoundationGenAiModelInfo", "CustomGenAiModelInfo", "ModelInfo",
+            });
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor =
+        internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_FoundationGenAiModelInfo_descriptor,
+            new java.lang.String[] {
+              "FinetuningAllowed", "MinTrainLabeledDocuments",
+            });
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor =
+        internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ProcessorVersion_GenAiModelInfo_CustomGenAiModelInfo_descriptor,
+            new java.lang.String[] {
+              "CustomModelType", "BaseProcessorVersionId",
             });
     internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_descriptor =
         getDescriptor().getMessageTypes().get(1);

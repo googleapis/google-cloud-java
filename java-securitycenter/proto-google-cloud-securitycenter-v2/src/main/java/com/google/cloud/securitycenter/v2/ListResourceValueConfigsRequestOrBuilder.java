@@ -30,7 +30,7 @@ public interface ListResourceValueConfigsRequestOrBuilder
    * <pre>
    * Required. The parent, which owns the collection of resource value configs.
    * Its format is
-   * "organizations/[organization_id]"
+   * `organizations/[organization_id]`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ListResourceValueConfigsRequestOrBuilder
    * <pre>
    * Required. The parent, which owns the collection of resource value configs.
    * Its format is
-   * "organizations/[organization_id]"
+   * `organizations/[organization_id]`
    * </pre>
    *
    * <code>

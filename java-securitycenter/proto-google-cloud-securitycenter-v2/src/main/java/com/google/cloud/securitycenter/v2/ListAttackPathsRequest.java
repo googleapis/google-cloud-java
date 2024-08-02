@@ -77,10 +77,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
    * Required. Name of parent to list attack paths.
    *
    * Valid formats:
-   * "organizations/{organization}",
-   * "organizations/{organization}/simulations/{simulation}"
-   * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-   * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   * `organizations/{organization}`,
+   * `organizations/{organization}/simulations/{simulation}`
+   * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+   * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * </pre>
    *
    * <code>
@@ -108,10 +108,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
    * Required. Name of parent to list attack paths.
    *
    * Valid formats:
-   * "organizations/{organization}",
-   * "organizations/{organization}/simulations/{simulation}"
-   * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-   * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   * `organizations/{organization}`,
+   * `organizations/{organization}/simulations/{simulation}`
+   * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+   * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * </pre>
    *
    * <code>
@@ -686,10 +686,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
      * Required. Name of parent to list attack paths.
      *
      * Valid formats:
-     * "organizations/{organization}",
-     * "organizations/{organization}/simulations/{simulation}"
-     * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}`,
+     * `organizations/{organization}/simulations/{simulation}`
+     * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -716,10 +716,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
      * Required. Name of parent to list attack paths.
      *
      * Valid formats:
-     * "organizations/{organization}",
-     * "organizations/{organization}/simulations/{simulation}"
-     * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}`,
+     * `organizations/{organization}/simulations/{simulation}`
+     * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -746,10 +746,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
      * Required. Name of parent to list attack paths.
      *
      * Valid formats:
-     * "organizations/{organization}",
-     * "organizations/{organization}/simulations/{simulation}"
-     * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}`,
+     * `organizations/{organization}/simulations/{simulation}`
+     * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -775,10 +775,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
      * Required. Name of parent to list attack paths.
      *
      * Valid formats:
-     * "organizations/{organization}",
-     * "organizations/{organization}/simulations/{simulation}"
-     * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}`,
+     * `organizations/{organization}/simulations/{simulation}`
+     * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -800,10 +800,10 @@ public final class ListAttackPathsRequest extends com.google.protobuf.GeneratedM
      * Required. Name of parent to list attack paths.
      *
      * Valid formats:
-     * "organizations/{organization}",
-     * "organizations/{organization}/simulations/{simulation}"
-     * "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}`,
+     * `organizations/{organization}/simulations/{simulation}`
+     * `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>

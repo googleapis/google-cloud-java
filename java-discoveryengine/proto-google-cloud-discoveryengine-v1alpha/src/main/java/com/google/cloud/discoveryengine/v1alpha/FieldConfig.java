@@ -1393,6 +1393,18 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Retrieve value from the attributes set by
+     * [SiteSearchEngineService.SetUriPatternDocumentData][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.SetUriPatternDocumentData]
+     * API.
+     * </pre>
+     *
+     * <code>URI_PATTERN_MAPPING = 3;</code>
+     */
+    URI_PATTERN_MAPPING(3),
+    /**
+     *
+     *
+     * <pre>
      * Retrieve value from schema.org data.
      * </pre>
      *
@@ -1436,6 +1448,18 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Retrieve value from the attributes set by
+     * [SiteSearchEngineService.SetUriPatternDocumentData][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.SetUriPatternDocumentData]
+     * API.
+     * </pre>
+     *
+     * <code>URI_PATTERN_MAPPING = 3;</code>
+     */
+    public static final int URI_PATTERN_MAPPING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * Retrieve value from schema.org data.
      * </pre>
      *
@@ -1473,6 +1497,8 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
           return METATAGS;
         case 2:
           return PAGEMAP;
+        case 3:
+          return URI_PATTERN_MAPPING;
         case 4:
           return SCHEMA_ORG;
         default:

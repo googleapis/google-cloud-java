@@ -29,11 +29,11 @@ public interface ListMuteConfigsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]",
-   * "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]",
-   * "projects/[project_id]/locations/[location_id]".
+   * is `organizations/[organization_id]", "folders/[folder_id]`,
+   * `projects/[project_id]`,
+   * `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`,
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>
@@ -48,11 +48,11 @@ public interface ListMuteConfigsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns the collection of mute configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]",
-   * "projects/[project_id]",
-   * "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]",
-   * "projects/[project_id]/locations/[location_id]".
+   * is `organizations/[organization_id]", "folders/[folder_id]`,
+   * `projects/[project_id]`,
+   * `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`,
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>

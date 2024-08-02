@@ -368,4 +368,49 @@ public interface ProcessorVersionOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the genAiModelInfo field is set.
+   */
+  boolean hasGenAiModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The genAiModelInfo.
+   */
+  com.google.cloud.documentai.v1.ProcessorVersion.GenAiModelInfo getGenAiModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about Generative AI model-based processor
+   * versions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.GenAiModelInfo gen_ai_model_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.documentai.v1.ProcessorVersion.GenAiModelInfoOrBuilder
+      getGenAiModelInfoOrBuilder();
 }

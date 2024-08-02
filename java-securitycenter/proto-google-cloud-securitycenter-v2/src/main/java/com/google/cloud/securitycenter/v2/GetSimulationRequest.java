@@ -76,8 +76,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
    * Required. The organization name or simulation name of this simulation
    *
    * Valid format:
-   * "organizations/{organization}/simulations/latest"
-   * "organizations/{organization}/simulations/{simulation}"
+   * `organizations/{organization}/simulations/latest`
+   * `organizations/{organization}/simulations/{simulation}`
    * </pre>
    *
    * <code>
@@ -105,8 +105,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
    * Required. The organization name or simulation name of this simulation
    *
    * Valid format:
-   * "organizations/{organization}/simulations/latest"
-   * "organizations/{organization}/simulations/{simulation}"
+   * `organizations/{organization}/simulations/latest`
+   * `organizations/{organization}/simulations/{simulation}`
    * </pre>
    *
    * <code>
@@ -481,8 +481,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
      * Required. The organization name or simulation name of this simulation
      *
      * Valid format:
-     * "organizations/{organization}/simulations/latest"
-     * "organizations/{organization}/simulations/{simulation}"
+     * `organizations/{organization}/simulations/latest`
+     * `organizations/{organization}/simulations/{simulation}`
      * </pre>
      *
      * <code>
@@ -509,8 +509,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
      * Required. The organization name or simulation name of this simulation
      *
      * Valid format:
-     * "organizations/{organization}/simulations/latest"
-     * "organizations/{organization}/simulations/{simulation}"
+     * `organizations/{organization}/simulations/latest`
+     * `organizations/{organization}/simulations/{simulation}`
      * </pre>
      *
      * <code>
@@ -537,8 +537,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
      * Required. The organization name or simulation name of this simulation
      *
      * Valid format:
-     * "organizations/{organization}/simulations/latest"
-     * "organizations/{organization}/simulations/{simulation}"
+     * `organizations/{organization}/simulations/latest`
+     * `organizations/{organization}/simulations/{simulation}`
      * </pre>
      *
      * <code>
@@ -564,8 +564,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
      * Required. The organization name or simulation name of this simulation
      *
      * Valid format:
-     * "organizations/{organization}/simulations/latest"
-     * "organizations/{organization}/simulations/{simulation}"
+     * `organizations/{organization}/simulations/latest`
+     * `organizations/{organization}/simulations/{simulation}`
      * </pre>
      *
      * <code>
@@ -587,8 +587,8 @@ public final class GetSimulationRequest extends com.google.protobuf.GeneratedMes
      * Required. The organization name or simulation name of this simulation
      *
      * Valid format:
-     * "organizations/{organization}/simulations/latest"
-     * "organizations/{organization}/simulations/{simulation}"
+     * `organizations/{organization}/simulations/latest`
+     * `organizations/{organization}/simulations/{simulation}`
      * </pre>
      *
      * <code>

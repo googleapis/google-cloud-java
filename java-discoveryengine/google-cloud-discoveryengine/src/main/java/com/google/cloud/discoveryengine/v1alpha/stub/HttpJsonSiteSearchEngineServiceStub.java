@@ -56,11 +56,16 @@ import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusReq
 import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse;
 import com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisResponse;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataMetadata;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine;
 import com.google.cloud.discoveryengine.v1alpha.TargetSite;
 import com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteMetadata;
@@ -97,6 +102,8 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
           .add(EnableAdvancedSiteSearchResponse.getDescriptor())
           .add(RecrawlUrisResponse.getDescriptor())
           .add(RecrawlUrisMetadata.getDescriptor())
+          .add(SetUriPatternDocumentDataResponse.getDescriptor())
+          .add(SetUriPatternDocumentDataMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(BatchVerifyTargetSitesMetadata.getDescriptor())
           .add(BatchCreateTargetSitesResponse.getDescriptor())
@@ -612,6 +619,89 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataMethodDescriptor =
+          ApiMethodDescriptor.<SetUriPatternDocumentDataRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService/SetUriPatternDocumentData")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetUriPatternDocumentDataRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{siteSearchEngine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:setUriPatternDocumentData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUriPatternDocumentDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "siteSearchEngine", request.getSiteSearchEngine());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetUriPatternDocumentDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearSiteSearchEngine().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetUriPatternDocumentDataRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService/GetUriPatternDocumentData")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetUriPatternDocumentDataRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{siteSearchEngine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:getUriPatternDocumentData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUriPatternDocumentDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "siteSearchEngine", request.getSiteSearchEngine());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUriPatternDocumentDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GetUriPatternDocumentDataResponse>newBuilder()
+                      .setDefaultInstance(GetUriPatternDocumentDataResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetSiteSearchEngineRequest, SiteSearchEngine>
       getSiteSearchEngineCallable;
   private final UnaryCallable<CreateTargetSiteRequest, Operation> createTargetSiteCallable;
@@ -665,6 +755,15 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
   private final UnaryCallable<
           FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusPagedResponse>
       fetchDomainVerificationStatusPagedCallable;
+  private final UnaryCallable<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataCallable;
+  private final OperationCallable<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationCallable;
+  private final UnaryCallable<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -795,6 +894,11 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -866,6 +970,11 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1alpha/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1024,6 +1133,33 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataTransportSettings =
+            HttpJsonCallSettings.<SetUriPatternDocumentDataRequest, Operation>newBuilder()
+                .setMethodDescriptor(setUriPatternDocumentDataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataTransportSettings =
+            HttpJsonCallSettings
+                .<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>newBuilder()
+                .setMethodDescriptor(getUriPatternDocumentDataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "site_search_engine", String.valueOf(request.getSiteSearchEngine()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getSiteSearchEngineCallable =
         callableFactory.createUnaryCallable(
@@ -1129,6 +1265,22 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
             fetchDomainVerificationStatusTransportSettings,
             settings.fetchDomainVerificationStatusSettings(),
             clientContext);
+    this.setUriPatternDocumentDataCallable =
+        callableFactory.createUnaryCallable(
+            setUriPatternDocumentDataTransportSettings,
+            settings.setUriPatternDocumentDataSettings(),
+            clientContext);
+    this.setUriPatternDocumentDataOperationCallable =
+        callableFactory.createOperationCallable(
+            setUriPatternDocumentDataTransportSettings,
+            settings.setUriPatternDocumentDataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getUriPatternDocumentDataCallable =
+        callableFactory.createUnaryCallable(
+            getUriPatternDocumentDataTransportSettings,
+            settings.getUriPatternDocumentDataSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1149,6 +1301,8 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
     methodDescriptors.add(recrawlUrisMethodDescriptor);
     methodDescriptors.add(batchVerifyTargetSitesMethodDescriptor);
     methodDescriptors.add(fetchDomainVerificationStatusMethodDescriptor);
+    methodDescriptors.add(setUriPatternDocumentDataMethodDescriptor);
+    methodDescriptors.add(getUriPatternDocumentDataMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1290,6 +1444,27 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
           FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusPagedResponse>
       fetchDomainVerificationStatusPagedCallable() {
     return fetchDomainVerificationStatusPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataCallable() {
+    return setUriPatternDocumentDataCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationCallable() {
+    return setUriPatternDocumentDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataCallable() {
+    return getUriPatternDocumentDataCallable;
   }
 
   @Override

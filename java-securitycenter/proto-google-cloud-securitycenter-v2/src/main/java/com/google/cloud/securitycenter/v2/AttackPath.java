@@ -77,7 +77,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource at this point in the attack path.
      * The format of the name follows the Cloud Asset Inventory [resource
      * name
-     * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+     * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -92,7 +92,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource at this point in the attack path.
      * The format of the name follows the Cloud Asset Inventory [resource
      * name
-     * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+     * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -106,7 +106,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The [supported resource
-     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -119,7 +119,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The [supported resource
-     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -577,7 +577,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Canonical name of the associated findings. Example:
-       * organizations/123/sources/456/findings/789
+       * `organizations/123/sources/456/findings/789`
        * </pre>
        *
        * <code>string canonical_finding = 1;</code>
@@ -590,7 +590,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Canonical name of the associated findings. Example:
-       * organizations/123/sources/456/findings/789
+       * `organizations/123/sources/456/findings/789`
        * </pre>
        *
        * <code>string canonical_finding = 1;</code>
@@ -708,7 +708,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Canonical name of the associated findings. Example:
-       * organizations/123/sources/456/findings/789
+       * `organizations/123/sources/456/findings/789`
        * </pre>
        *
        * <code>string canonical_finding = 1;</code>
@@ -732,7 +732,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Canonical name of the associated findings. Example:
-       * organizations/123/sources/456/findings/789
+       * `organizations/123/sources/456/findings/789`
        * </pre>
        *
        * <code>string canonical_finding = 1;</code>
@@ -1308,7 +1308,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Canonical name of the associated findings. Example:
-         * organizations/123/sources/456/findings/789
+         * `organizations/123/sources/456/findings/789`
          * </pre>
          *
          * <code>string canonical_finding = 1;</code>
@@ -1331,7 +1331,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Canonical name of the associated findings. Example:
-         * organizations/123/sources/456/findings/789
+         * `organizations/123/sources/456/findings/789`
          * </pre>
          *
          * <code>string canonical_finding = 1;</code>
@@ -1354,7 +1354,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Canonical name of the associated findings. Example:
-         * organizations/123/sources/456/findings/789
+         * `organizations/123/sources/456/findings/789`
          * </pre>
          *
          * <code>string canonical_finding = 1;</code>
@@ -1376,7 +1376,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Canonical name of the associated findings. Example:
-         * organizations/123/sources/456/findings/789
+         * `organizations/123/sources/456/findings/789`
          * </pre>
          *
          * <code>string canonical_finding = 1;</code>
@@ -1394,7 +1394,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Canonical name of the associated findings. Example:
-         * organizations/123/sources/456/findings/789
+         * `organizations/123/sources/456/findings/789`
          * </pre>
          *
          * <code>string canonical_finding = 1;</code>
@@ -3374,7 +3374,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource at this point in the attack path.
      * The format of the name follows the Cloud Asset Inventory [resource
      * name
-     * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+     * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -3400,7 +3400,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource at this point in the attack path.
      * The format of the name follows the Cloud Asset Inventory [resource
      * name
-     * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+     * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -3429,7 +3429,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The [supported resource
-     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -3453,7 +3453,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The [supported resource
-     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+     * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -4332,7 +4332,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * The name of the resource at this point in the attack path.
        * The format of the name follows the Cloud Asset Inventory [resource
        * name
-       * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+       * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
        * </pre>
        *
        * <code>string resource = 1;</code>
@@ -4357,7 +4357,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * The name of the resource at this point in the attack path.
        * The format of the name follows the Cloud Asset Inventory [resource
        * name
-       * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+       * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
        * </pre>
        *
        * <code>string resource = 1;</code>
@@ -4382,7 +4382,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * The name of the resource at this point in the attack path.
        * The format of the name follows the Cloud Asset Inventory [resource
        * name
-       * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+       * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
        * </pre>
        *
        * <code>string resource = 1;</code>
@@ -4406,7 +4406,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * The name of the resource at this point in the attack path.
        * The format of the name follows the Cloud Asset Inventory [resource
        * name
-       * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+       * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
        * </pre>
        *
        * <code>string resource = 1;</code>
@@ -4426,7 +4426,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        * The name of the resource at this point in the attack path.
        * The format of the name follows the Cloud Asset Inventory [resource
        * name
-       * format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
+       * format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
        * </pre>
        *
        * <code>string resource = 1;</code>
@@ -4451,7 +4451,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The [supported resource
-       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -4474,7 +4474,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The [supported resource
-       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -4497,7 +4497,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The [supported resource
-       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -4519,7 +4519,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The [supported resource
-       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -4537,7 +4537,7 @@ public final class AttackPath extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The [supported resource
-       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+       * type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
        * </pre>
        *
        * <code>string resource_type = 2;</code>

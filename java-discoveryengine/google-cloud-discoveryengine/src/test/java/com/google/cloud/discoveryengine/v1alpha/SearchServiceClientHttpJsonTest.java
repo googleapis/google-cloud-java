@@ -108,6 +108,8 @@ public class SearchServiceClientHttpJsonTest {
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
             .setUserInfo(UserInfo.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setRegionCode("regionCode-1991004415")
             .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .putAllParams(new HashMap<String, Value>())
@@ -119,7 +121,15 @@ public class SearchServiceClientHttpJsonTest {
             .setRankingExpression("rankingExpression2110320494")
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
+            .setNaturalLanguageQueryUnderstandingSpec(
+                SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+            .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
             .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -173,6 +183,8 @@ public class SearchServiceClientHttpJsonTest {
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -184,7 +196,15 @@ public class SearchServiceClientHttpJsonTest {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
               .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

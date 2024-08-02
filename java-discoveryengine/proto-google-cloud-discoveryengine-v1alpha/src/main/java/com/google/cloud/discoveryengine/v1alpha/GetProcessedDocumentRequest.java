@@ -112,7 +112,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Returns the converted PNG Image bytes if available.
+     * Returns the converted Image bytes (as JPEG or PNG) if available.
      * </pre>
      *
      * <code>PNG_CONVERTED_DOCUMENT = 3;</code>
@@ -155,7 +155,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Returns the converted PNG Image bytes if available.
+     * Returns the converted Image bytes (as JPEG or PNG) if available.
      * </pre>
      *
      * <code>PNG_CONVERTED_DOCUMENT = 3;</code>

@@ -226,6 +226,30 @@ public class SiteSearchEngineServiceSettings
         .fetchDomainVerificationStatusSettings();
   }
 
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public UnaryCallSettings<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .setUriPatternDocumentDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public OperationCallSettings<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .setUriPatternDocumentDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUriPatternDocumentData. */
+  public UnaryCallSettings<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .getUriPatternDocumentDataSettings();
+  }
+
   public static final SiteSearchEngineServiceSettings create(
       SiteSearchEngineServiceStubSettings stub) throws IOException {
     return new SiteSearchEngineServiceSettings.Builder(stub.toBuilder()).build();
@@ -474,6 +498,28 @@ public class SiteSearchEngineServiceSettings
             FetchDomainVerificationStatusPagedResponse>
         fetchDomainVerificationStatusSettings() {
       return getStubSettingsBuilder().fetchDomainVerificationStatusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataSettings() {
+      return getStubSettingsBuilder().setUriPatternDocumentDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public OperationCallSettings.Builder<
+            SetUriPatternDocumentDataRequest,
+            SetUriPatternDocumentDataResponse,
+            SetUriPatternDocumentDataMetadata>
+        setUriPatternDocumentDataOperationSettings() {
+      return getStubSettingsBuilder().setUriPatternDocumentDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<
+            GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataSettings() {
+      return getStubSettingsBuilder().getUriPatternDocumentDataSettings();
     }
 
     @Override

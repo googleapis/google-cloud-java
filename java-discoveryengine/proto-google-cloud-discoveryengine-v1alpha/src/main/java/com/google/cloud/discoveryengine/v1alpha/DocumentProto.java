@@ -63,7 +63,7 @@ public final class DocumentProto {
           + "roto\032\031google/api/resource.proto\0321google/"
           + "cloud/discoveryengine/v1alpha/common.pro"
           + "to\032\034google/protobuf/struct.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\324\007\n\010Document\022."
+          + "/protobuf/timestamp.proto\"\346\007\n\010Document\022."
           + "\n\013struct_data\030\004 \001(\0132\027.google.protobuf.St"
           + "ructH\000\022\023\n\tjson_data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001("
           + "\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001"
@@ -76,29 +76,30 @@ public final class DocumentProto {
           + "index_time\030\r \001(\0132\032.google.protobuf.Times"
           + "tampB\003\340A\003\032K\n\007Content\022\023\n\traw_bytes\030\002 \001(\014H"
           + "\000\022\r\n\003uri\030\003 \001(\tH\000\022\021\n\tmime_type\030\001 \001(\tB\t\n\007c"
-          + "ontent\032\276\001\n\007AclInfo\022Y\n\007readers\030\001 \003(\0132H.go"
+          + "ontent\032\320\001\n\007AclInfo\022Y\n\007readers\030\001 \003(\0132H.go"
           + "ogle.cloud.discoveryengine.v1alpha.Docum"
-          + "ent.AclInfo.AccessRestriction\032X\n\021AccessR"
+          + "ent.AclInfo.AccessRestriction\032j\n\021AccessR"
           + "estriction\022C\n\nprincipals\030\001 \003(\0132/.google."
-          + "cloud.discoveryengine.v1alpha.Principal:"
-          + "\226\002\352A\222\002\n\'discoveryengine.googleapis.com/D"
-          + "ocument\022fprojects/{project}/locations/{l"
-          + "ocation}/dataStores/{data_store}/branche"
-          + "s/{branch}/documents/{document}\022\177project"
-          + "s/{project}/locations/{location}/collect"
-          + "ions/{collection}/dataStores/{data_store"
-          + "}/branches/{branch}/documents/{document}"
-          + "B\006\n\004data\"\204\001\n\021ProcessedDocument\022\023\n\tjson_d"
-          + "ata\030\002 \001(\tH\000\022A\n\010document\030\001 \001(\tB/\340A\002\372A)\n\'d"
-          + "iscoveryengine.googleapis.com/DocumentB\027"
-          + "\n\025processed_data_formatB\231\002\n(com.google.c"
-          + "loud.discoveryengine.v1alphaB\rDocumentPr"
-          + "otoP\001ZRcloud.google.com/go/discoveryengi"
-          + "ne/apiv1alpha/discoveryenginepb;discover"
-          + "yenginepb\242\002\017DISCOVERYENGINE\252\002$Google.Clo"
-          + "ud.DiscoveryEngine.V1Alpha\312\002$Google\\Clou"
-          + "d\\DiscoveryEngine\\V1alpha\352\002\'Google::Clou"
-          + "d::DiscoveryEngine::V1alphab\006proto3"
+          + "cloud.discoveryengine.v1alpha.Principal\022"
+          + "\020\n\010idp_wide\030\002 \001(\010:\226\002\352A\222\002\n\'discoveryengin"
+          + "e.googleapis.com/Document\022fprojects/{pro"
+          + "ject}/locations/{location}/dataStores/{d"
+          + "ata_store}/branches/{branch}/documents/{"
+          + "document}\022\177projects/{project}/locations/"
+          + "{location}/collections/{collection}/data"
+          + "Stores/{data_store}/branches/{branch}/do"
+          + "cuments/{document}B\006\n\004data\"\204\001\n\021Processed"
+          + "Document\022\023\n\tjson_data\030\002 \001(\tH\000\022A\n\010documen"
+          + "t\030\001 \001(\tB/\340A\002\372A)\n\'discoveryengine.googlea"
+          + "pis.com/DocumentB\027\n\025processed_data_forma"
+          + "tB\231\002\n(com.google.cloud.discoveryengine.v"
+          + "1alphaB\rDocumentProtoP\001ZRcloud.google.co"
+          + "m/go/discoveryengine/apiv1alpha/discover"
+          + "yenginepb;discoveryenginepb\242\002\017DISCOVERYE"
+          + "NGINE\252\002$Google.Cloud.DiscoveryEngine.V1A"
+          + "lpha\312\002$Google\\Cloud\\DiscoveryEngine\\V1al"
+          + "pha\352\002\'Google::Cloud::DiscoveryEngine::V1"
+          + "alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -156,7 +157,7 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_Document_AclInfo_AccessRestriction_descriptor,
             new java.lang.String[] {
-              "Principals",
+              "Principals", "IdpWide",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor =
         getDescriptor().getMessageTypes().get(1);

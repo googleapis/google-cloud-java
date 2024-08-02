@@ -133,10 +133,13 @@ public interface CustomTuningModelOrBuilder
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
    * @return Whether the createTime field is set.
    */
+  @java.lang.Deprecated
   boolean hasCreateTime();
   /**
    *
@@ -145,10 +148,13 @@ public interface CustomTuningModelOrBuilder
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1alpha.CustomTuningModel.create_time is deprecated.
+   *     See google/cloud/discoveryengine/v1alpha/custom_tuning_model.proto;l=85
    * @return The createTime.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Timestamp getCreateTime();
   /**
    *
@@ -157,8 +163,9 @@ public interface CustomTuningModelOrBuilder
    * Timestamp the Model was created at.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
@@ -195,4 +202,58 @@ public interface CustomTuningModelOrBuilder
    * <code>.google.protobuf.Timestamp training_start_time = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getTrainingStartTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  int getMetricsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  boolean containsMetrics(java.lang.String key);
+  /** Use {@link #getMetricsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Double> getMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Double> getMetricsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  double getMetricsOrDefault(java.lang.String key, double defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 7;</code>
+   */
+  double getMetricsOrThrow(java.lang.String key);
 }

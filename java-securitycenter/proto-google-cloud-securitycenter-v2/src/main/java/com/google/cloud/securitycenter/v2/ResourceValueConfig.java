@@ -968,10 +968,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name for the resource value configuration
+   * Identifier. Name for the resource value configuration
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -991,10 +991,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name for the resource value configuration
+   * Identifier. Name for the resource value configuration
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1018,7 +1018,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource value level this expression represents
-   * Only required when there is no SDP mapping in the request
+   * Only required when there is no Sensitive Data Protection mapping in the
+   * request
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -1034,7 +1035,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource value level this expression represents
-   * Only required when there is no SDP mapping in the request
+   * Only required when there is no Sensitive Data Protection mapping in the
+   * request
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -1057,13 +1059,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+   * Tag values combined with `AND` to check against.
    * Values in the form "tagValues/123"
-   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
-   * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string tag_values = 3;</code>
    *
    * @return A list containing the tagValues.
    */
@@ -1074,13 +1076,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+   * Tag values combined with `AND` to check against.
    * Values in the form "tagValues/123"
-   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
-   * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string tag_values = 3;</code>
    *
    * @return The count of tagValues.
    */
@@ -1091,13 +1093,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+   * Tag values combined with `AND` to check against.
    * Values in the form "tagValues/123"
-   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
-   * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string tag_values = 3;</code>
    *
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
@@ -1109,13 +1111,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+   * Tag values combined with `AND` to check against.
    * Values in the form "tagValues/123"
-   * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+   * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
    * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
    * </pre>
    *
-   * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string tag_values = 3;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
@@ -1133,7 +1135,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Apply resource_value only to resources that match resource_type.
-   * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+   * resource_type will be checked with `AND` of other resources.
    * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
    * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
    * </pre>
@@ -1159,7 +1161,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Apply resource_value only to resources that match resource_type.
-   * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+   * resource_type will be checked with `AND` of other resources.
    * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
    * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
    * </pre>
@@ -1191,8 +1193,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Project or folder to scope this configuration to.
    * For example, "project/456" would apply this configuration only to resources
-   * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-   * resources.
+   * in "project/456" scope and will be checked with `AND` of other resources.
    * </pre>
    *
    * <code>string scope = 5;</code>
@@ -1217,8 +1218,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Project or folder to scope this configuration to.
    * For example, "project/456" would apply this configuration only to resources
-   * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-   * resources.
+   * in "project/456" scope and will be checked with `AND` of other resources.
    * </pre>
    *
    * <code>string scope = 5;</code>
@@ -1270,9 +1270,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * List of resource labels to search for, evaluated with `AND`.
    * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * will match resources with labels "key": "value" `AND` "env":
    * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
@@ -1296,9 +1296,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * List of resource labels to search for, evaluated with `AND`.
    * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * will match resources with labels "key": "value" `AND` "env":
    * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
@@ -1313,9 +1313,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * List of resource labels to search for, evaluated with `AND`.
    * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * will match resources with labels "key": "value" `AND` "env":
    * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
@@ -1338,9 +1338,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+   * List of resource labels to search for, evaluated with `AND`.
    * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-   * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+   * will match resources with labels "key": "value" `AND` "env":
    * "prod"
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels
    * </pre>
@@ -2309,10 +2309,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name for the resource value configuration
+     * Identifier. Name for the resource value configuration
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2331,10 +2331,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name for the resource value configuration
+     * Identifier. Name for the resource value configuration
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2353,10 +2353,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name for the resource value configuration
+     * Identifier. Name for the resource value configuration
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2374,10 +2374,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name for the resource value configuration
+     * Identifier. Name for the resource value configuration
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2391,10 +2391,10 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name for the resource value configuration
+     * Identifier. Name for the resource value configuration
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2416,7 +2416,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource value level this expression represents
-     * Only required when there is no SDP mapping in the request
+     * Only required when there is no Sensitive Data Protection mapping in the
+     * request
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -2432,7 +2433,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource value level this expression represents
-     * Only required when there is no SDP mapping in the request
+     * Only required when there is no Sensitive Data Protection mapping in the
+     * request
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -2451,7 +2453,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource value level this expression represents
-     * Only required when there is no SDP mapping in the request
+     * Only required when there is no Sensitive Data Protection mapping in the
+     * request
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -2471,7 +2474,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource value level this expression represents
-     * Only required when there is no SDP mapping in the request
+     * Only required when there is no Sensitive Data Protection mapping in the
+     * request
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -2493,7 +2497,8 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource value level this expression represents
-     * Only required when there is no SDP mapping in the request
+     * Only required when there is no Sensitive Data Protection mapping in the
+     * request
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v2.ResourceValue resource_value = 2;</code>
@@ -2520,13 +2525,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @return A list containing the tagValues.
      */
@@ -2538,13 +2543,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @return The count of tagValues.
      */
@@ -2555,13 +2560,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param index The index of the element to return.
      * @return The tagValues at the given index.
@@ -2573,13 +2578,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the tagValues at the given index.
@@ -2591,13 +2596,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param index The index to set the value at.
      * @param value The tagValues to set.
@@ -2617,13 +2622,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param value The tagValues to add.
      * @return This builder for chaining.
@@ -2642,13 +2647,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param values The tagValues to add.
      * @return This builder for chaining.
@@ -2664,13 +2669,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -2685,13 +2690,13 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Tag values combined with &lt;code&gt;AND&lt;/code&gt; to check against.
+     * Tag values combined with `AND` to check against.
      * Values in the form "tagValues/123"
-     * Example: [ "tagValues/123", "tagValues/456", "tagValues/789" ]
+     * Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]`
      * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
      * </pre>
      *
-     * <code>repeated string tag_values = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>repeated string tag_values = 3;</code>
      *
      * @param value The bytes of the tagValues to add.
      * @return This builder for chaining.
@@ -2714,7 +2719,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Apply resource_value only to resources that match resource_type.
-     * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+     * resource_type will be checked with `AND` of other resources.
      * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
      * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
      * </pre>
@@ -2739,7 +2744,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Apply resource_value only to resources that match resource_type.
-     * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+     * resource_type will be checked with `AND` of other resources.
      * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
      * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
      * </pre>
@@ -2764,7 +2769,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Apply resource_value only to resources that match resource_type.
-     * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+     * resource_type will be checked with `AND` of other resources.
      * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
      * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
      * </pre>
@@ -2788,7 +2793,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Apply resource_value only to resources that match resource_type.
-     * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+     * resource_type will be checked with `AND` of other resources.
      * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
      * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
      * </pre>
@@ -2808,7 +2813,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Apply resource_value only to resources that match resource_type.
-     * resource_type will be checked with &lt;code&gt;AND&lt;/code&gt; of other resources.
+     * resource_type will be checked with `AND` of other resources.
      * For example, "storage.googleapis.com/Bucket" with resource_value "HIGH"
      * will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
      * </pre>
@@ -2836,8 +2841,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Project or folder to scope this configuration to.
      * For example, "project/456" would apply this configuration only to resources
-     * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-     * resources.
+     * in "project/456" scope and will be checked with `AND` of other resources.
      * </pre>
      *
      * <code>string scope = 5;</code>
@@ -2861,8 +2865,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Project or folder to scope this configuration to.
      * For example, "project/456" would apply this configuration only to resources
-     * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-     * resources.
+     * in "project/456" scope and will be checked with `AND` of other resources.
      * </pre>
      *
      * <code>string scope = 5;</code>
@@ -2886,8 +2889,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Project or folder to scope this configuration to.
      * For example, "project/456" would apply this configuration only to resources
-     * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-     * resources.
+     * in "project/456" scope and will be checked with `AND` of other resources.
      * </pre>
      *
      * <code>string scope = 5;</code>
@@ -2910,8 +2912,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Project or folder to scope this configuration to.
      * For example, "project/456" would apply this configuration only to resources
-     * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-     * resources.
+     * in "project/456" scope and will be checked with `AND` of other resources.
      * </pre>
      *
      * <code>string scope = 5;</code>
@@ -2930,8 +2931,7 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Project or folder to scope this configuration to.
      * For example, "project/456" would apply this configuration only to resources
-     * in "project/456" scope will be checked with &lt;code&gt;AND&lt;/code&gt; of other
-     * resources.
+     * in "project/456" scope and will be checked with `AND` of other resources.
      * </pre>
      *
      * <code>string scope = 5;</code>
@@ -2984,9 +2984,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3010,9 +3010,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3027,9 +3027,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3052,9 +3052,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3083,9 +3083,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3109,9 +3109,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>
@@ -3133,9 +3133,9 @@ public final class ResourceValueConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * List of resource labels to search for, evaluated with &lt;code&gt;AND&lt;/code&gt;.
+     * List of resource labels to search for, evaluated with `AND`.
      * For example, "resource_labels_selector": {"key": "value", "env": "prod"}
-     * will match resources with labels "key": "value" &lt;code&gt;AND&lt;/code&gt; "env":
+     * will match resources with labels "key": "value" `AND` "env":
      * "prod"
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels
      * </pre>

@@ -74,7 +74,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
    * Required. The name of this valued resource
    *
    * Valid format:
-   * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
    * Required. The name of this valued resource
    *
    * Valid format:
-   * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+   * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
    * </pre>
    *
    * <code>
@@ -475,7 +475,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
      * Required. The name of this valued resource
      *
      * Valid format:
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -502,7 +502,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
      * Required. The name of this valued resource
      *
      * Valid format:
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -529,7 +529,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
      * Required. The name of this valued resource
      *
      * Valid format:
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -555,7 +555,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
      * Required. The name of this valued resource
      *
      * Valid format:
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>
@@ -577,7 +577,7 @@ public final class GetValuedResourceRequest extends com.google.protobuf.Generate
      * Required. The name of this valued resource
      *
      * Valid format:
-     * "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
+     * `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
      * </pre>
      *
      * <code>

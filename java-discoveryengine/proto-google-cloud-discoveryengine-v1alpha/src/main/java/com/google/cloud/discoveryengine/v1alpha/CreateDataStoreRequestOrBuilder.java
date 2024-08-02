@@ -156,4 +156,24 @@ public interface CreateDataStoreRequestOrBuilder
    * @return The createAdvancedSiteSearch.
    */
   boolean getCreateAdvancedSiteSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * A boolean flag indicating whether to skip the default schema creation for
+   * the data store. Only enable this flag if you are certain that the default
+   * schema is incompatible with your use case.
+   *
+   * If set to true, you must manually create a schema for the data store before
+   * any documents can be ingested.
+   *
+   * This flag cannot be specified if `data_store.starting_schema` is specified.
+   * </pre>
+   *
+   * <code>bool skip_default_schema_creation = 7;</code>
+   *
+   * @return The skipDefaultSchemaCreation.
+   */
+  boolean getSkipDefaultSchemaCreation();
 }

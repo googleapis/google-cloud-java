@@ -74,7 +74,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure management group, for example,
-     * "20000000-0001-0000-0000-000000000000".
+     * `20000000-0001-0000-0000-000000000000`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -87,7 +87,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure management group, for example,
-     * "20000000-0001-0000-0000-000000000000".
+     * `20000000-0001-0000-0000-000000000000`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -175,7 +175,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure management group, for example,
-     * "20000000-0001-0000-0000-000000000000".
+     * `20000000-0001-0000-0000-000000000000`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -199,7 +199,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure management group, for example,
-     * "20000000-0001-0000-0000-000000000000".
+     * `20000000-0001-0000-0000-000000000000`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -658,7 +658,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure management group, for example,
-       * "20000000-0001-0000-0000-000000000000".
+       * `20000000-0001-0000-0000-000000000000`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -681,7 +681,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure management group, for example,
-       * "20000000-0001-0000-0000-000000000000".
+       * `20000000-0001-0000-0000-000000000000`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -704,7 +704,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure management group, for example,
-       * "20000000-0001-0000-0000-000000000000".
+       * `20000000-0001-0000-0000-000000000000`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -726,7 +726,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure management group, for example,
-       * "20000000-0001-0000-0000-000000000000".
+       * `20000000-0001-0000-0000-000000000000`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -744,7 +744,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure management group, for example,
-       * "20000000-0001-0000-0000-000000000000".
+       * `20000000-0001-0000-0000-000000000000`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -947,7 +947,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure subscription, for example,
-     * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+     * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -960,7 +960,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure subscription, for example,
-     * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+     * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1048,7 +1048,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure subscription, for example,
-     * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+     * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1072,7 +1072,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The UUID of the Azure subscription, for example,
-     * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+     * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1528,7 +1528,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure subscription, for example,
-       * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+       * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1551,7 +1551,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure subscription, for example,
-       * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+       * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1574,7 +1574,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure subscription, for example,
-       * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+       * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1596,7 +1596,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure subscription, for example,
-       * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+       * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1614,7 +1614,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The UUID of the Azure subscription, for example,
-       * "291bba3f-e0a5-47bc-a099-3bdcb2a50a05".
+       * `291bba3f-e0a5-47bc-a099-3bdcb2a50a05`.
        * </pre>
        *
        * <code>string id = 1;</code>
