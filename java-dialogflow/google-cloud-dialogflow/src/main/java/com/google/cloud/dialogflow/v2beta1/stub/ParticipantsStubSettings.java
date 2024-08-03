@@ -64,6 +64,8 @@ import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2beta1.Suggestion;
@@ -145,6 +147,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestFaqAnswersSettings;
   private final UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesSettings;
+  private final UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings;
   private final PagedCallSettings<
           ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
       listSuggestionsSettings;
@@ -374,6 +378,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return suggestSmartRepliesSettings;
   }
 
+  /** Returns the object with the settings used for calls to suggestKnowledgeAssist. */
+  public UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings() {
+    return suggestKnowledgeAssistSettings;
+  }
+
   /**
    * Returns the object with the settings used for calls to listSuggestions.
    *
@@ -528,6 +538,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
     suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
+    suggestKnowledgeAssistSettings = settingsBuilder.suggestKnowledgeAssistSettings().build();
     listSuggestionsSettings = settingsBuilder.listSuggestionsSettings().build();
     compileSuggestionSettings = settingsBuilder.compileSuggestionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -557,6 +568,9 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
         suggestFaqAnswersSettings;
     private final UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings;
+    private final UnaryCallSettings.Builder<
+            SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings;
     private final PagedCallSettings.Builder<
             ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
         listSuggestionsSettings;
@@ -637,6 +651,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suggestKnowledgeAssistSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSuggestionsSettings = PagedCallSettings.newBuilder(LIST_SUGGESTIONS_PAGE_STR_FACT);
       compileSuggestionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -652,6 +667,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listSuggestionsSettings,
               compileSuggestionSettings,
               listLocationsSettings,
@@ -671,6 +687,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
       suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
+      suggestKnowledgeAssistSettings = settings.suggestKnowledgeAssistSettings.toBuilder();
       listSuggestionsSettings = settings.listSuggestionsSettings.toBuilder();
       compileSuggestionSettings = settings.compileSuggestionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -686,6 +703,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listSuggestionsSettings,
               compileSuggestionSettings,
               listLocationsSettings,
@@ -754,6 +772,11 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
       builder
           .suggestSmartRepliesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .suggestKnowledgeAssistSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -848,6 +871,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     public UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings() {
       return suggestSmartRepliesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suggestKnowledgeAssist. */
+    public UnaryCallSettings.Builder<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings() {
+      return suggestKnowledgeAssistSettings;
     }
 
     /**

@@ -209,6 +209,28 @@ public class MockConversationsImpl extends ConversationsImplBase {
   }
 
   @Override
+  public void generateStatelessSuggestion(
+      GenerateStatelessSuggestionRequest request,
+      StreamObserver<GenerateStatelessSuggestionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateStatelessSuggestionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateStatelessSuggestionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateStatelessSuggestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateStatelessSuggestionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchKnowledge(
       SearchKnowledgeRequest request, StreamObserver<SearchKnowledgeResponse> responseObserver) {
     Object response = responses.poll();

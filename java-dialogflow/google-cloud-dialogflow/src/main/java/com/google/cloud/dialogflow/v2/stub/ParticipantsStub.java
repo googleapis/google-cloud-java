@@ -35,6 +35,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
@@ -96,6 +98,11 @@ public abstract class ParticipantsStub implements BackgroundResource {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
+  }
+
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    throw new UnsupportedOperationException("Not implemented: suggestKnowledgeAssistCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

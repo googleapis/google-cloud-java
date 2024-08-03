@@ -1647,13 +1647,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The name of the latest conversation message used as context for
+   * Optional. The name of the latest conversation message used as context for
    * generating a Summary. If empty, the latest message of the conversation will
    * be used. The format is specific to the user and the names of the messages
    * provided.
    * </pre>
    *
-   * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The latestMessage.
    */
@@ -1673,13 +1675,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The name of the latest conversation message used as context for
+   * Optional. The name of the latest conversation message used as context for
    * generating a Summary. If empty, the latest message of the conversation will
    * be used. The format is specific to the user and the names of the messages
    * provided.
    * </pre>
    *
-   * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for latestMessage.
    */
@@ -1702,12 +1706,12 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Max number of messages prior to and including
+   * Optional. Max number of messages prior to and including
    * [latest_message] to use as context when compiling the
    * suggestion. By default 500 and at most 1000.
    * </pre>
    *
-   * <code>int32 max_context_size = 4;</code>
+   * <code>int32 max_context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxContextSize.
    */
@@ -2643,13 +2647,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * generating a Summary. If empty, the latest message of the conversation will
      * be used. The format is specific to the user and the names of the messages
      * provided.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The latestMessage.
      */
@@ -2668,13 +2674,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * generating a Summary. If empty, the latest message of the conversation will
      * be used. The format is specific to the user and the names of the messages
      * provided.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for latestMessage.
      */
@@ -2693,13 +2701,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * generating a Summary. If empty, the latest message of the conversation will
      * be used. The format is specific to the user and the names of the messages
      * provided.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -2717,13 +2727,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * generating a Summary. If empty, the latest message of the conversation will
      * be used. The format is specific to the user and the names of the messages
      * provided.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2737,13 +2749,15 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * generating a Summary. If empty, the latest message of the conversation will
      * be used. The format is specific to the user and the names of the messages
      * provided.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.
@@ -2764,12 +2778,12 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 max_context_size = 4;</code>
+     * <code>int32 max_context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxContextSize.
      */
@@ -2781,12 +2795,12 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 max_context_size = 4;</code>
+     * <code>int32 max_context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The maxContextSize to set.
      * @return This builder for chaining.
@@ -2802,12 +2816,12 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 max_context_size = 4;</code>
+     * <code>int32 max_context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

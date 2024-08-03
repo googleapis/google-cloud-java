@@ -16,28 +16,37 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_Conversationname_sync]
-import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
-import com.google.cloud.dialogflow.v2beta1.ConversationName;
+// [START dialogflow_v2beta1_generated_Conversations_GenerateStatelessSuggestion_sync]
+import com.google.cloud.dialogflow.v2beta1.ConversationContext;
 import com.google.cloud.dialogflow.v2beta1.ConversationsClient;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse;
+import com.google.cloud.dialogflow.v2beta1.LocationName;
+import com.google.cloud.dialogflow.v2beta1.TriggerEvent;
+import java.util.ArrayList;
 
-public class SyncBatchCreateMessagesConversationname {
+public class SyncGenerateStatelessSuggestion {
 
   public static void main(String[] args) throws Exception {
-    syncBatchCreateMessagesConversationname();
+    syncGenerateStatelessSuggestion();
   }
 
-  public static void syncBatchCreateMessagesConversationname() throws Exception {
+  public static void syncGenerateStatelessSuggestion() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ConversationsClient conversationsClient = ConversationsClient.create()) {
-      ConversationName parent =
-          ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
-      BatchCreateMessagesResponse response = conversationsClient.batchCreateMessages(parent);
+      GenerateStatelessSuggestionRequest request =
+          GenerateStatelessSuggestionRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setConversationContext(ConversationContext.newBuilder().build())
+              .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+              .build();
+      GenerateStatelessSuggestionResponse response =
+          conversationsClient.generateStatelessSuggestion(request);
     }
   }
 }
-// [END dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_Conversationname_sync]
+// [END dialogflow_v2beta1_generated_Conversations_GenerateStatelessSuggestion_sync]

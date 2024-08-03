@@ -134,7 +134,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The name of the latest conversation message used as context for
+   * Optional. The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
    *
@@ -142,7 +142,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The latestMessage.
    */
@@ -162,7 +164,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The name of the latest conversation message used as context for
+   * Optional. The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
    *
@@ -170,7 +172,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for latestMessage.
    */
@@ -193,12 +197,12 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Max number of messages prior to and including
+   * Optional. Max number of messages prior to and including
    * [latest_message] to use as context when compiling the
    * suggestion. By default 500 and at most 1000.
    * </pre>
    *
-   * <code>int32 context_size = 4;</code>
+   * <code>int32 context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The contextSize.
    */
@@ -213,10 +217,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query. Only used for POC/demo purpose.
+   * Optional. Parameters for a human assist query. Only used for POC/demo
+   * purpose.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the assistQueryParams field is set.
    */
@@ -228,10 +235,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query. Only used for POC/demo purpose.
+   * Optional. Parameters for a human assist query. Only used for POC/demo
+   * purpose.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The assistQueryParams.
    */
@@ -245,10 +255,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Parameters for a human assist query. Only used for POC/demo purpose.
+   * Optional. Parameters for a human assist query. Only used for POC/demo
+   * purpose.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder
@@ -834,7 +847,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * compiling suggestion. If empty, the latest message of the conversation will
      * be used.
      *
@@ -842,7 +855,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The latestMessage.
      */
@@ -861,7 +876,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * compiling suggestion. If empty, the latest message of the conversation will
      * be used.
      *
@@ -869,7 +884,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for latestMessage.
      */
@@ -888,7 +905,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * compiling suggestion. If empty, the latest message of the conversation will
      * be used.
      *
@@ -896,7 +913,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -914,7 +933,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * compiling suggestion. If empty, the latest message of the conversation will
      * be used.
      *
@@ -922,7 +941,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -936,7 +957,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of the latest conversation message used as context for
+     * Optional. The name of the latest conversation message used as context for
      * compiling suggestion. If empty, the latest message of the conversation will
      * be used.
      *
@@ -944,7 +965,9 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.
@@ -965,12 +988,12 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 context_size = 4;</code>
+     * <code>int32 context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The contextSize.
      */
@@ -982,12 +1005,12 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 context_size = 4;</code>
+     * <code>int32 context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The contextSize to set.
      * @return This builder for chaining.
@@ -1003,12 +1026,12 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Max number of messages prior to and including
+     * Optional. Max number of messages prior to and including
      * [latest_message] to use as context when compiling the
      * suggestion. By default 500 and at most 1000.
      * </pre>
      *
-     * <code>int32 context_size = 4;</code>
+     * <code>int32 context_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1029,10 +1052,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the assistQueryParams field is set.
      */
@@ -1043,10 +1069,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The assistQueryParams.
      */
@@ -1063,10 +1092,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
@@ -1086,10 +1118,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder builderForValue) {
@@ -1106,10 +1141,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
@@ -1135,10 +1173,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAssistQueryParams() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1154,10 +1195,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
@@ -1169,10 +1213,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder
         getAssistQueryParamsOrBuilder() {
@@ -1188,10 +1235,13 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Parameters for a human assist query. Only used for POC/demo purpose.
+     * Optional. Parameters for a human assist query. Only used for POC/demo
+     * purpose.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.AssistQueryParameters,

@@ -270,7 +270,7 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Deprecated
@@ -287,7 +287,7 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
    * @return The cxSessionParameters.
    */
   @java.lang.Deprecated
@@ -379,6 +379,19 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The bytes for cxCurrentPage.
    */
   com.google.protobuf.ByteString getCxCurrentPageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The auth code for accessing Call Companion UI.
+   * </pre>
+   *
+   * <code>bytes call_companion_auth_code = 12;</code>
+   *
+   * @return The callCompanionAuthCode.
+   */
+  com.google.protobuf.ByteString getCallCompanionAuthCode();
 
   com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.ResponseCase getResponseCase();
 

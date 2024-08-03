@@ -45,6 +45,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     dateRanges_ = java.util.Collections.emptyList();
     pivots_ = java.util.Collections.emptyList();
     currencyCode_ = "";
+    comparisons_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -729,6 +730,97 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     return returnPropertyQuota_;
   }
 
+  public static final int COMPARISONS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.analytics.data.v1beta.Comparison> comparisons_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1beta.Comparison> getComparisonsList() {
+    return comparisons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.analytics.data.v1beta.ComparisonOrBuilder>
+      getComparisonsOrBuilderList() {
+    return comparisons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getComparisonsCount() {
+    return comparisons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.Comparison getComparisons(int index) {
+    return comparisons_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.ComparisonOrBuilder getComparisonsOrBuilder(int index) {
+    return comparisons_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -776,6 +868,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     if (returnPropertyQuota_ != false) {
       output.writeBool(11, returnPropertyQuota_);
     }
+    for (int i = 0; i < comparisons_.size(); i++) {
+      output.writeMessage(12, comparisons_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -818,6 +913,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     if (returnPropertyQuota_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, returnPropertyQuota_);
     }
+    for (int i = 0; i < comparisons_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, comparisons_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -854,6 +952,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     }
     if (getKeepEmptyRows() != other.getKeepEmptyRows()) return false;
     if (getReturnPropertyQuota() != other.getReturnPropertyQuota()) return false;
+    if (!getComparisonsList().equals(other.getComparisonsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -901,6 +1000,10 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeepEmptyRows());
     hash = (37 * hash) + RETURN_PROPERTY_QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPropertyQuota());
+    if (getComparisonsCount() > 0) {
+      hash = (37 * hash) + COMPARISONS_FIELD_NUMBER;
+      hash = (53 * hash) + getComparisonsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1049,6 +1152,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
         getDimensionFilterFieldBuilder();
         getMetricFilterFieldBuilder();
         getCohortSpecFieldBuilder();
+        getComparisonsFieldBuilder();
       }
     }
 
@@ -1103,6 +1207,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
       }
       keepEmptyRows_ = false;
       returnPropertyQuota_ = false;
+      if (comparisonsBuilder_ == null) {
+        comparisons_ = java.util.Collections.emptyList();
+      } else {
+        comparisons_ = null;
+        comparisonsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1175,6 +1286,15 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
         result.pivots_ = pivots_;
       } else {
         result.pivots_ = pivotsBuilder_.build();
+      }
+      if (comparisonsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          comparisons_ = java.util.Collections.unmodifiableList(comparisons_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.comparisons_ = comparisons_;
+      } else {
+        result.comparisons_ = comparisonsBuilder_.build();
       }
     }
 
@@ -1389,6 +1509,33 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
       if (other.getReturnPropertyQuota() != false) {
         setReturnPropertyQuota(other.getReturnPropertyQuota());
       }
+      if (comparisonsBuilder_ == null) {
+        if (!other.comparisons_.isEmpty()) {
+          if (comparisons_.isEmpty()) {
+            comparisons_ = other.comparisons_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureComparisonsIsMutable();
+            comparisons_.addAll(other.comparisons_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.comparisons_.isEmpty()) {
+          if (comparisonsBuilder_.isEmpty()) {
+            comparisonsBuilder_.dispose();
+            comparisonsBuilder_ = null;
+            comparisons_ = other.comparisons_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            comparisonsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getComparisonsFieldBuilder()
+                    : null;
+          } else {
+            comparisonsBuilder_.addAllMessages(other.comparisons_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1509,6 +1656,19 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
+            case 98:
+              {
+                com.google.analytics.data.v1beta.Comparison m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Comparison.parser(), extensionRegistry);
+                if (comparisonsBuilder_ == null) {
+                  ensureComparisonsIsMutable();
+                  comparisons_.add(m);
+                } else {
+                  comparisonsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4089,6 +4249,429 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
       returnPropertyQuota_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.analytics.data.v1beta.Comparison> comparisons_ =
+        java.util.Collections.emptyList();
+
+    private void ensureComparisonsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        comparisons_ =
+            new java.util.ArrayList<com.google.analytics.data.v1beta.Comparison>(comparisons_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1beta.Comparison,
+            com.google.analytics.data.v1beta.Comparison.Builder,
+            com.google.analytics.data.v1beta.ComparisonOrBuilder>
+        comparisonsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.analytics.data.v1beta.Comparison> getComparisonsList() {
+      if (comparisonsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(comparisons_);
+      } else {
+        return comparisonsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getComparisonsCount() {
+      if (comparisonsBuilder_ == null) {
+        return comparisons_.size();
+      } else {
+        return comparisonsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.Comparison getComparisons(int index) {
+      if (comparisonsBuilder_ == null) {
+        return comparisons_.get(index);
+      } else {
+        return comparisonsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComparisons(int index, com.google.analytics.data.v1beta.Comparison value) {
+      if (comparisonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureComparisonsIsMutable();
+        comparisons_.set(index, value);
+        onChanged();
+      } else {
+        comparisonsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComparisons(
+        int index, com.google.analytics.data.v1beta.Comparison.Builder builderForValue) {
+      if (comparisonsBuilder_ == null) {
+        ensureComparisonsIsMutable();
+        comparisons_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        comparisonsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addComparisons(com.google.analytics.data.v1beta.Comparison value) {
+      if (comparisonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureComparisonsIsMutable();
+        comparisons_.add(value);
+        onChanged();
+      } else {
+        comparisonsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addComparisons(int index, com.google.analytics.data.v1beta.Comparison value) {
+      if (comparisonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureComparisonsIsMutable();
+        comparisons_.add(index, value);
+        onChanged();
+      } else {
+        comparisonsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addComparisons(
+        com.google.analytics.data.v1beta.Comparison.Builder builderForValue) {
+      if (comparisonsBuilder_ == null) {
+        ensureComparisonsIsMutable();
+        comparisons_.add(builderForValue.build());
+        onChanged();
+      } else {
+        comparisonsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addComparisons(
+        int index, com.google.analytics.data.v1beta.Comparison.Builder builderForValue) {
+      if (comparisonsBuilder_ == null) {
+        ensureComparisonsIsMutable();
+        comparisons_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        comparisonsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllComparisons(
+        java.lang.Iterable<? extends com.google.analytics.data.v1beta.Comparison> values) {
+      if (comparisonsBuilder_ == null) {
+        ensureComparisonsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, comparisons_);
+        onChanged();
+      } else {
+        comparisonsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearComparisons() {
+      if (comparisonsBuilder_ == null) {
+        comparisons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        comparisonsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeComparisons(int index) {
+      if (comparisonsBuilder_ == null) {
+        ensureComparisonsIsMutable();
+        comparisons_.remove(index);
+        onChanged();
+      } else {
+        comparisonsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.Comparison.Builder getComparisonsBuilder(int index) {
+      return getComparisonsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ComparisonOrBuilder getComparisonsOrBuilder(int index) {
+      if (comparisonsBuilder_ == null) {
+        return comparisons_.get(index);
+      } else {
+        return comparisonsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.analytics.data.v1beta.ComparisonOrBuilder>
+        getComparisonsOrBuilderList() {
+      if (comparisonsBuilder_ != null) {
+        return comparisonsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(comparisons_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.Comparison.Builder addComparisonsBuilder() {
+      return getComparisonsFieldBuilder()
+          .addBuilder(com.google.analytics.data.v1beta.Comparison.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.Comparison.Builder addComparisonsBuilder(int index) {
+      return getComparisonsFieldBuilder()
+          .addBuilder(index, com.google.analytics.data.v1beta.Comparison.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of comparisons requested and displayed. The
+     * request requires both a comparisons field and a comparisons dimension to
+     * receive a comparison column in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.analytics.data.v1beta.Comparison.Builder>
+        getComparisonsBuilderList() {
+      return getComparisonsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1beta.Comparison,
+            com.google.analytics.data.v1beta.Comparison.Builder,
+            com.google.analytics.data.v1beta.ComparisonOrBuilder>
+        getComparisonsFieldBuilder() {
+      if (comparisonsBuilder_ == null) {
+        comparisonsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.analytics.data.v1beta.Comparison,
+                com.google.analytics.data.v1beta.Comparison.Builder,
+                com.google.analytics.data.v1beta.ComparisonOrBuilder>(
+                comparisons_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+        comparisons_ = null;
+      }
+      return comparisonsBuilder_;
     }
 
     @java.lang.Override

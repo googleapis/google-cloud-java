@@ -16,28 +16,27 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_String_sync]
-import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
-import com.google.cloud.dialogflow.v2beta1.ConversationName;
-import com.google.cloud.dialogflow.v2beta1.ConversationsClient;
+// [START dialogflow_v2beta1_generated_EncryptionSpecService_Create_SetEndpoint_sync]
+import com.google.cloud.dialogflow.v2beta1.EncryptionSpecServiceClient;
+import com.google.cloud.dialogflow.v2beta1.EncryptionSpecServiceSettings;
+import com.google.cloud.dialogflow.v2beta1.myEndpoint;
 
-public class SyncBatchCreateMessagesString {
+public class SyncCreateSetEndpoint {
 
   public static void main(String[] args) throws Exception {
-    syncBatchCreateMessagesString();
+    syncCreateSetEndpoint();
   }
 
-  public static void syncBatchCreateMessagesString() throws Exception {
+  public static void syncCreateSetEndpoint() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (ConversationsClient conversationsClient = ConversationsClient.create()) {
-      String parent =
-          ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
-      BatchCreateMessagesResponse response = conversationsClient.batchCreateMessages(parent);
-    }
+    EncryptionSpecServiceSettings encryptionSpecServiceSettings =
+        EncryptionSpecServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
+    EncryptionSpecServiceClient encryptionSpecServiceClient =
+        EncryptionSpecServiceClient.create(encryptionSpecServiceSettings);
   }
 }
-// [END dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_String_sync]
+// [END dialogflow_v2beta1_generated_EncryptionSpecService_Create_SetEndpoint_sync]

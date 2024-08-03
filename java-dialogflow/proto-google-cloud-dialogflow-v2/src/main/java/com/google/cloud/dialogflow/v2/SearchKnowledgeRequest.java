@@ -77,12 +77,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The parent resource contains the conversation profile
+   * Required. The parent resource contains the conversation profile
    * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 6;</code>
+   * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -102,12 +102,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The parent resource contains the conversation profile
+   * Required. The parent resource contains the conversation profile
    * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 6;</code>
+   * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -243,7 +243,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The ID of the search session.
+   * Required. The ID of the search session.
    * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
    * conversation profile or on its own to identify a search session. The search
    * history of the same session will impact the search result. It's up to the
@@ -252,7 +252,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    * not exceed 36 characters.
    * </pre>
    *
-   * <code>string session_id = 3;</code>
+   * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sessionId.
    */
@@ -272,7 +272,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The ID of the search session.
+   * Required. The ID of the search session.
    * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
    * conversation profile or on its own to identify a search session. The search
    * history of the same session will impact the search result. It's up to the
@@ -281,7 +281,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    * not exceed 36 characters.
    * </pre>
    *
-   * <code>string session_id = 3;</code>
+   * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for sessionId.
    */
@@ -306,12 +306,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The conversation (between human agent and end user) where the search
-   * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * Optional. The conversation (between human agent and end user) where the
+   * search request is triggered. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
    * </pre>
    *
-   * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The conversation.
    */
@@ -331,12 +333,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The conversation (between human agent and end user) where the search
-   * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * Optional. The conversation (between human agent and end user) where the
+   * search request is triggered. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
    * </pre>
    *
-   * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for conversation.
    */
@@ -361,13 +365,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the latest conversation message when the request is
+   * Optional. The name of the latest conversation message when the request is
    * triggered.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The latestMessage.
    */
@@ -387,13 +393,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the latest conversation message when the request is
+   * Optional. The name of the latest conversation message when the request is
    * triggered.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
    *
-   * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for latestMessage.
    */
@@ -898,12 +906,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The parent resource contains the conversation profile
+     * Required. The parent resource contains the conversation profile
      * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The parent.
      */
@@ -922,12 +930,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The parent resource contains the conversation profile
+     * Required. The parent resource contains the conversation profile
      * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for parent.
      */
@@ -946,12 +954,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The parent resource contains the conversation profile
+     * Required. The parent resource contains the conversation profile
      * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -969,12 +977,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The parent resource contains the conversation profile
+     * Required. The parent resource contains the conversation profile
      * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -988,12 +996,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The parent resource contains the conversation profile
+     * Required. The parent resource contains the conversation profile
      * Format: 'projects/&lt;Project ID&gt;' or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1343,7 +1351,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID of the search session.
+     * Required. The ID of the search session.
      * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
      * conversation profile or on its own to identify a search session. The search
      * history of the same session will impact the search result. It's up to the
@@ -1352,7 +1360,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * not exceed 36 characters.
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The sessionId.
      */
@@ -1371,7 +1379,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID of the search session.
+     * Required. The ID of the search session.
      * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
      * conversation profile or on its own to identify a search session. The search
      * history of the same session will impact the search result. It's up to the
@@ -1380,7 +1388,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * not exceed 36 characters.
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for sessionId.
      */
@@ -1399,7 +1407,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID of the search session.
+     * Required. The ID of the search session.
      * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
      * conversation profile or on its own to identify a search session. The search
      * history of the same session will impact the search result. It's up to the
@@ -1408,7 +1416,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * not exceed 36 characters.
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The sessionId to set.
      * @return This builder for chaining.
@@ -1426,7 +1434,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID of the search session.
+     * Required. The ID of the search session.
      * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
      * conversation profile or on its own to identify a search session. The search
      * history of the same session will impact the search result. It's up to the
@@ -1435,7 +1443,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * not exceed 36 characters.
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1449,7 +1457,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The ID of the search session.
+     * Required. The ID of the search session.
      * The session_id can be combined with Dialogflow V3 Agent ID retrieved from
      * conversation profile or on its own to identify a search session. The search
      * history of the same session will impact the search result. It's up to the
@@ -1458,7 +1466,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      * not exceed 36 characters.
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string session_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for sessionId to set.
      * @return This builder for chaining.
@@ -1479,12 +1487,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The conversation (between human agent and end user) where the search
-     * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Optional. The conversation (between human agent and end user) where the
+     * search request is triggered. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
      * </pre>
      *
-     * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The conversation.
      */
@@ -1503,12 +1513,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The conversation (between human agent and end user) where the search
-     * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Optional. The conversation (between human agent and end user) where the
+     * search request is triggered. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
      * </pre>
      *
-     * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for conversation.
      */
@@ -1527,12 +1539,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The conversation (between human agent and end user) where the search
-     * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Optional. The conversation (between human agent and end user) where the
+     * search request is triggered. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
      * </pre>
      *
-     * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The conversation to set.
      * @return This builder for chaining.
@@ -1550,12 +1564,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The conversation (between human agent and end user) where the search
-     * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Optional. The conversation (between human agent and end user) where the
+     * search request is triggered. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
      * </pre>
      *
-     * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1569,12 +1585,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The conversation (between human agent and end user) where the search
-     * request is triggered. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/conversations/&lt;Conversation ID&gt;`.
+     * Optional. The conversation (between human agent and end user) where the
+     * search request is triggered. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
      * </pre>
      *
-     * <code>string conversation = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string conversation = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for conversation to set.
      * @return This builder for chaining.
@@ -1595,13 +1613,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the latest conversation message when the request is
+     * Optional. The name of the latest conversation message when the request is
      * triggered.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The latestMessage.
      */
@@ -1620,13 +1640,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the latest conversation message when the request is
+     * Optional. The name of the latest conversation message when the request is
      * triggered.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for latestMessage.
      */
@@ -1645,13 +1667,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the latest conversation message when the request is
+     * Optional. The name of the latest conversation message when the request is
      * triggered.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The latestMessage to set.
      * @return This builder for chaining.
@@ -1669,13 +1693,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the latest conversation message when the request is
+     * Optional. The name of the latest conversation message when the request is
      * triggered.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1689,13 +1715,15 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the latest conversation message when the request is
+     * Optional. The name of the latest conversation message when the request is
      * triggered.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
      *
-     * <code>string latest_message = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string latest_message = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for latestMessage to set.
      * @return This builder for chaining.

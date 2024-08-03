@@ -624,8 +624,9 @@ public class ConversationsClientHttpJsonTest {
 
     ConversationName parent =
         ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+    List<CreateMessageRequest> requests = new ArrayList<>();
 
-    BatchCreateMessagesResponse actualResponse = client.batchCreateMessages(parent);
+    BatchCreateMessagesResponse actualResponse = client.batchCreateMessages(parent, requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -653,7 +654,8 @@ public class ConversationsClientHttpJsonTest {
     try {
       ConversationName parent =
           ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
-      client.batchCreateMessages(parent);
+      List<CreateMessageRequest> requests = new ArrayList<>();
+      client.batchCreateMessages(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -667,8 +669,9 @@ public class ConversationsClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     String parent = "projects/project-4379/conversations/conversation-4379";
+    List<CreateMessageRequest> requests = new ArrayList<>();
 
-    BatchCreateMessagesResponse actualResponse = client.batchCreateMessages(parent);
+    BatchCreateMessagesResponse actualResponse = client.batchCreateMessages(parent, requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -695,7 +698,8 @@ public class ConversationsClientHttpJsonTest {
 
     try {
       String parent = "projects/project-4379/conversations/conversation-4379";
-      client.batchCreateMessages(parent);
+      List<CreateMessageRequest> requests = new ArrayList<>();
+      client.batchCreateMessages(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -975,6 +979,61 @@ public class ConversationsClientHttpJsonTest {
               .setMaxContextSize(-1134084212)
               .build();
       client.generateStatelessSummary(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateStatelessSuggestionTest() throws Exception {
+    GenerateStatelessSuggestionResponse expectedResponse =
+        GenerateStatelessSuggestionResponse.newBuilder()
+            .setGeneratorSuggestion(GeneratorSuggestion.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerateStatelessSuggestionRequest request =
+        GenerateStatelessSuggestionRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setConversationContext(ConversationContext.newBuilder().build())
+            .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+            .build();
+
+    GenerateStatelessSuggestionResponse actualResponse =
+        client.generateStatelessSuggestion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateStatelessSuggestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerateStatelessSuggestionRequest request =
+          GenerateStatelessSuggestionRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setConversationContext(ConversationContext.newBuilder().build())
+              .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+              .build();
+      client.generateStatelessSuggestion(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -500,4 +500,76 @@ public interface RunPivotReportRequestOrBuilder
    * @return The returnPropertyQuota.
    */
   boolean getReturnPropertyQuota();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.analytics.data.v1beta.Comparison> getComparisonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.analytics.data.v1beta.Comparison getComparisons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getComparisonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.analytics.data.v1beta.ComparisonOrBuilder>
+      getComparisonsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of comparisons requested and displayed. The
+   * request requires both a comparisons field and a comparisons dimension to
+   * receive a comparison column in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.Comparison comparisons = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.analytics.data.v1beta.ComparisonOrBuilder getComparisonsOrBuilder(int index);
 }
