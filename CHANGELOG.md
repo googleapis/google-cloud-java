@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.21.0](https://github.com/googleapis/java-datastore/compare/v2.20.2...v2.21.0) (2024-07-31)
+
+
+### Features
+
+* Enable hermetic library generation ([#1462](https://github.com/googleapis/java-datastore/issues/1462)) ([d142d9c](https://github.com/googleapis/java-datastore/commit/d142d9c95d91c8cadaf696efc12d6136814938ff))
+
 ## [2.20.2](https://github.com/googleapis/java-datastore/compare/v2.20.1...v2.20.2) (2024-06-28)
 
 
