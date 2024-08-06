@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.42.0](https://github.com/googleapis/java-bigtable/compare/v2.41.0...v2.42.0) (2024-08-06)
+
+
+### Features
+
+* Support float32, float64, and array type query params ([#2297](https://github.com/googleapis/java-bigtable/issues/2297)) ([a65640e](https://github.com/googleapis/java-bigtable/commit/a65640e285950d02136544bac913b2852cfe0274))
+
+
+### Bug Fixes
+
+* Adapt toString tests to introduction of java.time in gax  ([93f66a7](https://github.com/googleapis/java-bigtable/commit/93f66a70371f8095fd5c001a977d71e5622be46d))
+
+
+### Dependencies
+
+* Update shared dependencies ([93f66a7](https://github.com/googleapis/java-bigtable/commit/93f66a70371f8095fd5c001a977d71e5622be46d))
+
 ## [2.41.0](https://github.com/googleapis/java-bigtable/compare/v2.40.0...v2.41.0) (2024-07-24)
 
 
