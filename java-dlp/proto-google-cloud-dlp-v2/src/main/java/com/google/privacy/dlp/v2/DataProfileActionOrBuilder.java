@@ -98,5 +98,40 @@ public interface DataProfileActionOrBuilder
   com.google.privacy.dlp.v2.DataProfileAction.PubSubNotificationOrBuilder
       getPubSubNotificationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   *
+   * @return Whether the tagResources field is set.
+   */
+  boolean hasTagResources();
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   *
+   * @return The tagResources.
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.TagResources getTagResources();
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   */
+  com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder getTagResourcesOrBuilder();
+
   com.google.privacy.dlp.v2.DataProfileAction.ActionCase getActionCase();
 }

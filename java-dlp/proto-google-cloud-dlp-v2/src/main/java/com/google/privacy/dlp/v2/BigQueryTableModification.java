@@ -135,7 +135,7 @@ public enum BigQueryTableModification implements com.google.protobuf.ProtocolMes
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(6);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(7);
   }
 
   private static final BigQueryTableModification[] VALUES = values();

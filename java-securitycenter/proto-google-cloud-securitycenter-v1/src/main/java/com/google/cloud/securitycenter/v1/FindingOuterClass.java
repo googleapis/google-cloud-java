@@ -33,6 +33,18 @@ public final class FindingOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_Finding_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_StaticMute_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_StaticMute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_DynamicMuteRecord_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_DynamicMuteRecord_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_fieldAccessorTable;
@@ -96,7 +108,7 @@ public final class FindingOuterClass {
           + "/v1/toxic_combination.proto\0322google/clou"
           + "d/securitycenter/v1/vulnerability.proto\032"
           + "\034google/protobuf/struct.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\253\035\n\007Finding\022\014\n\004na"
+          + "otobuf/timestamp.proto\"\213!\n\007Finding\022\014\n\004na"
           + "me\030\001 \001(\t\022\016\n\006parent\030\002 \001(\t\022\025\n\rresource_nam"
           + "e\030\003 \001(\t\022<\n\005state\030\004 \001(\0162-.google.cloud.se"
           + "curitycenter.v1.Finding.State\022\020\n\010categor"
@@ -125,49 +137,61 @@ public final class FindingOuterClass {
           + "ss\030\032 \001(\0132&.google.cloud.securitycenter.v"
           + "1.Access\022?\n\013connections\030\037 \003(\0132*.google.c"
           + "loud.securitycenter.v1.Connection\022\026\n\016mut"
-          + "e_initiator\030\034 \001(\t\022:\n\tprocesses\030\036 \003(\0132\'.g"
-          + "oogle.cloud.securitycenter.v1.Process\022L\n"
-          + "\010contacts\030! \003(\01325.google.cloud.securityc"
-          + "enter.v1.Finding.ContactsEntryB\003\340A\003\022?\n\013c"
-          + "ompliances\030\" \003(\0132*.google.cloud.security"
-          + "center.v1.Compliance\022 \n\023parent_display_n"
-          + "ame\030$ \001(\tB\003\340A\003\022\023\n\013description\030% \001(\t\022B\n\014e"
-          + "xfiltration\030& \001(\0132,.google.cloud.securit"
-          + "ycenter.v1.Exfiltration\022@\n\014iam_bindings\030"
-          + "\' \003(\0132*.google.cloud.securitycenter.v1.I"
-          + "amBinding\022\022\n\nnext_steps\030( \001(\t\022\023\n\013module_"
-          + "name\030) \001(\t\022=\n\ncontainers\030* \003(\0132).google."
-          + "cloud.securitycenter.v1.Container\022>\n\nkub"
-          + "ernetes\030+ \001(\0132*.google.cloud.securitycen"
-          + "ter.v1.Kubernetes\022:\n\010database\030, \001(\0132(.go"
-          + "ogle.cloud.securitycenter.v1.Database\022G\n"
-          + "\017attack_exposure\030- \001(\0132..google.cloud.se"
-          + "curitycenter.v1.AttackExposure\0223\n\005files\030"
-          + ". \003(\0132$.google.cloud.securitycenter.v1.F"
-          + "ile\022P\n\024cloud_dlp_inspection\0300 \001(\01322.goog"
-          + "le.cloud.securitycenter.v1.CloudDlpInspe"
-          + "ction\022S\n\026cloud_dlp_data_profile\0301 \001(\01323."
-          + "google.cloud.securitycenter.v1.CloudDlpD"
-          + "ataProfile\022E\n\016kernel_rootkit\0302 \001(\0132-.goo"
-          + "gle.cloud.securitycenter.v1.KernelRootki"
-          + "t\022?\n\014org_policies\0303 \003(\0132).google.cloud.s"
-          + "ecuritycenter.v1.OrgPolicy\022@\n\013applicatio"
-          + "n\0305 \001(\0132+.google.cloud.securitycenter.v1"
-          + ".Application\022X\n\030backup_disaster_recovery"
-          + "\0307 \001(\01326.google.cloud.securitycenter.v1."
-          + "BackupDisasterRecovery\022I\n\020security_postu"
-          + "re\0308 \001(\0132/.google.cloud.securitycenter.v"
-          + "1.SecurityPosture\022=\n\013log_entries\0309 \003(\0132("
-          + ".google.cloud.securitycenter.v1.LogEntry"
-          + "\022D\n\016load_balancers\030: \003(\0132,.google.cloud."
-          + "securitycenter.v1.LoadBalancer\022?\n\013cloud_"
-          + "armor\030; \001(\0132*.google.cloud.securitycente"
-          + "r.v1.CloudArmor\022:\n\010notebook\030? \001(\0132(.goog"
-          + "le.cloud.securitycenter.v1.Notebook\022K\n\021t"
-          + "oxic_combination\030@ \001(\01320.google.cloud.se"
-          + "curitycenter.v1.ToxicCombination\022J\n\021grou"
-          + "p_memberships\030A \003(\0132/.google.cloud.secur"
-          + "itycenter.v1.GroupMembership\032O\n\025SourcePr"
+          + "e_initiator\030\034 \001(\t\022H\n\tmute_info\030= \001(\01320.g"
+          + "oogle.cloud.securitycenter.v1.Finding.Mu"
+          + "teInfoB\003\340A\003\022:\n\tprocesses\030\036 \003(\0132\'.google."
+          + "cloud.securitycenter.v1.Process\022L\n\010conta"
+          + "cts\030! \003(\01325.google.cloud.securitycenter."
+          + "v1.Finding.ContactsEntryB\003\340A\003\022?\n\013complia"
+          + "nces\030\" \003(\0132*.google.cloud.securitycenter"
+          + ".v1.Compliance\022 \n\023parent_display_name\030$ "
+          + "\001(\tB\003\340A\003\022\023\n\013description\030% \001(\t\022B\n\014exfiltr"
+          + "ation\030& \001(\0132,.google.cloud.securitycente"
+          + "r.v1.Exfiltration\022@\n\014iam_bindings\030\' \003(\0132"
+          + "*.google.cloud.securitycenter.v1.IamBind"
+          + "ing\022\022\n\nnext_steps\030( \001(\t\022\023\n\013module_name\030)"
+          + " \001(\t\022=\n\ncontainers\030* \003(\0132).google.cloud."
+          + "securitycenter.v1.Container\022>\n\nkubernete"
+          + "s\030+ \001(\0132*.google.cloud.securitycenter.v1"
+          + ".Kubernetes\022:\n\010database\030, \001(\0132(.google.c"
+          + "loud.securitycenter.v1.Database\022G\n\017attac"
+          + "k_exposure\030- \001(\0132..google.cloud.security"
+          + "center.v1.AttackExposure\0223\n\005files\030. \003(\0132"
+          + "$.google.cloud.securitycenter.v1.File\022P\n"
+          + "\024cloud_dlp_inspection\0300 \001(\01322.google.clo"
+          + "ud.securitycenter.v1.CloudDlpInspection\022"
+          + "S\n\026cloud_dlp_data_profile\0301 \001(\01323.google"
+          + ".cloud.securitycenter.v1.CloudDlpDataPro"
+          + "file\022E\n\016kernel_rootkit\0302 \001(\0132-.google.cl"
+          + "oud.securitycenter.v1.KernelRootkit\022?\n\014o"
+          + "rg_policies\0303 \003(\0132).google.cloud.securit"
+          + "ycenter.v1.OrgPolicy\022@\n\013application\0305 \001("
+          + "\0132+.google.cloud.securitycenter.v1.Appli"
+          + "cation\022X\n\030backup_disaster_recovery\0307 \001(\013"
+          + "26.google.cloud.securitycenter.v1.Backup"
+          + "DisasterRecovery\022I\n\020security_posture\0308 \001"
+          + "(\0132/.google.cloud.securitycenter.v1.Secu"
+          + "rityPosture\022=\n\013log_entries\0309 \003(\0132(.googl"
+          + "e.cloud.securitycenter.v1.LogEntry\022D\n\016lo"
+          + "ad_balancers\030: \003(\0132,.google.cloud.securi"
+          + "tycenter.v1.LoadBalancer\022?\n\013cloud_armor\030"
+          + "; \001(\0132*.google.cloud.securitycenter.v1.C"
+          + "loudArmor\022:\n\010notebook\030? \001(\0132(.google.clo"
+          + "ud.securitycenter.v1.Notebook\022K\n\021toxic_c"
+          + "ombination\030@ \001(\01320.google.cloud.security"
+          + "center.v1.ToxicCombination\022J\n\021group_memb"
+          + "erships\030A \003(\0132/.google.cloud.securitycen"
+          + "ter.v1.GroupMembership\032\223\003\n\010MuteInfo\022P\n\013s"
+          + "tatic_mute\030\001 \001(\0132;.google.cloud.security"
+          + "center.v1.Finding.MuteInfo.StaticMute\022`\n"
+          + "\024dynamic_mute_records\030\002 \003(\0132B.google.clo"
+          + "ud.securitycenter.v1.Finding.MuteInfo.Dy"
+          + "namicMuteRecord\032y\n\nStaticMute\022;\n\005state\030\001"
+          + " \001(\0162,.google.cloud.securitycenter.v1.Fi"
+          + "nding.Mute\022.\n\napply_time\030\002 \001(\0132\032.google."
+          + "protobuf.Timestamp\032X\n\021DynamicMuteRecord\022"
+          + "\023\n\013mute_config\030\001 \001(\t\022.\n\nmatch_time\030\002 \001(\013"
+          + "2\032.google.protobuf.Timestamp\032O\n\025SourcePr"
           + "opertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001("
           + "\0132\026.google.protobuf.Value:\0028\001\032f\n\024Externa"
           + "lSystemsEntry\022\013\n\003key\030\001 \001(\t\022=\n\005value\030\002 \001("
@@ -265,6 +289,7 @@ public final class FindingOuterClass {
               "Access",
               "Connections",
               "MuteInitiator",
+              "MuteInfo",
               "Processes",
               "Contacts",
               "Compliances",
@@ -293,8 +318,36 @@ public final class FindingOuterClass {
               "ToxicCombination",
               "GroupMemberships",
             });
-    internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_descriptor =
         internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_descriptor,
+            new java.lang.String[] {
+              "StaticMute", "DynamicMuteRecords",
+            });
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_StaticMute_descriptor =
+        internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_StaticMute_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_StaticMute_descriptor,
+            new java.lang.String[] {
+              "State", "ApplyTime",
+            });
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_DynamicMuteRecord_descriptor =
+        internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_DynamicMuteRecord_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_Finding_MuteInfo_DynamicMuteRecord_descriptor,
+            new java.lang.String[] {
+              "MuteConfig", "MatchTime",
+            });
+    internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
+        internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor,
@@ -302,7 +355,7 @@ public final class FindingOuterClass {
               "Key", "Value",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_ExternalSystemsEntry_descriptor =
-        internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(1);
+        internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_securitycenter_v1_Finding_ExternalSystemsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Finding_ExternalSystemsEntry_descriptor,
@@ -310,7 +363,7 @@ public final class FindingOuterClass {
               "Key", "Value",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_ContactsEntry_descriptor =
-        internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(2);
+        internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(3);
     internal_static_google_cloud_securitycenter_v1_Finding_ContactsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Finding_ContactsEntry_descriptor,

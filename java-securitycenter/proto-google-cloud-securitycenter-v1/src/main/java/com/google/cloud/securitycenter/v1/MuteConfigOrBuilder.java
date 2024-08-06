@@ -71,7 +71,7 @@ public interface MuteConfigOrBuilder
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=74
    * @return The displayName.
    */
   @java.lang.Deprecated
@@ -86,7 +86,7 @@ public interface MuteConfigOrBuilder
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=74
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated
@@ -296,4 +296,83 @@ public interface MuteConfigOrBuilder
    * @return The bytes for mostRecentEditor.
    */
   com.google.protobuf.ByteString getMostRecentEditorBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the mute config, which determines what type of mute
+   * state the config affects. The static mute state takes precedence over the
+   * dynamic mute state. Immutable after creation. STATIC by default if not set
+   * during creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the mute config, which determines what type of mute
+   * state the config affects. The static mute state takes precedence over the
+   * dynamic mute state. Immutable after creation. STATIC by default if not set
+   * during creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expiryTime field is set.
+   */
+  boolean hasExpiryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expiryTime.
+   */
+  com.google.protobuf.Timestamp getExpiryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder();
 }

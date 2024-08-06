@@ -189,7 +189,7 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(19);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(20);
   }
 
   private static final ConnectionState[] VALUES = values();

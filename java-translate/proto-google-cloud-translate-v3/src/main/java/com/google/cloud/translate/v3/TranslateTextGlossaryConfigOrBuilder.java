@@ -36,7 +36,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
-   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string glossary = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The glossary.
    */
@@ -53,7 +55,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
-   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string glossary = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for glossary.
    */

@@ -177,7 +177,7 @@ public enum DataProfileUpdateFrequency implements com.google.protobuf.ProtocolMe
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(5);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final DataProfileUpdateFrequency[] VALUES = values();

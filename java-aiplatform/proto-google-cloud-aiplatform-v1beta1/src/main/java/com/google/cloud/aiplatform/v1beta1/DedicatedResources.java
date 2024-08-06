@@ -377,6 +377,25 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     return autoscalingMetricSpecs_.get(index);
   }
 
+  public static final int SPOT_FIELD_NUMBER = 5;
+  private boolean spot_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, schedule the deployment workload on [spot
+   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+   * </pre>
+   *
+   * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  @java.lang.Override
+  public boolean getSpot() {
+    return spot_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -403,6 +422,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < autoscalingMetricSpecs_.size(); i++) {
       output.writeMessage(4, autoscalingMetricSpecs_.get(i));
     }
+    if (spot_ != false) {
+      output.writeBool(5, spot_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -425,6 +447,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, autoscalingMetricSpecs_.get(i));
+    }
+    if (spot_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, spot_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -450,6 +475,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (getMaxReplicaCount() != other.getMaxReplicaCount()) return false;
     if (!getAutoscalingMetricSpecsList().equals(other.getAutoscalingMetricSpecsList()))
       return false;
+    if (getSpot() != other.getSpot()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -473,6 +499,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + AUTOSCALING_METRIC_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingMetricSpecsList().hashCode();
     }
+    hash = (37 * hash) + SPOT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -638,6 +666,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         autoscalingMetricSpecsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      spot_ = false;
       return this;
     }
 
@@ -699,6 +728,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxReplicaCount_ = maxReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.spot_ = spot_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -785,6 +817,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.getSpot() != false) {
+        setSpot(other.getSpot());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -843,6 +878,12 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 34
+            case 40:
+              {
+                spot_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2046,6 +2087,62 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         autoscalingMetricSpecs_ = null;
       }
       return autoscalingMetricSpecsBuilder_;
+    }
+
+    private boolean spot_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The spot.
+     */
+    @java.lang.Override
+    public boolean getSpot() {
+      return spot_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The spot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpot(boolean value) {
+
+      spot_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpot() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      spot_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -19,7 +19,11 @@ package com.google.cloud.translate.v3;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossaryEntriesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -34,6 +38,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -289,6 +294,88 @@ public class TranslationServiceClientTest {
       List<String> contents = new ArrayList<>();
       client.translateText(
           parent, model, mimeType, sourceLanguageCode, targetLanguageCode, contents);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void romanizeTextTest() throws Exception {
+    RomanizeTextResponse expectedResponse =
+        RomanizeTextResponse.newBuilder()
+            .addAllRomanizations(new ArrayList<Romanization>())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> contents = new ArrayList<>();
+
+    RomanizeTextResponse actualResponse = client.romanizeText(parent, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RomanizeTextRequest actualRequest = ((RomanizeTextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(contents, actualRequest.getContentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void romanizeTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> contents = new ArrayList<>();
+      client.romanizeText(parent, contents);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void romanizeTextTest2() throws Exception {
+    RomanizeTextResponse expectedResponse =
+        RomanizeTextResponse.newBuilder()
+            .addAllRomanizations(new ArrayList<Romanization>())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<String> contents = new ArrayList<>();
+
+    RomanizeTextResponse actualResponse = client.romanizeText(parent, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RomanizeTextRequest actualRequest = ((RomanizeTextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(contents, actualRequest.getContentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void romanizeTextExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> contents = new ArrayList<>();
+      client.romanizeText(parent, contents);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -898,6 +985,60 @@ public class TranslationServiceClientTest {
   }
 
   @Test
+  public void updateGlossaryTest() throws Exception {
+    Glossary expectedResponse =
+        Glossary.newBuilder()
+            .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+            .setInputConfig(GlossaryInputConfig.newBuilder().build())
+            .setEntryCount(-811131134)
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGlossaryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    Glossary glossary = Glossary.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Glossary actualResponse = client.updateGlossaryAsync(glossary, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGlossaryRequest actualRequest = ((UpdateGlossaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(glossary, actualRequest.getGlossary());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGlossaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      Glossary glossary = Glossary.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGlossaryAsync(glossary, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listGlossariesTest() throws Exception {
     Glossary responsesElement = Glossary.newBuilder().build();
     ListGlossariesResponse expectedResponse =
@@ -1159,6 +1300,759 @@ public class TranslationServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteGlossaryAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    GlossaryEntryName name =
+        GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+
+    GlossaryEntry actualResponse = client.getGlossaryEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGlossaryEntryRequest actualRequest = ((GetGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGlossaryEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryEntryName name =
+          GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+      client.getGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGlossaryEntryTest2() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GlossaryEntry actualResponse = client.getGlossaryEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGlossaryEntryRequest actualRequest = ((GetGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGlossaryEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGlossaryEntriesTest() throws Exception {
+    GlossaryEntry responsesElement = GlossaryEntry.newBuilder().build();
+    ListGlossaryEntriesResponse expectedResponse =
+        ListGlossaryEntriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGlossaryEntries(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+
+    ListGlossaryEntriesPagedResponse pagedListResponse = client.listGlossaryEntries(parent);
+
+    List<GlossaryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGlossaryEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGlossaryEntriesRequest actualRequest = ((ListGlossaryEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGlossaryEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      client.listGlossaryEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGlossaryEntriesTest2() throws Exception {
+    GlossaryEntry responsesElement = GlossaryEntry.newBuilder().build();
+    ListGlossaryEntriesResponse expectedResponse =
+        ListGlossaryEntriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGlossaryEntries(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGlossaryEntriesPagedResponse pagedListResponse = client.listGlossaryEntries(parent);
+
+    List<GlossaryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGlossaryEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGlossaryEntriesRequest actualRequest = ((ListGlossaryEntriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGlossaryEntriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGlossaryEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+    GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+
+    GlossaryEntry actualResponse = client.createGlossaryEntry(parent, glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGlossaryEntryRequest actualRequest = ((CreateGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(glossaryEntry, actualRequest.getGlossaryEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGlossaryEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+      client.createGlossaryEntry(parent, glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGlossaryEntryTest2() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+
+    GlossaryEntry actualResponse = client.createGlossaryEntry(parent, glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGlossaryEntryRequest actualRequest = ((CreateGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(glossaryEntry, actualRequest.getGlossaryEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGlossaryEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+      client.createGlossaryEntry(parent, glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+
+    GlossaryEntry actualResponse = client.updateGlossaryEntry(glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGlossaryEntryRequest actualRequest = ((UpdateGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(glossaryEntry, actualRequest.getGlossaryEntry());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGlossaryEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+      client.updateGlossaryEntry(glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteGlossaryEntryTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    GlossaryEntryName name =
+        GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+
+    client.deleteGlossaryEntry(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGlossaryEntryRequest actualRequest = ((DeleteGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGlossaryEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryEntryName name =
+          GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+      client.deleteGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteGlossaryEntryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteGlossaryEntry(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGlossaryEntryRequest actualRequest = ((DeleteGlossaryEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGlossaryEntryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Dataset dataset = Dataset.newBuilder().build();
+
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatasetRequest actualRequest = ((CreateDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Dataset dataset = Dataset.newBuilder().build();
+      client.createDatasetAsync(parent, dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDatasetTest2() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Dataset dataset = Dataset.newBuilder().build();
+
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatasetRequest actualRequest = ((CreateDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Dataset dataset = Dataset.newBuilder().build();
+      client.createDatasetAsync(parent, dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    Dataset actualResponse = client.getDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatasetRequest actualRequest = ((GetDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetTest2() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Dataset actualResponse = client.getDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatasetRequest actualRequest = ((GetDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetsTest() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
+    ListDatasetsResponse expectedResponse =
+        ListDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
+
+    List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatasetsRequest actualRequest = ((ListDatasetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatasetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetsTest2() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
+    ListDatasetsResponse expectedResponse =
+        ListDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
+
+    List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatasetsRequest actualRequest = ((ListDatasetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatasetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    client.deleteDatasetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = ((DeleteDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.deleteDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDatasetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = ((DeleteDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDatasetAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1519,6 +2413,7 @@ public class TranslationServiceClientTest {
         AdaptiveMtTranslateResponse.newBuilder()
             .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
             .setLanguageCode("languageCode-2092349083")
+            .addAllGlossaryTranslations(new ArrayList<AdaptiveMtTranslation>())
             .build();
     mockTranslationService.addResponse(expectedResponse);
 
@@ -1561,6 +2456,7 @@ public class TranslationServiceClientTest {
         AdaptiveMtTranslateResponse.newBuilder()
             .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
             .setLanguageCode("languageCode-2092349083")
+            .addAllGlossaryTranslations(new ArrayList<AdaptiveMtTranslation>())
             .build();
     mockTranslationService.addResponse(expectedResponse);
 
@@ -2014,6 +2910,566 @@ public class TranslationServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void importDataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String dataset = "dataset1443214456";
+    DatasetInputConfig inputConfig = DatasetInputConfig.newBuilder().build();
+
+    client.importDataAsync(dataset, inputConfig).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDataRequest actualRequest = ((ImportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      DatasetInputConfig inputConfig = DatasetInputConfig.newBuilder().build();
+      client.importDataAsync(dataset, inputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportDataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String dataset = "dataset1443214456";
+    DatasetOutputConfig outputConfig = DatasetOutputConfig.newBuilder().build();
+
+    client.exportDataAsync(dataset, outputConfig).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDataRequest actualRequest = ((ExportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      DatasetOutputConfig outputConfig = DatasetOutputConfig.newBuilder().build();
+      client.exportDataAsync(dataset, outputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listExamplesTest() throws Exception {
+    Example responsesElement = Example.newBuilder().build();
+    ListExamplesResponse expectedResponse =
+        ListExamplesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExamples(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ListExamplesPagedResponse pagedListResponse = client.listExamples(parent);
+
+    List<Example> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExamplesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExamplesRequest actualRequest = ((ListExamplesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExamplesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.listExamples(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExamplesTest2() throws Exception {
+    Example responsesElement = Example.newBuilder().build();
+    ListExamplesResponse expectedResponse =
+        ListExamplesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExamples(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListExamplesPagedResponse pagedListResponse = client.listExamples(parent);
+
+    List<Example> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExamplesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExamplesRequest actualRequest = ((ListExamplesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExamplesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listExamples(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Model model = Model.newBuilder().build();
+
+    Model actualResponse = client.createModelAsync(parent, model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateModelRequest actualRequest = ((CreateModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Model model = Model.newBuilder().build();
+      client.createModelAsync(parent, model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Model model = Model.newBuilder().build();
+
+    Model actualResponse = client.createModelAsync(parent, model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateModelRequest actualRequest = ((CreateModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Model model = Model.newBuilder().build();
+      client.createModelAsync(parent, model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listModelsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteModelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    client.deleteModelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelRequest actualRequest = ((DeleteModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteModelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelRequest actualRequest = ((DeleteModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

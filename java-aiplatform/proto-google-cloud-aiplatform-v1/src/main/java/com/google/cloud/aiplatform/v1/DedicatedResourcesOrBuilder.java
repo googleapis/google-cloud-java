@@ -288,4 +288,18 @@ public interface DedicatedResourcesOrBuilder
    */
   com.google.cloud.aiplatform.v1.AutoscalingMetricSpecOrBuilder getAutoscalingMetricSpecsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, schedule the deployment workload on [spot
+   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+   * </pre>
+   *
+   * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  boolean getSpot();
 }

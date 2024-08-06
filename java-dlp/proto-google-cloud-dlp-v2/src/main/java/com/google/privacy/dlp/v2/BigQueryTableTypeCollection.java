@@ -167,7 +167,7 @@ public enum BigQueryTableTypeCollection implements com.google.protobuf.ProtocolM
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final BigQueryTableTypeCollection[] VALUES = values();

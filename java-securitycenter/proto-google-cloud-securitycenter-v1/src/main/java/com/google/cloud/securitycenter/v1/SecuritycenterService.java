@@ -438,9 +438,13 @@ public final class SecuritycenterService {
           + "rotobuf/empty.proto\032 google/protobuf/fie"
           + "ld_mask.proto\032\034google/protobuf/struct.pr"
           + "oto\032\037google/protobuf/timestamp.proto\032\027go"
-          + "ogle/rpc/status.proto\"a\n\027BulkMuteFinding"
-          + "sRequest\022\031\n\006parent\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022\016\n\006f"
-          + "ilter\030\002 \001(\t\022\033\n\017mute_annotation\030\003 \001(\tB\002\030\001"
+          + "ogle/rpc/status.proto\"\200\002\n\027BulkMuteFindin"
+          + "gsRequest\022\031\n\006parent\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022\016\n\006"
+          + "filter\030\002 \001(\t\022\033\n\017mute_annotation\030\003 \001(\tB\002\030"
+          + "\001\022Z\n\nmute_state\030\004 \001(\0162A.google.cloud.sec"
+          + "uritycenter.v1.BulkMuteFindingsRequest.M"
+          + "uteStateB\003\340A\001\"A\n\tMuteState\022\032\n\026MUTE_STATE"
+          + "_UNSPECIFIED\020\000\022\t\n\005MUTED\020\001\022\r\n\tUNDEFINED\020\002"
           + "\"\032\n\030BulkMuteFindingsResponse\"\254\001\n\024CreateF"
           + "indingRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\n$s"
           + "ecuritycenter.googleapis.com/Source\022\027\n\nf"
@@ -788,12 +792,12 @@ public final class SecuritycenterService {
           + "ogleapis.com/EventThreatDetectionCustomM"
           + "odule\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003"
           + " \001(\005\"\303\001\n7ListDescendantEventThreatDetect"
-          + "ionCustomModulesResponse\022o\n%event_threat"
-          + "_detection_custom_modules\030\001 \003(\0132@.google"
+          + "ionCustomModulesResponse\022o\n%event_threat",
+      "_detection_custom_modules\030\001 \003(\0132@.google"
           + ".cloud.securitycenter.v1.EventThreatDete"
           + "ctionCustomModule\022\027\n\017next_page_token\030\002 \001"
-          + "(\t\"\255\001\n,ListEventThreatDetectionCustomMod",
-      "ulesRequest\022V\n\006parent\030\001 \001(\tBF\340A\002\372A@\022>sec"
+          + "(\t\"\255\001\n,ListEventThreatDetectionCustomMod"
+          + "ulesRequest\022V\n\006parent\030\001 \001(\tBF\340A\002\372A@\022>sec"
           + "uritycenter.googleapis.com/EventThreatDe"
           + "tectionCustomModule\022\022\n\npage_token\030\002 \001(\t\022"
           + "\021\n\tpage_size\030\003 \001(\005\"\271\001\n-ListEventThreatDe"
@@ -1188,12 +1192,12 @@ public final class SecuritycenterService {
           + "rityMarks\022:.google.cloud.securitycenter."
           + "v1.UpdateSecurityMarksRequest\032-.google.c"
           + "loud.securitycenter.v1.SecurityMarks\"\234\004\332"
-          + "A\016security_marks\202\323\344\223\002\204\0042@/v1/{security_m"
-          + "arks.name=organizations/*/assets/*/secur"
+          + "A\016security_marks\202\323\344\223\002\204\0042@/v1/{security_m",
+      "arks.name=organizations/*/assets/*/secur"
           + "ityMarks}:\016security_marksZL2:/v1/{securi"
           + "ty_marks.name=folders/*/assets/*/securit"
-          + "yMarks}:\016security_marksZM2;/v1/{security",
-      "_marks.name=projects/*/assets/*/security"
+          + "yMarks}:\016security_marksZM2;/v1/{security"
+          + "_marks.name=projects/*/assets/*/security"
           + "Marks}:\016security_marksZ^2L/v1/{security_"
           + "marks.name=organizations/*/sources/*/fin"
           + "dings/*/securityMarks}:\016security_marksZX"
@@ -1467,7 +1471,7 @@ public final class SecuritycenterService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_BulkMuteFindingsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter", "MuteAnnotation",
+              "Parent", "Filter", "MuteAnnotation", "MuteState",
             });
     internal_static_google_cloud_securitycenter_v1_BulkMuteFindingsResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);

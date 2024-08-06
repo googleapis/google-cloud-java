@@ -235,4 +235,39 @@ public interface CveOrBuilder
    * @return The zeroDay.
    */
   boolean getZeroDay();
+
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   *
+   * @return Whether the exploitReleaseDate field is set.
+   */
+  boolean hasExploitReleaseDate();
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   *
+   * @return The exploitReleaseDate.
+   */
+  com.google.protobuf.Timestamp getExploitReleaseDate();
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExploitReleaseDateOrBuilder();
 }

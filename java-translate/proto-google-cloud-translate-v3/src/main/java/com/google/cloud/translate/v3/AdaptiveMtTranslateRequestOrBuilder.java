@@ -93,7 +93,6 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * For now only one sentence per request is supported.
    * </pre>
    *
    * <code>repeated string content = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -106,7 +105,6 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * For now only one sentence per request is supported.
    * </pre>
    *
    * <code>repeated string content = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -119,7 +117,6 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * For now only one sentence per request is supported.
    * </pre>
    *
    * <code>repeated string content = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -133,7 +130,6 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * For now only one sentence per request is supported.
    * </pre>
    *
    * <code>repeated string content = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -142,4 +138,95 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    * @return The bytes of the content at the given index.
    */
   com.google.protobuf.ByteString getContentBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for caller provided reference sentences.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig reference_sentence_config = 6;
+   * </code>
+   *
+   * @return Whether the referenceSentenceConfig field is set.
+   */
+  boolean hasReferenceSentenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for caller provided reference sentences.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig reference_sentence_config = 6;
+   * </code>
+   *
+   * @return The referenceSentenceConfig.
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
+      getReferenceSentenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for caller provided reference sentences.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig reference_sentence_config = 6;
+   * </code>
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfigOrBuilder
+      getReferenceSentenceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.GlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the glossaryConfig field is set.
+   */
+  boolean hasGlossaryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.GlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The glossaryConfig.
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig getGlossaryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.translation.v3.AdaptiveMtTranslateRequest.GlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfigOrBuilder
+      getGlossaryConfigOrBuilder();
 }

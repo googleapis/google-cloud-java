@@ -79,9 +79,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
    *
    * Its format is:
    *
-   * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-   * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-   * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+   * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+   * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+   * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
    * </pre>
    *
    * <code>
@@ -110,9 +110,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
    *
    * Its format is:
    *
-   * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-   * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-   * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+   * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+   * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+   * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
    * </pre>
    *
    * <code>
@@ -511,9 +511,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-     * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-     * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+     * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
      * </pre>
      *
      * <code>
@@ -541,9 +541,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-     * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-     * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+     * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
      * </pre>
      *
      * <code>
@@ -571,9 +571,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-     * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-     * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+     * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
      * </pre>
      *
      * <code>
@@ -600,9 +600,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-     * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-     * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+     * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
      * </pre>
      *
      * <code>
@@ -625,9 +625,9 @@ public final class DeleteEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     * * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-     * * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-     * * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+     * * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+     * * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
      * </pre>
      *
      * <code>

@@ -45,6 +45,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     filter_ = "";
     mostRecentEditor_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -66,6 +67,177 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.securitycenter.v1.MuteConfig.class,
             com.google.cloud.securitycenter.v1.MuteConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of MuteConfig.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.MuteConfig.MuteConfigType}
+   */
+  public enum MuteConfigType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>MUTE_CONFIG_TYPE_UNSPECIFIED = 0;</code>
+     */
+    MUTE_CONFIG_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * A static mute config, which sets the static mute state of future matching
+     * findings to muted. Once the static mute state has been set, finding or
+     * config modifications will not affect the state.
+     * </pre>
+     *
+     * <code>STATIC = 1;</code>
+     */
+    STATIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * A dynamic mute config, which is applied to existing and future matching
+     * findings, setting their dynamic mute state to "muted". If the config is
+     * updated or deleted, or a matching finding is updated, such that the
+     * finding doesn't match the config, the config will be removed from the
+     * finding, and the finding's dynamic mute state may become "unmuted"
+     * (unless other configs still match).
+     * </pre>
+     *
+     * <code>DYNAMIC = 2;</code>
+     */
+    DYNAMIC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unused.
+     * </pre>
+     *
+     * <code>MUTE_CONFIG_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MUTE_CONFIG_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * A static mute config, which sets the static mute state of future matching
+     * findings to muted. Once the static mute state has been set, finding or
+     * config modifications will not affect the state.
+     * </pre>
+     *
+     * <code>STATIC = 1;</code>
+     */
+    public static final int STATIC_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A dynamic mute config, which is applied to existing and future matching
+     * findings, setting their dynamic mute state to "muted". If the config is
+     * updated or deleted, or a matching finding is updated, such that the
+     * finding doesn't match the config, the config will be removed from the
+     * finding, and the finding's dynamic mute state may become "unmuted"
+     * (unless other configs still match).
+     * </pre>
+     *
+     * <code>DYNAMIC = 2;</code>
+     */
+    public static final int DYNAMIC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MuteConfigType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MuteConfigType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MUTE_CONFIG_TYPE_UNSPECIFIED;
+        case 1:
+          return STATIC;
+        case 2:
+          return DYNAMIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MuteConfigType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MuteConfigType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MuteConfigType>() {
+          public MuteConfigType findValueByNumber(int number) {
+            return MuteConfigType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.MuteConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final MuteConfigType[] VALUES = values();
+
+    public static MuteConfigType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MuteConfigType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.MuteConfig.MuteConfigType)
   }
 
   private int bitField0_;
@@ -146,7 +318,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=74
    * @return The displayName.
    */
   @java.lang.Override
@@ -172,7 +344,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string display_name = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-   *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=74
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -494,6 +666,108 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 8;
+  private int type_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the mute config, which determines what type of mute
+   * state the config affects. The static mute state takes precedence over the
+   * dynamic mute state. Immutable after creation. STATIC by default if not set
+   * during creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the mute config, which determines what type of mute
+   * state the config affects. The static mute state takes precedence over the
+   * dynamic mute state. Immutable after creation. STATIC by default if not set
+   * during creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType getType() {
+    com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType result =
+        com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.forNumber(type_);
+    return result == null
+        ? com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EXPIRY_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp expiryTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expiryTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpiryTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expiryTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpiryTime() {
+    return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder() {
+    return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -529,6 +803,14 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mostRecentEditor_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, mostRecentEditor_);
     }
+    if (type_
+        != com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.MUTE_CONFIG_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, type_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getExpiryTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -559,6 +841,14 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mostRecentEditor_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, mostRecentEditor_);
     }
+    if (type_
+        != com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.MUTE_CONFIG_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, type_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExpiryTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -588,6 +878,11 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getMostRecentEditor().equals(other.getMostRecentEditor())) return false;
+    if (type_ != other.type_) return false;
+    if (hasExpiryTime() != other.hasExpiryTime()) return false;
+    if (hasExpiryTime()) {
+      if (!getExpiryTime().equals(other.getExpiryTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -617,6 +912,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MOST_RECENT_EDITOR_FIELD_NUMBER;
     hash = (53 * hash) + getMostRecentEditor().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
+    if (hasExpiryTime()) {
+      hash = (37 * hash) + EXPIRY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiryTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -760,6 +1061,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getExpiryTimeFieldBuilder();
       }
     }
 
@@ -782,6 +1084,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       mostRecentEditor_ = "";
+      type_ = 0;
+      expiryTime_ = null;
+      if (expiryTimeBuilder_ != null) {
+        expiryTimeBuilder_.dispose();
+        expiryTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -841,6 +1149,13 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.mostRecentEditor_ = mostRecentEditor_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.expiryTime_ = expiryTimeBuilder_ == null ? expiryTime_ : expiryTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -921,6 +1236,12 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
+      if (other.hasExpiryTime()) {
+        mergeExpiryTime(other.getExpiryTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -989,6 +1310,18 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(getExpiryTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1155,7 +1488,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=74
      * @return The displayName.
      */
     @java.lang.Deprecated
@@ -1180,7 +1513,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=74
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated
@@ -1205,7 +1538,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=74
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -1229,7 +1562,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=74
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1249,7 +1582,7 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string display_name = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
-     *     google/cloud/securitycenter/v1/mute_config.proto;l=55
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=74
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -2128,6 +2461,335 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the mute config, which determines what type of mute
+     * state the config affects. The static mute state takes precedence over the
+     * dynamic mute state. Immutable after creation. STATIC by default if not set
+     * during creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the mute config, which determines what type of mute
+     * state the config affects. The static mute state takes precedence over the
+     * dynamic mute state. Immutable after creation. STATIC by default if not set
+     * during creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the mute config, which determines what type of mute
+     * state the config affects. The static mute state takes precedence over the
+     * dynamic mute state. Immutable after creation. STATIC by default if not set
+     * during creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType getType() {
+      com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType result =
+          com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.forNumber(type_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the mute config, which determines what type of mute
+     * state the config affects. The static mute state takes precedence over the
+     * dynamic mute state. Immutable after creation. STATIC by default if not set
+     * during creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.securitycenter.v1.MuteConfig.MuteConfigType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the mute config, which determines what type of mute
+     * state the config affects. The static mute state takes precedence over the
+     * dynamic mute state. Immutable after creation. STATIC by default if not set
+     * during creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.MuteConfig.MuteConfigType type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp expiryTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expiryTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expiryTime field is set.
+     */
+    public boolean hasExpiryTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expiryTime.
+     */
+    public com.google.protobuf.Timestamp getExpiryTime() {
+      if (expiryTimeBuilder_ == null) {
+        return expiryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expiryTime_;
+      } else {
+        return expiryTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpiryTime(com.google.protobuf.Timestamp value) {
+      if (expiryTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiryTime_ = value;
+      } else {
+        expiryTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpiryTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expiryTimeBuilder_ == null) {
+        expiryTime_ = builderForValue.build();
+      } else {
+        expiryTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExpiryTime(com.google.protobuf.Timestamp value) {
+      if (expiryTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && expiryTime_ != null
+            && expiryTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpiryTimeBuilder().mergeFrom(value);
+        } else {
+          expiryTime_ = value;
+        }
+      } else {
+        expiryTimeBuilder_.mergeFrom(value);
+      }
+      if (expiryTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExpiryTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      expiryTime_ = null;
+      if (expiryTimeBuilder_ != null) {
+        expiryTimeBuilder_.dispose();
+        expiryTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpiryTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getExpiryTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder() {
+      if (expiryTimeBuilder_ != null) {
+        return expiryTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expiryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expiryTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The expiry of the mute config. Only applicable for dynamic
+     * configs. If the expiry is set, when the config expires, it is removed from
+     * all findings.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpiryTimeFieldBuilder() {
+      if (expiryTimeBuilder_ == null) {
+        expiryTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpiryTime(), getParentForChildren(), isClean());
+        expiryTime_ = null;
+      }
+      return expiryTimeBuilder_;
     }
 
     @java.lang.Override

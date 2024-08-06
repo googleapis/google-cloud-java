@@ -181,7 +181,7 @@ public enum UniquenessScoreLevel implements com.google.protobuf.ProtocolMessageE
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(18);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(19);
   }
 
   private static final UniquenessScoreLevel[] VALUES = values();
