@@ -19,19 +19,19 @@ package com.google.cloud.securitycenter.v2.samples;
 // [START securitycenter_set_mute_undefined]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.securitycenter.v2.Finding;
-import com.google.cloud.securitycenter.v1.Finding.Mute;
+import com.google.cloud.securitycenter.v2.Finding.Mute;
 import com.google.cloud.securitycenter.v2.FindingName;
 import com.google.cloud.securitycenter.v2.SecurityCenterClient;
 import com.google.cloud.securitycenter.v2.SetMuteRequest;
 
-public class AsyncSetMute {
+public class AsyncSetMuteUndefined {
 
   public static void main(String[] args) throws Exception {
-    asyncSetMute();
+    asyncSetMuteUndefined();
   }
 
-  public static void asyncSetMute() throws Exception {
-    // This snippet has been automatically generated and should be regarded as a code template only.
+  public static void asyncSetMuteUndefined() throws Exception {
+    // This snippet is based on automatically generated template and modified as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
