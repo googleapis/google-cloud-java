@@ -16,7 +16,7 @@
 
 package com.google.cloud.securitycenter.v2.samples;
 
-// [START securitycenter_v2_generated_SecurityCenter_SetMuteUndefined_async]
+// [START securitycenter_set_mute_undefined]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.securitycenter.v2.Finding;
 import com.google.cloud.securitycenter.v1.Finding.Mute;
@@ -51,4 +51,4 @@ public class AsyncSetMute {
     }
   }
 }
-// [END securitycenter_v2_generated_SecurityCenter_SetMuteUndefined_async]
+// [END securitycenter_set_mute_undefined]
