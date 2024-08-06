@@ -85,7 +85,7 @@ to add `google-cloud-accessapproval` as a dependency in your code.
 ## About Access Approval
 
 
-[Access Approval][product-docs] enables controlling access to your organization's data by Google personnel.
+[Access Approval][product-docs] enables controlling access to your organization's data by Google personnel test.
 
 See the [Access Approval client library docs][javadocs] to learn how to
 use this Access Approval Client Library.
