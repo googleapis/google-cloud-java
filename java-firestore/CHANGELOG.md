@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.24.3](https://github.com/googleapis/java-firestore/compare/v3.24.2...v3.24.3) (2024-08-06)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.47.0 ([#1774](https://github.com/googleapis/java-firestore/issues/1774)) ([222629a](https://github.com/googleapis/java-firestore/commit/222629a97da72cfb32e9da6280896d3cee09885c))
+* Update dependency com.google.cloud:google-cloud-trace to v2.47.0 ([#1775](https://github.com/googleapis/java-firestore/issues/1775)) ([d3c2744](https://github.com/googleapis/java-firestore/commit/d3c274427d08a7e4ccbcdaa387645adc201360a5))
+
 ## [3.24.2](https://github.com/googleapis/java-firestore/compare/v3.24.1...v3.24.2) (2024-07-29)
 
 
