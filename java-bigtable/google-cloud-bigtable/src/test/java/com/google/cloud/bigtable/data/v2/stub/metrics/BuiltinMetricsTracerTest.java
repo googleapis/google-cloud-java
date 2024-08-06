@@ -113,7 +113,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class BuiltinMetricsTracerTest {
@@ -232,7 +231,7 @@ public class BuiltinMetricsTracerTest {
     stubSettingsBuilder
         .mutateRowSettings()
         .retrySettings()
-        .setInitialRetryDelay(Duration.ofMillis(200));
+        .setInitialRetryDelayDuration(java.time.Duration.ofMillis(200));
 
     stubSettingsBuilder
         .bulkMutateRowsSettings()
@@ -242,7 +241,7 @@ public class BuiltinMetricsTracerTest {
             BatchingSettings.newBuilder()
                 .setElementCountThreshold((long) batchElementCount)
                 .setRequestByteThreshold(1000L)
-                .setDelayThreshold(Duration.ofHours(1))
+                .setDelayThresholdDuration(java.time.Duration.ofHours(1))
                 .setFlowControlSettings(
                     FlowControlSettings.newBuilder()
                         .setMaxOutstandingElementCount((long) batchElementCount + 1)

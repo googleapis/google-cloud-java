@@ -171,8 +171,8 @@ public class BigtableTableAdminSettingsTest {
     checkToString(settings);
     assertThat(defaultSettings.toString()).doesNotContain("endpoint=example.com:1234");
     assertThat(settings.toString()).contains("endpoint=example.com:1234");
-    assertThat(defaultSettings.toString()).doesNotContain("totalTimeout=PT13H32M");
-    assertThat(settings.toString()).contains("totalTimeout=PT13H32M");
+    assertThat(defaultSettings.toString()).doesNotContain("totalTimeoutDuration=PT13H32M");
+    assertThat(settings.toString()).contains("totalTimeoutDuration=PT13H32M");
 
     List<String> nonStaticFields =
         Arrays.stream(BigtableTableAdminStubSettings.class.getDeclaredFields())

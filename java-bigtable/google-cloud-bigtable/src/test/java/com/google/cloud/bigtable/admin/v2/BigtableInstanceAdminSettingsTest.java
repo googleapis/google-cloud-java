@@ -144,7 +144,7 @@ public class BigtableInstanceAdminSettingsTest {
     BigtableInstanceAdminSettings settings = builder.build();
     checkToString(settings);
     assertThat(settings.toString()).contains("endpoint=example.com:1234");
-    assertThat(settings.toString()).contains("totalTimeout=PT13H32M");
+    assertThat(settings.toString()).contains("totalTimeoutDuration=PT13H32M");
   }
 
   void checkToString(BigtableInstanceAdminSettings settings) {
