@@ -78,7 +78,7 @@ public class WriteBufferedStream {
 
       // Use the JSON stream writer to send records in JSON format.
       // For more information about JsonStreamWriter, see:
-      // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter.html
+      // https://cloud.google.com/java/docs/reference/google-cloud-bigquerystorage/latest/com.google.cloud.bigquery.storage.v1.JsonStreamWriter
       try (JsonStreamWriter writer =
           JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
               .setRetrySettings(retrySettings)
