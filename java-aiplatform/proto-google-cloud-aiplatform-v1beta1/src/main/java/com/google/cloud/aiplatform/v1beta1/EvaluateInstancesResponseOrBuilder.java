@@ -709,6 +709,84 @@ public interface EvaluateInstancesResponseOrBuilder
    *
    *
    * <pre>
+   * Generic metrics.
+   * Result for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricResult pointwise_metric_result = 27;
+   * </code>
+   *
+   * @return Whether the pointwiseMetricResult field is set.
+   */
+  boolean hasPointwiseMetricResult();
+  /**
+   *
+   *
+   * <pre>
+   * Generic metrics.
+   * Result for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricResult pointwise_metric_result = 27;
+   * </code>
+   *
+   * @return The pointwiseMetricResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.PointwiseMetricResult getPointwiseMetricResult();
+  /**
+   *
+   *
+   * <pre>
+   * Generic metrics.
+   * Result for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricResult pointwise_metric_result = 27;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PointwiseMetricResultOrBuilder
+      getPointwiseMetricResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricResult pairwise_metric_result = 28;</code>
+   *
+   * @return Whether the pairwiseMetricResult field is set.
+   */
+  boolean hasPairwiseMetricResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricResult pairwise_metric_result = 28;</code>
+   *
+   * @return The pairwiseMetricResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.PairwiseMetricResult getPairwiseMetricResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricResult pairwise_metric_result = 28;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PairwiseMetricResultOrBuilder
+      getPairwiseMetricResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tool call metrics.
    *  Results for tool call valid metric.
    * </pre>

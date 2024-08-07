@@ -89,6 +89,8 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     QUESTION_ANSWERING_RELEVANCE_INPUT(16),
     QUESTION_ANSWERING_HELPFULNESS_INPUT(17),
     QUESTION_ANSWERING_CORRECTNESS_INPUT(18),
+    POINTWISE_METRIC_INPUT(28),
+    PAIRWISE_METRIC_INPUT(29),
     TOOL_CALL_VALID_INPUT(19),
     TOOL_NAME_MATCH_INPUT(20),
     TOOL_PARAMETER_KEY_MATCH_INPUT(21),
@@ -145,6 +147,10 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           return QUESTION_ANSWERING_HELPFULNESS_INPUT;
         case 18:
           return QUESTION_ANSWERING_CORRECTNESS_INPUT;
+        case 28:
+          return POINTWISE_METRIC_INPUT;
+        case 29:
+          return PAIRWISE_METRIC_INPUT;
         case 19:
           return TOOL_CALL_VALID_INPUT;
         case 20:
@@ -1136,6 +1142,110 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         .getDefaultInstance();
   }
 
+  public static final int POINTWISE_METRIC_INPUT_FIELD_NUMBER = 28;
+  /**
+   *
+   *
+   * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   *
+   * @return Whether the pointwiseMetricInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasPointwiseMetricInput() {
+    return metricInputsCase_ == 28;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   *
+   * @return The pointwiseMetricInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput getPointwiseMetricInput() {
+    if (metricInputsCase_ == 28) {
+      return (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder
+      getPointwiseMetricInputOrBuilder() {
+    if (metricInputsCase_ == 28) {
+      return (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+  }
+
+  public static final int PAIRWISE_METRIC_INPUT_FIELD_NUMBER = 29;
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   *
+   * @return Whether the pairwiseMetricInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasPairwiseMetricInput() {
+    return metricInputsCase_ == 29;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   *
+   * @return The pairwiseMetricInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput getPairwiseMetricInput() {
+    if (metricInputsCase_ == 29) {
+      return (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder
+      getPairwiseMetricInputOrBuilder() {
+    if (metricInputsCase_ == 29) {
+      return (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+  }
+
   public static final int TOOL_CALL_VALID_INPUT_FIELD_NUMBER = 19;
   /**
    *
@@ -1516,6 +1626,14 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           (com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInput)
               metricInputs_);
     }
+    if (metricInputsCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 29) {
+      output.writeMessage(
+          29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1644,6 +1762,16 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
               (com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInput)
                   metricInputs_);
     }
+    if (metricInputsCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1722,6 +1850,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 18:
         if (!getQuestionAnsweringCorrectnessInput()
             .equals(other.getQuestionAnsweringCorrectnessInput())) return false;
+        break;
+      case 28:
+        if (!getPointwiseMetricInput().equals(other.getPointwiseMetricInput())) return false;
+        break;
+      case 29:
+        if (!getPairwiseMetricInput().equals(other.getPairwiseMetricInput())) return false;
         break;
       case 19:
         if (!getToolCallValidInput().equals(other.getToolCallValidInput())) return false;
@@ -1821,6 +1955,14 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 18:
         hash = (37 * hash) + QUESTION_ANSWERING_CORRECTNESS_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getQuestionAnsweringCorrectnessInput().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + POINTWISE_METRIC_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getPointwiseMetricInput().hashCode();
+        break;
+      case 29:
+        hash = (37 * hash) + PAIRWISE_METRIC_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getPairwiseMetricInput().hashCode();
         break;
       case 19:
         hash = (37 * hash) + TOOL_CALL_VALID_INPUT_FIELD_NUMBER;
@@ -2032,6 +2174,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (questionAnsweringCorrectnessInputBuilder_ != null) {
         questionAnsweringCorrectnessInputBuilder_.clear();
       }
+      if (pointwiseMetricInputBuilder_ != null) {
+        pointwiseMetricInputBuilder_.clear();
+      }
+      if (pairwiseMetricInputBuilder_ != null) {
+        pairwiseMetricInputBuilder_.clear();
+      }
       if (toolCallValidInputBuilder_ != null) {
         toolCallValidInputBuilder_.clear();
       }
@@ -2086,7 +2234,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.location_ = location_;
       }
     }
@@ -2145,6 +2293,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       if (metricInputsCase_ == 18 && questionAnsweringCorrectnessInputBuilder_ != null) {
         result.metricInputs_ = questionAnsweringCorrectnessInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 28 && pointwiseMetricInputBuilder_ != null) {
+        result.metricInputs_ = pointwiseMetricInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 29 && pairwiseMetricInputBuilder_ != null) {
+        result.metricInputs_ = pairwiseMetricInputBuilder_.build();
       }
       if (metricInputsCase_ == 19 && toolCallValidInputBuilder_ != null) {
         result.metricInputs_ = toolCallValidInputBuilder_.build();
@@ -2209,7 +2363,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       switch (other.getMetricInputsCase()) {
@@ -2299,6 +2453,16 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             mergeQuestionAnsweringCorrectnessInput(other.getQuestionAnsweringCorrectnessInput());
             break;
           }
+        case POINTWISE_METRIC_INPUT:
+          {
+            mergePointwiseMetricInput(other.getPointwiseMetricInput());
+            break;
+          }
+        case PAIRWISE_METRIC_INPUT:
+          {
+            mergePairwiseMetricInput(other.getPairwiseMetricInput());
+            break;
+          }
         case TOOL_CALL_VALID_INPUT:
           {
             mergeToolCallValidInput(other.getToolCallValidInput());
@@ -2353,7 +2517,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 10
             case 18:
@@ -2502,6 +2666,20 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 24;
                 break;
               } // case 194
+            case 226:
+              {
+                input.readMessage(
+                    getPointwiseMetricInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 28;
+                break;
+              } // case 226
+            case 234:
+              {
+                input.readMessage(
+                    getPairwiseMetricInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 29;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6441,6 +6619,445 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput,
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder>
+        pointwiseMetricInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     *
+     * @return Whether the pointwiseMetricInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasPointwiseMetricInput() {
+      return metricInputsCase_ == 28;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     *
+     * @return The pointwiseMetricInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput getPointwiseMetricInput() {
+      if (pointwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 28) {
+          return (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 28) {
+          return pointwiseMetricInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    public Builder setPointwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput value) {
+      if (pointwiseMetricInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        pointwiseMetricInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    public Builder setPointwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.Builder builderForValue) {
+      if (pointwiseMetricInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        pointwiseMetricInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    public Builder mergePointwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput value) {
+      if (pointwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 28
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 28) {
+          pointwiseMetricInputBuilder_.mergeFrom(value);
+        } else {
+          pointwiseMetricInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    public Builder clearPointwiseMetricInput() {
+      if (pointwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 28) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 28) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        pointwiseMetricInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.Builder
+        getPointwiseMetricInputBuilder() {
+      return getPointwiseMetricInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder
+        getPointwiseMetricInputOrBuilder() {
+      if ((metricInputsCase_ == 28) && (pointwiseMetricInputBuilder_ != null)) {
+        return pointwiseMetricInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 28) {
+          return (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pointwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput,
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder>
+        getPointwiseMetricInputFieldBuilder() {
+      if (pointwiseMetricInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 28)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.getDefaultInstance();
+        }
+        pointwiseMetricInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput,
+                com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 28;
+      onChanged();
+      return pointwiseMetricInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput,
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder>
+        pairwiseMetricInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     *
+     * @return Whether the pairwiseMetricInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasPairwiseMetricInput() {
+      return metricInputsCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     *
+     * @return The pairwiseMetricInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput getPairwiseMetricInput() {
+      if (pairwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 29) {
+          return (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 29) {
+          return pairwiseMetricInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    public Builder setPairwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput value) {
+      if (pairwiseMetricInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        pairwiseMetricInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    public Builder setPairwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.Builder builderForValue) {
+      if (pairwiseMetricInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        pairwiseMetricInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    public Builder mergePairwiseMetricInput(
+        com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput value) {
+      if (pairwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 29
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 29) {
+          pairwiseMetricInputBuilder_.mergeFrom(value);
+        } else {
+          pairwiseMetricInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    public Builder clearPairwiseMetricInput() {
+      if (pairwiseMetricInputBuilder_ == null) {
+        if (metricInputsCase_ == 29) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 29) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        pairwiseMetricInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.Builder
+        getPairwiseMetricInputBuilder() {
+      return getPairwiseMetricInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder
+        getPairwiseMetricInputOrBuilder() {
+      if ((metricInputsCase_ == 29) && (pairwiseMetricInputBuilder_ != null)) {
+        return pairwiseMetricInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 29) {
+          return (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for pairwise metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput,
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder>
+        getPairwiseMetricInputFieldBuilder() {
+      if (pairwiseMetricInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 29)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.getDefaultInstance();
+        }
+        pairwiseMetricInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput,
+                com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 29;
+      onChanged();
+      return pairwiseMetricInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInput,
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInput.Builder,
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInputOrBuilder>
@@ -7421,7 +8038,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       location_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7441,7 +8058,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      */
     public Builder clearLocation() {
       location_ = getDefaultInstance().getLocation();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7466,7 +8083,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       location_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }

@@ -150,6 +150,8 @@ public class EvaluationServiceClientTest {
     Assert.assertEquals(
         request.getQuestionAnsweringCorrectnessInput(),
         actualRequest.getQuestionAnsweringCorrectnessInput());
+    Assert.assertEquals(request.getPointwiseMetricInput(), actualRequest.getPointwiseMetricInput());
+    Assert.assertEquals(request.getPairwiseMetricInput(), actualRequest.getPairwiseMetricInput());
     Assert.assertEquals(request.getToolCallValidInput(), actualRequest.getToolCallValidInput());
     Assert.assertEquals(request.getToolNameMatchInput(), actualRequest.getToolNameMatchInput());
     Assert.assertEquals(

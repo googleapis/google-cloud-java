@@ -113,7 +113,9 @@ public interface StatusEventOrBuilder
    *
    *
    * <pre>
-   * Task Execution
+   * Task Execution.
+   * This field is only defined for task-level status events where the task
+   * fails.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskExecution task_execution = 4;</code>
@@ -125,7 +127,9 @@ public interface StatusEventOrBuilder
    *
    *
    * <pre>
-   * Task Execution
+   * Task Execution.
+   * This field is only defined for task-level status events where the task
+   * fails.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskExecution task_execution = 4;</code>
@@ -137,7 +141,9 @@ public interface StatusEventOrBuilder
    *
    *
    * <pre>
-   * Task Execution
+   * Task Execution.
+   * This field is only defined for task-level status events where the task
+   * fails.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskExecution task_execution = 4;</code>
@@ -148,7 +154,8 @@ public interface StatusEventOrBuilder
    *
    *
    * <pre>
-   * Task State
+   * Task State.
+   * This field is only defined for task-level status events.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
@@ -160,7 +167,8 @@ public interface StatusEventOrBuilder
    *
    *
    * <pre>
-   * Task State
+   * Task State.
+   * This field is only defined for task-level status events.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>

@@ -51,6 +51,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1alpha.CancelJobRequest;
+import com.google.cloud.batch.v1alpha.CancelJobResponse;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
 import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
@@ -134,6 +136,9 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
   private final UnaryCallSettings<DeleteJobRequest, Operation> deleteJobSettings;
   private final OperationCallSettings<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationSettings;
+  private final UnaryCallSettings<CancelJobRequest, Operation> cancelJobSettings;
+  private final OperationCallSettings<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationSettings;
   private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
@@ -409,6 +414,17 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     return deleteJobOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to cancelJob. */
+  public UnaryCallSettings<CancelJobRequest, Operation> cancelJobSettings() {
+    return cancelJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelJob. */
+  public OperationCallSettings<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationSettings() {
+    return cancelJobOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateJob. */
   public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
     return updateJobSettings;
@@ -596,6 +612,8 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     getJobSettings = settingsBuilder.getJobSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
     deleteJobOperationSettings = settingsBuilder.deleteJobOperationSettings().build();
+    cancelJobSettings = settingsBuilder.cancelJobSettings().build();
+    cancelJobOperationSettings = settingsBuilder.cancelJobOperationSettings().build();
     updateJobSettings = settingsBuilder.updateJobSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
@@ -619,6 +637,10 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     private final UnaryCallSettings.Builder<DeleteJobRequest, Operation> deleteJobSettings;
     private final OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings;
+    private final UnaryCallSettings.Builder<CancelJobRequest, Operation> cancelJobSettings;
+    private final OperationCallSettings.Builder<
+            CancelJobRequest, CancelJobResponse, OperationMetadata>
+        cancelJobOperationSettings;
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -702,6 +724,8 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteJobOperationSettings = OperationCallSettings.newBuilder();
+      cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelJobOperationSettings = OperationCallSettings.newBuilder();
       updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -721,6 +745,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               createJobSettings,
               getJobSettings,
               deleteJobSettings,
+              cancelJobSettings,
               updateJobSettings,
               listJobsSettings,
               getTaskSettings,
@@ -742,6 +767,8 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       getJobSettings = settings.getJobSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
       deleteJobOperationSettings = settings.deleteJobOperationSettings.toBuilder();
+      cancelJobSettings = settings.cancelJobSettings.toBuilder();
+      cancelJobOperationSettings = settings.cancelJobOperationSettings.toBuilder();
       updateJobSettings = settings.updateJobSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
@@ -761,6 +788,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               createJobSettings,
               getJobSettings,
               deleteJobSettings,
+              cancelJobSettings,
               updateJobSettings,
               listJobsSettings,
               getTaskSettings,
@@ -811,6 +839,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
 
       builder
           .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .cancelJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -893,6 +926,29 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
                       .build()));
 
       builder
+          .cancelJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CancelJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CancelJobResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteResourceAllowanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -953,6 +1009,17 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     public OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings() {
       return deleteJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelJob. */
+    public UnaryCallSettings.Builder<CancelJobRequest, Operation> cancelJobSettings() {
+      return cancelJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelJob. */
+    public OperationCallSettings.Builder<CancelJobRequest, CancelJobResponse, OperationMetadata>
+        cancelJobOperationSettings() {
+      return cancelJobOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateJob. */
