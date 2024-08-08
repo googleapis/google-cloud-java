@@ -18,6 +18,7 @@ package com.google.cloud.functions.v2.samples;
 
 // [START cloudfunctions_v2_generated_FunctionService_GenerateUploadUrl_sync]
 import com.google.cloud.functions.v2.CryptoKeyName;
+import com.google.cloud.functions.v2.Environment;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.GenerateUploadUrlRequest;
 import com.google.cloud.functions.v2.GenerateUploadUrlResponse;
@@ -42,6 +43,7 @@ public class SyncGenerateUploadUrl {
               .setKmsKeyName(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setEnvironment(Environment.forNumber(0))
               .build();
       GenerateUploadUrlResponse response = functionServiceClient.generateUploadUrl(request);
     }

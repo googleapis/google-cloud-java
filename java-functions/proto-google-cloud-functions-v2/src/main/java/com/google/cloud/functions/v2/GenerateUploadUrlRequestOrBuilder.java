@@ -107,4 +107,35 @@ public interface GenerateUploadUrlRequestOrBuilder
    * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The function environment the generated upload url will be used for.
+   * The upload url for 2nd Gen functions can also be used for 1st gen
+   * functions, but not vice versa. If not specified, 2nd generation-style
+   * upload URLs are generated.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2.Environment environment = 3;</code>
+   *
+   * @return The enum numeric value on the wire for environment.
+   */
+  int getEnvironmentValue();
+  /**
+   *
+   *
+   * <pre>
+   * The function environment the generated upload url will be used for.
+   * The upload url for 2nd Gen functions can also be used for 1st gen
+   * functions, but not vice versa. If not specified, 2nd generation-style
+   * upload URLs are generated.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2.Environment environment = 3;</code>
+   *
+   * @return The environment.
+   */
+  com.google.cloud.functions.v2.Environment getEnvironment();
 }

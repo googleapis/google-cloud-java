@@ -987,6 +987,76 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 27;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 28;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The create timestamp of a Cloud Function. This is only
+   * applicable to 2nd Gen functions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The create timestamp of a Cloud Function. This is only
+   * applicable to 2nd Gen functions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The create timestamp of a Cloud Function. This is only
+   * applicable to 2nd Gen functions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1036,6 +1106,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, kmsKeyName_);
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(27, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(28, getCreateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1090,6 +1166,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, kmsKeyName_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getCreateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1129,6 +1211,11 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     if (environment_ != other.environment_) return false;
     if (!getUrl().equals(other.getUrl())) return false;
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1176,6 +1263,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUrl().hashCode();
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1344,6 +1437,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         getEventTriggerFieldBuilder();
         getUpdateTimeFieldBuilder();
         getStateMessagesFieldBuilder();
+        getCreateTimeFieldBuilder();
       }
     }
 
@@ -1385,6 +1479,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       environment_ = 0;
       url_ = "";
       kmsKeyName_ = "";
+      satisfiesPzs_ = false;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1475,6 +1575,13 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1591,6 +1698,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1702,6 +1815,18 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 202
+            case 216:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 216
+            case 226:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3700,6 +3825,271 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The create timestamp of a Cloud Function. This is only
+     * applicable to 2nd Gen functions.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     @java.lang.Override

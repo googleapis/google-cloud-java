@@ -152,7 +152,7 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.functions.v2.FunctionsProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.functions.v2.FunctionsProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final Environment[] VALUES = values();

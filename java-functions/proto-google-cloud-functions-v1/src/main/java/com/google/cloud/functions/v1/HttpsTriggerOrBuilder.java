@@ -28,7 +28,7 @@ public interface HttpsTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The deployed URL for the function.
+   * Output only. The deployed url for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,7 +40,7 @@ public interface HttpsTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The deployed URL for the function.
+   * Output only. The deployed url for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

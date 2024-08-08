@@ -52,6 +52,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     secretVolumes_ = java.util.Collections.emptyList();
     revision_ = "";
     securityLevel_ = 0;
+    binaryAuthorizationPolicy_ = "";
   }
 
   @java.lang.Override
@@ -755,7 +756,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Preview] The number of CPUs used in a single container instance.
+   * The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -782,7 +783,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Preview] The number of CPUs used in a single container instance.
+   * The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -1436,7 +1437,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Preview] Sets the maximum number of concurrent requests that each instance
+   * Sets the maximum number of concurrent requests that each instance
    * can receive. Defaults to 1.
    * </pre>
    *
@@ -1490,6 +1491,59 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.functions.v2.ServiceConfig.SecurityLevel.UNRECOGNIZED
         : result;
+  }
+
+  public static final int BINARY_AUTHORIZATION_POLICY_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object binaryAuthorizationPolicy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The binary authorization policy to be checked when deploying the
+   * Cloud Run service.
+   * </pre>
+   *
+   * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The binaryAuthorizationPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getBinaryAuthorizationPolicy() {
+    java.lang.Object ref = binaryAuthorizationPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      binaryAuthorizationPolicy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The binary authorization policy to be checked when deploying the
+   * Cloud Run service.
+   * </pre>
+   *
+   * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for binaryAuthorizationPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBinaryAuthorizationPolicyBytes() {
+    java.lang.Object ref = binaryAuthorizationPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      binaryAuthorizationPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1568,6 +1622,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availableCpu_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, availableCpu_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(binaryAuthorizationPolicy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, binaryAuthorizationPolicy_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1651,6 +1708,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availableCpu_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, availableCpu_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(binaryAuthorizationPolicy_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(23, binaryAuthorizationPolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1688,6 +1749,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     if (getMaxInstanceRequestConcurrency() != other.getMaxInstanceRequestConcurrency())
       return false;
     if (securityLevel_ != other.securityLevel_) return false;
+    if (!getBinaryAuthorizationPolicy().equals(other.getBinaryAuthorizationPolicy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1741,6 +1803,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMaxInstanceRequestConcurrency();
     hash = (37 * hash) + SECURITY_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + securityLevel_;
+    hash = (37 * hash) + BINARY_AUTHORIZATION_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getBinaryAuthorizationPolicy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1933,6 +1997,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       revision_ = "";
       maxInstanceRequestConcurrency_ = 0;
       securityLevel_ = 0;
+      binaryAuthorizationPolicy_ = "";
       return this;
     }
 
@@ -2040,6 +2105,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.securityLevel_ = securityLevel_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.binaryAuthorizationPolicy_ = binaryAuthorizationPolicy_;
       }
     }
 
@@ -2203,6 +2271,11 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.securityLevel_ != 0) {
         setSecurityLevelValue(other.getSecurityLevelValue());
       }
+      if (!other.getBinaryAuthorizationPolicy().isEmpty()) {
+        binaryAuthorizationPolicy_ = other.binaryAuthorizationPolicy_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2358,6 +2431,12 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 178
+            case 186:
+              {
+                binaryAuthorizationPolicy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2698,7 +2777,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] The number of CPUs used in a single container instance.
+     * The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2724,7 +2803,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] The number of CPUs used in a single container instance.
+     * The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2750,7 +2829,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] The number of CPUs used in a single container instance.
+     * The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2775,7 +2854,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] The number of CPUs used in a single container instance.
+     * The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2796,7 +2875,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] The number of CPUs used in a single container instance.
+     * The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -4599,7 +4678,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * Sets the maximum number of concurrent requests that each instance
      * can receive. Defaults to 1.
      * </pre>
      *
@@ -4615,7 +4694,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * Sets the maximum number of concurrent requests that each instance
      * can receive. Defaults to 1.
      * </pre>
      *
@@ -4635,7 +4714,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * Sets the maximum number of concurrent requests that each instance
      * can receive. Defaults to 1.
      * </pre>
      *
@@ -4754,6 +4833,122 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecurityLevel() {
       bitField0_ = (bitField0_ & ~0x00020000);
       securityLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object binaryAuthorizationPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The binary authorization policy to be checked when deploying the
+     * Cloud Run service.
+     * </pre>
+     *
+     * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The binaryAuthorizationPolicy.
+     */
+    public java.lang.String getBinaryAuthorizationPolicy() {
+      java.lang.Object ref = binaryAuthorizationPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        binaryAuthorizationPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The binary authorization policy to be checked when deploying the
+     * Cloud Run service.
+     * </pre>
+     *
+     * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for binaryAuthorizationPolicy.
+     */
+    public com.google.protobuf.ByteString getBinaryAuthorizationPolicyBytes() {
+      java.lang.Object ref = binaryAuthorizationPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        binaryAuthorizationPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The binary authorization policy to be checked when deploying the
+     * Cloud Run service.
+     * </pre>
+     *
+     * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The binaryAuthorizationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBinaryAuthorizationPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      binaryAuthorizationPolicy_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The binary authorization policy to be checked when deploying the
+     * Cloud Run service.
+     * </pre>
+     *
+     * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBinaryAuthorizationPolicy() {
+      binaryAuthorizationPolicy_ = getDefaultInstance().getBinaryAuthorizationPolicy();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The binary authorization policy to be checked when deploying the
+     * Cloud Run service.
+     * </pre>
+     *
+     * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for binaryAuthorizationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBinaryAuthorizationPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      binaryAuthorizationPolicy_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
