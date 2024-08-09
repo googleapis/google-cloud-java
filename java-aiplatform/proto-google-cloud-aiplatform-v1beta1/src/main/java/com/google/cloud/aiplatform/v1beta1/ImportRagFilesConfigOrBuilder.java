@@ -219,6 +219,42 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
+   * Specifies the parsing config for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   *
+   * @return Whether the ragFileParsingConfig field is set.
+   */
+  boolean hasRagFileParsingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the parsing config for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   *
+   * @return The ragFileParsingConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig getRagFileParsingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the parsing config for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
+      getRagFileParsingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The max number of queries per minute that this job is allowed to
    * make to the embedding model specified on the corpus. This value is specific
    * to this job and not shared across other import jobs. Consult the Quotas
