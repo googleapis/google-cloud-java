@@ -897,6 +897,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -956,6 +957,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -439,6 +439,44 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   *
+   * @return Whether the defaultNoSpeechTimeout field is set.
+   */
+  boolean hasDefaultNoSpeechTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   *
+   * @return The defaultNoSpeechTimeout.
+   */
+  com.google.protobuf.Duration getDefaultNoSpeechTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getDefaultNoSpeechTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If `true`, the request will opt out for STT conformer model migration.
    * This field will be deprecated once force migration takes place in June
    * 2024. Please refer to [Dialogflow ES Speech model

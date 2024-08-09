@@ -28,7 +28,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface HumanAgentHandoffConfigOrBuilder
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>

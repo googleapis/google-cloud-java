@@ -237,4 +237,47 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder
       getKnowledgeSearchFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback knowledge_assist_feedback = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeAssistFeedback field is set.
+   */
+  boolean hasKnowledgeAssistFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback knowledge_assist_feedback = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeAssistFeedback.
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback
+      getKnowledgeAssistFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback knowledge_assist_feedback = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedbackOrBuilder
+      getKnowledgeAssistFeedbackOrBuilder();
 }

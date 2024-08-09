@@ -43,7 +43,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Nvidia Tesla K80 GPU.
+   * Deprecated: Nvidia Tesla K80 GPU has reached end of support,
+   * see https://cloud.google.com/compute/docs/eol/k80-eol.
    * </pre>
    *
    * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
@@ -187,7 +188,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Nvidia Tesla K80 GPU.
+   * Deprecated: Nvidia Tesla K80 GPU has reached end of support,
+   * see https://cloud.google.com/compute/docs/eol/k80-eol.
    * </pre>
    *
    * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>

@@ -819,6 +819,56 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     return zeroDay_;
   }
 
+  public static final int EXPLOIT_RELEASE_DATE_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp exploitReleaseDate_;
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   *
+   * @return Whether the exploitReleaseDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasExploitReleaseDate() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   *
+   * @return The exploitReleaseDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExploitReleaseDate() {
+    return exploitReleaseDate_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : exploitReleaseDate_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date the first publicly available exploit or PoC was released.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExploitReleaseDateOrBuilder() {
+    return exploitReleaseDate_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : exploitReleaseDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -861,6 +911,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (zeroDay_ != false) {
       output.writeBool(8, zeroDay_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getExploitReleaseDate());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -898,6 +951,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (zeroDay_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, zeroDay_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExploitReleaseDate());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -924,6 +980,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (exploitationActivity_ != other.exploitationActivity_) return false;
     if (getObservedInTheWild() != other.getObservedInTheWild()) return false;
     if (getZeroDay() != other.getZeroDay()) return false;
+    if (hasExploitReleaseDate() != other.hasExploitReleaseDate()) return false;
+    if (hasExploitReleaseDate()) {
+      if (!getExploitReleaseDate().equals(other.getExploitReleaseDate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -955,6 +1015,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getObservedInTheWild());
     hash = (37 * hash) + ZERO_DAY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getZeroDay());
+    if (hasExploitReleaseDate()) {
+      hash = (37 * hash) + EXPLOIT_RELEASE_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getExploitReleaseDate().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1100,6 +1164,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReferencesFieldBuilder();
         getCvssv3FieldBuilder();
+        getExploitReleaseDateFieldBuilder();
       }
     }
 
@@ -1125,6 +1190,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       exploitationActivity_ = 0;
       observedInTheWild_ = false;
       zeroDay_ = false;
+      exploitReleaseDate_ = null;
+      if (exploitReleaseDateBuilder_ != null) {
+        exploitReleaseDateBuilder_.dispose();
+        exploitReleaseDateBuilder_ = null;
+      }
       return this;
     }
 
@@ -1196,6 +1266,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.zeroDay_ = zeroDay_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.exploitReleaseDate_ =
+            exploitReleaseDateBuilder_ == null
+                ? exploitReleaseDate_
+                : exploitReleaseDateBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1295,6 +1372,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (other.getZeroDay() != false) {
         setZeroDay(other.getZeroDay());
       }
+      if (other.hasExploitReleaseDate()) {
+        mergeExploitReleaseDate(other.getExploitReleaseDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1376,6 +1456,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    getExploitReleaseDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2415,6 +2502,191 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       zeroDay_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp exploitReleaseDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        exploitReleaseDateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     *
+     * @return Whether the exploitReleaseDate field is set.
+     */
+    public boolean hasExploitReleaseDate() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     *
+     * @return The exploitReleaseDate.
+     */
+    public com.google.protobuf.Timestamp getExploitReleaseDate() {
+      if (exploitReleaseDateBuilder_ == null) {
+        return exploitReleaseDate_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : exploitReleaseDate_;
+      } else {
+        return exploitReleaseDateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public Builder setExploitReleaseDate(com.google.protobuf.Timestamp value) {
+      if (exploitReleaseDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exploitReleaseDate_ = value;
+      } else {
+        exploitReleaseDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public Builder setExploitReleaseDate(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (exploitReleaseDateBuilder_ == null) {
+        exploitReleaseDate_ = builderForValue.build();
+      } else {
+        exploitReleaseDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public Builder mergeExploitReleaseDate(com.google.protobuf.Timestamp value) {
+      if (exploitReleaseDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && exploitReleaseDate_ != null
+            && exploitReleaseDate_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExploitReleaseDateBuilder().mergeFrom(value);
+        } else {
+          exploitReleaseDate_ = value;
+        }
+      } else {
+        exploitReleaseDateBuilder_.mergeFrom(value);
+      }
+      if (exploitReleaseDate_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public Builder clearExploitReleaseDate() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      exploitReleaseDate_ = null;
+      if (exploitReleaseDateBuilder_ != null) {
+        exploitReleaseDateBuilder_.dispose();
+        exploitReleaseDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExploitReleaseDateBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getExploitReleaseDateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExploitReleaseDateOrBuilder() {
+      if (exploitReleaseDateBuilder_ != null) {
+        return exploitReleaseDateBuilder_.getMessageOrBuilder();
+      } else {
+        return exploitReleaseDate_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : exploitReleaseDate_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date the first publicly available exploit or PoC was released.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExploitReleaseDateFieldBuilder() {
+      if (exploitReleaseDateBuilder_ == null) {
+        exploitReleaseDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExploitReleaseDate(), getParentForChildren(), isClean());
+        exploitReleaseDate_ = null;
+      }
+      return exploitReleaseDateBuilder_;
     }
 
     @java.lang.Override

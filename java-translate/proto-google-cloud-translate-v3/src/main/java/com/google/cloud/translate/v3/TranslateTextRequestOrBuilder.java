@@ -239,6 +239,8 @@ public interface TranslateTextRequestOrBuilder
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
    *
+   * - Translation LLM models:
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/translation-llm`,
    *
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
@@ -266,6 +268,8 @@ public interface TranslateTextRequestOrBuilder
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
    *
+   * - Translation LLM models:
+   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/translation-llm`,
    *
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
@@ -326,6 +330,47 @@ public interface TranslateTextRequestOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfigOrBuilder getGlossaryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transliteration to be applied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.translation.v3.TransliterationConfig transliteration_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transliterationConfig field is set.
+   */
+  boolean hasTransliterationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transliteration to be applied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.translation.v3.TransliterationConfig transliteration_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transliterationConfig.
+   */
+  com.google.cloud.translate.v3.TransliterationConfig getTransliterationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transliteration to be applied.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.translation.v3.TransliterationConfig transliteration_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.translate.v3.TransliterationConfigOrBuilder getTransliterationConfigOrBuilder();
 
   /**
    *

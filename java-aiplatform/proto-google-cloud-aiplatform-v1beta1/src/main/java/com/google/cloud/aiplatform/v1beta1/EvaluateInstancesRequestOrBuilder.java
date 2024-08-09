@@ -708,6 +708,78 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   *
+   * @return Whether the pointwiseMetricInput field is set.
+   */
+  boolean hasPointwiseMetricInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   *
+   * @return The pointwiseMetricInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput getPointwiseMetricInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for pointwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PointwiseMetricInput pointwise_metric_input = 28;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PointwiseMetricInputOrBuilder
+      getPointwiseMetricInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   *
+   * @return Whether the pairwiseMetricInput field is set.
+   */
+  boolean hasPairwiseMetricInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   *
+   * @return The pairwiseMetricInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput getPairwiseMetricInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for pairwise metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PairwiseMetricInput pairwise_metric_input = 29;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PairwiseMetricInputOrBuilder
+      getPairwiseMetricInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tool call metric instances.
    * Input for tool call valid metric.
    * </pre>

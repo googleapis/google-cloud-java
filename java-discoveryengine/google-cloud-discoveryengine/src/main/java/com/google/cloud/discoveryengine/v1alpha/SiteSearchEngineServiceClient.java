@@ -278,6 +278,35 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> SetUriPatternDocumentData</td>
+ *      <td><p> Sets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setUriPatternDocumentDataAsync(SetUriPatternDocumentDataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setUriPatternDocumentDataOperationCallable()
+ *           <li><p> setUriPatternDocumentDataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUriPatternDocumentData</td>
+ *      <td><p> Gets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUriPatternDocumentData(GetUriPatternDocumentDataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUriPatternDocumentDataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -2008,6 +2037,187 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
           FetchDomainVerificationStatusRequest, FetchDomainVerificationStatusResponse>
       fetchDomainVerificationStatusCallable() {
     return stub.fetchDomainVerificationStatusCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SetUriPatternDocumentDataRequest request =
+   *       SetUriPatternDocumentDataRequest.newBuilder()
+   *           .setSiteSearchEngine(
+   *               SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .putAllDocumentDataMap(new HashMap<String, Struct>())
+   *           .setEmptyDocumentDataMap(true)
+   *           .setSchema(Struct.newBuilder().build())
+   *           .build();
+   *   SetUriPatternDocumentDataResponse response =
+   *       siteSearchEngineServiceClient.setUriPatternDocumentDataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetUriPatternDocumentDataResponse, SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataAsync(SetUriPatternDocumentDataRequest request) {
+    return setUriPatternDocumentDataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SetUriPatternDocumentDataRequest request =
+   *       SetUriPatternDocumentDataRequest.newBuilder()
+   *           .setSiteSearchEngine(
+   *               SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .putAllDocumentDataMap(new HashMap<String, Struct>())
+   *           .setEmptyDocumentDataMap(true)
+   *           .setSchema(Struct.newBuilder().build())
+   *           .build();
+   *   OperationFuture<SetUriPatternDocumentDataResponse, SetUriPatternDocumentDataMetadata> future =
+   *       siteSearchEngineServiceClient
+   *           .setUriPatternDocumentDataOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SetUriPatternDocumentDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationCallable() {
+    return stub.setUriPatternDocumentDataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SetUriPatternDocumentDataRequest request =
+   *       SetUriPatternDocumentDataRequest.newBuilder()
+   *           .setSiteSearchEngine(
+   *               SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .putAllDocumentDataMap(new HashMap<String, Struct>())
+   *           .setEmptyDocumentDataMap(true)
+   *           .setSchema(Struct.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       siteSearchEngineServiceClient.setUriPatternDocumentDataCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataCallable() {
+    return stub.setUriPatternDocumentDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   GetUriPatternDocumentDataRequest request =
+   *       GetUriPatternDocumentDataRequest.newBuilder()
+   *           .setSiteSearchEngine(
+   *               SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   GetUriPatternDocumentDataResponse response =
+   *       siteSearchEngineServiceClient.getUriPatternDocumentData(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetUriPatternDocumentDataResponse getUriPatternDocumentData(
+      GetUriPatternDocumentDataRequest request) {
+    return getUriPatternDocumentDataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the URI Pattern to Document data mapping for an Advanced Site Search DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   GetUriPatternDocumentDataRequest request =
+   *       GetUriPatternDocumentDataRequest.newBuilder()
+   *           .setSiteSearchEngine(
+   *               SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<GetUriPatternDocumentDataResponse> future =
+   *       siteSearchEngineServiceClient.getUriPatternDocumentDataCallable().futureCall(request);
+   *   // Do something.
+   *   GetUriPatternDocumentDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataCallable() {
+    return stub.getUriPatternDocumentDataCallable();
   }
 
   @Override

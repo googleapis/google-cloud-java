@@ -29,7 +29,7 @@ public interface SimulationOrBuilder
    *
    * <pre>
    * Full resource name of the Simulation:
-   * organizations/123/simulations/456
+   * `organizations/123/simulations/456`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,7 +42,7 @@ public interface SimulationOrBuilder
    *
    * <pre>
    * Full resource name of the Simulation:
-   * organizations/123/simulations/456
+   * `organizations/123/simulations/456`
    * </pre>
    *
    * <code>string name = 1;</code>

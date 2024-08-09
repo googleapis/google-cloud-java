@@ -304,4 +304,43 @@ public interface EventTriggerOrBuilder
    * @return The bytes for channel.
    */
   com.google.protobuf.ByteString getChannelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hostname of the service that 1st Gen function should be
+   * observed.
+   *
+   * If no string is provided, the default service implementing the API will
+   * be used. For example, `storage.googleapis.com` is the default for all
+   * event types in the `google.storage` namespace.
+   *
+   * The field is only applicable to 1st Gen functions.
+   * </pre>
+   *
+   * <code>string service = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The service.
+   */
+  java.lang.String getService();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hostname of the service that 1st Gen function should be
+   * observed.
+   *
+   * If no string is provided, the default service implementing the API will
+   * be used. For example, `storage.googleapis.com` is the default for all
+   * event types in the `google.storage` namespace.
+   *
+   * The field is only applicable to 1st Gen functions.
+   * </pre>
+   *
+   * <code>string service = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for service.
+   */
+  com.google.protobuf.ByteString getServiceBytes();
 }

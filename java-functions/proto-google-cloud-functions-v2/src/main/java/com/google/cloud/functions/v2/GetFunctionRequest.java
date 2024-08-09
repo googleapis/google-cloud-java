@@ -40,6 +40,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
 
   private GetFunctionRequest() {
     name_ = "";
+    revision_ = "";
   }
 
   @java.lang.Override
@@ -118,6 +119,67 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int REVISION_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the 1st gen function whose details should
+   * be obtained. The version of a 1st gen function is an integer that starts
+   * from 1 and gets incremented on redeployments. GCF may keep historical
+   * configs for old versions of 1st gen function. This field can be specified
+   * to fetch the historical configs. This field is valid only for GCF 1st gen
+   * function.
+   * </pre>
+   *
+   * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revision.
+   */
+  @java.lang.Override
+  public java.lang.String getRevision() {
+    java.lang.Object ref = revision_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revision_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the 1st gen function whose details should
+   * be obtained. The version of a 1st gen function is an integer that starts
+   * from 1 and gets incremented on redeployments. GCF may keep historical
+   * configs for old versions of 1st gen function. This field can be specified
+   * to fetch the historical configs. This field is valid only for GCF 1st gen
+   * function.
+   * </pre>
+   *
+   * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for revision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRevisionBytes() {
+    java.lang.Object ref = revision_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revision_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +197,9 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, revision_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +211,9 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, revision_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +232,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.functions.v2.GetFunctionRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getRevision().equals(other.getRevision())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +246,8 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + REVISION_FIELD_NUMBER;
+    hash = (53 * hash) + getRevision().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,6 +388,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      revision_ = "";
       return this;
     }
 
@@ -355,6 +427,9 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revision_ = revision_;
       }
     }
 
@@ -409,6 +484,11 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getRevision().isEmpty()) {
+        revision_ = other.revision_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -441,6 +521,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                revision_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -572,6 +658,137 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object revision_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the 1st gen function whose details should
+     * be obtained. The version of a 1st gen function is an integer that starts
+     * from 1 and gets incremented on redeployments. GCF may keep historical
+     * configs for old versions of 1st gen function. This field can be specified
+     * to fetch the historical configs. This field is valid only for GCF 1st gen
+     * function.
+     * </pre>
+     *
+     * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The revision.
+     */
+    public java.lang.String getRevision() {
+      java.lang.Object ref = revision_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revision_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the 1st gen function whose details should
+     * be obtained. The version of a 1st gen function is an integer that starts
+     * from 1 and gets incremented on redeployments. GCF may keep historical
+     * configs for old versions of 1st gen function. This field can be specified
+     * to fetch the historical configs. This field is valid only for GCF 1st gen
+     * function.
+     * </pre>
+     *
+     * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for revision.
+     */
+    public com.google.protobuf.ByteString getRevisionBytes() {
+      java.lang.Object ref = revision_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revision_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the 1st gen function whose details should
+     * be obtained. The version of a 1st gen function is an integer that starts
+     * from 1 and gets incremented on redeployments. GCF may keep historical
+     * configs for old versions of 1st gen function. This field can be specified
+     * to fetch the historical configs. This field is valid only for GCF 1st gen
+     * function.
+     * </pre>
+     *
+     * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The revision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevision(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      revision_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the 1st gen function whose details should
+     * be obtained. The version of a 1st gen function is an integer that starts
+     * from 1 and gets incremented on redeployments. GCF may keep historical
+     * configs for old versions of 1st gen function. This field can be specified
+     * to fetch the historical configs. This field is valid only for GCF 1st gen
+     * function.
+     * </pre>
+     *
+     * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevision() {
+      revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the 1st gen function whose details should
+     * be obtained. The version of a 1st gen function is an integer that starts
+     * from 1 and gets incremented on redeployments. GCF may keep historical
+     * configs for old versions of 1st gen function. This field can be specified
+     * to fetch the historical configs. This field is valid only for GCF 1st gen
+     * function.
+     * </pre>
+     *
+     * <code>string revision = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for revision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      revision_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

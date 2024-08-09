@@ -38,6 +38,7 @@ public class SyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setRevision("revision-260786213")
               .build();
       Function response = functionServiceClient.getFunction(request);
     }

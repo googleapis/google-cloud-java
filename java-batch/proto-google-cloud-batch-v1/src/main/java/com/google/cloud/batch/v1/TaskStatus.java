@@ -23,7 +23,7 @@ package com.google.cloud.batch.v1;
  *
  *
  * <pre>
- * Status of a task
+ * Status of a task.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1.TaskStatus}
@@ -315,7 +315,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Task state
+   * Task state.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -330,7 +330,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Task state
+   * Task state.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -587,7 +587,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Status of a task
+   * Status of a task.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1.TaskStatus}
@@ -827,7 +827,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Task state
+     * Task state.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -842,7 +842,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Task state
+     * Task state.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -860,7 +860,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Task state
+     * Task state.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -877,7 +877,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Task state
+     * Task state.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>
@@ -898,7 +898,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Task state
+     * Task state.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.TaskStatus.State state = 1;</code>

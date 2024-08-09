@@ -28,7 +28,7 @@ public interface TaskStatusOrBuilder
    *
    *
    * <pre>
-   * Task state
+   * Task state.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskStatus.State state = 1;</code>
@@ -40,7 +40,7 @@ public interface TaskStatusOrBuilder
    *
    *
    * <pre>
-   * Task state
+   * Task state.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskStatus.State state = 1;</code>

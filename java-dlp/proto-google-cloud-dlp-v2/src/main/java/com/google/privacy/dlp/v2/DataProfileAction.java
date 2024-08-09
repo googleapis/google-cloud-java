@@ -2733,6 +2733,3857 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface TagResourcesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.TagResources)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+        getTagConditionsList();
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition getTagConditions(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    int getTagConditionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
+        getTagConditionsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder
+        getTagConditionsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return A list containing the profileGenerationsToTag.
+     */
+    java.util.List<com.google.privacy.dlp.v2.ProfileGeneration> getProfileGenerationsToTagList();
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return The count of profileGenerationsToTag.
+     */
+    int getProfileGenerationsToTagCount();
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The profileGenerationsToTag at the given index.
+     */
+    com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for profileGenerationsToTag.
+     */
+    java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList();
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of profileGenerationsToTag at the given index.
+     */
+    int getProfileGenerationsToTagValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether applying a tag to a resource should lower the risk of the profile
+     * for that resource. For example, in conjunction with an [IAM deny
+     * policy](https://cloud.google.com/iam/docs/deny-overview), you can deny
+     * all principals a permission if a tag value is present, mitigating the
+     * risk of the resource. This also lowers the data risk of resources at the
+     * lower levels of the resource hierarchy. For example, reducing the data
+     * risk of a table data profile also reduces the data risk of the
+     * constituent column data profiles.
+     * </pre>
+     *
+     * <code>bool lower_data_risk_to_low = 3;</code>
+     *
+     * @return The lowerDataRiskToLow.
+     */
+    boolean getLowerDataRiskToLow();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, attaches the [tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-overview)
+   * provided to profiled resources. Tags support [access
+   * control](https://cloud.google.com/iam/docs/tags-access-control). You can
+   * conditionally grant or deny access to a resource based on whether the
+   * resource has a specific tag.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources}
+   */
+  public static final class TagResources extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources)
+      TagResourcesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TagResources.newBuilder() to construct.
+    private TagResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TagResources() {
+      tagConditions_ = java.util.Collections.emptyList();
+      profileGenerationsToTag_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TagResources();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.class,
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder.class);
+    }
+
+    public interface TagConditionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       *
+       * @return Whether the tag field is set.
+       */
+      boolean hasTag();
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       *
+       * @return The tag.
+       */
+      com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue getTag();
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       */
+      com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder getTagOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       *
+       * @return Whether the sensitivityScore field is set.
+       */
+      boolean hasSensitivityScore();
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       *
+       * @return The sensitivityScore.
+       */
+      com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       */
+      com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder();
+
+      com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.TypeCase getTypeCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tag to attach to profiles matching the condition. At most one
+     * `TagCondition` can be specified per sensitivity level.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition}
+     */
+    public static final class TagCondition extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
+        TagConditionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TagCondition.newBuilder() to construct.
+      private TagCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TagCondition() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TagCondition();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.class,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      private int typeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object type_;
+
+      public enum TypeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        SENSITIVITY_SCORE(2),
+        TYPE_NOT_SET(0);
+        private final int value;
+
+        private TypeCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TypeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static TypeCase forNumber(int value) {
+          switch (value) {
+            case 2:
+              return SENSITIVITY_SCORE;
+            case 0:
+              return TYPE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public TypeCase getTypeCase() {
+        return TypeCase.forNumber(typeCase_);
+      }
+
+      public static final int TAG_FIELD_NUMBER = 1;
+      private com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag_;
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       *
+       * @return Whether the tag field is set.
+       */
+      @java.lang.Override
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       *
+       * @return The tag.
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue getTag() {
+        return tag_ == null
+            ? com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.getDefaultInstance()
+            : tag_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tag value to attach to resources.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder
+          getTagOrBuilder() {
+        return tag_ == null
+            ? com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.getDefaultInstance()
+            : tag_;
+      }
+
+      public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       *
+       * @return Whether the sensitivityScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasSensitivityScore() {
+        return typeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       *
+       * @return The sensitivityScore.
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+        if (typeCase_ == 2) {
+          return (com.google.privacy.dlp.v2.SensitivityScore) type_;
+        }
+        return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Conditions attaching the tag to a resource on its profile having this
+       * sensitivity score.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+        if (typeCase_ == 2) {
+          return (com.google.privacy.dlp.v2.SensitivityScore) type_;
+        }
+        return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getTag());
+        }
+        if (typeCase_ == 2) {
+          output.writeMessage(2, (com.google.privacy.dlp.v2.SensitivityScore) type_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTag());
+        }
+        if (typeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.privacy.dlp.v2.SensitivityScore) type_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition other =
+            (com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition) obj;
+
+        if (hasTag() != other.hasTag()) return false;
+        if (hasTag()) {
+          if (!getTag().equals(other.getTag())) return false;
+        }
+        if (!getTypeCase().equals(other.getTypeCase())) return false;
+        switch (typeCase_) {
+          case 2:
+            if (!getSensitivityScore().equals(other.getSensitivityScore())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasTag()) {
+          hash = (37 * hash) + TAG_FIELD_NUMBER;
+          hash = (53 * hash) + getTag().hashCode();
+        }
+        switch (typeCase_) {
+          case 2:
+            hash = (37 * hash) + SENSITIVITY_SCORE_FIELD_NUMBER;
+            hash = (53 * hash) + getSensitivityScore().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tag to attach to profiles matching the condition. At most one
+       * `TagCondition` can be specified per sensitivity level.
+       * </pre>
+       *
+       * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.class,
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getTagFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          tag_ = null;
+          if (tagBuilder_ != null) {
+            tagBuilder_.dispose();
+            tagBuilder_ = null;
+          }
+          if (sensitivityScoreBuilder_ != null) {
+            sensitivityScoreBuilder_.clear();
+          }
+          typeCase_ = 0;
+          type_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagCondition_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition build() {
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+            buildPartial() {
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition result =
+              new com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.tag_ = tagBuilder_ == null ? tag_ : tagBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition result) {
+          result.typeCase_ = typeCase_;
+          result.type_ = this.type_;
+          if (typeCase_ == 2 && sensitivityScoreBuilder_ != null) {
+            result.type_ = sensitivityScoreBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition other) {
+          if (other
+              == com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+                  .getDefaultInstance()) return this;
+          if (other.hasTag()) {
+            mergeTag(other.getTag());
+          }
+          switch (other.getTypeCase()) {
+            case SENSITIVITY_SCORE:
+              {
+                mergeSensitivityScore(other.getSensitivityScore());
+                break;
+              }
+            case TYPE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getTagFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
+                    typeCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int typeCase_ = 0;
+        private java.lang.Object type_;
+
+        public TypeCase getTypeCase() {
+          return TypeCase.forNumber(typeCase_);
+        }
+
+        public Builder clearType() {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder>
+            tagBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         *
+         * @return Whether the tag field is set.
+         */
+        public boolean hasTag() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         *
+         * @return The tag.
+         */
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue getTag() {
+          if (tagBuilder_ == null) {
+            return tag_ == null
+                ? com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+                    .getDefaultInstance()
+                : tag_;
+          } else {
+            return tagBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public Builder setTag(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue value) {
+          if (tagBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            tag_ = value;
+          } else {
+            tagBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public Builder setTag(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder
+                builderForValue) {
+          if (tagBuilder_ == null) {
+            tag_ = builderForValue.build();
+          } else {
+            tagBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public Builder mergeTag(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue value) {
+          if (tagBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && tag_ != null
+                && tag_
+                    != com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+                        .getDefaultInstance()) {
+              getTagBuilder().mergeFrom(value);
+            } else {
+              tag_ = value;
+            }
+          } else {
+            tagBuilder_.mergeFrom(value);
+          }
+          if (tag_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public Builder clearTag() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          tag_ = null;
+          if (tagBuilder_ != null) {
+            tagBuilder_.dispose();
+            tagBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder
+            getTagBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getTagFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder
+            getTagOrBuilder() {
+          if (tagBuilder_ != null) {
+            return tagBuilder_.getMessageOrBuilder();
+          } else {
+            return tag_ == null
+                ? com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+                    .getDefaultInstance()
+                : tag_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The tag value to attach to resources.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder>
+            getTagFieldBuilder() {
+          if (tagBuilder_ == null) {
+            tagBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue,
+                    com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder,
+                    com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder>(
+                    getTag(), getParentForChildren(), isClean());
+            tag_ = null;
+          }
+          return tagBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.SensitivityScore,
+                com.google.privacy.dlp.v2.SensitivityScore.Builder,
+                com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+            sensitivityScoreBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         *
+         * @return Whether the sensitivityScore field is set.
+         */
+        @java.lang.Override
+        public boolean hasSensitivityScore() {
+          return typeCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         *
+         * @return The sensitivityScore.
+         */
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+          if (sensitivityScoreBuilder_ == null) {
+            if (typeCase_ == 2) {
+              return (com.google.privacy.dlp.v2.SensitivityScore) type_;
+            }
+            return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+          } else {
+            if (typeCase_ == 2) {
+              return sensitivityScoreBuilder_.getMessage();
+            }
+            return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        public Builder setSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+          if (sensitivityScoreBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+            onChanged();
+          } else {
+            sensitivityScoreBuilder_.setMessage(value);
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        public Builder setSensitivityScore(
+            com.google.privacy.dlp.v2.SensitivityScore.Builder builderForValue) {
+          if (sensitivityScoreBuilder_ == null) {
+            type_ = builderForValue.build();
+            onChanged();
+          } else {
+            sensitivityScoreBuilder_.setMessage(builderForValue.build());
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+          if (sensitivityScoreBuilder_ == null) {
+            if (typeCase_ == 2
+                && type_ != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
+              type_ =
+                  com.google.privacy.dlp.v2.SensitivityScore.newBuilder(
+                          (com.google.privacy.dlp.v2.SensitivityScore) type_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              type_ = value;
+            }
+            onChanged();
+          } else {
+            if (typeCase_ == 2) {
+              sensitivityScoreBuilder_.mergeFrom(value);
+            } else {
+              sensitivityScoreBuilder_.setMessage(value);
+            }
+          }
+          typeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        public Builder clearSensitivityScore() {
+          if (sensitivityScoreBuilder_ == null) {
+            if (typeCase_ == 2) {
+              typeCase_ = 0;
+              type_ = null;
+              onChanged();
+            }
+          } else {
+            if (typeCase_ == 2) {
+              typeCase_ = 0;
+              type_ = null;
+            }
+            sensitivityScoreBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
+          return getSensitivityScoreFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+          if ((typeCase_ == 2) && (sensitivityScoreBuilder_ != null)) {
+            return sensitivityScoreBuilder_.getMessageOrBuilder();
+          } else {
+            if (typeCase_ == 2) {
+              return (com.google.privacy.dlp.v2.SensitivityScore) type_;
+            }
+            return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Conditions attaching the tag to a resource on its profile having this
+         * sensitivity score.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.SensitivityScore,
+                com.google.privacy.dlp.v2.SensitivityScore.Builder,
+                com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+            getSensitivityScoreFieldBuilder() {
+          if (sensitivityScoreBuilder_ == null) {
+            if (!(typeCase_ == 2)) {
+              type_ = com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
+            }
+            sensitivityScoreBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.SensitivityScore,
+                    com.google.privacy.dlp.v2.SensitivityScore.Builder,
+                    com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>(
+                    (com.google.privacy.dlp.v2.SensitivityScore) type_,
+                    getParentForChildren(),
+                    isClean());
+            type_ = null;
+          }
+          typeCase_ = 2;
+          onChanged();
+          return sensitivityScoreBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
+      private static final com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition();
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TagCondition> PARSER =
+          new com.google.protobuf.AbstractParser<TagCondition>() {
+            @java.lang.Override
+            public TagCondition parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TagCondition> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TagCondition> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface TagValueOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return Whether the namespacedValue field is set.
+       */
+      boolean hasNamespacedValue();
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return The namespacedValue.
+       */
+      java.lang.String getNamespacedValue();
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return The bytes for namespacedValue.
+       */
+      com.google.protobuf.ByteString getNamespacedValueBytes();
+
+      com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.FormatCase getFormatCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A value of a tag.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue}
+     */
+    public static final class TagValue extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
+        TagValueOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TagValue.newBuilder() to construct.
+      private TagValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TagValue() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TagValue();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagValue_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagValue_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.class,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder.class);
+      }
+
+      private int formatCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object format_;
+
+      public enum FormatCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        NAMESPACED_VALUE(1),
+        FORMAT_NOT_SET(0);
+        private final int value;
+
+        private FormatCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static FormatCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static FormatCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return NAMESPACED_VALUE;
+            case 0:
+              return FORMAT_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public FormatCase getFormatCase() {
+        return FormatCase.forNumber(formatCase_);
+      }
+
+      public static final int NAMESPACED_VALUE_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return Whether the namespacedValue field is set.
+       */
+      public boolean hasNamespacedValue() {
+        return formatCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return The namespacedValue.
+       */
+      public java.lang.String getNamespacedValue() {
+        java.lang.Object ref = "";
+        if (formatCase_ == 1) {
+          ref = format_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (formatCase_ == 1) {
+            format_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespaced name for the tag value to attach to resources. Must be
+       * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+       * example, "123456/environment/prod".
+       * </pre>
+       *
+       * <code>string namespaced_value = 1;</code>
+       *
+       * @return The bytes for namespacedValue.
+       */
+      public com.google.protobuf.ByteString getNamespacedValueBytes() {
+        java.lang.Object ref = "";
+        if (formatCase_ == 1) {
+          ref = format_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (formatCase_ == 1) {
+            format_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (formatCase_ == 1) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, format_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (formatCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, format_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue other =
+            (com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue) obj;
+
+        if (!getFormatCase().equals(other.getFormatCase())) return false;
+        switch (formatCase_) {
+          case 1:
+            if (!getNamespacedValue().equals(other.getNamespacedValue())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (formatCase_) {
+          case 1:
+            hash = (37 * hash) + NAMESPACED_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getNamespacedValue().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A value of a tag.
+       * </pre>
+       *
+       * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagValue_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagValue_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.class,
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder.class);
+        }
+
+        // Construct using
+        // com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          formatCase_ = 0;
+          format_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_TagValue_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue build() {
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue buildPartial() {
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue result =
+              new com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue result) {
+          result.formatCase_ = formatCase_;
+          result.format_ = this.format_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue other) {
+          if (other
+              == com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+                  .getDefaultInstance()) return this;
+          switch (other.getFormatCase()) {
+            case NAMESPACED_VALUE:
+              {
+                formatCase_ = 1;
+                format_ = other.format_;
+                onChanged();
+                break;
+              }
+            case FORMAT_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    formatCase_ = 1;
+                    format_ = s;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int formatCase_ = 0;
+        private java.lang.Object format_;
+
+        public FormatCase getFormatCase() {
+          return FormatCase.forNumber(formatCase_);
+        }
+
+        public Builder clearFormat() {
+          formatCase_ = 0;
+          format_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @return Whether the namespacedValue field is set.
+         */
+        @java.lang.Override
+        public boolean hasNamespacedValue() {
+          return formatCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @return The namespacedValue.
+         */
+        @java.lang.Override
+        public java.lang.String getNamespacedValue() {
+          java.lang.Object ref = "";
+          if (formatCase_ == 1) {
+            ref = format_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (formatCase_ == 1) {
+              format_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @return The bytes for namespacedValue.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNamespacedValueBytes() {
+          java.lang.Object ref = "";
+          if (formatCase_ == 1) {
+            ref = format_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (formatCase_ == 1) {
+              format_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @param value The namespacedValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNamespacedValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          formatCase_ = 1;
+          format_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNamespacedValue() {
+          if (formatCase_ == 1) {
+            formatCase_ = 0;
+            format_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The namespaced name for the tag value to attach to resources. Must be
+         * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
+         * example, "123456/environment/prod".
+         * </pre>
+         *
+         * <code>string namespaced_value = 1;</code>
+         *
+         * @param value The bytes for namespacedValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNamespacedValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          formatCase_ = 1;
+          format_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
+      private static final com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue();
+      }
+
+      public static com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TagValue> PARSER =
+          new com.google.protobuf.AbstractParser<TagValue>() {
+            @java.lang.Override
+            public TagValue parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TagValue> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TagValue> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int TAG_CONDITIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+        tagConditions_;
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+        getTagConditionsList() {
+      return tagConditions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
+        getTagConditionsOrBuilderList() {
+      return tagConditions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getTagConditionsCount() {
+      return tagConditions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition getTagConditions(
+        int index) {
+      return tagConditions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags to associate with different conditions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder
+        getTagConditionsOrBuilder(int index) {
+      return tagConditions_.get(index);
+    }
+
+    public static final int PROFILE_GENERATIONS_TO_TAG_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> profileGenerationsToTag_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>
+        profileGenerationsToTag_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>() {
+              public com.google.privacy.dlp.v2.ProfileGeneration convert(java.lang.Integer from) {
+                com.google.privacy.dlp.v2.ProfileGeneration result =
+                    com.google.privacy.dlp.v2.ProfileGeneration.forNumber(from);
+                return result == null
+                    ? com.google.privacy.dlp.v2.ProfileGeneration.UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return A list containing the profileGenerationsToTag.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.privacy.dlp.v2.ProfileGeneration>
+        getProfileGenerationsToTagList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>(
+          profileGenerationsToTag_, profileGenerationsToTag_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return The count of profileGenerationsToTag.
+     */
+    @java.lang.Override
+    public int getProfileGenerationsToTagCount() {
+      return profileGenerationsToTag_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The profileGenerationsToTag at the given index.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index) {
+      return profileGenerationsToTag_converter_.convert(profileGenerationsToTag_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for profileGenerationsToTag.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList() {
+      return profileGenerationsToTag_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The profile generations for which the tag should be attached to
+     * resources. If you attach a tag to only new profiles, then if the
+     * sensitivity score of a profile subsequently changes, its tag doesn't
+     * change. By default, this field includes only new profiles. To include
+     * both new and updated profiles for tagging, this field should explicitly
+     * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of profileGenerationsToTag at the given index.
+     */
+    @java.lang.Override
+    public int getProfileGenerationsToTagValue(int index) {
+      return profileGenerationsToTag_.get(index);
+    }
+
+    private int profileGenerationsToTagMemoizedSerializedSize;
+
+    public static final int LOWER_DATA_RISK_TO_LOW_FIELD_NUMBER = 3;
+    private boolean lowerDataRiskToLow_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether applying a tag to a resource should lower the risk of the profile
+     * for that resource. For example, in conjunction with an [IAM deny
+     * policy](https://cloud.google.com/iam/docs/deny-overview), you can deny
+     * all principals a permission if a tag value is present, mitigating the
+     * risk of the resource. This also lowers the data risk of resources at the
+     * lower levels of the resource hierarchy. For example, reducing the data
+     * risk of a table data profile also reduces the data risk of the
+     * constituent column data profiles.
+     * </pre>
+     *
+     * <code>bool lower_data_risk_to_low = 3;</code>
+     *
+     * @return The lowerDataRiskToLow.
+     */
+    @java.lang.Override
+    public boolean getLowerDataRiskToLow() {
+      return lowerDataRiskToLow_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < tagConditions_.size(); i++) {
+        output.writeMessage(1, tagConditions_.get(i));
+      }
+      if (getProfileGenerationsToTagList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(profileGenerationsToTagMemoizedSerializedSize);
+      }
+      for (int i = 0; i < profileGenerationsToTag_.size(); i++) {
+        output.writeEnumNoTag(profileGenerationsToTag_.get(i));
+      }
+      if (lowerDataRiskToLow_ != false) {
+        output.writeBool(3, lowerDataRiskToLow_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < tagConditions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, tagConditions_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < profileGenerationsToTag_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  profileGenerationsToTag_.get(i));
+        }
+        size += dataSize;
+        if (!getProfileGenerationsToTagList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        profileGenerationsToTagMemoizedSerializedSize = dataSize;
+      }
+      if (lowerDataRiskToLow_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, lowerDataRiskToLow_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.DataProfileAction.TagResources other =
+          (com.google.privacy.dlp.v2.DataProfileAction.TagResources) obj;
+
+      if (!getTagConditionsList().equals(other.getTagConditionsList())) return false;
+      if (!profileGenerationsToTag_.equals(other.profileGenerationsToTag_)) return false;
+      if (getLowerDataRiskToLow() != other.getLowerDataRiskToLow()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTagConditionsCount() > 0) {
+        hash = (37 * hash) + TAG_CONDITIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagConditionsList().hashCode();
+      }
+      if (getProfileGenerationsToTagCount() > 0) {
+        hash = (37 * hash) + PROFILE_GENERATIONS_TO_TAG_FIELD_NUMBER;
+        hash = (53 * hash) + profileGenerationsToTag_.hashCode();
+      }
+      hash = (37 * hash) + LOWER_DATA_RISK_TO_LOW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLowerDataRiskToLow());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, attaches the [tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-overview)
+     * provided to profiled resources. Tags support [access
+     * control](https://cloud.google.com/iam/docs/tags-access-control). You can
+     * conditionally grant or deny access to a resource based on whether the
+     * resource has a specific tag.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.TagResources}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DataProfileAction.TagResources)
+        com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.class,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.DataProfileAction.TagResources.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (tagConditionsBuilder_ == null) {
+          tagConditions_ = java.util.Collections.emptyList();
+        } else {
+          tagConditions_ = null;
+          tagConditionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        profileGenerationsToTag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lowerDataRiskToLow_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DataProfileAction_TagResources_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources build() {
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources buildPartial() {
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources result =
+            new com.google.privacy.dlp.v2.DataProfileAction.TagResources(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources result) {
+        if (tagConditionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            tagConditions_ = java.util.Collections.unmodifiableList(tagConditions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.tagConditions_ = tagConditions_;
+        } else {
+          result.tagConditions_ = tagConditionsBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          profileGenerationsToTag_ =
+              java.util.Collections.unmodifiableList(profileGenerationsToTag_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.profileGenerationsToTag_ = profileGenerationsToTag_;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.DataProfileAction.TagResources result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lowerDataRiskToLow_ = lowerDataRiskToLow_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.DataProfileAction.TagResources) {
+          return mergeFrom((com.google.privacy.dlp.v2.DataProfileAction.TagResources) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.DataProfileAction.TagResources other) {
+        if (other == com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance())
+          return this;
+        if (tagConditionsBuilder_ == null) {
+          if (!other.tagConditions_.isEmpty()) {
+            if (tagConditions_.isEmpty()) {
+              tagConditions_ = other.tagConditions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTagConditionsIsMutable();
+              tagConditions_.addAll(other.tagConditions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tagConditions_.isEmpty()) {
+            if (tagConditionsBuilder_.isEmpty()) {
+              tagConditionsBuilder_.dispose();
+              tagConditionsBuilder_ = null;
+              tagConditions_ = other.tagConditions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              tagConditionsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getTagConditionsFieldBuilder()
+                      : null;
+            } else {
+              tagConditionsBuilder_.addAllMessages(other.tagConditions_);
+            }
+          }
+        }
+        if (!other.profileGenerationsToTag_.isEmpty()) {
+          if (profileGenerationsToTag_.isEmpty()) {
+            profileGenerationsToTag_ = other.profileGenerationsToTag_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureProfileGenerationsToTagIsMutable();
+            profileGenerationsToTag_.addAll(other.profileGenerationsToTag_);
+          }
+          onChanged();
+        }
+        if (other.getLowerDataRiskToLow() != false) {
+          setLowerDataRiskToLow(other.getLowerDataRiskToLow());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition m =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+                              .parser(),
+                          extensionRegistry);
+                  if (tagConditionsBuilder_ == null) {
+                    ensureTagConditionsIsMutable();
+                    tagConditions_.add(m);
+                  } else {
+                    tagConditionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureProfileGenerationsToTagIsMutable();
+                  profileGenerationsToTag_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureProfileGenerationsToTagIsMutable();
+                    profileGenerationsToTag_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
+              case 24:
+                {
+                  lowerDataRiskToLow_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+          tagConditions_ = java.util.Collections.emptyList();
+
+      private void ensureTagConditionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tagConditions_ =
+              new java.util.ArrayList<
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>(
+                  tagConditions_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition,
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder,
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
+          tagConditionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+          getTagConditionsList() {
+        if (tagConditionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tagConditions_);
+        } else {
+          return tagConditionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public int getTagConditionsCount() {
+        if (tagConditionsBuilder_ == null) {
+          return tagConditions_.size();
+        } else {
+          return tagConditionsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition getTagConditions(
+          int index) {
+        if (tagConditionsBuilder_ == null) {
+          return tagConditions_.get(index);
+        } else {
+          return tagConditionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder setTagConditions(
+          int index, com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition value) {
+        if (tagConditionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagConditionsIsMutable();
+          tagConditions_.set(index, value);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder setTagConditions(
+          int index,
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+              builderForValue) {
+        if (tagConditionsBuilder_ == null) {
+          ensureTagConditionsIsMutable();
+          tagConditions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tagConditionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder addTagConditions(
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition value) {
+        if (tagConditionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagConditionsIsMutable();
+          tagConditions_.add(value);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder addTagConditions(
+          int index, com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition value) {
+        if (tagConditionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTagConditionsIsMutable();
+          tagConditions_.add(index, value);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder addTagConditions(
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+              builderForValue) {
+        if (tagConditionsBuilder_ == null) {
+          ensureTagConditionsIsMutable();
+          tagConditions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tagConditionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder addTagConditions(
+          int index,
+          com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+              builderForValue) {
+        if (tagConditionsBuilder_ == null) {
+          ensureTagConditionsIsMutable();
+          tagConditions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tagConditionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder addAllTagConditions(
+          java.lang.Iterable<
+                  ? extends com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
+              values) {
+        if (tagConditionsBuilder_ == null) {
+          ensureTagConditionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagConditions_);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder clearTagConditions() {
+        if (tagConditionsBuilder_ == null) {
+          tagConditions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public Builder removeTagConditions(int index) {
+        if (tagConditionsBuilder_ == null) {
+          ensureTagConditionsIsMutable();
+          tagConditions_.remove(index);
+          onChanged();
+        } else {
+          tagConditionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+          getTagConditionsBuilder(int index) {
+        return getTagConditionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder
+          getTagConditionsOrBuilder(int index) {
+        if (tagConditionsBuilder_ == null) {
+          return tagConditions_.get(index);
+        } else {
+          return tagConditionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
+          getTagConditionsOrBuilderList() {
+        if (tagConditionsBuilder_ != null) {
+          return tagConditionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tagConditions_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+          addTagConditionsBuilder() {
+        return getTagConditionsFieldBuilder()
+            .addBuilder(
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder
+          addTagConditionsBuilder(int index) {
+        return getTagConditionsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The tags to associate with different conditions.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition tag_conditions = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder>
+          getTagConditionsBuilderList() {
+        return getTagConditionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition,
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder,
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
+          getTagConditionsFieldBuilder() {
+        if (tagConditionsBuilder_ == null) {
+          tagConditionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition,
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.Builder,
+                  com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>(
+                  tagConditions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tagConditions_ = null;
+        }
+        return tagConditionsBuilder_;
+      }
+
+      private java.util.List<java.lang.Integer> profileGenerationsToTag_ =
+          java.util.Collections.emptyList();
+
+      private void ensureProfileGenerationsToTagIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          profileGenerationsToTag_ =
+              new java.util.ArrayList<java.lang.Integer>(profileGenerationsToTag_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @return A list containing the profileGenerationsToTag.
+       */
+      public java.util.List<com.google.privacy.dlp.v2.ProfileGeneration>
+          getProfileGenerationsToTagList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>(
+            profileGenerationsToTag_, profileGenerationsToTag_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @return The count of profileGenerationsToTag.
+       */
+      public int getProfileGenerationsToTagCount() {
+        return profileGenerationsToTag_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The profileGenerationsToTag at the given index.
+       */
+      public com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index) {
+        return profileGenerationsToTag_converter_.convert(profileGenerationsToTag_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The profileGenerationsToTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProfileGenerationsToTag(
+          int index, com.google.privacy.dlp.v2.ProfileGeneration value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProfileGenerationsToTagIsMutable();
+        profileGenerationsToTag_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param value The profileGenerationsToTag to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProfileGenerationsToTag(com.google.privacy.dlp.v2.ProfileGeneration value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProfileGenerationsToTagIsMutable();
+        profileGenerationsToTag_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param values The profileGenerationsToTag to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllProfileGenerationsToTag(
+          java.lang.Iterable<? extends com.google.privacy.dlp.v2.ProfileGeneration> values) {
+        ensureProfileGenerationsToTagIsMutable();
+        for (com.google.privacy.dlp.v2.ProfileGeneration value : values) {
+          profileGenerationsToTag_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProfileGenerationsToTag() {
+        profileGenerationsToTag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for profileGenerationsToTag.
+       */
+      public java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList() {
+        return java.util.Collections.unmodifiableList(profileGenerationsToTag_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of profileGenerationsToTag at the given index.
+       */
+      public int getProfileGenerationsToTagValue(int index) {
+        return profileGenerationsToTag_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for profileGenerationsToTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProfileGenerationsToTagValue(int index, int value) {
+        ensureProfileGenerationsToTagIsMutable();
+        profileGenerationsToTag_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for profileGenerationsToTag to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProfileGenerationsToTagValue(int value) {
+        ensureProfileGenerationsToTagIsMutable();
+        profileGenerationsToTag_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The profile generations for which the tag should be attached to
+       * resources. If you attach a tag to only new profiles, then if the
+       * sensitivity score of a profile subsequently changes, its tag doesn't
+       * change. By default, this field includes only new profiles. To include
+       * both new and updated profiles for tagging, this field should explicitly
+       * include both `PROFILE_GENERATION_NEW` and `PROFILE_GENERATION_UPDATE`.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.ProfileGeneration profile_generations_to_tag = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for profileGenerationsToTag to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllProfileGenerationsToTagValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureProfileGenerationsToTagIsMutable();
+        for (int value : values) {
+          profileGenerationsToTag_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private boolean lowerDataRiskToLow_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether applying a tag to a resource should lower the risk of the profile
+       * for that resource. For example, in conjunction with an [IAM deny
+       * policy](https://cloud.google.com/iam/docs/deny-overview), you can deny
+       * all principals a permission if a tag value is present, mitigating the
+       * risk of the resource. This also lowers the data risk of resources at the
+       * lower levels of the resource hierarchy. For example, reducing the data
+       * risk of a table data profile also reduces the data risk of the
+       * constituent column data profiles.
+       * </pre>
+       *
+       * <code>bool lower_data_risk_to_low = 3;</code>
+       *
+       * @return The lowerDataRiskToLow.
+       */
+      @java.lang.Override
+      public boolean getLowerDataRiskToLow() {
+        return lowerDataRiskToLow_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether applying a tag to a resource should lower the risk of the profile
+       * for that resource. For example, in conjunction with an [IAM deny
+       * policy](https://cloud.google.com/iam/docs/deny-overview), you can deny
+       * all principals a permission if a tag value is present, mitigating the
+       * risk of the resource. This also lowers the data risk of resources at the
+       * lower levels of the resource hierarchy. For example, reducing the data
+       * risk of a table data profile also reduces the data risk of the
+       * constituent column data profiles.
+       * </pre>
+       *
+       * <code>bool lower_data_risk_to_low = 3;</code>
+       *
+       * @param value The lowerDataRiskToLow to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLowerDataRiskToLow(boolean value) {
+
+        lowerDataRiskToLow_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether applying a tag to a resource should lower the risk of the profile
+       * for that resource. For example, in conjunction with an [IAM deny
+       * policy](https://cloud.google.com/iam/docs/deny-overview), you can deny
+       * all principals a permission if a tag value is present, mitigating the
+       * risk of the resource. This also lowers the data risk of resources at the
+       * lower levels of the resource hierarchy. For example, reducing the data
+       * risk of a table data profile also reduces the data risk of the
+       * constituent column data profiles.
+       * </pre>
+       *
+       * <code>bool lower_data_risk_to_low = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLowerDataRiskToLow() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        lowerDataRiskToLow_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DataProfileAction.TagResources)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DataProfileAction.TagResources)
+    private static final com.google.privacy.dlp.v2.DataProfileAction.TagResources DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DataProfileAction.TagResources();
+    }
+
+    public static com.google.privacy.dlp.v2.DataProfileAction.TagResources getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TagResources> PARSER =
+        new com.google.protobuf.AbstractParser<TagResources>() {
+          @java.lang.Override
+          public TagResources parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TagResources> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TagResources> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResources getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int actionCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2744,6 +6595,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     EXPORT_DATA(1),
     PUB_SUB_NOTIFICATION(2),
+    TAG_RESOURCES(8),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -2766,6 +6618,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return EXPORT_DATA;
         case 2:
           return PUB_SUB_NOTIFICATION;
+        case 8:
+          return TAG_RESOURCES;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -2888,6 +6742,58 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     return com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.getDefaultInstance();
   }
 
+  public static final int TAG_RESOURCES_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   *
+   * @return Whether the tagResources field is set.
+   */
+  @java.lang.Override
+  public boolean hasTagResources() {
+    return actionCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   *
+   * @return The tagResources.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.TagResources getTagResources() {
+    if (actionCase_ == 8) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Tags the profiled resources with the specified tag values.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder
+      getTagResourcesOrBuilder() {
+    if (actionCase_ == 8) {
+      return (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_;
+    }
+    return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2909,6 +6815,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           2, (com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification) action_);
     }
+    if (actionCase_ == 8) {
+      output.writeMessage(8, (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2927,6 +6836,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification) action_);
+    }
+    if (actionCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2952,6 +6866,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       case 2:
         if (!getPubSubNotification().equals(other.getPubSubNotification())) return false;
         break;
+      case 8:
+        if (!getTagResources().equals(other.getTagResources())) return false;
+        break;
       case 0:
       default:
     }
@@ -2974,6 +6891,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       case 2:
         hash = (37 * hash) + PUB_SUB_NOTIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getPubSubNotification().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + TAG_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getTagResources().hashCode();
         break;
       case 0:
       default:
@@ -3123,6 +7044,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       if (pubSubNotificationBuilder_ != null) {
         pubSubNotificationBuilder_.clear();
       }
+      if (tagResourcesBuilder_ != null) {
+        tagResourcesBuilder_.clear();
+      }
       actionCase_ = 0;
       action_ = null;
       return this;
@@ -3172,6 +7096,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       if (actionCase_ == 2 && pubSubNotificationBuilder_ != null) {
         result.action_ = pubSubNotificationBuilder_.build();
+      }
+      if (actionCase_ == 8 && tagResourcesBuilder_ != null) {
+        result.action_ = tagResourcesBuilder_.build();
       }
     }
 
@@ -3231,6 +7158,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             mergePubSubNotification(other.getPubSubNotification());
             break;
           }
+        case TAG_RESOURCES:
+          {
+            mergeTagResources(other.getTagResources());
+            break;
+          }
         case ACTION_NOT_SET:
           {
             break;
@@ -3275,6 +7207,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 actionCase_ = 2;
                 break;
               } // case 18
+            case 66:
+              {
+                input.readMessage(getTagResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3740,6 +7678,219 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 2;
       onChanged();
       return pubSubNotificationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources,
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder>
+        tagResourcesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     *
+     * @return Whether the tagResources field is set.
+     */
+    @java.lang.Override
+    public boolean hasTagResources() {
+      return actionCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     *
+     * @return The tagResources.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResources getTagResources() {
+      if (tagResourcesBuilder_ == null) {
+        if (actionCase_ == 8) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+      } else {
+        if (actionCase_ == 8) {
+          return tagResourcesBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    public Builder setTagResources(com.google.privacy.dlp.v2.DataProfileAction.TagResources value) {
+      if (tagResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        tagResourcesBuilder_.setMessage(value);
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    public Builder setTagResources(
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder builderForValue) {
+      if (tagResourcesBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        tagResourcesBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    public Builder mergeTagResources(
+        com.google.privacy.dlp.v2.DataProfileAction.TagResources value) {
+      if (tagResourcesBuilder_ == null) {
+        if (actionCase_ == 8
+            && action_
+                != com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.DataProfileAction.TagResources.newBuilder(
+                      (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 8) {
+          tagResourcesBuilder_.mergeFrom(value);
+        } else {
+          tagResourcesBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    public Builder clearTagResources() {
+      if (tagResourcesBuilder_ == null) {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        tagResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder
+        getTagResourcesBuilder() {
+      return getTagResourcesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder
+        getTagResourcesOrBuilder() {
+      if ((actionCase_ == 8) && (tagResourcesBuilder_ != null)) {
+        return tagResourcesBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 8) {
+          return (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_;
+        }
+        return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags the profiled resources with the specified tag values.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataProfileAction.TagResources tag_resources = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources,
+            com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder,
+            com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder>
+        getTagResourcesFieldBuilder() {
+      if (tagResourcesBuilder_ == null) {
+        if (!(actionCase_ == 8)) {
+          action_ = com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
+        }
+        tagResourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder,
+                com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder>(
+                (com.google.privacy.dlp.v2.DataProfileAction.TagResources) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 8;
+      onChanged();
+      return tagResourcesBuilder_;
     }
 
     @java.lang.Override

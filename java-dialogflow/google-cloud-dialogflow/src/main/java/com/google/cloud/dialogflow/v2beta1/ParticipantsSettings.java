@@ -133,6 +133,12 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).suggestSmartRepliesSettings();
   }
 
+  /** Returns the object with the settings used for calls to suggestKnowledgeAssist. */
+  public UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings() {
+    return ((ParticipantsStubSettings) getStubSettings()).suggestKnowledgeAssistSettings();
+  }
+
   /**
    * Returns the object with the settings used for calls to listSuggestions.
    *
@@ -332,6 +338,12 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     public UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings() {
       return getStubSettingsBuilder().suggestSmartRepliesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suggestKnowledgeAssist. */
+    public UnaryCallSettings.Builder<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings() {
+      return getStubSettingsBuilder().suggestKnowledgeAssistSettings();
     }
 
     /**

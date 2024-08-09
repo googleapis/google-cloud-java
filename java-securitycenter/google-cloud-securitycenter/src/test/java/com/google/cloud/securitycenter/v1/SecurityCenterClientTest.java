@@ -434,6 +434,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -525,6 +526,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -604,6 +606,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -653,6 +656,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -702,6 +706,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -751,6 +756,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -800,6 +806,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -849,6 +856,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -898,6 +906,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -947,6 +956,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -999,6 +1009,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1051,6 +1062,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1103,6 +1115,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1155,6 +1168,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1207,6 +1221,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1259,6 +1274,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2281,6 +2297,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2329,6 +2346,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4210,6 +4228,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4303,6 +4322,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4394,6 +4414,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4484,6 +4505,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4840,6 +4862,7 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4913,6 +4936,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

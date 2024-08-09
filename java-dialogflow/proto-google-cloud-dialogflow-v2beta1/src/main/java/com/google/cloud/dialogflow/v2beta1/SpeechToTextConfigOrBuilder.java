@@ -136,6 +136,99 @@ public interface SpeechToTextConfigOrBuilder
    *
    *
    * <pre>
+   * Audio encoding of the audio content to process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 6;</code>
+   *
+   * @return The enum numeric value on the wire for audioEncoding.
+   */
+  int getAudioEncodingValue();
+  /**
+   *
+   *
+   * <pre>
+   * Audio encoding of the audio content to process.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 6;</code>
+   *
+   * @return The audioEncoding.
+   */
+  com.google.cloud.dialogflow.v2beta1.AudioEncoding getAudioEncoding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sample rate (in Hertz) of the audio content sent in the query.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
+   * </pre>
+   *
+   * <code>int32 sample_rate_hertz = 7;</code>
+   *
+   * @return The sampleRateHertz.
+   */
+  int getSampleRateHertz();
+
+  /**
+   *
+   *
+   * <pre>
+   * The language of the supplied audio. Dialogflow does not do  translations.
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
+   * </pre>
+   *
+   * <code>string language_code = 8;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The language of the supplied audio. Dialogflow does not do  translations.
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
+   * </pre>
+   *
+   * <code>string language_code = 8;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, Dialogflow returns
+   * [SpeechWordInfo][google.cloud.dialogflow.v2beta1.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
+   * with information about the recognized speech words, e.g. start and end time
+   * offsets. If false or unspecified, Speech doesn't return any word-level
+   * information.
+   * </pre>
+   *
+   * <code>bool enable_word_info = 9;</code>
+   *
+   * @return The enableWordInfo.
+   */
+  boolean getEnableWordInfo();
+
+  /**
+   *
+   *
+   * <pre>
    * Use timeout based endpointing, interpreting endpointer sensitivy as
    * seconds of timeout value.
    * </pre>

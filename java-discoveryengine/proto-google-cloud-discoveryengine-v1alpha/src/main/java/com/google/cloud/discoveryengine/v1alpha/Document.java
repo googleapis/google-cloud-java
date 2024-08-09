@@ -117,7 +117,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -131,7 +131,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -145,7 +145,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -346,7 +346,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -362,7 +362,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -391,7 +391,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 2.5 MB for text-based formats, 100 MB for other formats.
+     * is 2.5 MB for text-based formats, 200 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -1026,7 +1026,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1043,7 +1043,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1073,7 +1073,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1103,7 +1103,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1126,7 +1126,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1147,7 +1147,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 2.5 MB for text-based formats, 100 MB for other formats.
+       * is 2.5 MB for text-based formats, 200 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1549,6 +1549,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.discoveryengine.v1alpha.Principal principals = 1;</code>
        */
       com.google.cloud.discoveryengine.v1alpha.PrincipalOrBuilder getPrincipalsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * All users within the Identity Provider.
+       * </pre>
+       *
+       * <code>bool idp_wide = 2;</code>
+       *
+       * @return The idpWide.
+       */
+      boolean getIdpWide();
     }
     /**
      *
@@ -1726,6 +1739,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return principals_.get(index);
       }
 
+      public static final int IDP_WIDE_FIELD_NUMBER = 2;
+      private boolean idpWide_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * All users within the Identity Provider.
+       * </pre>
+       *
+       * <code>bool idp_wide = 2;</code>
+       *
+       * @return The idpWide.
+       */
+      @java.lang.Override
+      public boolean getIdpWide() {
+        return idpWide_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1743,6 +1774,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < principals_.size(); i++) {
           output.writeMessage(1, principals_.get(i));
         }
+        if (idpWide_ != false) {
+          output.writeBool(2, idpWide_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1754,6 +1788,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         size = 0;
         for (int i = 0; i < principals_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, principals_.get(i));
+        }
+        if (idpWide_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, idpWide_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1774,6 +1811,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.discoveryengine.v1alpha.Document.AclInfo.AccessRestriction) obj;
 
         if (!getPrincipalsList().equals(other.getPrincipalsList())) return false;
+        if (getIdpWide() != other.getIdpWide()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1789,6 +1827,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + PRINCIPALS_FIELD_NUMBER;
           hash = (53 * hash) + getPrincipalsList().hashCode();
         }
+        hash = (37 * hash) + IDP_WIDE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIdpWide());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2007,6 +2047,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             principalsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000001);
+          idpWide_ = false;
           return this;
         }
 
@@ -2062,6 +2103,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         private void buildPartial0(
             com.google.cloud.discoveryengine.v1alpha.Document.AclInfo.AccessRestriction result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.idpWide_ = idpWide_;
+          }
         }
 
         @java.lang.Override
@@ -2145,6 +2189,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
+          if (other.getIdpWide() != false) {
+            setIdpWide(other.getIdpWide());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -2185,6 +2232,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     }
                     break;
                   } // case 10
+                case 16:
+                  {
+                    idpWide_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2565,6 +2618,59 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             principals_ = null;
           }
           return principalsBuilder_;
+        }
+
+        private boolean idpWide_;
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @return The idpWide.
+         */
+        @java.lang.Override
+        public boolean getIdpWide() {
+          return idpWide_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @param value The idpWide to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIdpWide(boolean value) {
+
+          idpWide_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIdpWide() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          idpWide_ = false;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override

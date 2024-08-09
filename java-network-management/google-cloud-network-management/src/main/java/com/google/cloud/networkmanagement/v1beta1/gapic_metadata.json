@@ -46,6 +46,45 @@
           }
         }
       }
+    },
+    "VpcFlowLogsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VpcFlowLogsServiceClient",
+          "rpcs": {
+            "CreateVpcFlowLogsConfig": {
+              "methods": ["createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigAsync", "createVpcFlowLogsConfigOperationCallable", "createVpcFlowLogsConfigCallable"]
+            },
+            "DeleteVpcFlowLogsConfig": {
+              "methods": ["deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigAsync", "deleteVpcFlowLogsConfigOperationCallable", "deleteVpcFlowLogsConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetVpcFlowLogsConfig": {
+              "methods": ["getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfig", "getVpcFlowLogsConfigCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListVpcFlowLogsConfigs": {
+              "methods": ["listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigs", "listVpcFlowLogsConfigsPagedCallable", "listVpcFlowLogsConfigsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateVpcFlowLogsConfig": {
+              "methods": ["updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigAsync", "updateVpcFlowLogsConfigOperationCallable", "updateVpcFlowLogsConfigCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

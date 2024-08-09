@@ -352,6 +352,92 @@ public class BatchServiceClientTest {
   }
 
   @Test
+  public void cancelJobTest() throws Exception {
+    CancelJobResponse expectedResponse = CancelJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBatchService.addResponse(resultOperation);
+
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    CancelJobResponse actualResponse = client.cancelJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBatchService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelJobRequest actualRequest = ((CancelJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBatchService.addException(exception);
+
+    try {
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.cancelJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelJobTest2() throws Exception {
+    CancelJobResponse expectedResponse = CancelJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBatchService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    CancelJobResponse actualResponse = client.cancelJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBatchService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelJobRequest actualRequest = ((CancelJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBatchService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void updateJobTest() throws Exception {
     Job expectedResponse =
         Job.newBuilder()

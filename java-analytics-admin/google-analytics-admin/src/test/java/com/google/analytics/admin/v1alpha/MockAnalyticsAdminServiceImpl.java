@@ -894,6 +894,110 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void createKeyEvent(
+      CreateKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateKeyEvent(
+      UpdateKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getKeyEvent(GetKeyEventRequest request, StreamObserver<KeyEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof KeyEvent) {
+      requests.add(request);
+      responseObserver.onNext(((KeyEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  KeyEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteKeyEvent(
+      DeleteKeyEventRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteKeyEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listKeyEvents(
+      ListKeyEventsRequest request, StreamObserver<ListKeyEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListKeyEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListKeyEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListKeyEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListKeyEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getDisplayVideo360AdvertiserLink(
       GetDisplayVideo360AdvertiserLinkRequest request,
       StreamObserver<DisplayVideo360AdvertiserLink> responseObserver) {
@@ -2219,6 +2323,27 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void createBigQueryLink(
+      CreateBigQueryLinkRequest request, StreamObserver<BigQueryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryLink) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBigQueryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getBigQueryLink(
       GetBigQueryLinkRequest request, StreamObserver<BigQueryLink> responseObserver) {
     Object response = responses.poll();
@@ -2257,6 +2382,48 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method ListBigQueryLinks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBigQueryLinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBigQueryLink(
+      DeleteBigQueryLinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBigQueryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateBigQueryLink(
+      UpdateBigQueryLinkRequest request, StreamObserver<BigQueryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryLink) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBigQueryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryLink.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -2583,6 +2750,133 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getEventEditRule(
+      GetEventEditRuleRequest request, StreamObserver<EventEditRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventEditRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventEditRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEventEditRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventEditRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listEventEditRules(
+      ListEventEditRulesRequest request,
+      StreamObserver<ListEventEditRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEventEditRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEventEditRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEventEditRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEventEditRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEventEditRule(
+      CreateEventEditRuleRequest request, StreamObserver<EventEditRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventEditRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventEditRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEventEditRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventEditRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEventEditRule(
+      UpdateEventEditRuleRequest request, StreamObserver<EventEditRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventEditRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventEditRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEventEditRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventEditRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEventEditRule(
+      DeleteEventEditRuleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEventEditRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void reorderEventEditRules(
+      ReorderEventEditRulesRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReorderEventEditRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateDataRedactionSettings(
       UpdateDataRedactionSettingsRequest request,
       StreamObserver<DataRedactionSettings> responseObserver) {
@@ -2842,13 +3136,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void createSubproperty(
-      CreateSubpropertyRequest request,
-      StreamObserver<CreateSubpropertyResponse> responseObserver) {
+  public void provisionSubproperty(
+      ProvisionSubpropertyRequest request,
+      StreamObserver<ProvisionSubpropertyResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CreateSubpropertyResponse) {
+    if (response instanceof ProvisionSubpropertyResponse) {
       requests.add(request);
-      responseObserver.onNext(((CreateSubpropertyResponse) response));
+      responseObserver.onNext(((ProvisionSubpropertyResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -2856,9 +3150,9 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSubproperty, expected %s or %s",
+                  "Unrecognized response type %s for method ProvisionSubproperty, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CreateSubpropertyResponse.class.getName(),
+                  ProvisionSubpropertyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

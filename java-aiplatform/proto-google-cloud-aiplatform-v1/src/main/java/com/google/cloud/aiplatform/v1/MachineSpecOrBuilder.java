@@ -145,4 +145,48 @@ public interface MachineSpecOrBuilder
    * @return The bytes for tpuTopology.
    */
   com.google.protobuf.ByteString getTpuTopologyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the reservationAffinity field is set.
+   */
+  boolean hasReservationAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The reservationAffinity.
+   */
+  com.google.cloud.aiplatform.v1.ReservationAffinity getReservationAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Configuration controlling how this resource pool
+   * consumes reservation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReservationAffinity reservation_affinity = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
 }

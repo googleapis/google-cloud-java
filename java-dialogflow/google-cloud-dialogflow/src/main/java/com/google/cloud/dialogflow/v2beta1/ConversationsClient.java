@@ -157,12 +157,9 @@ import javax.annotation.Generated;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
+ *           <li><p> batchCreateMessages(ConversationName parent, List&lt;CreateMessageRequest&gt; requests)
+ *           <li><p> batchCreateMessages(String parent, List&lt;CreateMessageRequest&gt; requests)
  *           <li><p> batchCreateMessages(BatchCreateMessagesRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> batchCreateMessages(ConversationName parent)
- *           <li><p> batchCreateMessages(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -220,6 +217,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> generateStatelessSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateStatelessSuggestion</td>
+ *      <td><p> Generates and returns a suggestion for a conversation that does not have a resource created for it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestion(GenerateStatelessSuggestionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1073,19 +1084,26 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ConversationName parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
-   *   BatchCreateMessagesResponse response = conversationsClient.batchCreateMessages(parent);
+   *   List<CreateMessageRequest> requests = new ArrayList<>();
+   *   BatchCreateMessagesResponse response =
+   *       conversationsClient.batchCreateMessages(parent, requests);
    * }
    * }</pre>
    *
    * @param parent Required. Resource identifier of the conversation to create message. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
    *     ID&gt;`.
+   * @param requests Required. A maximum of 300 messages can be created in a batch.
+   *     [CreateMessageRequest.message.send_time][] is required. All created messages will have
+   *     identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCreateMessagesResponse batchCreateMessages(ConversationName parent) {
+  public final BatchCreateMessagesResponse batchCreateMessages(
+      ConversationName parent, List<CreateMessageRequest> requests) {
     BatchCreateMessagesRequest request =
         BatchCreateMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
             .build();
     return batchCreateMessages(request);
   }
@@ -1106,18 +1124,24 @@ public class ConversationsClient implements BackgroundResource {
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
-   *   BatchCreateMessagesResponse response = conversationsClient.batchCreateMessages(parent);
+   *   List<CreateMessageRequest> requests = new ArrayList<>();
+   *   BatchCreateMessagesResponse response =
+   *       conversationsClient.batchCreateMessages(parent, requests);
    * }
    * }</pre>
    *
    * @param parent Required. Resource identifier of the conversation to create message. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
    *     ID&gt;`.
+   * @param requests Required. A maximum of 300 messages can be created in a batch.
+   *     [CreateMessageRequest.message.send_time][] is required. All created messages will have
+   *     identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BatchCreateMessagesResponse batchCreateMessages(String parent) {
+  public final BatchCreateMessagesResponse batchCreateMessages(
+      String parent, List<CreateMessageRequest> requests) {
     BatchCreateMessagesRequest request =
-        BatchCreateMessagesRequest.newBuilder().setParent(parent).build();
+        BatchCreateMessagesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
     return batchCreateMessages(request);
   }
 
@@ -1595,6 +1619,72 @@ public class ConversationsClient implements BackgroundResource {
   public final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable() {
     return stub.generateStatelessSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   GenerateStatelessSuggestionResponse response =
+   *       conversationsClient.generateStatelessSuggestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateStatelessSuggestionResponse generateStatelessSuggestion(
+      GenerateStatelessSuggestionRequest request) {
+    return generateStatelessSuggestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   ApiFuture<GenerateStatelessSuggestionResponse> future =
+   *       conversationsClient.generateStatelessSuggestionCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateStatelessSuggestionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    return stub.generateStatelessSuggestionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

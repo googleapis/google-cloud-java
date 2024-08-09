@@ -102,6 +102,49 @@ public interface SuggestionResultOrBuilder
    *
    *
    * <pre>
+   * SuggestKnowledgeAssistResponse if request is for KNOWLEDGE_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse suggest_knowledge_assist_response = 8;
+   * </code>
+   *
+   * @return Whether the suggestKnowledgeAssistResponse field is set.
+   */
+  boolean hasSuggestKnowledgeAssistResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestKnowledgeAssistResponse if request is for KNOWLEDGE_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse suggest_knowledge_assist_response = 8;
+   * </code>
+   *
+   * @return The suggestKnowledgeAssistResponse.
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse
+      getSuggestKnowledgeAssistResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestKnowledgeAssistResponse if request is for KNOWLEDGE_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse suggest_knowledge_assist_response = 8;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponseOrBuilder
+      getSuggestKnowledgeAssistResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
    * </pre>
    *

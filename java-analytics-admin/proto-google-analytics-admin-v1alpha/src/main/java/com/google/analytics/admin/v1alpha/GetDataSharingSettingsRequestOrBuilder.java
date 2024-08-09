@@ -30,7 +30,8 @@ public interface GetDataSharingSettingsRequestOrBuilder
    * <pre>
    * Required. The name of the settings to lookup.
    * Format: accounts/{account}/dataSharingSettings
-   * Example: "accounts/1000/dataSharingSettings"
+   *
+   * Example: `accounts/1000/dataSharingSettings`
    * </pre>
    *
    * <code>
@@ -46,7 +47,8 @@ public interface GetDataSharingSettingsRequestOrBuilder
    * <pre>
    * Required. The name of the settings to lookup.
    * Format: accounts/{account}/dataSharingSettings
-   * Example: "accounts/1000/dataSharingSettings"
+   *
+   * Example: `accounts/1000/dataSharingSettings`
    * </pre>
    *
    * <code>

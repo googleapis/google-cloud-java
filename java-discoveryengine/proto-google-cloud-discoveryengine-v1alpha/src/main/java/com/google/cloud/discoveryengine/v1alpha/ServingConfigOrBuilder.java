@@ -348,21 +348,27 @@ public interface ServingConfigOrBuilder
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
+   *
    *   * ranking_expression = function, { " + ", function };
+   *
    * Supported functions:
+   *
    *   * double * relevance_score
    *   * double * dotProduct(embedding_field_path)
+   *
    * Function variables:
-   *   relevance_score: pre-defined keywords, used for measure relevance between
-   *   query and document.
-   *   embedding_field_path: the document embedding field
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   * `embedding_field_path`: the document embedding field
    *   used with query embedding vector.
-   *   dotProduct: embedding function between embedding_field_path and query
+   *   * `dotProduct`: embedding function between embedding_field_path and query
    *   embedding vector.
    *
    *  Example ranking expression:
+   *
    *    If document has an embedding field doc_embedding, the ranking expression
-   *    could be 0.5 * relevance_score + 0.3 * dotProduct(doc_embedding).
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
    * </pre>
    *
    * <code>string ranking_expression = 21;</code>
@@ -383,21 +389,27 @@ public interface ServingConfigOrBuilder
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
+   *
    *   * ranking_expression = function, { " + ", function };
+   *
    * Supported functions:
+   *
    *   * double * relevance_score
    *   * double * dotProduct(embedding_field_path)
+   *
    * Function variables:
-   *   relevance_score: pre-defined keywords, used for measure relevance between
-   *   query and document.
-   *   embedding_field_path: the document embedding field
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   * `embedding_field_path`: the document embedding field
    *   used with query embedding vector.
-   *   dotProduct: embedding function between embedding_field_path and query
+   *   * `dotProduct`: embedding function between embedding_field_path and query
    *   embedding vector.
    *
    *  Example ranking expression:
+   *
    *    If document has an embedding field doc_embedding, the ranking expression
-   *    could be 0.5 * relevance_score + 0.3 * dotProduct(doc_embedding).
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
    * </pre>
    *
    * <code>string ranking_expression = 21;</code>
@@ -446,6 +458,9 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Custom fine tuning configs.
+   * If
+   * [SearchRequest.custom_fine_tuning_spec][google.cloud.discoveryengine.v1alpha.SearchRequest.custom_fine_tuning_spec]
+   * is set, it has higher priority than the configs set here.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 24;
@@ -459,6 +474,9 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Custom fine tuning configs.
+   * If
+   * [SearchRequest.custom_fine_tuning_spec][google.cloud.discoveryengine.v1alpha.SearchRequest.custom_fine_tuning_spec]
+   * is set, it has higher priority than the configs set here.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 24;
@@ -472,6 +490,9 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Custom fine tuning configs.
+   * If
+   * [SearchRequest.custom_fine_tuning_spec][google.cloud.discoveryengine.v1alpha.SearchRequest.custom_fine_tuning_spec]
+   * is set, it has higher priority than the configs set here.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 24;

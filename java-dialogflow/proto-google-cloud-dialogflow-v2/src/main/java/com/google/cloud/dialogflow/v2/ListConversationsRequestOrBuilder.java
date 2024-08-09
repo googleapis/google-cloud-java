@@ -98,18 +98,9 @@ public interface ListConversationsRequestOrBuilder
    *
    *
    * <pre>
-   * A filter expression that filters conversations listed in the response. In
-   * general, the expression must specify the field name, a comparison operator,
-   * and the value to use for filtering:
-   * &lt;ul&gt;
-   *   &lt;li&gt;The value must be a string, a number, or a boolean.&lt;/li&gt;
-   *   &lt;li&gt;The comparison operator must be either `=`,`!=`, `&gt;`, or `&lt;`.&lt;/li&gt;
-   *   &lt;li&gt;To filter on multiple expressions, separate the
-   *       expressions with `AND` or `OR` (omitting both implies `AND`).&lt;/li&gt;
-   *   &lt;li&gt;For clarity, expressions can be enclosed in parentheses.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * Only `lifecycle_state` can be filtered on in this way. For example,
-   * the following expression only returns `COMPLETED` conversations:
+   * Optional. A filter expression that filters conversations listed in the
+   * response. Only `lifecycle_state` can be filtered on in this way. For
+   * example, the following expression only returns `COMPLETED` conversations:
    *
    * `lifecycle_state = "COMPLETED"`
    *
@@ -117,7 +108,7 @@ public interface ListConversationsRequestOrBuilder
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -126,18 +117,9 @@ public interface ListConversationsRequestOrBuilder
    *
    *
    * <pre>
-   * A filter expression that filters conversations listed in the response. In
-   * general, the expression must specify the field name, a comparison operator,
-   * and the value to use for filtering:
-   * &lt;ul&gt;
-   *   &lt;li&gt;The value must be a string, a number, or a boolean.&lt;/li&gt;
-   *   &lt;li&gt;The comparison operator must be either `=`,`!=`, `&gt;`, or `&lt;`.&lt;/li&gt;
-   *   &lt;li&gt;To filter on multiple expressions, separate the
-   *       expressions with `AND` or `OR` (omitting both implies `AND`).&lt;/li&gt;
-   *   &lt;li&gt;For clarity, expressions can be enclosed in parentheses.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * Only `lifecycle_state` can be filtered on in this way. For example,
-   * the following expression only returns `COMPLETED` conversations:
+   * Optional. A filter expression that filters conversations listed in the
+   * response. Only `lifecycle_state` can be filtered on in this way. For
+   * example, the following expression only returns `COMPLETED` conversations:
    *
    * `lifecycle_state = "COMPLETED"`
    *
@@ -145,7 +127,7 @@ public interface ListConversationsRequestOrBuilder
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */

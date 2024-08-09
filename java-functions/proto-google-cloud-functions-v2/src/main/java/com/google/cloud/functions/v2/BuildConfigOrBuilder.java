@@ -25,6 +25,36 @@ public interface BuildConfigOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <code>.google.cloud.functions.v2.AutomaticUpdatePolicy automatic_update_policy = 40;</code>
+   *
+   * @return Whether the automaticUpdatePolicy field is set.
+   */
+  boolean hasAutomaticUpdatePolicy();
+  /**
+   * <code>.google.cloud.functions.v2.AutomaticUpdatePolicy automatic_update_policy = 40;</code>
+   *
+   * @return The automaticUpdatePolicy.
+   */
+  com.google.cloud.functions.v2.AutomaticUpdatePolicy getAutomaticUpdatePolicy();
+  /** <code>.google.cloud.functions.v2.AutomaticUpdatePolicy automatic_update_policy = 40;</code> */
+  com.google.cloud.functions.v2.AutomaticUpdatePolicyOrBuilder getAutomaticUpdatePolicyOrBuilder();
+
+  /**
+   * <code>.google.cloud.functions.v2.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
+   *
+   * @return Whether the onDeployUpdatePolicy field is set.
+   */
+  boolean hasOnDeployUpdatePolicy();
+  /**
+   * <code>.google.cloud.functions.v2.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
+   *
+   * @return The onDeployUpdatePolicy.
+   */
+  com.google.cloud.functions.v2.OnDeployUpdatePolicy getOnDeployUpdatePolicy();
+  /** <code>.google.cloud.functions.v2.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code> */
+  com.google.cloud.functions.v2.OnDeployUpdatePolicyOrBuilder getOnDeployUpdatePolicyOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -312,10 +342,9 @@ public interface BuildConfigOrBuilder
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
    *
-   * If `docker_repository` field is specified, this field will be automatically
-   * set as `ARTIFACT_REGISTRY`.
-   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-   * This field may be overridden by the backend for eligible deployments.
+   * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+   * If `docker_repository` field is specified, this field should either be left
+   * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -331,10 +360,9 @@ public interface BuildConfigOrBuilder
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
    *
-   * If `docker_repository` field is specified, this field will be automatically
-   * set as `ARTIFACT_REGISTRY`.
-   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-   * This field may be overridden by the backend for eligible deployments.
+   * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+   * If `docker_repository` field is specified, this field should either be left
+   * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -347,10 +375,10 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally
-   * with a customer managed encryption key. This is the repository to which the
-   * function docker image will be pushed after it is built by Cloud Build.
-   * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+   * Repository in Artifact Registry to which the function docker image will be
+   * pushed after it is built by Cloud Build. If specified by user, it is
+   * created and managed by user with a customer managed encryption key.
+   * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
    *
    * It must match the pattern
@@ -370,10 +398,10 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally
-   * with a customer managed encryption key. This is the repository to which the
-   * function docker image will be pushed after it is built by Cloud Build.
-   * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+   * Repository in Artifact Registry to which the function docker image will be
+   * pushed after it is built by Cloud Build. If specified by user, it is
+   * created and managed by user with a customer managed encryption key.
+   * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
    *
    * It must match the pattern
@@ -389,4 +417,33 @@ public interface BuildConfigOrBuilder
    * @return The bytes for dockerRepository.
    */
   com.google.protobuf.ByteString getDockerRepositoryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Service account to be used for building the container. The format of this
+   * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string service_account = 27;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Service account to be used for building the container. The format of this
+   * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string service_account = 27;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  com.google.cloud.functions.v2.BuildConfig.RuntimeUpdatePolicyCase getRuntimeUpdatePolicyCase();
 }

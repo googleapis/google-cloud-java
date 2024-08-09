@@ -204,6 +204,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GenerateStatelessSuggestion</td>
+ *      <td><p> Generates and returns a suggestion for a conversation that does not have a resource created for it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestion(GenerateStatelessSuggestionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SearchKnowledge</td>
  *      <td><p> Get answers for the given query based on knowledge documents.</td>
  *      <td>
@@ -1445,6 +1459,72 @@ public class ConversationsClient implements BackgroundResource {
   public final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable() {
     return stub.generateStatelessSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   GenerateStatelessSuggestionResponse response =
+   *       conversationsClient.generateStatelessSuggestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateStatelessSuggestionResponse generateStatelessSuggestion(
+      GenerateStatelessSuggestionRequest request) {
+    return generateStatelessSuggestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   ApiFuture<GenerateStatelessSuggestionResponse> future =
+   *       conversationsClient.generateStatelessSuggestionCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateStatelessSuggestionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    return stub.generateStatelessSuggestionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

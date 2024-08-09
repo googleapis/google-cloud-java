@@ -42,6 +42,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     responseMessages_ = java.util.Collections.emptyList();
     automatedAgentReplyType_ = 0;
     cxCurrentPage_ = "";
+    callCompanionAuthCode_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -694,7 +695,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Override
@@ -714,7 +715,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
    * @return The cxSessionParameters.
    */
   @java.lang.Override
@@ -862,6 +863,25 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int CALL_COMPANION_AUTH_CODE_FIELD_NUMBER = 12;
+  private com.google.protobuf.ByteString callCompanionAuthCode_ =
+      com.google.protobuf.ByteString.EMPTY;
+  /**
+   *
+   *
+   * <pre>
+   * The auth code for accessing Call Companion UI.
+   * </pre>
+   *
+   * <code>bytes call_companion_auth_code = 12;</code>
+   *
+   * @return The callCompanionAuthCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCallCompanionAuthCode() {
+    return callCompanionAuthCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -909,6 +929,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cxCurrentPage_);
     }
+    if (!callCompanionAuthCode_.isEmpty()) {
+      output.writeBytes(12, callCompanionAuthCode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -953,6 +976,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cxCurrentPage_);
     }
+    if (!callCompanionAuthCode_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(12, callCompanionAuthCode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -983,6 +1009,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (automatedAgentReplyType_ != other.automatedAgentReplyType_) return false;
     if (getAllowCancellation() != other.getAllowCancellation()) return false;
     if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
+    if (!getCallCompanionAuthCode().equals(other.getCallCompanionAuthCode())) return false;
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
@@ -1033,6 +1060,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCancellation());
     hash = (37 * hash) + CX_CURRENT_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getCxCurrentPage().hashCode();
+    hash = (37 * hash) + CALL_COMPANION_AUTH_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCallCompanionAuthCode().hashCode();
     switch (responseCase_) {
       case 1:
         hash = (37 * hash) + DETECT_INTENT_RESPONSE_FIELD_NUMBER;
@@ -1228,6 +1257,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       automatedAgentReplyType_ = 0;
       allowCancellation_ = false;
       cxCurrentPage_ = "";
+      callCompanionAuthCode_ = com.google.protobuf.ByteString.EMPTY;
       responseCase_ = 0;
       response_ = null;
       matchCase_ = 0;
@@ -1306,6 +1336,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.cxCurrentPage_ = cxCurrentPage_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.callCompanionAuthCode_ = callCompanionAuthCode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1413,6 +1446,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         cxCurrentPage_ = other.cxCurrentPage_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (other.getCallCompanionAuthCode() != com.google.protobuf.ByteString.EMPTY) {
+        setCallCompanionAuthCode(other.getCallCompanionAuthCode());
       }
       switch (other.getResponseCase()) {
         case DETECT_INTENT_RESPONSE:
@@ -1543,6 +1579,12 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                callCompanionAuthCode_ = input.readBytes();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2753,7 +2795,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
      * @return Whether the cxSessionParameters field is set.
      */
     @java.lang.Deprecated
@@ -2772,7 +2814,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=542
      * @return The cxSessionParameters.
      */
     @java.lang.Deprecated
@@ -3227,6 +3269,62 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       cxCurrentPage_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString callCompanionAuthCode_ =
+        com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @return The callCompanionAuthCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCallCompanionAuthCode() {
+      return callCompanionAuthCode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @param value The callCompanionAuthCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallCompanionAuthCode(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      callCompanionAuthCode_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCallCompanionAuthCode() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      callCompanionAuthCode_ = getDefaultInstance().getCallCompanionAuthCode();
       onChanged();
       return this;
     }

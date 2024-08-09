@@ -9095,9 +9095,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param name Required. Name of the custom module to delete.
    *     <p>Its format is:
    *     <ul>
-   *       <li>"organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-   *       <li>"folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-   *       <li>"projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+   *       <li>`organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+   *       <li>`folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+   *       <li>`projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -9136,9 +9136,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param name Required. Name of the custom module to delete.
    *     <p>Its format is:
    *     <ul>
-   *       <li>"organizations/{organization}/eventThreatDetectionSettings/customModules/{module}".
-   *       <li>"folders/{folder}/eventThreatDetectionSettings/customModules/{module}".
-   *       <li>"projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+   *       <li>`organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`.
+   *       <li>`folders/{folder}/eventThreatDetectionSettings/customModules/{module}`.
+   *       <li>`projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

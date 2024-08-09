@@ -97,4 +97,33 @@ public interface StorageSourceOrBuilder
    * @return The generation.
    */
   long getGeneration();
+
+  /**
+   *
+   *
+   * <pre>
+   * When the specified storage bucket is a 1st gen function uploard url bucket,
+   * this field should be set as the generated upload url for 1st gen
+   * deployment.
+   * </pre>
+   *
+   * <code>string source_upload_url = 4;</code>
+   *
+   * @return The sourceUploadUrl.
+   */
+  java.lang.String getSourceUploadUrl();
+  /**
+   *
+   *
+   * <pre>
+   * When the specified storage bucket is a 1st gen function uploard url bucket,
+   * this field should be set as the generated upload url for 1st gen
+   * deployment.
+   * </pre>
+   *
+   * <code>string source_upload_url = 4;</code>
+   *
+   * @return The bytes for sourceUploadUrl.
+   */
+  com.google.protobuf.ByteString getSourceUploadUrlBytes();
 }

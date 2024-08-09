@@ -19,6 +19,7 @@ package com.google.analytics.data.v1beta.samples;
 // [START analyticsdata_v1beta_generated_BetaAnalyticsData_RunReport_sync]
 import com.google.analytics.data.v1beta.BetaAnalyticsDataClient;
 import com.google.analytics.data.v1beta.CohortSpec;
+import com.google.analytics.data.v1beta.Comparison;
 import com.google.analytics.data.v1beta.DateRange;
 import com.google.analytics.data.v1beta.Dimension;
 import com.google.analytics.data.v1beta.FilterExpression;
@@ -58,6 +59,7 @@ public class SyncRunReport {
               .setCohortSpec(CohortSpec.newBuilder().build())
               .setKeepEmptyRows(true)
               .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
               .build();
       RunReportResponse response = betaAnalyticsDataClient.runReport(request);
     }

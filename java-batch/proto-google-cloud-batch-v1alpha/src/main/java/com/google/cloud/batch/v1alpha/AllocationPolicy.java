@@ -9380,6 +9380,35 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     boolean getInstallOpsAgent();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set this field to `true` if you want Batch to block
+     * project-level SSH keys from accessing this job's VMs.  Alternatively, you
+     * can configure the job to specify a VM instance template that blocks
+     * project-level SSH keys. In either case, Batch blocks project-level SSH
+     * keys while creating the VMs for this job.
+     *
+     * Batch allows project-level SSH keys for a job's VMs only if all
+     * the following are true:
+     *
+     * + This field is undefined or set to `false`.
+     * + The job's VM instance template (if any) doesn't block project-level
+     *   SSH keys.
+     *
+     * Notably, you can override this behavior by manually updating a VM to
+     * block or allow project-level SSH keys. For more information about
+     * blocking project-level SSH keys, see the Compute Engine documentation:
+     * https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
+     * </pre>
+     *
+     * <code>bool block_project_ssh_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The blockProjectSshKeys.
+     */
+    boolean getBlockProjectSshKeys();
+
     com.google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate.PolicyTemplateCase
         getPolicyTemplateCase();
   }
@@ -9652,6 +9681,40 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return installOpsAgent_;
     }
 
+    public static final int BLOCK_PROJECT_SSH_KEYS_FIELD_NUMBER = 5;
+    private boolean blockProjectSshKeys_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set this field to `true` if you want Batch to block
+     * project-level SSH keys from accessing this job's VMs.  Alternatively, you
+     * can configure the job to specify a VM instance template that blocks
+     * project-level SSH keys. In either case, Batch blocks project-level SSH
+     * keys while creating the VMs for this job.
+     *
+     * Batch allows project-level SSH keys for a job's VMs only if all
+     * the following are true:
+     *
+     * + This field is undefined or set to `false`.
+     * + The job's VM instance template (if any) doesn't block project-level
+     *   SSH keys.
+     *
+     * Notably, you can override this behavior by manually updating a VM to
+     * block or allow project-level SSH keys. For more information about
+     * blocking project-level SSH keys, see the Compute Engine documentation:
+     * https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
+     * </pre>
+     *
+     * <code>bool block_project_ssh_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The blockProjectSshKeys.
+     */
+    @java.lang.Override
+    public boolean getBlockProjectSshKeys() {
+      return blockProjectSshKeys_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9679,6 +9742,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installOpsAgent_ != false) {
         output.writeBool(4, installOpsAgent_);
       }
+      if (blockProjectSshKeys_ != false) {
+        output.writeBool(5, blockProjectSshKeys_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9703,6 +9769,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installOpsAgent_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, installOpsAgent_);
       }
+      if (blockProjectSshKeys_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, blockProjectSshKeys_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9722,6 +9791,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
       if (getInstallOpsAgent() != other.getInstallOpsAgent()) return false;
+      if (getBlockProjectSshKeys() != other.getBlockProjectSshKeys()) return false;
       if (!getPolicyTemplateCase().equals(other.getPolicyTemplateCase())) return false;
       switch (policyTemplateCase_) {
         case 1:
@@ -9748,6 +9818,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
       hash = (37 * hash) + INSTALL_OPS_AGENT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallOpsAgent());
+      hash = (37 * hash) + BLOCK_PROJECT_SSH_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBlockProjectSshKeys());
       switch (policyTemplateCase_) {
         case 1:
           hash = (37 * hash) + POLICY_FIELD_NUMBER;
@@ -9918,6 +9990,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         installGpuDrivers_ = false;
         installOpsAgent_ = false;
+        blockProjectSshKeys_ = false;
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -9967,6 +10040,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.installOpsAgent_ = installOpsAgent_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.blockProjectSshKeys_ = blockProjectSshKeys_;
         }
       }
 
@@ -10037,6 +10113,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other.getInstallOpsAgent() != false) {
           setInstallOpsAgent(other.getInstallOpsAgent());
         }
+        if (other.getBlockProjectSshKeys() != false) {
+          setBlockProjectSshKeys(other.getBlockProjectSshKeys());
+        }
         switch (other.getPolicyTemplateCase()) {
           case POLICY:
             {
@@ -10106,6 +10185,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 40:
+                {
+                  blockProjectSshKeys_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10637,6 +10722,107 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearInstallOpsAgent() {
         bitField0_ = (bitField0_ & ~0x00000008);
         installOpsAgent_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean blockProjectSshKeys_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field to `true` if you want Batch to block
+       * project-level SSH keys from accessing this job's VMs.  Alternatively, you
+       * can configure the job to specify a VM instance template that blocks
+       * project-level SSH keys. In either case, Batch blocks project-level SSH
+       * keys while creating the VMs for this job.
+       *
+       * Batch allows project-level SSH keys for a job's VMs only if all
+       * the following are true:
+       *
+       * + This field is undefined or set to `false`.
+       * + The job's VM instance template (if any) doesn't block project-level
+       *   SSH keys.
+       *
+       * Notably, you can override this behavior by manually updating a VM to
+       * block or allow project-level SSH keys. For more information about
+       * blocking project-level SSH keys, see the Compute Engine documentation:
+       * https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
+       * </pre>
+       *
+       * <code>bool block_project_ssh_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The blockProjectSshKeys.
+       */
+      @java.lang.Override
+      public boolean getBlockProjectSshKeys() {
+        return blockProjectSshKeys_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field to `true` if you want Batch to block
+       * project-level SSH keys from accessing this job's VMs.  Alternatively, you
+       * can configure the job to specify a VM instance template that blocks
+       * project-level SSH keys. In either case, Batch blocks project-level SSH
+       * keys while creating the VMs for this job.
+       *
+       * Batch allows project-level SSH keys for a job's VMs only if all
+       * the following are true:
+       *
+       * + This field is undefined or set to `false`.
+       * + The job's VM instance template (if any) doesn't block project-level
+       *   SSH keys.
+       *
+       * Notably, you can override this behavior by manually updating a VM to
+       * block or allow project-level SSH keys. For more information about
+       * blocking project-level SSH keys, see the Compute Engine documentation:
+       * https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
+       * </pre>
+       *
+       * <code>bool block_project_ssh_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The blockProjectSshKeys to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockProjectSshKeys(boolean value) {
+
+        blockProjectSshKeys_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set this field to `true` if you want Batch to block
+       * project-level SSH keys from accessing this job's VMs.  Alternatively, you
+       * can configure the job to specify a VM instance template that blocks
+       * project-level SSH keys. In either case, Batch blocks project-level SSH
+       * keys while creating the VMs for this job.
+       *
+       * Batch allows project-level SSH keys for a job's VMs only if all
+       * the following are true:
+       *
+       * + This field is undefined or set to `false`.
+       * + The job's VM instance template (if any) doesn't block project-level
+       *   SSH keys.
+       *
+       * Notably, you can override this behavior by manually updating a VM to
+       * block or allow project-level SSH keys. For more information about
+       * blocking project-level SSH keys, see the Compute Engine documentation:
+       * https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
+       * </pre>
+       *
+       * <code>bool block_project_ssh_keys = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockProjectSshKeys() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        blockProjectSshKeys_ = false;
         onChanged();
         return this;
       }
@@ -13787,7 +13973,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=594
+   *     google/cloud/batch/v1alpha/job.proto;l=613
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -13807,7 +13993,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=594
+   *     google/cloud/batch/v1alpha/job.proto;l=613
    * @return The instance.
    */
   @java.lang.Override
@@ -13944,7 +14130,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=601
+   *     google/cloud/batch/v1alpha/job.proto;l=620
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13961,7 +14147,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=601
+   *     google/cloud/batch/v1alpha/job.proto;l=620
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -13978,7 +14164,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=601
+   *     google/cloud/batch/v1alpha/job.proto;l=620
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -13996,7 +14182,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=601
+   *     google/cloud/batch/v1alpha/job.proto;l=620
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -14037,7 +14223,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=604
+   *     google/cloud/batch/v1alpha/job.proto;l=623
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -14060,7 +14246,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=604
+   *     google/cloud/batch/v1alpha/job.proto;l=623
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -14080,7 +14266,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=604
+   *     google/cloud/batch/v1alpha/job.proto;l=623
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -14102,7 +14288,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=604
+   *     google/cloud/batch/v1alpha/job.proto;l=623
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -14122,7 +14308,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=604
+   *     google/cloud/batch/v1alpha/job.proto;l=623
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -14148,7 +14334,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=607
+   *     See google/cloud/batch/v1alpha/job.proto;l=626
    * @return The serviceAccountEmail.
    */
   @java.lang.Override
@@ -14174,7 +14360,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=607
+   *     See google/cloud/batch/v1alpha/job.proto;l=626
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Override
@@ -15591,7 +15777,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=594
+     *     google/cloud/batch/v1alpha/job.proto;l=613
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -15610,7 +15796,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=594
+     *     google/cloud/batch/v1alpha/job.proto;l=613
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -16245,7 +16431,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -16263,7 +16449,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -16280,7 +16466,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -16298,7 +16484,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -16316,7 +16502,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -16342,7 +16528,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -16367,7 +16553,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -16389,7 +16575,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16410,7 +16596,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=601
+     *     google/cloud/batch/v1alpha/job.proto;l=620
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -16448,7 +16634,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -16470,7 +16656,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -16489,7 +16675,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -16510,7 +16696,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -16538,7 +16724,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16565,7 +16751,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16593,7 +16779,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16615,7 +16801,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -16634,7 +16820,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -16654,7 +16840,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -16678,7 +16864,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16701,7 +16887,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=604
+     *     See google/cloud/batch/v1alpha/job.proto;l=623
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -16726,7 +16912,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=607
+     *     See google/cloud/batch/v1alpha/job.proto;l=626
      * @return The serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -16751,7 +16937,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=607
+     *     See google/cloud/batch/v1alpha/job.proto;l=626
      * @return The bytes for serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -16776,7 +16962,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=607
+     *     See google/cloud/batch/v1alpha/job.proto;l=626
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -16800,7 +16986,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=607
+     *     See google/cloud/batch/v1alpha/job.proto;l=626
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16820,7 +17006,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=607
+     *     See google/cloud/batch/v1alpha/job.proto;l=626
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
      */

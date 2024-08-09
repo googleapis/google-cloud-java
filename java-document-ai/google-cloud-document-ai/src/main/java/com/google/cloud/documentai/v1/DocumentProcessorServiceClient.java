@@ -750,6 +750,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -783,6 +784,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setImagelessMode(true)
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);

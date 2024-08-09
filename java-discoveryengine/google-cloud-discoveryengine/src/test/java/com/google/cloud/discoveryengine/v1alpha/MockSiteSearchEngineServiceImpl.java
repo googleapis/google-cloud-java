@@ -310,4 +310,47 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void setUriPatternDocumentData(
+      SetUriPatternDocumentDataRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetUriPatternDocumentData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUriPatternDocumentData(
+      GetUriPatternDocumentDataRequest request,
+      StreamObserver<GetUriPatternDocumentDataResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GetUriPatternDocumentDataResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GetUriPatternDocumentDataResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUriPatternDocumentData, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GetUriPatternDocumentDataResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

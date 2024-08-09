@@ -40,7 +40,8 @@ public interface SourceRepositoryOrBuilder
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
    *
-   * You may omit `paths/&#42;` if you want to use the main directory.
+   * You may omit `paths/&#42;` if you want to use the main directory. The function
+   * response may add an empty `/paths/` to the URL.
    * </pre>
    *
    * <code>string url = 1;</code>
@@ -64,7 +65,8 @@ public interface SourceRepositoryOrBuilder
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
    *
-   * You may omit `paths/&#42;` if you want to use the main directory.
+   * You may omit `paths/&#42;` if you want to use the main directory. The function
+   * response may add an empty `/paths/` to the URL.
    * </pre>
    *
    * <code>string url = 1;</code>

@@ -157,7 +157,7 @@ public enum BigQuerySchemaModification implements com.google.protobuf.ProtocolMe
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(7);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final BigQuerySchemaModification[] VALUES = values();

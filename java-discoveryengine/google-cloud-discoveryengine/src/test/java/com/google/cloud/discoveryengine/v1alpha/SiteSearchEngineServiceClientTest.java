@@ -32,11 +32,13 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -990,6 +992,124 @@ public class SiteSearchEngineServiceClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.fetchDomainVerificationStatus(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setUriPatternDocumentDataTest() throws Exception {
+    SetUriPatternDocumentDataResponse expectedResponse =
+        SetUriPatternDocumentDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setUriPatternDocumentDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSiteSearchEngineService.addResponse(resultOperation);
+
+    SetUriPatternDocumentDataRequest request =
+        SetUriPatternDocumentDataRequest.newBuilder()
+            .setSiteSearchEngine(
+                SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .putAllDocumentDataMap(new HashMap<String, Struct>())
+            .setEmptyDocumentDataMap(true)
+            .setSchema(Struct.newBuilder().build())
+            .build();
+
+    SetUriPatternDocumentDataResponse actualResponse =
+        client.setUriPatternDocumentDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetUriPatternDocumentDataRequest actualRequest =
+        ((SetUriPatternDocumentDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getSiteSearchEngine(), actualRequest.getSiteSearchEngine());
+    Assert.assertEquals(request.getDocumentDataMapMap(), actualRequest.getDocumentDataMapMap());
+    Assert.assertEquals(request.getEmptyDocumentDataMap(), actualRequest.getEmptyDocumentDataMap());
+    Assert.assertEquals(request.getSchema(), actualRequest.getSchema());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setUriPatternDocumentDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      SetUriPatternDocumentDataRequest request =
+          SetUriPatternDocumentDataRequest.newBuilder()
+              .setSiteSearchEngine(
+                  SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .putAllDocumentDataMap(new HashMap<String, Struct>())
+              .setEmptyDocumentDataMap(true)
+              .setSchema(Struct.newBuilder().build())
+              .build();
+      client.setUriPatternDocumentDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getUriPatternDocumentDataTest() throws Exception {
+    GetUriPatternDocumentDataResponse expectedResponse =
+        GetUriPatternDocumentDataResponse.newBuilder()
+            .putAllDocumentDataMap(new HashMap<String, Struct>())
+            .build();
+    mockSiteSearchEngineService.addResponse(expectedResponse);
+
+    GetUriPatternDocumentDataRequest request =
+        GetUriPatternDocumentDataRequest.newBuilder()
+            .setSiteSearchEngine(
+                SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    GetUriPatternDocumentDataResponse actualResponse = client.getUriPatternDocumentData(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUriPatternDocumentDataRequest actualRequest =
+        ((GetUriPatternDocumentDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getSiteSearchEngine(), actualRequest.getSiteSearchEngine());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUriPatternDocumentDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      GetUriPatternDocumentDataRequest request =
+          GetUriPatternDocumentDataRequest.newBuilder()
+              .setSiteSearchEngine(
+                  SiteSearchEngineName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.getUriPatternDocumentData(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

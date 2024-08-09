@@ -188,11 +188,11 @@ import javax.annotation.Generated;
  * <li>  Source file type should be a zip file.
  * <li>  No credentials should be attached - the signed URLs provide access to the   target bucket using internal service identity; if credentials were   attached, the identity from the credentials would be used, but that   identity does not have permissions to upload files to the URL.
  * </ul>
- * <p>  When making a HTTP PUT request, these two headers need to be specified:
+ * <p>  When making a HTTP PUT request, specify this header:
  * <ul>
  * <li>  `content-type: application/zip`
  * </ul>
- * <p>  And this header SHOULD NOT be specified:
+ * <p>  Do not specify this header:
  * <ul>
  * <li>  `Authorization: Bearer YOUR_TOKEN`
  * </ul></td>
@@ -501,6 +501,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setRevision("revision-260786213")
    *           .build();
    *   Function response = functionServiceClient.getFunction(request);
    * }
@@ -529,6 +530,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *   GetFunctionRequest request =
    *       GetFunctionRequest.newBuilder()
    *           .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setRevision("revision-260786213")
    *           .build();
    *   ApiFuture<Function> future = functionServiceClient.getFunctionCallable().futureCall(request);
    *   // Do something.
@@ -914,8 +916,8 @@ public class FunctionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param function Required. New version of the function.
-   * @param updateMask The list of fields to be updated. If no field mask is provided, all provided
-   *     fields in the request will be updated.
+   * @param updateMask The list of fields to be updated. If no field mask is provided, all fields
+   *     will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Function, OperationMetadata> updateFunctionAsync(
@@ -1175,13 +1177,13 @@ public class FunctionServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making a HTTP PUT request, these two headers need to be specified:
+   * <p>When making a HTTP PUT request, specify this header:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    * </ul>
    *
-   * <p>And this header SHOULD NOT be specified:
+   * <p>Do not specify this header:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1202,6 +1204,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *           .setKmsKeyName(
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
+   *           .setEnvironment(Environment.forNumber(0))
    *           .build();
    *   GenerateUploadUrlResponse response = functionServiceClient.generateUploadUrl(request);
    * }
@@ -1231,13 +1234,13 @@ public class FunctionServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making a HTTP PUT request, these two headers need to be specified:
+   * <p>When making a HTTP PUT request, specify this header:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    * </ul>
    *
-   * <p>And this header SHOULD NOT be specified:
+   * <p>Do not specify this header:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1258,6 +1261,7 @@ public class FunctionServiceClient implements BackgroundResource {
    *           .setKmsKeyName(
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
+   *           .setEnvironment(Environment.forNumber(0))
    *           .build();
    *   ApiFuture<GenerateUploadUrlResponse> future =
    *       functionServiceClient.generateUploadUrlCallable().futureCall(request);

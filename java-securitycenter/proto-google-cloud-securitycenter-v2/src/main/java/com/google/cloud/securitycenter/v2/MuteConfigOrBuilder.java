@@ -28,8 +28,8 @@ public interface MuteConfigOrBuilder
    *
    *
    * <pre>
-   * This field will be ignored if provided on config creation. The following
-   * list shows some examples of the format:
+   * Identifier. This field will be ignored if provided on config creation. The
+   * following list shows some examples of the format:
    *
    * + `organizations/{organization}/muteConfigs/{mute_config}`
    * +
@@ -40,7 +40,7 @@ public interface MuteConfigOrBuilder
    * + `projects/{project}/locations/{location}/muteConfigs/{mute_config}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -49,8 +49,8 @@ public interface MuteConfigOrBuilder
    *
    *
    * <pre>
-   * This field will be ignored if provided on config creation. The following
-   * list shows some examples of the format:
+   * Identifier. This field will be ignored if provided on config creation. The
+   * following list shows some examples of the format:
    *
    * + `organizations/{organization}/muteConfigs/{mute_config}`
    * +
@@ -61,7 +61,7 @@ public interface MuteConfigOrBuilder
    * + `projects/{project}/locations/{location}/muteConfigs/{mute_config}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -302,4 +302,48 @@ public interface MuteConfigOrBuilder
    * @return The type.
    */
   com.google.cloud.securitycenter.v2.MuteConfig.MuteConfigType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expiryTime field is set.
+   */
+  boolean hasExpiryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expiryTime.
+   */
+  com.google.protobuf.Timestamp getExpiryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expiry of the mute config. Only applicable for dynamic
+   * configs. If the expiry is set, when the config expires, it is removed from
+   * all findings.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expiry_time = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder();
 }

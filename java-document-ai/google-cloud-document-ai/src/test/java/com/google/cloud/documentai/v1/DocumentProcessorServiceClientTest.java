@@ -823,6 +823,7 @@ public class DocumentProcessorServiceClientTest {
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -876,6 +877,7 @@ public class DocumentProcessorServiceClientTest {
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 

@@ -113,6 +113,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
             .setCohortSpec(CohortSpec.newBuilder().build())
             .setKeepEmptyRows(true)
             .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
             .build();
 
     RunReportResponse actualResponse = client.runReport(request);
@@ -157,6 +158,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
               .setCohortSpec(CohortSpec.newBuilder().build())
               .setKeepEmptyRows(true)
               .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
               .build();
       client.runReport(request);
       Assert.fail("No exception raised");
@@ -193,6 +195,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
             .setCohortSpec(CohortSpec.newBuilder().build())
             .setKeepEmptyRows(true)
             .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
             .build();
 
     RunPivotReportResponse actualResponse = client.runPivotReport(request);
@@ -234,6 +237,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
               .setCohortSpec(CohortSpec.newBuilder().build())
               .setKeepEmptyRows(true)
               .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
               .build();
       client.runPivotReport(request);
       Assert.fail("No exception raised");
@@ -355,6 +359,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
             .setName(MetadataName.of("[PROPERTY]").toString())
             .addAllDimensions(new ArrayList<DimensionMetadata>())
             .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -401,6 +406,7 @@ public class BetaAnalyticsDataClientHttpJsonTest {
             .setName(MetadataName.of("[PROPERTY]").toString())
             .addAllDimensions(new ArrayList<DimensionMetadata>())
             .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 

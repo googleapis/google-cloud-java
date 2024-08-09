@@ -80,7 +80,7 @@ public interface AttackExposureOrBuilder
    * <pre>
    * The resource name of the attack path simulation result that contains the
    * details regarding this attack exposure score.
-   * Example: organizations/123/simulations/456/attackExposureResults/789
+   * Example: `organizations/123/simulations/456/attackExposureResults/789`
    * </pre>
    *
    * <code>string attack_exposure_result = 3;</code>
@@ -94,7 +94,7 @@ public interface AttackExposureOrBuilder
    * <pre>
    * The resource name of the attack path simulation result that contains the
    * details regarding this attack exposure score.
-   * Example: organizations/123/simulations/456/attackExposureResults/789
+   * Example: `organizations/123/simulations/456/attackExposureResults/789`
    * </pre>
    *
    * <code>string attack_exposure_result = 3;</code>

@@ -69,11 +69,16 @@ import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusReq
 import com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse;
 import com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1alpha.RecrawlUrisResponse;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataMetadata;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest;
+import com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataResponse;
 import com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine;
 import com.google.cloud.discoveryengine.v1alpha.TargetSite;
 import com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteMetadata;
@@ -187,6 +192,16 @@ public class SiteSearchEngineServiceStubSettings
           FetchDomainVerificationStatusResponse,
           FetchDomainVerificationStatusPagedResponse>
       fetchDomainVerificationStatusSettings;
+  private final UnaryCallSettings<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataSettings;
+  private final OperationCallSettings<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationSettings;
+  private final UnaryCallSettings<
+          GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataSettings;
 
   private static final PagedListDescriptor<
           ListTargetSitesRequest, ListTargetSitesResponse, TargetSite>
@@ -454,6 +469,27 @@ public class SiteSearchEngineServiceStubSettings
     return fetchDomainVerificationStatusSettings;
   }
 
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public UnaryCallSettings<SetUriPatternDocumentDataRequest, Operation>
+      setUriPatternDocumentDataSettings() {
+    return setUriPatternDocumentDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setUriPatternDocumentData. */
+  public OperationCallSettings<
+          SetUriPatternDocumentDataRequest,
+          SetUriPatternDocumentDataResponse,
+          SetUriPatternDocumentDataMetadata>
+      setUriPatternDocumentDataOperationSettings() {
+    return setUriPatternDocumentDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUriPatternDocumentData. */
+  public UnaryCallSettings<GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+      getUriPatternDocumentDataSettings() {
+    return getUriPatternDocumentDataSettings;
+  }
+
   public SiteSearchEngineServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -590,6 +626,10 @@ public class SiteSearchEngineServiceStubSettings
         settingsBuilder.batchVerifyTargetSitesOperationSettings().build();
     fetchDomainVerificationStatusSettings =
         settingsBuilder.fetchDomainVerificationStatusSettings().build();
+    setUriPatternDocumentDataSettings = settingsBuilder.setUriPatternDocumentDataSettings().build();
+    setUriPatternDocumentDataOperationSettings =
+        settingsBuilder.setUriPatternDocumentDataOperationSettings().build();
+    getUriPatternDocumentDataSettings = settingsBuilder.getUriPatternDocumentDataSettings().build();
   }
 
   /** Builder for SiteSearchEngineServiceStubSettings. */
@@ -654,6 +694,16 @@ public class SiteSearchEngineServiceStubSettings
             FetchDomainVerificationStatusResponse,
             FetchDomainVerificationStatusPagedResponse>
         fetchDomainVerificationStatusSettings;
+    private final UnaryCallSettings.Builder<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataSettings;
+    private final OperationCallSettings.Builder<
+            SetUriPatternDocumentDataRequest,
+            SetUriPatternDocumentDataResponse,
+            SetUriPatternDocumentDataMetadata>
+        setUriPatternDocumentDataOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -702,6 +752,9 @@ public class SiteSearchEngineServiceStubSettings
       batchVerifyTargetSitesOperationSettings = OperationCallSettings.newBuilder();
       fetchDomainVerificationStatusSettings =
           PagedCallSettings.newBuilder(FETCH_DOMAIN_VERIFICATION_STATUS_PAGE_STR_FACT);
+      setUriPatternDocumentDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setUriPatternDocumentDataOperationSettings = OperationCallSettings.newBuilder();
+      getUriPatternDocumentDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -716,7 +769,9 @@ public class SiteSearchEngineServiceStubSettings
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
               batchVerifyTargetSitesSettings,
-              fetchDomainVerificationStatusSettings);
+              fetchDomainVerificationStatusSettings,
+              setUriPatternDocumentDataSettings,
+              getUriPatternDocumentDataSettings);
       initDefaults(this);
     }
 
@@ -748,6 +803,10 @@ public class SiteSearchEngineServiceStubSettings
           settings.batchVerifyTargetSitesOperationSettings.toBuilder();
       fetchDomainVerificationStatusSettings =
           settings.fetchDomainVerificationStatusSettings.toBuilder();
+      setUriPatternDocumentDataSettings = settings.setUriPatternDocumentDataSettings.toBuilder();
+      setUriPatternDocumentDataOperationSettings =
+          settings.setUriPatternDocumentDataOperationSettings.toBuilder();
+      getUriPatternDocumentDataSettings = settings.getUriPatternDocumentDataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -762,7 +821,9 @@ public class SiteSearchEngineServiceStubSettings
               disableAdvancedSiteSearchSettings,
               recrawlUrisSettings,
               batchVerifyTargetSitesSettings,
-              fetchDomainVerificationStatusSettings);
+              fetchDomainVerificationStatusSettings,
+              setUriPatternDocumentDataSettings,
+              getUriPatternDocumentDataSettings);
     }
 
     private static Builder createDefault() {
@@ -847,6 +908,16 @@ public class SiteSearchEngineServiceStubSettings
 
       builder
           .fetchDomainVerificationStatusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setUriPatternDocumentDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getUriPatternDocumentDataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1050,6 +1121,33 @@ public class SiteSearchEngineServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .setUriPatternDocumentDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetUriPatternDocumentDataRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SetUriPatternDocumentDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetUriPatternDocumentDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1203,6 +1301,28 @@ public class SiteSearchEngineServiceStubSettings
             FetchDomainVerificationStatusPagedResponse>
         fetchDomainVerificationStatusSettings() {
       return fetchDomainVerificationStatusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<SetUriPatternDocumentDataRequest, Operation>
+        setUriPatternDocumentDataSettings() {
+      return setUriPatternDocumentDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUriPatternDocumentData. */
+    public OperationCallSettings.Builder<
+            SetUriPatternDocumentDataRequest,
+            SetUriPatternDocumentDataResponse,
+            SetUriPatternDocumentDataMetadata>
+        setUriPatternDocumentDataOperationSettings() {
+      return setUriPatternDocumentDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUriPatternDocumentData. */
+    public UnaryCallSettings.Builder<
+            GetUriPatternDocumentDataRequest, GetUriPatternDocumentDataResponse>
+        getUriPatternDocumentDataSettings() {
+      return getUriPatternDocumentDataSettings;
     }
 
     @Override

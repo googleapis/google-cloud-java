@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  *           .setCohortSpec(CohortSpec.newBuilder().build())
  *           .setKeepEmptyRows(true)
  *           .setReturnPropertyQuota(true)
+ *           .addAllComparisons(new ArrayList<Comparison>())
  *           .build();
  *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
  * }
@@ -449,6 +450,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setCohortSpec(CohortSpec.newBuilder().build())
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
    *           .build();
    *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
    * }
@@ -497,6 +499,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setCohortSpec(CohortSpec.newBuilder().build())
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
    *           .build();
    *   ApiFuture<RunReportResponse> future =
    *       betaAnalyticsDataClient.runReportCallable().futureCall(request);
@@ -538,6 +541,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setCohortSpec(CohortSpec.newBuilder().build())
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
    *           .build();
    *   RunPivotReportResponse response = betaAnalyticsDataClient.runPivotReport(request);
    * }
@@ -579,6 +583,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setCohortSpec(CohortSpec.newBuilder().build())
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
    *           .build();
    *   ApiFuture<RunPivotReportResponse> future =
    *       betaAnalyticsDataClient.runPivotReportCallable().futureCall(request);

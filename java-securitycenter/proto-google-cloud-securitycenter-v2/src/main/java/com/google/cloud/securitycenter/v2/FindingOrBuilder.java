@@ -571,6 +571,47 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Output only. The mute information regarding this finding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v2.Finding.MuteInfo mute_info = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the muteInfo field is set.
+   */
+  boolean hasMuteInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The mute information regarding this finding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v2.Finding.MuteInfo mute_info = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The muteInfo.
+   */
+  com.google.cloud.securitycenter.v2.Finding.MuteInfo getMuteInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The mute information regarding this finding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v2.Finding.MuteInfo mute_info = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v2.Finding.MuteInfoOrBuilder getMuteInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The class of the finding.
    * </pre>
    *

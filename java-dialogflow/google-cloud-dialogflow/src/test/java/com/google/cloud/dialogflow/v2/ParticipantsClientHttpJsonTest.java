@@ -995,6 +995,76 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
+  public void suggestKnowledgeAssistTest() throws Exception {
+    SuggestKnowledgeAssistResponse expectedResponse =
+        SuggestKnowledgeAssistResponse.newBuilder()
+            .setKnowledgeAssistAnswer(KnowledgeAssistAnswer.newBuilder().build())
+            .setLatestMessage("latestMessage-1424305536")
+            .setContextSize(1116903569)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SuggestKnowledgeAssistRequest request =
+        SuggestKnowledgeAssistRequest.newBuilder()
+            .setParent(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+            .build();
+
+    SuggestKnowledgeAssistResponse actualResponse = client.suggestKnowledgeAssist(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void suggestKnowledgeAssistExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SuggestKnowledgeAssistRequest request =
+          SuggestKnowledgeAssistRequest.newBuilder()
+              .setParent(
+                  ParticipantName.ofProjectConversationParticipantName(
+                          "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                      .toString())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .setContextSize(1116903569)
+              .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+              .build();
+      client.suggestKnowledgeAssist(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

@@ -352,5 +352,18 @@ public interface ProcessRequestOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to remove images from the document.
+   * </pre>
+   *
+   * <code>bool imageless_mode = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The imagelessMode.
+   */
+  boolean getImagelessMode();
+
   com.google.cloud.documentai.v1.ProcessRequest.SourceCase getSourceCase();
 }

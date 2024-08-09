@@ -280,6 +280,41 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.AlloyDbSource alloy_db_source = 14;</code>
+   *
+   * @return Whether the alloyDbSource field is set.
+   */
+  boolean hasAlloyDbSource();
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.AlloyDbSource alloy_db_source = 14;</code>
+   *
+   * @return The alloyDbSource.
+   */
+  com.google.cloud.discoveryengine.v1alpha.AlloyDbSource getAlloyDbSource();
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.AlloyDbSource alloy_db_source = 14;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.AlloyDbSourceOrBuilder getAlloyDbSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Cloud Bigtable input source.
    * </pre>
    *

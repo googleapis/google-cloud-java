@@ -292,4 +292,37 @@ public interface BigQueryLinkOrBuilder
    * @return The bytes of the excludedEvents at the given index.
    */
   com.google.protobuf.ByteString getExcludedEventsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The geographic location where the created BigQuery
+   * dataset should reside. See https://cloud.google.com/bigquery/docs/locations
+   * for supported locations.
+   * </pre>
+   *
+   * <code>
+   * string dataset_location = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The datasetLocation.
+   */
+  java.lang.String getDatasetLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The geographic location where the created BigQuery
+   * dataset should reside. See https://cloud.google.com/bigquery/docs/locations
+   * for supported locations.
+   * </pre>
+   *
+   * <code>
+   * string dataset_location = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for datasetLocation.
+   */
+  com.google.protobuf.ByteString getDatasetLocationBytes();
 }

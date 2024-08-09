@@ -101,7 +101,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Configuration specific to LivePerson (https://www.liveperson.com).
+   * Configuration specific to [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig}
@@ -362,7 +362,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Configuration specific to LivePerson (https://www.liveperson.com).
+     * Configuration specific to [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2.HumanAgentHandoffConfig.LivePersonConfig}
@@ -2112,7 +2112,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>
@@ -2129,7 +2129,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>
@@ -2152,7 +2152,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Uses LivePerson (https://www.liveperson.com).
+   * Uses [LivePerson](https://www.liveperson.com).
    * </pre>
    *
    * <code>
@@ -2678,7 +2678,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2695,7 +2695,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2726,7 +2726,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2751,7 +2751,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2774,7 +2774,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2812,7 +2812,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2839,7 +2839,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2854,7 +2854,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>
@@ -2879,7 +2879,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Uses LivePerson (https://www.liveperson.com).
+     * Uses [LivePerson](https://www.liveperson.com).
      * </pre>
      *
      * <code>

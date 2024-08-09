@@ -49,6 +49,10 @@ public final class VertexRagDataProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RagFileChunkingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_fieldAccessorTable;
@@ -115,27 +119,31 @@ public final class VertexRagDataProto {
           + "agFiles/{rag_file}*\010ragFiles2\007ragFileB\021\n"
           + "\017rag_file_source\"B\n\025RagFileChunkingConfi"
           + "g\022\022\n\nchunk_size\030\001 \001(\005\022\025\n\rchunk_overlap\030\002"
-          + " \001(\005\"o\n\023UploadRagFileConfig\022X\n\030rag_file_"
-          + "chunking_config\030\001 \001(\01326.google.cloud.aip"
-          + "latform.v1beta1.RagFileChunkingConfig\"\315\003"
-          + "\n\024ImportRagFilesConfig\022@\n\ngcs_source\030\002 \001"
-          + "(\0132*.google.cloud.aiplatform.v1beta1.Gcs"
-          + "SourceH\000\022Q\n\023google_drive_source\030\003 \001(\01322."
-          + "google.cloud.aiplatform.v1beta1.GoogleDr"
-          + "iveSourceH\000\022D\n\014slack_source\030\006 \001(\0132,.goog"
-          + "le.cloud.aiplatform.v1beta1.SlackSourceH"
-          + "\000\022B\n\013jira_source\030\007 \001(\0132+.google.cloud.ai"
-          + "platform.v1beta1.JiraSourceH\000\022X\n\030rag_fil"
-          + "e_chunking_config\030\004 \001(\01326.google.cloud.a"
-          + "iplatform.v1beta1.RagFileChunkingConfig\022"
-          + "+\n\036max_embedding_requests_per_min\030\005 \001(\005B"
-          + "\003\340A\001B\017\n\rimport_sourceB\351\001\n#com.google.clo"
-          + "ud.aiplatform.v1beta1B\022VertexRagDataProt"
-          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
-          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
-          + "Platform::V1beta1b\006proto3"
+          + " \001(\005\"8\n\024RagFileParsingConfig\022 \n\030use_adva"
+          + "nced_pdf_parsing\030\002 \001(\010\"o\n\023UploadRagFileC"
+          + "onfig\022X\n\030rag_file_chunking_config\030\001 \001(\0132"
+          + "6.google.cloud.aiplatform.v1beta1.RagFil"
+          + "eChunkingConfig\"\245\004\n\024ImportRagFilesConfig"
+          + "\022@\n\ngcs_source\030\002 \001(\0132*.google.cloud.aipl"
+          + "atform.v1beta1.GcsSourceH\000\022Q\n\023google_dri"
+          + "ve_source\030\003 \001(\01322.google.cloud.aiplatfor"
+          + "m.v1beta1.GoogleDriveSourceH\000\022D\n\014slack_s"
+          + "ource\030\006 \001(\0132,.google.cloud.aiplatform.v1"
+          + "beta1.SlackSourceH\000\022B\n\013jira_source\030\007 \001(\013"
+          + "2+.google.cloud.aiplatform.v1beta1.JiraS"
+          + "ourceH\000\022X\n\030rag_file_chunking_config\030\004 \001("
+          + "\01326.google.cloud.aiplatform.v1beta1.RagF"
+          + "ileChunkingConfig\022V\n\027rag_file_parsing_co"
+          + "nfig\030\010 \001(\01325.google.cloud.aiplatform.v1b"
+          + "eta1.RagFileParsingConfig\022+\n\036max_embeddi"
+          + "ng_requests_per_min\030\005 \001(\005B\003\340A\001B\017\n\rimport"
+          + "_sourceB\351\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\022VertexRagDataProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -205,8 +213,16 @@ public final class VertexRagDataProto {
             new java.lang.String[] {
               "ChunkSize", "ChunkOverlap",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RagFileParsingConfig_descriptor,
+            new java.lang.String[] {
+              "UseAdvancedPdfParsing",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UploadRagFileConfig_descriptor,
@@ -214,7 +230,7 @@ public final class VertexRagDataProto {
               "RagFileChunkingConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesConfig_descriptor,
@@ -224,6 +240,7 @@ public final class VertexRagDataProto {
               "SlackSource",
               "JiraSource",
               "RagFileChunkingConfig",
+              "RagFileParsingConfig",
               "MaxEmbeddingRequestsPerMin",
               "ImportSource",
             });

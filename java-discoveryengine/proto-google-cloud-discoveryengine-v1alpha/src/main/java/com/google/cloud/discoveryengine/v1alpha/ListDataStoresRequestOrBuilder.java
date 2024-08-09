@@ -130,7 +130,7 @@ public interface ListDataStoresRequestOrBuilder
    *
    *
    * <pre>
-   * Filter by solution type.
+   * Filter by solution type .
    * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface ListDataStoresRequestOrBuilder
    *
    *
    * <pre>
-   * Filter by solution type.
+   * Filter by solution type .
    * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *

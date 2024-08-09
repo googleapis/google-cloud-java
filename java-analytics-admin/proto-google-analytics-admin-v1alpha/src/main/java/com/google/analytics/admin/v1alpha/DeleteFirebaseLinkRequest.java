@@ -72,7 +72,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-   * Example: properties/1234/firebaseLinks/5678
+   *
+   * Example: `properties/1234/firebaseLinks/5678`
    * </pre>
    *
    * <code>
@@ -98,7 +99,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-   * Example: properties/1234/firebaseLinks/5678
+   *
+   * Example: `properties/1234/firebaseLinks/5678`
    * </pre>
    *
    * <code>
@@ -472,7 +474,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-     * Example: properties/1234/firebaseLinks/5678
+     *
+     * Example: `properties/1234/firebaseLinks/5678`
      * </pre>
      *
      * <code>
@@ -497,7 +500,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-     * Example: properties/1234/firebaseLinks/5678
+     *
+     * Example: `properties/1234/firebaseLinks/5678`
      * </pre>
      *
      * <code>
@@ -522,7 +526,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-     * Example: properties/1234/firebaseLinks/5678
+     *
+     * Example: `properties/1234/firebaseLinks/5678`
      * </pre>
      *
      * <code>
@@ -546,7 +551,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-     * Example: properties/1234/firebaseLinks/5678
+     *
+     * Example: `properties/1234/firebaseLinks/5678`
      * </pre>
      *
      * <code>
@@ -566,7 +572,8 @@ public final class DeleteFirebaseLinkRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
-     * Example: properties/1234/firebaseLinks/5678
+     *
+     * Example: `properties/1234/firebaseLinks/5678`
      * </pre>
      *
      * <code>

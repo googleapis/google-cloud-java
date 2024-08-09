@@ -120,6 +120,26 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
   }
 
   @Override
+  public void cancelJob(CancelJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateJob(UpdateJobRequest request, StreamObserver<Job> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Job) {

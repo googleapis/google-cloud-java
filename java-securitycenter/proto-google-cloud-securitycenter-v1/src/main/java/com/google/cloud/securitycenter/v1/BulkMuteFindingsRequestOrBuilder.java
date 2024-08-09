@@ -131,7 +131,7 @@ public interface BulkMuteFindingsRequestOrBuilder
    * <code>string mute_annotation = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=1126
+   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=1138
    * @return The muteAnnotation.
    */
   @java.lang.Deprecated
@@ -147,9 +147,42 @@ public interface BulkMuteFindingsRequestOrBuilder
    * <code>string mute_annotation = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=1126
+   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=1138
    * @return The bytes for muteAnnotation.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getMuteAnnotationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. All findings matching the given filter will have their mute state
+   * set to this value. The default value is `MUTED`. Setting this to
+   * `UNDEFINED` will clear the mute state on all matching findings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.BulkMuteFindingsRequest.MuteState mute_state = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for muteState.
+   */
+  int getMuteStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. All findings matching the given filter will have their mute state
+   * set to this value. The default value is `MUTED`. Setting this to
+   * `UNDEFINED` will clear the mute state on all matching findings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securitycenter.v1.BulkMuteFindingsRequest.MuteState mute_state = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The muteState.
+   */
+  com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest.MuteState getMuteState();
 }

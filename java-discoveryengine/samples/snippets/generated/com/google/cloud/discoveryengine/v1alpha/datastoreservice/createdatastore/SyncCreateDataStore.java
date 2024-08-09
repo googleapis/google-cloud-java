@@ -41,6 +41,7 @@ public class SyncCreateDataStore {
               .setDataStore(DataStore.newBuilder().build())
               .setDataStoreId("dataStoreId929489618")
               .setCreateAdvancedSiteSearch(true)
+              .setSkipDefaultSchemaCreation(true)
               .build();
       DataStore response = dataStoreServiceClient.createDataStoreAsync(request).get();
     }

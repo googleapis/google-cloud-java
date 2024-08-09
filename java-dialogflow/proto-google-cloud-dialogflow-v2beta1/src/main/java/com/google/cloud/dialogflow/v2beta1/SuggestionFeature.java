@@ -146,6 +146,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>KNOWLEDGE_SEARCH = 14;</code>
      */
     KNOWLEDGE_SEARCH(14),
+    /**
+     *
+     *
+     * <pre>
+     * Run knowledge assist with automatic query generation.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_ASSIST = 15;</code>
+     */
+    KNOWLEDGE_ASSIST(15),
     UNRECOGNIZED(-1),
     ;
 
@@ -220,6 +230,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>KNOWLEDGE_SEARCH = 14;</code>
      */
     public static final int KNOWLEDGE_SEARCH_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Run knowledge assist with automatic query generation.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_ASSIST = 15;</code>
+     */
+    public static final int KNOWLEDGE_ASSIST_VALUE = 15;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -259,6 +279,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return CONVERSATION_SUMMARIZATION;
         case 14:
           return KNOWLEDGE_SEARCH;
+        case 15:
+          return KNOWLEDGE_ASSIST;
         default:
           return null;
       }

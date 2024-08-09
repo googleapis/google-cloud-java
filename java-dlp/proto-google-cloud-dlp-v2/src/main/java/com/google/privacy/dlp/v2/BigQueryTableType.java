@@ -154,7 +154,7 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final BigQueryTableType[] VALUES = values();

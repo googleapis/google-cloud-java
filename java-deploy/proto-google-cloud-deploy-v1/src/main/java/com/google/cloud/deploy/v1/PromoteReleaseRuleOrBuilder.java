@@ -99,10 +99,8 @@ public interface PromoteReleaseRuleOrBuilder
    * deploying. If unspecified, default it to the next stage in the promotion
    * flow. The value of this field could be one of the following:
    *
-   * * The last segment of a target name. It only needs the ID to determine
-   * if the target is one of the stages in the promotion sequence defined
-   * in the pipeline.
-   * * "&#64;next", the next target in the promotion sequence.
+   * * The last segment of a target name
+   * * "&#64;next", the next target in the promotion sequence
    * </pre>
    *
    * <code>string destination_target_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -118,10 +116,8 @@ public interface PromoteReleaseRuleOrBuilder
    * deploying. If unspecified, default it to the next stage in the promotion
    * flow. The value of this field could be one of the following:
    *
-   * * The last segment of a target name. It only needs the ID to determine
-   * if the target is one of the stages in the promotion sequence defined
-   * in the pipeline.
-   * * "&#64;next", the next target in the promotion sequence.
+   * * The last segment of a target name
+   * * "&#64;next", the next target in the promotion sequence
    * </pre>
    *
    * <code>string destination_target_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

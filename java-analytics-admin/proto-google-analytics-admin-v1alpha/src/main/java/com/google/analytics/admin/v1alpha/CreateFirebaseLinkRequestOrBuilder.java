@@ -29,7 +29,8 @@ public interface CreateFirebaseLinkRequestOrBuilder
    *
    * <pre>
    * Required. Format: properties/{property_id}
-   * Example: properties/1234
+   *
+   * Example: `properties/1234`
    * </pre>
    *
    * <code>
@@ -44,7 +45,8 @@ public interface CreateFirebaseLinkRequestOrBuilder
    *
    * <pre>
    * Required. Format: properties/{property_id}
-   * Example: properties/1234
+   *
+   * Example: `properties/1234`
    * </pre>
    *
    * <code>

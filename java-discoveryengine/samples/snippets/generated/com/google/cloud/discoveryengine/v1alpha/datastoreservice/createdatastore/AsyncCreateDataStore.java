@@ -43,6 +43,7 @@ public class AsyncCreateDataStore {
               .setDataStore(DataStore.newBuilder().build())
               .setDataStoreId("dataStoreId929489618")
               .setCreateAdvancedSiteSearch(true)
+              .setSkipDefaultSchemaCreation(true)
               .build();
       ApiFuture<Operation> future =
           dataStoreServiceClient.createDataStoreCallable().futureCall(request);

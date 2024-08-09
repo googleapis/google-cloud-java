@@ -559,6 +559,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
     Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
     Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getAlloyDbSource(), actualRequest.getAlloyDbSource());
     Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
@@ -632,6 +633,7 @@ public class DocumentServiceClientTest {
     PurgeDocumentsRequest actualRequest = ((PurgeDocumentsRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
+    Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());

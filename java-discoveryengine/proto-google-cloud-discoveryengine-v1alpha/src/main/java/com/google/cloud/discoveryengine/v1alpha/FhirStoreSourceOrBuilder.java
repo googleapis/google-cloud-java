@@ -85,4 +85,67 @@ public interface FhirStoreSourceOrBuilder
    * @return The bytes for gcsStagingDir.
    */
   com.google.protobuf.ByteString getGcsStagingDirBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @return A list containing the resourceTypes.
+   */
+  java.util.List<java.lang.String> getResourceTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @return The count of resourceTypes.
+   */
+  int getResourceTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceTypes at the given index.
+   */
+  java.lang.String getResourceTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The FHIR resource types to import. The resource types should be a subset of
+   * all [supported FHIR resource
+   * types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification).
+   * Default to all supported FHIR resource types if empty.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceTypes at the given index.
+   */
+  com.google.protobuf.ByteString getResourceTypesBytes(int index);
 }

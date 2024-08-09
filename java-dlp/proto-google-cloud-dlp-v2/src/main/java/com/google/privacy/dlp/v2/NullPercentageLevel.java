@@ -199,7 +199,7 @@ public enum NullPercentageLevel implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(17);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(18);
   }
 
   private static final NullPercentageLevel[] VALUES = values();

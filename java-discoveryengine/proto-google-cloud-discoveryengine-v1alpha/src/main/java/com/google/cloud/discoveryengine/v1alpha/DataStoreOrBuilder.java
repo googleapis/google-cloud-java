@@ -314,6 +314,41 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.LanguageInfo language_info = 14;</code>
+   *
+   * @return Whether the languageInfo field is set.
+   */
+  boolean hasLanguageInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.LanguageInfo language_info = 14;</code>
+   *
+   * @return The languageInfo.
+   */
+  com.google.cloud.discoveryengine.v1alpha.LanguageInfo getLanguageInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Language info for DataStore.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.LanguageInfo language_info = 14;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.LanguageInfoOrBuilder getLanguageInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Data store level identity provider config.
    * </pre>
    *

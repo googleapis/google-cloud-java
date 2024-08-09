@@ -40,6 +40,22 @@ public final class CommonProto {
       internal_static_google_cloud_translation_v3_GcsOutputDestination_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_translation_v3_GcsOutputDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_GlossaryEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_GlossaryEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsPair_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsPair_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsSet_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsSet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_translation_v3_GlossaryTerm_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_translation_v3_GlossaryTerm_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -51,23 +67,47 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/translate/v3/common.proto"
           + "\022\033google.cloud.translation.v3\032\037google/ap"
-          + "i/field_behavior.proto\"(\n\016GcsInputSource"
-          + "\022\026\n\tinput_uri\030\001 \001(\tB\003\340A\002\"Z\n\017FileInputSou"
-          + "rce\022\026\n\tmime_type\030\001 \001(\tB\003\340A\002\022\024\n\007content\030\002"
-          + " \001(\014B\003\340A\002\022\031\n\014display_name\030\003 \001(\tB\003\340A\002\"6\n\024"
-          + "GcsOutputDestination\022\036\n\021output_uri_prefi"
-          + "x\030\001 \001(\tB\003\340A\002B\305\001\n\035com.google.cloud.transl"
-          + "ate.v3B\013CommonProtoP\001Z;cloud.google.com/"
-          + "go/translate/apiv3/translatepb;translate"
-          + "pb\370\001\001\252\002\031Google.Cloud.Translate.V3\312\002\031Goog"
-          + "le\\Cloud\\Translate\\V3\352\002\034Google::Cloud::T"
-          + "ranslate::V3b\006proto3"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\"(\n\016GcsInputSource\022\026\n\tinput_uri"
+          + "\030\001 \001(\tB\003\340A\002\"Z\n\017FileInputSource\022\026\n\tmime_t"
+          + "ype\030\001 \001(\tB\003\340A\002\022\024\n\007content\030\002 \001(\014B\003\340A\002\022\031\n\014"
+          + "display_name\030\003 \001(\tB\003\340A\002\"6\n\024GcsOutputDest"
+          + "ination\022\036\n\021output_uri_prefix\030\001 \001(\tB\003\340A\002\""
+          + "\370\004\n\rGlossaryEntry\022\021\n\004name\030\001 \001(\tB\003\340A\010\022R\n\n"
+          + "terms_pair\030\002 \001(\0132<.google.cloud.translat"
+          + "ion.v3.GlossaryEntry.GlossaryTermsPairH\000"
+          + "\022P\n\tterms_set\030\003 \001(\0132;.google.cloud.trans"
+          + "lation.v3.GlossaryEntry.GlossaryTermsSet"
+          + "H\000\022\023\n\013description\030\004 \001(\t\032\223\001\n\021GlossaryTerm"
+          + "sPair\022>\n\013source_term\030\001 \001(\0132).google.clou"
+          + "d.translation.v3.GlossaryTerm\022>\n\013target_"
+          + "term\030\002 \001(\0132).google.cloud.translation.v3"
+          + ".GlossaryTerm\032L\n\020GlossaryTermsSet\0228\n\005ter"
+          + "ms\030\001 \003(\0132).google.cloud.translation.v3.G"
+          + "lossaryTerm:\254\001\352A\250\001\n&translate.googleapis"
+          + ".com/GlossaryEntry\022^projects/{project}/l"
+          + "ocations/{location}/glossaries/{glossary"
+          + "}/glossaryEntries/{glossary_entry}*\017glos"
+          + "saryEntries2\rglossaryEntryB\006\n\004data\"3\n\014Gl"
+          + "ossaryTerm\022\025\n\rlanguage_code\030\001 \001(\t\022\014\n\004tex"
+          + "t\030\002 \001(\t*\310\001\n\016OperationState\022\037\n\033OPERATION_"
+          + "STATE_UNSPECIFIED\020\000\022\033\n\027OPERATION_STATE_R"
+          + "UNNING\020\001\022\035\n\031OPERATION_STATE_SUCCEEDED\020\002\022"
+          + "\032\n\026OPERATION_STATE_FAILED\020\003\022\036\n\032OPERATION"
+          + "_STATE_CANCELLING\020\004\022\035\n\031OPERATION_STATE_C"
+          + "ANCELLED\020\005B\305\001\n\035com.google.cloud.translat"
+          + "e.v3B\013CommonProtoP\001Z;cloud.google.com/go"
+          + "/translate/apiv3/translatepb;translatepb"
+          + "\370\001\001\252\002\031Google.Cloud.Translate.V3\312\002\031Google"
+          + "\\Cloud\\Translate\\V3\352\002\034Google::Cloud::Tra"
+          + "nslate::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_translation_v3_GcsInputSource_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,12 +133,50 @@ public final class CommonProto {
             new java.lang.String[] {
               "OutputUriPrefix",
             });
+    internal_static_google_cloud_translation_v3_GlossaryEntry_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_translation_v3_GlossaryEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_GlossaryEntry_descriptor,
+            new java.lang.String[] {
+              "Name", "TermsPair", "TermsSet", "Description", "Data",
+            });
+    internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsPair_descriptor =
+        internal_static_google_cloud_translation_v3_GlossaryEntry_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsPair_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsPair_descriptor,
+            new java.lang.String[] {
+              "SourceTerm", "TargetTerm",
+            });
+    internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsSet_descriptor =
+        internal_static_google_cloud_translation_v3_GlossaryEntry_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsSet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_GlossaryEntry_GlossaryTermsSet_descriptor,
+            new java.lang.String[] {
+              "Terms",
+            });
+    internal_static_google_cloud_translation_v3_GlossaryTerm_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_translation_v3_GlossaryTerm_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_translation_v3_GlossaryTerm_descriptor,
+            new java.lang.String[] {
+              "LanguageCode", "Text",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

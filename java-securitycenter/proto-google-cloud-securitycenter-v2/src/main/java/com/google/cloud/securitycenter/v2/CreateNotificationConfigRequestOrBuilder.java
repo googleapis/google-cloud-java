@@ -29,9 +29,9 @@ public interface CreateNotificationConfigRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]", or
-   * "projects/[project_id]/locations/[location_id]".
+   * is `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`, or
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>
@@ -46,9 +46,9 @@ public interface CreateNotificationConfigRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]/locations/[location_id]",
-   * "folders/[folder_id]/locations/[location_id]", or
-   * "projects/[project_id]/locations/[location_id]".
+   * is `organizations/[organization_id]/locations/[location_id]`,
+   * `folders/[folder_id]/locations/[location_id]`, or
+   * `projects/[project_id]/locations/[location_id]`.
    * </pre>
    *
    * <code>

@@ -104,9 +104,30 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Low cost by making potential use of spot resources.
      * </pre>
      *
-     * <code>LOW_COST = 2;</code>
+     * <code>LOW_COST = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     LOW_COST(2),
+    /**
+     *
+     *
+     * <pre>
+     * Standard provisioning strategy uses regular on-demand resources.
+     * </pre>
+     *
+     * <code>STANDARD = 3;</code>
+     */
+    STANDARD(3),
+    /**
+     *
+     *
+     * <pre>
+     * Spot provisioning strategy uses spot resources.
+     * </pre>
+     *
+     * <code>SPOT = 4;</code>
+     */
+    SPOT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -137,9 +158,29 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Low cost by making potential use of spot resources.
      * </pre>
      *
-     * <code>LOW_COST = 2;</code>
+     * <code>LOW_COST = 2 [deprecated = true];</code>
      */
-    public static final int LOW_COST_VALUE = 2;
+    @java.lang.Deprecated public static final int LOW_COST_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Standard provisioning strategy uses regular on-demand resources.
+     * </pre>
+     *
+     * <code>STANDARD = 3;</code>
+     */
+    public static final int STANDARD_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Spot provisioning strategy uses spot resources.
+     * </pre>
+     *
+     * <code>SPOT = 4;</code>
+     */
+    public static final int SPOT_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -171,6 +212,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           return ON_DEMAND;
         case 2:
           return LOW_COST;
+        case 3:
+          return STANDARD;
+        case 4:
+          return SPOT;
         default:
           return null;
       }

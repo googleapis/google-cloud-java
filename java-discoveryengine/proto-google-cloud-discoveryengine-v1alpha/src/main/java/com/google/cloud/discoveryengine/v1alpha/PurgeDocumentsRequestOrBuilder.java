@@ -72,6 +72,48 @@ public interface PurgeDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return Whether the inlineSource field is set.
+   */
+  boolean hasInlineSource();
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   *
+   * @return The inlineSource.
+   */
+  com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.InlineSource getInlineSource();
+  /**
+   *
+   *
+   * <pre>
+   * Inline source for the input content for purge.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.InlineSource inline_source = 6;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.InlineSourceOrBuilder
+      getInlineSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent resource name, such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * </pre>

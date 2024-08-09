@@ -627,6 +627,59 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return enableAutomaticPunctuation_;
   }
 
+  public static final int DEFAULT_NO_SPEECH_TIMEOUT_FIELD_NUMBER = 18;
+  private com.google.protobuf.Duration defaultNoSpeechTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   *
+   * @return Whether the defaultNoSpeechTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultNoSpeechTimeout() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   *
+   * @return The defaultNoSpeechTimeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDefaultNoSpeechTimeout() {
+    return defaultNoSpeechTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : defaultNoSpeechTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, use this no-speech timeout when the agent does not provide a
+   * no-speech timeout itself.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDefaultNoSpeechTimeoutOrBuilder() {
+    return defaultNoSpeechTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : defaultNoSpeechTimeout_;
+  }
+
   public static final int OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER = 26;
   private boolean optOutConformerModelMigration_ = false;
   /**
@@ -702,6 +755,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(17, enableAutomaticPunctuation_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(18, getDefaultNoSpeechTimeout());
+    }
     if (optOutConformerModelMigration_ != false) {
       output.writeBool(26, optOutConformerModelMigration_);
     }
@@ -762,6 +818,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableAutomaticPunctuation_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18, getDefaultNoSpeechTimeout());
+    }
     if (optOutConformerModelMigration_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(26, optOutConformerModelMigration_);
@@ -798,6 +858,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!getBargeInConfig().equals(other.getBargeInConfig())) return false;
     }
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (hasDefaultNoSpeechTimeout() != other.hasDefaultNoSpeechTimeout()) return false;
+    if (hasDefaultNoSpeechTimeout()) {
+      if (!getDefaultNoSpeechTimeout().equals(other.getDefaultNoSpeechTimeout())) return false;
+    }
     if (getOptOutConformerModelMigration() != other.getOptOutConformerModelMigration())
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -842,6 +906,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
+    if (hasDefaultNoSpeechTimeout()) {
+      hash = (37 * hash) + DEFAULT_NO_SPEECH_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultNoSpeechTimeout().hashCode();
+    }
     hash = (37 * hash) + OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOptOutConformerModelMigration());
@@ -987,6 +1055,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSpeechContextsFieldBuilder();
         getBargeInConfigFieldBuilder();
+        getDefaultNoSpeechTimeoutFieldBuilder();
       }
     }
 
@@ -1016,6 +1085,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bargeInConfigBuilder_ = null;
       }
       enableAutomaticPunctuation_ = false;
+      defaultNoSpeechTimeout_ = null;
+      if (defaultNoSpeechTimeoutBuilder_ != null) {
+        defaultNoSpeechTimeoutBuilder_.dispose();
+        defaultNoSpeechTimeoutBuilder_ = null;
+      }
       optOutConformerModelMigration_ = false;
       return this;
     }
@@ -1105,6 +1179,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.defaultNoSpeechTimeout_ =
+            defaultNoSpeechTimeoutBuilder_ == null
+                ? defaultNoSpeechTimeout_
+                : defaultNoSpeechTimeoutBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.optOutConformerModelMigration_ = optOutConformerModelMigration_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1227,6 +1308,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
       }
+      if (other.hasDefaultNoSpeechTimeout()) {
+        mergeDefaultNoSpeechTimeout(other.getDefaultNoSpeechTimeout());
+      }
       if (other.getOptOutConformerModelMigration() != false) {
         setOptOutConformerModelMigration(other.getOptOutConformerModelMigration());
       }
@@ -1337,10 +1421,17 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    getDefaultNoSpeechTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 146
             case 208:
               {
                 optOutConformerModelMigration_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 208
             default:
@@ -3037,6 +3128,200 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.Duration defaultNoSpeechTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        defaultNoSpeechTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     *
+     * @return Whether the defaultNoSpeechTimeout field is set.
+     */
+    public boolean hasDefaultNoSpeechTimeout() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     *
+     * @return The defaultNoSpeechTimeout.
+     */
+    public com.google.protobuf.Duration getDefaultNoSpeechTimeout() {
+      if (defaultNoSpeechTimeoutBuilder_ == null) {
+        return defaultNoSpeechTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : defaultNoSpeechTimeout_;
+      } else {
+        return defaultNoSpeechTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public Builder setDefaultNoSpeechTimeout(com.google.protobuf.Duration value) {
+      if (defaultNoSpeechTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultNoSpeechTimeout_ = value;
+      } else {
+        defaultNoSpeechTimeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public Builder setDefaultNoSpeechTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (defaultNoSpeechTimeoutBuilder_ == null) {
+        defaultNoSpeechTimeout_ = builderForValue.build();
+      } else {
+        defaultNoSpeechTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public Builder mergeDefaultNoSpeechTimeout(com.google.protobuf.Duration value) {
+      if (defaultNoSpeechTimeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && defaultNoSpeechTimeout_ != null
+            && defaultNoSpeechTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDefaultNoSpeechTimeoutBuilder().mergeFrom(value);
+        } else {
+          defaultNoSpeechTimeout_ = value;
+        }
+      } else {
+        defaultNoSpeechTimeoutBuilder_.mergeFrom(value);
+      }
+      if (defaultNoSpeechTimeout_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public Builder clearDefaultNoSpeechTimeout() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      defaultNoSpeechTimeout_ = null;
+      if (defaultNoSpeechTimeoutBuilder_ != null) {
+        defaultNoSpeechTimeoutBuilder_.dispose();
+        defaultNoSpeechTimeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public com.google.protobuf.Duration.Builder getDefaultNoSpeechTimeoutBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getDefaultNoSpeechTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDefaultNoSpeechTimeoutOrBuilder() {
+      if (defaultNoSpeechTimeoutBuilder_ != null) {
+        return defaultNoSpeechTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultNoSpeechTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : defaultNoSpeechTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, use this no-speech timeout when the agent does not provide a
+     * no-speech timeout itself.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getDefaultNoSpeechTimeoutFieldBuilder() {
+      if (defaultNoSpeechTimeoutBuilder_ == null) {
+        defaultNoSpeechTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDefaultNoSpeechTimeout(), getParentForChildren(), isClean());
+        defaultNoSpeechTimeout_ = null;
+      }
+      return defaultNoSpeechTimeoutBuilder_;
+    }
+
     private boolean optOutConformerModelMigration_;
     /**
      *
@@ -3074,7 +3359,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setOptOutConformerModelMigration(boolean value) {
 
       optOutConformerModelMigration_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3093,7 +3378,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOptOutConformerModelMigration() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       optOutConformerModelMigration_ = false;
       onChanged();
       return this;

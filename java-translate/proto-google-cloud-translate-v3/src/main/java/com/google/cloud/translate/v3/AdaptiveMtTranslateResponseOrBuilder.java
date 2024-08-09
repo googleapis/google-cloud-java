@@ -110,4 +110,67 @@ public interface AdaptiveMtTranslateResponseOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Text translation response if a glossary is provided in the request. This
+   * could be the same as 'translation' above if no terms apply.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.translation.v3.AdaptiveMtTranslation glossary_translations = 4;
+   * </code>
+   */
+  java.util.List<com.google.cloud.translate.v3.AdaptiveMtTranslation> getGlossaryTranslationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Text translation response if a glossary is provided in the request. This
+   * could be the same as 'translation' above if no terms apply.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.translation.v3.AdaptiveMtTranslation glossary_translations = 4;
+   * </code>
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslation getGlossaryTranslations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Text translation response if a glossary is provided in the request. This
+   * could be the same as 'translation' above if no terms apply.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.translation.v3.AdaptiveMtTranslation glossary_translations = 4;
+   * </code>
+   */
+  int getGlossaryTranslationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Text translation response if a glossary is provided in the request. This
+   * could be the same as 'translation' above if no terms apply.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.translation.v3.AdaptiveMtTranslation glossary_translations = 4;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtTranslationOrBuilder>
+      getGlossaryTranslationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Text translation response if a glossary is provided in the request. This
+   * could be the same as 'translation' above if no terms apply.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.translation.v3.AdaptiveMtTranslation glossary_translations = 4;
+   * </code>
+   */
+  com.google.cloud.translate.v3.AdaptiveMtTranslationOrBuilder getGlossaryTranslationsOrBuilder(
+      int index);
 }

@@ -3875,7 +3875,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relevance score based on similarity.
+   * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
    * Only populated on [SearchService.SearchResponse][].
@@ -3893,7 +3893,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relevance score based on similarity.
+   * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
    * Only populated on [SearchService.SearchResponse][].
@@ -5047,7 +5047,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relevance score based on similarity.
+     * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
      * Only populated on [SearchService.SearchResponse][].
@@ -5066,7 +5066,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relevance score based on similarity.
+     * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
      * Only populated on [SearchService.SearchResponse][].
@@ -5085,7 +5085,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relevance score based on similarity.
+     * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
      * Only populated on [SearchService.SearchResponse][].
@@ -5108,7 +5108,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relevance score based on similarity.
+     * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
      * Only populated on [SearchService.SearchResponse][].

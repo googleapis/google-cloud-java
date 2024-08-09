@@ -242,6 +242,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SuggestKnowledgeAssist</td>
+ *      <td><p> Gets knowledge assist suggestions based on historical messages.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> suggestKnowledgeAssist(SuggestKnowledgeAssistRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> suggestKnowledgeAssistCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListSuggestions</td>
  *      <td><p> Deprecated: Use inline suggestion, event based suggestion or Suggestion&#42; API instead. See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more details. Removal Date: 2020-09-01.
  * <p>  Retrieves suggestions for live agents.
@@ -1748,6 +1762,82 @@ public class ParticipantsClient implements BackgroundResource {
   public final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     return stub.suggestSmartRepliesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets knowledge assist suggestions based on historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestKnowledgeAssistRequest request =
+   *       SuggestKnowledgeAssistRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+   *           .build();
+   *   SuggestKnowledgeAssistResponse response = participantsClient.suggestKnowledgeAssist(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestKnowledgeAssistResponse suggestKnowledgeAssist(
+      SuggestKnowledgeAssistRequest request) {
+    return suggestKnowledgeAssistCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets knowledge assist suggestions based on historical messages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   SuggestKnowledgeAssistRequest request =
+   *       SuggestKnowledgeAssistRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+   *           .build();
+   *   ApiFuture<SuggestKnowledgeAssistResponse> future =
+   *       participantsClient.suggestKnowledgeAssistCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestKnowledgeAssistResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return stub.suggestKnowledgeAssistCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

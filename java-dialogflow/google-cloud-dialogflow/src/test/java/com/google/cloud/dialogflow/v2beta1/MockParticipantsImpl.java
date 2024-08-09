@@ -266,6 +266,28 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   }
 
   @Override
+  public void suggestKnowledgeAssist(
+      SuggestKnowledgeAssistRequest request,
+      StreamObserver<SuggestKnowledgeAssistResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SuggestKnowledgeAssistResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SuggestKnowledgeAssistResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SuggestKnowledgeAssist, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SuggestKnowledgeAssistResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSuggestions(
       ListSuggestionsRequest request, StreamObserver<ListSuggestionsResponse> responseObserver) {
     Object response = responses.poll();

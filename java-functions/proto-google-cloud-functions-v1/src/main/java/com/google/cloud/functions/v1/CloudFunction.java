@@ -59,6 +59,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     sourceToken_ = "";
     dockerRepository_ = "";
     dockerRegistry_ = 0;
+    buildServiceAccount_ = "";
   }
 
   @java.lang.Override
@@ -1059,7 +1060,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. contains the runtime version which was used during latest
+     * Output only. Contains the runtime version which was used during latest
      * function deployment.
      * </pre>
      *
@@ -1072,7 +1073,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. contains the runtime version which was used during latest
+     * Output only. Contains the runtime version which was used during latest
      * function deployment.
      * </pre>
      *
@@ -1134,7 +1135,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. contains the runtime version which was used during latest
+     * Output only. Contains the runtime version which was used during latest
      * function deployment.
      * </pre>
      *
@@ -1158,7 +1159,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. contains the runtime version which was used during latest
+     * Output only. Contains the runtime version which was used during latest
      * function deployment.
      * </pre>
      *
@@ -1539,7 +1540,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. contains the runtime version which was used during latest
+       * Output only. Contains the runtime version which was used during latest
        * function deployment.
        * </pre>
        *
@@ -1562,7 +1563,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. contains the runtime version which was used during latest
+       * Output only. Contains the runtime version which was used during latest
        * function deployment.
        * </pre>
        *
@@ -1585,7 +1586,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. contains the runtime version which was used during latest
+       * Output only. Contains the runtime version which was used during latest
        * function deployment.
        * </pre>
        *
@@ -1607,7 +1608,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. contains the runtime version which was used during latest
+       * Output only. Contains the runtime version which was used during latest
        * function deployment.
        * </pre>
        *
@@ -1625,7 +1626,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. contains the runtime version which was used during latest
+       * Output only. Contains the runtime version which was used during latest
        * function deployment.
        * </pre>
        *
@@ -3698,12 +3699,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. If specified, deployments will use
-   * Artifact Registry. If unspecified and the deployment is eligible to use
-   * Artifact Registry, GCF will create and use a repository named
-   * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * User-managed repository created in Artifact Registry to which the
+   * function's Docker image will be pushed after it is built by Cloud Build.
+   * May optionally be encrypted with a customer-managed encryption key (CMEK).
+   * If unspecified and `docker_registry` is not explicitly set to
+   * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+   * repository named 'gcf-artifacts' in the region.
    *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -3733,12 +3734,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. If specified, deployments will use
-   * Artifact Registry. If unspecified and the deployment is eligible to use
-   * Artifact Registry, GCF will create and use a repository named
-   * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * User-managed repository created in Artifact Registry to which the
+   * function's Docker image will be pushed after it is built by Cloud Build.
+   * May optionally be encrypted with a customer-managed encryption key (CMEK).
+   * If unspecified and `docker_registry` is not explicitly set to
+   * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+   * repository named 'gcf-artifacts' in the region.
    *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -3812,12 +3813,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOMATIC_UPDATE_POLICY_FIELD_NUMBER = 40;
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
    * </code>
@@ -3829,12 +3824,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return runtimeUpdatePolicyCase_ == 40;
   }
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
    * </code>
@@ -3851,12 +3840,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy.getDefaultInstance();
   }
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
    * </code>
@@ -3873,12 +3856,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ON_DEPLOY_UPDATE_POLICY_FIELD_NUMBER = 41;
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
    * </code>
@@ -3890,12 +3867,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return runtimeUpdatePolicyCase_ == 41;
   }
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
    * </code>
@@ -3912,12 +3883,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy.getDefaultInstance();
   }
   /**
-   *
-   *
-   * <pre>
-   * See the comment next to this message for more details.
-   * </pre>
-   *
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
    * </code>
@@ -3930,6 +3895,61 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           runtimeUpdatePolicy_;
     }
     return com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy.getDefaultInstance();
+  }
+
+  public static final int BUILD_SERVICE_ACCOUNT_FIELD_NUMBER = 43;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildServiceAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A service account the user provides for use with Cloud Build. The format of
+   * this field is
+   * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string build_service_account = 43;</code>
+   *
+   * @return The buildServiceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getBuildServiceAccount() {
+    java.lang.Object ref = buildServiceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      buildServiceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A service account the user provides for use with Cloud Build. The format of
+   * this field is
+   * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string build_service_account = 43;</code>
+   *
+   * @return The bytes for buildServiceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBuildServiceAccountBytes() {
+    java.lang.Object ref = buildServiceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      buildServiceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4066,6 +4086,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           41,
           (com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy) runtimeUpdatePolicy_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildServiceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, buildServiceAccount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4229,6 +4252,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy)
                   runtimeUpdatePolicy_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildServiceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, buildServiceAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4282,6 +4308,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (!getSourceToken().equals(other.getSourceToken())) return false;
     if (!getDockerRepository().equals(other.getDockerRepository())) return false;
     if (dockerRegistry_ != other.dockerRegistry_) return false;
+    if (!getBuildServiceAccount().equals(other.getBuildServiceAccount())) return false;
     if (!getSourceCodeCase().equals(other.getSourceCodeCase())) return false;
     switch (sourceCodeCase_) {
       case 3:
@@ -4399,6 +4426,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDockerRepository().hashCode();
     hash = (37 * hash) + DOCKER_REGISTRY_FIELD_NUMBER;
     hash = (53 * hash) + dockerRegistry_;
+    hash = (37 * hash) + BUILD_SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getBuildServiceAccount().hashCode();
     switch (sourceCodeCase_) {
       case 3:
         hash = (37 * hash) + SOURCE_ARCHIVE_URL_FIELD_NUMBER;
@@ -4685,6 +4714,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       if (onDeployUpdatePolicyBuilder_ != null) {
         onDeployUpdatePolicyBuilder_.clear();
       }
+      buildServiceAccount_ = "";
       sourceCodeCase_ = 0;
       sourceCode_ = null;
       triggerCase_ = 0;
@@ -4842,6 +4872,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       if (((from_bitField1_ & 0x00000001) != 0)) {
         result.dockerRegistry_ = dockerRegistry_;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.buildServiceAccount_ = buildServiceAccount_;
       }
     }
 
@@ -5069,6 +5102,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.dockerRegistry_ != 0) {
         setDockerRegistryValue(other.getDockerRegistryValue());
+      }
+      if (!other.getBuildServiceAccount().isEmpty()) {
+        buildServiceAccount_ = other.buildServiceAccount_;
+        bitField1_ |= 0x00000008;
+        onChanged();
       }
       switch (other.getSourceCodeCase()) {
         case SOURCE_ARCHIVE_URL:
@@ -5405,6 +5443,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
                 runtimeUpdatePolicyCase_ = 41;
                 break;
               } // case 330
+            case 346:
+              {
+                buildServiceAccount_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10208,12 +10252,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. If specified, deployments will use
-     * Artifact Registry. If unspecified and the deployment is eligible to use
-     * Artifact Registry, GCF will create and use a repository named
-     * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * User-managed repository created in Artifact Registry to which the
+     * function's Docker image will be pushed after it is built by Cloud Build.
+     * May optionally be encrypted with a customer-managed encryption key (CMEK).
+     * If unspecified and `docker_registry` is not explicitly set to
+     * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+     * repository named 'gcf-artifacts' in the region.
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -10242,12 +10286,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. If specified, deployments will use
-     * Artifact Registry. If unspecified and the deployment is eligible to use
-     * Artifact Registry, GCF will create and use a repository named
-     * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * User-managed repository created in Artifact Registry to which the
+     * function's Docker image will be pushed after it is built by Cloud Build.
+     * May optionally be encrypted with a customer-managed encryption key (CMEK).
+     * If unspecified and `docker_registry` is not explicitly set to
+     * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+     * repository named 'gcf-artifacts' in the region.
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -10276,12 +10320,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. If specified, deployments will use
-     * Artifact Registry. If unspecified and the deployment is eligible to use
-     * Artifact Registry, GCF will create and use a repository named
-     * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * User-managed repository created in Artifact Registry to which the
+     * function's Docker image will be pushed after it is built by Cloud Build.
+     * May optionally be encrypted with a customer-managed encryption key (CMEK).
+     * If unspecified and `docker_registry` is not explicitly set to
+     * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+     * repository named 'gcf-artifacts' in the region.
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -10309,12 +10353,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. If specified, deployments will use
-     * Artifact Registry. If unspecified and the deployment is eligible to use
-     * Artifact Registry, GCF will create and use a repository named
-     * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * User-managed repository created in Artifact Registry to which the
+     * function's Docker image will be pushed after it is built by Cloud Build.
+     * May optionally be encrypted with a customer-managed encryption key (CMEK).
+     * If unspecified and `docker_registry` is not explicitly set to
+     * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+     * repository named 'gcf-artifacts' in the region.
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -10338,12 +10382,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. If specified, deployments will use
-     * Artifact Registry. If unspecified and the deployment is eligible to use
-     * Artifact Registry, GCF will create and use a repository named
-     * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * User-managed repository created in Artifact Registry to which the
+     * function's Docker image will be pushed after it is built by Cloud Build.
+     * May optionally be encrypted with a customer-managed encryption key (CMEK).
+     * If unspecified and `docker_registry` is not explicitly set to
+     * `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry
+     * repository named 'gcf-artifacts' in the region.
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
@@ -10488,12 +10532,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicyOrBuilder>
         automaticUpdatePolicyBuilder_;
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10505,12 +10543,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return runtimeUpdatePolicyCase_ == 40;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10536,12 +10568,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10561,12 +10587,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10583,12 +10603,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10621,12 +10635,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10648,12 +10656,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10663,12 +10665,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getAutomaticUpdatePolicyFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10688,12 +10684,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
      * </code>
@@ -10731,12 +10721,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicyOrBuilder>
         onDeployUpdatePolicyBuilder_;
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10748,12 +10732,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return runtimeUpdatePolicyCase_ == 41;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10779,12 +10757,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10804,12 +10776,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10826,12 +10792,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10864,12 +10824,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10891,12 +10845,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10906,12 +10854,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getOnDeployUpdatePolicyFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10931,12 +10873,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * See the comment next to this message for more details.
-     * </pre>
-     *
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
      * </code>
@@ -10965,6 +10901,122 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 41;
       onChanged();
       return onDeployUpdatePolicyBuilder_;
+    }
+
+    private java.lang.Object buildServiceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A service account the user provides for use with Cloud Build. The format of
+     * this field is
+     * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string build_service_account = 43;</code>
+     *
+     * @return The buildServiceAccount.
+     */
+    public java.lang.String getBuildServiceAccount() {
+      java.lang.Object ref = buildServiceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buildServiceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A service account the user provides for use with Cloud Build. The format of
+     * this field is
+     * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string build_service_account = 43;</code>
+     *
+     * @return The bytes for buildServiceAccount.
+     */
+    public com.google.protobuf.ByteString getBuildServiceAccountBytes() {
+      java.lang.Object ref = buildServiceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        buildServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A service account the user provides for use with Cloud Build. The format of
+     * this field is
+     * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string build_service_account = 43;</code>
+     *
+     * @param value The buildServiceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      buildServiceAccount_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A service account the user provides for use with Cloud Build. The format of
+     * this field is
+     * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string build_service_account = 43;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBuildServiceAccount() {
+      buildServiceAccount_ = getDefaultInstance().getBuildServiceAccount();
+      bitField1_ = (bitField1_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A service account the user provides for use with Cloud Build. The format of
+     * this field is
+     * `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string build_service_account = 43;</code>
+     *
+     * @param value The bytes for buildServiceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      buildServiceAccount_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

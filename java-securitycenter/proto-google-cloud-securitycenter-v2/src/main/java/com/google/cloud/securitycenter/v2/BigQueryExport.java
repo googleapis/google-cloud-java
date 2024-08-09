@@ -77,7 +77,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relative resource name of this export. See:
+   * Identifier. The relative resource name of this export. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
    * The following list shows some examples:
    *
@@ -91,7 +91,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * requests.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -111,7 +111,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relative resource name of this export. See:
+   * Identifier. The relative resource name of this export. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
    * The following list shows some examples:
    *
@@ -125,7 +125,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * requests.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -292,7 +292,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The dataset to write findings' updates to. Its format is
    * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-   * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+   * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
    * (0-9), or underscores (_).
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The dataset to write findings' updates to. Its format is
    * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-   * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+   * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
    * (0-9), or underscores (_).
    * </pre>
    *
@@ -1100,7 +1100,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this export. See:
+     * Identifier. The relative resource name of this export. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
      * The following list shows some examples:
      *
@@ -1114,7 +1114,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * requests.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1133,7 +1133,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this export. See:
+     * Identifier. The relative resource name of this export. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
      * The following list shows some examples:
      *
@@ -1147,7 +1147,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * requests.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1166,7 +1166,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this export. See:
+     * Identifier. The relative resource name of this export. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
      * The following list shows some examples:
      *
@@ -1180,7 +1180,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * requests.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1198,7 +1198,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this export. See:
+     * Identifier. The relative resource name of this export. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
      * The following list shows some examples:
      *
@@ -1212,7 +1212,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * requests.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1226,7 +1226,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this export. See:
+     * Identifier. The relative resource name of this export. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
      * The following list shows some examples:
      *
@@ -1240,7 +1240,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * requests.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1570,7 +1570,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset to write findings' updates to. Its format is
      * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-     * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+     * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
      * (0-9), or underscores (_).
      * </pre>
      *
@@ -1595,7 +1595,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset to write findings' updates to. Its format is
      * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-     * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+     * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
      * (0-9), or underscores (_).
      * </pre>
      *
@@ -1620,7 +1620,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset to write findings' updates to. Its format is
      * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-     * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+     * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
      * (0-9), or underscores (_).
      * </pre>
      *
@@ -1644,7 +1644,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset to write findings' updates to. Its format is
      * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-     * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+     * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
      * (0-9), or underscores (_).
      * </pre>
      *
@@ -1664,7 +1664,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset to write findings' updates to. Its format is
      * "projects/[project_id]/datasets/[bigquery_dataset_id]".
-     * BigQuery Dataset unique ID  must contain only letters (a-z, A-Z), numbers
+     * BigQuery dataset unique ID  must contain only letters (a-z, A-Z), numbers
      * (0-9), or underscores (_).
      * </pre>
      *
