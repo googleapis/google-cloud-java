@@ -254,6 +254,31 @@ public interface GenerationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Seed.
+   * </pre>
+   *
+   * <code>optional int32 seed = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the seed field is set.
+   */
+  boolean hasSeed();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Seed.
+   * </pre>
+   *
+   * <code>optional int32 seed = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The seed.
+   */
+  int getSeed();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Output response mimetype of the generated candidate text.
    * Supported mimetype:
    * - `text/plain`: (default) Text output.
@@ -345,4 +370,46 @@ public interface GenerationConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SchemaOrBuilder getResponseSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Routing configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.RoutingConfig routing_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routingConfig field is set.
+   */
+  boolean hasRoutingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Routing configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.RoutingConfig routing_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routingConfig.
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.RoutingConfig getRoutingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Routing configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.RoutingConfig routing_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.RoutingConfigOrBuilder
+      getRoutingConfigOrBuilder();
 }

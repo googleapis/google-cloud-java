@@ -121,6 +121,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -177,6 +179,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -233,6 +237,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -293,6 +299,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -353,6 +361,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -398,6 +408,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -531,6 +543,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -763,6 +777,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -821,6 +837,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -879,6 +897,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -941,6 +961,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1003,6 +1025,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1052,6 +1076,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1187,6 +1213,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 

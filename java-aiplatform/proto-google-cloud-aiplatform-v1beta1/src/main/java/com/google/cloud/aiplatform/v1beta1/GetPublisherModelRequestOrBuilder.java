@@ -126,4 +126,29 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The isHuggingFaceModel.
    */
   boolean getIsHuggingFaceModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Token used to access Hugging Face gated models.
+   * </pre>
+   *
+   * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The huggingFaceToken.
+   */
+  java.lang.String getHuggingFaceToken();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Token used to access Hugging Face gated models.
+   * </pre>
+   *
+   * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for huggingFaceToken.
+   */
+  com.google.protobuf.ByteString getHuggingFaceTokenBytes();
 }

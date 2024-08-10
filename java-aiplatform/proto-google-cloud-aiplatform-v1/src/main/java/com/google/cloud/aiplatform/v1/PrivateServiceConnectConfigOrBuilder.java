@@ -91,4 +91,33 @@ public interface PrivateServiceConnectConfigOrBuilder
    * @return The bytes of the projectAllowlist at the given index.
    */
   com.google.protobuf.ByteString getProjectAllowlistBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the generated service attachment resource.
+   * This is only populated if the endpoint is deployed with
+   * PrivateServiceConnect.
+   * </pre>
+   *
+   * <code>string service_attachment = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAttachment.
+   */
+  java.lang.String getServiceAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the generated service attachment resource.
+   * This is only populated if the endpoint is deployed with
+   * PrivateServiceConnect.
+   * </pre>
+   *
+   * <code>string service_attachment = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAttachment.
+   */
+  com.google.protobuf.ByteString getServiceAttachmentBytes();
 }

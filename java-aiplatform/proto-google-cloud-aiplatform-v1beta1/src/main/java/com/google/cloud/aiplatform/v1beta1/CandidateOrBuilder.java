@@ -82,6 +82,19 @@ public interface CandidateOrBuilder
    *
    *
    * <pre>
+   * Output only. Average log probability score of the candidate.
+   * </pre>
+   *
+   * <code>double avg_logprobs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The avgLogprobs.
+   */
+  double getAvgLogprobs();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The reason why the model stopped generating tokens.
    * If empty, the model has not stopped generating the tokens.
    * </pre>

@@ -90,7 +90,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Natural stop point of the model or provided stop sequence.
+     * Token generation reached a natural stopping point or a configured stop
+     * sequence.
      * </pre>
      *
      * <code>STOP = 1;</code>
@@ -100,7 +101,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum number of tokens as specified in the request was reached.
+     * Token generation reached the configured maximum output tokens.
      * </pre>
      *
      * <code>MAX_TOKENS = 2;</code>
@@ -110,9 +111,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for safety
-     * reasons. NOTE: When streaming the Candidate.content will be empty if
-     * content filters blocked the output.
+     * Token generation stopped because the content potentially contains safety
+     * violations. NOTE: When streaming,
+     * [content][google.cloud.aiplatform.v1.Candidate.content] is empty if
+     * content filters blocks the output.
      * </pre>
      *
      * <code>SAFETY = 3;</code>
@@ -122,8 +124,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * unauthorized citations.
+     * Token generation stopped because the content potentially contains
+     * copyright violations.
      * </pre>
      *
      * <code>RECITATION = 4;</code>
@@ -133,7 +135,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * All other reasons that stopped the token generation
+     * All other reasons that stopped the token generation.
      * </pre>
      *
      * <code>OTHER = 5;</code>
@@ -143,8 +145,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for the
-     * terms which are included from the terminology blocklist.
+     * Token generation stopped because the content contains forbidden terms.
      * </pre>
      *
      * <code>BLOCKLIST = 6;</code>
@@ -154,8 +155,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * the prohibited contents.
+     * Token generation stopped for potentially containing prohibited content.
      * </pre>
      *
      * <code>PROHIBITED_CONTENT = 7;</code>
@@ -165,8 +165,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * Sensitive Personally Identifiable Information (SPII) contents.
+     * Token generation stopped because the content potentially contains
+     * Sensitive Personally Identifiable Information (SPII).
      * </pre>
      *
      * <code>SPII = 8;</code>
@@ -199,7 +199,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Natural stop point of the model or provided stop sequence.
+     * Token generation reached a natural stopping point or a configured stop
+     * sequence.
      * </pre>
      *
      * <code>STOP = 1;</code>
@@ -209,7 +210,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum number of tokens as specified in the request was reached.
+     * Token generation reached the configured maximum output tokens.
      * </pre>
      *
      * <code>MAX_TOKENS = 2;</code>
@@ -219,9 +220,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for safety
-     * reasons. NOTE: When streaming the Candidate.content will be empty if
-     * content filters blocked the output.
+     * Token generation stopped because the content potentially contains safety
+     * violations. NOTE: When streaming,
+     * [content][google.cloud.aiplatform.v1.Candidate.content] is empty if
+     * content filters blocks the output.
      * </pre>
      *
      * <code>SAFETY = 3;</code>
@@ -231,8 +233,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * unauthorized citations.
+     * Token generation stopped because the content potentially contains
+     * copyright violations.
      * </pre>
      *
      * <code>RECITATION = 4;</code>
@@ -242,7 +244,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * All other reasons that stopped the token generation
+     * All other reasons that stopped the token generation.
      * </pre>
      *
      * <code>OTHER = 5;</code>
@@ -252,8 +254,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for the
-     * terms which are included from the terminology blocklist.
+     * Token generation stopped because the content contains forbidden terms.
      * </pre>
      *
      * <code>BLOCKLIST = 6;</code>
@@ -263,8 +264,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * the prohibited contents.
+     * Token generation stopped for potentially containing prohibited content.
      * </pre>
      *
      * <code>PROHIBITED_CONTENT = 7;</code>
@@ -274,8 +274,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The token generation was stopped as the response was flagged for
-     * Sensitive Personally Identifiable Information (SPII) contents.
+     * Token generation stopped because the content potentially contains
+     * Sensitive Personally Identifiable Information (SPII).
      * </pre>
      *
      * <code>SPII = 8;</code>
@@ -480,6 +480,24 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getScore() {
     return score_;
+  }
+
+  public static final int AVG_LOGPROBS_FIELD_NUMBER = 9;
+  private double avgLogprobs_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Average log probability score of the candidate.
+   * </pre>
+   *
+   * <code>double avg_logprobs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The avgLogprobs.
+   */
+  @java.lang.Override
+  public double getAvgLogprobs() {
+    return avgLogprobs_;
   }
 
   public static final int FINISH_REASON_FIELD_NUMBER = 3;
@@ -837,6 +855,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       output.writeDouble(8, score_);
     }
+    if (java.lang.Double.doubleToRawLongBits(avgLogprobs_) != 0) {
+      output.writeDouble(9, avgLogprobs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -872,6 +893,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, score_);
     }
+    if (java.lang.Double.doubleToRawLongBits(avgLogprobs_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, avgLogprobs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -894,6 +918,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
     if (java.lang.Double.doubleToLongBits(getScore())
         != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+    if (java.lang.Double.doubleToLongBits(getAvgLogprobs())
+        != java.lang.Double.doubleToLongBits(other.getAvgLogprobs())) return false;
     if (finishReason_ != other.finishReason_) return false;
     if (!getSafetyRatingsList().equals(other.getSafetyRatingsList())) return false;
     if (hasFinishMessage() != other.hasFinishMessage()) return false;
@@ -929,6 +955,11 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getScore()));
+    hash = (37 * hash) + AVG_LOGPROBS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getAvgLogprobs()));
     hash = (37 * hash) + FINISH_REASON_FIELD_NUMBER;
     hash = (53 * hash) + finishReason_;
     if (getSafetyRatingsCount() > 0) {
@@ -1105,6 +1136,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         contentBuilder_ = null;
       }
       score_ = 0D;
+      avgLogprobs_ = 0D;
       finishReason_ = 0;
       if (safetyRatingsBuilder_ == null) {
         safetyRatings_ = java.util.Collections.emptyList();
@@ -1112,7 +1144,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         safetyRatings_ = null;
         safetyRatingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       finishMessage_ = "";
       citationMetadata_ = null;
       if (citationMetadataBuilder_ != null) {
@@ -1161,9 +1193,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.Candidate result) {
       if (safetyRatingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           safetyRatings_ = java.util.Collections.unmodifiableList(safetyRatings_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.safetyRatings_ = safetyRatings_;
       } else {
@@ -1185,18 +1217,21 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         result.score_ = score_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.avgLogprobs_ = avgLogprobs_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.finishReason_ = finishReason_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.finishMessage_ = finishMessage_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.citationMetadata_ =
             citationMetadataBuilder_ == null ? citationMetadata_ : citationMetadataBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.groundingMetadata_ =
             groundingMetadataBuilder_ == null
                 ? groundingMetadata_
@@ -1260,6 +1295,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (other.getScore() != 0D) {
         setScore(other.getScore());
       }
+      if (other.getAvgLogprobs() != 0D) {
+        setAvgLogprobs(other.getAvgLogprobs());
+      }
       if (other.finishReason_ != 0) {
         setFinishReasonValue(other.getFinishReasonValue());
       }
@@ -1267,7 +1305,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         if (!other.safetyRatings_.isEmpty()) {
           if (safetyRatings_.isEmpty()) {
             safetyRatings_ = other.safetyRatings_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureSafetyRatingsIsMutable();
             safetyRatings_.addAll(other.safetyRatings_);
@@ -1280,7 +1318,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             safetyRatingsBuilder_.dispose();
             safetyRatingsBuilder_ = null;
             safetyRatings_ = other.safetyRatings_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             safetyRatingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSafetyRatingsFieldBuilder()
@@ -1292,7 +1330,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFinishMessage()) {
         finishMessage_ = other.finishMessage_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCitationMetadata()) {
@@ -1342,7 +1380,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 finishReason_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 34:
@@ -1361,21 +1399,21 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 finishMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getCitationMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getGroundingMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 65:
@@ -1384,6 +1422,12 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 65
+            case 73:
+              {
+                avgLogprobs_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 73
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1712,6 +1756,59 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private double avgLogprobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Average log probability score of the candidate.
+     * </pre>
+     *
+     * <code>double avg_logprobs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The avgLogprobs.
+     */
+    @java.lang.Override
+    public double getAvgLogprobs() {
+      return avgLogprobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Average log probability score of the candidate.
+     * </pre>
+     *
+     * <code>double avg_logprobs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The avgLogprobs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvgLogprobs(double value) {
+
+      avgLogprobs_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Average log probability score of the candidate.
+     * </pre>
+     *
+     * <code>double avg_logprobs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvgLogprobs() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      avgLogprobs_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private int finishReason_ = 0;
     /**
      *
@@ -1748,7 +1845,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setFinishReasonValue(int value) {
       finishReason_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1793,7 +1890,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       finishReason_ = value.getNumber();
       onChanged();
       return this;
@@ -1813,7 +1910,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFinishReason() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       finishReason_ = 0;
       onChanged();
       return this;
@@ -1823,10 +1920,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSafetyRatingsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         safetyRatings_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.SafetyRating>(safetyRatings_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2086,7 +2183,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSafetyRatings() {
       if (safetyRatingsBuilder_ == null) {
         safetyRatings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         safetyRatingsBuilder_.clear();
@@ -2238,7 +2335,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.SafetyRating.Builder,
                 com.google.cloud.aiplatform.v1.SafetyRatingOrBuilder>(
                 safetyRatings_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         safetyRatings_ = null;
@@ -2260,7 +2357,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the finishMessage field is set.
      */
     public boolean hasFinishMessage() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2326,7 +2423,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       finishMessage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2344,7 +2441,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFinishMessage() {
       finishMessage_ = getDefaultInstance().getFinishMessage();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2367,7 +2464,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       finishMessage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2392,7 +2489,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the citationMetadata field is set.
      */
     public boolean hasCitationMetadata() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2436,7 +2533,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         citationMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2458,7 +2555,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         citationMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2475,7 +2572,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCitationMetadata(com.google.cloud.aiplatform.v1.CitationMetadata value) {
       if (citationMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && citationMetadata_ != null
             && citationMetadata_
                 != com.google.cloud.aiplatform.v1.CitationMetadata.getDefaultInstance()) {
@@ -2487,7 +2584,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         citationMetadataBuilder_.mergeFrom(value);
       }
       if (citationMetadata_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2504,7 +2601,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCitationMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       citationMetadata_ = null;
       if (citationMetadataBuilder_ != null) {
         citationMetadataBuilder_.dispose();
@@ -2525,7 +2622,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.CitationMetadata.Builder getCitationMetadataBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCitationMetadataFieldBuilder().getBuilder();
     }
@@ -2597,7 +2694,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the groundingMetadata field is set.
      */
     public boolean hasGroundingMetadata() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2641,7 +2738,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         groundingMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2663,7 +2760,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         groundingMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2680,7 +2777,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGroundingMetadata(com.google.cloud.aiplatform.v1.GroundingMetadata value) {
       if (groundingMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && groundingMetadata_ != null
             && groundingMetadata_
                 != com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()) {
@@ -2692,7 +2789,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         groundingMetadataBuilder_.mergeFrom(value);
       }
       if (groundingMetadata_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2709,7 +2806,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGroundingMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       groundingMetadata_ = null;
       if (groundingMetadataBuilder_ != null) {
         groundingMetadataBuilder_.dispose();
@@ -2730,7 +2827,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.GroundingMetadata.Builder getGroundingMetadataBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getGroundingMetadataFieldBuilder().getBuilder();
     }

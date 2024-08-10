@@ -121,6 +121,8 @@ public class DeploymentResourcePoolServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -189,6 +191,8 @@ public class DeploymentResourcePoolServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -257,6 +261,8 @@ public class DeploymentResourcePoolServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDeploymentResourcePoolService.addResponse(expectedResponse);
 
@@ -306,6 +312,8 @@ public class DeploymentResourcePoolServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDeploymentResourcePoolService.addResponse(expectedResponse);
 
@@ -445,6 +453,8 @@ public class DeploymentResourcePoolServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

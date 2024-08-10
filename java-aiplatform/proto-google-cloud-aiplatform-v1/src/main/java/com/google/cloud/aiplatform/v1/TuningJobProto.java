@@ -120,7 +120,7 @@ public final class TuningJobProto {
           + "d.aiplatform.v1.SupervisedTuningDatasetD"
           + "istribution.DatasetBucketB\003\340A\003\032J\n\rDatase"
           + "tBucket\022\022\n\005count\030\001 \001(\001B\003\340A\003\022\021\n\004left\030\002 \001("
-          + "\001B\003\340A\003\022\022\n\005right\030\003 \001(\001B\003\340A\003\"\202\005\n\031Supervise"
+          + "\001B\003\340A\003\022\022\n\005right\030\003 \001(\001B\003\340A\003\"\314\005\n\031Supervise"
           + "dTuningDataStats\022)\n\034tuning_dataset_examp"
           + "le_count\030\001 \001(\003B\003\340A\003\022)\n\034total_tuning_char"
           + "acter_count\030\002 \001(\003B\003\340A\003\022-\n\036total_billable"
@@ -136,29 +136,31 @@ public final class TuningJobProto {
           + "on\030\007 \001(\0132?.google.cloud.aiplatform.v1.Su"
           + "pervisedTuningDatasetDistributionB\003\340A\003\022G"
           + "\n\025user_dataset_examples\030\010 \003(\0132#.google.c"
-          + "loud.aiplatform.v1.ContentB\003\340A\003\"\205\001\n\017Tuni"
-          + "ngDataStats\022]\n\034supervised_tuning_data_st"
-          + "ats\030\001 \001(\01325.google.cloud.aiplatform.v1.S"
-          + "upervisedTuningDataStatsH\000B\023\n\021tuning_dat"
-          + "a_stats\"\307\002\n\031SupervisedHyperParameters\022\030\n"
-          + "\013epoch_count\030\001 \001(\003B\003\340A\001\022%\n\030learning_rate"
-          + "_multiplier\030\002 \001(\001B\003\340A\001\022\\\n\014adapter_size\030\003"
-          + " \001(\0162A.google.cloud.aiplatform.v1.Superv"
-          + "isedHyperParameters.AdapterSizeB\003\340A\001\"\212\001\n"
-          + "\013AdapterSize\022\034\n\030ADAPTER_SIZE_UNSPECIFIED"
-          + "\020\000\022\024\n\020ADAPTER_SIZE_ONE\020\001\022\025\n\021ADAPTER_SIZE"
-          + "_FOUR\020\002\022\026\n\022ADAPTER_SIZE_EIGHT\020\003\022\030\n\024ADAPT"
-          + "ER_SIZE_SIXTEEN\020\004\"\264\001\n\024SupervisedTuningSp"
-          + "ec\022!\n\024training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n"
-          + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022T\n\020hy"
-          + "per_parameters\030\003 \001(\01325.google.cloud.aipl"
-          + "atform.v1.SupervisedHyperParametersB\003\340A\001"
-          + "B\314\001\n\036com.google.cloud.aiplatform.v1B\016Tun"
-          + "ingJobProtoP\001Z>cloud.google.com/go/aipla"
-          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
-          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
-          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
-          + "orm::V1b\006proto3"
+          + "loud.aiplatform.v1.ContentB\003\340A\003\022%\n\035total"
+          + "_truncated_example_count\030\n \001(\003\022!\n\031trunca"
+          + "ted_example_indices\030\013 \003(\003\"\205\001\n\017TuningData"
+          + "Stats\022]\n\034supervised_tuning_data_stats\030\001 "
+          + "\001(\01325.google.cloud.aiplatform.v1.Supervi"
+          + "sedTuningDataStatsH\000B\023\n\021tuning_data_stat"
+          + "s\"\307\002\n\031SupervisedHyperParameters\022\030\n\013epoch"
+          + "_count\030\001 \001(\003B\003\340A\001\022%\n\030learning_rate_multi"
+          + "plier\030\002 \001(\001B\003\340A\001\022\\\n\014adapter_size\030\003 \001(\0162A"
+          + ".google.cloud.aiplatform.v1.SupervisedHy"
+          + "perParameters.AdapterSizeB\003\340A\001\"\212\001\n\013Adapt"
+          + "erSize\022\034\n\030ADAPTER_SIZE_UNSPECIFIED\020\000\022\024\n\020"
+          + "ADAPTER_SIZE_ONE\020\001\022\025\n\021ADAPTER_SIZE_FOUR\020"
+          + "\002\022\026\n\022ADAPTER_SIZE_EIGHT\020\003\022\030\n\024ADAPTER_SIZ"
+          + "E_SIXTEEN\020\004\"\264\001\n\024SupervisedTuningSpec\022!\n\024"
+          + "training_dataset_uri\030\001 \001(\tB\003\340A\002\022#\n\026valid"
+          + "ation_dataset_uri\030\002 \001(\tB\003\340A\001\022T\n\020hyper_pa"
+          + "rameters\030\003 \001(\01325.google.cloud.aiplatform"
+          + ".v1.SupervisedHyperParametersB\003\340A\001B\314\001\n\036c"
+          + "om.google.cloud.aiplatform.v1B\016TuningJob"
+          + "ProtoP\001Z>cloud.google.com/go/aiplatform/"
+          + "apiv1/aiplatformpb;aiplatformpb\252\002\032Google"
+          + ".Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPl"
+          + "atform\\V1\352\002\035Google::Cloud::AIPlatform::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -246,6 +248,8 @@ public final class TuningJobProto {
               "UserOutputTokenDistribution",
               "UserMessagePerExampleDistribution",
               "UserDatasetExamples",
+              "TotalTruncatedExampleCount",
+              "TruncatedExampleIndices",
             });
     internal_static_google_cloud_aiplatform_v1_TuningDataStats_descriptor =
         getDescriptor().getMessageTypes().get(4);

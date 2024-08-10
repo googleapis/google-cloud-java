@@ -52,24 +52,25 @@ public final class ServiceNetworkingProto {
       "\n8google/cloud/aiplatform/v1beta1/servic"
           + "e_networking.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\"e\n\033Priva"
-          + "teServiceConnectConfig\022+\n\036enable_private"
-          + "_service_connect\030\001 \001(\010B\003\340A\002\022\031\n\021project_a"
-          + "llowlist\030\002 \003(\t\"S\n\025PscAutomatedEndpoints\022"
-          + "\022\n\nproject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\r"
-          + "match_address\030\003 \001(\t\"b\n\022PscInterfaceConfi"
-          + "g\022L\n\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n(c"
-          + "ompute.googleapis.com/NetworkAttachmentB"
-          + "\346\002\n#com.google.cloud.aiplatform.v1beta1B"
-          + "\026ServiceNetworkingProtoP\001ZCcloud.google."
-          + "com/go/aiplatform/apiv1beta1/aiplatformp"
-          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1\352"
-          + "Av\n(compute.googleapis.com/NetworkAttach"
-          + "ment\022Jprojects/{project}/regions/{region"
-          + "}/networkAttachments/{networkattachment}"
-          + "b\006proto3"
+          + "roto\032\031google/api/resource.proto\"\206\001\n\033Priv"
+          + "ateServiceConnectConfig\022+\n\036enable_privat"
+          + "e_service_connect\030\001 \001(\010B\003\340A\002\022\031\n\021project_"
+          + "allowlist\030\002 \003(\t\022\037\n\022service_attachment\030\005 "
+          + "\001(\tB\003\340A\003\"S\n\025PscAutomatedEndpoints\022\022\n\npro"
+          + "ject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rmatch_"
+          + "address\030\003 \001(\t\"b\n\022PscInterfaceConfig\022L\n\022n"
+          + "etwork_attachment\030\001 \001(\tB0\340A\001\372A*\n(compute"
+          + ".googleapis.com/NetworkAttachmentB\346\002\n#co"
+          + "m.google.cloud.aiplatform.v1beta1B\026Servi"
+          + "ceNetworkingProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1\352Av\n(co"
+          + "mpute.googleapis.com/NetworkAttachment\022J"
+          + "projects/{project}/regions/{region}/netw"
+          + "orkAttachments/{networkattachment}b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -84,7 +85,7 @@ public final class ServiceNetworkingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PrivateServiceConnectConfig_descriptor,
             new java.lang.String[] {
-              "EnablePrivateServiceConnect", "ProjectAllowlist",
+              "EnablePrivateServiceConnect", "ProjectAllowlist", "ServiceAttachment",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PscAutomatedEndpoints_descriptor =
         getDescriptor().getMessageTypes().get(1);

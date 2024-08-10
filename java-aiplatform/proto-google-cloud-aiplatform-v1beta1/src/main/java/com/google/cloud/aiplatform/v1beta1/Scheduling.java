@@ -68,8 +68,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. This determines which type of scheduling strategy to use. Right
-   * now users have two options such as ON_DEMAND which will use regular on
-   * demand resources to schedule the job, the other is LOW_COST which would
+   * now users have two options such as STANDARD which will use regular on
+   * demand resources to schedule the job, the other is SPOT which would
    * leverage spot resources alongwith regular resources to schedule
    * the job.
    * </pre>
@@ -81,7 +81,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Strategy will default to ON_DEMAND.
+     * Strategy will default to STANDARD.
      * </pre>
      *
      * <code>STRATEGY_UNSPECIFIED = 0;</code>
@@ -94,8 +94,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Regular on-demand provisioning strategy.
      * </pre>
      *
-     * <code>ON_DEMAND = 1;</code>
+     * <code>ON_DEMAND = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ON_DEMAND(1),
     /**
      *
@@ -135,7 +136,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Strategy will default to ON_DEMAND.
+     * Strategy will default to STANDARD.
      * </pre>
      *
      * <code>STRATEGY_UNSPECIFIED = 0;</code>
@@ -148,9 +149,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Regular on-demand provisioning strategy.
      * </pre>
      *
-     * <code>ON_DEMAND = 1;</code>
+     * <code>ON_DEMAND = 1 [deprecated = true];</code>
      */
-    public static final int ON_DEMAND_VALUE = 1;
+    @java.lang.Deprecated public static final int ON_DEMAND_VALUE = 1;
     /**
      *
      *

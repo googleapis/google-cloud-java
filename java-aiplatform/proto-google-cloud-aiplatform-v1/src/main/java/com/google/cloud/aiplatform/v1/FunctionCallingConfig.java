@@ -89,7 +89,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Default model behavior, model decides to predict either a function call
-     * or a natural language repspose.
+     * or a natural language response.
      * </pre>
      *
      * <code>AUTO = 1;</code>
@@ -137,7 +137,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Default model behavior, model decides to predict either a function call
-     * or a natural language repspose.
+     * or a natural language response.
      * </pre>
      *
      * <code>AUTO = 1;</code>

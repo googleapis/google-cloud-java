@@ -43,6 +43,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     name_ = "";
     languageCode_ = "";
     view_ = 0;
+    huggingFaceToken_ = "";
   }
 
   @java.lang.Override
@@ -236,6 +237,57 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     return isHuggingFaceModel_;
   }
 
+  public static final int HUGGING_FACE_TOKEN_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object huggingFaceToken_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Token used to access Hugging Face gated models.
+   * </pre>
+   *
+   * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The huggingFaceToken.
+   */
+  @java.lang.Override
+  public java.lang.String getHuggingFaceToken() {
+    java.lang.Object ref = huggingFaceToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      huggingFaceToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Token used to access Hugging Face gated models.
+   * </pre>
+   *
+   * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for huggingFaceToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHuggingFaceTokenBytes() {
+    java.lang.Object ref = huggingFaceToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      huggingFaceToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -264,6 +316,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (isHuggingFaceModel_ != false) {
       output.writeBool(5, isHuggingFaceModel_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(huggingFaceToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, huggingFaceToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -287,6 +342,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (isHuggingFaceModel_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isHuggingFaceModel_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(huggingFaceToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, huggingFaceToken_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -307,6 +365,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (view_ != other.view_) return false;
     if (getIsHuggingFaceModel() != other.getIsHuggingFaceModel()) return false;
+    if (!getHuggingFaceToken().equals(other.getHuggingFaceToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -326,6 +385,8 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + view_;
     hash = (37 * hash) + IS_HUGGING_FACE_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsHuggingFaceModel());
+    hash = (37 * hash) + HUGGING_FACE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getHuggingFaceToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -471,6 +532,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       languageCode_ = "";
       view_ = 0;
       isHuggingFaceModel_ = false;
+      huggingFaceToken_ = "";
       return this;
     }
 
@@ -518,6 +580,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.isHuggingFaceModel_ = isHuggingFaceModel_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.huggingFaceToken_ = huggingFaceToken_;
       }
     }
 
@@ -583,6 +648,11 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       if (other.getIsHuggingFaceModel() != false) {
         setIsHuggingFaceModel(other.getIsHuggingFaceModel());
       }
+      if (!other.getHuggingFaceToken().isEmpty()) {
+        huggingFaceToken_ = other.huggingFaceToken_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -633,6 +703,12 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 50:
+              {
+                huggingFaceToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1043,6 +1119,112 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     public Builder clearIsHuggingFaceModel() {
       bitField0_ = (bitField0_ & ~0x00000008);
       isHuggingFaceModel_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object huggingFaceToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Token used to access Hugging Face gated models.
+     * </pre>
+     *
+     * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The huggingFaceToken.
+     */
+    public java.lang.String getHuggingFaceToken() {
+      java.lang.Object ref = huggingFaceToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        huggingFaceToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Token used to access Hugging Face gated models.
+     * </pre>
+     *
+     * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for huggingFaceToken.
+     */
+    public com.google.protobuf.ByteString getHuggingFaceTokenBytes() {
+      java.lang.Object ref = huggingFaceToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        huggingFaceToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Token used to access Hugging Face gated models.
+     * </pre>
+     *
+     * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The huggingFaceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHuggingFaceToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      huggingFaceToken_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Token used to access Hugging Face gated models.
+     * </pre>
+     *
+     * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHuggingFaceToken() {
+      huggingFaceToken_ = getDefaultInstance().getHuggingFaceToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Token used to access Hugging Face gated models.
+     * </pre>
+     *
+     * <code>string hugging_face_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for huggingFaceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHuggingFaceTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      huggingFaceToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -75,7 +75,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the example, in form of
-   * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+   * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -99,7 +99,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name of the example, in form of
-   * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+   * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -689,7 +689,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the example, in form of
-     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -712,7 +712,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the example, in form of
-     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -735,7 +735,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the example, in form of
-     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -757,7 +757,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the example, in form of
-     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -775,7 +775,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name of the example, in form of
-     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+     * `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

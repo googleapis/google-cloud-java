@@ -287,4 +287,59 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getUserDatasetExamplesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of examples in the dataset that have been truncated by any
+   * amount.
+   * </pre>
+   *
+   * <code>int64 total_truncated_example_count = 10;</code>
+   *
+   * @return The totalTruncatedExampleCount.
+   */
+  long getTotalTruncatedExampleCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A partial sample of the indices (starting from 1) of the truncated
+   * examples.
+   * </pre>
+   *
+   * <code>repeated int64 truncated_example_indices = 11;</code>
+   *
+   * @return A list containing the truncatedExampleIndices.
+   */
+  java.util.List<java.lang.Long> getTruncatedExampleIndicesList();
+  /**
+   *
+   *
+   * <pre>
+   * A partial sample of the indices (starting from 1) of the truncated
+   * examples.
+   * </pre>
+   *
+   * <code>repeated int64 truncated_example_indices = 11;</code>
+   *
+   * @return The count of truncatedExampleIndices.
+   */
+  int getTruncatedExampleIndicesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A partial sample of the indices (starting from 1) of the truncated
+   * examples.
+   * </pre>
+   *
+   * <code>repeated int64 truncated_example_indices = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The truncatedExampleIndices at the given index.
+   */
+  long getTruncatedExampleIndices(int index);
 }

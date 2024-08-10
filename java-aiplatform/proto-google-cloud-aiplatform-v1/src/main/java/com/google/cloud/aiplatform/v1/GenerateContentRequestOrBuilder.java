@@ -28,9 +28,14 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
-   * prediction. Format:
+   * Required. The fully qualified name of the publisher model or tuned model
+   * endpoint to use.
+   *
+   * Publisher model format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   *
+   * Tuned model endpoint format:
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,9 +47,14 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the publisher model requested to serve the
-   * prediction. Format:
+   * Required. The fully qualified name of the publisher model or tuned model
+   * endpoint to use.
+   *
+   * Publisher model format:
    * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   *
+   * Tuned model endpoint format:
+   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = REQUIRED];</code>

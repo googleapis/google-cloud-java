@@ -1363,8 +1363,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param model Required. The name of the publisher model requested to serve the prediction.
-   *     Format: `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   * @param model Required. The fully qualified name of the publisher model or tuned model endpoint
+   *     to use.
+   *     <p>Publisher model format:
+   *     `projects/{project}/locations/{location}/publishers/&#42;/models/&#42;`
+   *     <p>Tuned model endpoint format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param contents Required. The content of the current conversation with the model.
    *     <p>For single-turn queries, this is a single instance. For multi-turn queries, this is a
    *     repeated field that contains conversation history + latest request.

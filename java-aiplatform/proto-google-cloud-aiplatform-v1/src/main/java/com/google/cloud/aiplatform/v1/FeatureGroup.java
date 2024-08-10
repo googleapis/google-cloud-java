@@ -180,6 +180,60 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the entityIdColumns at the given index.
      */
     com.google.protobuf.ByteString getEntityIdColumnsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timeSeries field is set.
+     */
+    boolean hasTimeSeries();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timeSeries.
+     */
+    com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries getTimeSeries();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder
+        getTimeSeriesOrBuilder();
   }
   /**
    *
@@ -223,6 +277,671 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.class,
               com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.Builder.class);
+    }
+
+    public interface TimeSeriesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column hosting timestamp values for a time-series source.
+       * Will be used to determine the latest `feature_values` for each entity.
+       * Optional. If not provided, column named `feature_timestamp` of
+       * type `TIMESTAMP` will be used.
+       * </pre>
+       *
+       * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The timestampColumn.
+       */
+      java.lang.String getTimestampColumn();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column hosting timestamp values for a time-series source.
+       * Will be used to determine the latest `feature_values` for each entity.
+       * Optional. If not provided, column named `feature_timestamp` of
+       * type `TIMESTAMP` will be used.
+       * </pre>
+       *
+       * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for timestampColumn.
+       */
+      com.google.protobuf.ByteString getTimestampColumnBytes();
+    }
+    /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries} */
+    public static final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
+        TimeSeriesOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TimeSeries.newBuilder() to construct.
+      private TimeSeries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TimeSeries() {
+        timestampColumn_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TimeSeries();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.FeatureGroupProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.FeatureGroupProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.class,
+                com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder.class);
+      }
+
+      public static final int TIMESTAMP_COLUMN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object timestampColumn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column hosting timestamp values for a time-series source.
+       * Will be used to determine the latest `feature_values` for each entity.
+       * Optional. If not provided, column named `feature_timestamp` of
+       * type `TIMESTAMP` will be used.
+       * </pre>
+       *
+       * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The timestampColumn.
+       */
+      @java.lang.Override
+      public java.lang.String getTimestampColumn() {
+        java.lang.Object ref = timestampColumn_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          timestampColumn_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column hosting timestamp values for a time-series source.
+       * Will be used to determine the latest `feature_values` for each entity.
+       * Optional. If not provided, column named `feature_timestamp` of
+       * type `TIMESTAMP` will be used.
+       * </pre>
+       *
+       * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for timestampColumn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTimestampColumnBytes() {
+        java.lang.Object ref = timestampColumn_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          timestampColumn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestampColumn_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timestampColumn_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestampColumn_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timestampColumn_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries other =
+            (com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries) obj;
+
+        if (!getTimestampColumn().equals(other.getTimestampColumn())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TIMESTAMP_COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestampColumn().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries} */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.FeatureGroupProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.FeatureGroupProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.class,
+                  com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          timestampColumn_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.FeatureGroupProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureGroup_BigQuery_TimeSeries_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries build() {
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries buildPartial() {
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries result =
+              new com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.timestampColumn_ = timestampColumn_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+                  .getDefaultInstance()) return this;
+          if (!other.getTimestampColumn().isEmpty()) {
+            timestampColumn_ = other.timestampColumn_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    timestampColumn_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object timestampColumn_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Column hosting timestamp values for a time-series source.
+         * Will be used to determine the latest `feature_values` for each entity.
+         * Optional. If not provided, column named `feature_timestamp` of
+         * type `TIMESTAMP` will be used.
+         * </pre>
+         *
+         * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The timestampColumn.
+         */
+        public java.lang.String getTimestampColumn() {
+          java.lang.Object ref = timestampColumn_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            timestampColumn_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Column hosting timestamp values for a time-series source.
+         * Will be used to determine the latest `feature_values` for each entity.
+         * Optional. If not provided, column named `feature_timestamp` of
+         * type `TIMESTAMP` will be used.
+         * </pre>
+         *
+         * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for timestampColumn.
+         */
+        public com.google.protobuf.ByteString getTimestampColumnBytes() {
+          java.lang.Object ref = timestampColumn_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            timestampColumn_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Column hosting timestamp values for a time-series source.
+         * Will be used to determine the latest `feature_values` for each entity.
+         * Optional. If not provided, column named `feature_timestamp` of
+         * type `TIMESTAMP` will be used.
+         * </pre>
+         *
+         * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The timestampColumn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTimestampColumn(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timestampColumn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Column hosting timestamp values for a time-series source.
+         * Will be used to determine the latest `feature_values` for each entity.
+         * Optional. If not provided, column named `feature_timestamp` of
+         * type `TIMESTAMP` will be used.
+         * </pre>
+         *
+         * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTimestampColumn() {
+          timestampColumn_ = getDefaultInstance().getTimestampColumn();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Column hosting timestamp values for a time-series source.
+         * Will be used to determine the latest `feature_values` for each entity.
+         * Optional. If not provided, column named `feature_timestamp` of
+         * type `TIMESTAMP` will be used.
+         * </pre>
+         *
+         * <code>string timestamp_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for timestampColumn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTimestampColumnBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          timestampColumn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries)
+      private static final com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries();
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TimeSeries> PARSER =
+          new com.google.protobuf.AbstractParser<TimeSeries>() {
+            @java.lang.Override
+            public TimeSeries parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TimeSeries> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TimeSeries> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     private int bitField0_;
@@ -353,6 +1072,75 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       return entityIdColumns_.getByteString(index);
     }
 
+    public static final int TIME_SERIES_FIELD_NUMBER = 4;
+    private com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries timeSeries_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timeSeries field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeSeries() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timeSeries.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries getTimeSeries() {
+      return timeSeries_ == null
+          ? com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.getDefaultInstance()
+          : timeSeries_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the source is a time-series source, this can be set to
+     * control how downstream sources (ex:
+     * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+     * time-series sources. If not set, will treat the source as a time-series
+     * source with `feature_timestamp` as timestamp column and no scan boundary.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder
+        getTimeSeriesOrBuilder() {
+      return timeSeries_ == null
+          ? com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.getDefaultInstance()
+          : timeSeries_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -373,6 +1161,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < entityIdColumns_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, entityIdColumns_.getRaw(i));
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getTimeSeries());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -392,6 +1183,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         }
         size += dataSize;
         size += 1 * getEntityIdColumnsList().size();
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeSeries());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -414,6 +1208,10 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         if (!getBigQuerySource().equals(other.getBigQuerySource())) return false;
       }
       if (!getEntityIdColumnsList().equals(other.getEntityIdColumnsList())) return false;
+      if (hasTimeSeries() != other.hasTimeSeries()) return false;
+      if (hasTimeSeries()) {
+        if (!getTimeSeries().equals(other.getTimeSeries())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -432,6 +1230,10 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       if (getEntityIdColumnsCount() > 0) {
         hash = (37 * hash) + ENTITY_ID_COLUMNS_FIELD_NUMBER;
         hash = (53 * hash) + getEntityIdColumnsList().hashCode();
+      }
+      if (hasTimeSeries()) {
+        hash = (37 * hash) + TIME_SERIES_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeSeries().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -577,6 +1379,7 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getBigQuerySourceFieldBuilder();
+          getTimeSeriesFieldBuilder();
         }
       }
 
@@ -590,6 +1393,11 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           bigQuerySourceBuilder_ = null;
         }
         entityIdColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        timeSeries_ = null;
+        if (timeSeriesBuilder_ != null) {
+          timeSeriesBuilder_.dispose();
+          timeSeriesBuilder_ = null;
+        }
         return this;
       }
 
@@ -635,6 +1443,11 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           entityIdColumns_.makeImmutable();
           result.entityIdColumns_ = entityIdColumns_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timeSeries_ =
+              timeSeriesBuilder_ == null ? timeSeries_ : timeSeriesBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -700,6 +1513,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (other.hasTimeSeries()) {
+          mergeTimeSeries(other.getTimeSeries());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -740,6 +1556,12 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
                   entityIdColumns_.add(s);
                   break;
                 } // case 18
+              case 34:
+                {
+                  input.readMessage(getTimeSeriesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1163,6 +1985,252 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries timeSeries_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries,
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder,
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder>
+          timeSeriesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the timeSeries field is set.
+       */
+      public boolean hasTimeSeries() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The timeSeries.
+       */
+      public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries getTimeSeries() {
+        if (timeSeriesBuilder_ == null) {
+          return timeSeries_ == null
+              ? com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.getDefaultInstance()
+              : timeSeries_;
+        } else {
+          return timeSeriesBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTimeSeries(
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries value) {
+        if (timeSeriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeSeries_ = value;
+        } else {
+          timeSeriesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTimeSeries(
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder builderForValue) {
+        if (timeSeriesBuilder_ == null) {
+          timeSeries_ = builderForValue.build();
+        } else {
+          timeSeriesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTimeSeries(
+          com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries value) {
+        if (timeSeriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && timeSeries_ != null
+              && timeSeries_
+                  != com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries
+                      .getDefaultInstance()) {
+            getTimeSeriesBuilder().mergeFrom(value);
+          } else {
+            timeSeries_ = value;
+          }
+        } else {
+          timeSeriesBuilder_.mergeFrom(value);
+        }
+        if (timeSeries_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTimeSeries() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timeSeries_ = null;
+        if (timeSeriesBuilder_ != null) {
+          timeSeriesBuilder_.dispose();
+          timeSeriesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder
+          getTimeSeriesBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getTimeSeriesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder
+          getTimeSeriesOrBuilder() {
+        if (timeSeriesBuilder_ != null) {
+          return timeSeriesBuilder_.getMessageOrBuilder();
+        } else {
+          return timeSeries_ == null
+              ? com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.getDefaultInstance()
+              : timeSeries_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the source is a time-series source, this can be set to
+       * control how downstream sources (ex:
+       * [FeatureView][google.cloud.aiplatform.v1.FeatureView] ) will treat
+       * time-series sources. If not set, will treat the source as a time-series
+       * source with `feature_timestamp` as timestamp column and no scan boundary.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries time_series = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries,
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder,
+              com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder>
+          getTimeSeriesFieldBuilder() {
+        if (timeSeriesBuilder_ == null) {
+          timeSeriesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries,
+                  com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeries.Builder,
+                  com.google.cloud.aiplatform.v1.FeatureGroup.BigQuery.TimeSeriesOrBuilder>(
+                  getTimeSeries(), getParentForChildren(), isClean());
+          timeSeries_ = null;
+        }
+        return timeSeriesBuilder_;
       }
 
       @java.lang.Override

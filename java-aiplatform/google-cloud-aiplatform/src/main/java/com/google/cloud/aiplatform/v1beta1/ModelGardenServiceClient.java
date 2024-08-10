@@ -353,6 +353,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
    *           .setIsHuggingFaceModel(true)
+   *           .setHuggingFaceToken("huggingFaceToken74062599")
    *           .build();
    *   PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
    * }
@@ -384,6 +385,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
    *           .setIsHuggingFaceModel(true)
+   *           .setHuggingFaceToken("huggingFaceToken74062599")
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.getPublisherModelCallable().futureCall(request);
