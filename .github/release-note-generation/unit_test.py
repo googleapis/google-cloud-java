@@ -2,7 +2,7 @@ import unittest
 
 # Unit tests for split_release_note.py
 
-from split_release_note import LibraryModule, create_changelog_entry, group_changes_by_api
+from split_release_note import LibraryModule, create_changelog_entry, group_changes_by_api, ChangesOnApi
 from pathlib import Path
 
 dummy_module = LibraryModule(
@@ -14,12 +14,16 @@ dummy_module = LibraryModule(
 class TestCase(unittest.TestCase):
 
     def test_create_changelog_entry(self):
+        changes = ChangesOnApi(
+            features=['Add support for disabling Pod overprovisioning',
+                      'Enhanced query generation performance'],
+            dependency_upgrades=[
+                'update google-cloud-shared-dependencies to 1.2.3']
+        )
         entry = create_changelog_entry(
             '2023-06-10',
             dummy_module,
-            ['Add support for disabling Pod overprovisioning',
-             'Enhanced query generation performance'],
-            ['update google-cloud-shared-dependencies to 1.2.3']
+            changes
         )
         self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
 
@@ -34,11 +38,14 @@ class TestCase(unittest.TestCase):
 ''')
 
     def test_create_changelog_entry_only_deps(self):
+        dep_changes = ChangesOnApi(
+            dependency_upgrades=[
+                'update google-cloud-shared-dependencies to 1.2.3']
+        )
         entry = create_changelog_entry(
             '2023-06-10',
             dummy_module,
-            [],
-            ['update google-cloud-shared-dependencies to 1.2.3']
+            dep_changes,
         )
         self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
 
@@ -48,11 +55,11 @@ class TestCase(unittest.TestCase):
 ''')
 
     def test_create_changelog_entry_empty(self):
+        empty_changes = ChangesOnApi()
         entry = create_changelog_entry(
             '2023-06-10',
             dummy_module,
-            [],
-            []
+            empty_changes
         )
         self.assertEqual(entry, f'''## 1.2.3 (2023-06-10)
 
@@ -69,7 +76,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(set(changes_by_api.keys()),
                          {'foo-api', 'bar-api'})
         self.assertEqual(changes_by_api['bar-api'],
-                         ['This is Change B'])
+                         ChangesOnApi(features=['This is Change B']))
         self.assertEqual(changes_by_api.get('nonexistent',
                                      ['No change']),
                          ['No change'])

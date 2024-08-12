@@ -2,6 +2,11 @@
 
 ## 0.50.0 (2023-06-08)
 
+### ⚠ BREAKING CHANGES
+
+* An existing field `entry` is removed from message `some.service.SearchEntriesResult`
+* An existing field `display_name` is removed from message `some.service.SearchEntriesResult`
+
 ### Features
 
 * some handwritten changes ([#1234](https://github.com/googleapis/google-cloud-java/issues/1234)) ([a268c80](https://github.com/googleapis/google-cloud-java/commit/a268c8016262a7a5a13be6a9983294f83d1ecc3f))

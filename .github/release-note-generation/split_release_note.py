@@ -17,9 +17,12 @@ from collections import defaultdict
 from pathlib import Path
 import json
 import xml.etree.ElementTree as ET
+from dataclasses import dataclass, field
 
 
 class LibraryModule:
+    """A module that represents one of the top-level library folders in
+    the google-cloud-java repository"""
     def __init__(self, path: Path, api_name: str, version: str,
         changelog: Path):
         self.path = path
@@ -32,6 +35,20 @@ class LibraryModule:
 
     def __repr__(self):
         return f"LibraryModule({self.path}, {self.api_name}, {self.version}, {self.changelog})"
+
+
+@dataclass
+class ChangesOnApi:
+    """Per-module changes, categorized as breaking changes, features, bug fixes,
+    and dependency upgrades"""
+    breaking_changes: [str] = field(default_factory=list)
+    features: [str] = field(default_factory=list)
+    bug_fixes: [str] = field(default_factory=list)
+    dependency_upgrades: [str] = field(default_factory=list)
+
+    def __len__(self):
+        return len(self.breaking_changes) + len(self.features) \
+            + len(self.bug_fixes) + len(self.dependency_upgrades)
 
 
 POM_NAMESPACES = {'mvn': 'http://maven.apache.org/POM/4.0.0'}
@@ -80,16 +97,45 @@ def detect_modules(root_directory: Path):
     return modules
 
 
-# Returns the dictionary from api name to a list of changelogs
+CHANGELOG_HEADER_MARK = '# Changelog'
+BREAKING_CHANGE_SECTION = '⚠ BREAKING CHANGES'
+FEATURES_SECTION = 'Features'
+BUG_FIXES_SECTION = 'Bug Fixes'
+DEPENDENCIES_SECTION = 'Dependencies'
+
+
+# Returns the dictionary from api name to ChangesOnApi
 def group_changes_by_api(main_changes: [str]):
-    api_to_changelog = defaultdict(list)
+    api_to_changelog = defaultdict(ChangesOnApi)
+    section = None
     for changelog in main_changes:
+        if changelog.endswith(BREAKING_CHANGE_SECTION):
+            section = BREAKING_CHANGE_SECTION
+            continue
+        if changelog.endswith(FEATURES_SECTION):
+            section = FEATURES_SECTION
+            continue
+        if changelog.endswith(BUG_FIXES_SECTION):
+            section = BUG_FIXES_SECTION
+            continue
+        if changelog.endswith(DEPENDENCIES_SECTION):
+            section = DEPENDENCIES_SECTION
+            continue
+
         match = re.search(r'\* \[(.+?)] (.+)', changelog)
         if match:
             api_name = match.group(1)
             note = match.group(2)
-            api_to_changelog[api_name].append(note)
+            if section == BREAKING_CHANGE_SECTION:
+                api_to_changelog[api_name].breaking_changes.append(note)
+            elif section == FEATURES_SECTION:
+                api_to_changelog[api_name].features.append(note)
+            elif section == BUG_FIXES_SECTION:
+                api_to_changelog[api_name].bug_fixes.append(note)
+            elif section == DEPENDENCIES_SECTION:
+                api_to_changelog[api_name].dependencies.append(note)
     return api_to_changelog
+
 
 def find_repo_wide_dependency_changes(main_changes: [str]):
     repo_wide_changes = []
@@ -102,29 +148,36 @@ def find_repo_wide_dependency_changes(main_changes: [str]):
     return repo_wide_changes
 
 
-CHANGELOG_HEADER_MARK = '# Changelog'
-
-
 def create_changelog_entry(current_date: str, module: LibraryModule,
-    changelog_lines: [str], dependency_changes: [str]):
+                           changes: ChangesOnApi):
     changelog_entry = f'## {module.version} ({current_date})\n\n'
-    if changelog_lines:
-        changelog_entry += '### Features\n\n'
-        for line in changelog_lines:
+    if changes.breaking_changes:
+        changelog_entry += f'### {BREAKING_CHANGE_SECTION}\n\n'
+        for line in changes.breaking_changes:
             changelog_entry += f'* {line}\n'
         changelog_entry += '\n'
-    if dependency_changes:
-        changelog_entry += "### Dependencies\n\n"
-        for line in dependency_changes:
+    if changes.features:
+        changelog_entry += f'### {FEATURES_SECTION}\n\n'
+        for line in changes.features:
+            changelog_entry += f'* {line}\n'
+        changelog_entry += '\n'
+    if changes.bug_fixes:
+        changelog_entry += f'### {BUG_FIXES_SECTION}\n\n'
+        for line in changes.bug_fixes:
+            changelog_entry += f'* {line}\n'
+        changelog_entry += '\n'
+    if changes.dependency_upgrades:
+        changelog_entry += f"### {DEPENDENCIES_SECTION}\n\n"
+        for line in changes.dependency_upgrades:
             changelog_entry += f'* {line}\n'
 
-    if len(changelog_lines) == 0 and len(dependency_changes) == 0:
+    if len(changes) == 0:
         changelog_entry += '* No change\n'
     return changelog_entry
 
 
 def write_changelog(current_date: str, module: LibraryModule,
-    changelog_entries: [str], dependency_changes: [str]):
+                    changelog_entries: [str]):
     changelog_file = module.changelog
     if changelog_file.exists():
         with open(changelog_file, 'r') as file:
@@ -136,8 +189,7 @@ def write_changelog(current_date: str, module: LibraryModule,
     if re.search(f'## {module.version}', changelog_content):
         return
 
-    entry = create_changelog_entry(current_date, module, changelog_entries,
-                                   dependency_changes)
+    entry = create_changelog_entry(current_date, module, changelog_entries)
     replaced = changelog_content.replace(CHANGELOG_HEADER_MARK,
                                          f'{CHANGELOG_HEADER_MARK}'
                                          f'\n\n{entry}')
@@ -166,21 +218,24 @@ def main():
             break
 
 
-    # Step 2: Detects target modules by .Owlbot-hermetic.yaml for api-name: field.
+    # Step 2: Detects target modules by .Owlbot-hermetic.yaml for
+    # the "api-name:" field.
     root_directory = sys.argv[2]
     modules = detect_modules(Path(root_directory))
     api_to_modules = {module.api_name: module for module in modules}
 
     # Step 3: Splits the changelog to ~100 modules
     api_to_changelog_entries = group_changes_by_api(main_changes)
-    dependency_change_entries = find_repo_wide_dependency_changes(main_changes)
+    global_dependency_change_entries = find_repo_wide_dependency_changes(main_changes)
 
     # Step 4: Writes the changelog entry to the CHANGELOG.md files in the
-    # modules
+    # modules. The global dependency changes appear in each module.
     for module in modules:
-        changelog_entries = api_to_changelog_entries.get(module.api_name, [])
-        write_changelog(release_date, module, changelog_entries,
-                        dependency_change_entries)
+        changes = api_to_changelog_entries.get(module.api_name,
+                                               ChangesOnApi())
+        if global_dependency_change_entries:
+            changes.dependency_upgrades.extend(global_dependency_change_entries)
+        write_changelog(release_date, module, changes)
 
 
 if __name__ == '__main__':
