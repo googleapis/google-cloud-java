@@ -174,7 +174,8 @@ class CustomClassMapper {
         || o instanceof Blob
         || o instanceof DocumentReference
         || o instanceof FieldValue
-        || o instanceof Value) {
+        || o instanceof Value
+        || o instanceof VectorValue) {
       return o;
     } else if (o instanceof Instant) {
       Instant instant = (Instant) o;
@@ -243,6 +244,8 @@ class CustomClassMapper {
       return (T) convertBlob(o, context);
     } else if (GeoPoint.class.isAssignableFrom(clazz)) {
       return (T) convertGeoPoint(o, context);
+    } else if (VectorValue.class.isAssignableFrom(clazz)) {
+      return (T) convertVectorValue(o, context);
     } else if (DocumentReference.class.isAssignableFrom(clazz)) {
       return (T) convertDocumentReference(o, context);
     } else if (clazz.isArray()) {
@@ -593,6 +596,16 @@ class CustomClassMapper {
       throw deserializeError(
           context.errorPath,
           "Failed to convert value of type " + o.getClass().getName() + " to GeoPoint");
+    }
+  }
+
+  private static VectorValue convertVectorValue(Object o, DeserializeContext context) {
+    if (o instanceof VectorValue) {
+      return (VectorValue) o;
+    } else {
+      throw deserializeError(
+          context.errorPath,
+          "Failed to convert value of type " + o.getClass().getName() + " to VectorValue");
     }
   }
 

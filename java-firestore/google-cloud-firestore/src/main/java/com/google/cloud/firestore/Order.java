@@ -16,9 +16,11 @@
 
 package com.google.cloud.firestore;
 
+import com.google.firestore.v1.MapValue;
 import com.google.firestore.v1.Value;
 import com.google.firestore.v1.Value.ValueTypeCase;
 import com.google.protobuf.ByteString;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -40,6 +42,7 @@ class Order implements Comparator<Value> {
     REF,
     GEO_POINT,
     ARRAY,
+    VECTOR,
     OBJECT;
 
     static TypeOrder fromValue(Value value) {
@@ -65,10 +68,21 @@ class Order implements Comparator<Value> {
         case ARRAY_VALUE:
           return ARRAY;
         case MAP_VALUE:
-          return OBJECT;
+          return fromMapValue(value.getMapValue());
         default:
           throw new IllegalArgumentException("Could not detect value type for " + value);
       }
+    }
+  }
+
+  static TypeOrder fromMapValue(MapValue mapValue) {
+    switch (UserDataConverter.detectMapRepresentation(mapValue)) {
+      case VECTOR_VALUE:
+        return TypeOrder.VECTOR;
+      case UNKNOWN:
+      case NONE:
+      default:
+        return TypeOrder.OBJECT;
     }
   }
 
@@ -113,6 +127,8 @@ class Order implements Comparator<Value> {
             left.getArrayValue().getValuesList(), right.getArrayValue().getValuesList());
       case OBJECT:
         return compareObjects(left, right);
+      case VECTOR:
+        return compareVectors(left, right);
       default:
         throw new IllegalArgumentException("Cannot compare " + leftType);
     }
@@ -207,6 +223,30 @@ class Order implements Comparator<Value> {
 
     // Only equal if both iterators are exhausted.
     return Boolean.compare(leftIterator.hasNext(), rightIterator.hasNext());
+  }
+
+  private int compareVectors(Value left, Value right) {
+    // The vector is a map, but only vector value is compared.
+    Value leftValueField =
+        left.getMapValue().getFieldsOrDefault(MapType.VECTOR_MAP_VECTORS_KEY, null);
+    Value rightValueField =
+        right.getMapValue().getFieldsOrDefault(MapType.VECTOR_MAP_VECTORS_KEY, null);
+
+    List<Value> leftArray =
+        (leftValueField != null)
+            ? leftValueField.getArrayValue().getValuesList()
+            : Collections.emptyList();
+    List<Value> rightArray =
+        (rightValueField != null)
+            ? rightValueField.getArrayValue().getValuesList()
+            : Collections.emptyList();
+
+    Integer lengthCompare = Long.compare(leftArray.size(), rightArray.size());
+    if (lengthCompare != 0) {
+      return lengthCompare;
+    }
+
+    return compareArrays(leftArray, rightArray);
   }
 
   private int compareNumbers(Value left, Value right) {

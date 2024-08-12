@@ -70,6 +70,7 @@ import com.google.cloud.firestore.SetOptions;
 import com.google.cloud.firestore.Transaction;
 import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.TransactionOptions;
+import com.google.cloud.firestore.VectorValue;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
 import com.google.common.collect.ImmutableList;
@@ -1328,6 +1329,169 @@ public class ITSystemTest extends ITBaseTest {
 
   private Map<String, Object> getData() throws ExecutionException, InterruptedException {
     return randomDoc.get().get().getData();
+  }
+
+  @Test
+  public void writeAndReadVectorEmbeddings() throws ExecutionException, InterruptedException {
+    Map<String, VectorValue> expected = new HashMap<>();
+
+    randomDoc
+        .create(
+            map(
+                "vector0",
+                FieldValue.vector(new double[] {0.0}),
+                "vector1",
+                FieldValue.vector(new double[] {1, 2, 3.99})))
+        .get();
+    randomDoc
+        .set(
+            map(
+                "vector0",
+                FieldValue.vector(new double[] {0.0}),
+                "vector1",
+                FieldValue.vector(new double[] {1, 2, 3.99}),
+                "vector2",
+                FieldValue.vector(new double[] {0, 0, 0})))
+        .get();
+    randomDoc.update(map("vector3", FieldValue.vector(new double[] {-1, -200, -9999}))).get();
+
+    expected.put("vector0", FieldValue.vector(new double[] {0.0}));
+    expected.put("vector1", FieldValue.vector(new double[] {1, 2, 3.99}));
+    expected.put("vector2", FieldValue.vector(new double[] {0, 0, 0}));
+    expected.put("vector3", FieldValue.vector(new double[] {-1, -200, -9999}));
+
+    DocumentSnapshot actual = randomDoc.get().get();
+
+    assertTrue(actual.get("vector0") instanceof VectorValue);
+    assertTrue(actual.get("vector1") instanceof VectorValue);
+    assertTrue(actual.get("vector2") instanceof VectorValue);
+    assertTrue(actual.get("vector3") instanceof VectorValue);
+
+    assertArrayEquals(
+        expected.get("vector0").toArray(),
+        actual.get("vector0", VectorValue.class).toArray(),
+        DOUBLE_EPSILON);
+    assertArrayEquals(
+        expected.get("vector1").toArray(),
+        actual.get("vector1", VectorValue.class).toArray(),
+        DOUBLE_EPSILON);
+    assertArrayEquals(
+        expected.get("vector2").toArray(),
+        actual.get("vector2", VectorValue.class).toArray(),
+        DOUBLE_EPSILON);
+    assertArrayEquals(
+        expected.get("vector3").toArray(),
+        actual.get("vector3", VectorValue.class).toArray(),
+        DOUBLE_EPSILON);
+  }
+
+  @Test
+  public void listenToDocumentsWithVectors() throws Throwable {
+    final Semaphore semaphore = new Semaphore(0);
+    ListenerRegistration registration = null;
+    DocumentReference ref = randomColl.document();
+    AtomicReference<Throwable> failureMessage = new AtomicReference(null);
+    int totalPermits = 5;
+
+    try {
+      registration =
+          randomColl
+              .whereEqualTo("purpose", "vector tests")
+              .addSnapshotListener(
+                  (value, error) -> {
+                    try {
+                      DocumentSnapshot docSnap =
+                          value.isEmpty() ? null : value.getDocuments().get(0);
+
+                      switch (semaphore.availablePermits()) {
+                        case 0:
+                          assertNull(docSnap);
+                          ref.create(
+                                  map(
+                                      "purpose", "vector tests",
+                                      "vector0", FieldValue.vector(new double[] {0.0}),
+                                      "vector1", FieldValue.vector(new double[] {1, 2, 3.99})))
+                              .get();
+                          break;
+                        case 1:
+                          assertNotNull(docSnap);
+
+                          assertEquals(
+                              docSnap.getVectorValue("vector0"),
+                              FieldValue.vector(new double[] {0.0}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector1"),
+                              FieldValue.vector(new double[] {1, 2, 3.99}));
+
+                          ref.set(
+                                  map(
+                                      "purpose",
+                                      "vector tests",
+                                      "vector0",
+                                      FieldValue.vector(new double[] {0.0}),
+                                      "vector1",
+                                      FieldValue.vector(new double[] {1, 2, 3.99}),
+                                      "vector2",
+                                      FieldValue.vector(new double[] {0, 0, 0})))
+                              .get();
+                          break;
+                        case 2:
+                          assertNotNull(docSnap);
+
+                          assertEquals(
+                              docSnap.getVectorValue("vector0"),
+                              FieldValue.vector(new double[] {0.0}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector1"),
+                              FieldValue.vector(new double[] {1, 2, 3.99}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector2"),
+                              FieldValue.vector(new double[] {0, 0, 0}));
+
+                          ref.update(
+                                  map("vector3", FieldValue.vector(new double[] {-1, -200, -999})))
+                              .get();
+                          break;
+                        case 3:
+                          assertNotNull(docSnap);
+
+                          assertEquals(
+                              docSnap.getVectorValue("vector0"),
+                              FieldValue.vector(new double[] {0.0}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector1"),
+                              FieldValue.vector(new double[] {1, 2, 3.99}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector2"),
+                              FieldValue.vector(new double[] {0, 0, 0}));
+                          assertEquals(
+                              docSnap.getVectorValue("vector3"),
+                              FieldValue.vector(new double[] {-1, -200, -999}));
+
+                          ref.delete().get();
+                          break;
+                        case 4:
+                          assertNull(docSnap);
+                          break;
+                      }
+                    } catch (Throwable t) {
+                      failureMessage.set(t);
+                      semaphore.release(totalPermits);
+                    }
+
+                    semaphore.release();
+                  });
+
+      semaphore.acquire(totalPermits);
+    } finally {
+      if (registration != null) {
+        registration.remove();
+      }
+
+      if (failureMessage.get() != null) {
+        throw failureMessage.get();
+      }
+    }
   }
 
   @Test

@@ -23,12 +23,14 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
+import static org.junit.Assert.assertArrayEquals;
 
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentChange;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
+import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.LocalFirestoreHelper;
@@ -45,6 +47,7 @@ import com.google.common.truth.Truth;
 import com.google.firestore.v1.ExistenceFilter;
 import com.google.firestore.v1.ListenResponse;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
@@ -439,6 +442,70 @@ public final class ITQueryWatchTest extends ITBaseTest {
     ListenerAssertions listenerAssertions = listener.assertions();
     listenerAssertions.noError();
     listenerAssertions.addedIdsIsAnyOf(emptyList(), asList("doc2", "doc3"));
+  }
+
+  /** Verifies that the SDK orders vector fields the same way as the backend. */
+  @Test
+  public void vectorFieldOrder() throws Exception {
+    // We validate that the SDK orders the vector field the same way as the backend
+    // by comparing the sort order of vector fields from a Query.get() and
+    // Query.addSnapshotListener(). Query.addSnapshotListener() will return sort order
+    // of the SDK, and Query.get() will return sort order of the backend.
+
+    // Test data in the order that we expect the backend to sort it.
+    List<Map<String, Object>> docsInOrder =
+        Arrays.asList(
+            map("embedding", Arrays.asList(1, 2, 3, 4, 5, 6)),
+            map("embedding", Arrays.asList(100)),
+            map("embedding", FieldValue.vector(new double[] {Double.NEGATIVE_INFINITY})),
+            map("embedding", FieldValue.vector(new double[] {-100})),
+            map("embedding", FieldValue.vector(new double[] {100})),
+            map("embedding", FieldValue.vector(new double[] {Double.POSITIVE_INFINITY})),
+            map("embedding", FieldValue.vector(new double[] {1, 2})),
+            map("embedding", FieldValue.vector(new double[] {2, 2})),
+            map("embedding", FieldValue.vector(new double[] {1, 2, 3})),
+            map("embedding", FieldValue.vector(new double[] {1, 2, 3, 4})),
+            map("embedding", FieldValue.vector(new double[] {1, 2, 3, 4, 5})),
+            map("embedding", FieldValue.vector(new double[] {1, 2, 100, 4, 4})),
+            map("embedding", FieldValue.vector(new double[] {100, 2, 3, 4, 5})),
+            map("embedding", map()),
+            map("embedding", map("HELLO", "WORLD")),
+            map("embedding", map("hello", "world")));
+
+    // Add docs and store doc IDs
+    List<String> docIds = new ArrayList<String>();
+    for (int i = 0; i < docsInOrder.size(); i++) {
+      DocumentReference docRef = randomColl.add(docsInOrder.get(i)).get();
+      docIds.add(docRef.getId());
+    }
+
+    // Test query
+    Query orderedQuery = randomColl.orderBy("embedding");
+
+    // Run query with snapshot listener
+    QuerySnapshotEventListener listener =
+        QuerySnapshotEventListener.builder().setInitialEventCount(1).build();
+    ListenerRegistration registration = orderedQuery.addSnapshotListener(listener);
+
+    try {
+      listener.eventsCountDownLatch.awaitInitialEvents();
+    } finally {
+      registration.remove();
+    }
+
+    // Get doc IDs from snapshot listener
+    ListenerAssertions listenerAssertions = listener.assertions();
+    listenerAssertions.noError();
+    List<String> listenerIds = listenerAssertions.addedIds;
+
+    // Run query with get() and get doc IDs
+    QuerySnapshot querySnapshot = orderedQuery.get().get();
+    List<String> getIds =
+        querySnapshot.getDocuments().stream().map(ds -> ds.getId()).collect(Collectors.toList());
+
+    // Assert that get and snapshot listener requests sort docs in the same, expected order
+    assertArrayEquals(docIds.toArray(new String[0]), getIds.toArray(new String[0]));
+    assertArrayEquals(docIds.toArray(new String[0]), listenerIds.toArray(new String[0]));
   }
 
   /**

@@ -949,6 +949,7 @@ public final class LocalFirestoreHelper {
     public Blob bytesValue = BLOB;
     public GeoPoint geoPointValue = GEO_POINT;
     public Map<String, Object> model = ImmutableMap.of("foo", SINGLE_FIELD_OBJECT.foo);
+    public VectorValue vectorValue = FieldValue.vector(new double[] {0.1, 0.2, 0.3});
 
     @Override
     public boolean equals(Object o) {
@@ -975,7 +976,8 @@ public final class LocalFirestoreHelper {
           && Objects.equals(nullValue, that.nullValue)
           && Objects.equals(bytesValue, that.bytesValue)
           && Objects.equals(geoPointValue, that.geoPointValue)
-          && Objects.equals(model, that.model);
+          && Objects.equals(model, that.model)
+          && Objects.equals(vectorValue, that.vectorValue);
     }
   }
 
@@ -1096,6 +1098,7 @@ public final class LocalFirestoreHelper {
     ALL_SUPPORTED_TYPES_MAP.put("bytesValue", BLOB);
     ALL_SUPPORTED_TYPES_MAP.put("geoPointValue", GEO_POINT);
     ALL_SUPPORTED_TYPES_MAP.put("model", map("foo", SINGLE_FIELD_OBJECT.foo));
+    ALL_SUPPORTED_TYPES_MAP.put("vectorValue", FieldValue.vector(new double[] {0.1, 0.2, 0.3}));
     ALL_SUPPORTED_TYPES_PROTO =
         ImmutableMap.<String, Value>builder()
             .put("foo", Value.newBuilder().setStringValue("bar").build())
@@ -1110,6 +1113,24 @@ public final class LocalFirestoreHelper {
                 "objectValue",
                 Value.newBuilder()
                     .setMapValue(MapValue.newBuilder().putAllFields(SINGLE_FIELD_PROTO))
+                    .build())
+            .put(
+                "vectorValue",
+                Value.newBuilder()
+                    .setMapValue(
+                        MapValue.newBuilder()
+                            .putAllFields(
+                                map(
+                                    "__type__",
+                                    Value.newBuilder().setStringValue("__vector__").build(),
+                                    "value",
+                                    Value.newBuilder()
+                                        .setArrayValue(
+                                            ArrayValue.newBuilder()
+                                                .addValues(Value.newBuilder().setDoubleValue(0.1))
+                                                .addValues(Value.newBuilder().setDoubleValue(0.2))
+                                                .addValues(Value.newBuilder().setDoubleValue(0.3)))
+                                        .build())))
                     .build())
             .put(
                 "dateValue",

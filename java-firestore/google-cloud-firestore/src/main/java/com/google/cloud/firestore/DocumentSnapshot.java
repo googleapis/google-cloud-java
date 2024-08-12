@@ -386,6 +386,18 @@ public class DocumentSnapshot {
   }
 
   /**
+   * Returns the value of the field as a VectorValue.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a VectorValue.
+   * @return The value of the field.
+   */
+  @Nullable
+  public VectorValue getVectorValue(@Nonnull String field) {
+    return (VectorValue) get(field);
+  }
+
+  /**
    * Gets the reference to the document.
    *
    * @return The reference to the document.

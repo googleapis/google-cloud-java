@@ -880,7 +880,8 @@ public class DocumentReferenceTest {
             "second.objectValue.foo",
             "second.timestampValue",
             "second.trueValue",
-            "second.model.foo");
+            "second.model.foo",
+            "second.vectorValue");
 
     CommitRequest expectedCommit = commit(set(nestedUpdate, updateMask));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
