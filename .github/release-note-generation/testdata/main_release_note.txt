@@ -6,6 +6,10 @@
 
 ## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
 
+### ⚠ BREAKING CHANGES
+
+* [vertexai] An existing field `entry` is removed from message `some.service.SearchEntriesResult`
+* [vertexai] An existing field `display_name` is removed from message `some.service.SearchEntriesResult`
 
 ### Features
 
