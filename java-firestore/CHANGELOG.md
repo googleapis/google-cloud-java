@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.25.0](https://github.com/googleapis/java-firestore/compare/v3.24.3...v3.25.0) (2024-08-12)
+
+
+### Features
+
+* Add support for the VectorValue type ([#1716](https://github.com/googleapis/java-firestore/issues/1716)) ([81bfa0d](https://github.com/googleapis/java-firestore/commit/81bfa0daeb4b75b2b964e8480a9baae711540e02))
+* Expose the proto changes to support `FindNearest.distance_result_field` parameter and the `FindNearest.distance_threshold` parameter ([6456d85](https://github.com/googleapis/java-firestore/commit/6456d855b2eef93869fcb06e39246a6ada589948))
+
 ## [3.24.3](https://github.com/googleapis/java-firestore/compare/v3.24.2...v3.24.3) (2024-08-06)
 
 
