@@ -213,7 +213,7 @@ public final class TableProto {
           + "\014\n\010CREATING\020\002:{\352Ax\n%bigtableadmin.google"
           + "apis.com/Snapshot\022Oprojects/{project}/in"
           + "stances/{instance}/clusters/{cluster}/sn"
-          + "apshots/{snapshot}\"\273\004\n\006Backup\022\014\n\004name\030\001 "
+          + "apshots/{snapshot}\"\371\005\n\006Backup\022\014\n\004name\030\001 "
           + "\001(\t\022\034\n\014source_table\030\002 \001(\tB\006\340A\005\340A\002\022\032\n\rsou"
           + "rce_backup\030\n \001(\tB\003\340A\003\0224\n\013expire_time\030\003 \001"
           + "(\0132\032.google.protobuf.TimestampB\003\340A\002\0223\n\ns"
@@ -223,28 +223,32 @@ public final class TableProto {
           + "\003\340A\003\022:\n\005state\030\007 \001(\0162&.google.bigtable.ad"
           + "min.v2.Backup.StateB\003\340A\003\022F\n\017encryption_i"
           + "nfo\030\t \001(\0132(.google.bigtable.admin.v2.Enc"
-          + "ryptionInfoB\003\340A\003\"7\n\005State\022\025\n\021STATE_UNSPE"
-          + "CIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002:u\352Ar\n#"
-          + "bigtableadmin.googleapis.com/Backup\022Kpro"
-          + "jects/{project}/instances/{instance}/clu"
-          + "sters/{cluster}/backups/{backup}\"\300\001\n\nBac"
-          + "kupInfo\022\023\n\006backup\030\001 \001(\tB\003\340A\003\0223\n\nstart_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022\031\n\014source_table\030\004 \001(\tB\003\340A\003\022"
-          + "\032\n\rsource_backup\030\n \001(\tB\003\340A\003*D\n\021RestoreSo"
-          + "urceType\022#\n\037RESTORE_SOURCE_TYPE_UNSPECIF"
-          + "IED\020\000\022\n\n\006BACKUP\020\001B\367\002\n\034com.google.bigtabl"
-          + "e.admin.v2B\nTableProtoP\001Z8cloud.google.c"
-          + "om/go/bigtable/admin/apiv2/adminpb;admin"
-          + "pb\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036Go"
-          + "ogle\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::C"
-          + "loud::Bigtable::Admin::V2\352A\246\001\n(cloudkms."
-          + "googleapis.com/CryptoKeyVersion\022zproject"
-          + "s/{project}/locations/{location}/keyRing"
-          + "s/{key_ring}/cryptoKeys/{crypto_key}/cry"
-          + "ptoKeyVersions/{crypto_key_version}b\006pro"
-          + "to3"
+          + "ryptionInfoB\003\340A\003\022@\n\013backup_type\030\013 \001(\0162+."
+          + "google.bigtable.admin.v2.Backup.BackupTy"
+          + "pe\0228\n\024hot_to_standard_time\030\014 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\"7\n\005State\022\025\n\021STATE_U"
+          + "NSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\"@\n"
+          + "\nBackupType\022\033\n\027BACKUP_TYPE_UNSPECIFIED\020\000"
+          + "\022\014\n\010STANDARD\020\001\022\007\n\003HOT\020\002:u\352Ar\n#bigtablead"
+          + "min.googleapis.com/Backup\022Kprojects/{pro"
+          + "ject}/instances/{instance}/clusters/{clu"
+          + "ster}/backups/{backup}\"\300\001\n\nBackupInfo\022\023\n"
+          + "\006backup\030\001 \001(\tB\003\340A\003\0223\n\nstart_time\030\002 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0221\n\010end_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022\031\n\014source_table\030\004 \001(\tB\003\340A\003\022\032\n\rsource_"
+          + "backup\030\n \001(\tB\003\340A\003*D\n\021RestoreSourceType\022#"
+          + "\n\037RESTORE_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006B"
+          + "ACKUP\020\001B\367\002\n\034com.google.bigtable.admin.v2"
+          + "B\nTableProtoP\001Z8cloud.google.com/go/bigt"
+          + "able/admin/apiv2/adminpb;adminpb\252\002\036Googl"
+          + "e.Cloud.Bigtable.Admin.V2\312\002\036Google\\Cloud"
+          + "\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigt"
+          + "able::Admin::V2\352A\246\001\n(cloudkms.googleapis"
+          + ".com/CryptoKeyVersion\022zprojects/{project"
+          + "}/locations/{location}/keyRings/{key_rin"
+          + "g}/cryptoKeys/{crypto_key}/cryptoKeyVers"
+          + "ions/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -424,6 +428,8 @@ public final class TableProto {
               "SizeBytes",
               "State",
               "EncryptionInfo",
+              "BackupType",
+              "HotToStandardTime",
             });
     internal_static_google_bigtable_admin_v2_BackupInfo_descriptor =
         getDescriptor().getMessageTypes().get(9);

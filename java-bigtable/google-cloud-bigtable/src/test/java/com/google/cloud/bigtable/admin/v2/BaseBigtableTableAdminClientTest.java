@@ -2096,6 +2096,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2155,6 +2156,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2214,6 +2216,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -2259,6 +2262,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -2304,6 +2308,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -2569,6 +2574,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2632,6 +2638,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2695,6 +2702,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2758,6 +2766,7 @@ public class BaseBigtableTableAdminClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setHotToStandardTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -43,6 +43,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     sourceTable_ = "";
     sourceBackup_ = "";
     state_ = 0;
+    backupType_ = 0;
   }
 
   @java.lang.Override
@@ -225,6 +226,173 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Backup.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of the backup.
+   * </pre>
+   *
+   * Protobuf enum {@code google.bigtable.admin.v2.Backup.BackupType}
+   */
+  public enum BackupType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>BACKUP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    BACKUP_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The default type for Cloud Bigtable managed backups. Supported for
+     * backups created in both HDD and SSD instances. Requires optimization when
+     * restored to a table in an SSD instance.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * A backup type with faster restore to SSD performance. Only supported for
+     * backups created in SSD instances. A new SSD table restored from a hot
+     * backup reaches production performance more quickly than a standard
+     * backup.
+     * </pre>
+     *
+     * <code>HOT = 2;</code>
+     */
+    HOT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>BACKUP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int BACKUP_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The default type for Cloud Bigtable managed backups. Supported for
+     * backups created in both HDD and SSD instances. Requires optimization when
+     * restored to a table in an SSD instance.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    public static final int STANDARD_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A backup type with faster restore to SSD performance. Only supported for
+     * backups created in SSD instances. A new SSD table restored from a hot
+     * backup reaches production performance more quickly than a standard
+     * backup.
+     * </pre>
+     *
+     * <code>HOT = 2;</code>
+     */
+    public static final int HOT_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BackupType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BackupType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return BACKUP_TYPE_UNSPECIFIED;
+        case 1:
+          return STANDARD;
+        case 2:
+          return HOT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BackupType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BackupType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<BackupType>() {
+          public BackupType findValueByNumber(int number) {
+            return BackupType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.Backup.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BackupType[] VALUES = values();
+
+    public static BackupType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BackupType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Backup.BackupType)
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -364,7 +532,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -389,7 +558,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -415,11 +585,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -435,11 +607,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -455,11 +629,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -696,6 +872,112 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         : encryptionInfo_;
   }
 
+  public static final int BACKUP_TYPE_FIELD_NUMBER = 11;
+  private int backupType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the backup type of the backup.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+   *
+   * @return The enum numeric value on the wire for backupType.
+   */
+  @java.lang.Override
+  public int getBackupTypeValue() {
+    return backupType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the backup type of the backup.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+   *
+   * @return The backupType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Backup.BackupType getBackupType() {
+    com.google.bigtable.admin.v2.Backup.BackupType result =
+        com.google.bigtable.admin.v2.Backup.BackupType.forNumber(backupType_);
+    return result == null ? com.google.bigtable.admin.v2.Backup.BackupType.UNRECOGNIZED : result;
+  }
+
+  public static final int HOT_TO_STANDARD_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp hotToStandardTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   *
+   * @return Whether the hotToStandardTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasHotToStandardTime() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   *
+   * @return The hotToStandardTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getHotToStandardTime() {
+    return hotToStandardTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : hotToStandardTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getHotToStandardTimeOrBuilder() {
+    return hotToStandardTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : hotToStandardTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -737,6 +1019,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBackup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, sourceBackup_);
     }
+    if (backupType_
+        != com.google.bigtable.admin.v2.Backup.BackupType.BACKUP_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, backupType_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(12, getHotToStandardTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -772,6 +1061,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBackup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, sourceBackup_);
+    }
+    if (backupType_
+        != com.google.bigtable.admin.v2.Backup.BackupType.BACKUP_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, backupType_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getHotToStandardTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -809,6 +1105,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo()) {
       if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
     }
+    if (backupType_ != other.backupType_) return false;
+    if (hasHotToStandardTime() != other.hasHotToStandardTime()) return false;
+    if (hasHotToStandardTime()) {
+      if (!getHotToStandardTime().equals(other.getHotToStandardTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -845,6 +1146,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo()) {
       hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
+    hash = (37 * hash) + BACKUP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + backupType_;
+    if (hasHotToStandardTime()) {
+      hash = (37 * hash) + HOT_TO_STANDARD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getHotToStandardTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -989,6 +1296,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         getStartTimeFieldBuilder();
         getEndTimeFieldBuilder();
         getEncryptionInfoFieldBuilder();
+        getHotToStandardTimeFieldBuilder();
       }
     }
 
@@ -1020,6 +1328,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (encryptionInfoBuilder_ != null) {
         encryptionInfoBuilder_.dispose();
         encryptionInfoBuilder_ = null;
+      }
+      backupType_ = 0;
+      hotToStandardTime_ = null;
+      if (hotToStandardTimeBuilder_ != null) {
+        hotToStandardTimeBuilder_.dispose();
+        hotToStandardTimeBuilder_ = null;
       }
       return this;
     }
@@ -1088,6 +1402,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         result.encryptionInfo_ =
             encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.backupType_ = backupType_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.hotToStandardTime_ =
+            hotToStandardTimeBuilder_ == null
+                ? hotToStandardTime_
+                : hotToStandardTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1170,6 +1494,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEncryptionInfo()) {
         mergeEncryptionInfo(other.getEncryptionInfo());
       }
+      if (other.backupType_ != 0) {
+        setBackupTypeValue(other.getBackupTypeValue());
+      }
+      if (other.hasHotToStandardTime()) {
+        mergeHotToStandardTime(other.getHotToStandardTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1250,6 +1580,19 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 82
+            case 88:
+              {
+                backupType_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(
+                    getHotToStandardTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1553,7 +1896,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the backup from which this backup was copied. If a
      * backup is not created by copying a backup, this field will be empty. Values
-     * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+     * are of the form:
+     * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
      * </pre>
      *
      * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1577,7 +1921,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the backup from which this backup was copied. If a
      * backup is not created by copying a backup, this field will be empty. Values
-     * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+     * are of the form:
+     * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
      * </pre>
      *
      * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1601,7 +1946,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the backup from which this backup was copied. If a
      * backup is not created by copying a backup, this field will be empty. Values
-     * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+     * are of the form:
+     * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
      * </pre>
      *
      * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1624,7 +1970,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the backup from which this backup was copied. If a
      * backup is not created by copying a backup, this field will be empty. Values
-     * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+     * are of the form:
+     * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
      * </pre>
      *
      * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1643,7 +1990,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the backup from which this backup was copied. If a
      * backup is not created by copying a backup, this field will be empty. Values
-     * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+     * are of the form:
+     * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
      * </pre>
      *
      * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1672,11 +2020,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1691,11 +2041,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1716,11 +2068,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1743,11 +2097,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1767,11 +2123,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1799,11 +2157,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1823,11 +2183,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1842,11 +2204,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1865,11 +2229,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The expiration time of the backup, with microseconds
-     * granularity that must be at least 6 hours and at most 90 days
-     * from the time the request is received. Once the `expire_time`
-     * has passed, Cloud Bigtable will delete the backup and free the
-     * resources used by the backup.
+     * Required. The expiration time of the backup.
+     * When creating a backup or updating its `expire_time`, the value must be
+     * greater than the backup creation time by:
+     * - At least 6 hours
+     * - At most 90 days
+     *
+     * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2673,6 +3039,344 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         encryptionInfo_ = null;
       }
       return encryptionInfoBuilder_;
+    }
+
+    private int backupType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the backup type of the backup.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+     *
+     * @return The enum numeric value on the wire for backupType.
+     */
+    @java.lang.Override
+    public int getBackupTypeValue() {
+      return backupType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the backup type of the backup.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for backupType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupTypeValue(int value) {
+      backupType_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the backup type of the backup.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+     *
+     * @return The backupType.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Backup.BackupType getBackupType() {
+      com.google.bigtable.admin.v2.Backup.BackupType result =
+          com.google.bigtable.admin.v2.Backup.BackupType.forNumber(backupType_);
+      return result == null ? com.google.bigtable.admin.v2.Backup.BackupType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the backup type of the backup.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+     *
+     * @param value The backupType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupType(com.google.bigtable.admin.v2.Backup.BackupType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      backupType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the backup type of the backup.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      backupType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp hotToStandardTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        hotToStandardTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     *
+     * @return Whether the hotToStandardTime field is set.
+     */
+    public boolean hasHotToStandardTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     *
+     * @return The hotToStandardTime.
+     */
+    public com.google.protobuf.Timestamp getHotToStandardTime() {
+      if (hotToStandardTimeBuilder_ == null) {
+        return hotToStandardTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : hotToStandardTime_;
+      } else {
+        return hotToStandardTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public Builder setHotToStandardTime(com.google.protobuf.Timestamp value) {
+      if (hotToStandardTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hotToStandardTime_ = value;
+      } else {
+        hotToStandardTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public Builder setHotToStandardTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (hotToStandardTimeBuilder_ == null) {
+        hotToStandardTime_ = builderForValue.build();
+      } else {
+        hotToStandardTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public Builder mergeHotToStandardTime(com.google.protobuf.Timestamp value) {
+      if (hotToStandardTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && hotToStandardTime_ != null
+            && hotToStandardTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getHotToStandardTimeBuilder().mergeFrom(value);
+        } else {
+          hotToStandardTime_ = value;
+        }
+      } else {
+        hotToStandardTimeBuilder_.mergeFrom(value);
+      }
+      if (hotToStandardTime_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public Builder clearHotToStandardTime() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      hotToStandardTime_ = null;
+      if (hotToStandardTimeBuilder_ != null) {
+        hotToStandardTimeBuilder_.dispose();
+        hotToStandardTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getHotToStandardTimeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getHotToStandardTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getHotToStandardTimeOrBuilder() {
+      if (hotToStandardTimeBuilder_ != null) {
+        return hotToStandardTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return hotToStandardTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : hotToStandardTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the hot backup will be converted to a standard backup.
+     * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+     * hot backup to a standard backup. This value must be greater than the backup
+     * creation time by:
+     * - At least 24 hours
+     *
+     * This field only applies for hot backups. When creating or updating a
+     * standard backup, attempting to set this field will fail the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getHotToStandardTimeFieldBuilder() {
+      if (hotToStandardTimeBuilder_ == null) {
+        hotToStandardTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getHotToStandardTime(), getParentForChildren(), isClean());
+        hotToStandardTime_ = null;
+      }
+      return hotToStandardTimeBuilder_;
     }
 
     @java.lang.Override

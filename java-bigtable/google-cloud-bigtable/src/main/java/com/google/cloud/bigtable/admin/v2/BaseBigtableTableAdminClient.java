@@ -4068,7 +4068,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * Create a new table by restoring from a completed backup. The returned table [long-running
    * operation][google.longrunning.Operation] can be used to track the progress of the operation,
    * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
-   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [RestoreTableMetadata][google.bigtable.admin.v2.RestoreTableMetadata]. The
    * [response][google.longrunning.Operation.response] type is
    * [Table][google.bigtable.admin.v2.Table], if successful.
    *
@@ -4104,7 +4104,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * Create a new table by restoring from a completed backup. The returned table [long-running
    * operation][google.longrunning.Operation] can be used to track the progress of the operation,
    * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
-   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [RestoreTableMetadata][google.bigtable.admin.v2.RestoreTableMetadata]. The
    * [response][google.longrunning.Operation.response] type is
    * [Table][google.bigtable.admin.v2.Table], if successful.
    *
@@ -4140,7 +4140,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * Create a new table by restoring from a completed backup. The returned table [long-running
    * operation][google.longrunning.Operation] can be used to track the progress of the operation,
    * and to cancel it. The [metadata][google.longrunning.Operation.metadata] field type is
-   * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+   * [RestoreTableMetadata][google.bigtable.admin.v2.RestoreTableMetadata]. The
    * [response][google.longrunning.Operation.response] type is
    * [Table][google.bigtable.admin.v2.Table], if successful.
    *
@@ -4197,7 +4197,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the destination cluster that will contain the backup copy.
-   *     The cluster must already exists. Values are of the form:
+   *     The cluster must already exist. Values are of the form:
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param backupId Required. The id of the new backup. The `backup_id` along with `parent` are
    *     combined as {parent}/backups/{backup_id} to create the full backup name, of the form:
@@ -4255,7 +4255,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the destination cluster that will contain the backup copy.
-   *     The cluster must already exists. Values are of the form:
+   *     The cluster must already exist. Values are of the form:
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param backupId Required. The id of the new backup. The `backup_id` along with `parent` are
    *     combined as {parent}/backups/{backup_id} to create the full backup name, of the form:
@@ -4312,7 +4312,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the destination cluster that will contain the backup copy.
-   *     The cluster must already exists. Values are of the form:
+   *     The cluster must already exist. Values are of the form:
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param backupId Required. The id of the new backup. The `backup_id` along with `parent` are
    *     combined as {parent}/backups/{backup_id} to create the full backup name, of the form:
@@ -4370,7 +4370,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the destination cluster that will contain the backup copy.
-   *     The cluster must already exists. Values are of the form:
+   *     The cluster must already exist. Values are of the form:
    *     `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * @param backupId Required. The id of the new backup. The `backup_id` along with `parent` are
    *     combined as {parent}/backups/{backup_id} to create the full backup name, of the form:

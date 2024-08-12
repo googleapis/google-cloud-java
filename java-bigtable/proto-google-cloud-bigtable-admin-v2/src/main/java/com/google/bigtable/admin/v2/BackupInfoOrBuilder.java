@@ -162,7 +162,8 @@ public interface BackupInfoOrBuilder
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -176,7 +177,8 @@ public interface BackupInfoOrBuilder
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

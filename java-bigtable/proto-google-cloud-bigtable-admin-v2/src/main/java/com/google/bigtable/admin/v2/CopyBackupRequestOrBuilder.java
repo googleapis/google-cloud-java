@@ -29,7 +29,7 @@ public interface CopyBackupRequestOrBuilder
    *
    * <pre>
    * Required. The name of the destination cluster that will contain the backup
-   * copy. The cluster must already exists. Values are of the form:
+   * copy. The cluster must already exist. Values are of the form:
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
@@ -45,7 +45,7 @@ public interface CopyBackupRequestOrBuilder
    *
    * <pre>
    * Required. The name of the destination cluster that will contain the backup
-   * copy. The cluster must already exists. Values are of the form:
+   * copy. The cluster must already exist. Values are of the form:
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *

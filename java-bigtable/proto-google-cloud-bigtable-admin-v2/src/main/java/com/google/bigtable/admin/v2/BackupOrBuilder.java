@@ -106,7 +106,8 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -120,7 +121,8 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. Name of the backup from which this backup was copied. If a
    * backup is not created by copying a backup, this field will be empty. Values
-   * are of the form: projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;.
+   * are of the form:
+   * projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;
    * </pre>
    *
    * <code>string source_backup = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -133,11 +135,13 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -150,11 +154,13 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -167,11 +173,13 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. The expiration time of the backup, with microseconds
-   * granularity that must be at least 6 hours and at most 90 days
-   * from the time the request is received. Once the `expire_time`
-   * has passed, Cloud Bigtable will delete the backup and free the
-   * resources used by the backup.
+   * Required. The expiration time of the backup.
+   * When creating a backup or updating its `expire_time`, the value must be
+   * greater than the backup creation time by:
+   * - At least 6 hours
+   * - At most 90 days
+   *
+   * Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -352,4 +360,85 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the backup type of the backup.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+   *
+   * @return The enum numeric value on the wire for backupType.
+   */
+  int getBackupTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the backup type of the backup.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Backup.BackupType backup_type = 11;</code>
+   *
+   * @return The backupType.
+   */
+  com.google.bigtable.admin.v2.Backup.BackupType getBackupType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   *
+   * @return Whether the hotToStandardTime field is set.
+   */
+  boolean hasHotToStandardTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   *
+   * @return The hotToStandardTime.
+   */
+  com.google.protobuf.Timestamp getHotToStandardTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the hot backup will be converted to a standard backup.
+   * Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the
+   * hot backup to a standard backup. This value must be greater than the backup
+   * creation time by:
+   * - At least 24 hours
+   *
+   * This field only applies for hot backups. When creating or updating a
+   * standard backup, attempting to set this field will fail the request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp hot_to_standard_time = 12;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getHotToStandardTimeOrBuilder();
 }
