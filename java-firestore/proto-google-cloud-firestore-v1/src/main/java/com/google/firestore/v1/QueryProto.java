@@ -104,7 +104,7 @@ public final class QueryProto {
       "\n\037google/firestore/v1/query.proto\022\023googl"
           + "e.firestore.v1\032\037google/api/field_behavio"
           + "r.proto\032\"google/firestore/v1/document.pr"
-          + "oto\032\036google/protobuf/wrappers.proto\"\225\023\n\017"
+          + "oto\032\036google/protobuf/wrappers.proto\"\370\023\n\017"
           + "StructuredQuery\022?\n\006select\030\001 \001(\0132/.google"
           + ".firestore.v1.StructuredQuery.Projection"
           + "\022E\n\004from\030\002 \003(\01327.google.firestore.v1.Str"
@@ -154,7 +154,7 @@ public final class QueryProto {
           + "StructuredQuery.Direction\032$\n\016FieldRefere"
           + "nce\022\022\n\nfield_path\030\002 \001(\t\032Q\n\nProjection\022C\n"
           + "\006fields\030\002 \003(\01323.google.firestore.v1.Stru"
-          + "cturedQuery.FieldReference\032\207\003\n\013FindNeare"
+          + "cturedQuery.FieldReference\032\352\003\n\013FindNeare"
           + "st\022N\n\014vector_field\030\001 \001(\01323.google.firest"
           + "ore.v1.StructuredQuery.FieldReferenceB\003\340"
           + "A\002\0225\n\014query_vector\030\002 \001(\0132\032.google.firest"
@@ -162,35 +162,38 @@ public final class QueryProto {
           + "\001(\0162@.google.firestore.v1.StructuredQuer"
           + "y.FindNearest.DistanceMeasureB\003\340A\002\022/\n\005li"
           + "mit\030\004 \001(\0132\033.google.protobuf.Int32ValueB\003"
-          + "\340A\002\"_\n\017DistanceMeasure\022 \n\034DISTANCE_MEASU"
-          + "RE_UNSPECIFIED\020\000\022\r\n\tEUCLIDEAN\020\001\022\n\n\006COSIN"
-          + "E\020\002\022\017\n\013DOT_PRODUCT\020\003\"E\n\tDirection\022\031\n\025DIR"
-          + "ECTION_UNSPECIFIED\020\000\022\r\n\tASCENDING\020\001\022\016\n\nD"
-          + "ESCENDING\020\002\"\270\005\n\032StructuredAggregationQue"
-          + "ry\022@\n\020structured_query\030\001 \001(\0132$.google.fi"
-          + "restore.v1.StructuredQueryH\000\022V\n\014aggregat"
-          + "ions\030\003 \003(\0132;.google.firestore.v1.Structu"
-          + "redAggregationQuery.AggregationB\003\340A\001\032\361\003\n"
-          + "\013Aggregation\022R\n\005count\030\001 \001(\0132A.google.fir"
-          + "estore.v1.StructuredAggregationQuery.Agg"
-          + "regation.CountH\000\022N\n\003sum\030\002 \001(\0132?.google.f"
+          + "\340A\002\022\"\n\025distance_result_field\030\005 \001(\tB\003\340A\001\022"
+          + "=\n\022distance_threshold\030\006 \001(\0132\034.google.pro"
+          + "tobuf.DoubleValueB\003\340A\001\"_\n\017DistanceMeasur"
+          + "e\022 \n\034DISTANCE_MEASURE_UNSPECIFIED\020\000\022\r\n\tE"
+          + "UCLIDEAN\020\001\022\n\n\006COSINE\020\002\022\017\n\013DOT_PRODUCT\020\003\""
+          + "E\n\tDirection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022"
+          + "\r\n\tASCENDING\020\001\022\016\n\nDESCENDING\020\002\"\270\005\n\032Struc"
+          + "turedAggregationQuery\022@\n\020structured_quer"
+          + "y\030\001 \001(\0132$.google.firestore.v1.Structured"
+          + "QueryH\000\022V\n\014aggregations\030\003 \003(\0132;.google.f"
           + "irestore.v1.StructuredAggregationQuery.A"
-          + "ggregation.SumH\000\022N\n\003avg\030\003 \001(\0132?.google.f"
-          + "irestore.v1.StructuredAggregationQuery.A"
-          + "ggregation.AvgH\000\022\022\n\005alias\030\007 \001(\tB\003\340A\001\0328\n\005"
-          + "Count\022/\n\005up_to\030\001 \001(\0132\033.google.protobuf.I"
-          + "nt64ValueB\003\340A\001\032I\n\003Sum\022B\n\005field\030\001 \001(\01323.g"
-          + "oogle.firestore.v1.StructuredQuery.Field"
-          + "Reference\032I\n\003Avg\022B\n\005field\030\001 \001(\01323.google"
-          + ".firestore.v1.StructuredQuery.FieldRefer"
-          + "enceB\n\n\010operatorB\014\n\nquery_type\"D\n\006Cursor"
-          + "\022*\n\006values\030\001 \003(\0132\032.google.firestore.v1.V"
-          + "alue\022\016\n\006before\030\002 \001(\010B\302\001\n\027com.google.fire"
-          + "store.v1B\nQueryProtoP\001Z;cloud.google.com"
-          + "/go/firestore/apiv1/firestorepb;firestor"
-          + "epb\242\002\004GCFS\252\002\031Google.Cloud.Firestore.V1\312\002"
-          + "\031Google\\Cloud\\Firestore\\V1\352\002\034Google::Clo"
-          + "ud::Firestore::V1b\006proto3"
+          + "ggregationB\003\340A\001\032\361\003\n\013Aggregation\022R\n\005count"
+          + "\030\001 \001(\0132A.google.firestore.v1.StructuredA"
+          + "ggregationQuery.Aggregation.CountH\000\022N\n\003s"
+          + "um\030\002 \001(\0132?.google.firestore.v1.Structure"
+          + "dAggregationQuery.Aggregation.SumH\000\022N\n\003a"
+          + "vg\030\003 \001(\0132?.google.firestore.v1.Structure"
+          + "dAggregationQuery.Aggregation.AvgH\000\022\022\n\005a"
+          + "lias\030\007 \001(\tB\003\340A\001\0328\n\005Count\022/\n\005up_to\030\001 \001(\0132"
+          + "\033.google.protobuf.Int64ValueB\003\340A\001\032I\n\003Sum"
+          + "\022B\n\005field\030\001 \001(\01323.google.firestore.v1.St"
+          + "ructuredQuery.FieldReference\032I\n\003Avg\022B\n\005f"
+          + "ield\030\001 \001(\01323.google.firestore.v1.Structu"
+          + "redQuery.FieldReferenceB\n\n\010operatorB\014\n\nq"
+          + "uery_type\"D\n\006Cursor\022*\n\006values\030\001 \003(\0132\032.go"
+          + "ogle.firestore.v1.Value\022\016\n\006before\030\002 \001(\010B"
+          + "\302\001\n\027com.google.firestore.v1B\nQueryProtoP"
+          + "\001Z;cloud.google.com/go/firestore/apiv1/f"
+          + "irestorepb;firestorepb\242\002\004GCFS\252\002\031Google.C"
+          + "loud.Firestore.V1\312\002\031Google\\Cloud\\Firesto"
+          + "re\\V1\352\002\034Google::Cloud::Firestore::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -286,7 +289,12 @@ public final class QueryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_firestore_v1_StructuredQuery_FindNearest_descriptor,
             new java.lang.String[] {
-              "VectorField", "QueryVector", "DistanceMeasure", "Limit",
+              "VectorField",
+              "QueryVector",
+              "DistanceMeasure",
+              "Limit",
+              "DistanceResultField",
+              "DistanceThreshold",
             });
     internal_static_google_firestore_v1_StructuredAggregationQuery_descriptor =
         getDescriptor().getMessageTypes().get(1);

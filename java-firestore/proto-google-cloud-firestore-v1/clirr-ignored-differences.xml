@@ -136,4 +136,29 @@
     <className>com/google/firestore/v1/StructuredQueryOrBuilder</className>
     <method>boolean hasFindNearest()</method>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>java.lang.String getDistanceResultField()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.ByteString getDistanceResultFieldBytes()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.DoubleValue getDistanceThreshold()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>boolean hasDistanceThreshold()</method>
+  </difference>
 </differences>

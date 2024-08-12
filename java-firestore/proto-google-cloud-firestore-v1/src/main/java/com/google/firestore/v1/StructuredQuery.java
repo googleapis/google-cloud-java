@@ -9718,6 +9718,97 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int32Value limit = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.protobuf.Int32ValueOrBuilder getLimitOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional name of the field to output the result of the vector
+     * distance calculation. Must conform to [document field
+     * name][google.firestore.v1.Document.fields] limitations.
+     * </pre>
+     *
+     * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The distanceResultField.
+     */
+    java.lang.String getDistanceResultField();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional name of the field to output the result of the vector
+     * distance calculation. Must conform to [document field
+     * name][google.firestore.v1.Document.fields] limitations.
+     * </pre>
+     *
+     * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for distanceResultField.
+     */
+    com.google.protobuf.ByteString getDistanceResultFieldBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the distanceThreshold field is set.
+     */
+    boolean hasDistanceThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The distanceThreshold.
+     */
+    com.google.protobuf.DoubleValue getDistanceThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder();
   }
   /**
    *
@@ -9743,6 +9834,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     private FindNearest() {
       distanceMeasure_ = 0;
+      distanceResultField_ = "";
     }
 
     @java.lang.Override
@@ -10186,6 +10278,138 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
     }
 
+    public static final int DISTANCE_RESULT_FIELD_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object distanceResultField_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional name of the field to output the result of the vector
+     * distance calculation. Must conform to [document field
+     * name][google.firestore.v1.Document.fields] limitations.
+     * </pre>
+     *
+     * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The distanceResultField.
+     */
+    @java.lang.Override
+    public java.lang.String getDistanceResultField() {
+      java.lang.Object ref = distanceResultField_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        distanceResultField_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional name of the field to output the result of the vector
+     * distance calculation. Must conform to [document field
+     * name][google.firestore.v1.Document.fields] limitations.
+     * </pre>
+     *
+     * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for distanceResultField.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDistanceResultFieldBytes() {
+      java.lang.Object ref = distanceResultField_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        distanceResultField_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISTANCE_THRESHOLD_FIELD_NUMBER = 6;
+    private com.google.protobuf.DoubleValue distanceThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the distanceThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistanceThreshold() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The distanceThreshold.
+     */
+    @java.lang.Override
+    public com.google.protobuf.DoubleValue getDistanceThreshold() {
+      return distanceThreshold_ == null
+          ? com.google.protobuf.DoubleValue.getDefaultInstance()
+          : distanceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify a threshold for which no less similar
+     * documents will be returned. The behavior of the specified
+     * `distance_measure` will affect the meaning of the distance threshold.
+     * Since DOT_PRODUCT distances increase when the vectors are more similar,
+     * the comparison is inverted.
+     *
+     * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+     * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder() {
+      return distanceThreshold_ == null
+          ? com.google.protobuf.DoubleValue.getDefaultInstance()
+          : distanceThreshold_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10215,6 +10439,12 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(4, getLimit());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distanceResultField_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, distanceResultField_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(6, getDistanceThreshold());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10238,6 +10468,12 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getLimit());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distanceResultField_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, distanceResultField_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDistanceThreshold());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10268,6 +10504,11 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       if (hasLimit()) {
         if (!getLimit().equals(other.getLimit())) return false;
       }
+      if (!getDistanceResultField().equals(other.getDistanceResultField())) return false;
+      if (hasDistanceThreshold() != other.hasDistanceThreshold()) return false;
+      if (hasDistanceThreshold()) {
+        if (!getDistanceThreshold().equals(other.getDistanceThreshold())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10292,6 +10533,12 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       if (hasLimit()) {
         hash = (37 * hash) + LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getLimit().hashCode();
+      }
+      hash = (37 * hash) + DISTANCE_RESULT_FIELD_FIELD_NUMBER;
+      hash = (53 * hash) + getDistanceResultField().hashCode();
+      if (hasDistanceThreshold()) {
+        hash = (37 * hash) + DISTANCE_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getDistanceThreshold().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -10442,6 +10689,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           getVectorFieldFieldBuilder();
           getQueryVectorFieldBuilder();
           getLimitFieldBuilder();
+          getDistanceThresholdFieldBuilder();
         }
       }
 
@@ -10464,6 +10712,12 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         if (limitBuilder_ != null) {
           limitBuilder_.dispose();
           limitBuilder_ = null;
+        }
+        distanceResultField_ = "";
+        distanceThreshold_ = null;
+        if (distanceThresholdBuilder_ != null) {
+          distanceThresholdBuilder_.dispose();
+          distanceThresholdBuilder_ = null;
         }
         return this;
       }
@@ -10518,6 +10772,16 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.limit_ = limitBuilder_ == null ? limit_ : limitBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.distanceResultField_ = distanceResultField_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.distanceThreshold_ =
+              distanceThresholdBuilder_ == null
+                  ? distanceThreshold_
+                  : distanceThresholdBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -10582,6 +10846,14 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         if (other.hasLimit()) {
           mergeLimit(other.getLimit());
         }
+        if (!other.getDistanceResultField().isEmpty()) {
+          distanceResultField_ = other.distanceResultField_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.hasDistanceThreshold()) {
+          mergeDistanceThreshold(other.getDistanceThreshold());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -10632,6 +10904,19 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  distanceResultField_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getDistanceThresholdFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11391,6 +11676,388 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           limit_ = null;
         }
         return limitBuilder_;
+      }
+
+      private java.lang.Object distanceResultField_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Optional name of the field to output the result of the vector
+       * distance calculation. Must conform to [document field
+       * name][google.firestore.v1.Document.fields] limitations.
+       * </pre>
+       *
+       * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The distanceResultField.
+       */
+      public java.lang.String getDistanceResultField() {
+        java.lang.Object ref = distanceResultField_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          distanceResultField_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Optional name of the field to output the result of the vector
+       * distance calculation. Must conform to [document field
+       * name][google.firestore.v1.Document.fields] limitations.
+       * </pre>
+       *
+       * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for distanceResultField.
+       */
+      public com.google.protobuf.ByteString getDistanceResultFieldBytes() {
+        java.lang.Object ref = distanceResultField_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          distanceResultField_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Optional name of the field to output the result of the vector
+       * distance calculation. Must conform to [document field
+       * name][google.firestore.v1.Document.fields] limitations.
+       * </pre>
+       *
+       * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The distanceResultField to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDistanceResultField(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        distanceResultField_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Optional name of the field to output the result of the vector
+       * distance calculation. Must conform to [document field
+       * name][google.firestore.v1.Document.fields] limitations.
+       * </pre>
+       *
+       * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDistanceResultField() {
+        distanceResultField_ = getDefaultInstance().getDistanceResultField();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Optional name of the field to output the result of the vector
+       * distance calculation. Must conform to [document field
+       * name][google.firestore.v1.Document.fields] limitations.
+       * </pre>
+       *
+       * <code>string distance_result_field = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for distanceResultField to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDistanceResultFieldBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        distanceResultField_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.DoubleValue distanceThreshold_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.DoubleValue,
+              com.google.protobuf.DoubleValue.Builder,
+              com.google.protobuf.DoubleValueOrBuilder>
+          distanceThresholdBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the distanceThreshold field is set.
+       */
+      public boolean hasDistanceThreshold() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The distanceThreshold.
+       */
+      public com.google.protobuf.DoubleValue getDistanceThreshold() {
+        if (distanceThresholdBuilder_ == null) {
+          return distanceThreshold_ == null
+              ? com.google.protobuf.DoubleValue.getDefaultInstance()
+              : distanceThreshold_;
+        } else {
+          return distanceThresholdBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDistanceThreshold(com.google.protobuf.DoubleValue value) {
+        if (distanceThresholdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          distanceThreshold_ = value;
+        } else {
+          distanceThresholdBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDistanceThreshold(com.google.protobuf.DoubleValue.Builder builderForValue) {
+        if (distanceThresholdBuilder_ == null) {
+          distanceThreshold_ = builderForValue.build();
+        } else {
+          distanceThresholdBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDistanceThreshold(com.google.protobuf.DoubleValue value) {
+        if (distanceThresholdBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && distanceThreshold_ != null
+              && distanceThreshold_ != com.google.protobuf.DoubleValue.getDefaultInstance()) {
+            getDistanceThresholdBuilder().mergeFrom(value);
+          } else {
+            distanceThreshold_ = value;
+          }
+        } else {
+          distanceThresholdBuilder_.mergeFrom(value);
+        }
+        if (distanceThreshold_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDistanceThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        distanceThreshold_ = null;
+        if (distanceThresholdBuilder_ != null) {
+          distanceThresholdBuilder_.dispose();
+          distanceThresholdBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DoubleValue.Builder getDistanceThresholdBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getDistanceThresholdFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder() {
+        if (distanceThresholdBuilder_ != null) {
+          return distanceThresholdBuilder_.getMessageOrBuilder();
+        } else {
+          return distanceThreshold_ == null
+              ? com.google.protobuf.DoubleValue.getDefaultInstance()
+              : distanceThreshold_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Option to specify a threshold for which no less similar
+       * documents will be returned. The behavior of the specified
+       * `distance_measure` will affect the meaning of the distance threshold.
+       * Since DOT_PRODUCT distances increase when the vectors are more similar,
+       * the comparison is inverted.
+       *
+       * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
+       * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.DoubleValue distance_threshold = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.DoubleValue,
+              com.google.protobuf.DoubleValue.Builder,
+              com.google.protobuf.DoubleValueOrBuilder>
+          getDistanceThresholdFieldBuilder() {
+        if (distanceThresholdBuilder_ == null) {
+          distanceThresholdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.DoubleValue,
+                  com.google.protobuf.DoubleValue.Builder,
+                  com.google.protobuf.DoubleValueOrBuilder>(
+                  getDistanceThreshold(), getParentForChildren(), isClean());
+          distanceThreshold_ = null;
+        }
+        return distanceThresholdBuilder_;
       }
 
       @java.lang.Override
