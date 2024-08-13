@@ -249,4 +249,14 @@
         <className>com/google/cloud/bigtable/admin/v2/models/Type$Raw</className>
         <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
     </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64$Encoding$BigEndianBytes</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64$Encoding$BigEndianBytes</className>
+        <method>*</method>
+    </difference>
 </differences>

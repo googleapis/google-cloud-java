@@ -55,7 +55,7 @@ public class TypeTest {
 
   @Test
   public void int64WithEncoding() {
-    Type type = Type.int64(Int64.Encoding.BigEndianBytes.create(Type.rawBytes()));
+    Type type = Type.int64(Int64.Encoding.BigEndianBytes.create());
     assertThat(type.toProto()).isEqualTo(TypeProtos.int64Type());
   }
 

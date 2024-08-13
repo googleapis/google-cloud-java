@@ -34,7 +34,6 @@ public class TypeProtos {
                         .setBigEndianBytes(
                             com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes
                                 .newBuilder()
-                                .setBytesType(bytesType())
                                 .build())
                         .build()))
         .build();
