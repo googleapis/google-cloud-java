@@ -125,8 +125,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -142,8 +141,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -159,8 +157,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -779,8 +776,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -795,8 +791,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -817,8 +812,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -841,8 +835,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -862,8 +855,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -891,8 +883,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -912,8 +903,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -928,8 +918,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -948,8 +937,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to be updated.
-     * If no field mask is provided, all provided fields in the request will be
-     * updated.
+     * If no field mask is provided, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

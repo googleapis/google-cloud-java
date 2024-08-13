@@ -111,7 +111,7 @@ public interface ServiceConfigOrBuilder
    *
    *
    * <pre>
-   * [Preview] The number of CPUs used in a single container instance.
+   * The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -127,7 +127,7 @@ public interface ServiceConfigOrBuilder
    *
    *
    * <pre>
-   * [Preview] The number of CPUs used in a single container instance.
+   * The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -540,7 +540,7 @@ public interface ServiceConfigOrBuilder
    *
    *
    * <pre>
-   * [Preview] Sets the maximum number of concurrent requests that each instance
+   * Sets the maximum number of concurrent requests that each instance
    * can receive. Defaults to 1.
    * </pre>
    *
@@ -580,4 +580,31 @@ public interface ServiceConfigOrBuilder
    * @return The securityLevel.
    */
   com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel getSecurityLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The binary authorization policy to be checked when deploying the
+   * Cloud Run service.
+   * </pre>
+   *
+   * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The binaryAuthorizationPolicy.
+   */
+  java.lang.String getBinaryAuthorizationPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The binary authorization policy to be checked when deploying the
+   * Cloud Run service.
+   * </pre>
+   *
+   * <code>string binary_authorization_policy = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for binaryAuthorizationPolicy.
+   */
+  com.google.protobuf.ByteString getBinaryAuthorizationPolicyBytes();
 }

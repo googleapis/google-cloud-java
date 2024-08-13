@@ -99,4 +99,31 @@ public interface SourceProvenanceOrBuilder
    * <code>.google.cloud.functions.v2beta.RepoSource resolved_repo_source = 2;</code>
    */
   com.google.cloud.functions.v2beta.RepoSourceOrBuilder getResolvedRepoSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.git_uri`, if exists, with any commits
+   * resolved.
+   * </pre>
+   *
+   * <code>string git_uri = 3;</code>
+   *
+   * @return The gitUri.
+   */
+  java.lang.String getGitUri();
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.git_uri`, if exists, with any commits
+   * resolved.
+   * </pre>
+   *
+   * <code>string git_uri = 3;</code>
+   *
+   * @return The bytes for gitUri.
+   */
+  com.google.protobuf.ByteString getGitUriBytes();
 }

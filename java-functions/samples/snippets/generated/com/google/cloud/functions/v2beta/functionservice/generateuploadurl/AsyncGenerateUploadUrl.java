@@ -19,6 +19,7 @@ package com.google.cloud.functions.v2beta.samples;
 // [START cloudfunctions_v2beta_generated_FunctionService_GenerateUploadUrl_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2beta.CryptoKeyName;
+import com.google.cloud.functions.v2beta.Environment;
 import com.google.cloud.functions.v2beta.FunctionServiceClient;
 import com.google.cloud.functions.v2beta.GenerateUploadUrlRequest;
 import com.google.cloud.functions.v2beta.GenerateUploadUrlResponse;
@@ -43,6 +44,7 @@ public class AsyncGenerateUploadUrl {
               .setKmsKeyName(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setEnvironment(Environment.forNumber(0))
               .build();
       ApiFuture<GenerateUploadUrlResponse> future =
           functionServiceClient.generateUploadUrlCallable().futureCall(request);

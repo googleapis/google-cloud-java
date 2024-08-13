@@ -46,6 +46,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     workerPool_ = "";
     dockerRegistry_ = 0;
     dockerRepository_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -249,6 +250,123 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int runtimeUpdatePolicyCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object runtimeUpdatePolicy_;
+
+  public enum RuntimeUpdatePolicyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AUTOMATIC_UPDATE_POLICY(40),
+    ON_DEPLOY_UPDATE_POLICY(41),
+    RUNTIMEUPDATEPOLICY_NOT_SET(0);
+    private final int value;
+
+    private RuntimeUpdatePolicyCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RuntimeUpdatePolicyCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RuntimeUpdatePolicyCase forNumber(int value) {
+      switch (value) {
+        case 40:
+          return AUTOMATIC_UPDATE_POLICY;
+        case 41:
+          return ON_DEPLOY_UPDATE_POLICY;
+        case 0:
+          return RUNTIMEUPDATEPOLICY_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RuntimeUpdatePolicyCase getRuntimeUpdatePolicyCase() {
+    return RuntimeUpdatePolicyCase.forNumber(runtimeUpdatePolicyCase_);
+  }
+
+  public static final int AUTOMATIC_UPDATE_POLICY_FIELD_NUMBER = 40;
+  /**
+   * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;</code>
+   *
+   * @return Whether the automaticUpdatePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomaticUpdatePolicy() {
+    return runtimeUpdatePolicyCase_ == 40;
+  }
+  /**
+   * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;</code>
+   *
+   * @return The automaticUpdatePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2beta.AutomaticUpdatePolicy getAutomaticUpdatePolicy() {
+    if (runtimeUpdatePolicyCase_ == 40) {
+      return (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_;
+    }
+    return com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+  }
+  /**
+   * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2beta.AutomaticUpdatePolicyOrBuilder
+      getAutomaticUpdatePolicyOrBuilder() {
+    if (runtimeUpdatePolicyCase_ == 40) {
+      return (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_;
+    }
+    return com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+  }
+
+  public static final int ON_DEPLOY_UPDATE_POLICY_FIELD_NUMBER = 41;
+  /**
+   * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
+   *
+   * @return Whether the onDeployUpdatePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnDeployUpdatePolicy() {
+    return runtimeUpdatePolicyCase_ == 41;
+  }
+  /**
+   * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
+   *
+   * @return The onDeployUpdatePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2beta.OnDeployUpdatePolicy getOnDeployUpdatePolicy() {
+    if (runtimeUpdatePolicyCase_ == 41) {
+      return (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_;
+    }
+    return com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+  }
+  /**
+   * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2beta.OnDeployUpdatePolicyOrBuilder
+      getOnDeployUpdatePolicyOrBuilder() {
+    if (runtimeUpdatePolicyCase_ == 41) {
+      return (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_;
+    }
+    return com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+  }
+
   public static final int BUILD_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -722,10 +840,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
    *
-   * If `docker_repository` field is specified, this field will be automatically
-   * set as `ARTIFACT_REGISTRY`.
-   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-   * This field may be overridden by the backend for eligible deployments.
+   * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+   * If `docker_repository` field is specified, this field should either be left
+   * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
    * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -744,10 +861,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
    *
-   * If `docker_repository` field is specified, this field will be automatically
-   * set as `ARTIFACT_REGISTRY`.
-   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-   * This field may be overridden by the backend for eligible deployments.
+   * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+   * If `docker_repository` field is specified, this field should either be left
+   * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
    * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -771,10 +887,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally
-   * with a customer managed encryption key. This is the repository to which the
-   * function docker image will be pushed after it is built by Cloud Build.
-   * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+   * Repository in Artifact Registry to which the function docker image will be
+   * pushed after it is built by Cloud Build. If specified by user, it is
+   * created and managed by user with a customer managed encryption key.
+   * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
    *
    * It must match the pattern
@@ -805,10 +921,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally
-   * with a customer managed encryption key. This is the repository to which the
-   * function docker image will be pushed after it is built by Cloud Build.
-   * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+   * Repository in Artifact Registry to which the function docker image will be
+   * pushed after it is built by Cloud Build. If specified by user, it is
+   * created and managed by user with a customer managed encryption key.
+   * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
    *
    * It must match the pattern
@@ -830,6 +946,59 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       dockerRepository_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Service account to be used for building the container. The format of this
+   * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string service_account = 27;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Service account to be used for building the container. The format of this
+   * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+   * </pre>
+   *
+   * <code>string service_account = 27;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -881,6 +1050,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(10, dockerRegistry_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, serviceAccount_);
+    }
+    if (runtimeUpdatePolicyCase_ == 40) {
+      output.writeMessage(
+          40, (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_);
+    }
+    if (runtimeUpdatePolicyCase_ == 41) {
+      output.writeMessage(
+          41, (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -926,6 +1106,19 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, dockerRegistry_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, serviceAccount_);
+    }
+    if (runtimeUpdatePolicyCase_ == 40) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40, (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_);
+    }
+    if (runtimeUpdatePolicyCase_ == 41) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              41, (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -958,6 +1151,18 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (dockerRegistry_ != other.dockerRegistry_) return false;
     if (!getDockerRepository().equals(other.getDockerRepository())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getRuntimeUpdatePolicyCase().equals(other.getRuntimeUpdatePolicyCase())) return false;
+    switch (runtimeUpdatePolicyCase_) {
+      case 40:
+        if (!getAutomaticUpdatePolicy().equals(other.getAutomaticUpdatePolicy())) return false;
+        break;
+      case 41:
+        if (!getOnDeployUpdatePolicy().equals(other.getOnDeployUpdatePolicy())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -993,6 +1198,20 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + dockerRegistry_;
     hash = (37 * hash) + DOCKER_REPOSITORY_FIELD_NUMBER;
     hash = (53 * hash) + getDockerRepository().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
+    switch (runtimeUpdatePolicyCase_) {
+      case 40:
+        hash = (37 * hash) + AUTOMATIC_UPDATE_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getAutomaticUpdatePolicy().hashCode();
+        break;
+      case 41:
+        hash = (37 * hash) + ON_DEPLOY_UPDATE_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getOnDeployUpdatePolicy().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1165,6 +1384,12 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (automaticUpdatePolicyBuilder_ != null) {
+        automaticUpdatePolicyBuilder_.clear();
+      }
+      if (onDeployUpdatePolicyBuilder_ != null) {
+        onDeployUpdatePolicyBuilder_.clear();
+      }
       build_ = "";
       runtime_ = "";
       entryPoint_ = "";
@@ -1182,6 +1407,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvironmentVariables().clear();
       dockerRegistry_ = 0;
       dockerRepository_ = "";
+      serviceAccount_ = "";
+      runtimeUpdatePolicyCase_ = 0;
+      runtimeUpdatePolicy_ = null;
       return this;
     }
 
@@ -1212,45 +1440,60 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.functions.v2beta.BuildConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.build_ = build_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.runtime_ = runtime_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.entryPoint_ = entryPoint_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.sourceProvenance_ =
             sourceProvenanceBuilder_ == null ? sourceProvenance_ : sourceProvenanceBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.workerPool_ = workerPool_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.environmentVariables_ = internalGetEnvironmentVariables();
         result.environmentVariables_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.dockerRegistry_ = dockerRegistry_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.dockerRepository_ = dockerRepository_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.functions.v2beta.BuildConfig result) {
+      result.runtimeUpdatePolicyCase_ = runtimeUpdatePolicyCase_;
+      result.runtimeUpdatePolicy_ = this.runtimeUpdatePolicy_;
+      if (runtimeUpdatePolicyCase_ == 40 && automaticUpdatePolicyBuilder_ != null) {
+        result.runtimeUpdatePolicy_ = automaticUpdatePolicyBuilder_.build();
+      }
+      if (runtimeUpdatePolicyCase_ == 41 && onDeployUpdatePolicyBuilder_ != null) {
+        result.runtimeUpdatePolicy_ = onDeployUpdatePolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1300,17 +1543,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v2beta.BuildConfig.getDefaultInstance()) return this;
       if (!other.getBuild().isEmpty()) {
         build_ = other.build_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRuntime().isEmpty()) {
         runtime_ = other.runtime_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getEntryPoint().isEmpty()) {
         entryPoint_ = other.entryPoint_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSource()) {
@@ -1321,18 +1564,39 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       if (other.dockerRegistry_ != 0) {
         setDockerRegistryValue(other.getDockerRegistryValue());
       }
       if (!other.getDockerRepository().isEmpty()) {
         dockerRepository_ = other.dockerRepository_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      switch (other.getRuntimeUpdatePolicyCase()) {
+        case AUTOMATIC_UPDATE_POLICY:
+          {
+            mergeAutomaticUpdatePolicy(other.getAutomaticUpdatePolicy());
+            break;
+          }
+        case ON_DEPLOY_UPDATE_POLICY:
+          {
+            mergeOnDeployUpdatePolicy(other.getOnDeployUpdatePolicy());
+            break;
+          }
+        case RUNTIMEUPDATEPOLICY_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1363,31 +1627,31 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 build_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 runtime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 entryPoint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 workerPool_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
@@ -1400,28 +1664,48 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironmentVariables()
                     .getMutableMap()
                     .put(environmentVariables__.getKey(), environmentVariables__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 dockerRepository_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getSourceProvenanceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 80:
               {
                 dockerRegistry_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
+            case 218:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 218
+            case 322:
+              {
+                input.readMessage(
+                    getAutomaticUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                runtimeUpdatePolicyCase_ = 40;
+                break;
+              } // case 322
+            case 330:
+              {
+                input.readMessage(
+                    getOnDeployUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                runtimeUpdatePolicyCase_ = 41;
+                break;
+              } // case 330
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1439,7 +1723,362 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int runtimeUpdatePolicyCase_ = 0;
+    private java.lang.Object runtimeUpdatePolicy_;
+
+    public RuntimeUpdatePolicyCase getRuntimeUpdatePolicyCase() {
+      return RuntimeUpdatePolicyCase.forNumber(runtimeUpdatePolicyCase_);
+    }
+
+    public Builder clearRuntimeUpdatePolicy() {
+      runtimeUpdatePolicyCase_ = 0;
+      runtimeUpdatePolicy_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicy,
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.Builder,
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicyOrBuilder>
+        automaticUpdatePolicyBuilder_;
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     *
+     * @return Whether the automaticUpdatePolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutomaticUpdatePolicy() {
+      return runtimeUpdatePolicyCase_ == 40;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     *
+     * @return The automaticUpdatePolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2beta.AutomaticUpdatePolicy getAutomaticUpdatePolicy() {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          return (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_;
+        }
+        return com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          return automaticUpdatePolicyBuilder_.getMessage();
+        }
+        return com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    public Builder setAutomaticUpdatePolicy(
+        com.google.cloud.functions.v2beta.AutomaticUpdatePolicy value) {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtimeUpdatePolicy_ = value;
+        onChanged();
+      } else {
+        automaticUpdatePolicyBuilder_.setMessage(value);
+      }
+      runtimeUpdatePolicyCase_ = 40;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    public Builder setAutomaticUpdatePolicy(
+        com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.Builder builderForValue) {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        runtimeUpdatePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        automaticUpdatePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      runtimeUpdatePolicyCase_ = 40;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    public Builder mergeAutomaticUpdatePolicy(
+        com.google.cloud.functions.v2beta.AutomaticUpdatePolicy value) {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 40
+            && runtimeUpdatePolicy_
+                != com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance()) {
+          runtimeUpdatePolicy_ =
+              com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.newBuilder(
+                      (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy)
+                          runtimeUpdatePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          runtimeUpdatePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          automaticUpdatePolicyBuilder_.mergeFrom(value);
+        } else {
+          automaticUpdatePolicyBuilder_.setMessage(value);
+        }
+      }
+      runtimeUpdatePolicyCase_ = 40;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    public Builder clearAutomaticUpdatePolicy() {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          runtimeUpdatePolicyCase_ = 0;
+          runtimeUpdatePolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          runtimeUpdatePolicyCase_ = 0;
+          runtimeUpdatePolicy_ = null;
+        }
+        automaticUpdatePolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    public com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.Builder
+        getAutomaticUpdatePolicyBuilder() {
+      return getAutomaticUpdatePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2beta.AutomaticUpdatePolicyOrBuilder
+        getAutomaticUpdatePolicyOrBuilder() {
+      if ((runtimeUpdatePolicyCase_ == 40) && (automaticUpdatePolicyBuilder_ != null)) {
+        return automaticUpdatePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 40) {
+          return (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_;
+        }
+        return com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.AutomaticUpdatePolicy automatic_update_policy = 40;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicy,
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.Builder,
+            com.google.cloud.functions.v2beta.AutomaticUpdatePolicyOrBuilder>
+        getAutomaticUpdatePolicyFieldBuilder() {
+      if (automaticUpdatePolicyBuilder_ == null) {
+        if (!(runtimeUpdatePolicyCase_ == 40)) {
+          runtimeUpdatePolicy_ =
+              com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.getDefaultInstance();
+        }
+        automaticUpdatePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.functions.v2beta.AutomaticUpdatePolicy,
+                com.google.cloud.functions.v2beta.AutomaticUpdatePolicy.Builder,
+                com.google.cloud.functions.v2beta.AutomaticUpdatePolicyOrBuilder>(
+                (com.google.cloud.functions.v2beta.AutomaticUpdatePolicy) runtimeUpdatePolicy_,
+                getParentForChildren(),
+                isClean());
+        runtimeUpdatePolicy_ = null;
+      }
+      runtimeUpdatePolicyCase_ = 40;
+      onChanged();
+      return automaticUpdatePolicyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicy,
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.Builder,
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicyOrBuilder>
+        onDeployUpdatePolicyBuilder_;
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     *
+     * @return Whether the onDeployUpdatePolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasOnDeployUpdatePolicy() {
+      return runtimeUpdatePolicyCase_ == 41;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     *
+     * @return The onDeployUpdatePolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2beta.OnDeployUpdatePolicy getOnDeployUpdatePolicy() {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          return (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_;
+        }
+        return com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          return onDeployUpdatePolicyBuilder_.getMessage();
+        }
+        return com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    public Builder setOnDeployUpdatePolicy(
+        com.google.cloud.functions.v2beta.OnDeployUpdatePolicy value) {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtimeUpdatePolicy_ = value;
+        onChanged();
+      } else {
+        onDeployUpdatePolicyBuilder_.setMessage(value);
+      }
+      runtimeUpdatePolicyCase_ = 41;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    public Builder setOnDeployUpdatePolicy(
+        com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.Builder builderForValue) {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        runtimeUpdatePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        onDeployUpdatePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      runtimeUpdatePolicyCase_ = 41;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    public Builder mergeOnDeployUpdatePolicy(
+        com.google.cloud.functions.v2beta.OnDeployUpdatePolicy value) {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 41
+            && runtimeUpdatePolicy_
+                != com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance()) {
+          runtimeUpdatePolicy_ =
+              com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.newBuilder(
+                      (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          runtimeUpdatePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          onDeployUpdatePolicyBuilder_.mergeFrom(value);
+        } else {
+          onDeployUpdatePolicyBuilder_.setMessage(value);
+        }
+      }
+      runtimeUpdatePolicyCase_ = 41;
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    public Builder clearOnDeployUpdatePolicy() {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          runtimeUpdatePolicyCase_ = 0;
+          runtimeUpdatePolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          runtimeUpdatePolicyCase_ = 0;
+          runtimeUpdatePolicy_ = null;
+        }
+        onDeployUpdatePolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    public com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.Builder
+        getOnDeployUpdatePolicyBuilder() {
+      return getOnDeployUpdatePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2beta.OnDeployUpdatePolicyOrBuilder
+        getOnDeployUpdatePolicyOrBuilder() {
+      if ((runtimeUpdatePolicyCase_ == 41) && (onDeployUpdatePolicyBuilder_ != null)) {
+        return onDeployUpdatePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        if (runtimeUpdatePolicyCase_ == 41) {
+          return (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_;
+        }
+        return com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.cloud.functions.v2beta.OnDeployUpdatePolicy on_deploy_update_policy = 41;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicy,
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.Builder,
+            com.google.cloud.functions.v2beta.OnDeployUpdatePolicyOrBuilder>
+        getOnDeployUpdatePolicyFieldBuilder() {
+      if (onDeployUpdatePolicyBuilder_ == null) {
+        if (!(runtimeUpdatePolicyCase_ == 41)) {
+          runtimeUpdatePolicy_ =
+              com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.getDefaultInstance();
+        }
+        onDeployUpdatePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.functions.v2beta.OnDeployUpdatePolicy,
+                com.google.cloud.functions.v2beta.OnDeployUpdatePolicy.Builder,
+                com.google.cloud.functions.v2beta.OnDeployUpdatePolicyOrBuilder>(
+                (com.google.cloud.functions.v2beta.OnDeployUpdatePolicy) runtimeUpdatePolicy_,
+                getParentForChildren(),
+                isClean());
+        runtimeUpdatePolicy_ = null;
+      }
+      runtimeUpdatePolicyCase_ = 41;
+      onChanged();
+      return onDeployUpdatePolicyBuilder_;
+    }
 
     private java.lang.Object build_ = "";
     /**
@@ -1512,7 +2151,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       build_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1532,7 +2171,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBuild() {
       build_ = getDefaultInstance().getBuild();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1557,7 +2196,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       build_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1636,7 +2275,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       runtime_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1657,7 +2296,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRuntime() {
       runtime_ = getDefaultInstance().getRuntime();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1683,7 +2322,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       runtime_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1765,7 +2404,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       entryPoint_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1787,7 +2426,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEntryPoint() {
       entryPoint_ = getDefaultInstance().getEntryPoint();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1814,7 +2453,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       entryPoint_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1837,7 +2476,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1877,7 +2516,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1896,7 +2535,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1911,7 +2550,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSource(com.google.cloud.functions.v2beta.Source value) {
       if (sourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && source_ != null
             && source_ != com.google.cloud.functions.v2beta.Source.getDefaultInstance()) {
           getSourceBuilder().mergeFrom(value);
@@ -1922,7 +2561,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         sourceBuilder_.mergeFrom(value);
       }
       if (source_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1937,7 +2576,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.Source source = 4;</code>
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       source_ = null;
       if (sourceBuilder_ != null) {
         sourceBuilder_.dispose();
@@ -1956,7 +2595,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.Source source = 4;</code>
      */
     public com.google.cloud.functions.v2beta.Source.Builder getSourceBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -2024,7 +2663,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceProvenance field is set.
      */
     public boolean hasSourceProvenance() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2068,7 +2707,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceProvenanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2090,7 +2729,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceProvenanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2107,7 +2746,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceProvenance(com.google.cloud.functions.v2beta.SourceProvenance value) {
       if (sourceProvenanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && sourceProvenance_ != null
             && sourceProvenance_
                 != com.google.cloud.functions.v2beta.SourceProvenance.getDefaultInstance()) {
@@ -2119,7 +2758,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         sourceProvenanceBuilder_.mergeFrom(value);
       }
       if (sourceProvenance_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2136,7 +2775,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceProvenance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sourceProvenance_ = null;
       if (sourceProvenanceBuilder_ != null) {
         sourceProvenanceBuilder_.dispose();
@@ -2157,7 +2796,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.functions.v2beta.SourceProvenance.Builder getSourceProvenanceBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSourceProvenanceFieldBuilder().getBuilder();
     }
@@ -2305,7 +2944,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       workerPool_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2333,7 +2972,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearWorkerPool() {
       workerPool_ = getDefaultInstance().getWorkerPool();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2366,7 +3005,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       workerPool_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2392,7 +3031,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (!environmentVariables_.isMutable()) {
         environmentVariables_ = environmentVariables_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return environmentVariables_;
     }
@@ -2479,7 +3118,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvironmentVariables() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableEnvironmentVariables().getMutableMap().clear();
       return this;
     }
@@ -2502,7 +3141,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
@@ -2522,7 +3161,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableEnvironmentVariables().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2537,7 +3176,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironmentVariables().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2550,10 +3189,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
      *
-     * If `docker_repository` field is specified, this field will be automatically
-     * set as `ARTIFACT_REGISTRY`.
-     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-     * This field may be overridden by the backend for eligible deployments.
+     * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+     * If `docker_repository` field is specified, this field should either be left
+     * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
      * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -2572,10 +3210,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
      *
-     * If `docker_repository` field is specified, this field will be automatically
-     * set as `ARTIFACT_REGISTRY`.
-     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-     * This field may be overridden by the backend for eligible deployments.
+     * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+     * If `docker_repository` field is specified, this field should either be left
+     * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
      * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -2585,7 +3222,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDockerRegistryValue(int value) {
       dockerRegistry_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2597,10 +3234,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
      *
-     * If `docker_repository` field is specified, this field will be automatically
-     * set as `ARTIFACT_REGISTRY`.
-     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-     * This field may be overridden by the backend for eligible deployments.
+     * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+     * If `docker_repository` field is specified, this field should either be left
+     * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
      * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -2623,10 +3259,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
      *
-     * If `docker_repository` field is specified, this field will be automatically
-     * set as `ARTIFACT_REGISTRY`.
-     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-     * This field may be overridden by the backend for eligible deployments.
+     * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+     * If `docker_repository` field is specified, this field should either be left
+     * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
      * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -2639,7 +3274,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       dockerRegistry_ = value.getNumber();
       onChanged();
       return this;
@@ -2652,10 +3287,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
      *
-     * If `docker_repository` field is specified, this field will be automatically
-     * set as `ARTIFACT_REGISTRY`.
-     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
-     * This field may be overridden by the backend for eligible deployments.
+     * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
+     * If `docker_repository` field is specified, this field should either be left
+     * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
      * <code>.google.cloud.functions.v2beta.BuildConfig.DockerRegistry docker_registry = 10;</code>
@@ -2663,7 +3297,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDockerRegistry() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       dockerRegistry_ = 0;
       onChanged();
       return this;
@@ -2674,10 +3308,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally
-     * with a customer managed encryption key. This is the repository to which the
-     * function docker image will be pushed after it is built by Cloud Build.
-     * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+     * Repository in Artifact Registry to which the function docker image will be
+     * pushed after it is built by Cloud Build. If specified by user, it is
+     * created and managed by user with a customer managed encryption key.
+     * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
      *
      * It must match the pattern
@@ -2707,10 +3341,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally
-     * with a customer managed encryption key. This is the repository to which the
-     * function docker image will be pushed after it is built by Cloud Build.
-     * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+     * Repository in Artifact Registry to which the function docker image will be
+     * pushed after it is built by Cloud Build. If specified by user, it is
+     * created and managed by user with a customer managed encryption key.
+     * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
      *
      * It must match the pattern
@@ -2740,10 +3374,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally
-     * with a customer managed encryption key. This is the repository to which the
-     * function docker image will be pushed after it is built by Cloud Build.
-     * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+     * Repository in Artifact Registry to which the function docker image will be
+     * pushed after it is built by Cloud Build. If specified by user, it is
+     * created and managed by user with a customer managed encryption key.
+     * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
      *
      * It must match the pattern
@@ -2764,7 +3398,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       dockerRepository_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2772,10 +3406,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally
-     * with a customer managed encryption key. This is the repository to which the
-     * function docker image will be pushed after it is built by Cloud Build.
-     * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+     * Repository in Artifact Registry to which the function docker image will be
+     * pushed after it is built by Cloud Build. If specified by user, it is
+     * created and managed by user with a customer managed encryption key.
+     * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
      *
      * It must match the pattern
@@ -2792,7 +3426,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDockerRepository() {
       dockerRepository_ = getDefaultInstance().getDockerRepository();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2800,10 +3434,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally
-     * with a customer managed encryption key. This is the repository to which the
-     * function docker image will be pushed after it is built by Cloud Build.
-     * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
+     * Repository in Artifact Registry to which the function docker image will be
+     * pushed after it is built by Cloud Build. If specified by user, it is
+     * created and managed by user with a customer managed encryption key.
+     * Otherwise, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
      *
      * It must match the pattern
@@ -2825,7 +3459,118 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       dockerRepository_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Service account to be used for building the container. The format of this
+     * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string service_account = 27;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account to be used for building the container. The format of this
+     * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string service_account = 27;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account to be used for building the container. The format of this
+     * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string service_account = 27;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account to be used for building the container. The format of this
+     * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string service_account = 27;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account to be used for building the container. The format of this
+     * field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
+     * </pre>
+     *
+     * <code>string service_account = 27;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -23,12 +23,12 @@ package com.google.cloud.functions.v2beta;
  *
  *
  * <pre>
- * The environment the function is hosted on.
+ * The type of the long running operation.
  * </pre>
  *
- * Protobuf enum {@code google.cloud.functions.v2beta.Environment}
+ * Protobuf enum {@code google.cloud.functions.v2beta.OperationType}
  */
-public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
+public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
@@ -36,29 +36,39 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * Unspecified
    * </pre>
    *
-   * <code>ENVIRONMENT_UNSPECIFIED = 0;</code>
+   * <code>OPERATIONTYPE_UNSPECIFIED = 0;</code>
    */
-  ENVIRONMENT_UNSPECIFIED(0),
+  OPERATIONTYPE_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * Gen 1
+   * CreateFunction
    * </pre>
    *
-   * <code>GEN_1 = 1;</code>
+   * <code>CREATE_FUNCTION = 1;</code>
    */
-  GEN_1(1),
+  CREATE_FUNCTION(1),
   /**
    *
    *
    * <pre>
-   * Gen 2
+   * UpdateFunction
    * </pre>
    *
-   * <code>GEN_2 = 2;</code>
+   * <code>UPDATE_FUNCTION = 2;</code>
    */
-  GEN_2(2),
+  UPDATE_FUNCTION(2),
+  /**
+   *
+   *
+   * <pre>
+   * DeleteFunction
+   * </pre>
+   *
+   * <code>DELETE_FUNCTION = 3;</code>
+   */
+  DELETE_FUNCTION(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -69,29 +79,39 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * Unspecified
    * </pre>
    *
-   * <code>ENVIRONMENT_UNSPECIFIED = 0;</code>
+   * <code>OPERATIONTYPE_UNSPECIFIED = 0;</code>
    */
-  public static final int ENVIRONMENT_UNSPECIFIED_VALUE = 0;
+  public static final int OPERATIONTYPE_UNSPECIFIED_VALUE = 0;
   /**
    *
    *
    * <pre>
-   * Gen 1
+   * CreateFunction
    * </pre>
    *
-   * <code>GEN_1 = 1;</code>
+   * <code>CREATE_FUNCTION = 1;</code>
    */
-  public static final int GEN_1_VALUE = 1;
+  public static final int CREATE_FUNCTION_VALUE = 1;
   /**
    *
    *
    * <pre>
-   * Gen 2
+   * UpdateFunction
    * </pre>
    *
-   * <code>GEN_2 = 2;</code>
+   * <code>UPDATE_FUNCTION = 2;</code>
    */
-  public static final int GEN_2_VALUE = 2;
+  public static final int UPDATE_FUNCTION_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * DeleteFunction
+   * </pre>
+   *
+   * <code>DELETE_FUNCTION = 3;</code>
+   */
+  public static final int DELETE_FUNCTION_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -107,7 +127,7 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static Environment valueOf(int value) {
+  public static OperationType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -115,27 +135,29 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static Environment forNumber(int value) {
+  public static OperationType forNumber(int value) {
     switch (value) {
       case 0:
-        return ENVIRONMENT_UNSPECIFIED;
+        return OPERATIONTYPE_UNSPECIFIED;
       case 1:
-        return GEN_1;
+        return CREATE_FUNCTION;
       case 2:
-        return GEN_2;
+        return UPDATE_FUNCTION;
+      case 3:
+        return DELETE_FUNCTION;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Environment> internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<OperationType> internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<Environment> internalValueMap =
-      new com.google.protobuf.Internal.EnumLiteMap<Environment>() {
-        public Environment findValueByNumber(int number) {
-          return Environment.forNumber(number);
+  private static final com.google.protobuf.Internal.EnumLiteMap<OperationType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<OperationType>() {
+        public OperationType findValueByNumber(int number) {
+          return OperationType.forNumber(number);
         }
       };
 
@@ -152,12 +174,12 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.functions.v2beta.FunctionsProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.cloud.functions.v2beta.FunctionsProto.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final Environment[] VALUES = values();
+  private static final OperationType[] VALUES = values();
 
-  public static Environment valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static OperationType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
@@ -169,9 +191,9 @@ public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
 
   private final int value;
 
-  private Environment(int value) {
+  private OperationType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.cloud.functions.v2beta.Environment)
+  // @@protoc_insertion_point(enum_scope:google.cloud.functions.v2beta.OperationType)
 }

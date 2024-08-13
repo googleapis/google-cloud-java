@@ -97,5 +97,48 @@ public interface SourceOrBuilder
    */
   com.google.cloud.functions.v2beta.RepoSourceOrBuilder getRepoSourceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from GitHub repository. This option is valid
+   * only for GCF 1st Gen function.
+   * Example: https://github.com/&lt;user&gt;/&lt;repo&gt;/blob/&lt;commit&gt;/&lt;path-to-code&gt;
+   * </pre>
+   *
+   * <code>string git_uri = 3;</code>
+   *
+   * @return Whether the gitUri field is set.
+   */
+  boolean hasGitUri();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from GitHub repository. This option is valid
+   * only for GCF 1st Gen function.
+   * Example: https://github.com/&lt;user&gt;/&lt;repo&gt;/blob/&lt;commit&gt;/&lt;path-to-code&gt;
+   * </pre>
+   *
+   * <code>string git_uri = 3;</code>
+   *
+   * @return The gitUri.
+   */
+  java.lang.String getGitUri();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from GitHub repository. This option is valid
+   * only for GCF 1st Gen function.
+   * Example: https://github.com/&lt;user&gt;/&lt;repo&gt;/blob/&lt;commit&gt;/&lt;path-to-code&gt;
+   * </pre>
+   *
+   * <code>string git_uri = 3;</code>
+   *
+   * @return The bytes for gitUri.
+   */
+  com.google.protobuf.ByteString getGitUriBytes();
+
   com.google.cloud.functions.v2beta.Source.SourceCase getSourceCase();
 }

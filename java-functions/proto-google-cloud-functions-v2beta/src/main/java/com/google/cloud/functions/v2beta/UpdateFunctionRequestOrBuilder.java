@@ -70,8 +70,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -84,8 +83,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -98,8 +96,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    * <pre>
    * The list of fields to be updated.
-   * If no field mask is provided, all provided fields in the request will be
-   * updated.
+   * If no field mask is provided, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

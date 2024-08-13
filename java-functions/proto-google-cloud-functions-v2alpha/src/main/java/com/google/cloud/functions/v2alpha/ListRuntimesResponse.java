@@ -465,6 +465,76 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The environment.
      */
     com.google.cloud.functions.v2alpha.Environment getEnvironment();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     *
+     * @return Whether the deprecationDate field is set.
+     */
+    boolean hasDeprecationDate();
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     *
+     * @return The deprecationDate.
+     */
+    com.google.type.Date getDeprecationDate();
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     */
+    com.google.type.DateOrBuilder getDeprecationDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     *
+     * @return Whether the decommissionDate field is set.
+     */
+    boolean hasDecommissionDate();
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     *
+     * @return The decommissionDate.
+     */
+    com.google.type.Date getDecommissionDate();
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     */
+    com.google.type.DateOrBuilder getDecommissionDateOrBuilder();
   }
   /**
    *
@@ -515,6 +585,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               com.google.cloud.functions.v2alpha.ListRuntimesResponse.Runtime.Builder.class);
     }
 
+    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -753,6 +824,106 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       return result == null ? com.google.cloud.functions.v2alpha.Environment.UNRECOGNIZED : result;
     }
 
+    public static final int DEPRECATION_DATE_FIELD_NUMBER = 6;
+    private com.google.type.Date deprecationDate_;
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     *
+     * @return Whether the deprecationDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeprecationDate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     *
+     * @return The deprecationDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getDeprecationDate() {
+      return deprecationDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : deprecationDate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecation date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date deprecation_date = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getDeprecationDateOrBuilder() {
+      return deprecationDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : deprecationDate_;
+    }
+
+    public static final int DECOMMISSION_DATE_FIELD_NUMBER = 7;
+    private com.google.type.Date decommissionDate_;
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     *
+     * @return Whether the decommissionDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasDecommissionDate() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     *
+     * @return The decommissionDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getDecommissionDate() {
+      return decommissionDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : decommissionDate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Decommission date for the runtime.
+     * </pre>
+     *
+     * <code>.google.type.Date decommission_date = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getDecommissionDateOrBuilder() {
+      return decommissionDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : decommissionDate_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -785,6 +956,12 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getDeprecationDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getDecommissionDate());
       }
       getUnknownFields().writeTo(output);
     }
@@ -819,6 +996,12 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDeprecationDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDecommissionDate());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -840,6 +1023,14 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       if (stage_ != other.stage_) return false;
       if (!getWarningsList().equals(other.getWarningsList())) return false;
       if (environment_ != other.environment_) return false;
+      if (hasDeprecationDate() != other.hasDeprecationDate()) return false;
+      if (hasDeprecationDate()) {
+        if (!getDeprecationDate().equals(other.getDeprecationDate())) return false;
+      }
+      if (hasDecommissionDate() != other.hasDecommissionDate()) return false;
+      if (hasDecommissionDate()) {
+        if (!getDecommissionDate().equals(other.getDecommissionDate())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -863,6 +1054,14 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + environment_;
+      if (hasDeprecationDate()) {
+        hash = (37 * hash) + DEPRECATION_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getDeprecationDate().hashCode();
+      }
+      if (hasDecommissionDate()) {
+        hash = (37 * hash) + DECOMMISSION_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getDecommissionDate().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -998,10 +1197,20 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
       // Construct using
       // com.google.cloud.functions.v2alpha.ListRuntimesResponse.Runtime.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getDeprecationDateFieldBuilder();
+          getDecommissionDateFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1013,6 +1222,16 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         stage_ = 0;
         warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
         environment_ = 0;
+        deprecationDate_ = null;
+        if (deprecationDateBuilder_ != null) {
+          deprecationDateBuilder_.dispose();
+          deprecationDateBuilder_ = null;
+        }
+        decommissionDate_ = null;
+        if (decommissionDateBuilder_ != null) {
+          decommissionDateBuilder_.dispose();
+          decommissionDateBuilder_ = null;
+        }
         return this;
       }
 
@@ -1067,6 +1286,20 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.environment_ = environment_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.deprecationDate_ =
+              deprecationDateBuilder_ == null ? deprecationDate_ : deprecationDateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.decommissionDate_ =
+              decommissionDateBuilder_ == null
+                  ? decommissionDate_
+                  : decommissionDateBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1145,6 +1378,12 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (other.environment_ != 0) {
           setEnvironmentValue(other.getEnvironmentValue());
         }
+        if (other.hasDeprecationDate()) {
+          mergeDeprecationDate(other.getDeprecationDate());
+        }
+        if (other.hasDecommissionDate()) {
+          mergeDecommissionDate(other.getDecommissionDate());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1202,6 +1441,20 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getDeprecationDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getDecommissionDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1790,6 +2043,368 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         environment_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.type.Date deprecationDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          deprecationDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       *
+       * @return Whether the deprecationDate field is set.
+       */
+      public boolean hasDeprecationDate() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       *
+       * @return The deprecationDate.
+       */
+      public com.google.type.Date getDeprecationDate() {
+        if (deprecationDateBuilder_ == null) {
+          return deprecationDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : deprecationDate_;
+        } else {
+          return deprecationDateBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public Builder setDeprecationDate(com.google.type.Date value) {
+        if (deprecationDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deprecationDate_ = value;
+        } else {
+          deprecationDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public Builder setDeprecationDate(com.google.type.Date.Builder builderForValue) {
+        if (deprecationDateBuilder_ == null) {
+          deprecationDate_ = builderForValue.build();
+        } else {
+          deprecationDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public Builder mergeDeprecationDate(com.google.type.Date value) {
+        if (deprecationDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && deprecationDate_ != null
+              && deprecationDate_ != com.google.type.Date.getDefaultInstance()) {
+            getDeprecationDateBuilder().mergeFrom(value);
+          } else {
+            deprecationDate_ = value;
+          }
+        } else {
+          deprecationDateBuilder_.mergeFrom(value);
+        }
+        if (deprecationDate_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public Builder clearDeprecationDate() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        deprecationDate_ = null;
+        if (deprecationDateBuilder_ != null) {
+          deprecationDateBuilder_.dispose();
+          deprecationDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public com.google.type.Date.Builder getDeprecationDateBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getDeprecationDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      public com.google.type.DateOrBuilder getDeprecationDateOrBuilder() {
+        if (deprecationDateBuilder_ != null) {
+          return deprecationDateBuilder_.getMessageOrBuilder();
+        } else {
+          return deprecationDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : deprecationDate_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Deprecation date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date deprecation_date = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getDeprecationDateFieldBuilder() {
+        if (deprecationDateBuilder_ == null) {
+          deprecationDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(
+                  getDeprecationDate(), getParentForChildren(), isClean());
+          deprecationDate_ = null;
+        }
+        return deprecationDateBuilder_;
+      }
+
+      private com.google.type.Date decommissionDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          decommissionDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       *
+       * @return Whether the decommissionDate field is set.
+       */
+      public boolean hasDecommissionDate() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       *
+       * @return The decommissionDate.
+       */
+      public com.google.type.Date getDecommissionDate() {
+        if (decommissionDateBuilder_ == null) {
+          return decommissionDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : decommissionDate_;
+        } else {
+          return decommissionDateBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public Builder setDecommissionDate(com.google.type.Date value) {
+        if (decommissionDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          decommissionDate_ = value;
+        } else {
+          decommissionDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public Builder setDecommissionDate(com.google.type.Date.Builder builderForValue) {
+        if (decommissionDateBuilder_ == null) {
+          decommissionDate_ = builderForValue.build();
+        } else {
+          decommissionDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public Builder mergeDecommissionDate(com.google.type.Date value) {
+        if (decommissionDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && decommissionDate_ != null
+              && decommissionDate_ != com.google.type.Date.getDefaultInstance()) {
+            getDecommissionDateBuilder().mergeFrom(value);
+          } else {
+            decommissionDate_ = value;
+          }
+        } else {
+          decommissionDateBuilder_.mergeFrom(value);
+        }
+        if (decommissionDate_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public Builder clearDecommissionDate() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        decommissionDate_ = null;
+        if (decommissionDateBuilder_ != null) {
+          decommissionDateBuilder_.dispose();
+          decommissionDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public com.google.type.Date.Builder getDecommissionDateBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getDecommissionDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      public com.google.type.DateOrBuilder getDecommissionDateOrBuilder() {
+        if (decommissionDateBuilder_ != null) {
+          return decommissionDateBuilder_.getMessageOrBuilder();
+        } else {
+          return decommissionDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : decommissionDate_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Decommission date for the runtime.
+       * </pre>
+       *
+       * <code>.google.type.Date decommission_date = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getDecommissionDateFieldBuilder() {
+        if (decommissionDateBuilder_ == null) {
+          decommissionDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(
+                  getDecommissionDate(), getParentForChildren(), isClean());
+          decommissionDate_ = null;
+        }
+        return decommissionDateBuilder_;
       }
 
       @java.lang.Override
