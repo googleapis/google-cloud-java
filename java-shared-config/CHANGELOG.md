@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.10.0](https://github.com/googleapis/java-shared-config/compare/v1.9.1...v1.10.0) (2024-08-13)
+
+
+### Features
+
+* Update graal-sdk to 24 and graalvm-A to 21.x ([#815](https://github.com/googleapis/java-shared-config/issues/815)) ([3c3c630](https://github.com/googleapis/java-shared-config/commit/3c3c6307ea88dc56f5901a95c295d1b2d53a3559))
+
+
+### Bug Fixes
+
+* Address terraform installation failure by updating hashicorp baseurl ([#881](https://github.com/googleapis/java-shared-config/issues/881)) ([0b7164f](https://github.com/googleapis/java-shared-config/commit/0b7164fd15150cb26668d381dbcd89671f1e66e4))
+
 ## [1.9.1](https://github.com/googleapis/java-shared-config/compare/v1.9.0...v1.9.1) (2024-07-22)
 
 
