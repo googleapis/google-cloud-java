@@ -28,10 +28,12 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * The sequence of scripts or containers to run for this Task. Each Task using
-   * this TaskSpec executes its list of runnables in order. The Task succeeds if
-   * all of its runnables either exit with a zero status or any that exit with a
-   * non-zero status have the ignore_exit_status flag.
+   * Required. The sequence of one or more runnables (executable scripts,
+   * executable containers, and/or barriers) for each task in this task group to
+   * run. Each task runs this list of runnables in order. For a task to succeed,
+   * all of its script and container runnables each must either exit with a zero
+   * status or enable the `ignore_exit_status` subfield and exit with any
+   * status.
    *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
@@ -47,10 +49,12 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * The sequence of scripts or containers to run for this Task. Each Task using
-   * this TaskSpec executes its list of runnables in order. The Task succeeds if
-   * all of its runnables either exit with a zero status or any that exit with a
-   * non-zero status have the ignore_exit_status flag.
+   * Required. The sequence of one or more runnables (executable scripts,
+   * executable containers, and/or barriers) for each task in this task group to
+   * run. Each task runs this list of runnables in order. For a task to succeed,
+   * all of its script and container runnables each must either exit with a zero
+   * status or enable the `ignore_exit_status` subfield and exit with any
+   * status.
    *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
@@ -66,10 +70,12 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * The sequence of scripts or containers to run for this Task. Each Task using
-   * this TaskSpec executes its list of runnables in order. The Task succeeds if
-   * all of its runnables either exit with a zero status or any that exit with a
-   * non-zero status have the ignore_exit_status flag.
+   * Required. The sequence of one or more runnables (executable scripts,
+   * executable containers, and/or barriers) for each task in this task group to
+   * run. Each task runs this list of runnables in order. For a task to succeed,
+   * all of its script and container runnables each must either exit with a zero
+   * status or enable the `ignore_exit_status` subfield and exit with any
+   * status.
    *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
@@ -85,10 +91,12 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * The sequence of scripts or containers to run for this Task. Each Task using
-   * this TaskSpec executes its list of runnables in order. The Task succeeds if
-   * all of its runnables either exit with a zero status or any that exit with a
-   * non-zero status have the ignore_exit_status flag.
+   * Required. The sequence of one or more runnables (executable scripts,
+   * executable containers, and/or barriers) for each task in this task group to
+   * run. Each task runs this list of runnables in order. For a task to succeed,
+   * all of its script and container runnables each must either exit with a zero
+   * status or enable the `ignore_exit_status` subfield and exit with any
+   * status.
    *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
@@ -104,10 +112,12 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * The sequence of scripts or containers to run for this Task. Each Task using
-   * this TaskSpec executes its list of runnables in order. The Task succeeds if
-   * all of its runnables either exit with a zero status or any that exit with a
-   * non-zero status have the ignore_exit_status flag.
+   * Required. The sequence of one or more runnables (executable scripts,
+   * executable containers, and/or barriers) for each task in this task group to
+   * run. Each task runs this list of runnables in order. For a task to succeed,
+   * all of its script and container runnables each must either exit with a zero
+   * status or enable the `ignore_exit_status` subfield and exit with any
+   * status.
    *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
