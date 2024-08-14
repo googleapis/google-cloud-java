@@ -835,12 +835,14 @@ public class StreamWriterTest {
             .setWriterSchema(createProtoSchema())
             .setLocation("US")
             .setEnableConnectionPool(true)
+            .setEnableOpenTelemetry(true)
             .build();
     StreamWriter writer2 =
         StreamWriter.newBuilder(TEST_STREAM_2, client)
             .setWriterSchema(createProtoSchema())
             .setLocation("US")
             .setEnableConnectionPool(true)
+            .setEnableOpenTelemetry(true)
             .build();
 
     testBigQueryWrite.addResponse(createAppendResponse(0));
@@ -849,13 +851,13 @@ public class StreamWriterTest {
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer1, new String[] {"A"});
     assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
     Attributes attributes = writer1.getTelemetryAttributes();
-    String attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    String attributesTableId = attributes.get(TelemetryMetrics.telemetryKeyTableId);
     assertEquals("projects/p/datasets/d1/tables/t1", attributesTableId);
 
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer2, new String[] {"A"});
     assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
     attributes = writer2.getTelemetryAttributes();
-    attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    attributesTableId = attributes.get(TelemetryMetrics.telemetryKeyTableId);
     assertEquals("projects/p/datasets/d2/tables/t2", attributesTableId);
 
     writer1.close();

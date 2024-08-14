@@ -787,10 +787,10 @@ public class ConnectionWorkerTest {
             client.getSettings(),
             retrySettings,
             /*enableRequestProfiler=*/ false,
-            /*enableOpenTelemetry=*/ false);
+            /*enableOpenTelemetry=*/ true);
 
     Attributes attributes = connectionWorker.getTelemetryAttributes();
-    String attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    String attributesTableId = attributes.get(TelemetryMetrics.telemetryKeyTableId);
     assertEquals(expected, attributesTableId);
   }
 
@@ -807,7 +807,7 @@ public class ConnectionWorkerTest {
   }
 
   void checkOpenTelemetryTraceIdAttribute(Attributes attributes, int index, String expected) {
-    String attributesTraceId = attributes.get(ConnectionWorker.telemetryKeysTraceId.get(index));
+    String attributesTraceId = attributes.get(TelemetryMetrics.telemetryKeysTraceId.get(index));
     assertEquals(expected, attributesTraceId);
   }
 
@@ -829,7 +829,7 @@ public class ConnectionWorkerTest {
             client.getSettings(),
             retrySettings,
             /*enableRequestProfiler=*/ false,
-            /*enableOpenTelemetry=*/ false);
+            /*enableOpenTelemetry=*/ true);
 
     Attributes attributes = connectionWorker.getTelemetryAttributes();
     checkOpenTelemetryTraceIdAttribute(attributes, 0, expectedField1);

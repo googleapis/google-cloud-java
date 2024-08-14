@@ -30,6 +30,7 @@ class Singletons {
   static OpenTelemetry getOpenTelemetry() {
     if (openTelemetry == null) {
       openTelemetry = GlobalOpenTelemetry.get();
+      log.info("BigQueryStorage initialized Open Telemetry");
     }
     return openTelemetry;
   }

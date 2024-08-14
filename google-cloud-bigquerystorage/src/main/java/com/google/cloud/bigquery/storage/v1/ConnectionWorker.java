@@ -31,19 +31,12 @@ import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
-import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.api.metrics.LongCounter;
-import io.opentelemetry.api.metrics.LongHistogram;
-import io.opentelemetry.api.metrics.Meter;
-import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -250,6 +243,7 @@ class ConnectionWorker implements AutoCloseable {
   private final RetrySettings retrySettings;
 
   private final RequestProfiler.RequestProfilerHook requestProfilerHook;
+  private final TelemetryMetrics telemetryMetrics;
 
   private static String projectMatching = "projects/[^/]+/";
   private static Pattern streamPatternProject = Pattern.compile(projectMatching);
@@ -259,38 +253,7 @@ class ConnectionWorker implements AutoCloseable {
 
   private static String tableMatching = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/";
   private static Pattern streamPatternTable = Pattern.compile(tableMatching);
-  private final boolean enableOpenTelemetry;
-  private Meter writeMeter;
-  static AttributeKey<String> telemetryKeyTableId = AttributeKey.stringKey("table_id");
-  static AttributeKey<String> telemetryKeyWriterId = AttributeKey.stringKey("writer_id");
-  private static String dataflowPrefix = "dataflow:";
-  static List<AttributeKey<String>> telemetryKeysTraceId =
-      new ArrayList<AttributeKey<String>>() {
-        {
-          add(AttributeKey.stringKey("trace_field_1"));
-          add(AttributeKey.stringKey("trace_field_2"));
-          add(AttributeKey.stringKey("trace_field_3"));
-        }
-      };
-  static AttributeKey<String> telemetryKeyErrorCode = AttributeKey.stringKey("error_code");
-  static AttributeKey<String> telemetryKeyIsRetry = AttributeKey.stringKey("is_retry");
-  private Attributes telemetryAttributes;
   // Latency buckets are based on a list of 1.5 ^ n
-  private static final List<Long> METRICS_MILLISECONDS_LATENCY_BUCKETS =
-      ImmutableList.of(
-          0L, 17L, 38L, 86L, 195L, 438L, 985L, 2217L, 4988L, 11223L, 25251L, 56815L, 127834L,
-          287627L, 647160L);
-
-  private static final class OpenTelemetryMetrics {
-    private LongCounter instrumentAckedRequestCount;
-    private LongCounter instrumentAckedRequestSize;
-    private LongCounter instrumentAckedRequestRows;
-    private LongHistogram instrumentNetworkResponseLatency;
-    private LongCounter instrumentConnectionStartCount;
-    private LongCounter instrumentConnectionEndCount;
-  }
-
-  private OpenTelemetryMetrics telemetryMetrics = new OpenTelemetryMetrics();
 
   public static Boolean isDefaultStreamName(String streamName) {
     Matcher matcher = DEFAULT_STREAM_PATTERN.matcher(streamName);
@@ -322,151 +285,33 @@ class ConnectionWorker implements AutoCloseable {
     return tableMatcher.find() ? tableMatcher.group(1) : "";
   }
 
-  private void setTraceIdAttributesPart(
-      AttributesBuilder builder,
-      String[] traceIdParts,
-      int indexPartsToCheck,
-      int indexTelemetryKeysToUse) {
-    if ((indexPartsToCheck < traceIdParts.length) && !traceIdParts[indexPartsToCheck].isEmpty()) {
-      builder.put(
-          telemetryKeysTraceId.get(indexTelemetryKeysToUse), traceIdParts[indexPartsToCheck]);
-    }
-  }
-
-  private void setTraceIdAttributes(AttributesBuilder builder) {
-    if ((this.traceId != null) && !this.traceId.isEmpty()) {
-      int indexDataflow = this.traceId.toLowerCase().indexOf(dataflowPrefix);
-      if (indexDataflow >= 0) {
-        String[] traceIdParts =
-            this.traceId.substring(indexDataflow + dataflowPrefix.length()).split(":", 8);
-        setTraceIdAttributesPart(builder, traceIdParts, 0, 0);
-        setTraceIdAttributesPart(builder, traceIdParts, 1, 1);
-        setTraceIdAttributesPart(builder, traceIdParts, 2, 2);
+  public boolean hasActiveConnection() {
+    boolean isConnected = false;
+    this.lock.lock();
+    try {
+      if (streamConnectionIsConnected) {
+        isConnected = true;
       }
+    } finally {
+      this.lock.unlock();
     }
+    return isConnected;
   }
 
-  // Specify common attributes for all metrics.
-  // For example, table name and writer id.
-  // Metrics dashboards can be filtered on available attributes.
-  private Attributes buildOpenTelemetryAttributes() {
-    AttributesBuilder builder = Attributes.builder();
-    String tableName = getTableName();
-    if (!tableName.isEmpty()) {
-      builder.put(telemetryKeyTableId, tableName);
+  public int getInflightRequestQueueLength() {
+    int length = 0;
+    this.lock.lock();
+    try {
+      length = inflightRequestQueue.size();
+    } finally {
+      this.lock.unlock();
     }
-    builder.put(telemetryKeyWriterId, writerId);
-    setTraceIdAttributes(builder);
-    return builder.build();
-  }
-
-  // Refresh the table name attribute when multiplexing switches between tables.
-  private void refreshOpenTelemetryTableNameAttributes() {
-    String tableName = getTableName();
-    if (!tableName.isEmpty()
-        && !tableName.equals(getTelemetryAttributes().get(telemetryKeyTableId))) {
-      AttributesBuilder builder = getTelemetryAttributes().toBuilder();
-      builder.put(telemetryKeyTableId, tableName);
-      this.telemetryAttributes = builder.build();
-    }
-  }
-
-  // Build new attributes augmented with an error code string.
-  private Attributes augmentAttributesWithErrorCode(Attributes attributes, String errorCode) {
-    AttributesBuilder builder = attributes.toBuilder();
-    if ((errorCode != null) && !errorCode.isEmpty()) {
-      builder.put(telemetryKeyErrorCode, errorCode);
-    }
-    return builder.build();
-  }
-
-  // Build new attributes augmented with a flag indicating this was a retry.
-  private Attributes augmentAttributesWithRetry(Attributes attributes) {
-    AttributesBuilder builder = attributes.toBuilder();
-    builder.put(telemetryKeyIsRetry, "1");
-    return builder.build();
+    return length;
   }
 
   @VisibleForTesting
   Attributes getTelemetryAttributes() {
-    return telemetryAttributes;
-  }
-
-  private void registerOpenTelemetryMetrics() {
-    MeterProvider meterProvider = Singletons.getOpenTelemetry().getMeterProvider();
-    writeMeter =
-        meterProvider
-            .meterBuilder("com.google.cloud.bigquery.storage.v1.write")
-            .setInstrumentationVersion(
-                ConnectionWorker.class.getPackage().getImplementationVersion())
-            .build();
-    telemetryMetrics.instrumentAckedRequestCount =
-        writeMeter
-            .counterBuilder("append_requests_acked")
-            .setDescription("Counts number of requests acked by the server")
-            .build();
-    telemetryMetrics.instrumentAckedRequestSize =
-        writeMeter
-            .counterBuilder("append_request_bytes_acked")
-            .setDescription("Counts byte size of requests acked by the server")
-            .build();
-    telemetryMetrics.instrumentAckedRequestRows =
-        writeMeter
-            .counterBuilder("append_rows_acked")
-            .setDescription("Counts number of request rows acked by the server")
-            .build();
-    writeMeter
-        .gaugeBuilder("active_connection_count")
-        .ofLongs()
-        .setDescription("Reports number of active connections")
-        .buildWithCallback(
-            measurement -> {
-              int count = 0;
-              this.lock.lock();
-              try {
-                if (streamConnectionIsConnected) {
-                  count = 1;
-                }
-              } finally {
-                this.lock.unlock();
-              }
-              measurement.record(count, getTelemetryAttributes());
-            });
-    writeMeter
-        .gaugeBuilder("inflight_queue_length")
-        .ofLongs()
-        .setDescription(
-            "Reports length of inflight queue. This queue contains sent append requests waiting for response from the server.")
-        .buildWithCallback(
-            measurement -> {
-              int length = 0;
-              this.lock.lock();
-              try {
-                length = inflightRequestQueue.size();
-              } finally {
-                this.lock.unlock();
-              }
-              measurement.record(length, getTelemetryAttributes());
-            });
-    telemetryMetrics.instrumentNetworkResponseLatency =
-        writeMeter
-            .histogramBuilder("network_response_latency")
-            .ofLongs()
-            .setDescription(
-                "Reports time taken in milliseconds for a response to arrive once a message has been sent over the network.")
-            .setExplicitBucketBoundariesAdvice(METRICS_MILLISECONDS_LATENCY_BUCKETS)
-            .build();
-    telemetryMetrics.instrumentConnectionStartCount =
-        writeMeter
-            .counterBuilder("connection_start_count")
-            .setDescription(
-                "Counts number of connection attempts made, regardless of whether these are initial or retry.")
-            .build();
-    telemetryMetrics.instrumentConnectionEndCount =
-        writeMeter
-            .counterBuilder("connection_end_count")
-            .setDescription("Counts number of connection end events.")
-            .build();
+    return telemetryMetrics.getTelemetryAttributes();
   }
 
   public ConnectionWorker(
@@ -505,10 +350,9 @@ class ConnectionWorker implements AutoCloseable {
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.compressorName = compressorName;
     this.retrySettings = retrySettings;
-    this.telemetryAttributes = buildOpenTelemetryAttributes();
     this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
-    this.enableOpenTelemetry = enableOpenTelemetry;
-    registerOpenTelemetryMetrics();
+    this.telemetryMetrics =
+        new TelemetryMetrics(this, enableOpenTelemetry, getTableName(), writerId, traceId);
 
     // Always recreate a client for connection worker.
     HashMap<String, String> newHeaders = new HashMap<>();
@@ -559,7 +403,7 @@ class ConnectionWorker implements AutoCloseable {
 
   private void resetConnection() {
     log.info("Start connecting stream: " + streamName + " id: " + writerId);
-    telemetryMetrics.instrumentConnectionStartCount.add(1, getTelemetryAttributes());
+    telemetryMetrics.recordConnectionStart();
     if (this.streamConnection != null) {
       // It's safe to directly close the previous connection as the in flight messages
       // will be picked up by the next connection.
@@ -1002,7 +846,7 @@ class ConnectionWorker implements AutoCloseable {
             || (originalRequest.getProtoRows().hasWriterSchema()
                 && !originalRequest.getProtoRows().getWriterSchema().equals(writerSchema))) {
           streamName = originalRequest.getWriteStream();
-          refreshOpenTelemetryTableNameAttributes();
+          telemetryMetrics.refreshOpenTelemetryTableNameAttributes(getTableName());
           writerSchema = originalRequest.getProtoRows().getWriterSchema();
           isMultiplexing = true;
           firstRequestForTableOrSchemaSwitch = true;
@@ -1309,8 +1153,7 @@ class ConnectionWorker implements AutoCloseable {
         Instant sendInstant = inflightRequestQueue.getFirst().requestSendTimeStamp;
         if (sendInstant != null) {
           Duration durationLatency = Duration.between(sendInstant, Instant.now());
-          telemetryMetrics.instrumentNetworkResponseLatency.record(
-              durationLatency.toMillis(), getTelemetryAttributes());
+          telemetryMetrics.recordNetworkLatency(durationLatency);
         }
 
         requestWrapper = pollFirstInflightRequestQueue();
@@ -1333,21 +1176,13 @@ class ConnectionWorker implements AutoCloseable {
       this.lock.unlock();
     }
 
-    Attributes augmentedTelemetryAttributes =
-        augmentAttributesWithErrorCode(
-            getTelemetryAttributes(),
-            Code.values()[
-                response.hasError() ? response.getError().getCode() : Status.Code.OK.ordinal()]
-                .toString());
-    if (requestWrapper.retryCount > 0) {
-      augmentedTelemetryAttributes = augmentAttributesWithRetry(augmentedTelemetryAttributes);
-    }
-    telemetryMetrics.instrumentAckedRequestCount.add(1, augmentedTelemetryAttributes);
-    telemetryMetrics.instrumentAckedRequestSize.add(
-        requestWrapper.messageSize, augmentedTelemetryAttributes);
-    telemetryMetrics.instrumentAckedRequestRows.add(
+    telemetryMetrics.recordResponse(
+        requestWrapper.messageSize,
         requestWrapper.message.getProtoRows().getRows().getSerializedRowsCount(),
-        augmentedTelemetryAttributes);
+        Code.values()[
+            response.hasError() ? response.getError().getCode() : Status.Code.OK.ordinal()]
+            .toString(),
+        requestWrapper.retryCount > 0);
 
     // Retries need to happen on the same thread as queue locking may occur
     if (response.hasError()) {
@@ -1431,11 +1266,8 @@ class ConnectionWorker implements AutoCloseable {
     this.lock.lock();
     try {
       this.streamConnectionIsConnected = false;
-      this.telemetryMetrics.instrumentConnectionEndCount.add(
-          1,
-          augmentAttributesWithErrorCode(
-              getTelemetryAttributes(),
-              Code.values()[Status.fromThrowable(finalStatus).getCode().ordinal()].toString()));
+      this.telemetryMetrics.recordConnectionEnd(
+          Code.values()[Status.fromThrowable(finalStatus).getCode().ordinal()].toString());
       if (connectionFinalStatus == null) {
         if (connectionRetryStartTime == 0) {
           connectionRetryStartTime = System.currentTimeMillis();
@@ -1447,8 +1279,7 @@ class ConnectionWorker implements AutoCloseable {
                 || System.currentTimeMillis() - connectionRetryStartTime
                     <= maxRetryDuration.toMillis())) {
           this.conectionRetryCountWithoutCallback++;
-          this.telemetryMetrics.instrumentConnectionStartCount.add(
-              1, augmentAttributesWithRetry(getTelemetryAttributes()));
+          this.telemetryMetrics.recordConnectionStartWithRetry();
           log.info(
               "Connection is going to be reestablished with the next request. Retriable error "
                   + finalStatus.toString()
