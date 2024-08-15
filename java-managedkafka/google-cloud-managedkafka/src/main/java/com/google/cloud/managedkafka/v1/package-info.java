@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Apache Kafka for BigQuery API
+ * A client to Managed Service for Apache Kafka API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

@@ -68,6 +68,22 @@ public final class TextToSpeechProto {
       internal_static_google_cloud_texttospeech_v1beta1_Timepoint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_texttospeech_v1beta1_Timepoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesisInput_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesisInput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -125,32 +141,47 @@ public final class TextToSpeechProto {
           + "int\022D\n\014audio_config\030\004 \001(\0132..google.cloud"
           + ".texttospeech.v1beta1.AudioConfig\"4\n\tTim"
           + "epoint\022\021\n\tmark_name\030\004 \001(\t\022\024\n\014time_second"
-          + "s\030\003 \001(\001*W\n\017SsmlVoiceGender\022!\n\035SSML_VOICE"
-          + "_GENDER_UNSPECIFIED\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMAL"
-          + "E\020\002\022\013\n\007NEUTRAL\020\003*z\n\rAudioEncoding\022\036\n\032AUD"
-          + "IO_ENCODING_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020\001\022"
-          + "\007\n\003MP3\020\002\022\017\n\013MP3_64_KBPS\020\004\022\014\n\010OGG_OPUS\020\003\022"
-          + "\t\n\005MULAW\020\005\022\010\n\004ALAW\020\0062\322\003\n\014TextToSpeech\022\242\001"
-          + "\n\nListVoices\0224.google.cloud.texttospeech"
-          + ".v1beta1.ListVoicesRequest\0325.google.clou"
-          + "d.texttospeech.v1beta1.ListVoicesRespons"
-          + "e\"\'\332A\rlanguage_code\202\323\344\223\002\021\022\017/v1beta1/voic"
-          + "es\022\313\001\n\020SynthesizeSpeech\022:.google.cloud.t"
-          + "exttospeech.v1beta1.SynthesizeSpeechRequ"
-          + "est\032;.google.cloud.texttospeech.v1beta1."
-          + "SynthesizeSpeechResponse\">\332A\030input,voice"
-          + ",audio_config\202\323\344\223\002\035\"\030/v1beta1/text:synth"
-          + "esize:\001*\032O\312A\033texttospeech.googleapis.com"
-          + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\321\002\n%com.google.cloud.texttospe"
-          + "ech.v1beta1B\021TextToSpeechProtoP\001ZIcloud."
-          + "google.com/go/texttospeech/apiv1beta1/te"
-          + "xttospeechpb;texttospeechpb\370\001\001\252\002!Google."
-          + "Cloud.TextToSpeech.V1Beta1\312\002!Google\\Clou"
-          + "d\\TextToSpeech\\V1beta1\352\002$Google::Cloud::"
-          + "TextToSpeech::V1beta1\352AU\n\033automl.googlea"
-          + "pis.com/Model\0226projects/{project}/locati"
-          + "ons/{location}/models/{model}b\006proto3"
+          + "s\030\003 \001(\001\"h\n\031StreamingSynthesizeConfig\022K\n\005"
+          + "voice\030\001 \001(\01327.google.cloud.texttospeech."
+          + "v1beta1.VoiceSelectionParamsB\003\340A\002\"9\n\027Str"
+          + "eamingSynthesisInput\022\016\n\004text\030\001 \001(\tH\000B\016\n\014"
+          + "input_source\"\330\001\n\032StreamingSynthesizeRequ"
+          + "est\022X\n\020streaming_config\030\001 \001(\0132<.google.c"
+          + "loud.texttospeech.v1beta1.StreamingSynth"
+          + "esizeConfigH\000\022K\n\005input\030\002 \001(\0132:.google.cl"
+          + "oud.texttospeech.v1beta1.StreamingSynthe"
+          + "sisInputH\000B\023\n\021streaming_request\"4\n\033Strea"
+          + "mingSynthesizeResponse\022\025\n\raudio_content\030"
+          + "\001 \001(\014*W\n\017SsmlVoiceGender\022!\n\035SSML_VOICE_G"
+          + "ENDER_UNSPECIFIED\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020"
+          + "\002\022\013\n\007NEUTRAL\020\003*z\n\rAudioEncoding\022\036\n\032AUDIO"
+          + "_ENCODING_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020\001\022\007\n"
+          + "\003MP3\020\002\022\017\n\013MP3_64_KBPS\020\004\022\014\n\010OGG_OPUS\020\003\022\t\n"
+          + "\005MULAW\020\005\022\010\n\004ALAW\020\0062\357\004\n\014TextToSpeech\022\242\001\n\n"
+          + "ListVoices\0224.google.cloud.texttospeech.v"
+          + "1beta1.ListVoicesRequest\0325.google.cloud."
+          + "texttospeech.v1beta1.ListVoicesResponse\""
+          + "\'\332A\rlanguage_code\202\323\344\223\002\021\022\017/v1beta1/voices"
+          + "\022\313\001\n\020SynthesizeSpeech\022:.google.cloud.tex"
+          + "ttospeech.v1beta1.SynthesizeSpeechReques"
+          + "t\032;.google.cloud.texttospeech.v1beta1.Sy"
+          + "nthesizeSpeechResponse\">\332A\030input,voice,a"
+          + "udio_config\202\323\344\223\002\035\"\030/v1beta1/text:synthes"
+          + "ize:\001*\022\232\001\n\023StreamingSynthesize\022=.google."
+          + "cloud.texttospeech.v1beta1.StreamingSynt"
+          + "hesizeRequest\032>.google.cloud.texttospeec"
+          + "h.v1beta1.StreamingSynthesizeResponse\"\000("
+          + "\0010\001\032O\312A\033texttospeech.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-plat"
+          + "formB\330\002\n%com.google.cloud.texttospeech.v"
+          + "1beta1B\021TextToSpeechProtoP\001ZIcloud.googl"
+          + "e.com/go/texttospeech/apiv1beta1/texttos"
+          + "peechpb;texttospeechpb\370\001\001\242\002\004CTTS\252\002!Googl"
+          + "e.Cloud.TextToSpeech.V1Beta1\312\002!Google\\Cl"
+          + "oud\\TextToSpeech\\V1beta1\352\002$Google::Cloud"
+          + "::TextToSpeech::V1beta1\352AU\n\033automl.googl"
+          + "eapis.com/Model\0226projects/{project}/loca"
+          + "tions/{location}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -245,6 +276,38 @@ public final class TextToSpeechProto {
             internal_static_google_cloud_texttospeech_v1beta1_Timepoint_descriptor,
             new java.lang.String[] {
               "MarkName", "TimeSeconds",
+            });
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeConfig_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeConfig_descriptor,
+            new java.lang.String[] {
+              "Voice",
+            });
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesisInput_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesisInput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesisInput_descriptor,
+            new java.lang.String[] {
+              "Text", "InputSource",
+            });
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeRequest_descriptor,
+            new java.lang.String[] {
+              "StreamingConfig", "Input", "StreamingRequest",
+            });
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeResponse_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_texttospeech_v1beta1_StreamingSynthesizeResponse_descriptor,
+            new java.lang.String[] {
+              "AudioContent",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

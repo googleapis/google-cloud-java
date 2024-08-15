@@ -28,7 +28,7 @@ public interface ConsumerPartitionMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. The offset for this partition, or 0 if no offset has been
+   * Required. The current offset for this partition, or 0 if no offset has been
    * committed.
    * </pre>
    *

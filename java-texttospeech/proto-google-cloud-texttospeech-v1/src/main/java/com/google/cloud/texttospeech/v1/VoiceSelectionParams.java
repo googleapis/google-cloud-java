@@ -145,8 +145,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The name of the voice. If not set, the service will choose a
-   * voice based on the other parameters such as language_code and gender.
+   * The name of the voice. If both the name and the gender are not set,
+   * the service will choose a voice based on the other parameters such as
+   * language_code.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -169,8 +170,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The name of the voice. If not set, the service will choose a
-   * voice based on the other parameters such as language_code and gender.
+   * The name of the voice. If both the name and the gender are not set,
+   * the service will choose a voice based on the other parameters such as
+   * language_code.
    * </pre>
    *
    * <code>string name = 2;</code>
@@ -887,8 +889,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * The name of the voice. If both the name and the gender are not set,
+     * the service will choose a voice based on the other parameters such as
+     * language_code.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -910,8 +913,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * The name of the voice. If both the name and the gender are not set,
+     * the service will choose a voice based on the other parameters such as
+     * language_code.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -933,8 +937,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * The name of the voice. If both the name and the gender are not set,
+     * the service will choose a voice based on the other parameters such as
+     * language_code.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -955,8 +960,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * The name of the voice. If both the name and the gender are not set,
+     * the service will choose a voice based on the other parameters such as
+     * language_code.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -973,8 +979,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * The name of the voice. If both the name and the gender are not set,
+     * the service will choose a voice based on the other parameters such as
+     * language_code.
      * </pre>
      *
      * <code>string name = 2;</code>

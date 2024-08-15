@@ -6339,6 +6339,31 @@ public final class TransferTypes {
      * @return The bytes for path.
      */
     com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview. Enables the transfer of managed folders between Cloud Storage
+     * buckets. Set this option on the gcs_data_source.
+     *
+     * If set to true:
+     *
+     * - Managed folders in the source bucket are transferred to the
+     *   destination bucket.
+     * - Managed folders in the destination bucket are overwritten. Other
+     *   OVERWRITE options are not supported.
+     *
+     * See
+     * [Transfer Cloud Storage managed
+     * folders](/storage-transfer/docs/managed-folders).
+     * </pre>
+     *
+     * <code>bool managed_folder_transfer_enabled = 4;</code>
+     *
+     * @return The managedFolderTransferEnabled.
+     */
+    boolean getManagedFolderTransferEnabled();
   }
   /**
    *
@@ -6506,6 +6531,36 @@ public final class TransferTypes {
       }
     }
 
+    public static final int MANAGED_FOLDER_TRANSFER_ENABLED_FIELD_NUMBER = 4;
+    private boolean managedFolderTransferEnabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Preview. Enables the transfer of managed folders between Cloud Storage
+     * buckets. Set this option on the gcs_data_source.
+     *
+     * If set to true:
+     *
+     * - Managed folders in the source bucket are transferred to the
+     *   destination bucket.
+     * - Managed folders in the destination bucket are overwritten. Other
+     *   OVERWRITE options are not supported.
+     *
+     * See
+     * [Transfer Cloud Storage managed
+     * folders](/storage-transfer/docs/managed-folders).
+     * </pre>
+     *
+     * <code>bool managed_folder_transfer_enabled = 4;</code>
+     *
+     * @return The managedFolderTransferEnabled.
+     */
+    @java.lang.Override
+    public boolean getManagedFolderTransferEnabled() {
+      return managedFolderTransferEnabled_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6526,6 +6581,9 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
+      if (managedFolderTransferEnabled_ != false) {
+        output.writeBool(4, managedFolderTransferEnabled_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6540,6 +6598,10 @@ public final class TransferTypes {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
+      }
+      if (managedFolderTransferEnabled_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(4, managedFolderTransferEnabled_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6559,6 +6621,8 @@ public final class TransferTypes {
 
       if (!getBucketName().equals(other.getBucketName())) return false;
       if (!getPath().equals(other.getPath())) return false;
+      if (getManagedFolderTransferEnabled() != other.getManagedFolderTransferEnabled())
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6574,6 +6638,9 @@ public final class TransferTypes {
       hash = (53 * hash) + getBucketName().hashCode();
       hash = (37 * hash) + PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + MANAGED_FOLDER_TRANSFER_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagedFolderTransferEnabled());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6721,6 +6788,7 @@ public final class TransferTypes {
         bitField0_ = 0;
         bucketName_ = "";
         path_ = "";
+        managedFolderTransferEnabled_ = false;
         return this;
       }
 
@@ -6762,6 +6830,9 @@ public final class TransferTypes {
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.managedFolderTransferEnabled_ = managedFolderTransferEnabled_;
         }
       }
 
@@ -6823,6 +6894,9 @@ public final class TransferTypes {
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getManagedFolderTransferEnabled() != false) {
+          setManagedFolderTransferEnabled(other.getManagedFolderTransferEnabled());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6861,6 +6935,12 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 26
+              case 32:
+                {
+                  managedFolderTransferEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7132,6 +7212,95 @@ public final class TransferTypes {
         return this;
       }
 
+      private boolean managedFolderTransferEnabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Preview. Enables the transfer of managed folders between Cloud Storage
+       * buckets. Set this option on the gcs_data_source.
+       *
+       * If set to true:
+       *
+       * - Managed folders in the source bucket are transferred to the
+       *   destination bucket.
+       * - Managed folders in the destination bucket are overwritten. Other
+       *   OVERWRITE options are not supported.
+       *
+       * See
+       * [Transfer Cloud Storage managed
+       * folders](/storage-transfer/docs/managed-folders).
+       * </pre>
+       *
+       * <code>bool managed_folder_transfer_enabled = 4;</code>
+       *
+       * @return The managedFolderTransferEnabled.
+       */
+      @java.lang.Override
+      public boolean getManagedFolderTransferEnabled() {
+        return managedFolderTransferEnabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Preview. Enables the transfer of managed folders between Cloud Storage
+       * buckets. Set this option on the gcs_data_source.
+       *
+       * If set to true:
+       *
+       * - Managed folders in the source bucket are transferred to the
+       *   destination bucket.
+       * - Managed folders in the destination bucket are overwritten. Other
+       *   OVERWRITE options are not supported.
+       *
+       * See
+       * [Transfer Cloud Storage managed
+       * folders](/storage-transfer/docs/managed-folders).
+       * </pre>
+       *
+       * <code>bool managed_folder_transfer_enabled = 4;</code>
+       *
+       * @param value The managedFolderTransferEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagedFolderTransferEnabled(boolean value) {
+
+        managedFolderTransferEnabled_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Preview. Enables the transfer of managed folders between Cloud Storage
+       * buckets. Set this option on the gcs_data_source.
+       *
+       * If set to true:
+       *
+       * - Managed folders in the source bucket are transferred to the
+       *   destination bucket.
+       * - Managed folders in the destination bucket are overwritten. Other
+       *   OVERWRITE options are not supported.
+       *
+       * See
+       * [Transfer Cloud Storage managed
+       * folders](/storage-transfer/docs/managed-folders).
+       * </pre>
+       *
+       * <code>bool managed_folder_transfer_enabled = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearManagedFolderTransferEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        managedFolderTransferEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7367,23 +7536,68 @@ public final class TransferTypes {
      *
      *
      * <pre>
+     * Optional. The CloudFront distribution domain name pointing to this bucket,
+     * to use when fetching.
+     *
+     * See
+     * [Transfer from S3 via
+     * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+     * for more information.
+     *
+     * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+     * begin with `https://`.
+     * </pre>
+     *
+     * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cloudfrontDomain.
+     */
+    java.lang.String getCloudfrontDomain();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CloudFront distribution domain name pointing to this bucket,
+     * to use when fetching.
+     *
+     * See
+     * [Transfer from S3 via
+     * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+     * for more information.
+     *
+     * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+     * begin with `https://`.
+     * </pre>
+     *
+     * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for cloudfrontDomain.
+     */
+    com.google.protobuf.ByteString getCloudfrontDomainBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The Resource name of a secret in Secret Manager.
      *
-     * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     * AWS credentials must be stored in Secret Manager in JSON format:
+     *
+     * {
+     *  "access_key_id": "ACCESS_KEY_ID",
+     *  "secret_access_key": "SECRET_ACCESS_KEY"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
-     * See [Configure access to a source: Microsoft Azure Blob Storage]
-     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * See [Configure access to a source: Amazon S3]
+     * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
      * for more information.
      *
-     * If `credentials_secret` is specified, do not specify [azure_credentials][].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
+     * If `credentials_secret` is specified, do not specify
+     * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+     * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -7399,21 +7613,23 @@ public final class TransferTypes {
      * <pre>
      * Optional. The Resource name of a secret in Secret Manager.
      *
-     * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     * AWS credentials must be stored in Secret Manager in JSON format:
+     *
+     * {
+     *  "access_key_id": "ACCESS_KEY_ID",
+     *  "secret_access_key": "SECRET_ACCESS_KEY"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
-     * See [Configure access to a source: Microsoft Azure Blob Storage]
-     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * See [Configure access to a source: Amazon S3]
+     * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
      * for more information.
      *
-     * If `credentials_secret` is specified, do not specify [azure_credentials][].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
+     * If `credentials_secret` is specified, do not specify
+     * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+     * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -7423,6 +7639,36 @@ public final class TransferTypes {
      * @return The bytes for credentialsSecret.
      */
     com.google.protobuf.ByteString getCredentialsSecretBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Egress bytes over a Google-managed private network.
+     * This network is shared between other users of Storage Transfer Service.
+     * </pre>
+     *
+     * <code>bool managed_private_network = 8;</code>
+     *
+     * @return Whether the managedPrivateNetwork field is set.
+     */
+    boolean hasManagedPrivateNetwork();
+    /**
+     *
+     *
+     * <pre>
+     * Egress bytes over a Google-managed private network.
+     * This network is shared between other users of Storage Transfer Service.
+     * </pre>
+     *
+     * <code>bool managed_private_network = 8;</code>
+     *
+     * @return The managedPrivateNetwork.
+     */
+    boolean getManagedPrivateNetwork();
+
+    com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data.PrivateNetworkCase
+        getPrivateNetworkCase();
   }
   /**
    *
@@ -7448,6 +7694,7 @@ public final class TransferTypes {
       bucketName_ = "";
       path_ = "";
       roleArn_ = "";
+      cloudfrontDomain_ = "";
       credentialsSecret_ = "";
     }
 
@@ -7473,6 +7720,52 @@ public final class TransferTypes {
     }
 
     private int bitField0_;
+    private int privateNetworkCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object privateNetwork_;
+
+    public enum PrivateNetworkCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      MANAGED_PRIVATE_NETWORK(8),
+      PRIVATENETWORK_NOT_SET(0);
+      private final int value;
+
+      private PrivateNetworkCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PrivateNetworkCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static PrivateNetworkCase forNumber(int value) {
+        switch (value) {
+          case 8:
+            return MANAGED_PRIVATE_NETWORK;
+          case 0:
+            return PRIVATENETWORK_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public PrivateNetworkCase getPrivateNetworkCase() {
+      return PrivateNetworkCase.forNumber(privateNetworkCase_);
+    }
+
     public static final int BUCKET_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -7728,6 +8021,75 @@ public final class TransferTypes {
       }
     }
 
+    public static final int CLOUDFRONT_DOMAIN_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cloudfrontDomain_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CloudFront distribution domain name pointing to this bucket,
+     * to use when fetching.
+     *
+     * See
+     * [Transfer from S3 via
+     * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+     * for more information.
+     *
+     * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+     * begin with `https://`.
+     * </pre>
+     *
+     * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cloudfrontDomain.
+     */
+    @java.lang.Override
+    public java.lang.String getCloudfrontDomain() {
+      java.lang.Object ref = cloudfrontDomain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloudfrontDomain_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CloudFront distribution domain name pointing to this bucket,
+     * to use when fetching.
+     *
+     * See
+     * [Transfer from S3 via
+     * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+     * for more information.
+     *
+     * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+     * begin with `https://`.
+     * </pre>
+     *
+     * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for cloudfrontDomain.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCloudfrontDomainBytes() {
+      java.lang.Object ref = cloudfrontDomain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cloudfrontDomain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int CREDENTIALS_SECRET_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
@@ -7738,21 +8100,23 @@ public final class TransferTypes {
      * <pre>
      * Optional. The Resource name of a secret in Secret Manager.
      *
-     * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     * AWS credentials must be stored in Secret Manager in JSON format:
+     *
+     * {
+     *  "access_key_id": "ACCESS_KEY_ID",
+     *  "secret_access_key": "SECRET_ACCESS_KEY"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
-     * See [Configure access to a source: Microsoft Azure Blob Storage]
-     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * See [Configure access to a source: Amazon S3]
+     * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
      * for more information.
      *
-     * If `credentials_secret` is specified, do not specify [azure_credentials][].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
+     * If `credentials_secret` is specified, do not specify
+     * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+     * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -7779,21 +8143,23 @@ public final class TransferTypes {
      * <pre>
      * Optional. The Resource name of a secret in Secret Manager.
      *
-     * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     * AWS credentials must be stored in Secret Manager in JSON format:
+     *
+     * {
+     *  "access_key_id": "ACCESS_KEY_ID",
+     *  "secret_access_key": "SECRET_ACCESS_KEY"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
-     * See [Configure access to a source: Microsoft Azure Blob Storage]
-     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * See [Configure access to a source: Amazon S3]
+     * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
      * for more information.
      *
-     * If `credentials_secret` is specified, do not specify [azure_credentials][].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
+     * If `credentials_secret` is specified, do not specify
+     * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+     * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -7813,6 +8179,43 @@ public final class TransferTypes {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MANAGED_PRIVATE_NETWORK_FIELD_NUMBER = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Egress bytes over a Google-managed private network.
+     * This network is shared between other users of Storage Transfer Service.
+     * </pre>
+     *
+     * <code>bool managed_private_network = 8;</code>
+     *
+     * @return Whether the managedPrivateNetwork field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagedPrivateNetwork() {
+      return privateNetworkCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Egress bytes over a Google-managed private network.
+     * This network is shared between other users of Storage Transfer Service.
+     * </pre>
+     *
+     * <code>bool managed_private_network = 8;</code>
+     *
+     * @return The managedPrivateNetwork.
+     */
+    @java.lang.Override
+    public boolean getManagedPrivateNetwork() {
+      if (privateNetworkCase_ == 8) {
+        return (java.lang.Boolean) privateNetwork_;
+      }
+      return false;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7841,8 +8244,14 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleArn_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudfrontDomain_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cloudfrontDomain_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, credentialsSecret_);
+      }
+      if (privateNetworkCase_ == 8) {
+        output.writeBool(8, (boolean) ((java.lang.Boolean) privateNetwork_));
       }
       getUnknownFields().writeTo(output);
     }
@@ -7865,8 +8274,16 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleArn_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudfrontDomain_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cloudfrontDomain_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, credentialsSecret_);
+      }
+      if (privateNetworkCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                8, (boolean) ((java.lang.Boolean) privateNetwork_));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7891,7 +8308,16 @@ public final class TransferTypes {
       }
       if (!getPath().equals(other.getPath())) return false;
       if (!getRoleArn().equals(other.getRoleArn())) return false;
+      if (!getCloudfrontDomain().equals(other.getCloudfrontDomain())) return false;
       if (!getCredentialsSecret().equals(other.getCredentialsSecret())) return false;
+      if (!getPrivateNetworkCase().equals(other.getPrivateNetworkCase())) return false;
+      switch (privateNetworkCase_) {
+        case 8:
+          if (getManagedPrivateNetwork() != other.getManagedPrivateNetwork()) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7913,8 +8339,18 @@ public final class TransferTypes {
       hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + ROLE_ARN_FIELD_NUMBER;
       hash = (53 * hash) + getRoleArn().hashCode();
+      hash = (37 * hash) + CLOUDFRONT_DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudfrontDomain().hashCode();
       hash = (37 * hash) + CREDENTIALS_SECRET_FIELD_NUMBER;
       hash = (53 * hash) + getCredentialsSecret().hashCode();
+      switch (privateNetworkCase_) {
+        case 8:
+          hash = (37 * hash) + MANAGED_PRIVATE_NETWORK_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagedPrivateNetwork());
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8075,7 +8511,10 @@ public final class TransferTypes {
         }
         path_ = "";
         roleArn_ = "";
+        cloudfrontDomain_ = "";
         credentialsSecret_ = "";
+        privateNetworkCase_ = 0;
+        privateNetwork_ = null;
         return this;
       }
 
@@ -8107,6 +8546,7 @@ public final class TransferTypes {
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
@@ -8130,9 +8570,18 @@ public final class TransferTypes {
           result.roleArn_ = roleArn_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.cloudfrontDomain_ = cloudfrontDomain_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.credentialsSecret_ = credentialsSecret_;
         }
         result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data result) {
+        result.privateNetworkCase_ = privateNetworkCase_;
+        result.privateNetwork_ = this.privateNetwork_;
       }
 
       @java.lang.Override
@@ -8202,10 +8651,26 @@ public final class TransferTypes {
           bitField0_ |= 0x00000008;
           onChanged();
         }
-        if (!other.getCredentialsSecret().isEmpty()) {
-          credentialsSecret_ = other.credentialsSecret_;
+        if (!other.getCloudfrontDomain().isEmpty()) {
+          cloudfrontDomain_ = other.cloudfrontDomain_;
           bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (!other.getCredentialsSecret().isEmpty()) {
+          credentialsSecret_ = other.credentialsSecret_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        switch (other.getPrivateNetworkCase()) {
+          case MANAGED_PRIVATE_NETWORK:
+            {
+              setManagedPrivateNetwork(other.getManagedPrivateNetwork());
+              break;
+            }
+          case PRIVATENETWORK_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -8257,12 +8722,24 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 50:
+                {
+                  cloudfrontDomain_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 50
               case 58:
                 {
                   credentialsSecret_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 58
+              case 64:
+                {
+                  privateNetwork_ = input.readBool();
+                  privateNetworkCase_ = 8;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8277,6 +8754,20 @@ public final class TransferTypes {
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+
+      private int privateNetworkCase_ = 0;
+      private java.lang.Object privateNetwork_;
+
+      public PrivateNetworkCase getPrivateNetworkCase() {
+        return PrivateNetworkCase.forNumber(privateNetworkCase_);
+      }
+
+      public Builder clearPrivateNetwork() {
+        privateNetworkCase_ = 0;
+        privateNetwork_ = null;
+        onChanged();
         return this;
       }
 
@@ -8930,6 +9421,157 @@ public final class TransferTypes {
         return this;
       }
 
+      private java.lang.Object cloudfrontDomain_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The CloudFront distribution domain name pointing to this bucket,
+       * to use when fetching.
+       *
+       * See
+       * [Transfer from S3 via
+       * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+       * for more information.
+       *
+       * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+       * begin with `https://`.
+       * </pre>
+       *
+       * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The cloudfrontDomain.
+       */
+      public java.lang.String getCloudfrontDomain() {
+        java.lang.Object ref = cloudfrontDomain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cloudfrontDomain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The CloudFront distribution domain name pointing to this bucket,
+       * to use when fetching.
+       *
+       * See
+       * [Transfer from S3 via
+       * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+       * for more information.
+       *
+       * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+       * begin with `https://`.
+       * </pre>
+       *
+       * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for cloudfrontDomain.
+       */
+      public com.google.protobuf.ByteString getCloudfrontDomainBytes() {
+        java.lang.Object ref = cloudfrontDomain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          cloudfrontDomain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The CloudFront distribution domain name pointing to this bucket,
+       * to use when fetching.
+       *
+       * See
+       * [Transfer from S3 via
+       * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+       * for more information.
+       *
+       * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+       * begin with `https://`.
+       * </pre>
+       *
+       * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The cloudfrontDomain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloudfrontDomain(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudfrontDomain_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The CloudFront distribution domain name pointing to this bucket,
+       * to use when fetching.
+       *
+       * See
+       * [Transfer from S3 via
+       * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+       * for more information.
+       *
+       * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+       * begin with `https://`.
+       * </pre>
+       *
+       * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCloudfrontDomain() {
+        cloudfrontDomain_ = getDefaultInstance().getCloudfrontDomain();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The CloudFront distribution domain name pointing to this bucket,
+       * to use when fetching.
+       *
+       * See
+       * [Transfer from S3 via
+       * CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront)
+       * for more information.
+       *
+       * Format: `https://{id}.cloudfront.net` or any valid custom domain. Must
+       * begin with `https://`.
+       * </pre>
+       *
+       * <code>string cloudfront_domain = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for cloudfrontDomain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloudfrontDomainBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        cloudfrontDomain_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object credentialsSecret_ = "";
       /**
        *
@@ -8937,21 +9579,23 @@ public final class TransferTypes {
        * <pre>
        * Optional. The Resource name of a secret in Secret Manager.
        *
-       * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       * AWS credentials must be stored in Secret Manager in JSON format:
+       *
+       * {
+       *  "access_key_id": "ACCESS_KEY_ID",
+       *  "secret_access_key": "SECRET_ACCESS_KEY"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
-       * See [Configure access to a source: Microsoft Azure Blob Storage]
-       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * See [Configure access to a source: Amazon S3]
+       * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
        * for more information.
        *
-       * If `credentials_secret` is specified, do not specify [azure_credentials][].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
+       * If `credentials_secret` is specified, do not specify
+       * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+       * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -8977,21 +9621,23 @@ public final class TransferTypes {
        * <pre>
        * Optional. The Resource name of a secret in Secret Manager.
        *
-       * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       * AWS credentials must be stored in Secret Manager in JSON format:
+       *
+       * {
+       *  "access_key_id": "ACCESS_KEY_ID",
+       *  "secret_access_key": "SECRET_ACCESS_KEY"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
-       * See [Configure access to a source: Microsoft Azure Blob Storage]
-       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * See [Configure access to a source: Amazon S3]
+       * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
        * for more information.
        *
-       * If `credentials_secret` is specified, do not specify [azure_credentials][].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
+       * If `credentials_secret` is specified, do not specify
+       * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+       * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -9017,21 +9663,23 @@ public final class TransferTypes {
        * <pre>
        * Optional. The Resource name of a secret in Secret Manager.
        *
-       * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       * AWS credentials must be stored in Secret Manager in JSON format:
+       *
+       * {
+       *  "access_key_id": "ACCESS_KEY_ID",
+       *  "secret_access_key": "SECRET_ACCESS_KEY"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
-       * See [Configure access to a source: Microsoft Azure Blob Storage]
-       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * See [Configure access to a source: Amazon S3]
+       * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
        * for more information.
        *
-       * If `credentials_secret` is specified, do not specify [azure_credentials][].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
+       * If `credentials_secret` is specified, do not specify
+       * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+       * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -9046,7 +9694,7 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         credentialsSecret_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -9056,21 +9704,23 @@ public final class TransferTypes {
        * <pre>
        * Optional. The Resource name of a secret in Secret Manager.
        *
-       * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       * AWS credentials must be stored in Secret Manager in JSON format:
+       *
+       * {
+       *  "access_key_id": "ACCESS_KEY_ID",
+       *  "secret_access_key": "SECRET_ACCESS_KEY"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
-       * See [Configure access to a source: Microsoft Azure Blob Storage]
-       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * See [Configure access to a source: Amazon S3]
+       * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
        * for more information.
        *
-       * If `credentials_secret` is specified, do not specify [azure_credentials][].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
+       * If `credentials_secret` is specified, do not specify
+       * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+       * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -9081,7 +9731,7 @@ public final class TransferTypes {
        */
       public Builder clearCredentialsSecret() {
         credentialsSecret_ = getDefaultInstance().getCredentialsSecret();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -9091,21 +9741,23 @@ public final class TransferTypes {
        * <pre>
        * Optional. The Resource name of a secret in Secret Manager.
        *
-       * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       * AWS credentials must be stored in Secret Manager in JSON format:
+       *
+       * {
+       *  "access_key_id": "ACCESS_KEY_ID",
+       *  "secret_access_key": "SECRET_ACCESS_KEY"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
-       * See [Configure access to a source: Microsoft Azure Blob Storage]
-       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * See [Configure access to a source: Amazon S3]
+       * (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager)
        * for more information.
        *
-       * If `credentials_secret` is specified, do not specify [azure_credentials][].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
+       * If `credentials_secret` is specified, do not specify
+       * [role_arn][google.storagetransfer.v1.AwsS3Data.role_arn] or
+       * [aws_access_key][google.storagetransfer.v1.AwsS3Data.aws_access_key].
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -9121,8 +9773,82 @@ public final class TransferTypes {
         }
         checkByteStringIsUtf8(value);
         credentialsSecret_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Egress bytes over a Google-managed private network.
+       * This network is shared between other users of Storage Transfer Service.
+       * </pre>
+       *
+       * <code>bool managed_private_network = 8;</code>
+       *
+       * @return Whether the managedPrivateNetwork field is set.
+       */
+      public boolean hasManagedPrivateNetwork() {
+        return privateNetworkCase_ == 8;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Egress bytes over a Google-managed private network.
+       * This network is shared between other users of Storage Transfer Service.
+       * </pre>
+       *
+       * <code>bool managed_private_network = 8;</code>
+       *
+       * @return The managedPrivateNetwork.
+       */
+      public boolean getManagedPrivateNetwork() {
+        if (privateNetworkCase_ == 8) {
+          return (java.lang.Boolean) privateNetwork_;
+        }
+        return false;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Egress bytes over a Google-managed private network.
+       * This network is shared between other users of Storage Transfer Service.
+       * </pre>
+       *
+       * <code>bool managed_private_network = 8;</code>
+       *
+       * @param value The managedPrivateNetwork to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagedPrivateNetwork(boolean value) {
+
+        privateNetworkCase_ = 8;
+        privateNetwork_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Egress bytes over a Google-managed private network.
+       * This network is shared between other users of Storage Transfer Service.
+       * </pre>
+       *
+       * <code>bool managed_private_network = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearManagedPrivateNetwork() {
+        if (privateNetworkCase_ == 8) {
+          privateNetworkCase_ = 0;
+          privateNetwork_ = null;
+          onChanged();
+        }
         return this;
       }
 
@@ -9340,9 +10066,11 @@ public final class TransferTypes {
      * Optional. The Resource name of a secret in Secret Manager.
      *
      * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     *
+     * {
+     *  "sas_token" : "SAS_TOKEN"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
@@ -9352,9 +10080,6 @@ public final class TransferTypes {
      *
      * If `credentials_secret` is specified, do not specify
      * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -9371,9 +10096,11 @@ public final class TransferTypes {
      * Optional. The Resource name of a secret in Secret Manager.
      *
      * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     *
+     * {
+     *  "sas_token" : "SAS_TOKEN"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
@@ -9383,9 +10110,6 @@ public final class TransferTypes {
      *
      * If `credentials_secret` is specified, do not specify
      * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -9692,9 +10416,11 @@ public final class TransferTypes {
      * Optional. The Resource name of a secret in Secret Manager.
      *
      * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     *
+     * {
+     *  "sas_token" : "SAS_TOKEN"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
@@ -9704,9 +10430,6 @@ public final class TransferTypes {
      *
      * If `credentials_secret` is specified, do not specify
      * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -9734,9 +10457,11 @@ public final class TransferTypes {
      * Optional. The Resource name of a secret in Secret Manager.
      *
      * The Azure SAS token must be stored in Secret Manager in JSON format:
-     * &lt;pre&gt;{
-     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-     * }&lt;/pre&gt;
+     *
+     * {
+     *  "sas_token" : "SAS_TOKEN"
+     * }
+     *
      * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
      * be granted `roles/secretmanager.secretAccessor` for the resource.
      *
@@ -9746,9 +10471,6 @@ public final class TransferTypes {
      *
      * If `credentials_secret` is specified, do not specify
      * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-     *
-     * This feature is in
-     * [preview](https://cloud.google.com/terms/service-terms#1).
      *
      * Format: `projects/{project_number}/secrets/{secret_name}`
      * </pre>
@@ -10850,9 +11572,11 @@ public final class TransferTypes {
        * Optional. The Resource name of a secret in Secret Manager.
        *
        * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       *
+       * {
+       *  "sas_token" : "SAS_TOKEN"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
@@ -10862,9 +11586,6 @@ public final class TransferTypes {
        *
        * If `credentials_secret` is specified, do not specify
        * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -10891,9 +11612,11 @@ public final class TransferTypes {
        * Optional. The Resource name of a secret in Secret Manager.
        *
        * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       *
+       * {
+       *  "sas_token" : "SAS_TOKEN"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
@@ -10903,9 +11626,6 @@ public final class TransferTypes {
        *
        * If `credentials_secret` is specified, do not specify
        * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -10932,9 +11652,11 @@ public final class TransferTypes {
        * Optional. The Resource name of a secret in Secret Manager.
        *
        * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       *
+       * {
+       *  "sas_token" : "SAS_TOKEN"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
@@ -10944,9 +11666,6 @@ public final class TransferTypes {
        *
        * If `credentials_secret` is specified, do not specify
        * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -10972,9 +11691,11 @@ public final class TransferTypes {
        * Optional. The Resource name of a secret in Secret Manager.
        *
        * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       *
+       * {
+       *  "sas_token" : "SAS_TOKEN"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
@@ -10984,9 +11705,6 @@ public final class TransferTypes {
        *
        * If `credentials_secret` is specified, do not specify
        * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -11008,9 +11726,11 @@ public final class TransferTypes {
        * Optional. The Resource name of a secret in Secret Manager.
        *
        * The Azure SAS token must be stored in Secret Manager in JSON format:
-       * &lt;pre&gt;{
-       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
-       * }&lt;/pre&gt;
+       *
+       * {
+       *  "sas_token" : "SAS_TOKEN"
+       * }
+       *
        * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
        * be granted `roles/secretmanager.secretAccessor` for the resource.
        *
@@ -11020,9 +11740,6 @@ public final class TransferTypes {
        *
        * If `credentials_secret` is specified, do not specify
        * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
-       *
-       * This feature is in
-       * [preview](https://cloud.google.com/terms/service-terms#1).
        *
        * Format: `projects/{project_number}/secrets/{secret_name}`
        * </pre>
@@ -12502,6 +13219,658 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.PosixFilesystem
         getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface HdfsDataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.HdfsData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Root path to transfer files.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * Root path to transfer files.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An HdfsData resource specifies a path within an HDFS entity (e.g. a cluster).
+   * All cluster-specific settings, such as namenodes and ports, are configured on
+   * the transfer agents servicing requests, so HdfsData only contains the root
+   * path to the data in our transfer.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.HdfsData}
+   */
+  public static final class HdfsData extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.HdfsData)
+      HdfsDataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use HdfsData.newBuilder() to construct.
+    private HdfsData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HdfsData() {
+      path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HdfsData();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_HdfsData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_HdfsData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.class,
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder.class);
+    }
+
+    public static final int PATH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Root path to transfer files.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Root path to transfer files.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.storagetransfer.v1.proto.TransferTypes.HdfsData)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferTypes.HdfsData other =
+          (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) obj;
+
+      if (!getPath().equals(other.getPath())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferTypes.HdfsData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HdfsData resource specifies a path within an HDFS entity (e.g. a cluster).
+     * All cluster-specific settings, such as namenodes and ports, are configured on
+     * the transfer agents servicing requests, so HdfsData only contains the root
+     * path to the data in our transfer.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.HdfsData}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.HdfsData)
+        com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_HdfsData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_HdfsData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.class,
+                com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder.class);
+      }
+
+      // Construct using com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        path_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_HdfsData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData build() {
+        com.google.storagetransfer.v1.proto.TransferTypes.HdfsData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferTypes.HdfsData result =
+            new com.google.storagetransfer.v1.proto.TransferTypes.HdfsData(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.HdfsData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = path_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) {
+          return mergeFrom((com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.storagetransfer.v1.proto.TransferTypes.HdfsData other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance())
+          return this;
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  path_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Root path to transfer files.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Root path to transfer files.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Root path to transfer files.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Root path to transfer files.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Root path to transfer files.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.HdfsData)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.HdfsData)
+    private static final com.google.storagetransfer.v1.proto.TransferTypes.HdfsData
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.storagetransfer.v1.proto.TransferTypes.HdfsData();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.HdfsData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HdfsData> PARSER =
+        new com.google.protobuf.AbstractParser<HdfsData>() {
+          @java.lang.Override
+          public HdfsData parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HdfsData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HdfsData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -16331,7 +17700,7 @@ public final class TransferTypes {
    *
    *
    * <pre>
-   * Represents an On-Premises Agent pool.
+   * Represents an agent pool.
    * </pre>
    *
    * Protobuf type {@code google.storagetransfer.v1.AgentPool}
@@ -16397,8 +17766,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * This is an initialization state. During this stage, the resources such as
-       * Pub/Sub topics are allocated for the AgentPool.
+       * This is an initialization state. During this stage, resources are
+       * allocated for the AgentPool.
        * </pre>
        *
        * <code>CREATING = 1;</code>
@@ -16443,8 +17812,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * This is an initialization state. During this stage, the resources such as
-       * Pub/Sub topics are allocated for the AgentPool.
+       * This is an initialization state. During this stage, resources are
+       * allocated for the AgentPool.
        * </pre>
        *
        * <code>CREATING = 1;</code>
@@ -17540,7 +18909,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents an On-Premises Agent pool.
+     * Represents an agent pool.
      * </pre>
      *
      * Protobuf type {@code google.storagetransfer.v1.AgentPool}
@@ -20250,6 +21619,42 @@ public final class TransferTypes {
      *
      *
      * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     *
+     * @return Whether the hdfsDataSource field is set.
+     */
+    boolean hasHdfsDataSource();
+    /**
+     *
+     *
+     * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     *
+     * @return The hdfsDataSource.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.HdfsData getHdfsDataSource();
+    /**
+     *
+     *
+     * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder
+        getHdfsDataSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * For transfers between file systems, specifies a Cloud Storage bucket
      * to be used as an intermediate location through which to transfer data.
      *
@@ -20601,6 +22006,7 @@ public final class TransferTypes {
       POSIX_DATA_SOURCE(14),
       AZURE_BLOB_STORAGE_DATA_SOURCE(8),
       AWS_S3_COMPATIBLE_DATA_SOURCE(19),
+      HDFS_DATA_SOURCE(20),
       DATASOURCE_NOT_SET(0);
       private final int value;
 
@@ -20631,6 +22037,8 @@ public final class TransferTypes {
             return AZURE_BLOB_STORAGE_DATA_SOURCE;
           case 19:
             return AWS_S3_COMPATIBLE_DATA_SOURCE;
+          case 20:
+            return HDFS_DATA_SOURCE;
           case 0:
             return DATASOURCE_NOT_SET;
           default:
@@ -21121,6 +22529,58 @@ public final class TransferTypes {
           .getDefaultInstance();
     }
 
+    public static final int HDFS_DATA_SOURCE_FIELD_NUMBER = 20;
+    /**
+     *
+     *
+     * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     *
+     * @return Whether the hdfsDataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasHdfsDataSource() {
+      return dataSourceCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     *
+     * @return The hdfsDataSource.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData getHdfsDataSource() {
+      if (dataSourceCase_ == 20) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An HDFS cluster data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder
+        getHdfsDataSourceOrBuilder() {
+      if (dataSourceCase_ == 20) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+    }
+
     public static final int GCS_INTERMEDIATE_DATA_LOCATION_FIELD_NUMBER = 16;
     /**
      *
@@ -21544,6 +23004,10 @@ public final class TransferTypes {
             19,
             (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) dataSource_);
       }
+      if (dataSourceCase_ == 20) {
+        output.writeMessage(
+            20, (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -21620,6 +23084,11 @@ public final class TransferTypes {
                 (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
                     dataSource_);
       }
+      if (dataSourceCase_ == 20) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                20, (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -21682,6 +23151,9 @@ public final class TransferTypes {
         case 19:
           if (!getAwsS3CompatibleDataSource().equals(other.getAwsS3CompatibleDataSource()))
             return false;
+          break;
+        case 20:
+          if (!getHdfsDataSource().equals(other.getHdfsDataSource())) return false;
           break;
         case 0:
         default:
@@ -21759,6 +23231,10 @@ public final class TransferTypes {
         case 19:
           hash = (37 * hash) + AWS_S3_COMPATIBLE_DATA_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getAwsS3CompatibleDataSource().hashCode();
+          break;
+        case 20:
+          hash = (37 * hash) + HDFS_DATA_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getHdfsDataSource().hashCode();
           break;
         case 0:
         default:
@@ -21948,6 +23424,9 @@ public final class TransferTypes {
         if (awsS3CompatibleDataSourceBuilder_ != null) {
           awsS3CompatibleDataSourceBuilder_.clear();
         }
+        if (hdfsDataSourceBuilder_ != null) {
+          hdfsDataSourceBuilder_.clear();
+        }
         if (gcsIntermediateDataLocationBuilder_ != null) {
           gcsIntermediateDataLocationBuilder_.clear();
         }
@@ -22014,29 +23493,29 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.objectConditions_ =
               objectConditionsBuilder_ == null
                   ? objectConditions_
                   : objectConditionsBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.transferOptions_ =
               transferOptionsBuilder_ == null ? transferOptions_ : transferOptionsBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.transferManifest_ =
               transferManifestBuilder_ == null
                   ? transferManifest_
                   : transferManifestBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.sourceAgentPoolName_ = sourceAgentPoolName_;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.sinkAgentPoolName_ = sinkAgentPoolName_;
         }
         result.bitField0_ |= to_bitField0_;
@@ -22071,6 +23550,9 @@ public final class TransferTypes {
         }
         if (dataSourceCase_ == 19 && awsS3CompatibleDataSourceBuilder_ != null) {
           result.dataSource_ = awsS3CompatibleDataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 20 && hdfsDataSourceBuilder_ != null) {
+          result.dataSource_ = hdfsDataSourceBuilder_.build();
         }
         result.intermediateDataLocationCase_ = intermediateDataLocationCase_;
         result.intermediateDataLocation_ = this.intermediateDataLocation_;
@@ -22140,12 +23622,12 @@ public final class TransferTypes {
         }
         if (!other.getSourceAgentPoolName().isEmpty()) {
           sourceAgentPoolName_ = other.sourceAgentPoolName_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         if (!other.getSinkAgentPoolName().isEmpty()) {
           sinkAgentPoolName_ = other.sinkAgentPoolName_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
           onChanged();
         }
         switch (other.getDataSinkCase()) {
@@ -22193,6 +23675,11 @@ public final class TransferTypes {
           case AWS_S3_COMPATIBLE_DATA_SOURCE:
             {
               mergeAwsS3CompatibleDataSource(other.getAwsS3CompatibleDataSource());
+              break;
+            }
+          case HDFS_DATA_SOURCE:
+            {
+              mergeHdfsDataSource(other.getHdfsDataSource());
               break;
             }
           case DATASOURCE_NOT_SET:
@@ -22267,14 +23754,14 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getObjectConditionsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getTransferOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 50
               case 66:
@@ -22301,7 +23788,7 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getTransferManifestFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 122
               case 130:
@@ -22314,13 +23801,13 @@ public final class TransferTypes {
               case 138:
                 {
                   sourceAgentPoolName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00001000;
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 138
               case 146:
                 {
                   sinkAgentPoolName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00002000;
+                  bitField0_ |= 0x00004000;
                   break;
                 } // case 146
               case 154:
@@ -22330,6 +23817,13 @@ public final class TransferTypes {
                   dataSourceCase_ = 19;
                   break;
                 } // case 154
+              case 162:
+                {
+                  input.readMessage(
+                      getHdfsDataSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  dataSourceCase_ = 20;
+                  break;
+                } // case 162
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -24171,6 +25665,222 @@ public final class TransferTypes {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData,
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder>
+          hdfsDataSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       *
+       * @return Whether the hdfsDataSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasHdfsDataSource() {
+        return dataSourceCase_ == 20;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       *
+       * @return The hdfsDataSource.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData getHdfsDataSource() {
+        if (hdfsDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 20) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+        } else {
+          if (dataSourceCase_ == 20) {
+            return hdfsDataSourceBuilder_.getMessage();
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      public Builder setHdfsDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.HdfsData value) {
+        if (hdfsDataSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSource_ = value;
+          onChanged();
+        } else {
+          hdfsDataSourceBuilder_.setMessage(value);
+        }
+        dataSourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      public Builder setHdfsDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder builderForValue) {
+        if (hdfsDataSourceBuilder_ == null) {
+          dataSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          hdfsDataSourceBuilder_.setMessage(builderForValue.build());
+        }
+        dataSourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      public Builder mergeHdfsDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.HdfsData value) {
+        if (hdfsDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 20
+              && dataSource_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.HdfsData
+                      .getDefaultInstance()) {
+            dataSource_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.newBuilder(
+                        (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataSource_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataSourceCase_ == 20) {
+            hdfsDataSourceBuilder_.mergeFrom(value);
+          } else {
+            hdfsDataSourceBuilder_.setMessage(value);
+          }
+        }
+        dataSourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      public Builder clearHdfsDataSource() {
+        if (hdfsDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 20) {
+            dataSourceCase_ = 0;
+            dataSource_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataSourceCase_ == 20) {
+            dataSourceCase_ = 0;
+            dataSource_ = null;
+          }
+          hdfsDataSourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder
+          getHdfsDataSourceBuilder() {
+        return getHdfsDataSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder
+          getHdfsDataSourceOrBuilder() {
+        if ((dataSourceCase_ == 20) && (hdfsDataSourceBuilder_ != null)) {
+          return hdfsDataSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataSourceCase_ == 20) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An HDFS cluster data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.HdfsData hdfs_data_source = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData,
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder>
+          getHdfsDataSourceFieldBuilder() {
+        if (hdfsDataSourceBuilder_ == null) {
+          if (!(dataSourceCase_ == 20)) {
+            dataSource_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.getDefaultInstance();
+          }
+          hdfsDataSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.HdfsData,
+                  com.google.storagetransfer.v1.proto.TransferTypes.HdfsData.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.HdfsDataOrBuilder>(
+                  (com.google.storagetransfer.v1.proto.TransferTypes.HdfsData) dataSource_,
+                  getParentForChildren(),
+                  isClean());
+          dataSource_ = null;
+        }
+        dataSourceCase_ = 20;
+        onChanged();
+        return hdfsDataSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
               com.google.storagetransfer.v1.proto.TransferTypes.GcsData,
               com.google.storagetransfer.v1.proto.TransferTypes.GcsData.Builder,
               com.google.storagetransfer.v1.proto.TransferTypes.GcsDataOrBuilder>
@@ -24457,7 +26167,7 @@ public final class TransferTypes {
        * @return Whether the objectConditions field is set.
        */
       public boolean hasObjectConditions() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -24504,7 +26214,7 @@ public final class TransferTypes {
         } else {
           objectConditionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -24527,7 +26237,7 @@ public final class TransferTypes {
         } else {
           objectConditionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -24545,7 +26255,7 @@ public final class TransferTypes {
       public Builder mergeObjectConditions(
           com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions value) {
         if (objectConditionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)
+          if (((bitField0_ & 0x00000400) != 0)
               && objectConditions_ != null
               && objectConditions_
                   != com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions
@@ -24558,7 +26268,7 @@ public final class TransferTypes {
           objectConditionsBuilder_.mergeFrom(value);
         }
         if (objectConditions_ != null) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         return this;
@@ -24575,7 +26285,7 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.ObjectConditions object_conditions = 5;</code>
        */
       public Builder clearObjectConditions() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         objectConditions_ = null;
         if (objectConditionsBuilder_ != null) {
           objectConditionsBuilder_.dispose();
@@ -24597,7 +26307,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions.Builder
           getObjectConditionsBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getObjectConditionsFieldBuilder().getBuilder();
       }
@@ -24673,7 +26383,7 @@ public final class TransferTypes {
        * @return Whether the transferOptions field is set.
        */
       public boolean hasTransferOptions() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        *
@@ -24724,7 +26434,7 @@ public final class TransferTypes {
         } else {
           transferOptionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -24749,7 +26459,7 @@ public final class TransferTypes {
         } else {
           transferOptionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -24769,7 +26479,7 @@ public final class TransferTypes {
       public Builder mergeTransferOptions(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions value) {
         if (transferOptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)
+          if (((bitField0_ & 0x00000800) != 0)
               && transferOptions_ != null
               && transferOptions_
                   != com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions
@@ -24782,7 +26492,7 @@ public final class TransferTypes {
           transferOptionsBuilder_.mergeFrom(value);
         }
         if (transferOptions_ != null) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         return this;
@@ -24801,7 +26511,7 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferOptions transfer_options = 6;</code>
        */
       public Builder clearTransferOptions() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         transferOptions_ = null;
         if (transferOptionsBuilder_ != null) {
           transferOptionsBuilder_.dispose();
@@ -24825,7 +26535,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.Builder
           getTransferOptionsBuilder() {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getTransferOptionsFieldBuilder().getBuilder();
       }
@@ -24903,7 +26613,7 @@ public final class TransferTypes {
        * @return Whether the transferManifest field is set.
        */
       public boolean hasTransferManifest() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        *
@@ -24950,7 +26660,7 @@ public final class TransferTypes {
         } else {
           transferManifestBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -24973,7 +26683,7 @@ public final class TransferTypes {
         } else {
           transferManifestBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -24991,7 +26701,7 @@ public final class TransferTypes {
       public Builder mergeTransferManifest(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest value) {
         if (transferManifestBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0)
+          if (((bitField0_ & 0x00001000) != 0)
               && transferManifest_ != null
               && transferManifest_
                   != com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest
@@ -25004,7 +26714,7 @@ public final class TransferTypes {
           transferManifestBuilder_.mergeFrom(value);
         }
         if (transferManifest_ != null) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         return this;
@@ -25021,7 +26731,7 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferManifest transfer_manifest = 15;</code>
        */
       public Builder clearTransferManifest() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         transferManifest_ = null;
         if (transferManifestBuilder_ != null) {
           transferManifestBuilder_.dispose();
@@ -25043,7 +26753,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest.Builder
           getTransferManifestBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getTransferManifestFieldBuilder().getBuilder();
       }
@@ -25162,7 +26872,7 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         sourceAgentPoolName_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -25180,7 +26890,7 @@ public final class TransferTypes {
        */
       public Builder clearSourceAgentPoolName() {
         sourceAgentPoolName_ = getDefaultInstance().getSourceAgentPoolName();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -25203,7 +26913,7 @@ public final class TransferTypes {
         }
         checkByteStringIsUtf8(value);
         sourceAgentPoolName_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -25273,7 +26983,7 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         sinkAgentPoolName_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -25291,7 +27001,7 @@ public final class TransferTypes {
        */
       public Builder clearSinkAgentPoolName() {
         sinkAgentPoolName_ = getDefaultInstance().getSinkAgentPoolName();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -25314,7 +27024,7 @@ public final class TransferTypes {
         }
         checkByteStringIsUtf8(value);
         sinkAgentPoolName_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -25634,9 +27344,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies how each object's `timeCreated` metadata is preserved for
-     * transfers between Google Cloud Storage buckets.  If unspecified, the
-     * default behavior is the same as
+     * transfers. If unspecified, the default behavior is the same as
      * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+     * This behavior is supported for transfers to Cloud Storage buckets from
+     * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -25649,9 +27360,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies how each object's `timeCreated` metadata is preserved for
-     * transfers between Google Cloud Storage buckets.  If unspecified, the
-     * default behavior is the same as
+     * transfers. If unspecified, the default behavior is the same as
      * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+     * This behavior is supported for transfers to Cloud Storage buckets from
+     * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -27127,10 +28839,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Preserves the source object's `timeCreated` metadata in the `customTime`
-       * field in the destination object.  Note that any value stored in the
-       * source object's `customTime` field will not be propagated to the
-       * destination object.
+       * Preserves the source object's `timeCreated` or `lastModified` metadata in
+       * the `customTime` field in the destination object.  Note that any value
+       * stored in the source object's `customTime` field will not be propagated
+       * to the destination object.
        * </pre>
        *
        * <code>TIME_CREATED_PRESERVE_AS_CUSTOM_TIME = 2;</code>
@@ -27163,10 +28875,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Preserves the source object's `timeCreated` metadata in the `customTime`
-       * field in the destination object.  Note that any value stored in the
-       * source object's `customTime` field will not be propagated to the
-       * destination object.
+       * Preserves the source object's `timeCreated` or `lastModified` metadata in
+       * the `customTime` field in the destination object.  Note that any value
+       * stored in the source object's `customTime` field will not be propagated
+       * to the destination object.
        * </pre>
        *
        * <code>TIME_CREATED_PRESERVE_AS_CUSTOM_TIME = 2;</code>
@@ -27605,9 +29317,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies how each object's `timeCreated` metadata is preserved for
-     * transfers between Google Cloud Storage buckets.  If unspecified, the
-     * default behavior is the same as
+     * transfers. If unspecified, the default behavior is the same as
      * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+     * This behavior is supported for transfers to Cloud Storage buckets from
+     * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -27623,9 +29336,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies how each object's `timeCreated` metadata is preserved for
-     * transfers between Google Cloud Storage buckets.  If unspecified, the
-     * default behavior is the same as
+     * transfers. If unspecified, the default behavior is the same as
      * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+     * This behavior is supported for transfers to Cloud Storage buckets from
+     * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -29068,9 +30782,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies how each object's `timeCreated` metadata is preserved for
-       * transfers between Google Cloud Storage buckets.  If unspecified, the
-       * default behavior is the same as
+       * transfers. If unspecified, the default behavior is the same as
        * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+       * This behavior is supported for transfers to Cloud Storage buckets from
+       * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -29086,9 +30801,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies how each object's `timeCreated` metadata is preserved for
-       * transfers between Google Cloud Storage buckets.  If unspecified, the
-       * default behavior is the same as
+       * transfers. If unspecified, the default behavior is the same as
        * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+       * This behavior is supported for transfers to Cloud Storage buckets from
+       * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -29107,9 +30823,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies how each object's `timeCreated` metadata is preserved for
-       * transfers between Google Cloud Storage buckets.  If unspecified, the
-       * default behavior is the same as
+       * transfers. If unspecified, the default behavior is the same as
        * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+       * This behavior is supported for transfers to Cloud Storage buckets from
+       * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -29132,9 +30849,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies how each object's `timeCreated` metadata is preserved for
-       * transfers between Google Cloud Storage buckets.  If unspecified, the
-       * default behavior is the same as
+       * transfers. If unspecified, the default behavior is the same as
        * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+       * This behavior is supported for transfers to Cloud Storage buckets from
+       * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -29157,9 +30875,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies how each object's `timeCreated` metadata is preserved for
-       * transfers between Google Cloud Storage buckets.  If unspecified, the
-       * default behavior is the same as
+       * transfers. If unspecified, the default behavior is the same as
        * [TIME_CREATED_SKIP][google.storagetransfer.v1.MetadataOptions.TimeCreated.TIME_CREATED_SKIP].
+       * This behavior is supported for transfers to Cloud Storage buckets from
+       * Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions.TimeCreated time_created = 9;</code>
@@ -34277,8 +35996,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -34290,8 +36008,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -34303,8 +36020,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -35120,8 +36836,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -35136,8 +36851,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -35156,8 +36870,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Notification configuration. This is not supported for transfers involving
-     * PosixFilesystem.
+     * Notification configuration.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -36995,8 +38708,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37010,8 +38722,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37033,8 +38744,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37057,8 +38767,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37079,8 +38788,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37110,8 +38818,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37130,8 +38837,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37146,8 +38852,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -37167,8 +38872,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Notification configuration. This is not supported for transfers involving
-       * PosixFilesystem.
+       * Notification configuration.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
@@ -45724,9 +47428,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -45741,9 +47442,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -45757,9 +47455,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -45775,9 +47470,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -45791,9 +47483,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -45809,9 +47498,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -45828,9 +47514,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -45845,9 +47528,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -45864,9 +47544,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -45881,9 +47558,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -45899,8 +47573,13 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * For transfers with a PosixFilesystem source, this option enables the Cloud
-     * Storage transfer logs for this transfer.
+     * For PosixFilesystem transfers, enables
+     * [file system transfer
+     * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-format)
+     * instead of, or in addition to, Cloud Logging.
+     *
+     * This option ignores [LoggableAction] and [LoggableActionState]. If these
+     * are set, Cloud Logging will also be enabled for this transfer.
      * </pre>
      *
      * <code>bool enable_onprem_gcs_transfer_logs = 3;</code>
@@ -45915,16 +47594,10 @@ public final class TransferTypes {
    * <pre>
    * Specifies the logging behavior for transfer operations.
    *
-   * For cloud-to-cloud transfers, logs are sent to Cloud Logging. See
+   * Logs can be sent to Cloud Logging for all transfer types. See
    * [Read transfer
    * logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for
    * details.
-   *
-   * For transfers to or from a POSIX file system, logs are stored in the
-   * Cloud Storage bucket that is the source or sink of the transfer.
-   * See [Managing Transfer for on-premises jobs]
-   * (https://cloud.google.com/storage-transfer/docs/managing-on-prem-jobs#viewing-logs)
-   * for details.
    * </pre>
    *
    * Protobuf type {@code google.storagetransfer.v1.LoggingConfig}
@@ -46343,9 +48016,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -46367,9 +48037,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -46386,9 +48053,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -46407,9 +48071,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -46426,9 +48087,6 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -46475,9 +48133,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -46500,9 +48155,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -46520,9 +48172,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -46542,9 +48191,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -46562,9 +48208,6 @@ public final class TransferTypes {
      *
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
-     * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-     * instead.
      * </pre>
      *
      * <code>
@@ -46587,8 +48230,13 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * For transfers with a PosixFilesystem source, this option enables the Cloud
-     * Storage transfer logs for this transfer.
+     * For PosixFilesystem transfers, enables
+     * [file system transfer
+     * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-format)
+     * instead of, or in addition to, Cloud Logging.
+     *
+     * This option ignores [LoggableAction] and [LoggableActionState]. If these
+     * are set, Cloud Logging will also be enabled for this transfer.
      * </pre>
      *
      * <code>bool enable_onprem_gcs_transfer_logs = 3;</code>
@@ -46821,16 +48469,10 @@ public final class TransferTypes {
      * <pre>
      * Specifies the logging behavior for transfer operations.
      *
-     * For cloud-to-cloud transfers, logs are sent to Cloud Logging. See
+     * Logs can be sent to Cloud Logging for all transfer types. See
      * [Read transfer
      * logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for
      * details.
-     *
-     * For transfers to or from a POSIX file system, logs are stored in the
-     * Cloud Storage bucket that is the source or sink of the transfer.
-     * See [Managing Transfer for on-premises jobs]
-     * (https://cloud.google.com/storage-transfer/docs/managing-on-prem-jobs#viewing-logs)
-     * for details.
      * </pre>
      *
      * Protobuf type {@code google.storagetransfer.v1.LoggingConfig}
@@ -47105,9 +48747,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47128,9 +48767,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47146,9 +48782,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47166,9 +48799,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47194,9 +48824,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47220,9 +48847,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47250,9 +48874,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47271,9 +48892,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47289,9 +48907,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47308,9 +48923,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47331,9 +48943,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47353,9 +48962,6 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -47387,9 +48993,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47411,9 +49014,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47430,9 +49030,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47451,9 +49048,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47481,9 +49075,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47509,9 +49100,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47540,9 +49128,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47562,9 +49147,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47581,9 +49163,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47601,9 +49180,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47625,9 +49201,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47648,9 +49221,6 @@ public final class TransferTypes {
        *
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
-       * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
-       * instead.
        * </pre>
        *
        * <code>
@@ -47674,8 +49244,13 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * For transfers with a PosixFilesystem source, this option enables the Cloud
-       * Storage transfer logs for this transfer.
+       * For PosixFilesystem transfers, enables
+       * [file system transfer
+       * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-format)
+       * instead of, or in addition to, Cloud Logging.
+       *
+       * This option ignores [LoggableAction] and [LoggableActionState]. If these
+       * are set, Cloud Logging will also be enabled for this transfer.
        * </pre>
        *
        * <code>bool enable_onprem_gcs_transfer_logs = 3;</code>
@@ -47690,8 +49265,13 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * For transfers with a PosixFilesystem source, this option enables the Cloud
-       * Storage transfer logs for this transfer.
+       * For PosixFilesystem transfers, enables
+       * [file system transfer
+       * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-format)
+       * instead of, or in addition to, Cloud Logging.
+       *
+       * This option ignores [LoggableAction] and [LoggableActionState]. If these
+       * are set, Cloud Logging will also be enabled for this transfer.
        * </pre>
        *
        * <code>bool enable_onprem_gcs_transfer_logs = 3;</code>
@@ -47710,8 +49290,13 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * For transfers with a PosixFilesystem source, this option enables the Cloud
-       * Storage transfer logs for this transfer.
+       * For PosixFilesystem transfers, enables
+       * [file system transfer
+       * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-format)
+       * instead of, or in addition to, Cloud Logging.
+       *
+       * This option ignores [LoggableAction] and [LoggableActionState]. If these
+       * are set, Cloud Logging will also be enabled for this transfer.
        * </pre>
        *
        * <code>bool enable_onprem_gcs_transfer_logs = 3;</code>
@@ -51806,6 +53391,10 @@ public final class TransferTypes {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_PosixFilesystem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_HdfsData_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_HdfsData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable;
@@ -51902,228 +53491,233 @@ public final class TransferTypes {
           + "ixes\030\004 \003(\t\0227\n\023last_modified_since\030\005 \001(\0132"
           + "\032.google.protobuf.Timestamp\0228\n\024last_modi"
           + "fied_before\030\006 \001(\0132\032.google.protobuf.Time"
-          + "stamp\"1\n\007GcsData\022\030\n\013bucket_name\030\001 \001(\tB\003\340"
-          + "A\002\022\014\n\004path\030\003 \001(\t\"\254\001\n\tAwsS3Data\022\030\n\013bucket"
-          + "_name\030\001 \001(\tB\003\340A\002\022D\n\016aws_access_key\030\002 \001(\013"
-          + "2\'.google.storagetransfer.v1.AwsAccessKe"
-          + "yB\003\340A\004\022\014\n\004path\030\003 \001(\t\022\020\n\010role_arn\030\004 \001(\t\022\037"
-          + "\n\022credentials_secret\030\007 \001(\tB\003\340A\001\"\313\001\n\024Azur"
-          + "eBlobStorageData\022\034\n\017storage_account\030\001 \001("
-          + "\tB\003\340A\002\022N\n\021azure_credentials\030\002 \001(\0132+.goog"
-          + "le.storagetransfer.v1.AzureCredentialsB\006"
-          + "\340A\002\340A\004\022\026\n\tcontainer\030\004 \001(\tB\003\340A\002\022\014\n\004path\030\005"
-          + " \001(\t\022\037\n\022credentials_secret\030\007 \001(\tB\003\340A\001\"!\n"
-          + "\010HttpData\022\025\n\010list_url\030\001 \001(\tB\003\340A\002\")\n\017Posi"
-          + "xFilesystem\022\026\n\016root_directory\030\001 \001(\t\"\275\001\n\023"
-          + "AwsS3CompatibleData\022\030\n\013bucket_name\030\001 \001(\t"
-          + "B\003\340A\002\022\014\n\004path\030\002 \001(\t\022\025\n\010endpoint\030\003 \001(\tB\003\340"
-          + "A\002\022\016\n\006region\030\005 \001(\t\022F\n\013s3_metadata\030\004 \001(\0132"
-          + "/.google.storagetransfer.v1.S3Compatible"
-          + "MetadataH\000B\017\n\rdata_provider\"\366\005\n\024S3Compat"
-          + "ibleMetadata\022O\n\013auth_method\030\001 \001(\0162:.goog"
-          + "le.storagetransfer.v1.S3CompatibleMetada"
-          + "ta.AuthMethod\022S\n\rrequest_model\030\002 \001(\0162<.g"
-          + "oogle.storagetransfer.v1.S3CompatibleMet"
-          + "adata.RequestModel\022Q\n\010protocol\030\003 \001(\0162?.g"
-          + "oogle.storagetransfer.v1.S3CompatibleMet"
-          + "adata.NetworkProtocol\022I\n\010list_api\030\004 \001(\0162"
-          + "7.google.storagetransfer.v1.S3Compatible"
-          + "Metadata.ListApi\"m\n\nAuthMethod\022\033\n\027AUTH_M"
-          + "ETHOD_UNSPECIFIED\020\000\022 \n\034AUTH_METHOD_AWS_S"
-          + "IGNATURE_V4\020\001\022 \n\034AUTH_METHOD_AWS_SIGNATU"
-          + "RE_V2\020\002\"s\n\014RequestModel\022\035\n\031REQUEST_MODEL"
-          + "_UNSPECIFIED\020\000\022&\n\"REQUEST_MODEL_VIRTUAL_"
-          + "HOSTED_STYLE\020\001\022\034\n\030REQUEST_MODEL_PATH_STY"
-          + "LE\020\002\"j\n\017NetworkProtocol\022 \n\034NETWORK_PROTO"
-          + "COL_UNSPECIFIED\020\000\022\032\n\026NETWORK_PROTOCOL_HT"
-          + "TPS\020\001\022\031\n\025NETWORK_PROTOCOL_HTTP\020\002\"J\n\007List"
-          + "Api\022\030\n\024LIST_API_UNSPECIFIED\020\000\022\023\n\017LIST_OB"
-          + "JECTS_V2\020\001\022\020\n\014LIST_OBJECTS\020\002\"\223\003\n\tAgentPo"
-          + "ol\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\024\n\014display_name\030\003 "
-          + "\001(\t\022>\n\005state\030\004 \001(\0162*.google.storagetrans"
-          + "fer.v1.AgentPool.StateB\003\340A\003\022L\n\017bandwidth"
-          + "_limit\030\005 \001(\01323.google.storagetransfer.v1"
-          + ".AgentPool.BandwidthLimit\032$\n\016BandwidthLi"
-          + "mit\022\022\n\nlimit_mbps\030\001 \001(\003\"G\n\005State\022\025\n\021STAT"
-          + "E_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007CREATED"
-          + "\020\002\022\014\n\010DELETING\020\003:`\352A]\n)storagetransfer.g"
-          + "oogleapis.com/agentPools\0220projects/{proj"
-          + "ect_id}/agentPools/{agent_pool_id}\"\216\003\n\017T"
-          + "ransferOptions\0222\n*overwrite_objects_alre"
-          + "ady_existing_in_sink\030\001 \001(\010\022%\n\035delete_obj"
-          + "ects_unique_in_sink\030\002 \001(\010\0221\n)delete_obje"
-          + "cts_from_source_after_transfer\030\003 \001(\010\022P\n\016"
-          + "overwrite_when\030\004 \001(\01628.google.storagetra"
-          + "nsfer.v1.TransferOptions.OverwriteWhen\022D"
-          + "\n\020metadata_options\030\005 \001(\0132*.google.storag"
-          + "etransfer.v1.MetadataOptions\"U\n\rOverwrit"
-          + "eWhen\022\036\n\032OVERWRITE_WHEN_UNSPECIFIED\020\000\022\r\n"
-          + "\tDIFFERENT\020\001\022\t\n\005NEVER\020\002\022\n\n\006ALWAYS\020\003\"\357\007\n\014"
-          + "TransferSpec\022;\n\rgcs_data_sink\030\004 \001(\0132\".go"
-          + "ogle.storagetransfer.v1.GcsDataH\000\022E\n\017pos"
-          + "ix_data_sink\030\r \001(\0132*.google.storagetrans"
-          + "fer.v1.PosixFilesystemH\000\022=\n\017gcs_data_sou"
-          + "rce\030\001 \001(\0132\".google.storagetransfer.v1.Gc"
-          + "sDataH\001\022B\n\022aws_s3_data_source\030\002 \001(\0132$.go"
-          + "ogle.storagetransfer.v1.AwsS3DataH\001\022?\n\020h"
-          + "ttp_data_source\030\003 \001(\0132#.google.storagetr"
-          + "ansfer.v1.HttpDataH\001\022G\n\021posix_data_sourc"
-          + "e\030\016 \001(\0132*.google.storagetransfer.v1.Posi"
-          + "xFilesystemH\001\022Y\n\036azure_blob_storage_data"
-          + "_source\030\010 \001(\0132/.google.storagetransfer.v"
-          + "1.AzureBlobStorageDataH\001\022W\n\035aws_s3_compa"
-          + "tible_data_source\030\023 \001(\0132..google.storage"
-          + "transfer.v1.AwsS3CompatibleDataH\001\022L\n\036gcs"
-          + "_intermediate_data_location\030\020 \001(\0132\".goog"
-          + "le.storagetransfer.v1.GcsDataH\002\022F\n\021objec"
-          + "t_conditions\030\005 \001(\0132+.google.storagetrans"
-          + "fer.v1.ObjectConditions\022D\n\020transfer_opti"
-          + "ons\030\006 \001(\0132*.google.storagetransfer.v1.Tr"
-          + "ansferOptions\022F\n\021transfer_manifest\030\017 \001(\013"
-          + "2+.google.storagetransfer.v1.TransferMan"
-          + "ifest\022\036\n\026source_agent_pool_name\030\021 \001(\t\022\034\n"
-          + "\024sink_agent_pool_name\030\022 \001(\tB\013\n\tdata_sink"
-          + "B\r\n\013data_sourceB\034\n\032intermediate_data_loc"
-          + "ation\"\361\013\n\017MetadataOptions\022C\n\007symlink\030\001 \001"
-          + "(\01622.google.storagetransfer.v1.MetadataO"
-          + "ptions.Symlink\022=\n\004mode\030\002 \001(\0162/.google.st"
-          + "oragetransfer.v1.MetadataOptions.Mode\022;\n"
-          + "\003gid\030\003 \001(\0162..google.storagetransfer.v1.M"
-          + "etadataOptions.GID\022;\n\003uid\030\004 \001(\0162..google"
-          + ".storagetransfer.v1.MetadataOptions.UID\022"
-          + ";\n\003acl\030\005 \001(\0162..google.storagetransfer.v1"
-          + ".MetadataOptions.Acl\022N\n\rstorage_class\030\006 "
-          + "\001(\01627.google.storagetransfer.v1.Metadata"
-          + "Options.StorageClass\022P\n\016temporary_hold\030\007"
-          + " \001(\01628.google.storagetransfer.v1.Metadat"
-          + "aOptions.TemporaryHold\022B\n\007kms_key\030\010 \001(\0162"
-          + "1.google.storagetransfer.v1.MetadataOpti"
-          + "ons.KmsKey\022L\n\014time_created\030\t \001(\01626.googl"
-          + "e.storagetransfer.v1.MetadataOptions.Tim"
-          + "eCreated\"J\n\007Symlink\022\027\n\023SYMLINK_UNSPECIFI"
-          + "ED\020\000\022\020\n\014SYMLINK_SKIP\020\001\022\024\n\020SYMLINK_PRESER"
-          + "VE\020\002\">\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\r\n\tMO"
-          + "DE_SKIP\020\001\022\021\n\rMODE_PRESERVE\020\002\"8\n\003GID\022\023\n\017G"
-          + "ID_UNSPECIFIED\020\000\022\014\n\010GID_SKIP\020\001\022\016\n\nGID_NU"
-          + "MBER\020\002\"8\n\003UID\022\023\n\017UID_UNSPECIFIED\020\000\022\014\n\010UI"
-          + "D_SKIP\020\001\022\016\n\nUID_NUMBER\020\002\"P\n\003Acl\022\023\n\017ACL_U"
-          + "NSPECIFIED\020\000\022\"\n\036ACL_DESTINATION_BUCKET_D"
-          + "EFAULT\020\001\022\020\n\014ACL_PRESERVE\020\002\"\346\001\n\014StorageCl"
-          + "ass\022\035\n\031STORAGE_CLASS_UNSPECIFIED\020\000\022,\n(ST"
-          + "ORAGE_CLASS_DESTINATION_BUCKET_DEFAULT\020\001"
-          + "\022\032\n\026STORAGE_CLASS_PRESERVE\020\002\022\032\n\026STORAGE_"
-          + "CLASS_STANDARD\020\003\022\032\n\026STORAGE_CLASS_NEARLI"
-          + "NE\020\004\022\032\n\026STORAGE_CLASS_COLDLINE\020\005\022\031\n\025STOR"
-          + "AGE_CLASS_ARCHIVE\020\006\"e\n\rTemporaryHold\022\036\n\032"
-          + "TEMPORARY_HOLD_UNSPECIFIED\020\000\022\027\n\023TEMPORAR"
-          + "Y_HOLD_SKIP\020\001\022\033\n\027TEMPORARY_HOLD_PRESERVE"
-          + "\020\002\"_\n\006KmsKey\022\027\n\023KMS_KEY_UNSPECIFIED\020\000\022&\n"
-          + "\"KMS_KEY_DESTINATION_BUCKET_DEFAULT\020\001\022\024\n"
-          + "\020KMS_KEY_PRESERVE\020\002\"l\n\013TimeCreated\022\034\n\030TI"
-          + "ME_CREATED_UNSPECIFIED\020\000\022\025\n\021TIME_CREATED"
-          + "_SKIP\020\001\022(\n$TIME_CREATED_PRESERVE_AS_CUST"
-          + "OM_TIME\020\002\"$\n\020TransferManifest\022\020\n\010locatio"
-          + "n\030\001 \001(\t\"\205\002\n\010Schedule\0223\n\023schedule_start_d"
-          + "ate\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022,\n\021sch"
-          + "edule_end_date\030\002 \001(\0132\021.google.type.Date\022"
-          + "1\n\021start_time_of_day\030\003 \001(\0132\026.google.type"
-          + ".TimeOfDay\022/\n\017end_time_of_day\030\004 \001(\0132\026.go"
-          + "ogle.type.TimeOfDay\0222\n\017repeat_interval\030\005"
-          + " \001(\0132\031.google.protobuf.Duration\"\237\001\n\013Even"
-          + "tStream\022\021\n\004name\030\001 \001(\tB\003\340A\002\022;\n\027event_stre"
-          + "am_start_time\030\002 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022@\n\034event_stream_expiration_time\030"
-          + "\003 \001(\0132\032.google.protobuf.Timestamp\"\340\005\n\013Tr"
-          + "ansferJob\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002"
-          + " \001(\t\022\022\n\nproject_id\030\003 \001(\t\022>\n\rtransfer_spe"
-          + "c\030\004 \001(\0132\'.google.storagetransfer.v1.Tran"
-          + "sferSpec\022J\n\023notification_config\030\013 \001(\0132-."
-          + "google.storagetransfer.v1.NotificationCo"
-          + "nfig\022@\n\016logging_config\030\016 \001(\0132(.google.st"
-          + "oragetransfer.v1.LoggingConfig\0225\n\010schedu"
-          + "le\030\005 \001(\0132#.google.storagetransfer.v1.Sch"
-          + "edule\022<\n\014event_stream\030\017 \001(\0132&.google.sto"
-          + "ragetransfer.v1.EventStream\022=\n\006status\030\006 "
-          + "\001(\0162-.google.storagetransfer.v1.Transfer"
-          + "Job.Status\0226\n\rcreation_time\030\007 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\022?\n\026last_modif"
-          + "ication_time\030\010 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\0226\n\rdeletion_time\030\t \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\022\035\n\025latest_op"
-          + "eration_name\030\014 \001(\t\"H\n\006Status\022\026\n\022STATUS_U"
-          + "NSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022"
-          + "\013\n\007DELETED\020\003\"8\n\rErrorLogEntry\022\020\n\003url\030\001 \001"
-          + "(\tB\003\340A\002\022\025\n\rerror_details\030\003 \003(\t\"\230\001\n\014Error"
-          + "Summary\022)\n\nerror_code\030\001 \001(\0162\020.google.rpc"
-          + ".CodeB\003\340A\002\022\030\n\013error_count\030\002 \001(\003B\003\340A\002\022C\n\021"
-          + "error_log_entries\030\003 \003(\0132(.google.storage"
-          + "transfer.v1.ErrorLogEntry\"\303\006\n\020TransferCo"
-          + "unters\022!\n\031objects_found_from_source\030\001 \001("
-          + "\003\022\037\n\027bytes_found_from_source\030\002 \001(\003\022$\n\034ob"
-          + "jects_found_only_from_sink\030\003 \001(\003\022\"\n\032byte"
-          + "s_found_only_from_sink\030\004 \001(\003\022+\n#objects_"
-          + "from_source_skipped_by_sync\030\005 \001(\003\022)\n!byt"
-          + "es_from_source_skipped_by_sync\030\006 \001(\003\022\036\n\026"
-          + "objects_copied_to_sink\030\007 \001(\003\022\034\n\024bytes_co"
-          + "pied_to_sink\030\010 \001(\003\022#\n\033objects_deleted_fr"
-          + "om_source\030\t \001(\003\022!\n\031bytes_deleted_from_so"
-          + "urce\030\n \001(\003\022!\n\031objects_deleted_from_sink\030"
-          + "\013 \001(\003\022\037\n\027bytes_deleted_from_sink\030\014 \001(\003\022\""
-          + "\n\032objects_from_source_failed\030\r \001(\003\022 \n\030by"
-          + "tes_from_source_failed\030\016 \001(\003\022*\n\"objects_"
-          + "failed_to_delete_from_sink\030\017 \001(\003\022(\n byte"
-          + "s_failed_to_delete_from_sink\030\020 \001(\003\022%\n\035di"
-          + "rectories_found_from_source\030\021 \001(\003\022.\n&dir"
-          + "ectories_failed_to_list_from_source\030\022 \001("
-          + "\003\0223\n+directories_successfully_listed_fro"
-          + "m_source\030\023 \001(\003\022\'\n\037intermediate_objects_c"
-          + "leaned_up\030\026 \001(\003\022.\n&intermediate_objects_"
-          + "failed_cleaned_up\030\027 \001(\003\"\245\003\n\022Notification"
-          + "Config\022\031\n\014pubsub_topic\030\001 \001(\tB\003\340A\002\022L\n\013eve"
-          + "nt_types\030\002 \003(\01627.google.storagetransfer."
-          + "v1.NotificationConfig.EventType\022X\n\016paylo"
-          + "ad_format\030\003 \001(\0162;.google.storagetransfer"
-          + ".v1.NotificationConfig.PayloadFormatB\003\340A"
-          + "\002\"\206\001\n\tEventType\022\032\n\026EVENT_TYPE_UNSPECIFIE"
-          + "D\020\000\022\036\n\032TRANSFER_OPERATION_SUCCESS\020\001\022\035\n\031T"
-          + "RANSFER_OPERATION_FAILED\020\002\022\036\n\032TRANSFER_O"
-          + "PERATION_ABORTED\020\003\"C\n\rPayloadFormat\022\036\n\032P"
-          + "AYLOAD_FORMAT_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\010\n"
-          + "\004JSON\020\002\"\213\003\n\rLoggingConfig\022L\n\013log_actions"
-          + "\030\001 \003(\01627.google.storagetransfer.v1.Loggi"
-          + "ngConfig.LoggableAction\022W\n\021log_action_st"
-          + "ates\030\002 \003(\0162<.google.storagetransfer.v1.L"
-          + "oggingConfig.LoggableActionState\022\'\n\037enab"
-          + "le_onprem_gcs_transfer_logs\030\003 \001(\010\"Q\n\016Log"
-          + "gableAction\022\037\n\033LOGGABLE_ACTION_UNSPECIFI"
-          + "ED\020\000\022\010\n\004FIND\020\001\022\n\n\006DELETE\020\002\022\010\n\004COPY\020\003\"W\n\023"
-          + "LoggableActionState\022%\n!LOGGABLE_ACTION_S"
-          + "TATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAI"
-          + "LED\020\002\"\304\005\n\021TransferOperation\022\014\n\004name\030\001 \001("
-          + "\t\022\022\n\nproject_id\030\002 \001(\t\022>\n\rtransfer_spec\030\003"
-          + " \001(\0132\'.google.storagetransfer.v1.Transfe"
-          + "rSpec\022J\n\023notification_config\030\n \001(\0132-.goo"
-          + "gle.storagetransfer.v1.NotificationConfi"
-          + "g\022@\n\016logging_config\030\014 \001(\0132(.google.stora"
-          + "getransfer.v1.LoggingConfig\022.\n\nstart_tim"
-          + "e\030\004 \001(\0132\032.google.protobuf.Timestamp\022,\n\010e"
-          + "nd_time\030\005 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022C\n\006status\030\006 \001(\01623.google.storagetransf"
-          + "er.v1.TransferOperation.Status\022=\n\010counte"
-          + "rs\030\007 \001(\0132+.google.storagetransfer.v1.Tra"
-          + "nsferCounters\022A\n\020error_breakdowns\030\010 \003(\0132"
-          + "\'.google.storagetransfer.v1.ErrorSummary"
-          + "\022\031\n\021transfer_job_name\030\t \001(\t\"\177\n\006Status\022\026\n"
-          + "\022STATUS_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\n"
-          + "\n\006PAUSED\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004\022\013\n\007A"
-          + "BORTED\020\005\022\n\n\006QUEUED\020\006\022\016\n\nSUSPENDING\020\007B\357\001\n"
-          + "#com.google.storagetransfer.v1.protoB\rTr"
-          + "ansferTypesZMcloud.google.com/go/storage"
-          + "transfer/apiv1/storagetransferpb;storage"
-          + "transferpb\370\001\001\252\002\037Google.Cloud.StorageTran"
-          + "sfer.V1\312\002\037Google\\Cloud\\StorageTransfer\\V"
-          + "1\352\002\"Google::Cloud::StorageTransfer::V1b\006"
-          + "proto3"
+          + "stamp\"Z\n\007GcsData\022\030\n\013bucket_name\030\001 \001(\tB\003\340"
+          + "A\002\022\014\n\004path\030\003 \001(\t\022\'\n\037managed_folder_trans"
+          + "fer_enabled\030\004 \001(\010\"\202\002\n\tAwsS3Data\022\030\n\013bucke"
+          + "t_name\030\001 \001(\tB\003\340A\002\022D\n\016aws_access_key\030\002 \001("
+          + "\0132\'.google.storagetransfer.v1.AwsAccessK"
+          + "eyB\003\340A\004\022\014\n\004path\030\003 \001(\t\022\020\n\010role_arn\030\004 \001(\t\022"
+          + "\036\n\021cloudfront_domain\030\006 \001(\tB\003\340A\001\022\037\n\022crede"
+          + "ntials_secret\030\007 \001(\tB\003\340A\001\022!\n\027managed_priv"
+          + "ate_network\030\010 \001(\010H\000B\021\n\017private_network\"\313"
+          + "\001\n\024AzureBlobStorageData\022\034\n\017storage_accou"
+          + "nt\030\001 \001(\tB\003\340A\002\022N\n\021azure_credentials\030\002 \001(\013"
+          + "2+.google.storagetransfer.v1.AzureCreden"
+          + "tialsB\006\340A\002\340A\004\022\026\n\tcontainer\030\004 \001(\tB\003\340A\002\022\014\n"
+          + "\004path\030\005 \001(\t\022\037\n\022credentials_secret\030\007 \001(\tB"
+          + "\003\340A\001\"!\n\010HttpData\022\025\n\010list_url\030\001 \001(\tB\003\340A\002\""
+          + ")\n\017PosixFilesystem\022\026\n\016root_directory\030\001 \001"
+          + "(\t\"\030\n\010HdfsData\022\014\n\004path\030\001 \001(\t\"\275\001\n\023AwsS3Co"
+          + "mpatibleData\022\030\n\013bucket_name\030\001 \001(\tB\003\340A\002\022\014"
+          + "\n\004path\030\002 \001(\t\022\025\n\010endpoint\030\003 \001(\tB\003\340A\002\022\016\n\006r"
+          + "egion\030\005 \001(\t\022F\n\013s3_metadata\030\004 \001(\0132/.googl"
+          + "e.storagetransfer.v1.S3CompatibleMetadat"
+          + "aH\000B\017\n\rdata_provider\"\366\005\n\024S3CompatibleMet"
+          + "adata\022O\n\013auth_method\030\001 \001(\0162:.google.stor"
+          + "agetransfer.v1.S3CompatibleMetadata.Auth"
+          + "Method\022S\n\rrequest_model\030\002 \001(\0162<.google.s"
+          + "toragetransfer.v1.S3CompatibleMetadata.R"
+          + "equestModel\022Q\n\010protocol\030\003 \001(\0162?.google.s"
+          + "toragetransfer.v1.S3CompatibleMetadata.N"
+          + "etworkProtocol\022I\n\010list_api\030\004 \001(\01627.googl"
+          + "e.storagetransfer.v1.S3CompatibleMetadat"
+          + "a.ListApi\"m\n\nAuthMethod\022\033\n\027AUTH_METHOD_U"
+          + "NSPECIFIED\020\000\022 \n\034AUTH_METHOD_AWS_SIGNATUR"
+          + "E_V4\020\001\022 \n\034AUTH_METHOD_AWS_SIGNATURE_V2\020\002"
+          + "\"s\n\014RequestModel\022\035\n\031REQUEST_MODEL_UNSPEC"
+          + "IFIED\020\000\022&\n\"REQUEST_MODEL_VIRTUAL_HOSTED_"
+          + "STYLE\020\001\022\034\n\030REQUEST_MODEL_PATH_STYLE\020\002\"j\n"
+          + "\017NetworkProtocol\022 \n\034NETWORK_PROTOCOL_UNS"
+          + "PECIFIED\020\000\022\032\n\026NETWORK_PROTOCOL_HTTPS\020\001\022\031"
+          + "\n\025NETWORK_PROTOCOL_HTTP\020\002\"J\n\007ListApi\022\030\n\024"
+          + "LIST_API_UNSPECIFIED\020\000\022\023\n\017LIST_OBJECTS_V"
+          + "2\020\001\022\020\n\014LIST_OBJECTS\020\002\"\223\003\n\tAgentPool\022\021\n\004n"
+          + "ame\030\002 \001(\tB\003\340A\002\022\024\n\014display_name\030\003 \001(\t\022>\n\005"
+          + "state\030\004 \001(\0162*.google.storagetransfer.v1."
+          + "AgentPool.StateB\003\340A\003\022L\n\017bandwidth_limit\030"
+          + "\005 \001(\01323.google.storagetransfer.v1.AgentP"
+          + "ool.BandwidthLimit\032$\n\016BandwidthLimit\022\022\n\n"
+          + "limit_mbps\030\001 \001(\003\"G\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007CREATED\020\002\022\014\n\010D"
+          + "ELETING\020\003:`\352A]\n)storagetransfer.googleap"
+          + "is.com/agentPools\0220projects/{project_id}"
+          + "/agentPools/{agent_pool_id}\"\216\003\n\017Transfer"
+          + "Options\0222\n*overwrite_objects_already_exi"
+          + "sting_in_sink\030\001 \001(\010\022%\n\035delete_objects_un"
+          + "ique_in_sink\030\002 \001(\010\0221\n)delete_objects_fro"
+          + "m_source_after_transfer\030\003 \001(\010\022P\n\016overwri"
+          + "te_when\030\004 \001(\01628.google.storagetransfer.v"
+          + "1.TransferOptions.OverwriteWhen\022D\n\020metad"
+          + "ata_options\030\005 \001(\0132*.google.storagetransf"
+          + "er.v1.MetadataOptions\"U\n\rOverwriteWhen\022\036"
+          + "\n\032OVERWRITE_WHEN_UNSPECIFIED\020\000\022\r\n\tDIFFER"
+          + "ENT\020\001\022\t\n\005NEVER\020\002\022\n\n\006ALWAYS\020\003\"\260\010\n\014Transfe"
+          + "rSpec\022;\n\rgcs_data_sink\030\004 \001(\0132\".google.st"
+          + "oragetransfer.v1.GcsDataH\000\022E\n\017posix_data"
+          + "_sink\030\r \001(\0132*.google.storagetransfer.v1."
+          + "PosixFilesystemH\000\022=\n\017gcs_data_source\030\001 \001"
+          + "(\0132\".google.storagetransfer.v1.GcsDataH\001"
+          + "\022B\n\022aws_s3_data_source\030\002 \001(\0132$.google.st"
+          + "oragetransfer.v1.AwsS3DataH\001\022?\n\020http_dat"
+          + "a_source\030\003 \001(\0132#.google.storagetransfer."
+          + "v1.HttpDataH\001\022G\n\021posix_data_source\030\016 \001(\013"
+          + "2*.google.storagetransfer.v1.PosixFilesy"
+          + "stemH\001\022Y\n\036azure_blob_storage_data_source"
+          + "\030\010 \001(\0132/.google.storagetransfer.v1.Azure"
+          + "BlobStorageDataH\001\022W\n\035aws_s3_compatible_d"
+          + "ata_source\030\023 \001(\0132..google.storagetransfe"
+          + "r.v1.AwsS3CompatibleDataH\001\022?\n\020hdfs_data_"
+          + "source\030\024 \001(\0132#.google.storagetransfer.v1"
+          + ".HdfsDataH\001\022L\n\036gcs_intermediate_data_loc"
+          + "ation\030\020 \001(\0132\".google.storagetransfer.v1."
+          + "GcsDataH\002\022F\n\021object_conditions\030\005 \001(\0132+.g"
+          + "oogle.storagetransfer.v1.ObjectCondition"
+          + "s\022D\n\020transfer_options\030\006 \001(\0132*.google.sto"
+          + "ragetransfer.v1.TransferOptions\022F\n\021trans"
+          + "fer_manifest\030\017 \001(\0132+.google.storagetrans"
+          + "fer.v1.TransferManifest\022\036\n\026source_agent_"
+          + "pool_name\030\021 \001(\t\022\034\n\024sink_agent_pool_name\030"
+          + "\022 \001(\tB\013\n\tdata_sinkB\r\n\013data_sourceB\034\n\032int"
+          + "ermediate_data_location\"\361\013\n\017MetadataOpti"
+          + "ons\022C\n\007symlink\030\001 \001(\01622.google.storagetra"
+          + "nsfer.v1.MetadataOptions.Symlink\022=\n\004mode"
+          + "\030\002 \001(\0162/.google.storagetransfer.v1.Metad"
+          + "ataOptions.Mode\022;\n\003gid\030\003 \001(\0162..google.st"
+          + "oragetransfer.v1.MetadataOptions.GID\022;\n\003"
+          + "uid\030\004 \001(\0162..google.storagetransfer.v1.Me"
+          + "tadataOptions.UID\022;\n\003acl\030\005 \001(\0162..google."
+          + "storagetransfer.v1.MetadataOptions.Acl\022N"
+          + "\n\rstorage_class\030\006 \001(\01627.google.storagetr"
+          + "ansfer.v1.MetadataOptions.StorageClass\022P"
+          + "\n\016temporary_hold\030\007 \001(\01628.google.storaget"
+          + "ransfer.v1.MetadataOptions.TemporaryHold"
+          + "\022B\n\007kms_key\030\010 \001(\01621.google.storagetransf"
+          + "er.v1.MetadataOptions.KmsKey\022L\n\014time_cre"
+          + "ated\030\t \001(\01626.google.storagetransfer.v1.M"
+          + "etadataOptions.TimeCreated\"J\n\007Symlink\022\027\n"
+          + "\023SYMLINK_UNSPECIFIED\020\000\022\020\n\014SYMLINK_SKIP\020\001"
+          + "\022\024\n\020SYMLINK_PRESERVE\020\002\">\n\004Mode\022\024\n\020MODE_U"
+          + "NSPECIFIED\020\000\022\r\n\tMODE_SKIP\020\001\022\021\n\rMODE_PRES"
+          + "ERVE\020\002\"8\n\003GID\022\023\n\017GID_UNSPECIFIED\020\000\022\014\n\010GI"
+          + "D_SKIP\020\001\022\016\n\nGID_NUMBER\020\002\"8\n\003UID\022\023\n\017UID_U"
+          + "NSPECIFIED\020\000\022\014\n\010UID_SKIP\020\001\022\016\n\nUID_NUMBER"
+          + "\020\002\"P\n\003Acl\022\023\n\017ACL_UNSPECIFIED\020\000\022\"\n\036ACL_DE"
+          + "STINATION_BUCKET_DEFAULT\020\001\022\020\n\014ACL_PRESER"
+          + "VE\020\002\"\346\001\n\014StorageClass\022\035\n\031STORAGE_CLASS_U"
+          + "NSPECIFIED\020\000\022,\n(STORAGE_CLASS_DESTINATIO"
+          + "N_BUCKET_DEFAULT\020\001\022\032\n\026STORAGE_CLASS_PRES"
+          + "ERVE\020\002\022\032\n\026STORAGE_CLASS_STANDARD\020\003\022\032\n\026ST"
+          + "ORAGE_CLASS_NEARLINE\020\004\022\032\n\026STORAGE_CLASS_"
+          + "COLDLINE\020\005\022\031\n\025STORAGE_CLASS_ARCHIVE\020\006\"e\n"
+          + "\rTemporaryHold\022\036\n\032TEMPORARY_HOLD_UNSPECI"
+          + "FIED\020\000\022\027\n\023TEMPORARY_HOLD_SKIP\020\001\022\033\n\027TEMPO"
+          + "RARY_HOLD_PRESERVE\020\002\"_\n\006KmsKey\022\027\n\023KMS_KE"
+          + "Y_UNSPECIFIED\020\000\022&\n\"KMS_KEY_DESTINATION_B"
+          + "UCKET_DEFAULT\020\001\022\024\n\020KMS_KEY_PRESERVE\020\002\"l\n"
+          + "\013TimeCreated\022\034\n\030TIME_CREATED_UNSPECIFIED"
+          + "\020\000\022\025\n\021TIME_CREATED_SKIP\020\001\022(\n$TIME_CREATE"
+          + "D_PRESERVE_AS_CUSTOM_TIME\020\002\"$\n\020TransferM"
+          + "anifest\022\020\n\010location\030\001 \001(\t\"\205\002\n\010Schedule\0223"
+          + "\n\023schedule_start_date\030\001 \001(\0132\021.google.typ"
+          + "e.DateB\003\340A\002\022,\n\021schedule_end_date\030\002 \001(\0132\021"
+          + ".google.type.Date\0221\n\021start_time_of_day\030\003"
+          + " \001(\0132\026.google.type.TimeOfDay\022/\n\017end_time"
+          + "_of_day\030\004 \001(\0132\026.google.type.TimeOfDay\0222\n"
+          + "\017repeat_interval\030\005 \001(\0132\031.google.protobuf"
+          + ".Duration\"\237\001\n\013EventStream\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\002\022;\n\027event_stream_start_time\030\002 \001(\0132\032."
+          + "google.protobuf.Timestamp\022@\n\034event_strea"
+          + "m_expiration_time\030\003 \001(\0132\032.google.protobu"
+          + "f.Timestamp\"\340\005\n\013TransferJob\022\014\n\004name\030\001 \001("
+          + "\t\022\023\n\013description\030\002 \001(\t\022\022\n\nproject_id\030\003 \001"
+          + "(\t\022>\n\rtransfer_spec\030\004 \001(\0132\'.google.stora"
+          + "getransfer.v1.TransferSpec\022J\n\023notificati"
+          + "on_config\030\013 \001(\0132-.google.storagetransfer"
+          + ".v1.NotificationConfig\022@\n\016logging_config"
+          + "\030\016 \001(\0132(.google.storagetransfer.v1.Loggi"
+          + "ngConfig\0225\n\010schedule\030\005 \001(\0132#.google.stor"
+          + "agetransfer.v1.Schedule\022<\n\014event_stream\030"
+          + "\017 \001(\0132&.google.storagetransfer.v1.EventS"
+          + "tream\022=\n\006status\030\006 \001(\0162-.google.storagetr"
+          + "ansfer.v1.TransferJob.Status\0226\n\rcreation"
+          + "_time\030\007 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\022?\n\026last_modification_time\030\010 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0226\n\rdeletio"
+          + "n_time\030\t \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\022\035\n\025latest_operation_name\030\014 \001(\t\"H\n\006"
+          + "Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\013\n\007ENABLE"
+          + "D\020\001\022\014\n\010DISABLED\020\002\022\013\n\007DELETED\020\003\"8\n\rErrorL"
+          + "ogEntry\022\020\n\003url\030\001 \001(\tB\003\340A\002\022\025\n\rerror_detai"
+          + "ls\030\003 \003(\t\"\230\001\n\014ErrorSummary\022)\n\nerror_code\030"
+          + "\001 \001(\0162\020.google.rpc.CodeB\003\340A\002\022\030\n\013error_co"
+          + "unt\030\002 \001(\003B\003\340A\002\022C\n\021error_log_entries\030\003 \003("
+          + "\0132(.google.storagetransfer.v1.ErrorLogEn"
+          + "try\"\303\006\n\020TransferCounters\022!\n\031objects_foun"
+          + "d_from_source\030\001 \001(\003\022\037\n\027bytes_found_from_"
+          + "source\030\002 \001(\003\022$\n\034objects_found_only_from_"
+          + "sink\030\003 \001(\003\022\"\n\032bytes_found_only_from_sink"
+          + "\030\004 \001(\003\022+\n#objects_from_source_skipped_by"
+          + "_sync\030\005 \001(\003\022)\n!bytes_from_source_skipped"
+          + "_by_sync\030\006 \001(\003\022\036\n\026objects_copied_to_sink"
+          + "\030\007 \001(\003\022\034\n\024bytes_copied_to_sink\030\010 \001(\003\022#\n\033"
+          + "objects_deleted_from_source\030\t \001(\003\022!\n\031byt"
+          + "es_deleted_from_source\030\n \001(\003\022!\n\031objects_"
+          + "deleted_from_sink\030\013 \001(\003\022\037\n\027bytes_deleted"
+          + "_from_sink\030\014 \001(\003\022\"\n\032objects_from_source_"
+          + "failed\030\r \001(\003\022 \n\030bytes_from_source_failed"
+          + "\030\016 \001(\003\022*\n\"objects_failed_to_delete_from_"
+          + "sink\030\017 \001(\003\022(\n bytes_failed_to_delete_fro"
+          + "m_sink\030\020 \001(\003\022%\n\035directories_found_from_s"
+          + "ource\030\021 \001(\003\022.\n&directories_failed_to_lis"
+          + "t_from_source\030\022 \001(\003\0223\n+directories_succe"
+          + "ssfully_listed_from_source\030\023 \001(\003\022\'\n\037inte"
+          + "rmediate_objects_cleaned_up\030\026 \001(\003\022.\n&int"
+          + "ermediate_objects_failed_cleaned_up\030\027 \001("
+          + "\003\"\245\003\n\022NotificationConfig\022\031\n\014pubsub_topic"
+          + "\030\001 \001(\tB\003\340A\002\022L\n\013event_types\030\002 \003(\01627.googl"
+          + "e.storagetransfer.v1.NotificationConfig."
+          + "EventType\022X\n\016payload_format\030\003 \001(\0162;.goog"
+          + "le.storagetransfer.v1.NotificationConfig"
+          + ".PayloadFormatB\003\340A\002\"\206\001\n\tEventType\022\032\n\026EVE"
+          + "NT_TYPE_UNSPECIFIED\020\000\022\036\n\032TRANSFER_OPERAT"
+          + "ION_SUCCESS\020\001\022\035\n\031TRANSFER_OPERATION_FAIL"
+          + "ED\020\002\022\036\n\032TRANSFER_OPERATION_ABORTED\020\003\"C\n\r"
+          + "PayloadFormat\022\036\n\032PAYLOAD_FORMAT_UNSPECIF"
+          + "IED\020\000\022\010\n\004NONE\020\001\022\010\n\004JSON\020\002\"\213\003\n\rLoggingCon"
+          + "fig\022L\n\013log_actions\030\001 \003(\01627.google.storag"
+          + "etransfer.v1.LoggingConfig.LoggableActio"
+          + "n\022W\n\021log_action_states\030\002 \003(\0162<.google.st"
+          + "oragetransfer.v1.LoggingConfig.LoggableA"
+          + "ctionState\022\'\n\037enable_onprem_gcs_transfer"
+          + "_logs\030\003 \001(\010\"Q\n\016LoggableAction\022\037\n\033LOGGABL"
+          + "E_ACTION_UNSPECIFIED\020\000\022\010\n\004FIND\020\001\022\n\n\006DELE"
+          + "TE\020\002\022\010\n\004COPY\020\003\"W\n\023LoggableActionState\022%\n"
+          + "!LOGGABLE_ACTION_STATE_UNSPECIFIED\020\000\022\r\n\t"
+          + "SUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\304\005\n\021TransferOper"
+          + "ation\022\014\n\004name\030\001 \001(\t\022\022\n\nproject_id\030\002 \001(\t\022"
+          + ">\n\rtransfer_spec\030\003 \001(\0132\'.google.storaget"
+          + "ransfer.v1.TransferSpec\022J\n\023notification_"
+          + "config\030\n \001(\0132-.google.storagetransfer.v1"
+          + ".NotificationConfig\022@\n\016logging_config\030\014 "
+          + "\001(\0132(.google.storagetransfer.v1.LoggingC"
+          + "onfig\022.\n\nstart_time\030\004 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022C\n\006status\030\006 \001(\01623.go"
+          + "ogle.storagetransfer.v1.TransferOperatio"
+          + "n.Status\022=\n\010counters\030\007 \001(\0132+.google.stor"
+          + "agetransfer.v1.TransferCounters\022A\n\020error"
+          + "_breakdowns\030\010 \003(\0132\'.google.storagetransf"
+          + "er.v1.ErrorSummary\022\031\n\021transfer_job_name\030"
+          + "\t \001(\t\"\177\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022"
+          + "\017\n\013IN_PROGRESS\020\001\022\n\n\006PAUSED\020\002\022\013\n\007SUCCESS\020"
+          + "\003\022\n\n\006FAILED\020\004\022\013\n\007ABORTED\020\005\022\n\n\006QUEUED\020\006\022\016"
+          + "\n\nSUSPENDING\020\007B\357\001\n#com.google.storagetra"
+          + "nsfer.v1.protoB\rTransferTypesZMcloud.goo"
+          + "gle.com/go/storagetransfer/apiv1/storage"
+          + "transferpb;storagetransferpb\370\001\001\252\002\037Google"
+          + ".Cloud.StorageTransfer.V1\312\002\037Google\\Cloud"
+          + "\\StorageTransfer\\V1\352\002\"Google::Cloud::Sto"
+          + "rageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -52180,7 +53774,7 @@ public final class TransferTypes {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_GcsData_descriptor,
             new java.lang.String[] {
-              "BucketName", "Path",
+              "BucketName", "Path", "ManagedFolderTransferEnabled",
             });
     internal_static_google_storagetransfer_v1_AwsS3Data_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -52188,7 +53782,14 @@ public final class TransferTypes {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AwsS3Data_descriptor,
             new java.lang.String[] {
-              "BucketName", "AwsAccessKey", "Path", "RoleArn", "CredentialsSecret",
+              "BucketName",
+              "AwsAccessKey",
+              "Path",
+              "RoleArn",
+              "CloudfrontDomain",
+              "CredentialsSecret",
+              "ManagedPrivateNetwork",
+              "PrivateNetwork",
             });
     internal_static_google_storagetransfer_v1_AzureBlobStorageData_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -52214,8 +53815,16 @@ public final class TransferTypes {
             new java.lang.String[] {
               "RootDirectory",
             });
-    internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor =
+    internal_static_google_storagetransfer_v1_HdfsData_descriptor =
         getDescriptor().getMessageTypes().get(9);
+    internal_static_google_storagetransfer_v1_HdfsData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_HdfsData_descriptor,
+            new java.lang.String[] {
+              "Path",
+            });
+    internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor =
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor,
@@ -52223,7 +53832,7 @@ public final class TransferTypes {
               "BucketName", "Path", "Endpoint", "Region", "S3Metadata", "DataProvider",
             });
     internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_storagetransfer_v1_S3CompatibleMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor,
@@ -52231,7 +53840,7 @@ public final class TransferTypes {
               "AuthMethod", "RequestModel", "Protocol", "ListApi",
             });
     internal_static_google_storagetransfer_v1_AgentPool_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_storagetransfer_v1_AgentPool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AgentPool_descriptor,
@@ -52247,7 +53856,7 @@ public final class TransferTypes {
               "LimitMbps",
             });
     internal_static_google_storagetransfer_v1_TransferOptions_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_storagetransfer_v1_TransferOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferOptions_descriptor,
@@ -52259,7 +53868,7 @@ public final class TransferTypes {
               "MetadataOptions",
             });
     internal_static_google_storagetransfer_v1_TransferSpec_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_storagetransfer_v1_TransferSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferSpec_descriptor,
@@ -52272,6 +53881,7 @@ public final class TransferTypes {
               "PosixDataSource",
               "AzureBlobStorageDataSource",
               "AwsS3CompatibleDataSource",
+              "HdfsDataSource",
               "GcsIntermediateDataLocation",
               "ObjectConditions",
               "TransferOptions",
@@ -52283,7 +53893,7 @@ public final class TransferTypes {
               "IntermediateDataLocation",
             });
     internal_static_google_storagetransfer_v1_MetadataOptions_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_storagetransfer_v1_MetadataOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_MetadataOptions_descriptor,
@@ -52299,7 +53909,7 @@ public final class TransferTypes {
               "TimeCreated",
             });
     internal_static_google_storagetransfer_v1_TransferManifest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_storagetransfer_v1_TransferManifest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferManifest_descriptor,
@@ -52307,7 +53917,7 @@ public final class TransferTypes {
               "Location",
             });
     internal_static_google_storagetransfer_v1_Schedule_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_storagetransfer_v1_Schedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_Schedule_descriptor,
@@ -52319,7 +53929,7 @@ public final class TransferTypes {
               "RepeatInterval",
             });
     internal_static_google_storagetransfer_v1_EventStream_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_storagetransfer_v1_EventStream_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_EventStream_descriptor,
@@ -52327,7 +53937,7 @@ public final class TransferTypes {
               "Name", "EventStreamStartTime", "EventStreamExpirationTime",
             });
     internal_static_google_storagetransfer_v1_TransferJob_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_storagetransfer_v1_TransferJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferJob_descriptor,
@@ -52347,7 +53957,7 @@ public final class TransferTypes {
               "LatestOperationName",
             });
     internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_storagetransfer_v1_ErrorLogEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor,
@@ -52355,7 +53965,7 @@ public final class TransferTypes {
               "Url", "ErrorDetails",
             });
     internal_static_google_storagetransfer_v1_ErrorSummary_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_storagetransfer_v1_ErrorSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorSummary_descriptor,
@@ -52363,7 +53973,7 @@ public final class TransferTypes {
               "ErrorCode", "ErrorCount", "ErrorLogEntries",
             });
     internal_static_google_storagetransfer_v1_TransferCounters_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_storagetransfer_v1_TransferCounters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferCounters_descriptor,
@@ -52391,7 +54001,7 @@ public final class TransferTypes {
               "IntermediateObjectsFailedCleanedUp",
             });
     internal_static_google_storagetransfer_v1_NotificationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_storagetransfer_v1_NotificationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_NotificationConfig_descriptor,
@@ -52399,7 +54009,7 @@ public final class TransferTypes {
               "PubsubTopic", "EventTypes", "PayloadFormat",
             });
     internal_static_google_storagetransfer_v1_LoggingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_storagetransfer_v1_LoggingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_LoggingConfig_descriptor,
@@ -52407,7 +54017,7 @@ public final class TransferTypes {
               "LogActions", "LogActionStates", "EnableOnpremGcsTransferLogs",
             });
     internal_static_google_storagetransfer_v1_TransferOperation_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_storagetransfer_v1_TransferOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferOperation_descriptor,

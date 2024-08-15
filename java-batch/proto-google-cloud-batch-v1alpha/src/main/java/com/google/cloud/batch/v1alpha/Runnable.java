@@ -85,7 +85,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI to pull the container image from.
+     * Required. The URI to pull the container image from.
      * </pre>
      *
      * <code>string image_uri = 1;</code>
@@ -97,7 +97,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI to pull the container image from.
+     * Required. The URI to pull the container image from.
      * </pre>
      *
      * <code>string image_uri = 1;</code>
@@ -110,9 +110,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -124,9 +125,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -138,9 +140,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -153,9 +156,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -169,7 +173,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `ENTRYPOINT` specified in the container.
+     * Required for some container images. Overrides the `ENTRYPOINT` specified
+     * in the container.
      * </pre>
      *
      * <code>string entrypoint = 3;</code>
@@ -181,7 +186,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `ENTRYPOINT` specified in the container.
+     * Required for some container images. Overrides the `ENTRYPOINT` specified
+     * in the container.
      * </pre>
      *
      * <code>string entrypoint = 3;</code>
@@ -195,16 +201,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -217,16 +223,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -239,16 +245,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -262,16 +268,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -285,8 +291,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Arbitrary additional options to include in the "docker run" command when
-     * running this container, e.g. "--network host".
+     * Required for some container images. Arbitrary additional options to
+     * include in the `docker run` command when running this container&amp;mdash;for
+     * example, `--network host`. For the `--volume` option, use the `volumes`
+     * field for the container.
      * </pre>
      *
      * <code>string options = 8;</code>
@@ -298,8 +306,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Arbitrary additional options to include in the "docker run" command when
-     * running this container, e.g. "--network host".
+     * Required for some container images. Arbitrary additional options to
+     * include in the `docker run` command when running this container&amp;mdash;for
+     * example, `--network host`. For the `--volume` option, use the `volumes`
+     * field for the container.
      * </pre>
      *
      * <code>string options = 8;</code>
@@ -519,7 +529,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI to pull the container image from.
+     * Required. The URI to pull the container image from.
      * </pre>
      *
      * <code>string image_uri = 1;</code>
@@ -542,7 +552,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI to pull the container image from.
+     * Required. The URI to pull the container image from.
      * </pre>
      *
      * <code>string image_uri = 1;</code>
@@ -571,9 +581,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -587,9 +598,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -603,9 +615,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -620,9 +633,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-     * (either in the container image or with the entrypoint field below) then
-     * commands are appended as arguments to the ENTRYPOINT.
+     * Required for some container images. Overrides the `CMD` specified in the
+     * container. If there is an `ENTRYPOINT` (either in the container image or
+     * with the `entrypoint` field below) then these commands are appended as
+     * arguments to the `ENTRYPOINT`.
      * </pre>
      *
      * <code>repeated string commands = 2;</code>
@@ -642,7 +656,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `ENTRYPOINT` specified in the container.
+     * Required for some container images. Overrides the `ENTRYPOINT` specified
+     * in the container.
      * </pre>
      *
      * <code>string entrypoint = 3;</code>
@@ -665,7 +680,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overrides the `ENTRYPOINT` specified in the container.
+     * Required for some container images. Overrides the `ENTRYPOINT` specified
+     * in the container.
      * </pre>
      *
      * <code>string entrypoint = 3;</code>
@@ -695,16 +711,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -719,16 +735,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -743,16 +759,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -768,16 +784,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Volumes to mount (bind mount) from the host machine files or directories
-     * into the container, formatted to match docker run's --volume option,
-     * e.g. /foo:/bar, or /foo:/bar:ro
+     * into the container, formatted to match `--volume` option for the
+     * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
      *
      * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
      * will mount each volume from the host machine to the container with the
      * same mount path by default. In this case, the default mount option for
-     * containers will be read-only (ro) for existing persistent disks and
-     * read-write (rw) for other volume types, regardless of the original mount
-     * options specified in `TaskSpec.Volumes`. If you need different mount
-     * settings, you can explicitly configure them in this field.
+     * containers will be read-only (`ro`) for existing persistent disks and
+     * read-write (`rw`) for other volume types, regardless of the original
+     * mount options specified in `TaskSpec.Volumes`. If you need different
+     * mount settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -797,8 +813,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Arbitrary additional options to include in the "docker run" command when
-     * running this container, e.g. "--network host".
+     * Required for some container images. Arbitrary additional options to
+     * include in the `docker run` command when running this container&amp;mdash;for
+     * example, `--network host`. For the `--volume` option, use the `volumes`
+     * field for the container.
      * </pre>
      *
      * <code>string options = 8;</code>
@@ -821,8 +839,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Arbitrary additional options to include in the "docker run" command when
-     * running this container, e.g. "--network host".
+     * Required for some container images. Arbitrary additional options to
+     * include in the `docker run` command when running this container&amp;mdash;for
+     * example, `--network host`. For the `--volume` option, use the `volumes`
+     * field for the container.
      * </pre>
      *
      * <code>string options = 8;</code>
@@ -1624,7 +1644,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The URI to pull the container image from.
+       * Required. The URI to pull the container image from.
        * </pre>
        *
        * <code>string image_uri = 1;</code>
@@ -1646,7 +1666,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The URI to pull the container image from.
+       * Required. The URI to pull the container image from.
        * </pre>
        *
        * <code>string image_uri = 1;</code>
@@ -1668,7 +1688,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The URI to pull the container image from.
+       * Required. The URI to pull the container image from.
        * </pre>
        *
        * <code>string image_uri = 1;</code>
@@ -1689,7 +1709,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The URI to pull the container image from.
+       * Required. The URI to pull the container image from.
        * </pre>
        *
        * <code>string image_uri = 1;</code>
@@ -1706,7 +1726,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The URI to pull the container image from.
+       * Required. The URI to pull the container image from.
        * </pre>
        *
        * <code>string image_uri = 1;</code>
@@ -1738,9 +1758,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1755,9 +1776,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1771,9 +1793,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1788,9 +1811,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1805,9 +1829,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1830,9 +1855,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1854,9 +1880,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1875,9 +1902,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1895,9 +1923,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `CMD` specified in the container. If there is an ENTRYPOINT
-       * (either in the container image or with the entrypoint field below) then
-       * commands are appended as arguments to the ENTRYPOINT.
+       * Required for some container images. Overrides the `CMD` specified in the
+       * container. If there is an `ENTRYPOINT` (either in the container image or
+       * with the `entrypoint` field below) then these commands are appended as
+       * arguments to the `ENTRYPOINT`.
        * </pre>
        *
        * <code>repeated string commands = 2;</code>
@@ -1922,7 +1951,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `ENTRYPOINT` specified in the container.
+       * Required for some container images. Overrides the `ENTRYPOINT` specified
+       * in the container.
        * </pre>
        *
        * <code>string entrypoint = 3;</code>
@@ -1944,7 +1974,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `ENTRYPOINT` specified in the container.
+       * Required for some container images. Overrides the `ENTRYPOINT` specified
+       * in the container.
        * </pre>
        *
        * <code>string entrypoint = 3;</code>
@@ -1966,7 +1997,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `ENTRYPOINT` specified in the container.
+       * Required for some container images. Overrides the `ENTRYPOINT` specified
+       * in the container.
        * </pre>
        *
        * <code>string entrypoint = 3;</code>
@@ -1987,7 +2019,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `ENTRYPOINT` specified in the container.
+       * Required for some container images. Overrides the `ENTRYPOINT` specified
+       * in the container.
        * </pre>
        *
        * <code>string entrypoint = 3;</code>
@@ -2004,7 +2037,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Overrides the `ENTRYPOINT` specified in the container.
+       * Required for some container images. Overrides the `ENTRYPOINT` specified
+       * in the container.
        * </pre>
        *
        * <code>string entrypoint = 3;</code>
@@ -2037,16 +2071,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2062,16 +2096,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2086,16 +2120,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2111,16 +2145,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2136,16 +2170,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2169,16 +2203,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2201,16 +2235,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2230,16 +2264,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2258,16 +2292,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Volumes to mount (bind mount) from the host machine files or directories
-       * into the container, formatted to match docker run's --volume option,
-       * e.g. /foo:/bar, or /foo:/bar:ro
+       * into the container, formatted to match `--volume` option for the
+       * `docker run` command&amp;mdash;for example, `/foo:/bar` or `/foo:/bar:ro`.
        *
        * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
        * will mount each volume from the host machine to the container with the
        * same mount path by default. In this case, the default mount option for
-       * containers will be read-only (ro) for existing persistent disks and
-       * read-write (rw) for other volume types, regardless of the original mount
-       * options specified in `TaskSpec.Volumes`. If you need different mount
-       * settings, you can explicitly configure them in this field.
+       * containers will be read-only (`ro`) for existing persistent disks and
+       * read-write (`rw`) for other volume types, regardless of the original
+       * mount options specified in `TaskSpec.Volumes`. If you need different
+       * mount settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2292,8 +2326,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Arbitrary additional options to include in the "docker run" command when
-       * running this container, e.g. "--network host".
+       * Required for some container images. Arbitrary additional options to
+       * include in the `docker run` command when running this container&amp;mdash;for
+       * example, `--network host`. For the `--volume` option, use the `volumes`
+       * field for the container.
        * </pre>
        *
        * <code>string options = 8;</code>
@@ -2315,8 +2351,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Arbitrary additional options to include in the "docker run" command when
-       * running this container, e.g. "--network host".
+       * Required for some container images. Arbitrary additional options to
+       * include in the `docker run` command when running this container&amp;mdash;for
+       * example, `--network host`. For the `--volume` option, use the `volumes`
+       * field for the container.
        * </pre>
        *
        * <code>string options = 8;</code>
@@ -2338,8 +2376,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Arbitrary additional options to include in the "docker run" command when
-       * running this container, e.g. "--network host".
+       * Required for some container images. Arbitrary additional options to
+       * include in the `docker run` command when running this container&amp;mdash;for
+       * example, `--network host`. For the `--volume` option, use the `volumes`
+       * field for the container.
        * </pre>
        *
        * <code>string options = 8;</code>
@@ -2360,8 +2400,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Arbitrary additional options to include in the "docker run" command when
-       * running this container, e.g. "--network host".
+       * Required for some container images. Arbitrary additional options to
+       * include in the `docker run` command when running this container&amp;mdash;for
+       * example, `--network host`. For the `--volume` option, use the `volumes`
+       * field for the container.
        * </pre>
        *
        * <code>string options = 8;</code>
@@ -2378,8 +2420,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Arbitrary additional options to include in the "docker run" command when
-       * running this container, e.g. "--network host".
+       * Required for some container images. Arbitrary additional options to
+       * include in the `docker run` command when running this container&amp;mdash;for
+       * example, `--network host`. For the `--volume` option, use the `volumes`
+       * field for the container.
        * </pre>
        *
        * <code>string options = 8;</code>
@@ -2991,15 +3035,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3011,15 +3055,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3031,15 +3075,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3052,13 +3096,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3070,13 +3116,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3088,13 +3136,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3201,15 +3251,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3223,15 +3273,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3258,15 +3308,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path on the host VM.
+     * The path to a script file that is accessible from the host VM(s).
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-     * first line of the file.(For example, to execute the script using bash,
-     * `#!/bin/bash` should be the first line of the file. To execute the
-     * script using`Python3`, `#!/usr/bin/env python3` should be the first
-     * line of the file.) Otherwise, the file will by default be executed by
-     * `/bin/sh`.
+     * Unless the script file supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+     * first line of the file. For example, to execute the script using bash,
+     * include `#!/bin/bash` as the first line of the file. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3`
+     * as the first line of the file.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3295,13 +3345,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3315,13 +3367,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3348,13 +3402,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Shell script text.
+     * The text for a script.
      *
-     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-     * beginning of the text.(For example, to execute the script using bash,
-     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-     * by default be executed by `/bin/sh`.
+     * Unless the script text supports the default `#!/bin/sh` shell
+     * interpreter, you must specify an interpreter by including a
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+     * beginning of the text. For example, to execute the script using bash,
+     * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+     * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+     * at the beginning of the text.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3795,15 +3851,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3818,15 +3874,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3854,15 +3910,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3890,15 +3946,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3919,15 +3975,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3946,15 +4002,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path on the host VM.
+       * The path to a script file that is accessible from the host VM(s).
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
-       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
-       * first line of the file.(For example, to execute the script using bash,
-       * `#!/bin/bash` should be the first line of the file. To execute the
-       * script using`Python3`, `#!/usr/bin/env python3` should be the first
-       * line of the file.) Otherwise, the file will by default be executed by
-       * `/bin/sh`.
+       * Unless the script file supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the
+       * first line of the file. For example, to execute the script using bash,
+       * include `#!/bin/bash` as the first line of the file. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3`
+       * as the first line of the file.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3977,13 +4033,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3998,13 +4056,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -4032,13 +4092,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -4066,13 +4128,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -4093,13 +4157,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -4118,13 +4184,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Shell script text.
+       * The text for a script.
        *
-       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
-       * beginning of the text.(For example, to execute the script using bash,
-       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
-       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
-       * by default be executed by `/bin/sh`.
+       * Unless the script text supports the default `#!/bin/sh` shell
+       * interpreter, you must specify an interpreter by including a
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the
+       * beginning of the text. For example, to execute the script using bash,
+       * include `#!/bin/bash&#92;n` at the beginning of the text. Alternatively,
+       * to execute the script using Python3, include `#!/usr/bin/env python3&#92;n`
+       * at the beginning of the text.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -4243,7 +4311,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Barrier runnable blocks until all tasks in a taskgroup reach it.
+   * A barrier runnable automatically blocks the execution of subsequent
+   * runnables until all the tasks in the task group reach the barrier.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.Runnable.Barrier}
@@ -4500,7 +4569,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Barrier runnable blocks until all tasks in a taskgroup reach it.
+     * A barrier runnable automatically blocks the execution of subsequent
+     * runnables until all the tasks in the task group reach the barrier.
      * </pre>
      *
      * Protobuf type {@code google.cloud.batch.v1alpha.Runnable.Barrier}
