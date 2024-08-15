@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ghcr.io/graalvm/graalvm-community:21.0.2-ol7-20240116
+FROM ghcr.io/graalvm/graalvm-community:21.0.2-ol9-20240116
 
-RUN yum update -y && \
-    yum install -y wget unzip git && \
+# use microdnf, see https://github.com/graalvm/container/issues/10
+RUN microdnf update -y oraclelinux-release-el9 && \
+    microdnf install -y wget unzip git && \
     # Install maven
     wget -q https://archive.apache.org/dist/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip -O /tmp/maven.zip && \
     unzip /tmp/maven.zip -d /tmp/maven && \
@@ -27,20 +28,22 @@ ENV PATH $PATH:/usr/local/lib/maven/bin
 
 # Install gcloud SDK
 COPY google-cloud-sdk.repo /etc/yum.repos.d/google-cloud-sdk.repo
-RUN yum install -y google-cloud-sdk
+RUN microdnf install -y google-cloud-sdk
 
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 # Install docker
-RUN yum install -y docker-engine docker-cli
+# See also https://docs.docker.com/engine/install/rhel/#set-up-the-repository
+COPY docker-ce.repo /etc/yum.repos.d/docker-ce.repo
+RUN microdnf install -y docker-ce docker-ce-cli
 
 # Install terraform
 # See also https://www.hashicorp.com/official-packaging-guide
 COPY hashicorp.repo /etc/yum.repos.d/hashicorp.repo
-RUN yum -y install terraform
+RUN microdnf -y install terraform
 
 # Install jq
-RUN yum -y install jq
+RUN microdnf -y install jq
 
 WORKDIR /workspace
