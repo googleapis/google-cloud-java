@@ -26,7 +26,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
-    <auto-value.version>1.10.4</auto-value.version>
+    <auto-value.version>1.11.0</auto-value.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
 
