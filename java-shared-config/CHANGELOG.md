@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/googleapis/java-shared-config/compare/v1.10.0...v1.11.0) (2024-08-16)
+
+
+### Features
+
+* Update test image to ol9 ([#877](https://github.com/googleapis/java-shared-config/issues/877)) ([0dd80f0](https://github.com/googleapis/java-shared-config/commit/0dd80f007e75afffb28aa7daefd179007bf38068))
+
+
+### Dependencies
+
+* Update com.google.auto.value:auto-value-annotations to 1.11.0 ([#886](https://github.com/googleapis/java-shared-config/issues/886)) ([97cceb3](https://github.com/googleapis/java-shared-config/commit/97cceb38ea3b23b959be74dd19371dfd836e5b9d))
+
 ## [1.10.0](https://github.com/googleapis/java-shared-config/compare/v1.9.1...v1.10.0) (2024-08-13)
 
 
