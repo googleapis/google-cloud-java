@@ -260,7 +260,8 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned.
+   * scanned. File extensions can be derived from the file name or the file
+   * content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
@@ -271,7 +272,8 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned.
+   * scanned. File extensions can be derived from the file name or the file
+   * content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
@@ -282,7 +284,8 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned.
+   * scanned. File extensions can be derived from the file name or the file
+   * content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
@@ -293,7 +296,8 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned.
+   * scanned. File extensions can be derived from the file name or the file
+   * content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
@@ -305,7 +309,8 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned.
+   * scanned. File extensions can be derived from the file name or the file
+   * content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
@@ -317,6 +322,7 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types seen in this cluster. Empty if no files were seen.
+   * File extensions can be derived from the file name or the file content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
@@ -327,6 +333,7 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types seen in this cluster. Empty if no files were seen.
+   * File extensions can be derived from the file name or the file content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
@@ -337,6 +344,7 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types seen in this cluster. Empty if no files were seen.
+   * File extensions can be derived from the file name or the file content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
@@ -347,6 +355,7 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types seen in this cluster. Empty if no files were seen.
+   * File extensions can be derived from the file name or the file content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
@@ -358,6 +367,7 @@ public interface FileClusterSummaryOrBuilder
    *
    * <pre>
    * A sample of file types seen in this cluster. Empty if no files were seen.
+   * File extensions can be derived from the file name or the file content.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
