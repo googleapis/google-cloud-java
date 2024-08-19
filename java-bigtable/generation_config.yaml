@@ -1,0 +1,36 @@
+googleapis_commitish: c93b54fa3060c7185f6dc724f0f9ec0c12bc44fc
+libraries_bom_version: 26.44.0
+template_excludes:
+  - .gitignore
+  - .kokoro/presubmit/integration.cfg
+  - .kokoro/presubmit/graalvm-native.cfg
+  - .kokoro/presubmit/graalvm-native-17.cfg
+  - .kokoro/nightly/integration.cfg
+  - .kokoro/presubmit/samples.cfg
+  - .kokoro/nightly/samples.cfg
+  - .github/ISSUE_TEMPLATE/bug_report.md
+  - .github/PULL_REQUEST_TEMPLATE.md
+  - .github/trusted-contribution.yml
+  - CONTRIBUTING.md
+  - codecov.yaml
+  - .github/release-please.yml
+  - renovate.json
+  - .kokoro/requirements.in
+  - .kokoro/requirements.txt
+libraries:
+- api_shortname: bigtable
+  api_description: API for reading and writing the contents of Bigtables associated with a cloud project.
+  name_pretty: Cloud Bigtable
+  product_documentation: https://cloud.google.com/bigtable
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/559777
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-bigtable
+  codeowner_team: '@googleapis/api-bigtable @googleapis/api-bigtable-partners'
+  api_id: bigtable.googleapis.com
+  library_type: GAPIC_COMBO
+  extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
+  excluded_poms: google-cloud-bigtable-bom
+  GAPICs:
+  - proto_path: google/bigtable/v2
+  - proto_path: google/bigtable/admin/v2
