@@ -36,9 +36,12 @@ import com.google.common.base.Strings;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,6 +66,7 @@ public class VertexAI implements AutoCloseable {
   private final String location;
   private final String apiEndpoint;
   private final Transport transport;
+  private final HeaderProvider headerProvider;
   private final CredentialsProvider credentialsProvider;
 
   private final transient Supplier<PredictionServiceClient> predictionClientSupplier;
@@ -85,6 +89,7 @@ public class VertexAI implements AutoCloseable {
         location,
         Transport.GRPC,
         ImmutableList.of(),
+        /* customHeaders= */ ImmutableMap.of(),
         /* credentials= */ Optional.empty(),
         /* apiEndpoint= */ Optional.empty(),
         /* predictionClientSupplierOpt= */ Optional.empty(),
@@ -108,6 +113,7 @@ public class VertexAI implements AutoCloseable {
         null,
         Transport.GRPC,
         ImmutableList.of(),
+        /* customHeaders= */ ImmutableMap.of(),
         /* credentials= */ Optional.empty(),
         /* apiEndpoint= */ Optional.empty(),
         /* predictionClientSupplierOpt= */ Optional.empty(),
@@ -119,6 +125,7 @@ public class VertexAI implements AutoCloseable {
       String location,
       Transport transport,
       List<String> scopes,
+      Map<String, String> customHeaders,
       Optional<Credentials> credentials,
       Optional<String> apiEndpoint,
       Optional<Supplier<PredictionServiceClient>> predictionClientSupplierOpt,
@@ -130,6 +137,15 @@ public class VertexAI implements AutoCloseable {
     checkNotNull(transport, "transport can't be null");
     this.location = Strings.isNullOrEmpty(location) ? inferLocation() : location;
     this.transport = transport;
+
+    String sdkHeader =
+        String.format(
+            "%s/%s",
+            Constants.USER_AGENT_HEADER,
+            GaxProperties.getLibraryVersion(PredictionServiceSettings.class));
+    Map<String, String> headers = new HashMap<>(customHeaders);
+    headers.compute("user-agent", (k, v) -> v == null ? sdkHeader : sdkHeader + " " + v);
+    this.headerProvider = FixedHeaderProvider.create(headers);
 
     if (credentials.isPresent()) {
       this.credentialsProvider = FixedCredentialsProvider.create(credentials.get());
@@ -160,6 +176,7 @@ public class VertexAI implements AutoCloseable {
     private String location;
     private Transport transport = Transport.GRPC;
     private ImmutableList<String> scopes = ImmutableList.of();
+    private ImmutableMap<String, String> customHeaders = ImmutableMap.of();
     private Optional<Credentials> credentials = Optional.empty();
     private Optional<String> apiEndpoint = Optional.empty();
 
@@ -174,6 +191,7 @@ public class VertexAI implements AutoCloseable {
           location,
           transport,
           scopes,
+          customHeaders,
           credentials,
           apiEndpoint,
           Optional.ofNullable(predictionClientSupplier),
@@ -240,6 +258,14 @@ public class VertexAI implements AutoCloseable {
       this.scopes = ImmutableList.copyOf(scopes);
       return this;
     }
+
+    @CanIgnoreReturnValue
+    public Builder setCustomHeaders(Map<String, String> customHeaders) {
+      checkNotNull(customHeaders, "customHeaders can't be null");
+
+      this.customHeaders = ImmutableMap.copyOf(customHeaders);
+      return this;
+    }
   }
 
   /**
@@ -276,6 +302,15 @@ public class VertexAI implements AutoCloseable {
    */
   public String getApiEndpoint() {
     return apiEndpoint;
+  }
+
+  /**
+   * Returns the headers to use when making API calls.
+   *
+   * @return a map of headers to use when making API calls.
+   */
+  public Map<String, String> getHeaders() {
+    return headerProvider.getHeaders();
   }
 
   /**
