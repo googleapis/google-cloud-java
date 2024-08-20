@@ -126,6 +126,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -192,6 +194,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -258,6 +262,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -309,6 +315,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -448,6 +456,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -604,6 +614,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -670,6 +682,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -734,6 +748,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -785,6 +801,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -924,6 +942,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1144,6 +1164,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
             .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -1193,6 +1215,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
             .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 

@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.42.0</version>
+      <version>26.44.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -88,7 +88,7 @@ to add `google-cloud-privilegedaccessmanager` as a dependency in your code.
 ## About Privileged Access Manager API
 
 
-[Privileged Access Manager API][product-docs] Privileged Access Manager API Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse or abuse.
+[Privileged Access Manager API][product-docs] Privileged Access Manager (PAM) helps you on your journey towards least privilege and helps mitigate risks tied to privileged access misuse orabuse. PAM allows you to shift from always-on standing privileges towards on-demand access with just-in-time, time-bound, and approval-based access elevations. PAM allows IAM administrators to create entitlements that can grant just-in-time, temporary access to any resource scope. Requesters can explore eligible entitlements and request the access needed for their task. Approvers are notified when approvals await their decision. Streamlined workflows facilitated by using PAM can support various use cases, including emergency access for incident responders, time-boxed access for developers for critical deployment or maintenance, temporary access for operators for data ingestion and audits, JIT access to service accounts for automated tasks, and more.
 
 See the [Privileged Access Manager API client library docs][javadocs] to learn how to
 use this Privileged Access Manager API Client Library.
@@ -201,7 +201,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-privilegedaccessmanager.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-privilegedaccessmanager/0.0.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-privilegedaccessmanager/0.1.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

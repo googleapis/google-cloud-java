@@ -132,7 +132,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect",
+                          "/v1alpha/{parent=projects/*/locations/*}/userEvents:collect")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -380,6 +381,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -451,6 +457,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1alpha/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

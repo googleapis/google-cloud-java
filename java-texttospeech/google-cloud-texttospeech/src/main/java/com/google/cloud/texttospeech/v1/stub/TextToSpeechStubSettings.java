@@ -32,11 +32,14 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.texttospeech.v1.ListVoicesRequest;
 import com.google.cloud.texttospeech.v1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
 import com.google.common.collect.ImmutableList;
@@ -94,6 +97,8 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   private final UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings;
   private final UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings;
+  private final StreamingCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeSettings;
 
   /** Returns the object with the settings used for calls to listVoices. */
   public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
@@ -104,6 +109,12 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   public UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings() {
     return synthesizeSpeechSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingSynthesize. */
+  public StreamingCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeSettings() {
+    return streamingSynthesizeSettings;
   }
 
   public TextToSpeechStub createStub() throws IOException {
@@ -219,6 +230,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
     listVoicesSettings = settingsBuilder.listVoicesSettings().build();
     synthesizeSpeechSettings = settingsBuilder.synthesizeSpeechSettings().build();
+    streamingSynthesizeSettings = settingsBuilder.streamingSynthesizeSettings().build();
   }
 
   /** Builder for TextToSpeechStubSettings. */
@@ -228,6 +240,9 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
         listVoicesSettings;
     private final UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -270,6 +285,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
       listVoicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       synthesizeSpeechSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamingSynthesizeSettings = StreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -282,6 +298,7 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
 
       listVoicesSettings = settings.listVoicesSettings.toBuilder();
       synthesizeSpeechSettings = settings.synthesizeSpeechSettings.toBuilder();
+      streamingSynthesizeSettings = settings.streamingSynthesizeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -350,6 +367,12 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     public UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings() {
       return synthesizeSpeechSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingSynthesize. */
+    public StreamingCallSettings.Builder<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeSettings() {
+      return streamingSynthesizeSettings;
     }
 
     @Override

@@ -48,6 +48,7 @@
  *           .setCohortSpec(CohortSpec.newBuilder().build())
  *           .setKeepEmptyRows(true)
  *           .setReturnPropertyQuota(true)
+ *           .addAllComparisons(new ArrayList<Comparison>())
  *           .build();
  *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
  * }

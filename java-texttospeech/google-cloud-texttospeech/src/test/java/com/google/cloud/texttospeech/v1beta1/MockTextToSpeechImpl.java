@@ -99,4 +99,41 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public StreamObserver<StreamingSynthesizeRequest> streamingSynthesize(
+      final StreamObserver<StreamingSynthesizeResponse> responseObserver) {
+    StreamObserver<StreamingSynthesizeRequest> requestObserver =
+        new StreamObserver<StreamingSynthesizeRequest>() {
+          @Override
+          public void onNext(StreamingSynthesizeRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingSynthesizeResponse) {
+              responseObserver.onNext(((StreamingSynthesizeResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingSynthesize, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingSynthesizeResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
 }

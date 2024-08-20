@@ -160,4 +160,10 @@ public class TextToSpeechClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void streamingSynthesizeUnsupportedMethodTest() throws Exception {
+    // The streamingSynthesize() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
 }

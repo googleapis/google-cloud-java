@@ -818,6 +818,60 @@ public class ConversationsClientTest {
   }
 
   @Test
+  public void generateStatelessSuggestionTest() throws Exception {
+    GenerateStatelessSuggestionResponse expectedResponse =
+        GenerateStatelessSuggestionResponse.newBuilder()
+            .setGeneratorSuggestion(GeneratorSuggestion.newBuilder().build())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    GenerateStatelessSuggestionRequest request =
+        GenerateStatelessSuggestionRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setConversationContext(ConversationContext.newBuilder().build())
+            .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+            .build();
+
+    GenerateStatelessSuggestionResponse actualResponse =
+        client.generateStatelessSuggestion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateStatelessSuggestionRequest actualRequest =
+        ((GenerateStatelessSuggestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getGenerator(), actualRequest.getGenerator());
+    Assert.assertEquals(request.getGeneratorName(), actualRequest.getGeneratorName());
+    Assert.assertEquals(request.getConversationContext(), actualRequest.getConversationContext());
+    Assert.assertEquals(request.getTriggerEventsList(), actualRequest.getTriggerEventsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateStatelessSuggestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      GenerateStatelessSuggestionRequest request =
+          GenerateStatelessSuggestionRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setConversationContext(ConversationContext.newBuilder().build())
+              .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+              .build();
+      client.generateStatelessSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchKnowledgeTest() throws Exception {
     SearchKnowledgeResponse expectedResponse =
         SearchKnowledgeResponse.newBuilder()

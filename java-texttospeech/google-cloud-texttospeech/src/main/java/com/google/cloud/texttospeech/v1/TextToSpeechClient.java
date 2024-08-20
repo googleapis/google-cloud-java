@@ -17,6 +17,7 @@
 package com.google.cloud.texttospeech.v1;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.texttospeech.v1.stub.TextToSpeechStub;
 import com.google.cloud.texttospeech.v1.stub.TextToSpeechStubSettings;
@@ -86,6 +87,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> synthesizeSpeechCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingSynthesize</td>
+ *      <td><p> Performs bidirectional streaming speech synthesis: receive audio while sending text.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingSynthesizeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -372,6 +383,34 @@ public class TextToSpeechClient implements BackgroundResource {
   public final UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return stub.synthesizeSpeechCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs bidirectional streaming speech synthesis: receive audio while sending text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   BidiStream<StreamingSynthesizeRequest, StreamingSynthesizeResponse> bidiStream =
+   *       textToSpeechClient.streamingSynthesizeCallable().call();
+   *   StreamingSynthesizeRequest request = StreamingSynthesizeRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (StreamingSynthesizeResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeCallable() {
+    return stub.streamingSynthesizeCallable();
   }
 
   @Override

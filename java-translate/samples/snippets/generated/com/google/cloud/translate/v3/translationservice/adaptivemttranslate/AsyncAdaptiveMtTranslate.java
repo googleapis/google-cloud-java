@@ -44,6 +44,9 @@ public class AsyncAdaptiveMtTranslate {
               .setDataset(
                   AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
               .addAllContent(new ArrayList<String>())
+              .setReferenceSentenceConfig(
+                  AdaptiveMtTranslateRequest.ReferenceSentenceConfig.newBuilder().build())
+              .setGlossaryConfig(AdaptiveMtTranslateRequest.GlossaryConfig.newBuilder().build())
               .build();
       ApiFuture<AdaptiveMtTranslateResponse> future =
           translationServiceClient.adaptiveMtTranslateCallable().futureCall(request);

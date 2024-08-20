@@ -17,9 +17,12 @@
 package com.google.cloud.texttospeech.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.texttospeech.v1.ListVoicesRequest;
 import com.google.cloud.texttospeech.v1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
 import javax.annotation.Generated;
@@ -40,6 +43,11 @@ public abstract class TextToSpeechStub implements BackgroundResource {
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     throw new UnsupportedOperationException("Not implemented: synthesizeSpeechCallable()");
+  }
+
+  public BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamingSynthesizeCallable()");
   }
 
   @Override

@@ -45,6 +45,8 @@ import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
@@ -383,6 +385,47 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistMethodDescriptor =
+          ApiMethodDescriptor
+              .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.Participants/SuggestKnowledgeAssist")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SuggestKnowledgeAssistRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SuggestKnowledgeAssistResponse>newBuilder()
+                      .setDefaultInstance(SuggestKnowledgeAssistResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -465,6 +508,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
       suggestFaqAnswersCallable;
   private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable;
+  private final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -607,6 +652,19 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistTransportSettings =
+            HttpJsonCallSettings
+                .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+                .setMethodDescriptor(suggestKnowledgeAssistMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -666,6 +724,11 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
             suggestSmartRepliesTransportSettings,
             settings.suggestSmartRepliesSettings(),
             clientContext);
+    this.suggestKnowledgeAssistCallable =
+        callableFactory.createUnaryCallable(
+            suggestKnowledgeAssistTransportSettings,
+            settings.suggestKnowledgeAssistSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -691,6 +754,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     methodDescriptors.add(suggestArticlesMethodDescriptor);
     methodDescriptors.add(suggestFaqAnswersMethodDescriptor);
     methodDescriptors.add(suggestSmartRepliesMethodDescriptor);
+    methodDescriptors.add(suggestKnowledgeAssistMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -743,6 +807,12 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     return suggestSmartRepliesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return suggestKnowledgeAssistCallable;
   }
 
   @Override

@@ -130,6 +130,8 @@ public class DatasetServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -192,6 +194,8 @@ public class DatasetServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -254,6 +258,8 @@ public class DatasetServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -305,6 +311,8 @@ public class DatasetServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -356,6 +364,8 @@ public class DatasetServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -770,6 +780,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -829,6 +841,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -888,6 +902,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1027,6 +1043,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1076,6 +1094,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1211,6 +1231,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1269,6 +1291,8 @@ public class DatasetServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

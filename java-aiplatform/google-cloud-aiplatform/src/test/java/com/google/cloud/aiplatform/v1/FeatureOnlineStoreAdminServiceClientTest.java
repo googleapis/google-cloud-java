@@ -125,6 +125,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -190,6 +192,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -255,6 +259,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -305,6 +311,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -443,6 +451,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -597,6 +607,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -661,6 +673,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -723,6 +737,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -772,6 +788,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -909,6 +927,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1129,6 +1149,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
             .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -1178,6 +1200,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
             .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 

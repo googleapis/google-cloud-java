@@ -107,6 +107,10 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields,
+                                "skipDefaultSchemaCreation",
+                                request.getSkipDefaultSchemaCreation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -514,6 +518,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -585,6 +594,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1alpha/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

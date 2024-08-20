@@ -584,6 +584,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -679,6 +680,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -769,6 +771,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -824,6 +827,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -879,6 +883,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -934,6 +939,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -989,6 +995,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1044,6 +1051,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1099,6 +1107,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2228,6 +2237,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2281,6 +2291,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4228,6 +4239,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4323,6 +4335,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4514,6 +4527,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4609,6 +4623,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4956,6 +4971,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -5009,6 +5025,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -5088,6 +5105,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setSecurityMarks(SecurityMarks.newBuilder().build())
               .setEventTime(Timestamp.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
+              .setMuteInfo(Finding.MuteInfo.newBuilder().build())
               .setIndicator(Indicator.newBuilder().build())
               .setVulnerability(Vulnerability.newBuilder().build())
               .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -5144,6 +5162,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5157,6 +5176,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5196,6 +5216,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setMostRecentEditor("mostRecentEditor-833861941")
+              .setExpiryTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMuteConfig(muteConfig, updateMask);

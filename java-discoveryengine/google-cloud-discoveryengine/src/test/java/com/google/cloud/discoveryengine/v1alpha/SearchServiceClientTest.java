@@ -114,6 +114,8 @@ public class SearchServiceClientTest {
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
             .setUserInfo(UserInfo.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setRegionCode("regionCode-1991004415")
             .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .putAllParams(new HashMap<String, Value>())
@@ -125,7 +127,15 @@ public class SearchServiceClientTest {
             .setRankingExpression("rankingExpression2110320494")
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
+            .setNaturalLanguageQueryUnderstandingSpec(
+                SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+            .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
             .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -152,6 +162,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
     Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getRegionCode(), actualRequest.getRegionCode());
     Assert.assertEquals(request.getFacetSpecsList(), actualRequest.getFacetSpecsList());
     Assert.assertEquals(request.getBoostSpec(), actualRequest.getBoostSpec());
     Assert.assertEquals(request.getParamsMap(), actualRequest.getParamsMap());
@@ -163,7 +175,14 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
+    Assert.assertEquals(
+        request.getNaturalLanguageQueryUnderstandingSpec(),
+        actualRequest.getNaturalLanguageQueryUnderstandingSpec());
+    Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
     Assert.assertEquals(request.getCustomFineTuningSpec(), actualRequest.getCustomFineTuningSpec());
+    Assert.assertEquals(request.getSession(), actualRequest.getSession());
+    Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -196,6 +215,8 @@ public class SearchServiceClientTest {
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -207,7 +228,15 @@ public class SearchServiceClientTest {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
               .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

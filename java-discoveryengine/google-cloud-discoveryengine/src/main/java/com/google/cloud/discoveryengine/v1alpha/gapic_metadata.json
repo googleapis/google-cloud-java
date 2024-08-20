@@ -43,8 +43,14 @@
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
             },
+            "ImportCompletionSuggestions": {
+              "methods": ["importCompletionSuggestionsAsync", "importCompletionSuggestionsOperationCallable", "importCompletionSuggestionsCallable"]
+            },
             "ImportSuggestionDenyListEntries": {
               "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeCompletionSuggestions": {
+              "methods": ["purgeCompletionSuggestionsAsync", "purgeCompletionSuggestionsOperationCallable", "purgeCompletionSuggestionsCallable"]
             },
             "PurgeSuggestionDenyListEntries": {
               "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
@@ -460,11 +466,17 @@
             "GetTargetSite": {
               "methods": ["getTargetSite", "getTargetSite", "getTargetSite", "getTargetSiteCallable"]
             },
+            "GetUriPatternDocumentData": {
+              "methods": ["getUriPatternDocumentData", "getUriPatternDocumentDataCallable"]
+            },
             "ListTargetSites": {
               "methods": ["listTargetSites", "listTargetSites", "listTargetSites", "listTargetSitesPagedCallable", "listTargetSitesCallable"]
             },
             "RecrawlUris": {
               "methods": ["recrawlUrisAsync", "recrawlUrisOperationCallable", "recrawlUrisCallable"]
+            },
+            "SetUriPatternDocumentData": {
+              "methods": ["setUriPatternDocumentDataAsync", "setUriPatternDocumentDataOperationCallable", "setUriPatternDocumentDataCallable"]
             },
             "UpdateTargetSite": {
               "methods": ["updateTargetSiteAsync", "updateTargetSiteAsync", "updateTargetSiteOperationCallable", "updateTargetSiteCallable"]

@@ -21,10 +21,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.texttospeech.v1beta1.ListVoicesRequest;
 import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeRequest;
+import com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeResponse;
 import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest;
 import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -63,9 +66,23 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
                   ProtoUtils.marshaller(SynthesizeSpeechResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeMethodDescriptor =
+          MethodDescriptor.<StreamingSynthesizeRequest, StreamingSynthesizeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.texttospeech.v1beta1.TextToSpeech/StreamingSynthesize")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamingSynthesizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamingSynthesizeResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable;
   private final UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable;
+  private final BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -118,6 +135,11 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
             GrpcCallSettings.<SynthesizeSpeechRequest, SynthesizeSpeechResponse>newBuilder()
                 .setMethodDescriptor(synthesizeSpeechMethodDescriptor)
                 .build();
+    GrpcCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeTransportSettings =
+            GrpcCallSettings.<StreamingSynthesizeRequest, StreamingSynthesizeResponse>newBuilder()
+                .setMethodDescriptor(streamingSynthesizeMethodDescriptor)
+                .build();
 
     this.listVoicesCallable =
         callableFactory.createUnaryCallable(
@@ -125,6 +147,11 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
     this.synthesizeSpeechCallable =
         callableFactory.createUnaryCallable(
             synthesizeSpeechTransportSettings, settings.synthesizeSpeechSettings(), clientContext);
+    this.streamingSynthesizeCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamingSynthesizeTransportSettings,
+            settings.streamingSynthesizeSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -143,6 +170,12 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return synthesizeSpeechCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeCallable() {
+    return streamingSynthesizeCallable;
   }
 
   @Override

@@ -561,6 +561,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -652,6 +653,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -738,6 +740,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -789,6 +792,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -840,6 +844,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -891,6 +896,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -942,6 +948,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -993,6 +1000,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1044,6 +1052,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2049,6 +2058,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2096,6 +2106,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3826,6 +3837,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -3916,6 +3928,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4092,6 +4105,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4182,6 +4196,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4452,6 +4467,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .setIndicator(Indicator.newBuilder().build())
             .setVulnerability(Vulnerability.newBuilder().build())
             .setMuteUpdateTime(Timestamp.newBuilder().build())
@@ -4535,6 +4551,7 @@ public class SecurityCenterClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

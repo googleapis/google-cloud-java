@@ -39,6 +39,7 @@ public class AsyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setRevision("revision-260786213")
               .build();
       ApiFuture<Function> future = functionServiceClient.getFunctionCallable().futureCall(request);
       // Do something.

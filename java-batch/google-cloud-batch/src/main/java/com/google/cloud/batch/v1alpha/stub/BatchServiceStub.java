@@ -25,6 +25,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1alpha.CancelJobRequest;
+import com.google.cloud.batch.v1alpha.CancelJobResponse;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
 import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
@@ -86,6 +88,15 @@ public abstract class BatchServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelJobOperationCallable()");
+  }
+
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelJobCallable()");
   }
 
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {

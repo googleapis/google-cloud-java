@@ -308,6 +308,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1alpha/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -379,6 +384,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1alpha/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

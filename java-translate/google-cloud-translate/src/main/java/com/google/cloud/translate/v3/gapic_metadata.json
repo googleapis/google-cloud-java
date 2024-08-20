@@ -22,8 +22,17 @@
             "CreateAdaptiveMtDataset": {
               "methods": ["createAdaptiveMtDataset", "createAdaptiveMtDataset", "createAdaptiveMtDataset", "createAdaptiveMtDatasetCallable"]
             },
+            "CreateDataset": {
+              "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
+            },
             "CreateGlossary": {
               "methods": ["createGlossaryAsync", "createGlossaryAsync", "createGlossaryAsync", "createGlossaryOperationCallable", "createGlossaryCallable"]
+            },
+            "CreateGlossaryEntry": {
+              "methods": ["createGlossaryEntry", "createGlossaryEntry", "createGlossaryEntry", "createGlossaryEntryCallable"]
+            },
+            "CreateModel": {
+              "methods": ["createModelAsync", "createModelAsync", "createModelAsync", "createModelOperationCallable", "createModelCallable"]
             },
             "DeleteAdaptiveMtDataset": {
               "methods": ["deleteAdaptiveMtDataset", "deleteAdaptiveMtDataset", "deleteAdaptiveMtDataset", "deleteAdaptiveMtDatasetCallable"]
@@ -31,11 +40,23 @@
             "DeleteAdaptiveMtFile": {
               "methods": ["deleteAdaptiveMtFile", "deleteAdaptiveMtFile", "deleteAdaptiveMtFile", "deleteAdaptiveMtFileCallable"]
             },
+            "DeleteDataset": {
+              "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
+            },
             "DeleteGlossary": {
               "methods": ["deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryOperationCallable", "deleteGlossaryCallable"]
             },
+            "DeleteGlossaryEntry": {
+              "methods": ["deleteGlossaryEntry", "deleteGlossaryEntry", "deleteGlossaryEntry", "deleteGlossaryEntryCallable"]
+            },
+            "DeleteModel": {
+              "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
+            },
             "DetectLanguage": {
               "methods": ["detectLanguage", "detectLanguage", "detectLanguage", "detectLanguageCallable"]
+            },
+            "ExportData": {
+              "methods": ["exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
             },
             "GetAdaptiveMtDataset": {
               "methods": ["getAdaptiveMtDataset", "getAdaptiveMtDataset", "getAdaptiveMtDataset", "getAdaptiveMtDatasetCallable"]
@@ -43,14 +64,26 @@
             "GetAdaptiveMtFile": {
               "methods": ["getAdaptiveMtFile", "getAdaptiveMtFile", "getAdaptiveMtFile", "getAdaptiveMtFileCallable"]
             },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
             "GetGlossary": {
               "methods": ["getGlossary", "getGlossary", "getGlossary", "getGlossaryCallable"]
+            },
+            "GetGlossaryEntry": {
+              "methods": ["getGlossaryEntry", "getGlossaryEntry", "getGlossaryEntry", "getGlossaryEntryCallable"]
+            },
+            "GetModel": {
+              "methods": ["getModel", "getModel", "getModel", "getModelCallable"]
             },
             "GetSupportedLanguages": {
               "methods": ["getSupportedLanguages", "getSupportedLanguages", "getSupportedLanguages", "getSupportedLanguagesCallable"]
             },
             "ImportAdaptiveMtFile": {
               "methods": ["importAdaptiveMtFile", "importAdaptiveMtFile", "importAdaptiveMtFile", "importAdaptiveMtFileCallable"]
+            },
+            "ImportData": {
+              "methods": ["importDataAsync", "importDataAsync", "importDataOperationCallable", "importDataCallable"]
             },
             "ListAdaptiveMtDatasets": {
               "methods": ["listAdaptiveMtDatasets", "listAdaptiveMtDatasets", "listAdaptiveMtDatasets", "listAdaptiveMtDatasetsPagedCallable", "listAdaptiveMtDatasetsCallable"]
@@ -61,14 +94,35 @@
             "ListAdaptiveMtSentences": {
               "methods": ["listAdaptiveMtSentences", "listAdaptiveMtSentences", "listAdaptiveMtSentences", "listAdaptiveMtSentencesPagedCallable", "listAdaptiveMtSentencesCallable"]
             },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "ListExamples": {
+              "methods": ["listExamples", "listExamples", "listExamples", "listExamplesPagedCallable", "listExamplesCallable"]
+            },
             "ListGlossaries": {
               "methods": ["listGlossaries", "listGlossaries", "listGlossaries", "listGlossariesPagedCallable", "listGlossariesCallable"]
+            },
+            "ListGlossaryEntries": {
+              "methods": ["listGlossaryEntries", "listGlossaryEntries", "listGlossaryEntries", "listGlossaryEntriesPagedCallable", "listGlossaryEntriesCallable"]
+            },
+            "ListModels": {
+              "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
+            "RomanizeText": {
+              "methods": ["romanizeText", "romanizeText", "romanizeText", "romanizeTextCallable"]
             },
             "TranslateDocument": {
               "methods": ["translateDocument", "translateDocumentCallable"]
             },
             "TranslateText": {
               "methods": ["translateText", "translateText", "translateText", "translateText", "translateText", "translateTextCallable"]
+            },
+            "UpdateGlossary": {
+              "methods": ["updateGlossaryAsync", "updateGlossaryAsync", "updateGlossaryOperationCallable", "updateGlossaryCallable"]
+            },
+            "UpdateGlossaryEntry": {
+              "methods": ["updateGlossaryEntry", "updateGlossaryEntry", "updateGlossaryEntryCallable"]
             }
           }
         }

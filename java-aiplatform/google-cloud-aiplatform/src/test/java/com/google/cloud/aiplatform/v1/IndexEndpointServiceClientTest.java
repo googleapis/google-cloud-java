@@ -124,6 +124,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +188,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -248,6 +252,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -299,6 +305,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -438,6 +446,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 

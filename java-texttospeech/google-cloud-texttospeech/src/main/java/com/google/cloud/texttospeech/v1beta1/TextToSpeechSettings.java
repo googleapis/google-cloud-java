@@ -25,6 +25,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.texttospeech.v1beta1.stub.TextToSpeechStubSettings;
@@ -81,6 +82,12 @@ public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
   public UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings() {
     return ((TextToSpeechStubSettings) getStubSettings()).synthesizeSpeechSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamingSynthesize. */
+  public StreamingCallSettings<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeSettings() {
+    return ((TextToSpeechStubSettings) getStubSettings()).streamingSynthesizeSettings();
   }
 
   public static final TextToSpeechSettings create(TextToSpeechStubSettings stub)
@@ -204,6 +211,12 @@ public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
     public UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings() {
       return getStubSettingsBuilder().synthesizeSpeechSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamingSynthesize. */
+    public StreamingCallSettings.Builder<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+        streamingSynthesizeSettings() {
+      return getStubSettingsBuilder().streamingSynthesizeSettings();
     }
 
     @Override

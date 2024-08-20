@@ -19,7 +19,11 @@ package com.google.cloud.translate.v3;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossaryEntriesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -35,6 +39,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -295,6 +300,98 @@ public class TranslationServiceClientHttpJsonTest {
       List<String> contents = new ArrayList<>();
       client.translateText(
           parent, model, mimeType, sourceLanguageCode, targetLanguageCode, contents);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void romanizeTextTest() throws Exception {
+    RomanizeTextResponse expectedResponse =
+        RomanizeTextResponse.newBuilder()
+            .addAllRomanizations(new ArrayList<Romanization>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> contents = new ArrayList<>();
+
+    RomanizeTextResponse actualResponse = client.romanizeText(parent, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void romanizeTextExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> contents = new ArrayList<>();
+      client.romanizeText(parent, contents);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void romanizeTextTest2() throws Exception {
+    RomanizeTextResponse expectedResponse =
+        RomanizeTextResponse.newBuilder()
+            .addAllRomanizations(new ArrayList<Romanization>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    List<String> contents = new ArrayList<>();
+
+    RomanizeTextResponse actualResponse = client.romanizeText(parent, contents);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void romanizeTextExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      List<String> contents = new ArrayList<>();
+      client.romanizeText(parent, contents);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -902,6 +999,78 @@ public class TranslationServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateGlossaryTest() throws Exception {
+    Glossary expectedResponse =
+        Glossary.newBuilder()
+            .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+            .setInputConfig(GlossaryInputConfig.newBuilder().build())
+            .setEntryCount(-811131134)
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGlossaryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Glossary glossary =
+        Glossary.newBuilder()
+            .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+            .setInputConfig(GlossaryInputConfig.newBuilder().build())
+            .setEntryCount(-811131134)
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Glossary actualResponse = client.updateGlossaryAsync(glossary, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateGlossaryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Glossary glossary =
+          Glossary.newBuilder()
+              .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+              .setInputConfig(GlossaryInputConfig.newBuilder().build())
+              .setEntryCount(-811131134)
+              .setSubmitTime(Timestamp.newBuilder().build())
+              .setEndTime(Timestamp.newBuilder().build())
+              .setDisplayName("displayName1714148973")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGlossaryAsync(glossary, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listGlossariesTest() throws Exception {
     Glossary responsesElement = Glossary.newBuilder().build();
     ListGlossariesResponse expectedResponse =
@@ -1196,6 +1365,861 @@ public class TranslationServiceClientHttpJsonTest {
     try {
       String name = "projects/project-9868/locations/location-9868/glossaries/glossarie-9868";
       client.deleteGlossaryAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GlossaryEntryName name =
+        GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+
+    GlossaryEntry actualResponse = client.getGlossaryEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGlossaryEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GlossaryEntryName name =
+          GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+      client.getGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGlossaryEntryTest2() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1530/locations/location-1530/glossaries/glossarie-1530/glossaryEntries/glossaryEntrie-1530";
+
+    GlossaryEntry actualResponse = client.getGlossaryEntry(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGlossaryEntryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1530/locations/location-1530/glossaries/glossarie-1530/glossaryEntries/glossaryEntrie-1530";
+      client.getGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGlossaryEntriesTest() throws Exception {
+    GlossaryEntry responsesElement = GlossaryEntry.newBuilder().build();
+    ListGlossaryEntriesResponse expectedResponse =
+        ListGlossaryEntriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGlossaryEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+
+    ListGlossaryEntriesPagedResponse pagedListResponse = client.listGlossaryEntries(parent);
+
+    List<GlossaryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGlossaryEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGlossaryEntriesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      client.listGlossaryEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGlossaryEntriesTest2() throws Exception {
+    GlossaryEntry responsesElement = GlossaryEntry.newBuilder().build();
+    ListGlossaryEntriesResponse expectedResponse =
+        ListGlossaryEntriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGlossaryEntries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1837/locations/location-1837/glossaries/glossarie-1837";
+
+    ListGlossaryEntriesPagedResponse pagedListResponse = client.listGlossaryEntries(parent);
+
+    List<GlossaryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGlossaryEntriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGlossaryEntriesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1837/locations/location-1837/glossaries/glossarie-1837";
+      client.listGlossaryEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+    GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+
+    GlossaryEntry actualResponse = client.createGlossaryEntry(parent, glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGlossaryEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GlossaryName parent = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+      GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+      client.createGlossaryEntry(parent, glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGlossaryEntryTest2() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1837/locations/location-1837/glossaries/glossarie-1837";
+    GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+
+    GlossaryEntry actualResponse = client.createGlossaryEntry(parent, glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGlossaryEntryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1837/locations/location-1837/glossaries/glossarie-1837";
+      GlossaryEntry glossaryEntry = GlossaryEntry.newBuilder().build();
+      client.createGlossaryEntry(parent, glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGlossaryEntryTest() throws Exception {
+    GlossaryEntry expectedResponse =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GlossaryEntry glossaryEntry =
+        GlossaryEntry.newBuilder()
+            .setName(
+                GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .build();
+
+    GlossaryEntry actualResponse = client.updateGlossaryEntry(glossaryEntry);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateGlossaryEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GlossaryEntry glossaryEntry =
+          GlossaryEntry.newBuilder()
+              .setName(
+                  GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]")
+                      .toString())
+              .setDescription("description-1724546052")
+              .build();
+      client.updateGlossaryEntry(glossaryEntry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteGlossaryEntryTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    GlossaryEntryName name =
+        GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+
+    client.deleteGlossaryEntry(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGlossaryEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GlossaryEntryName name =
+          GlossaryEntryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]", "[GLOSSARY_ENTRY]");
+      client.deleteGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteGlossaryEntryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1530/locations/location-1530/glossaries/glossarie-1530/glossaryEntries/glossaryEntrie-1530";
+
+    client.deleteGlossaryEntry(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGlossaryEntryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1530/locations/location-1530/glossaries/glossarie-1530/glossaryEntries/glossaryEntrie-1530";
+      client.deleteGlossaryEntry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Dataset dataset = Dataset.newBuilder().build();
+
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Dataset dataset = Dataset.newBuilder().build();
+      client.createDatasetAsync(parent, dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDatasetTest2() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Dataset dataset = Dataset.newBuilder().build();
+
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Dataset dataset = Dataset.newBuilder().build();
+      client.createDatasetAsync(parent, dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    Dataset actualResponse = client.getDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetTest2() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1333/locations/location-1333/datasets/dataset-1333";
+
+    Dataset actualResponse = client.getDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1333/locations/location-1333/datasets/dataset-1333";
+      client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetsTest() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
+    ListDatasetsResponse expectedResponse =
+        ListDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
+
+    List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatasetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetsTest2() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
+    ListDatasetsResponse expectedResponse =
+        ListDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
+
+    List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatasetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    client.deleteDatasetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.deleteDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1333/locations/location-1333/datasets/dataset-1333";
+
+    client.deleteDatasetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1333/locations/location-1333/datasets/dataset-1333";
+      client.deleteDatasetAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1595,6 +2619,7 @@ public class TranslationServiceClientHttpJsonTest {
         AdaptiveMtTranslateResponse.newBuilder()
             .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
             .setLanguageCode("languageCode-2092349083")
+            .addAllGlossaryTranslations(new ArrayList<AdaptiveMtTranslation>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1642,6 +2667,7 @@ public class TranslationServiceClientHttpJsonTest {
         AdaptiveMtTranslateResponse.newBuilder()
             .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
             .setLanguageCode("languageCode-2092349083")
+            .addAllGlossaryTranslations(new ArrayList<AdaptiveMtTranslation>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2164,6 +3190,616 @@ public class TranslationServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void importDataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String dataset = "projects/project-462/locations/location-462/datasets/dataset-462";
+    DatasetInputConfig inputConfig = DatasetInputConfig.newBuilder().build();
+
+    client.importDataAsync(dataset, inputConfig).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String dataset = "projects/project-462/locations/location-462/datasets/dataset-462";
+      DatasetInputConfig inputConfig = DatasetInputConfig.newBuilder().build();
+      client.importDataAsync(dataset, inputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportDataTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String dataset = "projects/project-462/locations/location-462/datasets/dataset-462";
+    DatasetOutputConfig outputConfig = DatasetOutputConfig.newBuilder().build();
+
+    client.exportDataAsync(dataset, outputConfig).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String dataset = "projects/project-462/locations/location-462/datasets/dataset-462";
+      DatasetOutputConfig outputConfig = DatasetOutputConfig.newBuilder().build();
+      client.exportDataAsync(dataset, outputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listExamplesTest() throws Exception {
+    Example responsesElement = Example.newBuilder().build();
+    ListExamplesResponse expectedResponse =
+        ListExamplesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExamples(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ListExamplesPagedResponse pagedListResponse = client.listExamples(parent);
+
+    List<Example> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExamplesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExamplesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.listExamples(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExamplesTest2() throws Exception {
+    Example responsesElement = Example.newBuilder().build();
+    ListExamplesResponse expectedResponse =
+        ListExamplesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExamples(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8892/locations/location-8892/datasets/dataset-8892";
+
+    ListExamplesPagedResponse pagedListResponse = client.listExamples(parent);
+
+    List<Example> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExamplesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExamplesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8892/locations/location-8892/datasets/dataset-8892";
+      client.listExamples(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Model model = Model.newBuilder().build();
+
+    Model actualResponse = client.createModelAsync(parent, model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Model model = Model.newBuilder().build();
+      client.createModelAsync(parent, model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Model model = Model.newBuilder().build();
+
+    Model actualResponse = client.createModelAsync(parent, model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Model model = Model.newBuilder().build();
+      client.createModelAsync(parent, model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listModelsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listModelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listModelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDataset("dataset1443214456")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setTrainExampleCount(-1755438077)
+            .setValidateExampleCount(159308433)
+            .setTestExampleCount(483147021)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7594/locations/location-7594/models/model-7594";
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7594/locations/location-7594/models/model-7594";
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteModelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    client.deleteModelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteModelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-7594/locations/location-7594/models/model-7594";
+
+    client.deleteModelAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7594/locations/location-7594/models/model-7594";
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 }
