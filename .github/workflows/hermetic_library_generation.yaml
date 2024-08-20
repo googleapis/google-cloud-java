@@ -17,10 +17,14 @@ name: Hermetic library generation upon generation config change through pull req
 on:
   pull_request:
 
+env:
+  HEAD_REF: ${{ github.head_ref }}
+  REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
+
 jobs:
   library_generation:
     # skip pull requests coming from a forked repository
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: github.env.REPO_FULL_NAME == github.repository
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -30,11 +34,11 @@ jobs:
     - name: Generate changed libraries
       shell: bash
       run: |
-        set -x
+        set -ex
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         bash .github/scripts/hermetic_library_generation.sh \
           --target_branch ${{ github.base_ref }} \
-          --current_branch ${{ github.head_ref }}
+          --current_branch $HEAD_REF
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
