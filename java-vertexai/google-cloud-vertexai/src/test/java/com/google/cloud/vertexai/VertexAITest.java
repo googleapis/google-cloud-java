@@ -22,12 +22,15 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import org.junit.Rule;
 import org.junit.Test;
@@ -396,5 +399,60 @@ public final class VertexAITest {
     assertThat(vertexAi.getLocation()).isEqualTo(TEST_LOCATION);
     assertThat(vertexAi.getTransport()).isEqualTo(Transport.REST);
     assertThat(vertexAi.getApiEndpoint()).isEqualTo(TEST_DEFAULT_ENDPOINT);
+  }
+
+  @Test
+  public void testInstantiateVertexAI_builderWithCustomHeaders_shouldContainRightFields()
+      throws IOException {
+    Map<String, String> customHeaders = new HashMap<>();
+    customHeaders.put("test_key", "test_value");
+
+    vertexAi =
+        new VertexAI.Builder()
+            .setProjectId(TEST_PROJECT)
+            .setLocation(TEST_LOCATION)
+            .setCustomHeaders(customHeaders)
+            .build();
+
+    assertThat(vertexAi.getProjectId()).isEqualTo(TEST_PROJECT);
+    assertThat(vertexAi.getLocation()).isEqualTo(TEST_LOCATION);
+    // headers should include both the sdk header and the custom headers
+    Map<String, String> expectedHeaders = new HashMap<>(customHeaders);
+    expectedHeaders.put(
+        "user-agent",
+        String.format(
+            "%s/%s",
+            Constants.USER_AGENT_HEADER,
+            GaxProperties.getLibraryVersion(PredictionServiceSettings.class)));
+    assertThat(vertexAi.getHeaders()).isEqualTo(expectedHeaders);
+  }
+
+  @Test
+  public void
+      testInstantiateVertexAI_builderWithCustomHeadersWithSdkReservedKey_shouldContainRightFields()
+          throws IOException {
+    Map<String, String> customHeadersWithSdkReservedKey = new HashMap<>();
+    customHeadersWithSdkReservedKey.put("user-agent", "test_value");
+
+    vertexAi =
+        new VertexAI.Builder()
+            .setProjectId(TEST_PROJECT)
+            .setLocation(TEST_LOCATION)
+            .setCustomHeaders(customHeadersWithSdkReservedKey)
+            .build();
+
+    assertThat(vertexAi.getProjectId()).isEqualTo(TEST_PROJECT);
+    assertThat(vertexAi.getLocation()).isEqualTo(TEST_LOCATION);
+    // headers should include sdk reserved key with value of both the sdk header and the custom
+    // headers
+    Map<String, String> expectedHeaders = new HashMap<>();
+    expectedHeaders.put(
+        "user-agent",
+        String.format(
+            "%s/%s %s",
+            Constants.USER_AGENT_HEADER,
+            GaxProperties.getLibraryVersion(PredictionServiceSettings.class),
+            "test_value"));
+    assertThat(vertexAi.getHeaders()).isEqualTo(expectedHeaders);
   }
 }
