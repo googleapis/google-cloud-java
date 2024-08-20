@@ -800,8 +800,8 @@ public class VpcFlowLogsServiceClientTest {
     }
   }
 
-  @Test
   @Ignore
+  @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
@@ -854,8 +854,8 @@ public class VpcFlowLogsServiceClientTest {
     }
   }
 
-  @Test
   @Ignore
+  @Test
   public void getIamPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
@@ -905,8 +905,8 @@ public class VpcFlowLogsServiceClientTest {
     }
   }
 
-  @Test
   @Ignore
+  @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
