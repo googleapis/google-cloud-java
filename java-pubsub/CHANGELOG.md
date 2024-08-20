@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.132.1](https://github.com/googleapis/java-pubsub/compare/v1.132.0...v1.132.1) (2024-08-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.42.0 ([#2140](https://github.com/googleapis/java-pubsub/issues/2140)) ([80dca35](https://github.com/googleapis/java-pubsub/commit/80dca35cebb1061f3d2a852ff9929519e69283cc))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.34.0 ([#2141](https://github.com/googleapis/java-pubsub/issues/2141)) ([273fbf3](https://github.com/googleapis/java-pubsub/commit/273fbf3f752444a397b0e743c5c6de1a539291ea))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.27.3 ([#2127](https://github.com/googleapis/java-pubsub/issues/2127)) ([8523b4f](https://github.com/googleapis/java-pubsub/commit/8523b4f67f45ac219671c0d588bac7e9dc450dcb))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.6 ([#2135](https://github.com/googleapis/java-pubsub/issues/2135)) ([102ff84](https://github.com/googleapis/java-pubsub/commit/102ff844594687b3bbaca1ff92e650fe9e8d3f1e))
+
 ## [1.132.0](https://github.com/googleapis/java-pubsub/compare/v1.131.0...v1.132.0) (2024-08-01)
 
 
