@@ -30,6 +30,8 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -44,6 +46,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicyName;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
@@ -269,6 +272,29 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> migrateKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddIpOverride</td>
+ *      <td><p> Adds an IP override to a key. The following restrictions hold:
+ * <ul>
+ * <li>  The maximum number of IP overrides per key is 100.
+ * <li>  For any conflict (such as IP already exists or IP part of an existing   IP range), an error will be returned.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addIpOverride(AddIpOverrideRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> addIpOverride(KeyName name, IpOverrideData ipOverrideData)
+ *           <li><p> addIpOverride(String name, IpOverrideData ipOverrideData)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addIpOverrideCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1630,6 +1656,157 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
     return stub.migrateKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       will be returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   AddIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.addIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to which the IP override is added, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override added to the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(KeyName name, IpOverrideData ipOverrideData) {
+    AddIpOverrideRequest request =
+        AddIpOverrideRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setIpOverrideData(ipOverrideData)
+            .build();
+    return addIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       will be returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   AddIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.addIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to which the IP override is added, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override added to the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(String name, IpOverrideData ipOverrideData) {
+    AddIpOverrideRequest request =
+        AddIpOverrideRequest.newBuilder().setName(name).setIpOverrideData(ipOverrideData).build();
+    return addIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       will be returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   AddIpOverrideRequest request =
+   *       AddIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   AddIpOverrideResponse response = recaptchaEnterpriseServiceClient.addIpOverride(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(AddIpOverrideRequest request) {
+    return addIpOverrideCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       will be returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   AddIpOverrideRequest request =
+   *       AddIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AddIpOverrideResponse> future =
+   *       recaptchaEnterpriseServiceClient.addIpOverrideCallable().futureCall(request);
+   *   // Do something.
+   *   AddIpOverrideResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    return stub.addIpOverrideCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

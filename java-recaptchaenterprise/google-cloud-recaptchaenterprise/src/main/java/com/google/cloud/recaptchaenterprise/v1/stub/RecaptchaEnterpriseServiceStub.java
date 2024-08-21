@@ -25,6 +25,8 @@ import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -107,6 +109,10 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: migrateKeyCallable()");
+  }
+
+  public UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    throw new UnsupportedOperationException("Not implemented: addIpOverrideCallable()");
   }
 
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {

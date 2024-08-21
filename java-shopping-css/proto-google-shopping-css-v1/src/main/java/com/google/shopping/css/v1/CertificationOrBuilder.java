@@ -28,7 +28,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Name of the certification.
+   * The name of the certification. At this time, the most common value is
+   * "EPREL", which represents energy efficiency certifications in the EU
+   * European Registry for Energy Labeling (EPREL) database.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,7 +42,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Name of the certification.
+   * The name of the certification. At this time, the most common value is
+   * "EPREL", which represents energy efficiency certifications in the EU
+   * European Registry for Energy Labeling (EPREL) database.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -53,7 +57,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Name of the certification body.
+   * The authority or certification body responsible for issuing the
+   * certification. At this time, the most common value is "EC" or
+   * “European_Commission” for energy labels in the EU.
    * </pre>
    *
    * <code>string authority = 2;</code>
@@ -65,7 +71,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * Name of the certification body.
+   * The authority or certification body responsible for issuing the
+   * certification. At this time, the most common value is "EC" or
+   * “European_Commission” for energy labels in the EU.
    * </pre>
    *
    * <code>string authority = 2;</code>
@@ -78,7 +86,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * A unique code to identify the certification.
+   * The code of the certification. For example, for the EPREL certificate with
+   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+   * the code is 123456. The code is required for European Energy Labels.
    * </pre>
    *
    * <code>string code = 3;</code>
@@ -90,7 +100,9 @@ public interface CertificationOrBuilder
    *
    *
    * <pre>
-   * A unique code to identify the certification.
+   * The code of the certification. For example, for the EPREL certificate with
+   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+   * the code is 123456. The code is required for European Energy Labels.
    * </pre>
    *
    * <code>string code = 3;</code>

@@ -70,7 +70,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Supported WAF features. For more information, see
-   * https://cloud.google.com/recaptcha-enterprise/docs/usecase#comparison_of_features.
+   * https://cloud.google.com/recaptcha/docs/usecase#comparison_of_features.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.WafSettings.WafFeature}

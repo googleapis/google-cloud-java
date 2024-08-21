@@ -19,6 +19,8 @@ package com.google.cloud.recaptchaenterprise.v1;
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -271,6 +273,27 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method MigrateKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Key.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addIpOverride(
+      AddIpOverrideRequest request, StreamObserver<AddIpOverrideResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AddIpOverrideResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AddIpOverrideResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddIpOverride, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AddIpOverrideResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
