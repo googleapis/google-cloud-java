@@ -1,5 +1,74 @@
 # Changelog
 
+## [1.42.0](https://github.com/googleapis/google-cloud-java/compare/v1.41.0...v1.42.0) (2024-08-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* existing client libraries are being regenerated to remove unused functionality and introduce new features.
+
+### Features
+
+* [aiplatform] A new field `satisfies_pzs` is added to message `.google.cloud.aiplatform.v1.BatchPredictionJob` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] A new message `RoutingConfig` is added ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] add evaluation service proto to v1 ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] add pointwise and pairwise metrics to evaluation service ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] add reservation affinity proto ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] add reservation affinity proto ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] Allow v1 api calls for some dataset_service, llm_utility_service, and prediction_service apis without project and location ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] Allow v1beta1 api calls for some dataset_service, llm_utility_service, and prediction_service apis without project and location ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [aiplatform] release advanced parsing options for rag files ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [analytics-admin] add `GetKeyEvent`, `CreateKeyEvent`, `ListKeyEvents`, `UpdateKeyEvent`, and `DeleteKeyEvent` methods ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [analytics-data] add the `comparisons` field to the `Metadata` resource ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [apihub] new module for apihub ([#11089](https://github.com/googleapis/google-cloud-java/issues/11089)) ([4b97769](https://github.com/googleapis/google-cloud-java/commit/4b9776914a7465d0d8a6f27327bb9b33e41eaae8))
+* [batch] add block_project_ssh_keys field to the v1alpha job API to block project level ssh keys access to Batch created VMs ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [dialogflow] Add Proactive Generative Knowledge Assist endpoints and types ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [dialogflow] Add Proactive Generative Knowledge Assist endpoints and types ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [discoveryengine] support natural language understanding in search ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [dlp] add the TagResources API ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [dlp] inspect template modified cadence discovery config for Cloud SQL ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [document-ai] A new field `imageless_mode` is added to message `.google.cloud.documentai.v1.ProcessRequest` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [document-ai] A new field `imageless_mode` is added to message `.google.cloud.documentai.v1.ProcessRequest` ([4aae553](https://github.com/googleapis/google-cloud-java/commit/4aae5537bed9ddb992a85749aa1199b475c2db87))
+* [functions] Added `build_service_account` field to CloudFunction ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [functions] optional field for specifying a service account to use for the build. This helps navigate the change of historical default on new projects. For more details, see https://cloud.google.com/build/docs/cloud-build-service-account-updates ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [functions] optional field for specifying a service account to use for the build. This helps navigate the change of historical default on new projects. For more details, see https://cloud.google.com/build/docs/cloud-build-service-account-updates ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [gke-connect-gateway] removed the nonfunctional GatewayService and replaced it with the GatewayControl service ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* [network-management] expose the new vpcflowlogs api proto ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [parallelstore] add file_stripe_level and directory_stripe_level fields to Instance ([4aae553](https://github.com/googleapis/google-cloud-java/commit/4aae5537bed9ddb992a85749aa1199b475c2db87))
+* [recaptchaenterprise] add AddIpOverride RPC ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* [securitycenter] enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [securitycenter] enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [storage-transfer] add HDFS configuration ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [texttospeech] A new method `StreamingSynthesize` is added to service `TextToSpeech` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [texttospeech] A new method `StreamingSynthesize` is added to service `TextToSpeech` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [translate] Adds AdaptiveMt HTML/Glossary support ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [vertexai] add custom headers support in VertexAI ([#11085](https://github.com/googleapis/google-cloud-java/issues/11085)) ([5bed284](https://github.com/googleapis/google-cloud-java/commit/5bed2849157e35c737eeff34fb749a84639f4f66))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20240809-2.0.0 ([#11069](https://github.com/googleapis/google-cloud-java/issues/11069)) ([2ba5930](https://github.com/googleapis/google-cloud-java/commit/2ba593060d9430efd2b3c747cf0e44605d829d31))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.132.0 ([#11056](https://github.com/googleapis/google-cloud-java/issues/11056)) ([79e7912](https://github.com/googleapis/google-cloud-java/commit/79e79129b7f6870b6388bf2e0034df98cddbba52))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.41.0 ([#11049](https://github.com/googleapis/google-cloud-java/issues/11049)) ([6b49114](https://github.com/googleapis/google-cloud-java/commit/6b491143348c3273aad9bdb02c9a98130f696c46))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.42.0 ([#11083](https://github.com/googleapis/google-cloud-java/issues/11083)) ([890ba17](https://github.com/googleapis/google-cloud-java/commit/890ba1736a3a97c4ba26884f3ec4bd4d09bdbc1d))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.44.0 ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+### Documentation
+
+* [batch] Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [batch] Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [batch] clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* [batch] clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* [batch] Refine usage scope for fields `task_execution` and `task_state` in StatusEvent ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [bigquerydatatransfer] deprecate `authorization_code` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [datacatalog] mark DataplexTransferStatus.MIGRATED as deprecated ([4aae553](https://github.com/googleapis/google-cloud-java/commit/4aae5537bed9ddb992a85749aa1199b475c2db87))
+* [deploy] very minor documentation updates ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [managedkafka] changed API title to official name ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [shopping-css] update `Certification` field descriptions ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* [texttospeech] update Long Audio capabilities to include SSML ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* [translate] Format comment in AutoML Translation ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
 ## [1.41.0](https://github.com/googleapis/google-cloud-java/compare/v1.40.0...v1.41.0) (2024-07-31)
 
 
