@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.52.0 (2024-08-21)
+
+### Features
+
+* add the TagResources API ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* inspect template modified cadence discovery config for Cloud SQL ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 3.51.0 (2024-07-31)
 
 ### Features

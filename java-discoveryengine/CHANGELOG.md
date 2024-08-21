@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.44.0 (2024-08-21)
+
+### Features
+
+* support natural language understanding in search ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 0.43.0 (2024-07-31)
 
 ### Features

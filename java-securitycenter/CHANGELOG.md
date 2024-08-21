@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.56.0 (2024-08-21)
+
+### Features
+
+* enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* enable Dynamic Mute ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 2.55.0 (2024-07-31)
 
 ### Features

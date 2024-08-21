@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 (2024-08-21)
+
+### Features
+
+* add file_stripe_level and directory_stripe_level fields to Instance ([4aae553](https://github.com/googleapis/google-cloud-java/commit/4aae5537bed9ddb992a85749aa1199b475c2db87))
+
+
+
 ## 0.10.0 (2024-07-31)
 
 ### Features

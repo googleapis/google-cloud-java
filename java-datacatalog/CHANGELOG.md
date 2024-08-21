@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.54.0 (2024-08-21)
+
+### Bug Fixes
+
+* mark DataplexTransferStatus.MIGRATED as deprecated ([4aae553](https://github.com/googleapis/google-cloud-java/commit/4aae5537bed9ddb992a85749aa1199b475c2db87))
+
+
+
 ## 1.53.0 (2024-07-31)
 
 ### Features

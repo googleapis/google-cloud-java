@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.54.0 (2024-08-21)
+
+### Features
+
+* Add Proactive Generative Knowledge Assist endpoints and types ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* Add Proactive Generative Knowledge Assist endpoints and types ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 4.53.0 (2024-07-31)
 
 * No change
