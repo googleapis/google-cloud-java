@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.25.1](https://github.com/googleapis/java-firestore/compare/v3.25.0...v3.25.1) (2024-08-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.34.0 ([#1795](https://github.com/googleapis/java-firestore/issues/1795)) ([abb3f7f](https://github.com/googleapis/java-firestore/commit/abb3f7fb25844b0a2b7c9eb2132c17eadb3c528a))
+* Update opentelemetry.version to v1.41.0 ([#1793](https://github.com/googleapis/java-firestore/issues/1793)) ([165aae9](https://github.com/googleapis/java-firestore/commit/165aae94f2628255f84e68eac08ecef75967a237))
+
 ## [3.25.0](https://github.com/googleapis/java-firestore/compare/v3.24.3...v3.25.0) (2024-08-12)
 
 
