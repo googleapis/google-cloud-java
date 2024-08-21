@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.8.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.8.0...v3.8.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* Github workflow vulnerable to script injection ([#2600](https://github.com/googleapis/java-bigquerystorage/issues/2600)) ([9ce25b6](https://github.com/googleapis/java-bigquerystorage/commit/9ce25b6c96bcb5b89f69b8deee65c80c4545758f))
+* RequestProfilerTest.java regex in deep-preserve list ([#2589](https://github.com/googleapis/java-bigquerystorage/issues/2589)) ([e62ac66](https://github.com/googleapis/java-bigquerystorage/commit/e62ac664fb8e7056481ad29547bb33ae73ad2ef0))
+
+
+### Dependencies
+
+* Update core dependencies to v1.24.1 ([#2604](https://github.com/googleapis/java-bigquerystorage/issues/2604)) ([eaac3dc](https://github.com/googleapis/java-bigquerystorage/commit/eaac3dc886fe2b4cdcc8cca71fdba4b8055d70f1))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.42.0 ([#2586](https://github.com/googleapis/java-bigquerystorage/issues/2586)) ([8893d43](https://github.com/googleapis/java-bigquerystorage/commit/8893d435597dd393f39225eaa186bfb637240816))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.34.0 ([#2608](https://github.com/googleapis/java-bigquerystorage/issues/2608)) ([b4861b4](https://github.com/googleapis/java-bigquerystorage/commit/b4861b43f873037b8e20da445f0d6e125eab01b9))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.41.0 ([#2603](https://github.com/googleapis/java-bigquerystorage/issues/2603)) ([896903a](https://github.com/googleapis/java-bigquerystorage/commit/896903ac4ef5cbc315e6e0a6b1d882649f134cab))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.11.0 ([#2605](https://github.com/googleapis/java-bigquerystorage/issues/2605)) ([754e883](https://github.com/googleapis/java-bigquerystorage/commit/754e88326d99c1baa191eba511be49a28953632c))
+
 ## [3.8.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.7.0...v3.8.0) (2024-07-26)
 
 
