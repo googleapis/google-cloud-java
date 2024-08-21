@@ -27,6 +27,7 @@
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
+    <module>java-apihub</module>
     <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-apphub</module>
