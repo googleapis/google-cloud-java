@@ -178,7 +178,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=706
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
@@ -189,8 +189,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. Flag for a reCAPTCHA express request for an assessment without a
-   * token. If enabled, `site_key` must reference a SCORE key with WAF feature
-   * set to EXPRESS.
+   * token. If enabled, `site_key` must reference an Express site key.
    * </pre>
    *
    * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>

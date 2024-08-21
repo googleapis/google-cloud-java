@@ -31,15 +31,13 @@ public interface TaskSpecOrBuilder
    * Required. The sequence of one or more runnables (executable scripts,
    * executable containers, and/or barriers) for each task in this task group to
    * run. Each task runs this list of runnables in order. For a task to succeed,
-   * all of its script and container runnables each must either exit with a zero
-   * status or enable the `ignore_exit_status` subfield and exit with any
-   * status.
+   * all of its script and container runnables each must meet at least one of
+   * the following conditions:
    *
-   * Background runnables are killed automatically (if they have not already
-   * exited) a short time after all foreground runnables have completed. Even
-   * though this is likely to result in a non-zero exit status for the
-   * background runnable, these automatic kills are not treated as Task
-   * failures.
+   * + The runnable exited with a zero status.
+   * + The runnable didn't finish, but you enabled its `background` subfield.
+   * + The runnable exited with a non-zero status, but you enabled its
+   *   `ignore_exit_status` subfield.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Runnable runnables = 8;</code>
@@ -52,15 +50,13 @@ public interface TaskSpecOrBuilder
    * Required. The sequence of one or more runnables (executable scripts,
    * executable containers, and/or barriers) for each task in this task group to
    * run. Each task runs this list of runnables in order. For a task to succeed,
-   * all of its script and container runnables each must either exit with a zero
-   * status or enable the `ignore_exit_status` subfield and exit with any
-   * status.
+   * all of its script and container runnables each must meet at least one of
+   * the following conditions:
    *
-   * Background runnables are killed automatically (if they have not already
-   * exited) a short time after all foreground runnables have completed. Even
-   * though this is likely to result in a non-zero exit status for the
-   * background runnable, these automatic kills are not treated as Task
-   * failures.
+   * + The runnable exited with a zero status.
+   * + The runnable didn't finish, but you enabled its `background` subfield.
+   * + The runnable exited with a non-zero status, but you enabled its
+   *   `ignore_exit_status` subfield.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Runnable runnables = 8;</code>
@@ -73,15 +69,13 @@ public interface TaskSpecOrBuilder
    * Required. The sequence of one or more runnables (executable scripts,
    * executable containers, and/or barriers) for each task in this task group to
    * run. Each task runs this list of runnables in order. For a task to succeed,
-   * all of its script and container runnables each must either exit with a zero
-   * status or enable the `ignore_exit_status` subfield and exit with any
-   * status.
+   * all of its script and container runnables each must meet at least one of
+   * the following conditions:
    *
-   * Background runnables are killed automatically (if they have not already
-   * exited) a short time after all foreground runnables have completed. Even
-   * though this is likely to result in a non-zero exit status for the
-   * background runnable, these automatic kills are not treated as Task
-   * failures.
+   * + The runnable exited with a zero status.
+   * + The runnable didn't finish, but you enabled its `background` subfield.
+   * + The runnable exited with a non-zero status, but you enabled its
+   *   `ignore_exit_status` subfield.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Runnable runnables = 8;</code>
@@ -94,15 +88,13 @@ public interface TaskSpecOrBuilder
    * Required. The sequence of one or more runnables (executable scripts,
    * executable containers, and/or barriers) for each task in this task group to
    * run. Each task runs this list of runnables in order. For a task to succeed,
-   * all of its script and container runnables each must either exit with a zero
-   * status or enable the `ignore_exit_status` subfield and exit with any
-   * status.
+   * all of its script and container runnables each must meet at least one of
+   * the following conditions:
    *
-   * Background runnables are killed automatically (if they have not already
-   * exited) a short time after all foreground runnables have completed. Even
-   * though this is likely to result in a non-zero exit status for the
-   * background runnable, these automatic kills are not treated as Task
-   * failures.
+   * + The runnable exited with a zero status.
+   * + The runnable didn't finish, but you enabled its `background` subfield.
+   * + The runnable exited with a non-zero status, but you enabled its
+   *   `ignore_exit_status` subfield.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Runnable runnables = 8;</code>
@@ -116,15 +108,13 @@ public interface TaskSpecOrBuilder
    * Required. The sequence of one or more runnables (executable scripts,
    * executable containers, and/or barriers) for each task in this task group to
    * run. Each task runs this list of runnables in order. For a task to succeed,
-   * all of its script and container runnables each must either exit with a zero
-   * status or enable the `ignore_exit_status` subfield and exit with any
-   * status.
+   * all of its script and container runnables each must meet at least one of
+   * the following conditions:
    *
-   * Background runnables are killed automatically (if they have not already
-   * exited) a short time after all foreground runnables have completed. Even
-   * though this is likely to result in a non-zero exit status for the
-   * background runnable, these automatic kills are not treated as Task
-   * failures.
+   * + The runnable exited with a zero status.
+   * + The runnable didn't finish, but you enabled its `background` subfield.
+   * + The runnable exited with a non-zero status, but you enabled its
+   *   `ignore_exit_status` subfield.
    * </pre>
    *
    * <code>repeated .google.cloud.batch.v1alpha.Runnable runnables = 8;</code>

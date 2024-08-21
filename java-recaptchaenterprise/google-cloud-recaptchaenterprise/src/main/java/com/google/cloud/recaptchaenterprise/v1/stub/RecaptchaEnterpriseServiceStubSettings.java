@@ -49,6 +49,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -145,6 +147,8 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings;
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
   private final UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings;
+  private final UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse>
+      addIpOverrideSettings;
   private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
   private final UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicySettings;
@@ -579,6 +583,11 @@ public class RecaptchaEnterpriseServiceStubSettings
     return migrateKeySettings;
   }
 
+  /** Returns the object with the settings used for calls to addIpOverride. */
+  public UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideSettings() {
+    return addIpOverrideSettings;
+  }
+
   /** Returns the object with the settings used for calls to getMetrics. */
   public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
     return getMetricsSettings;
@@ -740,6 +749,7 @@ public class RecaptchaEnterpriseServiceStubSettings
     updateKeySettings = settingsBuilder.updateKeySettings().build();
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
     migrateKeySettings = settingsBuilder.migrateKeySettings().build();
+    addIpOverrideSettings = settingsBuilder.addIpOverrideSettings().build();
     getMetricsSettings = settingsBuilder.getMetricsSettings().build();
     createFirewallPolicySettings = settingsBuilder.createFirewallPolicySettings().build();
     listFirewallPoliciesSettings = settingsBuilder.listFirewallPoliciesSettings().build();
@@ -773,6 +783,8 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings;
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
     private final UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings;
+    private final UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings;
     private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
     private final UnaryCallSettings.Builder<CreateFirewallPolicyRequest, FirewallPolicy>
         createFirewallPolicySettings;
@@ -851,6 +863,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       updateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       migrateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addIpOverrideSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirewallPoliciesSettings =
@@ -877,6 +890,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
+              addIpOverrideSettings,
               getMetricsSettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
@@ -902,6 +916,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       updateKeySettings = settings.updateKeySettings.toBuilder();
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
       migrateKeySettings = settings.migrateKeySettings.toBuilder();
+      addIpOverrideSettings = settings.addIpOverrideSettings.toBuilder();
       getMetricsSettings = settings.getMetricsSettings.toBuilder();
       createFirewallPolicySettings = settings.createFirewallPolicySettings.toBuilder();
       listFirewallPoliciesSettings = settings.listFirewallPoliciesSettings.toBuilder();
@@ -926,6 +941,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
+              addIpOverrideSettings,
               getMetricsSettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
@@ -993,6 +1009,11 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .migrateKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addIpOverrideSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1112,6 +1133,12 @@ public class RecaptchaEnterpriseServiceStubSettings
     /** Returns the builder for the settings used for calls to migrateKey. */
     public UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings() {
       return migrateKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addIpOverride. */
+    public UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings() {
+      return addIpOverrideSettings;
     }
 
     /** Returns the builder for the settings used for calls to getMetrics. */

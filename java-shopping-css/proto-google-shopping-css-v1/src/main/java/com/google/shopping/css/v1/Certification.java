@@ -23,7 +23,8 @@ package com.google.shopping.css.v1;
  *
  *
  * <pre>
- * The certification for the product.
+ * The certification for the product. Use the this attribute to describe
+ * certifications, such as energy efficiency ratings, associated with a product.
  * </pre>
  *
  * Protobuf type {@code google.shopping.css.v1.Certification}
@@ -73,7 +74,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the certification.
+   * The name of the certification. At this time, the most common value is
+   * "EPREL", which represents energy efficiency certifications in the EU
+   * European Registry for Energy Labeling (EPREL) database.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -96,7 +99,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the certification.
+   * The name of the certification. At this time, the most common value is
+   * "EPREL", which represents energy efficiency certifications in the EU
+   * European Registry for Energy Labeling (EPREL) database.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -124,7 +129,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the certification body.
+   * The authority or certification body responsible for issuing the
+   * certification. At this time, the most common value is "EC" or
+   * “European_Commission” for energy labels in the EU.
    * </pre>
    *
    * <code>string authority = 2;</code>
@@ -147,7 +154,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the certification body.
+   * The authority or certification body responsible for issuing the
+   * certification. At this time, the most common value is "EC" or
+   * “European_Commission” for energy labels in the EU.
    * </pre>
    *
    * <code>string authority = 2;</code>
@@ -175,7 +184,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique code to identify the certification.
+   * The code of the certification. For example, for the EPREL certificate with
+   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+   * the code is 123456. The code is required for European Energy Labels.
    * </pre>
    *
    * <code>string code = 3;</code>
@@ -198,7 +209,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique code to identify the certification.
+   * The code of the certification. For example, for the EPREL certificate with
+   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+   * the code is 123456. The code is required for European Energy Labels.
    * </pre>
    *
    * <code>string code = 3;</code>
@@ -398,7 +411,8 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The certification for the product.
+   * The certification for the product. Use the this attribute to describe
+   * certifications, such as energy efficiency ratings, associated with a product.
    * </pre>
    *
    * Protobuf type {@code google.shopping.css.v1.Certification}
@@ -611,7 +625,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification.
+     * The name of the certification. At this time, the most common value is
+     * "EPREL", which represents energy efficiency certifications in the EU
+     * European Registry for Energy Labeling (EPREL) database.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -633,7 +649,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification.
+     * The name of the certification. At this time, the most common value is
+     * "EPREL", which represents energy efficiency certifications in the EU
+     * European Registry for Energy Labeling (EPREL) database.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -655,7 +673,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification.
+     * The name of the certification. At this time, the most common value is
+     * "EPREL", which represents energy efficiency certifications in the EU
+     * European Registry for Energy Labeling (EPREL) database.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -676,7 +696,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification.
+     * The name of the certification. At this time, the most common value is
+     * "EPREL", which represents energy efficiency certifications in the EU
+     * European Registry for Energy Labeling (EPREL) database.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -693,7 +715,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification.
+     * The name of the certification. At this time, the most common value is
+     * "EPREL", which represents energy efficiency certifications in the EU
+     * European Registry for Energy Labeling (EPREL) database.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -717,7 +741,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification body.
+     * The authority or certification body responsible for issuing the
+     * certification. At this time, the most common value is "EC" or
+     * “European_Commission” for energy labels in the EU.
      * </pre>
      *
      * <code>string authority = 2;</code>
@@ -739,7 +765,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification body.
+     * The authority or certification body responsible for issuing the
+     * certification. At this time, the most common value is "EC" or
+     * “European_Commission” for energy labels in the EU.
      * </pre>
      *
      * <code>string authority = 2;</code>
@@ -761,7 +789,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification body.
+     * The authority or certification body responsible for issuing the
+     * certification. At this time, the most common value is "EC" or
+     * “European_Commission” for energy labels in the EU.
      * </pre>
      *
      * <code>string authority = 2;</code>
@@ -782,7 +812,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification body.
+     * The authority or certification body responsible for issuing the
+     * certification. At this time, the most common value is "EC" or
+     * “European_Commission” for energy labels in the EU.
      * </pre>
      *
      * <code>string authority = 2;</code>
@@ -799,7 +831,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the certification body.
+     * The authority or certification body responsible for issuing the
+     * certification. At this time, the most common value is "EC" or
+     * “European_Commission” for energy labels in the EU.
      * </pre>
      *
      * <code>string authority = 2;</code>
@@ -823,7 +857,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique code to identify the certification.
+     * The code of the certification. For example, for the EPREL certificate with
+     * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+     * the code is 123456. The code is required for European Energy Labels.
      * </pre>
      *
      * <code>string code = 3;</code>
@@ -845,7 +881,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique code to identify the certification.
+     * The code of the certification. For example, for the EPREL certificate with
+     * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+     * the code is 123456. The code is required for European Energy Labels.
      * </pre>
      *
      * <code>string code = 3;</code>
@@ -867,7 +905,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique code to identify the certification.
+     * The code of the certification. For example, for the EPREL certificate with
+     * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+     * the code is 123456. The code is required for European Energy Labels.
      * </pre>
      *
      * <code>string code = 3;</code>
@@ -888,7 +928,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique code to identify the certification.
+     * The code of the certification. For example, for the EPREL certificate with
+     * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+     * the code is 123456. The code is required for European Energy Labels.
      * </pre>
      *
      * <code>string code = 3;</code>
@@ -905,7 +947,9 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique code to identify the certification.
+     * The code of the certification. For example, for the EPREL certificate with
+     * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
+     * the code is 123456. The code is required for European Energy Labels.
      * </pre>
      *
      * <code>string code = 3;</code>

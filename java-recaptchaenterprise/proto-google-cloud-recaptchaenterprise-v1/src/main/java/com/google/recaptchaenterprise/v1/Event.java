@@ -530,7 +530,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=706
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
    * @return The hashedAccountId.
    */
   @java.lang.Override
@@ -546,8 +546,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Flag for a reCAPTCHA express request for an assessment without a
-   * token. If enabled, `site_key` must reference a SCORE key with WAF feature
-   * set to EXPRESS.
+   * token. If enabled, `site_key` must reference an Express site key.
    * </pre>
    *
    * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2231,7 +2230,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=706
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
      * @return The hashedAccountId.
      */
     @java.lang.Override
@@ -2253,7 +2252,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=706
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
@@ -2281,7 +2280,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=706
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2298,8 +2297,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
-     * set to EXPRESS.
+     * token. If enabled, `site_key` must reference an Express site key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2315,8 +2313,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
-     * set to EXPRESS.
+     * token. If enabled, `site_key` must reference an Express site key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2336,8 +2333,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Flag for a reCAPTCHA express request for an assessment without a
-     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
-     * set to EXPRESS.
+     * token. If enabled, `site_key` must reference an Express site key.
      * </pre>
      *
      * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -34,6 +34,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.recaptchaenterprise.v1.stub.RecaptchaEnterpriseServiceStubSettings;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -160,6 +162,11 @@ public class RecaptchaEnterpriseServiceSettings
   /** Returns the object with the settings used for calls to migrateKey. */
   public UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).migrateKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to addIpOverride. */
+  public UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).addIpOverrideSettings();
   }
 
   /** Returns the object with the settings used for calls to getMetrics. */
@@ -386,6 +393,12 @@ public class RecaptchaEnterpriseServiceSettings
     /** Returns the builder for the settings used for calls to migrateKey. */
     public UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings() {
       return getStubSettingsBuilder().migrateKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addIpOverride. */
+    public UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings() {
+      return getStubSettingsBuilder().addIpOverrideSettings();
     }
 
     /** Returns the builder for the settings used for calls to getMetrics. */

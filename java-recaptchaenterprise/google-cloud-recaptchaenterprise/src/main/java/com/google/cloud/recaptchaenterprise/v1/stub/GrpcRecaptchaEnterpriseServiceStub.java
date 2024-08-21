@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -167,6 +169,18 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setRequestMarshaller(ProtoUtils.marshaller(MigrateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<AddIpOverrideRequest, AddIpOverrideResponse>
+      addIpOverrideMethodDescriptor =
+          MethodDescriptor.<AddIpOverrideRequest, AddIpOverrideResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/AddIpOverride")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddIpOverrideRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AddIpOverrideResponse.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<GetMetricsRequest, Metrics> getMetricsMethodDescriptor =
       MethodDescriptor.<GetMetricsRequest, Metrics>newBuilder()
@@ -309,6 +323,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
   private final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable;
+  private final UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable;
   private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
   private final UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicyCallable;
@@ -482,6 +497,16 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideTransportSettings =
+        GrpcCallSettings.<AddIpOverrideRequest, AddIpOverrideResponse>newBuilder()
+            .setMethodDescriptor(addIpOverrideMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetMetricsRequest, Metrics> getMetricsTransportSettings =
         GrpcCallSettings.<GetMetricsRequest, Metrics>newBuilder()
             .setMethodDescriptor(getMetricsMethodDescriptor)
@@ -637,6 +662,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.migrateKeyCallable =
         callableFactory.createUnaryCallable(
             migrateKeyTransportSettings, settings.migrateKeySettings(), clientContext);
+    this.addIpOverrideCallable =
+        callableFactory.createUnaryCallable(
+            addIpOverrideTransportSettings, settings.addIpOverrideSettings(), clientContext);
     this.getMetricsCallable =
         callableFactory.createUnaryCallable(
             getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
@@ -764,6 +792,11 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable() {
     return migrateKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    return addIpOverrideCallable;
   }
 
   @Override

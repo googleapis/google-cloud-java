@@ -185,8 +185,43 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   *
+   * @return Whether the expressSettings field is set.
+   */
+  boolean hasExpressSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   *
+   * @return The expressSettings.
+   */
+  com.google.recaptchaenterprise.v1.ExpressKeySettings getExpressSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   */
+  com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder getExpressSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -197,7 +232,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -211,7 +246,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,7 +257,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -237,7 +272,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

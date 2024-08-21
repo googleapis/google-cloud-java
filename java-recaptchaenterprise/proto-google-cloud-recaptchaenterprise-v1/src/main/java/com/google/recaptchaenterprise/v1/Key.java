@@ -90,6 +90,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     WEB_SETTINGS(3),
     ANDROID_SETTINGS(4),
     IOS_SETTINGS(5),
+    EXPRESS_SETTINGS(11),
     PLATFORMSETTINGS_NOT_SET(0);
     private final int value;
 
@@ -114,6 +115,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
           return ANDROID_SETTINGS;
         case 5:
           return IOS_SETTINGS;
+        case 11:
+          return EXPRESS_SETTINGS;
         case 0:
           return PLATFORMSETTINGS_NOT_SET;
         default:
@@ -388,6 +391,58 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return com.google.recaptchaenterprise.v1.IOSKeySettings.getDefaultInstance();
   }
 
+  public static final int EXPRESS_SETTINGS_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   *
+   * @return Whether the expressSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpressSettings() {
+    return platformSettingsCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   *
+   * @return The expressSettings.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.ExpressKeySettings getExpressSettings() {
+    if (platformSettingsCase_ == 11) {
+      return (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_;
+    }
+    return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that can be used by reCAPTCHA Express.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder
+      getExpressSettingsOrBuilder() {
+    if (platformSettingsCase_ == 11) {
+      return (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_;
+    }
+    return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+  }
+
   public static final int LABELS_FIELD_NUMBER = 6;
 
   private static final class LabelsDefaultEntryHolder {
@@ -419,7 +474,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -442,7 +497,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -456,7 +511,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -477,7 +532,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+   * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -696,6 +751,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10, getWafSettings());
     }
+    if (platformSettingsCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -745,6 +804,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getWafSettings());
     }
+    if (platformSettingsCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -785,6 +849,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getIosSettings().equals(other.getIosSettings())) return false;
+        break;
+      case 11:
+        if (!getExpressSettings().equals(other.getExpressSettings())) return false;
         break;
       case 0:
       default:
@@ -832,6 +899,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + IOS_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getIosSettings().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + EXPRESS_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getExpressSettings().hashCode();
         break;
       case 0:
       default:
@@ -1019,6 +1090,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       if (iosSettingsBuilder_ != null) {
         iosSettingsBuilder_.clear();
       }
+      if (expressSettingsBuilder_ != null) {
+        expressSettingsBuilder_.clear();
+      }
       internalGetMutableLabels().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1080,21 +1154,21 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.testingOptions_ =
             testingOptionsBuilder_ == null ? testingOptions_ : testingOptionsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.wafSettings_ =
             wafSettingsBuilder_ == null ? wafSettings_ : wafSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -1113,6 +1187,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       if (platformSettingsCase_ == 5 && iosSettingsBuilder_ != null) {
         result.platformSettings_ = iosSettingsBuilder_.build();
+      }
+      if (platformSettingsCase_ == 11 && expressSettingsBuilder_ != null) {
+        result.platformSettings_ = expressSettingsBuilder_.build();
       }
     }
 
@@ -1172,7 +1249,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1196,6 +1273,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         case IOS_SETTINGS:
           {
             mergeIosSettings(other.getIosSettings());
+            break;
+          }
+        case EXPRESS_SETTINGS:
+          {
+            mergeExpressSettings(other.getExpressSettings());
             break;
           }
         case PLATFORMSETTINGS_NOT_SET:
@@ -1268,27 +1350,33 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 74:
               {
                 input.readMessage(getTestingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getWafSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getExpressSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                platformSettingsCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2173,6 +2261,220 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return iosSettingsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.ExpressKeySettings,
+            com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder,
+            com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder>
+        expressSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     *
+     * @return Whether the expressSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpressSettings() {
+      return platformSettingsCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     *
+     * @return The expressSettings.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.ExpressKeySettings getExpressSettings() {
+      if (expressSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 11) {
+          return (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_;
+        }
+        return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+      } else {
+        if (platformSettingsCase_ == 11) {
+          return expressSettingsBuilder_.getMessage();
+        }
+        return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    public Builder setExpressSettings(com.google.recaptchaenterprise.v1.ExpressKeySettings value) {
+      if (expressSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        platformSettings_ = value;
+        onChanged();
+      } else {
+        expressSettingsBuilder_.setMessage(value);
+      }
+      platformSettingsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    public Builder setExpressSettings(
+        com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder builderForValue) {
+      if (expressSettingsBuilder_ == null) {
+        platformSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        expressSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      platformSettingsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    public Builder mergeExpressSettings(
+        com.google.recaptchaenterprise.v1.ExpressKeySettings value) {
+      if (expressSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 11
+            && platformSettings_
+                != com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance()) {
+          platformSettings_ =
+              com.google.recaptchaenterprise.v1.ExpressKeySettings.newBuilder(
+                      (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          platformSettings_ = value;
+        }
+        onChanged();
+      } else {
+        if (platformSettingsCase_ == 11) {
+          expressSettingsBuilder_.mergeFrom(value);
+        } else {
+          expressSettingsBuilder_.setMessage(value);
+        }
+      }
+      platformSettingsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    public Builder clearExpressSettings() {
+      if (expressSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 11) {
+          platformSettingsCase_ = 0;
+          platformSettings_ = null;
+          onChanged();
+        }
+      } else {
+        if (platformSettingsCase_ == 11) {
+          platformSettingsCase_ = 0;
+          platformSettings_ = null;
+        }
+        expressSettingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    public com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder
+        getExpressSettingsBuilder() {
+      return getExpressSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder
+        getExpressSettingsOrBuilder() {
+      if ((platformSettingsCase_ == 11) && (expressSettingsBuilder_ != null)) {
+        return expressSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        if (platformSettingsCase_ == 11) {
+          return (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_;
+        }
+        return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that can be used by reCAPTCHA Express.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.ExpressKeySettings,
+            com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder,
+            com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder>
+        getExpressSettingsFieldBuilder() {
+      if (expressSettingsBuilder_ == null) {
+        if (!(platformSettingsCase_ == 11)) {
+          platformSettings_ =
+              com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
+        }
+        expressSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.ExpressKeySettings,
+                com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder,
+                com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder>(
+                (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_,
+                getParentForChildren(),
+                isClean());
+        platformSettings_ = null;
+      }
+      platformSettingsCase_ = 11;
+      onChanged();
+      return expressSettingsBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2190,7 +2492,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -2203,7 +2505,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2226,7 +2528,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2240,7 +2542,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2261,7 +2563,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2279,7 +2581,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2288,7 +2590,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2303,7 +2605,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2311,7 +2613,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2324,7 +2626,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2332,14 +2634,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. See [Creating and managing labels]
-     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+     * (https://cloud.google.com/recaptcha/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2363,7 +2665,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2407,7 +2709,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2428,7 +2730,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2445,7 +2747,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2456,7 +2758,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2473,7 +2775,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2494,7 +2796,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2566,7 +2868,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the testingOptions field is set.
      */
     public boolean hasTestingOptions() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2610,7 +2912,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         testingOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2632,7 +2934,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         testingOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2649,7 +2951,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
       if (testingOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && testingOptions_ != null
             && testingOptions_
                 != com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()) {
@@ -2661,7 +2963,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         testingOptionsBuilder_.mergeFrom(value);
       }
       if (testingOptions_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2678,7 +2980,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTestingOptions() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       testingOptions_ = null;
       if (testingOptionsBuilder_ != null) {
         testingOptionsBuilder_.dispose();
@@ -2699,7 +3001,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TestingOptions.Builder getTestingOptionsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTestingOptionsFieldBuilder().getBuilder();
     }
@@ -2771,7 +3073,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the wafSettings field is set.
      */
     public boolean hasWafSettings() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2815,7 +3117,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         wafSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2837,7 +3139,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         wafSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2854,7 +3156,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
       if (wafSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && wafSettings_ != null
             && wafSettings_ != com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()) {
           getWafSettingsBuilder().mergeFrom(value);
@@ -2865,7 +3167,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         wafSettingsBuilder_.mergeFrom(value);
       }
       if (wafSettings_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2882,7 +3184,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearWafSettings() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       wafSettings_ = null;
       if (wafSettingsBuilder_ != null) {
         wafSettingsBuilder_.dispose();
@@ -2903,7 +3205,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.WafSettings.Builder getWafSettingsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getWafSettingsFieldBuilder().getBuilder();
     }

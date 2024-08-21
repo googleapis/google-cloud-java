@@ -37,6 +37,8 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.recaptchaenterprise.v1.AccountDefenderAssessment;
 import com.google.recaptchaenterprise.v1.AccountVerificationInfo;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -57,6 +59,7 @@ import com.google.recaptchaenterprise.v1.FraudSignals;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
@@ -831,6 +834,82 @@ public class RecaptchaEnterpriseServiceClientTest {
               .setSkipBillingCheck(true)
               .build();
       client.migrateKey(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addIpOverrideTest() throws Exception {
+    AddIpOverrideResponse expectedResponse = AddIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    AddIpOverrideResponse actualResponse = client.addIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddIpOverrideRequest actualRequest = ((AddIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addIpOverrideExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.addIpOverride(name, ipOverrideData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addIpOverrideTest2() throws Exception {
+    AddIpOverrideResponse expectedResponse = AddIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    AddIpOverrideResponse actualResponse = client.addIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddIpOverrideRequest actualRequest = ((AddIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addIpOverrideExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.addIpOverride(name, ipOverrideData);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
