@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.45.0 (2024-08-21)
+
+### Features
+
+* add AddIpOverride RPC ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+
+
+
 ## 3.44.0 (2024-07-31)
 
 * No change

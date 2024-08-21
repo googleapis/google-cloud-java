@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.48.0 (2024-08-21)
+
+### Features
+
+* add block_project_ssh_keys field to the v1alpha job API to block project level ssh keys access to Batch created VMs ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+### Bug Fixes
+
+* Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* Refine usage scope for fields `task_execution` and `task_state` in StatusEvent ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 0.47.0 (2024-07-31)
 
 * No change

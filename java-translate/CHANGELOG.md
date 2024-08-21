@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.48.0 (2024-08-21)
+
+### Features
+
+* Adds AdaptiveMt HTML/Glossary support ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+### Bug Fixes
+
+* Format comment in AutoML Translation ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
 ## 2.47.0 (2024-07-31)
 
 * No change

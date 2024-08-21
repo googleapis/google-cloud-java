@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.0 (2024-08-21)
+
+### Features
+
+* add custom headers support in VertexAI ([#11085](https://github.com/googleapis/google-cloud-java/issues/11085)) ([5bed284](https://github.com/googleapis/google-cloud-java/commit/5bed2849157e35c737eeff34fb749a84639f4f66))
+
+
+
 ## 1.7.0 (2024-07-31)
 
 * No change
