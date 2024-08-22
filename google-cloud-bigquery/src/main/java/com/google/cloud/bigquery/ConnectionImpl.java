@@ -53,6 +53,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -418,12 +419,15 @@ class ConnectionImpl implements Connection {
   @VisibleForTesting
   BigQueryResult getResultSet(
       GetQueryResultsResponse firstPage, JobId jobId, String sql, Boolean hasQueryParameters) {
-    return getSubsequentQueryResultsWithJob(
-        firstPage.getTotalRows().longValue(),
-        (long) firstPage.getRows().size(),
-        jobId,
-        firstPage,
-        hasQueryParameters);
+    if (firstPage.getTotalRows().compareTo(BigInteger.ZERO) > 0) {
+      return getSubsequentQueryResultsWithJob(
+          firstPage.getTotalRows().longValue(),
+          (long) firstPage.getRows().size(),
+          jobId,
+          firstPage,
+          hasQueryParameters);
+    }
+    return new BigQueryResultImpl(Schema.fromPb(firstPage.getSchema()), 0, null, null);
   }
 
   static class EndOfFieldValueList

@@ -100,6 +100,15 @@ public class ConnectionImplTest {
           .setTotalBytesProcessed(42L)
           .setTotalRows(BigInteger.valueOf(1L))
           .setSchema(FAST_QUERY_TABLESCHEMA);
+  private static final GetQueryResultsResponse GET_QUERY_RESULTS_RESPONSE_EMPTY =
+      new GetQueryResultsResponse()
+          .setJobReference(QUERY_JOB.toPb())
+          .setJobComplete(true)
+          .setCacheHit(false)
+          .setPageToken(PAGE_TOKEN)
+          .setTotalBytesProcessed(0L)
+          .setTotalRows(BigInteger.valueOf(0L))
+          .setSchema(FAST_QUERY_TABLESCHEMA);
 
   private static final GetQueryResultsResponse GET_QUERY_RESULTS_RESPONSE_NULL_SCHEMA =
       new GetQueryResultsResponse()
@@ -375,7 +384,6 @@ public class ConnectionImplTest {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     com.google.api.services.bigquery.model.Job jobResponseMock =
         new com.google.api.services.bigquery.model.Job()
-            // .setConfiguration(QUERY_JOB.g)
             .setJobReference(QUERY_JOB.toPb())
             .setId(JOB)
             .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
@@ -396,6 +404,29 @@ public class ConnectionImplTest {
         .thenReturn(jobResponseMock); // RPC call in createQueryJob
     BigQueryResult res = connectionSpy.executeSelect(SQL_QUERY);
     assertEquals(res.getTotalRows(), 2);
+    assertEquals(QUERY_SCHEMA, res.getSchema());
+    verify(bigqueryRpcMock, times(1))
+        .createJobForQuery(any(com.google.api.services.bigquery.model.Job.class));
+  }
+
+  // calls executeSelect with a nonFast query where the query returns an empty result.
+  @Test
+  public void testLegacyQuerySinglePageEmptyResults() throws BigQuerySQLException {
+    ConnectionImpl connectionSpy = Mockito.spy(connection);
+    com.google.api.services.bigquery.model.Job jobResponseMock =
+        new com.google.api.services.bigquery.model.Job()
+            .setJobReference(QUERY_JOB.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    // emulating a legacy query
+    doReturn(false).when(connectionSpy).isFastQuerySupported();
+    doReturn(GET_QUERY_RESULTS_RESPONSE_EMPTY)
+        .when(connectionSpy)
+        .getQueryResultsFirstPage(any(JobId.class));
+    when(bigqueryRpcMock.createJobForQuery(any(com.google.api.services.bigquery.model.Job.class)))
+        .thenReturn(jobResponseMock); // RPC call in createQueryJob
+    BigQueryResult res = connectionSpy.executeSelect(SQL_QUERY);
+    assertEquals(res.getTotalRows(), 0);
     assertEquals(QUERY_SCHEMA, res.getSchema());
     verify(bigqueryRpcMock, times(1))
         .createJobForQuery(any(com.google.api.services.bigquery.model.Job.class));
