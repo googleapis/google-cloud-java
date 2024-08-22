@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.*;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.LazyStringArrayList;
-import com.google.protobuf.UnmodifiableLazyStringList;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -109,14 +108,16 @@ public class RowCellTest {
 
   @Test
   public void testSerialization() throws IOException, ClassNotFoundException {
-    LazyStringArrayList lazyList = new LazyStringArrayList();
-    lazyList.add("lazy");
-    lazyList.add("very lazy");
+    LazyStringArrayList lazyListNonEmpty =
+        new LazyStringArrayList(ImmutableList.of("lazy", "very lazy"));
+    lazyListNonEmpty.makeImmutable();
+    LazyStringArrayList lazyListEmpty = LazyStringArrayList.emptyList();
+    lazyListEmpty.makeImmutable();
     List[] labelLists = {
       Arrays.asList("str1", "str2", "str3"),
       ImmutableList.of("string1", "string2"),
-      new UnmodifiableLazyStringList(lazyList),
-      new UnmodifiableLazyStringList(LazyStringArrayList.EMPTY)
+      lazyListNonEmpty,
+      lazyListEmpty
     };
 
     for (int i = 0; i < labelLists.length; i++) {
