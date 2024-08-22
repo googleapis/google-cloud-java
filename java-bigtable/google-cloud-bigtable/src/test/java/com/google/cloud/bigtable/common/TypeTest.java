@@ -126,7 +126,8 @@ public class TypeTest {
             StructWithSchema.fromProto(structProto.getStructType()))
         .addEqualityGroup(
             StructWithSchema.fromProto(complexStructProto.getStructType()),
-            StructWithSchema.fromProto(complexStructProto.getStructType()));
+            StructWithSchema.fromProto(complexStructProto.getStructType()))
+        .testEquals();
   }
 
   @Test
