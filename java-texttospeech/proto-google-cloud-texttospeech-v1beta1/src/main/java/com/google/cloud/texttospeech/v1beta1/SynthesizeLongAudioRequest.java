@@ -126,7 +126,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
-   * While Long Audio is in preview, SSML is temporarily unsupported.
    * </pre>
    *
    * <code>
@@ -144,7 +143,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
-   * While Long Audio is in preview, SSML is temporarily unsupported.
    * </pre>
    *
    * <code>
@@ -164,7 +162,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
-   * While Long Audio is in preview, SSML is temporarily unsupported.
    * </pre>
    *
    * <code>
@@ -949,7 +946,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -966,7 +962,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -989,7 +984,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1014,7 +1008,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1037,7 +1030,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1068,7 +1060,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1090,7 +1081,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1107,7 +1097,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
@@ -1128,7 +1117,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
-     * While Long Audio is in preview, SSML is temporarily unsupported.
      * </pre>
      *
      * <code>
