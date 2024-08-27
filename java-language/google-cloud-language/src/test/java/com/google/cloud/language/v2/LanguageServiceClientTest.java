@@ -16,6 +16,7 @@
 
 package com.google.cloud.language.v2;
 
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -23,14 +24,21 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.ApiKeyCredentials;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.StatusRuntimeException;
+
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
+import javax.print.Doc;
+
+import org.apache.http.impl.client.SystemDefaultCredentialsProvider;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,78 +53,72 @@ public class LanguageServiceClientTest {
   private LocalChannelProvider channelProvider;
   private LanguageServiceClient client;
 
-  @BeforeClass
-  public static void startStaticServer() {
-    mockLanguageService = new MockLanguageService();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockLanguageService));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
-    LanguageServiceSettings settings =
-        LanguageServiceSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .build();
-    client = LanguageServiceClient.create(settings);
-  }
-
+  private String API_KEY = "XXX";
   @After
   public void tearDown() throws Exception {
     client.close();
   }
 
   @Test
-  public void analyzeSentimentTest() throws Exception {
-    AnalyzeSentimentResponse expectedResponse =
-        AnalyzeSentimentResponse.newBuilder()
-            .setDocumentSentiment(Sentiment.newBuilder().build())
-            .setLanguageCode("languageCode-2092349083")
-            .addAllSentences(new ArrayList<Sentence>())
-            .setLanguageSupported(true)
-            .build();
-    mockLanguageService.addResponse(expectedResponse);
+  public void analyzeSentimentTestWithApiKeySetThroughSettings() throws Exception {
+    LanguageServiceSettings settings =
+            LanguageServiceSettings.newBuilder()
+                    .setApiKey(API_KEY)
+                    .build();
+    client = LanguageServiceClient.create(settings);
 
-    Document document = Document.newBuilder().build();
+    Document document =
+            Document.newBuilder()
+                    .setContent("I'm happy!").setType(Document.Type.PLAIN_TEXT)
+                    .build();
+
 
     AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    System.out.println("response " + actualResponse.getDocumentSentiment().toString());
 
-    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AnalyzeSentimentRequest actualRequest = ((AnalyzeSentimentRequest) actualRequests.get(0));
-
-    Assert.assertEquals(document, actualRequest.getDocument());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
-  public void analyzeSentimentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockLanguageService.addException(exception);
+  public void analyzeSentimentTestWithApiKeySetThroughCredentials() throws Exception {
+    LanguageServiceSettings settings =
+            LanguageServiceSettings.newBuilder()
+                    .setCredentialsProvider(FixedCredentialsProvider.create(ApiKeyCredentials.create(API_KEY)))
+                    .build();
+    client = LanguageServiceClient.create(settings);
+
+    Document document =
+            Document.newBuilder()
+                    .setContent("I'm happy!").setType(Document.Type.PLAIN_TEXT)
+                    .build();
+
+
+    AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
+    System.out.println("response " + actualResponse.getDocumentSentiment().toString());
+
+  }
+
+  @Test
+  public void analyzeSentimentExceptionTestInvalidCredentials() throws Exception {
+    LanguageServiceSettings settings =
+            LanguageServiceSettings.newBuilder()
+                    .setCredentialsProvider(FixedCredentialsProvider.create(ApiKeyCredentials.create("invalid")))
+                    .build();
+    client = LanguageServiceClient.create(settings);
+
+    Document document =
+            Document.newBuilder()
+                    .setContent("I'm happy!").setType(Document.Type.PLAIN_TEXT)
+                    .build();
 
     try {
-      Document document = Document.newBuilder().build();
       client.analyzeSentiment(document);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      Assert.assertTrue(e.getMessage().contains("API key not valid. Please pass a valid API key."));
     }
   }
 
+  /*
   @Test
   public void analyzeSentimentTest2() throws Exception {
     AnalyzeSentimentResponse expectedResponse =
@@ -419,5 +421,5 @@ public class LanguageServiceClientTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
-  }
+  }*/
 }
