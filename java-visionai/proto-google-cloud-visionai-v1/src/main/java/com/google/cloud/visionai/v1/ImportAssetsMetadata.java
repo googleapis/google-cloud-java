@@ -112,6 +112,59 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         : metadata_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private com.google.cloud.visionai.v1.BatchOperationStatus status_;
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.cloud.visionai.v1.BatchOperationStatus getStatus() {
+    return status_ == null
+        ? com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()
+        : status_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder getStatusOrBuilder() {
+    return status_ == null
+        ? com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()
+        : status_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -129,6 +182,9 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getMetadata());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -140,6 +196,9 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMetadata());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -161,6 +220,10 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus().equals(other.getStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -175,6 +238,10 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -317,6 +384,7 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMetadataFieldBuilder();
+        getStatusFieldBuilder();
       }
     }
 
@@ -328,6 +396,11 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       if (metadataBuilder_ != null) {
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
+      }
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
       }
       return this;
     }
@@ -369,6 +442,10 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -422,6 +499,9 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -454,6 +534,12 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -657,6 +743,201 @@ public final class ImportAssetsMetadata extends com.google.protobuf.GeneratedMes
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.cloud.visionai.v1.BatchOperationStatus status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.visionai.v1.BatchOperationStatus,
+            com.google.cloud.visionai.v1.BatchOperationStatus.Builder,
+            com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder>
+        statusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     *
+     * @return The status.
+     */
+    public com.google.cloud.visionai.v1.BatchOperationStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null
+            ? com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()
+            : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public Builder setStatus(com.google.cloud.visionai.v1.BatchOperationStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public Builder setStatus(
+        com.google.cloud.visionai.v1.BatchOperationStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public Builder mergeStatus(com.google.cloud.visionai.v1.BatchOperationStatus value) {
+      if (statusBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
+        } else {
+          status_ = value;
+        }
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+      if (status_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public com.google.cloud.visionai.v1.BatchOperationStatus.Builder getStatusBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    public com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null
+            ? com.google.cloud.visionai.v1.BatchOperationStatus.getDefaultInstance()
+            : status_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The importing status including partial failures, if the implementation can
+     * provide such information during the progress of the ImportAssets.
+     * </pre>
+     *
+     * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.visionai.v1.BatchOperationStatus,
+            com.google.cloud.visionai.v1.BatchOperationStatus.Builder,
+            com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder>
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.visionai.v1.BatchOperationStatus,
+                com.google.cloud.visionai.v1.BatchOperationStatus.Builder,
+                com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder>(
+                getStatus(), getParentForChildren(), isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
 
     @java.lang.Override

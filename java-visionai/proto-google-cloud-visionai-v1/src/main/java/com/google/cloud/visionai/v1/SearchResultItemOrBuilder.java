@@ -164,10 +164,13 @@ public interface SearchResultItemOrBuilder
    *
    *
    * <pre>
-   * Relevance of this `SearchResultItem` to user search request.
-   * Currently available only in Image Warehouse, and by default represents
-   * cosine similarity.  In the future can be other measures such as "dot
-   * product" or "topicality" requested in the search request.
+   * Available to IMAGE corpus types.
+   * Relevance of this `SearchResultItem` to user search query (text query or
+   * image query).
+   * By default this represents cosine similarity between the query and the
+   * retrieved media content. The value is in the range of [-1, 1].
+   * Note that search ranking is not only decided by this relevance score,
+   * but also other factors such as the match of annotations.
    * </pre>
    *
    * <code>double relevance = 6;</code>

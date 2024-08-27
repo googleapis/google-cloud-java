@@ -555,6 +555,80 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         : searchCapabilitySetting_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 11;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the corpus is a valid zone separated corpus and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the corpus is a valid zone separated corpus and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 12;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the corpus is a valid zone isolated corpus and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the corpus is a valid zone isolated corpus and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -587,6 +661,12 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(8, getSearchCapabilitySetting());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(11, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(12, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -615,6 +695,12 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSearchCapabilitySetting());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -642,6 +728,14 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     if (hasSearchCapabilitySetting()) {
       if (!getSearchCapabilitySetting().equals(other.getSearchCapabilitySetting())) return false;
     }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -668,6 +762,14 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
     if (hasSearchCapabilitySetting()) {
       hash = (37 * hash) + SEARCH_CAPABILITY_SETTING_FIELD_NUMBER;
       hash = (53 * hash) + getSearchCapabilitySetting().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -833,6 +935,8 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         searchCapabilitySettingBuilder_.dispose();
         searchCapabilitySettingBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -891,6 +995,14 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
                 ? searchCapabilitySetting_
                 : searchCapabilitySettingBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -964,6 +1076,12 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSearchCapabilitySetting()) {
         mergeSearchCapabilitySetting(other.getSearchCapabilitySetting());
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1027,6 +1145,18 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 88:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 88
+            case 96:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1889,6 +2019,158 @@ public final class Corpus extends com.google.protobuf.GeneratedMessageV3
         searchCapabilitySetting_ = null;
       }
       return searchCapabilitySettingBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the corpus is a valid zone separated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the corpus is a valid zone separated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the corpus is a valid zone separated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the corpus is a valid zone separated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the corpus is a valid zone isolated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the corpus is a valid zone isolated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the corpus is a valid zone isolated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the corpus is a valid zone isolated corpus and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

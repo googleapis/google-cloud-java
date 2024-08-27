@@ -198,7 +198,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The feature is in progress.
+       * The ml model analysis is in progress.
        * </pre>
        *
        * <code>IN_PROGRESS = 1;</code>
@@ -208,7 +208,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The process is successfully done.
+       * The ml model analysis is successfully done.
        * </pre>
        *
        * <code>SUCCEEDED = 2;</code>
@@ -218,7 +218,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The process failed.
+       * The ml model analysis failed.
        * </pre>
        *
        * <code>FAILED = 3;</code>
@@ -241,7 +241,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The feature is in progress.
+       * The ml model analysis is in progress.
        * </pre>
        *
        * <code>IN_PROGRESS = 1;</code>
@@ -251,7 +251,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The process is successfully done.
+       * The ml model analysis is successfully done.
        * </pre>
        *
        * <code>SUCCEEDED = 2;</code>
@@ -261,7 +261,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The process failed.
+       * The ml model analysis failed.
        * </pre>
        *
        * <code>FAILED = 3;</code>

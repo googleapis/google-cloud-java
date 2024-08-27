@@ -217,6 +217,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -277,6 +279,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -337,6 +341,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -411,6 +417,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -485,6 +493,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -640,6 +650,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -708,6 +720,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -776,6 +790,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -865,6 +881,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -940,6 +958,8 @@ public class AlloyDBAdminClientTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1105,6 +1125,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1167,6 +1188,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1229,6 +1251,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1305,6 +1328,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1381,6 +1405,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1459,6 +1484,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1596,6 +1622,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1753,6 +1780,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1823,6 +1851,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1893,6 +1922,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1966,6 +1996,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2039,6 +2070,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2109,6 +2141,7 @@ public class AlloyDBAdminClientTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -494,7 +494,7 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -503,7 +503,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=547
+   *     google/cloud/alloydb/v1beta/resources.proto;l=574
    * @return The network.
    */
   @java.lang.Deprecated
@@ -515,7 +515,7 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -524,7 +524,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=547
+   *     google/cloud/alloydb/v1beta/resources.proto;l=574
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -748,7 +748,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=582
+   *     google/cloud/alloydb/v1beta/resources.proto;l=609
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -763,7 +763,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=582
+   *     google/cloud/alloydb/v1beta/resources.proto;l=609
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1045,6 +1045,95 @@ public interface ClusterOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceUpdatePolicy field is set.
+   */
+  boolean hasMaintenanceUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceUpdatePolicy.
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy getMaintenanceUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder
+      getMaintenanceUpdatePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceSchedule getMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder();
 
   com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
 }

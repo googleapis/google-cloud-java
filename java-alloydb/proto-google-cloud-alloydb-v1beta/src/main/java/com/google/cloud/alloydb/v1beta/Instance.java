@@ -51,6 +51,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     ipAddress_ = "";
     publicIpAddress_ = "";
     etag_ = "";
+    outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -9678,6 +9679,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The enablePublicIp.
      */
     boolean getEnablePublicIp();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enabling an outbound public IP address to support a database
+     * server sending requests out into the internet.
+     * </pre>
+     *
+     * <code>bool enable_outbound_public_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableOutboundPublicIp.
+     */
+    boolean getEnableOutboundPublicIp();
   }
   /**
    *
@@ -10512,6 +10527,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return enablePublicIp_;
     }
 
+    public static final int ENABLE_OUTBOUND_PUBLIC_IP_FIELD_NUMBER = 3;
+    private boolean enableOutboundPublicIp_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enabling an outbound public IP address to support a database
+     * server sending requests out into the internet.
+     * </pre>
+     *
+     * <code>bool enable_outbound_public_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableOutboundPublicIp.
+     */
+    @java.lang.Override
+    public boolean getEnableOutboundPublicIp() {
+      return enableOutboundPublicIp_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10532,6 +10566,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (enablePublicIp_ != false) {
         output.writeBool(2, enablePublicIp_);
       }
+      if (enableOutboundPublicIp_ != false) {
+        output.writeBool(3, enableOutboundPublicIp_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10548,6 +10585,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (enablePublicIp_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enablePublicIp_);
+      }
+      if (enableOutboundPublicIp_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableOutboundPublicIp_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10568,6 +10608,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!getAuthorizedExternalNetworksList().equals(other.getAuthorizedExternalNetworksList()))
         return false;
       if (getEnablePublicIp() != other.getEnablePublicIp()) return false;
+      if (getEnableOutboundPublicIp() != other.getEnableOutboundPublicIp()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10585,6 +10626,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + ENABLE_PUBLIC_IP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePublicIp());
+      hash = (37 * hash) + ENABLE_OUTBOUND_PUBLIC_IP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableOutboundPublicIp());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10735,6 +10778,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         enablePublicIp_ = false;
+        enableOutboundPublicIp_ = false;
         return this;
       }
 
@@ -10790,6 +10834,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.enablePublicIp_ = enablePublicIp_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableOutboundPublicIp_ = enableOutboundPublicIp_;
         }
       }
 
@@ -10873,6 +10920,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (other.getEnablePublicIp() != false) {
           setEnablePublicIp(other.getEnablePublicIp());
         }
+        if (other.getEnableOutboundPublicIp() != false) {
+          setEnableOutboundPublicIp(other.getEnableOutboundPublicIp());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -10921,6 +10971,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 24:
+                {
+                  enableOutboundPublicIp_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11424,6 +11480,62 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public Builder clearEnablePublicIp() {
         bitField0_ = (bitField0_ & ~0x00000002);
         enablePublicIp_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableOutboundPublicIp_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling an outbound public IP address to support a database
+       * server sending requests out into the internet.
+       * </pre>
+       *
+       * <code>bool enable_outbound_public_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableOutboundPublicIp.
+       */
+      @java.lang.Override
+      public boolean getEnableOutboundPublicIp() {
+        return enableOutboundPublicIp_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling an outbound public IP address to support a database
+       * server sending requests out into the internet.
+       * </pre>
+       *
+       * <code>bool enable_outbound_public_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableOutboundPublicIp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableOutboundPublicIp(boolean value) {
+
+        enableOutboundPublicIp_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling an outbound public IP address to support a database
+       * server sending requests out into the internet.
+       * </pre>
+       *
+       * <code>bool enable_outbound_public_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableOutboundPublicIp() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableOutboundPublicIp_ = false;
         onChanged();
         return this;
       }
@@ -12637,7 +12749,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The publicIpAddress.
    */
@@ -12662,7 +12776,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for publicIpAddress.
    */
@@ -13115,6 +13231,78 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : networkConfig_;
   }
 
+  public static final int OUTBOUND_PUBLIC_IP_ADDRESSES_FIELD_NUMBER = 34;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList outboundPublicIpAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the outboundPublicIpAddresses.
+   */
+  public com.google.protobuf.ProtocolStringList getOutboundPublicIpAddressesList() {
+    return outboundPublicIpAddresses_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of outboundPublicIpAddresses.
+   */
+  public int getOutboundPublicIpAddressesCount() {
+    return outboundPublicIpAddresses_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The outboundPublicIpAddresses at the given index.
+   */
+  public java.lang.String getOutboundPublicIpAddresses(int index) {
+    return outboundPublicIpAddresses_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the outboundPublicIpAddresses at the given index.
+   */
+  public com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index) {
+    return outboundPublicIpAddresses_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13210,6 +13398,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(29, getNetworkConfig());
+    }
+    for (int i = 0; i < outboundPublicIpAddresses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 34, outboundPublicIpAddresses_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -13328,6 +13520,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < outboundPublicIpAddresses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(outboundPublicIpAddresses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getOutboundPublicIpAddressesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13403,6 +13603,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkConfig()) {
       if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
+    if (!getOutboundPublicIpAddressesList().equals(other.getOutboundPublicIpAddressesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -13497,6 +13699,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkConfig()) {
       hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    if (getOutboundPublicIpAddressesCount() > 0) {
+      hash = (37 * hash) + OUTBOUND_PUBLIC_IP_ADDRESSES_FIELD_NUMBER;
+      hash = (53 * hash) + getOutboundPublicIpAddressesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -13765,6 +13971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
+      outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -13920,6 +14127,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.networkConfig_ =
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        outboundPublicIpAddresses_.makeImmutable();
+        result.outboundPublicIpAddresses_ = outboundPublicIpAddresses_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -14084,6 +14295,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasNetworkConfig()) {
         mergeNetworkConfig(other.getNetworkConfig());
+      }
+      if (!other.outboundPublicIpAddresses_.isEmpty()) {
+        if (outboundPublicIpAddresses_.isEmpty()) {
+          outboundPublicIpAddresses_ = other.outboundPublicIpAddresses_;
+          bitField0_ |= 0x08000000;
+        } else {
+          ensureOutboundPublicIpAddressesIsMutable();
+          outboundPublicIpAddresses_.addAll(other.outboundPublicIpAddresses_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -14301,6 +14522,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x04000000;
                 break;
               } // case 234
+            case 274:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOutboundPublicIpAddressesIsMutable();
+                outboundPublicIpAddresses_.add(s);
+                break;
+              } // case 274
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17515,7 +17743,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * end-user application.
      * </pre>
      *
-     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The publicIpAddress.
      */
@@ -17539,7 +17769,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * end-user application.
      * </pre>
      *
-     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for publicIpAddress.
      */
@@ -17563,7 +17795,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * end-user application.
      * </pre>
      *
-     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The publicIpAddress to set.
      * @return This builder for chaining.
@@ -17586,7 +17820,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * end-user application.
      * </pre>
      *
-     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -17605,7 +17841,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * end-user application.
      * </pre>
      *
-     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for publicIpAddress to set.
      * @return This builder for chaining.
@@ -18878,6 +19116,199 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         networkConfig_ = null;
       }
       return networkConfigBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList outboundPublicIpAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureOutboundPublicIpAddressesIsMutable() {
+      if (!outboundPublicIpAddresses_.isModifiable()) {
+        outboundPublicIpAddresses_ =
+            new com.google.protobuf.LazyStringArrayList(outboundPublicIpAddresses_);
+      }
+      bitField0_ |= 0x08000000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return A list containing the outboundPublicIpAddresses.
+     */
+    public com.google.protobuf.ProtocolStringList getOutboundPublicIpAddressesList() {
+      outboundPublicIpAddresses_.makeImmutable();
+      return outboundPublicIpAddresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The count of outboundPublicIpAddresses.
+     */
+    public int getOutboundPublicIpAddressesCount() {
+      return outboundPublicIpAddresses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The outboundPublicIpAddresses at the given index.
+     */
+    public java.lang.String getOutboundPublicIpAddresses(int index) {
+      return outboundPublicIpAddresses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the outboundPublicIpAddresses at the given index.
+     */
+    public com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index) {
+      return outboundPublicIpAddresses_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The outboundPublicIpAddresses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutboundPublicIpAddresses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOutboundPublicIpAddressesIsMutable();
+      outboundPublicIpAddresses_.set(index, value);
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The outboundPublicIpAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOutboundPublicIpAddresses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOutboundPublicIpAddressesIsMutable();
+      outboundPublicIpAddresses_.add(value);
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param values The outboundPublicIpAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllOutboundPublicIpAddresses(java.lang.Iterable<java.lang.String> values) {
+      ensureOutboundPublicIpAddressesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outboundPublicIpAddresses_);
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutboundPublicIpAddresses() {
+      outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All outbound public IP addresses configured for the instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the outboundPublicIpAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOutboundPublicIpAddressesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureOutboundPublicIpAddressesIsMutable();
+      outboundPublicIpAddresses_.add(value);
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

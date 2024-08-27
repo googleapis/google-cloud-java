@@ -861,6 +861,8 @@ public class WarehouseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -919,6 +921,8 @@ public class WarehouseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -977,6 +981,8 @@ public class WarehouseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1032,6 +1038,8 @@ public class WarehouseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -1076,6 +1084,8 @@ public class WarehouseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -1290,6 +1300,8 @@ public class WarehouseClientTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1343,6 +1355,8 @@ public class WarehouseClientTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -1385,6 +1399,8 @@ public class WarehouseClientTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -1427,6 +1443,8 @@ public class WarehouseClientTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -3526,6 +3544,8 @@ public class WarehouseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3585,6 +3605,8 @@ public class WarehouseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3644,6 +3666,8 @@ public class WarehouseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -3688,6 +3712,8 @@ public class WarehouseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockWarehouse.addResponse(expectedResponse);
 
@@ -3820,6 +3846,8 @@ public class WarehouseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

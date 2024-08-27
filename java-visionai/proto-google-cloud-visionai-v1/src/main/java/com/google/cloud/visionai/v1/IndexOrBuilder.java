@@ -306,5 +306,63 @@ public interface IndexOrBuilder
   com.google.cloud.visionai.v1.DeployedIndexReferenceOrBuilder getDeployedIndexesOrBuilder(
       int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index is a valid zone separated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index is a valid zone separated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index is a valid zone isolated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index is a valid zone isolated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
   com.google.cloud.visionai.v1.Index.AssetFilterCase getAssetFilterCase();
 }

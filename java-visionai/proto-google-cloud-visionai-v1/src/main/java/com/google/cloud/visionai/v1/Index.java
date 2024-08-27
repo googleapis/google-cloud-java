@@ -718,6 +718,80 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     return deployedIndexes_.get(index);
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 11;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index is a valid zone separated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index is a valid zone separated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 12;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index is a valid zone isolated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index is a valid zone isolated index and false if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -756,6 +830,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (assetFilterCase_ == 9) {
       output.writeBool(9, (boolean) ((java.lang.Boolean) assetFilter_));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(11, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(12, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -791,6 +871,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               9, (boolean) ((java.lang.Boolean) assetFilter_));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -819,6 +905,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getDeployedIndexesList().equals(other.getDeployedIndexesList())) return false;
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
     if (!getAssetFilterCase().equals(other.getAssetFilterCase())) return false;
     switch (assetFilterCase_) {
       case 9:
@@ -857,6 +951,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (getDeployedIndexesCount() > 0) {
       hash = (37 * hash) + DEPLOYED_INDEXES_FIELD_NUMBER;
       hash = (53 * hash) + getDeployedIndexesList().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     switch (assetFilterCase_) {
       case 9:
@@ -1038,6 +1140,8 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         deployedIndexesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       assetFilterCase_ = 0;
       assetFilter_ = null;
       return this;
@@ -1109,6 +1213,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1214,6 +1326,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       switch (other.getAssetFilterCase()) {
         case ENTIRE_CORPUS:
           {
@@ -1307,6 +1425,18 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 assetFilterCase_ = 9;
                 break;
               } // case 72
+            case 88:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+            case 96:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2676,6 +2806,158 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         deployedIndexes_ = null;
       }
       return deployedIndexesBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the index is a valid zone separated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the index is a valid zone separated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the index is a valid zone separated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Separation enabled via an Org Policy constraint. It is set to true
+     * when the index is a valid zone separated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the index is a valid zone isolated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the index is a valid zone isolated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the index is a valid zone isolated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This boolean field is only set for projects that have Physical
+     * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+     * the index is a valid zone isolated index and false if it isn't.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
