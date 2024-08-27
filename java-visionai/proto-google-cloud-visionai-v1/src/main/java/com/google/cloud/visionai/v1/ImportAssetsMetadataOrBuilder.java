@@ -58,4 +58,42 @@ public interface ImportAssetsMetadataOrBuilder
    * <code>.google.cloud.visionai.v1.OperationMetadata metadata = 1;</code>
    */
   com.google.cloud.visionai.v1.OperationMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.visionai.v1.BatchOperationStatus getStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The importing status including partial failures, if the implementation can
+   * provide such information during the progress of the ImportAssets.
+   * </pre>
+   *
+   * <code>.google.cloud.visionai.v1.BatchOperationStatus status = 2;</code>
+   */
+  com.google.cloud.visionai.v1.BatchOperationStatusOrBuilder getStatusOrBuilder();
 }

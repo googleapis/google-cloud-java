@@ -220,6 +220,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -286,6 +288,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -352,6 +356,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -427,6 +433,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -502,6 +510,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -536,6 +546,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -590,6 +602,8 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
               .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
               .setSatisfiesPzs(true)
+              .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+              .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -715,6 +729,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -786,6 +802,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -857,6 +875,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -942,6 +962,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1017,6 +1039,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setMaintenanceUpdatePolicy(MaintenanceUpdatePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1194,6 +1218,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1262,6 +1287,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1332,6 +1358,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1409,6 +1436,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1486,6 +1514,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1564,6 +1593,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1701,6 +1731,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1737,6 +1768,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1793,6 +1825,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSatisfiesPzs(true)
               .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
               .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+              .addAllOutboundPublicIpAddresses(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1922,6 +1955,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1995,6 +2029,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2070,6 +2105,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2145,6 +2181,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2222,6 +2259,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2295,6 +2333,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
+            .addAllOutboundPublicIpAddresses(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

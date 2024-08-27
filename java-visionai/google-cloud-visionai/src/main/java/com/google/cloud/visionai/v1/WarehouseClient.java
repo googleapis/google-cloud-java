@@ -670,7 +670,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ClipAsset</td>
- *      <td><p> Generates clips for downloading. The api takes in a time range, and generates a clip of the first content available after start_time and before end_time, which may overflow beyond these bounds. Returned clips are truncated if the total size of the clips are larger than 100MB.</td>
+ *      <td><p> Supported by STREAM_VIDEO corpus type. Generates clips for downloading. The api takes in a time range, and generates a clip of the first content available after start_time and before end_time, which may overflow beyond these bounds. Returned clips are truncated if the total size of the clips are larger than 100MB.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -5262,9 +5262,10 @@ public class WarehouseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates clips for downloading. The api takes in a time range, and generates a clip of the
-   * first content available after start_time and before end_time, which may overflow beyond these
-   * bounds. Returned clips are truncated if the total size of the clips are larger than 100MB.
+   * Supported by STREAM_VIDEO corpus type. Generates clips for downloading. The api takes in a time
+   * range, and generates a clip of the first content available after start_time and before
+   * end_time, which may overflow beyond these bounds. Returned clips are truncated if the total
+   * size of the clips are larger than 100MB.
    *
    * <p>Sample code:
    *
@@ -5294,9 +5295,10 @@ public class WarehouseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates clips for downloading. The api takes in a time range, and generates a clip of the
-   * first content available after start_time and before end_time, which may overflow beyond these
-   * bounds. Returned clips are truncated if the total size of the clips are larger than 100MB.
+   * Supported by STREAM_VIDEO corpus type. Generates clips for downloading. The api takes in a time
+   * range, and generates a clip of the first content available after start_time and before
+   * end_time, which may overflow beyond these bounds. Returned clips are truncated if the total
+   * size of the clips are larger than 100MB.
    *
    * <p>Sample code:
    *

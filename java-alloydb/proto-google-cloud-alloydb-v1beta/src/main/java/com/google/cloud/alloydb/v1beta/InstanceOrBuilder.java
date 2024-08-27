@@ -805,7 +805,9 @@ public interface InstanceOrBuilder
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The publicIpAddress.
    */
@@ -819,7 +821,9 @@ public interface InstanceOrBuilder
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for publicIpAddress.
    */
@@ -1120,4 +1124,63 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder
       getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the outboundPublicIpAddresses.
+   */
+  java.util.List<java.lang.String> getOutboundPublicIpAddressesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of outboundPublicIpAddresses.
+   */
+  int getOutboundPublicIpAddressesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The outboundPublicIpAddresses at the given index.
+   */
+  java.lang.String getOutboundPublicIpAddresses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the outboundPublicIpAddresses at the given index.
+   */
+  com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index);
 }

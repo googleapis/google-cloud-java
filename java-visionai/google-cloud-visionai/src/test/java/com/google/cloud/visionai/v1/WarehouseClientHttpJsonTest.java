@@ -935,6 +935,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -994,6 +996,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1053,6 +1057,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1071,6 +1077,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1109,6 +1117,8 @@ public class WarehouseClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIndexAsync(index, updateMask).get();
@@ -1128,6 +1138,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1178,6 +1190,8 @@ public class WarehouseClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllDeployedIndexes(new ArrayList<DeployedIndexReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1420,6 +1434,8 @@ public class WarehouseClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1475,6 +1491,8 @@ public class WarehouseClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1523,6 +1541,8 @@ public class WarehouseClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1571,6 +1591,8 @@ public class WarehouseClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1581,6 +1603,8 @@ public class WarehouseClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDefaultTtl(Duration.newBuilder().build())
             .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1617,6 +1641,8 @@ public class WarehouseClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setDefaultTtl(Duration.newBuilder().build())
               .setSearchCapabilitySetting(SearchCapabilitySetting.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCorpus(corpus, updateMask);
@@ -3944,6 +3970,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4004,6 +4032,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4064,6 +4094,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4114,6 +4146,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4265,6 +4299,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4283,6 +4319,8 @@ public class WarehouseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4322,6 +4360,8 @@ public class WarehouseClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIndexEndpointAsync(indexEndpoint, updateMask).get();

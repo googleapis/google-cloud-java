@@ -395,4 +395,66 @@ public interface IndexEndpointOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index endpoint is a valid zone separated index endpoint and false
+   * if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Separation enabled via an Org Policy constraint. It is set to true
+   * when the index endpoint is a valid zone separated index endpoint and false
+   * if it isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index endpoint is a valid zone isolated index endpoint and false if it
+   * isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This boolean field is only set for projects that have Physical
+   * Zone Isolation enabled via an Org Policy constraint. It is set to true when
+   * the index endpoint is a valid zone isolated index endpoint and false if it
+   * isn't.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

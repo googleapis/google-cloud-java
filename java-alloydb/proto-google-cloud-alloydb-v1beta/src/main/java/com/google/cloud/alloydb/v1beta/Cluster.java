@@ -585,7 +585,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
-     * "projects/{project_number}/global/networks/{network_id}". This is
+     * `projects/{project_number}/global/networks/{network_id}`. This is
      * required to create a cluster.
      * </pre>
      *
@@ -604,7 +604,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
-     * "projects/{project_number}/global/networks/{network_id}". This is
+     * `projects/{project_number}/global/networks/{network_id}`. This is
      * required to create a cluster.
      * </pre>
      *
@@ -710,7 +710,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
-     * "projects/{project_number}/global/networks/{network_id}". This is
+     * `projects/{project_number}/global/networks/{network_id}`. This is
      * required to create a cluster.
      * </pre>
      *
@@ -740,7 +740,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
-     * "projects/{project_number}/global/networks/{network_id}". This is
+     * `projects/{project_number}/global/networks/{network_id}`. This is
      * required to create a cluster.
      * </pre>
      *
@@ -1206,7 +1206,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
-       * "projects/{project_number}/global/networks/{network_id}". This is
+       * `projects/{project_number}/global/networks/{network_id}`. This is
        * required to create a cluster.
        * </pre>
        *
@@ -1235,7 +1235,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
-       * "projects/{project_number}/global/networks/{network_id}". This is
+       * `projects/{project_number}/global/networks/{network_id}`. This is
        * required to create a cluster.
        * </pre>
        *
@@ -1264,7 +1264,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
-       * "projects/{project_number}/global/networks/{network_id}". This is
+       * `projects/{project_number}/global/networks/{network_id}`. This is
        * required to create a cluster.
        * </pre>
        *
@@ -1292,7 +1292,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
-       * "projects/{project_number}/global/networks/{network_id}". This is
+       * `projects/{project_number}/global/networks/{network_id}`. This is
        * required to create a cluster.
        * </pre>
        *
@@ -1316,7 +1316,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
-       * "projects/{project_number}/global/networks/{network_id}". This is
+       * `projects/{project_number}/global/networks/{network_id}`. This is
        * required to create a cluster.
        * </pre>
        *
@@ -3771,7 +3771,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -3780,7 +3780,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=547
+   *     google/cloud/alloydb/v1beta/resources.proto;l=574
    * @return The network.
    */
   @java.lang.Override
@@ -3803,7 +3803,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * form: `projects/{project}/global/networks/{network_id}`. This is required
    * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
@@ -3812,7 +3812,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=547
+   *     google/cloud/alloydb/v1beta/resources.proto;l=574
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -4153,7 +4153,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=582
+   *     google/cloud/alloydb/v1beta/resources.proto;l=609
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -4171,7 +4171,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=582
+   *     google/cloud/alloydb/v1beta/resources.proto;l=609
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -4562,6 +4562,126 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int MAINTENANCE_UPDATE_POLICY_FIELD_NUMBER = 32;
+  private com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenanceUpdatePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceUpdatePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceUpdatePolicy() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceUpdatePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy getMaintenanceUpdatePolicy() {
+    return maintenanceUpdatePolicy_ == null
+        ? com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()
+        : maintenanceUpdatePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance update policy determines when to allow or deny
+   * updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder
+      getMaintenanceUpdatePolicyOrBuilder() {
+    return maintenanceUpdatePolicy_ == null
+        ? com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()
+        : maintenanceUpdatePolicy_;
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 37;
+  private com.google.cloud.alloydb.v1beta.MaintenanceSchedule maintenanceSchedule_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.MaintenanceSchedule getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maintenance schedule for the cluster, generated for a
+   * specific rollout if a maintenance window is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4658,6 +4778,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(30, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(32, getMaintenanceUpdatePolicy());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(37, getMaintenanceSchedule());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4774,6 +4900,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              32, getMaintenanceUpdatePolicy());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(37, getMaintenanceSchedule());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4853,6 +4988,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!getPrimaryConfig().equals(other.getPrimaryConfig())) return false;
     }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasMaintenanceUpdatePolicy() != other.hasMaintenanceUpdatePolicy()) return false;
+    if (hasMaintenanceUpdatePolicy()) {
+      if (!getMaintenanceUpdatePolicy().equals(other.getMaintenanceUpdatePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -4955,6 +5098,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasMaintenanceUpdatePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_UPDATE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceUpdatePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -5148,6 +5299,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getContinuousBackupInfoFieldBuilder();
         getSecondaryConfigFieldBuilder();
         getPrimaryConfigFieldBuilder();
+        getMaintenanceUpdatePolicyFieldBuilder();
+        getMaintenanceScheduleFieldBuilder();
       }
     }
 
@@ -5238,6 +5391,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_ = null;
       }
       satisfiesPzs_ = false;
+      maintenanceUpdatePolicy_ = null;
+      if (maintenanceUpdatePolicyBuilder_ != null) {
+        maintenanceUpdatePolicyBuilder_.dispose();
+        maintenanceUpdatePolicyBuilder_ = null;
+      }
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -5383,6 +5546,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x04000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.maintenanceUpdatePolicy_ =
+            maintenanceUpdatePolicyBuilder_ == null
+                ? maintenanceUpdatePolicy_
+                : maintenanceUpdatePolicyBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.maintenanceSchedule_ =
+            maintenanceScheduleBuilder_ == null
+                ? maintenanceSchedule_
+                : maintenanceScheduleBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -5524,6 +5701,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasMaintenanceUpdatePolicy()) {
+        mergeMaintenanceUpdatePolicy(other.getMaintenanceUpdatePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
       }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
@@ -5745,6 +5928,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x04000000;
                 break;
               } // case 240
+            case 258:
+              {
+                input.readMessage(
+                    getMaintenanceUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 258
+            case 298:
+              {
+                input.readMessage(
+                    getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7844,7 +8041,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * form: `projects/{project}/global/networks/{network_id}`. This is required
      * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
@@ -7853,7 +8050,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=547
+     *     google/cloud/alloydb/v1beta/resources.proto;l=574
      * @return The network.
      */
     @java.lang.Deprecated
@@ -7875,7 +8072,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * form: `projects/{project}/global/networks/{network_id}`. This is required
      * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
@@ -7884,7 +8081,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=547
+     *     google/cloud/alloydb/v1beta/resources.proto;l=574
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -7906,7 +8103,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * form: `projects/{project}/global/networks/{network_id}`. This is required
      * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
@@ -7915,7 +8112,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=547
+     *     google/cloud/alloydb/v1beta/resources.proto;l=574
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -7936,7 +8133,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * form: `projects/{project}/global/networks/{network_id}`. This is required
      * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
@@ -7945,7 +8142,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=547
+     *     google/cloud/alloydb/v1beta/resources.proto;l=574
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7962,7 +8159,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * form: `projects/{project}/global/networks/{network_id}`. This is required
      * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
@@ -7971,7 +8168,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=547
+     *     google/cloud/alloydb/v1beta/resources.proto;l=574
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -8812,7 +9009,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=582
+     *     google/cloud/alloydb/v1beta/resources.proto;l=609
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -8829,7 +9026,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=582
+     *     google/cloud/alloydb/v1beta/resources.proto;l=609
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -10306,6 +10503,442 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzs_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenanceUpdatePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy,
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder,
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder>
+        maintenanceUpdatePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenanceUpdatePolicy field is set.
+     */
+    public boolean hasMaintenanceUpdatePolicy() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenanceUpdatePolicy.
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy getMaintenanceUpdatePolicy() {
+      if (maintenanceUpdatePolicyBuilder_ == null) {
+        return maintenanceUpdatePolicy_ == null
+            ? com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()
+            : maintenanceUpdatePolicy_;
+      } else {
+        return maintenanceUpdatePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceUpdatePolicy(
+        com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy value) {
+      if (maintenanceUpdatePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceUpdatePolicy_ = value;
+      } else {
+        maintenanceUpdatePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceUpdatePolicy(
+        com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder builderForValue) {
+      if (maintenanceUpdatePolicyBuilder_ == null) {
+        maintenanceUpdatePolicy_ = builderForValue.build();
+      } else {
+        maintenanceUpdatePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenanceUpdatePolicy(
+        com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy value) {
+      if (maintenanceUpdatePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && maintenanceUpdatePolicy_ != null
+            && maintenanceUpdatePolicy_
+                != com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()) {
+          getMaintenanceUpdatePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenanceUpdatePolicy_ = value;
+        }
+      } else {
+        maintenanceUpdatePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenanceUpdatePolicy_ != null) {
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenanceUpdatePolicy() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      maintenanceUpdatePolicy_ = null;
+      if (maintenanceUpdatePolicyBuilder_ != null) {
+        maintenanceUpdatePolicyBuilder_.dispose();
+        maintenanceUpdatePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder
+        getMaintenanceUpdatePolicyBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return getMaintenanceUpdatePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder
+        getMaintenanceUpdatePolicyOrBuilder() {
+      if (maintenanceUpdatePolicyBuilder_ != null) {
+        return maintenanceUpdatePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceUpdatePolicy_ == null
+            ? com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()
+            : maintenanceUpdatePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance update policy determines when to allow or deny
+     * updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenance_update_policy = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy,
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder,
+            com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder>
+        getMaintenanceUpdatePolicyFieldBuilder() {
+      if (maintenanceUpdatePolicyBuilder_ == null) {
+        maintenanceUpdatePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy,
+                com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder,
+                com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicyOrBuilder>(
+                getMaintenanceUpdatePolicy(), getParentForChildren(), isClean());
+        maintenanceUpdatePolicy_ = null;
+      }
+      return maintenanceUpdatePolicyBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1beta.MaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.MaintenanceSchedule,
+            com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder,
+            com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceSchedule getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.alloydb.v1beta.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(
+        com.google.cloud.alloydb.v1beta.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && maintenanceSchedule_ != null
+            && maintenanceSchedule_
+                != com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()) {
+          getMaintenanceScheduleBuilder().mergeFrom(value);
+        } else {
+          maintenanceSchedule_ = value;
+        }
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+      if (maintenanceSchedule_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder
+        getMaintenanceScheduleBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maintenance schedule for the cluster, generated for a
+     * specific rollout if a maintenance window is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.MaintenanceSchedule maintenance_schedule = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.MaintenanceSchedule,
+            com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder,
+            com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.MaintenanceSchedule,
+                com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder,
+                com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
     }
 
     @java.lang.Override

@@ -3364,6 +3364,7 @@ public final class WarehouseGrpc {
      *
      *
      * <pre>
+     * Supported by STREAM_VIDEO corpus type.
      * Generates clips for downloading. The api takes in a time range, and
      * generates a clip of the first content available after start_time and
      * before end_time, which may overflow beyond these bounds.
@@ -4405,6 +4406,7 @@ public final class WarehouseGrpc {
      *
      *
      * <pre>
+     * Supported by STREAM_VIDEO corpus type.
      * Generates clips for downloading. The api takes in a time range, and
      * generates a clip of the first content available after start_time and
      * before end_time, which may overflow beyond these bounds.
@@ -5382,6 +5384,7 @@ public final class WarehouseGrpc {
      *
      *
      * <pre>
+     * Supported by STREAM_VIDEO corpus type.
      * Generates clips for downloading. The api takes in a time range, and
      * generates a clip of the first content available after start_time and
      * before end_time, which may overflow beyond these bounds.
@@ -6272,6 +6275,7 @@ public final class WarehouseGrpc {
      *
      *
      * <pre>
+     * Supported by STREAM_VIDEO corpus type.
      * Generates clips for downloading. The api takes in a time range, and
      * generates a clip of the first content available after start_time and
      * before end_time, which may overflow beyond these bounds.
