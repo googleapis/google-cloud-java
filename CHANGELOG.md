@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.9.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.8.1...v3.9.0) (2024-08-27)
+
+
+### Features
+
+* V1alpha client generation ([#2615](https://github.com/googleapis/java-bigquerystorage/issues/2615)) ([061691c](https://github.com/googleapis/java-bigquerystorage/commit/061691ccdfe56ae0813e376b8f1946cd2a41617b))
+
+
+### Dependencies
+
+* Update dependency com.google.http-client:google-http-client to v1.45.0 ([#2616](https://github.com/googleapis/java-bigquerystorage/issues/2616)) ([93b30f9](https://github.com/googleapis/java-bigquerystorage/commit/93b30f91cbe103ab44d10ca64cf344304f342600))
+
 ## [3.8.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.8.0...v3.8.1) (2024-08-20)
 
 
