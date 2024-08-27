@@ -21,5 +21,6 @@ libraries:
       recommended_package: com.google.cloud.bigquery.storage.v1
       GAPICs:
           - proto_path: google/cloud/bigquery/storage/v1
+          - proto_path: google/cloud/bigquery/storage/v1alpha
           - proto_path: google/cloud/bigquery/storage/v1beta1
           - proto_path: google/cloud/bigquery/storage/v1beta2
