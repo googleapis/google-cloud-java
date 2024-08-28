@@ -143,20 +143,22 @@ public final class CustomJobProto {
           + "\002\022\031\n\014package_uris\030\002 \003(\tB\003\340A\002\022\032\n\rpython_m"
           + "odule\030\003 \001(\tB\003\340A\002\022\014\n\004args\030\004 \003(\t\0224\n\003env\030\005 "
           + "\003(\0132\'.google.cloud.aiplatform.v1beta1.En"
-          + "vVar\"\255\002\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.g"
+          + "vVar\"\350\002\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.g"
           + "oogle.protobuf.Duration\022%\n\035restart_job_o"
           + "n_worker_restart\030\003 \001(\010\022K\n\010strategy\030\004 \001(\016"
           + "24.google.cloud.aiplatform.v1beta1.Sched"
           + "uling.StrategyB\003\340A\001\022\034\n\017disable_retries\030\005"
-          + " \001(\010B\003\340A\001\"a\n\010Strategy\022\030\n\024STRATEGY_UNSPEC"
-          + "IFIED\020\000\022\021\n\tON_DEMAND\020\001\032\002\010\001\022\020\n\010LOW_COST\020\002"
-          + "\032\002\010\001\022\014\n\010STANDARD\020\003\022\010\n\004SPOT\020\004B\345\001\n#com.goo"
-          + "gle.cloud.aiplatform.v1beta1B\016CustomJobP"
-          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
-          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
-          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
-          + ":AIPlatform::V1beta1b\006proto3"
+          + " \001(\010B\003\340A\001\0229\n\021max_wait_duration\030\006 \001(\0132\031.g"
+          + "oogle.protobuf.DurationB\003\340A\001\"a\n\010Strategy"
+          + "\022\030\n\024STRATEGY_UNSPECIFIED\020\000\022\021\n\tON_DEMAND\020"
+          + "\001\032\002\010\001\022\020\n\010LOW_COST\020\002\032\002\010\001\022\014\n\010STANDARD\020\003\022\010\n"
+          + "\004SPOT\020\004B\345\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\016CustomJobProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -271,7 +273,11 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart", "Strategy", "DisableRetries",
+              "Timeout",
+              "RestartJobOnWorkerRestart",
+              "Strategy",
+              "DisableRetries",
+              "MaxWaitDuration",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

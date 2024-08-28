@@ -714,6 +714,69 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         : phoneFraudAssessment_;
   }
 
+  public static final int ASSESSMENT_ENVIRONMENT_FIELD_NUMBER = 14;
+  private com.google.recaptchaenterprise.v1.AssessmentEnvironment assessmentEnvironment_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the assessmentEnvironment field is set.
+   */
+  @java.lang.Override
+  public boolean hasAssessmentEnvironment() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The assessmentEnvironment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AssessmentEnvironment getAssessmentEnvironment() {
+    return assessmentEnvironment_ == null
+        ? com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()
+        : assessmentEnvironment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder
+      getAssessmentEnvironmentOrBuilder() {
+    return assessmentEnvironment_ == null
+        ? com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()
+        : assessmentEnvironment_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -760,6 +823,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(13, getFraudSignals());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(14, getAssessmentEnvironment());
     }
     getUnknownFields().writeTo(output);
   }
@@ -811,6 +877,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFraudSignals());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAssessmentEnvironment());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -873,6 +943,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasPhoneFraudAssessment()) {
       if (!getPhoneFraudAssessment().equals(other.getPhoneFraudAssessment())) return false;
     }
+    if (hasAssessmentEnvironment() != other.hasAssessmentEnvironment()) return false;
+    if (hasAssessmentEnvironment()) {
+      if (!getAssessmentEnvironment().equals(other.getAssessmentEnvironment())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -925,6 +999,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasPhoneFraudAssessment()) {
       hash = (37 * hash) + PHONE_FRAUD_ASSESSMENT_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneFraudAssessment().hashCode();
+    }
+    if (hasAssessmentEnvironment()) {
+      hash = (37 * hash) + ASSESSMENT_ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAssessmentEnvironment().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1076,6 +1154,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         getFraudPreventionAssessmentFieldBuilder();
         getFraudSignalsFieldBuilder();
         getPhoneFraudAssessmentFieldBuilder();
+        getAssessmentEnvironmentFieldBuilder();
       }
     }
 
@@ -1133,6 +1212,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (phoneFraudAssessmentBuilder_ != null) {
         phoneFraudAssessmentBuilder_.dispose();
         phoneFraudAssessmentBuilder_ = null;
+      }
+      assessmentEnvironment_ = null;
+      if (assessmentEnvironmentBuilder_ != null) {
+        assessmentEnvironmentBuilder_.dispose();
+        assessmentEnvironmentBuilder_ = null;
       }
       return this;
     }
@@ -1235,6 +1319,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 : phoneFraudAssessmentBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.assessmentEnvironment_ =
+            assessmentEnvironmentBuilder_ == null
+                ? assessmentEnvironment_
+                : assessmentEnvironmentBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1317,6 +1408,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPhoneFraudAssessment()) {
         mergePhoneFraudAssessment(other.getPhoneFraudAssessment());
+      }
+      if (other.hasAssessmentEnvironment()) {
+        mergeAssessmentEnvironment(other.getAssessmentEnvironment());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1417,6 +1511,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getAssessmentEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3718,6 +3819,233 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         phoneFraudAssessment_ = null;
       }
       return phoneFraudAssessmentBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.AssessmentEnvironment assessmentEnvironment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AssessmentEnvironment,
+            com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder,
+            com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder>
+        assessmentEnvironmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the assessmentEnvironment field is set.
+     */
+    public boolean hasAssessmentEnvironment() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The assessmentEnvironment.
+     */
+    public com.google.recaptchaenterprise.v1.AssessmentEnvironment getAssessmentEnvironment() {
+      if (assessmentEnvironmentBuilder_ == null) {
+        return assessmentEnvironment_ == null
+            ? com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()
+            : assessmentEnvironment_;
+      } else {
+        return assessmentEnvironmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAssessmentEnvironment(
+        com.google.recaptchaenterprise.v1.AssessmentEnvironment value) {
+      if (assessmentEnvironmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assessmentEnvironment_ = value;
+      } else {
+        assessmentEnvironmentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAssessmentEnvironment(
+        com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder builderForValue) {
+      if (assessmentEnvironmentBuilder_ == null) {
+        assessmentEnvironment_ = builderForValue.build();
+      } else {
+        assessmentEnvironmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAssessmentEnvironment(
+        com.google.recaptchaenterprise.v1.AssessmentEnvironment value) {
+      if (assessmentEnvironmentBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && assessmentEnvironment_ != null
+            && assessmentEnvironment_
+                != com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()) {
+          getAssessmentEnvironmentBuilder().mergeFrom(value);
+        } else {
+          assessmentEnvironment_ = value;
+        }
+      } else {
+        assessmentEnvironmentBuilder_.mergeFrom(value);
+      }
+      if (assessmentEnvironment_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAssessmentEnvironment() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      assessmentEnvironment_ = null;
+      if (assessmentEnvironmentBuilder_ != null) {
+        assessmentEnvironmentBuilder_.dispose();
+        assessmentEnvironmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder
+        getAssessmentEnvironmentBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getAssessmentEnvironmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder
+        getAssessmentEnvironmentOrBuilder() {
+      if (assessmentEnvironmentBuilder_ != null) {
+        return assessmentEnvironmentBuilder_.getMessageOrBuilder();
+      } else {
+        return assessmentEnvironment_ == null
+            ? com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()
+            : assessmentEnvironment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment creating the assessment. This describes your
+     * environment (the system invoking CreateAssessment), NOT the environment of
+     * your user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AssessmentEnvironment,
+            com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder,
+            com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder>
+        getAssessmentEnvironmentFieldBuilder() {
+      if (assessmentEnvironmentBuilder_ == null) {
+        assessmentEnvironmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.AssessmentEnvironment,
+                com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder,
+                com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder>(
+                getAssessmentEnvironment(), getParentForChildren(), isClean());
+        assessmentEnvironment_ = null;
+      }
+      return assessmentEnvironmentBuilder_;
     }
 
     @java.lang.Override

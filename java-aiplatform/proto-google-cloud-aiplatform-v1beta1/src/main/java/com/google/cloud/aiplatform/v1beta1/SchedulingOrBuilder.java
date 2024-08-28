@@ -117,4 +117,54 @@ public interface SchedulingOrBuilder
    * @return The disableRetries.
    */
   boolean getDisableRetries();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum duration that a job will wait for the
+   * requested resources to be provisioned if the scheduling strategy is set to
+   * [Strategy.DWS_FLEX_START].
+   * If set to 0, the job will wait indefinitely. The default is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxWaitDuration field is set.
+   */
+  boolean hasMaxWaitDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum duration that a job will wait for the
+   * requested resources to be provisioned if the scheduling strategy is set to
+   * [Strategy.DWS_FLEX_START].
+   * If set to 0, the job will wait indefinitely. The default is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxWaitDuration.
+   */
+  com.google.protobuf.Duration getMaxWaitDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum duration that a job will wait for the
+   * requested resources to be provisioned if the scheduling strategy is set to
+   * [Strategy.DWS_FLEX_START].
+   * If set to 0, the job will wait indefinitely. The default is 24 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getMaxWaitDurationOrBuilder();
 }

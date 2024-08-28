@@ -126,6 +126,17 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>STABLE = 3;</code>
      */
     STABLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Clusters subscribed to EXTENDED receive extended support and availability
+     * for versions which are known to be stable and reliable in production.
+     * </pre>
+     *
+     * <code>EXTENDED = 4;</code>
+     */
+    EXTENDED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -177,6 +188,17 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <code>STABLE = 3;</code>
      */
     public static final int STABLE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Clusters subscribed to EXTENDED receive extended support and availability
+     * for versions which are known to be stable and reliable in production.
+     * </pre>
+     *
+     * <code>EXTENDED = 4;</code>
+     */
+    public static final int EXTENDED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -210,6 +232,8 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
           return REGULAR;
         case 3:
           return STABLE;
+        case 4:
+          return EXTENDED;
         default:
           return null;
       }
