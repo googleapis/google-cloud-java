@@ -498,4 +498,52 @@ public interface AssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder
       getPhoneFraudAssessmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the assessmentEnvironment field is set.
+   */
+  boolean hasAssessmentEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The assessmentEnvironment.
+   */
+  com.google.recaptchaenterprise.v1.AssessmentEnvironment getAssessmentEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment creating the assessment. This describes your
+   * environment (the system invoking CreateAssessment), NOT the environment of
+   * your user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AssessmentEnvironment assessment_environment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder
+      getAssessmentEnvironmentOrBuilder();
 }

@@ -42,6 +42,7 @@ import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
+import com.google.recaptchaenterprise.v1.AssessmentEnvironment;
 import com.google.recaptchaenterprise.v1.AssessmentName;
 import com.google.recaptchaenterprise.v1.ChallengeMetrics;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
@@ -162,6 +163,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
             .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
+            .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -214,6 +216,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
             .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
+            .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 

@@ -178,7 +178,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=718
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=724
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
