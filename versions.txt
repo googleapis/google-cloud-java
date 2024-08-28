@@ -806,3 +806,6 @@ grpc-google-cloud-privilegedaccessmanager-v1:0.2.0:0.3.0-SNAPSHOT
 google-cloud-apihub:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-apihub-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-apihub-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-connectgateway:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-connectgateway-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-connectgateway-v1:0.0.0:0.0.1-SNAPSHOT
