@@ -21,6 +21,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -35,6 +36,7 @@ import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
@@ -955,7 +957,12 @@ class ConnectionImpl implements Connection {
 
     try {
       if (bqReadClient == null) { // if the read client isn't already initialized. Not thread safe.
-        bqReadClient = BigQueryReadClient.create();
+        BigQueryReadSettings settings =
+            BigQueryReadSettings.newBuilder()
+                .setCredentialsProvider(
+                    FixedCredentialsProvider.create(bigQueryOptions.getCredentials()))
+                .build();
+        bqReadClient = BigQueryReadClient.create(settings);
       }
       String parent = String.format("projects/%s", destinationTable.getProject());
       String srcTable =

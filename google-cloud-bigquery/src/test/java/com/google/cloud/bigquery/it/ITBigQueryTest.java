@@ -3249,6 +3249,57 @@ public class ITBigQueryTest {
     assertEquals(42, bigQueryResult.getTotalRows());
   }
 
+  @Test
+  public void testExecuteSelectWithCredentials() throws SQLException {
+    // This test validate that executeSelect uses the same credential provided by the BigQuery
+    // object used to create the Connection client.
+    // This is done the following scenarios:
+    // 1. Validate that setting a valid credential executes the query.
+    // 2. Validate that setting an invalid credential causes failure.
+
+    // Scenario 1.
+    // Create a new bigQuery object but explicitly set the credentials.
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQueryOptions bigQueryOptions =
+        bigqueryHelper
+            .getOptions()
+            .toBuilder()
+            .setCredentials(bigquery.getOptions().getCredentials())
+            .build();
+    BigQuery bigQueryGoodCredentials = bigQueryOptions.getService();
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setJobTimeoutMs(10L) //  Force non-fast query to use BigQueryReadClient.
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .build();
+    Connection connectionGoodCredentials =
+        bigQueryGoodCredentials.createConnection(connectionSettings);
+    String query =
+        "SELECT * FROM "
+            + TABLE_ID_LARGE.getTable(); // Large query result is needed to use BigQueryReadClient.
+    BigQueryResult bigQueryResult = connectionGoodCredentials.executeSelect(query);
+    assertEquals(313348, bigQueryResult.getTotalRows());
+
+    // Scenario 2.
+    // Create a new bigQuery object but explicitly an invalid credential.
+    BigQueryOptions bigQueryOptionsBadCredentials =
+        bigqueryHelper
+            .getOptions()
+            .toBuilder()
+            .setCredentials(loadCredentials(FAKE_JSON_CRED_WITH_GOOGLE_DOMAIN))
+            .build();
+    BigQuery bigQueryBadCredentials = bigQueryOptionsBadCredentials.getService();
+    Connection connectionBadCredentials =
+        bigQueryBadCredentials.createConnection(connectionSettings);
+    try {
+      connectionBadCredentials.executeSelect(query);
+      fail(); // this line should not be reached
+    } catch (BigQuerySQLException e) {
+      assertNotNull(e);
+    }
+  }
+
   /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryTimeStamp() throws InterruptedException {
