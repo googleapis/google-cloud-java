@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.42.2](https://github.com/googleapis/java-bigquery/compare/v2.42.1...v2.42.2) (2024-08-29)
+
+
+### Bug Fixes
+
+* ExecuteSelect now use provided credentials instead of GOOGLE_APP… ([#3465](https://github.com/googleapis/java-bigquery/issues/3465)) ([cd82235](https://github.com/googleapis/java-bigquery/commit/cd82235475310cacf1f607a412418be97c83559f))
+
+
+### Dependencies
+
+* Update actions/upload-artifact action to v4.3.5 ([#3456](https://github.com/googleapis/java-bigquery/issues/3456)) ([f00977c](https://github.com/googleapis/java-bigquery/commit/f00977ccf60227bf1415795da5b6e0a208f21b2c))
+* Update actions/upload-artifact action to v4.3.5 ([#3462](https://github.com/googleapis/java-bigquery/issues/3462)) ([e1c6e92](https://github.com/googleapis/java-bigquery/commit/e1c6e92813c739fcd861e0622413b74c638cb547))
+* Update actions/upload-artifact action to v4.3.6 ([#3463](https://github.com/googleapis/java-bigquery/issues/3463)) ([ba91227](https://github.com/googleapis/java-bigquery/commit/ba91227b972acb1d0796d5a9470ba790dfb8d5b0))
+* Update github/codeql-action action to v2.26.6 ([#3464](https://github.com/googleapis/java-bigquery/issues/3464)) ([2aeb44d](https://github.com/googleapis/java-bigquery/commit/2aeb44d8b2ff5fa264cb14a8fc31e9494d77cb6b))
+
 ## [2.42.1](https://github.com/googleapis/java-bigquery/compare/v2.42.0...v2.42.1) (2024-08-27)
 
 
