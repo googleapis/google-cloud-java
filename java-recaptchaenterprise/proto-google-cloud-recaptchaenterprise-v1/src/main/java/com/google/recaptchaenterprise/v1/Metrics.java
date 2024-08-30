@@ -177,7 +177,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -191,7 +191,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -206,7 +206,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -220,7 +220,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -234,7 +234,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. All Key types should have score-based data.
    * </pre>
    *
@@ -254,7 +254,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -271,7 +271,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -288,7 +288,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -304,7 +304,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -320,7 +320,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metrics will be continuous and in order by dates, and in the granularity
+   * Metrics are continuous and in order by dates, and in the granularity
    * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
    * challenge-based data.
    * </pre>
@@ -1182,7 +1182,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1199,7 +1199,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1216,7 +1216,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1233,7 +1233,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1257,7 +1257,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1278,7 +1278,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1301,7 +1301,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1325,7 +1325,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1346,7 +1346,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1367,7 +1367,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1388,7 +1388,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1408,7 +1408,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1428,7 +1428,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1442,7 +1442,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1460,7 +1460,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1478,7 +1478,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1492,7 +1492,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1507,7 +1507,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. All Key types should have score-based data.
      * </pre>
      *
@@ -1557,7 +1557,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1577,7 +1577,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1596,7 +1596,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1615,7 +1615,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1641,7 +1641,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1664,7 +1664,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1689,7 +1689,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1715,7 +1715,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1738,7 +1738,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1761,7 +1761,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1784,7 +1784,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1806,7 +1806,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1828,7 +1828,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1844,7 +1844,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1864,7 +1864,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1884,7 +1884,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1900,7 +1900,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>
@@ -1918,7 +1918,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metrics will be continuous and in order by dates, and in the granularity
+     * Metrics are continuous and in order by dates, and in the granularity
      * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
      * challenge-based data.
      * </pre>

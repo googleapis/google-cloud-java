@@ -280,7 +280,7 @@ import javax.annotation.Generated;
  *      <td><p> Adds an IP override to a key. The following restrictions hold:
  * <ul>
  * <li>  The maximum number of IP overrides per key is 100.
- * <li>  For any conflict (such as IP already exists or IP part of an existing   IP range), an error will be returned.
+ * <li>  For any conflict (such as IP already exists or IP part of an existing   IP range), an error is returned.
  * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -606,7 +606,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -640,7 +640,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -736,9 +736,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project}/assessments/{assessment}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -776,9 +776,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project}/assessments/{assessment}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -878,7 +878,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the key will be created, in the format
+   * @param parent Required. The name of the project in which the key is created, in the format
    *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -912,7 +912,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the key will be created, in the format
+   * @param parent Required. The name of the project in which the key is created, in the format
    *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1003,8 +1003,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format `projects/{project}`.
+   * @param parent Required. The name of the project that contains the keys that are listed, in the
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(ProjectName parent) {
@@ -1034,8 +1034,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format `projects/{project}`.
+   * @param parent Required. The name of the project that contains the keys that are listed, in the
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(String parent) {
@@ -1408,7 +1408,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param key Required. The key to update.
    * @param updateMask Optional. The mask to control which fields of the key get updated. If the
-   *     mask is not present, all fields will be updated.
+   *     mask is not present, all fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Key updateKey(Key key, FieldMask updateMask) {
@@ -1665,7 +1665,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <ul>
    *   <li>The maximum number of IP overrides per key is 100.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
-   *       will be returned.
+   *       is returned.
    * </ul>
    *
    * <p>Sample code:
@@ -1706,7 +1706,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <ul>
    *   <li>The maximum number of IP overrides per key is 100.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
-   *       will be returned.
+   *       is returned.
    * </ul>
    *
    * <p>Sample code:
@@ -1744,7 +1744,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <ul>
    *   <li>The maximum number of IP overrides per key is 100.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
-   *       will be returned.
+   *       is returned.
    * </ul>
    *
    * <p>Sample code:
@@ -1780,7 +1780,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <ul>
    *   <li>The maximum number of IP overrides per key is 100.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
-   *       will be returned.
+   *       is returned.
    * </ul>
    *
    * <p>Sample code:
@@ -2376,7 +2376,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param firewallPolicy Required. The policy to update.
    * @param updateMask Optional. The mask to control which fields of the policy get updated. If the
-   *     mask is not present, all fields will be updated.
+   *     mask is not present, all fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirewallPolicy updateFirewallPolicy(

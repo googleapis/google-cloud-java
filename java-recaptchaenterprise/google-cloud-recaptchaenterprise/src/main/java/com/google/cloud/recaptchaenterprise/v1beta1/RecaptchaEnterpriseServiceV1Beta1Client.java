@@ -237,7 +237,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project_number}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -272,7 +272,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project_number}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -368,9 +368,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project_number}/assessments/{assessment_id}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -408,9 +408,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project_number}/assessments/{assessment_id}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(

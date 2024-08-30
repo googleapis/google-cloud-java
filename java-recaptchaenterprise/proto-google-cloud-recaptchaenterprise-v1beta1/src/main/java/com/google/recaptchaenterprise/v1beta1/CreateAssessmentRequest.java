@@ -72,7 +72,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project in which the assessment will be created,
+   * Required. The name of the project in which the assessment is created,
    * in the format `projects/{project_number}`.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project in which the assessment will be created,
+   * Required. The name of the project in which the assessment is created,
    * in the format `projects/{project_number}`.
    * </pre>
    *
@@ -571,7 +571,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project in which the assessment will be created,
+     * Required. The name of the project in which the assessment is created,
      * in the format `projects/{project_number}`.
      * </pre>
      *
@@ -596,7 +596,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project in which the assessment will be created,
+     * Required. The name of the project in which the assessment is created,
      * in the format `projects/{project_number}`.
      * </pre>
      *
@@ -621,7 +621,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project in which the assessment will be created,
+     * Required. The name of the project in which the assessment is created,
      * in the format `projects/{project_number}`.
      * </pre>
      *
@@ -645,7 +645,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project in which the assessment will be created,
+     * Required. The name of the project in which the assessment is created,
      * in the format `projects/{project_number}`.
      * </pre>
      *
@@ -665,7 +665,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project in which the assessment will be created,
+     * Required. The name of the project in which the assessment is created,
      * in the format `projects/{project_number}`.
      * </pre>
      *

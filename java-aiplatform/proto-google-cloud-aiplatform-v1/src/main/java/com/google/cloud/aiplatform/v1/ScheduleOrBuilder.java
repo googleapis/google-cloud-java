@@ -128,6 +128,52 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1.NotebookService.CreateNotebookExecutionJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   *
+   * @return Whether the createNotebookExecutionJobRequest field is set.
+   */
+  boolean hasCreateNotebookExecutionJobRequest();
+  /**
+   *
+   *
+   * <pre>
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1.NotebookService.CreateNotebookExecutionJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   *
+   * @return The createNotebookExecutionJobRequest.
+   */
+  com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest
+      getCreateNotebookExecutionJobRequest();
+  /**
+   *
+   *
+   * <pre>
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1.NotebookService.CreateNotebookExecutionJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.CreateNotebookExecutionJobRequestOrBuilder
+      getCreateNotebookExecutionJobRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The resource name of the Schedule.
    * </pre>
    *

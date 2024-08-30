@@ -28,7 +28,7 @@ public interface CreateKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project in which the key will be created, in the
+   * Required. The name of the project in which the key is created, in the
    * format `projects/{project}`.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface CreateKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project in which the key will be created, in the
+   * Required. The name of the project in which the key is created, in the
    * format `projects/{project}`.
    * </pre>
    *
