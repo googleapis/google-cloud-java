@@ -35,6 +35,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-bom</artifactId>
+        <version>1.41.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+       </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -65,6 +72,16 @@
       <artifactId>arrow-memory-netty</artifactId>
       <version>${arrow.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-logging</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-metrics</artifactId>
+      <version>0.31.0</version>
+    </dependency>
+
 
     <!-- Test Dependencies -->
     <dependency>
